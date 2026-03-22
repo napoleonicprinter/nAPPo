@@ -94,6 +94,8 @@ export const AppProvider = ({ children }) => {
     const [filterSignificance, setFilterSignificance] = useState('');
     const [filterVisited, setFilterVisited] = useState('all');
     const [filterRadius, setFilterRadius] = useState('all');
+    const [filterSearch, setFilterSearch] = useState('');
+    const [filterYear, setFilterYear] = useState('all');
 
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
@@ -156,6 +158,10 @@ export const AppProvider = ({ children }) => {
         if (filterSignificance && site.significance !== filterSignificance) return false;
         if (filterVisited === 'visited' && !site.visited) return false;
         if (filterVisited === 'unvisited' && site.visited) return false;
+        if (filterSearch && !site.name.toLowerCase().includes(filterSearch.toLowerCase())) return false;
+        
+        const siteYearStr = site.year ? String(site.year).trim() : '';
+        if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
         // Filter by radius if geolocation is enabled and user has coordinates
         if (geolocationEnabled && userCoords && filterRadius !== 'all' && site.distance !== undefined) {
@@ -239,6 +245,25 @@ export const AppProvider = ({ children }) => {
         setCurrentUser(null);
     };
 
+    const deleteCurrentUser = () => {
+        if (!currentUser) return;
+
+        const usernameToDelete = currentUser.username;
+        const timestamp = new Date().toLocaleString();
+
+        // Log deletion (in console for now, and I'll also create a file-based log)
+        console.log(`[USER DELETED] Username: ${usernameToDelete}, Date: ${timestamp}`);
+
+        // Update users list
+        setUsers(prev => prev.filter(u => u.username !== usernameToDelete));
+
+        // Purge user-specific data from localStorage
+        localStorage.removeItem(`visitedSites_${usernameToDelete}`);
+
+        // Clear session
+        setCurrentUser(null);
+    };
+
     const requestGeolocation = () => {
         if (!navigator.geolocation) {
             alert("Geolocation is not supported by your browser");
@@ -259,6 +284,7 @@ export const AppProvider = ({ children }) => {
                 console.error("Error getting location:", error);
                 setGeolocationEnabled(false);
                 setLocationMode('none');
+                setFilterRadius('all');
                 alert("Failed to get location. Please allow permissions in your browser.");
             }
         );
@@ -268,6 +294,7 @@ export const AppProvider = ({ children }) => {
         setGeolocationEnabled(false);
         setUserCoords(null);
         setLocationMode('none');
+        setFilterRadius('all');
     };
 
     const handleLocationSelect = (mode) => {
@@ -298,6 +325,8 @@ export const AppProvider = ({ children }) => {
             disableGeolocation,
             locationMode,
             handleLocationSelect,
+            filterSearch,
+            setFilterSearch,
             filterCategory,
             setFilterCategory,
             filterSignificance,
@@ -306,10 +335,13 @@ export const AppProvider = ({ children }) => {
             setFilterVisited,
             filterRadius,
             setFilterRadius,
+            filterYear,
+            setFilterYear,
             currentUser,
             login,
             signup,
             logout,
+            deleteCurrentUser,
             newSitesDays,
             setNewSitesDays,
             showOnlyNew,

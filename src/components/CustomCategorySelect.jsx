@@ -9,13 +9,14 @@ const CustomCategorySelect = ({ categories, value, onChange }) => {
     const getCategoryColor = (category) => {
         switch (category) {
             case 'Battle site': return '#f85149';
+            case 'Sea Battle': return '#38bdf8';
             case 'Battle landmark': return '#d29922';
             case 'Museum': return '#a371f7';
-            case 'Monument': return '#58a6ff';
+            case 'Monument': return '#10b981';
             case 'Building': return '#ff7b72';
-            case 'Art work': return '#d2a8ff';
-            case 'Event site': return '#79c0ff';
-            case 'Landmark': return '#e6edf3';
+            case 'Artwork': return '#d2a8ff';
+            case 'Event site': return '#fde047';
+            case 'Landmark': return '#7b5a25ff';
             default: return '#8b949e';
         }
     };

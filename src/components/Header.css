@@ -111,6 +111,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 .category-dot {
@@ -165,6 +166,95 @@
     padding: 4px;
     gap: 4px;
 }
+
+/* Search feature */
+.search-toggle-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input-wrapper {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 14px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid var(--accent-primary);
+    border-radius: 20px;
+    padding: 4px 10px 4px 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 8px rgba(88, 166, 255, 0.2);
+    white-space: nowrap;
+    z-index: 3010;
+}
+
+.search-input-icon {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    width: 180px;
+    padding: 2px 0;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.search-clear-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.search-clear-btn:hover {
+    background: var(--accent-danger);
+    color: #fff;
+}
+
+/* On mobile, show search input in a full-width row below */
+@media (max-width: 1024px) {
+    .search-input-wrapper {
+        position: static;
+        transform: none;
+        right: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 8px;
+        border-radius: 8px;
+    }
+
+    .search-toggle-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+
 
 .toggle-btn {
     display: flex;
@@ -274,6 +364,12 @@
     gap: 0.75rem;
 }
 
+.category-filters-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 /* Base style for all header selects to ensure "armony" */
 .filter-select, 
 .custom-select-trigger {
@@ -324,18 +420,20 @@
     .header-controls {
         display: none; /* Hidden by default when navigation is collapsed */
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        padding: 1.5rem;
-        background: rgba(13, 17, 23, 0.95);
+        top: calc(100% + 5px);
+        right: 1rem;
+        left: auto;
+        width: 260px;
+        padding: 1.25rem;
+        background: rgba(13, 17, 23, 0.98);
         backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-color);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.25rem;
         align-items: stretch;
         z-index: 1000;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
     .header-controls.mobile-open {
@@ -363,9 +461,27 @@
     }
 
     .header-actions {
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .user-profile-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .settings-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .settings-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -385,6 +501,37 @@
         .filter-select:not([value*="Set Location"]) { min-width: 110px; }
         .custom-select-container { min-width: 160px; }
         .filters-line { gap: 0.5rem; }
+        
+        .custom-desktop-layout {
+            display: grid !important;
+            grid-template-columns: auto auto;
+            grid-template-areas: 
+                "areas categories"
+                "year significance";
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .filter-select[title*="Distance"] { grid-area: areas; margin-bottom: 0; }
+        .desktop-year-filter { grid-area: year; width: 100%; margin-top: 0; }
+        
+        .category-filters-wrapper { 
+            display: contents; 
+        }
+
+        .category-filters-wrapper > .custom-select-container {
+            grid-area: categories;
+            justify-self: center;
+        }
+
+        .category-filters-wrapper .significance-filter {
+            grid-area: significance;
+            justify-self: center;
+            height: auto;
+            border: none;
+            background: transparent;
+            padding: 0;
+        }
     }
 }
 
@@ -412,11 +559,36 @@
     }
 
     .filter-select {
-        min-width: 140px !important;
-        width: 100%;
-        padding: 6px 24px 6px 8px;
+        min-width: 100px !important;
+        width: auto;
+        padding: 6px 20px 6px 8px;
+        font-size: 0.75rem;
+        height: 32px;
+    }
+
+    .custom-select-container {
+        min-width: 145px !important;
+    }
+
+    .custom-select-trigger {
+        height: 32px;
+        padding: 0 8px;
+        font-size: 0.75rem;
+    }
+
+    .custom-select-menu {
+        width: max-content;
+        min-width: 100%;
+    }
+
+    .custom-select-option {
+        white-space: nowrap;
         font-size: 0.8rem;
-        height: 36px;
+    }
+
+    /* Push Leaflet right controls down to align with the Year filter and avoid overlay tags */
+    .leaflet-top.leaflet-right {
+        top: 48px;
     }
 }
 

@@ -7,10 +7,7 @@ const ShoppingView = () => {
     const { shoppingItems } = useAppContext();
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
-    const categories = useMemo(() => {
-        const uniqueCategories = new Set(shoppingItems.map(item => item.category).filter(Boolean));
-        return ['All Categories', ...Array.from(uniqueCategories).sort()];
-    }, [shoppingItems]);
+    const categories = ['All Categories', 'Figures', 'Wargaming', 'Books', 'Store', 'Reenactment', 'Collectibles'];
 
     const filteredItems = useMemo(() => {
         return shoppingItems.filter(item => {
@@ -62,20 +59,11 @@ const ShoppingView = () => {
                                     <h2 className="shopping-title">{item.title}</h2>
                                     <span className="badge category-badge" style={{ backgroundColor: '#58a6ff' }}>
                                         <Tag size={12} />
-                                        Historical Item
+                                        {item.category}
                                     </span>
                                 </div>
 
-                                <div className="shopping-meta">
-                                    <div className="meta-item">
-                                        <Package size={16} />
-                                        <span>Available for purchase</span>
-                                    </div>
-                                    <div className="meta-item">
-                                        <DollarSign size={16} />
-                                        <span>Official Replica</span>
-                                    </div>
-                                </div>
+
 
                                 <p className="shopping-description">{item.description}</p>
                                 <a 

@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe } from 'lucide-react';
 import './CalendarView.css';
 
-const SHOW_CATEGORIES = ['All Categories', 'Reenactment', 'Conference', 'Exhibition', 'Book release'];
+const SHOW_CATEGORIES = ['All Categories', 'Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
 const SHOW_MONTHS = [
     'All Months', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -11,7 +11,8 @@ const SHOW_MONTHS = [
 const getEventCategoryColor = (category) => {
     switch (category) {
         case 'Reenactment': return '#f85149'; // Direct Action/Battle feel
-        case 'Conference': return '#58a6ff'; // Information/Logic feel
+        case 'Ball': return '#151294'; // Direct Action/Ball feel
+        case 'Lecture': return '#58a6ff'; // Information/Logic feel
         case 'Exhibition': return '#a371f7'; // Arts/Culture feel
         case 'Book release': return '#d29922'; // Educational/Warning feel
         default: return '#8b949e';
@@ -43,13 +44,15 @@ const CalendarView = () => {
     const [selectedCountry, setSelectedCountry] = useState('All Countries');
 
     const filteredShows = useMemo(() => {
-        return showsToCome.filter(show => {
-            const categoryMatch = selectedCategory === 'All Categories' || show.category === selectedCategory;
-            const monthMatch = selectedMonth === 'All Months' || show.month === selectedMonth;
-            const countryMatch = selectedCountry === 'All Countries' || show.country === selectedCountry;
+        return showsToCome
+            .filter(show => {
+                const categoryMatch = selectedCategory === 'All Categories' || show.category === selectedCategory;
+                const monthMatch = selectedMonth === 'All Months' || show.month === selectedMonth;
+                const countryMatch = selectedCountry === 'All Countries' || show.country === selectedCountry;
 
-            return categoryMatch && monthMatch && countryMatch;
-        });
+                return categoryMatch && monthMatch && countryMatch;
+            })
+            .sort((a, b) => new Date(a.date) - new Date(b.date));
     }, [showsToCome, selectedCategory, selectedMonth, selectedCountry]);
 
     if (!showsToCome || showsToCome.length === 0) {
@@ -64,8 +67,8 @@ const CalendarView = () => {
     return (
         <div className="calendar-container animate-fade-in">
             <div className="calendar-header">
-                <h1>Upcoming Events</h1>
-                <p>Discover heritage events and historic reenactments across the world.</p>
+                <h1>Upcoming nAPPo Events</h1>
+                <p>Discover Napoleonic events and reenactments across the world.</p>
 
                 <div className="calendar-controls">
                     <div className="category-filter-wrapper glass-panel">

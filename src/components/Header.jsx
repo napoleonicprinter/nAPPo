@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
-import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import CustomCategorySelect from './CustomCategorySelect';
 import AuthModal from './AuthModal';
 import EventsModal from './EventsModal';
 import FiltersModal from './FiltersModal';
+import SignificanceFilter from './SignificanceFilter';
+import YearFilter from './YearFilter';
 import './Header.css';
 
 const CATEGORY_ORDER = [
     'Battle site',
+    'Sea Battle',
     'Battle landmark',
     'Museum',
+    'Artwork',
     'Monument',
     'Building',
-    'Art work',
-    'Event site',
     'Landmark'
 ];
 
@@ -27,9 +29,10 @@ const Header = () => {
         filterVisited, setFilterVisited,
         filterRadius, setFilterRadius,
         locationMode, handleLocationSelect,
-        currentUser, logout,
+        currentUser, logout, deleteCurrentUser,
         newSitesDays, setNewSitesDays,
         showOnlyNew, setShowOnlyNew,
+        filterSearch, setFilterSearch,
         allSites, sites
     } = useAppContext();
     const [showSettings, setShowSettings] = useState(false);
@@ -37,6 +40,9 @@ const Header = () => {
     const [showEvents, setShowEvents] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
+    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+    const searchInputRef = useRef(null);
 
     // Derive and sort categories for the header filters
     const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
@@ -87,7 +93,7 @@ const Header = () => {
                         </optgroup>
                     </select>
 
-                    <div className="desktop-filters">
+                    <div className="desktop-filters custom-desktop-layout">
                         <select
                             className="filter-select glass-panel"
                             value={filterRadius}
@@ -105,11 +111,16 @@ const Header = () => {
                             <option value="500">500 km area</option>
                         </select>
 
-                        <CustomCategorySelect
-                            categories={categories}
-                            value={filterCategory}
-                            onChange={setFilterCategory}
-                        />
+                        <div className="category-filters-wrapper">
+                            <CustomCategorySelect
+                                categories={categories}
+                                value={filterCategory}
+                                onChange={setFilterCategory}
+                            />
+
+                            <SignificanceFilter />
+                        </div>
+                        <YearFilter className="desktop-year-filter" />
                     </div>
                 </div>
             </div>
@@ -117,7 +128,7 @@ const Header = () => {
             <div className={`header-controls ${isMenuOpen ? 'mobile-open' : ''}`}>
                 <div className="header-actions">
                     {currentUser ? (
-                        <div className="user-profile-btn glass-panel" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '8px' }}>
+                        <div className="user-profile-btn glass-panel" style={{ display: 'flex', alignItems: 'center' }}>
                             <span style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>{currentUser.username}</span>
                             <button onClick={logout} style={{ background: 'transparent', border: '1px solid var(--accent-danger)', color: 'var(--accent-danger)', borderRadius: '4px', padding: '4px 8px', fontSize: '0.8rem', cursor: 'pointer' }}>
                                 Logout
@@ -167,8 +178,8 @@ const Header = () => {
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                         <h3 style={{ margin: 0 }}>Show only NEW sites</h3>
                                         <label className="switch" style={{ width: '40px', height: '20px', position: 'relative', display: 'inline-block' }}>
-                                            <input 
-                                                type="checkbox" 
+                                            <input
+                                                type="checkbox"
                                                 checked={showOnlyNew}
                                                 onChange={(e) => setShowOnlyNew(e.target.checked)}
                                                 style={{ opacity: 0, width: 0, height: 0 }}
@@ -190,17 +201,83 @@ const Header = () => {
                                 </div>
 
                                 <div className="settings-section" style={{ marginTop: '1.5rem' }}>
-                                    <h3>"New" Sites Display</h3>
-                                    <p>Number of days a site is labeled as NEW:</p>
-                                    <input
-                                        type="number"
-                                        className="glass-panel settings-input"
-                                        value={newSitesDays}
-                                        onChange={(e) => setNewSitesDays(e.target.value === '' ? '' : Number(e.target.value))}
-                                        min="1"
-                                        style={{ width: '100%', padding: '8px', marginTop: '10px', borderRadius: '4px', border: '1px solid var(--border-color)', color: 'var(--text-primary)', background: 'rgba(255,255,255,0.05)' }}
-                                    />
+                                    <h3 style={{ marginBottom: '8px' }}>"New" Sites Display</h3>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'space-between' }}>
+                                        <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.9, lineHeight: '1.3', maxWidth: '75%' }}>
+                                            Number of days a site is labeled as NEW:
+                                        </p>
+                                        <input
+                                            type="number"
+                                            className="glass-panel settings-input"
+                                            value={newSitesDays}
+                                            onChange={(e) => setNewSitesDays(e.target.value === '' ? '' : Number(e.target.value))}
+                                            min="1"
+                                            style={{
+                                                width: '65px',
+                                                padding: '6px',
+                                                borderRadius: '4px',
+                                                border: '1px solid var(--border-color)',
+                                                color: 'var(--text-primary)',
+                                                background: 'rgba(255,255,255,0.05)',
+                                                textAlign: 'center'
+                                            }}
+                                        />
+                                    </div>
                                 </div>
+
+                                {currentUser && (
+                                    <div className="settings-section" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
+                                        <h3 style={{ color: 'var(--accent-danger)', marginBottom: '8px' }}>Account Management</h3>
+                                        <p style={{ fontSize: '0.8rem', opacity: 0.8 }}>Permanently delete your account and all associated data.</p>
+                                        
+                                        {!showDeleteConfirm ? (
+                                            <button 
+                                                className="btn-outline" 
+                                                onClick={() => setShowDeleteConfirm(true)}
+                                                style={{ 
+                                                    width: '100%', 
+                                                    borderColor: 'var(--accent-danger)', 
+                                                    color: 'var(--accent-danger)',
+                                                    marginTop: '8px'
+                                                }}
+                                            >
+                                                Delete My Account
+                                            </button>
+                                        ) : (
+                                            <div className="delete-confirmation animate-fade-in" style={{ 
+                                                background: 'rgba(248, 81, 73, 0.1)', 
+                                                padding: '12px', 
+                                                borderRadius: '8px', 
+                                                border: '1px solid var(--accent-danger)',
+                                                marginTop: '8px'
+                                            }}>
+                                                <p style={{ color: 'var(--accent-danger)', fontWeight: 'bold', fontSize: '0.85rem', marginBottom: '10px' }}>
+                                                    Your user name and data will be deleted. Do you want to proceed?
+                                                </p>
+                                                <div style={{ display: 'flex', gap: '8px' }}>
+                                                    <button 
+                                                        className="btn-primary" 
+                                                        onClick={() => {
+                                                            deleteCurrentUser();
+                                                            setShowSettings(false);
+                                                            setShowDeleteConfirm(false);
+                                                        }}
+                                                        style={{ flex: 1, backgroundColor: 'var(--accent-danger)', color: '#fff', fontSize: '0.8rem', padding: '6px' }}
+                                                    >
+                                                        Yes, Delete
+                                                    </button>
+                                                    <button 
+                                                        className="btn-outline" 
+                                                        onClick={() => setShowDeleteConfirm(false)}
+                                                        style={{ flex: 1, fontSize: '0.8rem', padding: '6px' }}
+                                                    >
+                                                        Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         )}
                     </div>
@@ -224,6 +301,46 @@ const Header = () => {
                         <List size={20} />
                         <span className="mobile-only-label">List</span>
                     </button>
+
+                    {/* Search */}
+                    <div className="search-toggle-wrapper">
+                        <button
+                            className={`toggle-btn ${showSearch || filterSearch ? 'active' : ''}`}
+                            onClick={() => {
+                                const next = !showSearch;
+                                setShowSearch(next);
+                                if (!next) setFilterSearch('');
+                                else setTimeout(() => searchInputRef.current?.focus(), 50);
+                            }}
+                            title="Search Sites"
+                        >
+                            <Search size={20} />
+                            <span className="mobile-only-label">Search</span>
+                        </button>
+                        {showSearch && (
+                            <div className="search-input-wrapper animate-fade-in">
+                                <Search size={14} className="search-input-icon" />
+                                <input
+                                    ref={searchInputRef}
+                                    type="text"
+                                    className="search-input"
+                                    placeholder="Search sites…"
+                                    value={filterSearch}
+                                    onChange={(e) => setFilterSearch(e.target.value)}
+                                />
+                                {filterSearch && (
+                                    <button
+                                        className="search-clear-btn"
+                                        onClick={() => setFilterSearch('')}
+                                        title="Clear search"
+                                    >
+                                        <X size={12} />
+                                    </button>
+                                )}
+                            </div>
+                        )}
+                    </div>
+
                     <button
                         className={`toggle-btn ${showFilters ? 'active' : ''}`}
                         onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }}
@@ -259,7 +376,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <button 
+            <button
                 className="mobile-menu-toggle glass-panel"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >

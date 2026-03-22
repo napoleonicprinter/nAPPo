@@ -1,0 +1,42 @@
+.significance-filter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 8px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-fast);
+}
+
+.significance-filter:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.star-button {
+    background: transparent;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.star-button:hover {
+    transform: scale(1.2);
+}
+
+.star-button.active svg {
+    filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.5));
+}
+
+.significance-filter--compact {
+    height: auto;
+    border: none;
+    background: transparent;
+    padding: 0 4px;
+}

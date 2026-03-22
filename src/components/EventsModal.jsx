@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen } from 'lucide-react';
+import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays } from 'lucide-react';
 import eventsData from '../data/events.json';
+import HistoryCalendarModal from './HistoryCalendarModal';
 import './CardView.css';
 
 const EventsModal = ({ onClose }) => {
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
     const todaysEvents = useMemo(() => {
         const today = new Date();
@@ -85,6 +87,36 @@ const EventsModal = ({ onClose }) => {
                         <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{todayString}</span>
                     </div>
 
+                    <div style={{ marginLeft: 'auto', marginRight: '40px' }}>
+                        <button
+                            onClick={() => setIsCalendarOpen(true)}
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                background: 'rgba(255,255,255,0.1)',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                color: 'var(--text-primary)',
+                                padding: '6px 12px',
+                                borderRadius: '16px',
+                                cursor: 'pointer',
+                                fontSize: '0.9rem',
+                                transition: 'all 0.2s'
+                            }}
+                            onMouseOver={(e) => {
+                                e.currentTarget.style.background = 'var(--accent-primary)';
+                                e.currentTarget.style.color = '#000';
+                            }}
+                            onMouseOut={(e) => {
+                                e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                                e.currentTarget.style.color = 'var(--text-primary)';
+                            }}
+                        >
+                            <CalendarDays size={16} />
+                            View Calendar
+                        </button>
+                    </div>
+
                     <button
                         onClick={onClose}
                         style={{ position: 'absolute', top: '15px', right: '15px', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
@@ -147,6 +179,7 @@ const EventsModal = ({ onClose }) => {
                     )}
                 </div>
             </div>
+            {isCalendarOpen && <HistoryCalendarModal onClose={() => setIsCalendarOpen(false)} />}
         </div>,
         document.body
     );

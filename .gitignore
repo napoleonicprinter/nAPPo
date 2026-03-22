@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Design files (Paint.NET)
+*.pdn
+
+# Local logs
+deleted_users.log
+

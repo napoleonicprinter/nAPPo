@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Navigation } from 'lucide-react';
-import NavigationModal from './NavigationModal';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -22,24 +21,26 @@ L.Icon.Default.mergeOptions({
 const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149'; // Red
+        case 'Sea Battle': return '#38bdf8'; // Light Blue
         case 'Battle landmark': return '#d29922'; // Orange/Gold
         case 'Museum': return '#a371f7'; // Purple
-        case 'Monument': return '#58a6ff'; // Blue
+        case 'Monument': return '#10b981'; // Emerald Green
         case 'Building': return '#ff7b72'; // Light Coral
-        case 'Art work': return '#d2a8ff'; // Light Purple
-        case 'Event site': return '#79c0ff'; // Light Blue
-        case 'Landmark': return '#e6edf3'; // White
+        case 'Artwork': return '#d2a8ff'; // Light Purple
+        case 'Event site': return '#fde047'; // Light Yellow
+        case 'Landmark': return '#7b5a25ff'; // Brown
         default: return '#8b949e'; // Grey
     }
 };
 
 const CATEGORY_ORDER = [
     'Battle site',
+    'Sea Battle',
     'Battle landmark',
     'Museum',
     'Monument',
     'Building',
-    'Art work',
+    'Artwork',
     'Event site',
     'Landmark'
 ];
@@ -57,8 +58,8 @@ const createCustomIcon = (site) => {
             <div style="
                 box-sizing: border-box;
                 background-color: ${bgColor};
-                width: 24px;
-                height: 24px;
+                width: 20px;
+                height: 20px;
                 border-radius: 50% 50% 50% 0;
                 border: ${borderWidth} solid ${borderColor};
                 box-shadow: ${site.visited ? '0 0 10px rgba(63, 185, 80, 0.8)' : '2px 2px 4px rgba(0,0,0,0.4)'};
@@ -105,12 +106,12 @@ const ClusteringController = ({ setMaxClusterRadius }) => {
     const updateRadius = () => {
         const zoom = map.getZoom();
         const center = map.getCenter();
-        
+
         // At zoom Level z, 1 pixel = (40075 * cos(lat)) / (256 * 2^z) km
         // So pixels for 10 km = 10 / ((40075 * cos(lat)) / (256 * 2^z))
         const kmPerPixel = (40075 * Math.cos(center.lat * Math.PI / 180)) / (256 * Math.pow(2, zoom));
         const pixelsFor10Km = 10 / kmPerPixel;
-        
+
         // We set a minimum of 20px and a maximum of 200px to keep it usable
         const radius = Math.min(Math.max(Math.round(pixelsFor10Km), 20), 200);
         setMaxClusterRadius(radius);
@@ -149,11 +150,11 @@ const GeolocationControl = () => {
 
         container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
 
-        container.onmouseover = () => { 
-            if (!geolocationEnabled) container.style.backgroundColor = '#f4f4f4'; 
+        container.onmouseover = () => {
+            if (!geolocationEnabled) container.style.backgroundColor = '#f4f4f4';
         };
-        container.onmouseout = () => { 
-            container.style.backgroundColor = geolocationEnabled ? 'var(--accent-primary)' : 'white'; 
+        container.onmouseout = () => {
+            container.style.backgroundColor = geolocationEnabled ? 'var(--accent-primary)' : 'white';
         };
 
         container.onclick = function (e) {
@@ -166,7 +167,7 @@ const GeolocationControl = () => {
             }
         };
 
-        const control = L.control({ position: 'topleft' });
+        const control = L.control({ position: 'topright' });
         control.onAdd = function () {
             return container;
         };
@@ -210,7 +211,7 @@ const CenterControl = () => {
             map.flyTo([userCoords.lat, userCoords.lon], 12);
         };
 
-        const control = L.control({ position: 'topleft' });
+        const control = L.control({ position: 'topright' });
         control.onAdd = function () {
             return container;
         };
@@ -225,11 +226,23 @@ const CenterControl = () => {
     return null;
 };
 
+const RemoveDefaultZoom = () => {
+    const map = useMap();
+    useEffect(() => {
+        if (map.zoomControl) {
+            map.removeControl(map.zoomControl);
+        }
+    }, [map]);
+    return null;
+};
+
 import CustomCategorySelect from './CustomCategorySelect';
+import SignificanceFilter from './SignificanceFilter';
+import YearFilter from './YearFilter';
 
 const MapView = () => {
-    const { 
-        sites, allSites, toggleVisited, userCoords, 
+    const {
+        sites, allSites, toggleVisited, userCoords,
         filterCategory, setFilterCategory,
         filterRadius, setFilterRadius,
         geolocationEnabled
@@ -257,10 +270,12 @@ const MapView = () => {
             <div className="map-overlay-filters" style={{
                 position: 'absolute',
                 top: '8px',
-                left: '50%',
-                transform: 'translateX(-50%)',
+                left: '8px',
+                right: '8px',
                 zIndex: 1000,
                 display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 gap: '8px',
                 padding: '6px 12px',
                 background: 'rgba(13, 17, 23, 0.4)',
@@ -275,8 +290,9 @@ const MapView = () => {
                     onChange={(e) => setFilterRadius(e.target.value)}
                     disabled={!geolocationEnabled}
                     title={!geolocationEnabled ? "Enable Location Services to use this filter" : "Filter by Distance"}
-                    style={{ 
-                        minWidth: '130px',
+                    style={{
+                        minWidth: '90px',
+                        flexShrink: 0,
                         background: 'rgba(255, 255, 255, 0.05)',
                         border: '1px solid rgba(255, 255, 255, 0.1)',
                         color: 'var(--text-primary)',
@@ -295,18 +311,46 @@ const MapView = () => {
                     <option value="500">500 km area</option>
                 </select>
 
-                <CustomCategorySelect
-                    categories={categories}
-                    value={filterCategory}
-                    onChange={setFilterCategory}
-                />
+                {/* Categories always centred */}
+                <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                    <CustomCategorySelect
+                        categories={categories}
+                        value={filterCategory}
+                        onChange={setFilterCategory}
+                    />
+                </div>
+
+                <SignificanceFilter compact={true} />
+            </div>
+
+            <div className="map-overlay-filters mobile-year-filter-container" style={{
+                position: 'absolute',
+                top: '58px', /* Below the main overlay container */
+                left: '8px', /* Left margin */
+                zIndex: 1000,
+                display: 'flex'
+            }}>
+                <YearFilter compact={true} style={{ 
+                    background: 'rgba(13, 17, 23, 0.4)',
+                    backdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
+                    color: 'var(--text-primary)',
+                    padding: '4px 10px',
+                    borderRadius: '10px',
+                    fontSize: '0.8rem',
+                    height: '34px'
+                }} />
             </div>
 
             <MapContainer
                 center={defaultCenter}
                 zoom={5}
                 style={{ height: '100%', width: '100%' }}
+                zoomControl={false}
             >
+                <RemoveDefaultZoom />
+                <ZoomControl position="topright" />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
                     url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
@@ -317,8 +361,8 @@ const MapView = () => {
                 <CenterControl />
                 <ClusteringController setMaxClusterRadius={setMaxClusterRadius} />
 
-                <MarkerClusterGroup 
-                    chunkedLoading 
+                <MarkerClusterGroup
+                    chunkedLoading
                     maxClusterRadius={maxClusterRadius}
                     key={`cluster-group-${maxClusterRadius}`} // Re-mount when radius changes significantly to force clustering update
                 >
@@ -357,13 +401,16 @@ const MapView = () => {
                                                     }}>
                                                         <strong>{site.distance} km</strong> away
                                                     </div>
-                                                    
+
                                                     {userCoords && (
                                                         <button
-                                                            onClick={() => {
-                                                                setNavigatingSite(site);
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                e.preventDefault();
+                                                                const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                                                window.open(url, '_blank', 'noopener,noreferrer,width=1000,height=800,left=100,top=100');
                                                             }}
-                                                            title="Navigate to site"
+                                                            title="Navigate to site via Google Maps"
                                                             style={{
                                                                 display: 'flex',
                                                                 alignItems: 'center',
@@ -388,7 +435,12 @@ const MapView = () => {
                                             )}
                                         </div>
                                     )}
-                                    <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: '#f0f6fc' }}>{site.name}</h3>
+                                    <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: '#f0f6fc', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {site.special === 'arc' && (
+                                            <img src="/assets/Arc.png" alt="Arc" style={{ height: '1.2em', width: 'auto' }} />
+                                        )}
+                                        {site.name}
+                                    </h3>
                                     <p style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: '#8b949e' }}>
                                         {site.category} &bull; {site.year}
                                     </p>
@@ -454,13 +506,6 @@ const MapView = () => {
                 </div>
             )}
 
-            {navigatingSite && userCoords && (
-                <NavigationModal
-                    userCoords={userCoords}
-                    site={navigatingSite}
-                    onClose={() => setNavigatingSite(null)}
-                />
-            )}
         </div>
     );
 };

@@ -81,19 +81,6 @@ const FiltersModal = ({ onClose }) => {
 
                 {/* Content */}
                 <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                    
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Rating / Significance</label>
-                        <select
-                            className="filter-select glass-panel"
-                            value={filterSignificance}
-                            onChange={(e) => setFilterSignificance(e.target.value)}
-                            style={{ width: '100%' }}
-                        >
-                            <option value="">All Ratings</option>
-                            {significances.map(sig => <option key={sig} value={sig}>{sig}</option>)}
-                        </select>
-                    </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Visit Status</label>

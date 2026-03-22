@@ -5,7 +5,7 @@
     "description": "High-quality canvas tent for historical reenactments. Period-accurate design and durable materials.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Reenactment_tent_01.jpg",
     "link": "https://example.com/shop/tent",
-    "category": "Equipment"
+    "category": "Reenactment"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "description": "Non-firing collector's replica of a French Charleville musket. Perfect for displays and museum collections.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Fusil_Charleville_1766.png/1280px-Fusil_Charleville_1766.png",
     "link": "https://example.com/shop/musket",
-    "category": "Replicas"
+    "category": "Collectibles"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "description": "Hand-crafted leather boots suitable for various historical periods. Comfortable for all-day wear at events.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Medieval_boots.jpg",
     "link": "https://example.com/shop/boots",
-    "category": "Clothing"
+    "category": "Reenactment"
   },
   {
     "id": 4,
@@ -29,6 +29,6 @@
     "description": "Large scale reproduction of original planning maps used during the 1815 campaign.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Waterloo_Campaign_Map.jpg",
     "link": "https://example.com/shop/map",
-    "category": "Education"
+    "category": "Wargaming"
   }
 ]

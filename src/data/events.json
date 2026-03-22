@@ -376,5 +376,394 @@
         "description": "Tuvo lugar en la localidad turolense de Alcañiz el 23 de mayo de 1809 y donde las tropas españolas al mando de Joaquín Blake vencieron a las francesas comandadas por Louis Gabriel Suchet..",
         "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alca%C3%B1iz",
         "more_info_link": ""
+    },
+    {
+        "id": 42,
+        "title": "Batalla de Usagre",
+        "date": "1811-05-25",
+        "location": "Usagre,Badajoz, Spain",
+        "description": "La batalla de Usagre se desarrolló el 25 de mayo de 1811 en Usagre, España, y enfrentó la caballería francesa del general de Latour-Maubourg a la caballería anglo-hispano-portuguesa del mayor general William Lumley. El enfrentamiento terminó con una victoria de los aliados hispano-anglo-portugueses.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Usagre",
+        "more_info_link": ""
+    },
+    {
+        "id": 43,
+        "title": "Batalla del Bidasoa",
+        "date": "1813-10-07",
+        "location": "Urrugne, Francia",
+        "description": "La batalla de Bidasoa, también conocida como batalla de Larrún, fue una batalla librada el 7 de octubre de 1813 entre el ejército francés comandado por el mariscal Soult y el ejército aliado anglo-hispano-portugués comandado por el duque de Wellington. La batalla terminó con una victoria aliada.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bidasoa",
+        "more_info_link": ""
+    },
+    {
+        "id": 44,
+        "title": "Batalla del Puente de Triana",
+        "date": "1812-08-27",
+        "location": "Sevilla, Andalucía, España",
+        "description": "La batalla del Puente de Triana tuvo lugar el 27 de agosto de 1812 para poder tomar la ciudad de Sevilla.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Puente_de_Triana",
+        "more_info_link": ""
+    },
+    {
+        "id": 45,
+        "title": "Batalla de Cabezón",
+        "date": "1808-06-12",
+        "location": "Cabezón de Pisuerga, Valladolid, España",
+        "description": "El 12 de junio de 1808 se produjo el primer intento del general García de la Cuesta de cortar las comunicaciones entre Madrid e Irún, cuando se produjeron sublevaciones en España tras el levantamiento del 2 de mayo.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Cabez%C3%B3n",
+        "more_info_link": ""
+    },
+    {
+        "id": 46,
+        "title": "Sitio de Cádiz",
+        "date": "1810-02-05",
+        "location": "Cádiz, Andalucía, España",
+        "description": "El asedio de Cádiz es como se le conoce al sitio de Cádiz y San Fernando que tuvo lugar el 5 de febrero de 1810, estableciendo un cerco a la ciudad de Cádiz y San Fernando hasta el 24 de agosto de 1812.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_C%C3%A1diz",
+        "more_info_link": ""
+    },
+    {
+        "id": 47,
+        "title": "Batalla de Arroyomolinos",
+        "date": "1811-10-28",
+        "location": "Arroyomolinos, Cáceres, España",
+        "description": "On 28 October 1811 an allied force under General Rowland Hill trapped and defeated a French force under General Jean-Baptiste Girard.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arroyo_dos_Molinos",
+        "more_info_link": ""
+    },
+    {
+        "id": 48,
+        "title": "Batalla de Medina de Rioseco",
+        "date": "1808-07-14",
+        "location": "Medina de Rioseco, Valladolid, España",
+        "description": "El 14 de julio de 1808 en las inmediaciones de Medina de Rioseco (actualmente en la provincia de Valladolid) se enfrentaron el Ejército español comandado conjuntamente por los generales españoles García de la Cuesta y Joaquín Blake frente al mariscal Jean-Baptiste Bessières que término con el triunfo francés.",
+        "wikipedia_link": ""
+    },
+    {
+        "id": 49,
+        "title": "Toma del Fuerte del Rastrillar de Laredo",
+        "date": "1814-02-21",
+        "location": "Laredo, Cantabria, España",
+        "description": "Fue una rápida operación, lograda en apenas dos días debido a la baja moral de los defensores italianos, aliados de Francia. Tras amenazar con no dar cuartel, las tropas españolas forzaron la rendición cuando los soldados italianos apresaron a sus oficiales franceses, facilitando la conquista con bajas mínimas.",
+        "more_info_link": "https://voluntariosdeleon.com/toma-del-fuerte-del-rastrillar-de-laredo-21-de-febrero-de-1814/"
+    },
+    {
+        "id": 50,
+        "title": "Batalla de Fuentes de Oñoro",
+        "date": "1811-05-03",
+        "location": "Fuentes de Oñoro, Salamanca, España",
+        "description": "Entre el 3 y el 5 de mayo de 1811 se enfrentó el ejército Británico-Portugués con el ejército francés para disminuir la presión del sitio de la ciudad de Almeida.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Fuentes_de_O%C3%B1oro",
+        "more_info_link": ""
+    },
+    {
+        "id": 51,
+        "title": "Batalla de Roliça",
+        "date": "1808-08-17",
+        "location": "Columbeira, Portugal",
+        "description": "17 August 1808, was the first battle fought by the British army during the Peninsular War.",
+        "wikipedia_link": "https://ca.wikipedia.org/wiki/Batalla_de_Roli%C3%A7a",
+        "more_info_link": ""
+    },
+    {
+        "id": 52,
+        "title": "Batalla de Vimieiro",
+        "date": "1808-08-21",
+        "location": "Vimeiro, Portugal",
+        "description": "On 21 August 1808, the British under General Arthur Wellesley (who later became the Duke of Wellington) defeated the French under Major-General Jean-Andoche Junot near the village of Vimeiro.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro",
+        "more_info_link": ""
+    },
+    {
+        "id": 53,
+        "title": "Segona Batalla de Porto",
+        "date": "1809-05-12",
+        "location": "Oporto, Portugal",
+        "description": "El 12 de maig de 1809 va ser una contesa que va acabar amb la victòria per a l'exèrcit anglo-portuguès comandat per Sir Arthur Wellesley sobre l'exèrcit francès del mariscal Nicolas Jean de Dieu Soult.",
+        "wikipedia_link": "https://ca.wikipedia.org/wiki/Segona_Batalla_de_Porto",
+        "more_info_link": ""
+    },
+    {
+        "id": 54,
+        "title": "Batalla de García Hernández",
+        "date": "1812-07-23",
+        "location": "García Hernández, Salamanca, España",
+        "description": "Fue una acción militar librada el 23 de julio de 1812 entre la caballería ligera del ejército británico y la caballería francesa.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Garc%C3%ADa_Hern%C3%A1ndez",
+        "more_info_link": ""
+    },
+    {
+        "id": 55,
+        "title": "Batalla de Majadahonda",
+        "date": "1812-08-11",
+        "location": "Majadahonda, Madrid, España",
+        "description": "The confrontation took place on August 11, 1812, where Napoleonic troops led by General Anne-François-Charles Trelliard defeated Anglo-Portuguese forces led by George Bock and Benjamin d’Urban.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Majadahonda",
+        "more_info_link": ""
+    },
+    {
+        "id": 56,
+        "title": "Batalla de Caldiero",
+        "date": "1796-11-12",
+        "location": "Caldiero, Verona",
+        "country": "Italy",
+        "description": "Fought on November 12th 1796 it was the first defeat Bonaparte suffered in open field. But his victory at Arcole just five days later help to minimize this defeat.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Caldiero_(1796)",
+        "more_info_link": ""
+    },
+    {
+        "id": 57,
+        "title": "Coronation of Emperor Alexander I",
+        "date": "1801-09-15",
+        "location": "Moscow",
+        "country": "Russia",
+        "description": "The coronation of Emperor Alexander I and Elizabeth Alexeyevna took place on 15 September 1801 in the Dormition Cathedral of the Moscow Kremlin.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Coronation_of_Alexander_I",
+        "more_info_link": ""
+    },
+    {
+        "id": 58,
+        "title": "Battle of Aspern-Essling",
+        "date": "1809-05-21",
+        "location": "Aspern-Essling",
+        "country": "Austria",
+        "description": "The Battle of Aspern-Essling was a major engagement of the Napoleonic Wars, fought on May 21–22, 1809, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen. It marked Napoleon's first personal defeat in a major battle, as the Austrians successfully defended their ground and forced the French to retreat across the Danube River.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Aspern-Essling",
+        "more_info_link": ""
+    },
+    {
+        "id": 59,
+        "title": "Battle of Wagram",
+        "date": "1809-07-05",
+        "location": "Deutsch-Wagram",
+        "country": "Austria",
+        "description": "The Battle of Wagram was a major engagement of the Napoleonic Wars, fought on July 5–6, 1809, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wagram",
+        "more_info_link": ""
+    },
+    {
+        "id": 60,
+        "title": "Battle of Leipzig",
+        "date": "1813-10-16",
+        "location": "Leipzig, Saxony",
+        "country": "Germany",
+        "description": "Known as the Battle of the Nations, was the largest battle in the Napoleonic Wars. Napoleon's defeat by a coalition of Austrian, Prussian, Russian, and Swedish forces led to his first exile.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Leipzig",
+        "more_info_link": ""
+    },
+    {
+        "id": 61,
+        "title": "Battle of Borodino",
+        "date": "1812-09-07",
+        "location": "Borodino, Russia",
+        "description": "It was the bloodiest single-day battle in the Napoleonic Wars. Though technically a French victory, the massive losses weakened Napoleon's Grande Armée and foreshadowed the disastrous retreat from Moscow.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borodino",
+        "more_info_link": ""
+    },
+    {
+        "id": 62,
+        "title": "Battle of Corunna / Elviña",
+        "date": "1809-01-16",
+        "location": "A Coruña, Galicia",
+        "country": "Spain",
+        "description": "The Battle of Corunna (or A Coruña, La Corunna, La Coruña or La Corogne), in Spain known as Battle of Elviña, took place on 16 January 1809, when a French corps under Marshal of the Empire Jean de Dieu Soult attacked a British army under Lieutenant-General Sir John Moore. The battle took place during the Peninsular War, which was part of the wider Napoleonic Wars.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Corunna",
+        "more_info_link": ""
+    },
+    {
+        "id": 63,
+        "title": "Battle of the Pyramids",
+        "date": "1798-07-21",
+        "location": "Giza, Egypt",
+        "country": "Egypt",
+        "description": "It was a decisive French victory during Napoleon's Egyptian campaign. Napoleon famously addressed his troops: 'Soldiers, from the height of these pyramids, forty centuries look down upon you.'",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Pyramids",
+        "more_info_link": ""
+    },
+    {
+        "id": 64,
+        "title": "Battle of Waterloo",
+        "date": "1815-06-18",
+        "location": "Waterloo,",
+        "country": "Belgium",
+        "description": "The Battle of Waterloo on June 18, 1815 was Napoleon's final defeat. The Duke of Wellington and Prussian Marshal Blücher's combined forces ended Napoleon's rule as Emperor of France. The Lion's Mound memorial overlooks the battlefield.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+        "more_info_link": "https://www.waterloo1815.be/en/prepare-your-visit-2/"
+    },
+    {
+        "id": 65,
+        "title": "Battle of Jena",
+        "date": "1806-10-14",
+        "location": "Jena, Germany",
+        "description": "Napoleon crushed the Prussian army at the Battle of Jena-Auerstedt. This decisive victory led to the French occupation of most of Prussia and cemented Napoleon's control over Central Europe.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jena%E2%80%93Auerstedt"
+    },
+    {
+        "id": 66,
+        "title": "Battle of Arcole",
+        "date": "1796-11-15",
+        "location": "Arcole, Italy",
+        "description": "The Battle of Arcole or Battle of Arcola (15–17 November 1796) was fought between French and Austrian forces 25 kilometres (16 mi) southeast of Verona during the War of the First Coalition, a part of the French Revolutionary Wars.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcole"
+    },
+    {
+        "id": 67,
+        "title": "Battle of Arcis-sur-Aube",
+        "date": "1814-03-20",
+        "location": "Arcis-sur-Aube, France",
+        "description": "The Battle of Arcis-sur-Aube (20-21 March 1814) saw an Imperial French army under Napoleon face a much larger Allied army led by Karl Philipp, Prince of Schwarzenberg during the War of the Sixth Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcis-sur-Aube"
+    },
+    {
+        "id": 68,
+        "title": "Battle of Auerstaedt",
+        "date": "1806-10-14",
+        "location": "Hassenhausen, Germany",
+        "description": "This battle pitted the first Prussian army under King Frederick William III of Prussia against part of the French army led by Louis Nicolas Davout on October 14, 1806, parallel to the Battle of Jena, which was fought on the same date.",
+        "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_d%27Auerstaedt"
+    },
+    {
+        "id": 70,
+        "title": "Battle of Bautzen",
+        "date": "1813-05-20",
+        "location": "Bautzen, Germany",
+        "description": "The Battle of Bautzen (20-21 May 1813) saw an Imperial French army under Napoleon face a much larger Allied army led by Karl Philipp, Prince of Schwarzenberg during the War of the Sixth Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bautzen_(1813)"
+    },
+    {
+        "id": 71,
+        "title": "Battle of Wagram",
+        "date": "1809-07-05",
+        "location": "Deutsch-Wagram, Austria",
+        "description": "The Battle of Wagram was a major engagement of the Napoleonic Wars, fought on July 5–6, 1809, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wagram"
+    },
+    {
+        "id": 72,
+        "title": "Battle of Ulm",
+        "date": "1805-10-16",
+        "location": "Ulm, Germany",
+        "description": "The Battle of Ulm was a major engagement of the Napoleonic Wars, fought on October 16–19, 1805, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ulm"
+    },
+    {
+        "id": 73,
+        "title": "Battle of Trafalgar",
+        "date": "1805-10-21",
+        "location": "Cabo Trafalgar, Spain",
+        "description": "The Battle of Trafalgar was fought on October 21, 1805, between the British Royal Navy and the combined fleets of the French and Spanish Navies.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar"
+    },
+    {
+        "id": 74,
+        "title": "Battle of Eylau",
+        "date": "1807-02-07",
+        "location": "Eylau, Germany",
+        "description": "The Battle of Eylau (also known as the Battle of Preussisch-Eylau) was a bloody and strategically inconclusive battle on 7 and 8 February [O.S. 26 and 27 Jan.] 1807 between Napoleon's Grande Armée and the Imperial Russian Army under the command of General Levin August von Bennigsen",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eylau"
+    },
+    {
+        "id": 75,
+        "title": "Battle of Friedland",
+        "date": "1807-06-14",
+        "location": "Pravdinsk, Russia",
+        "description": "Fought on June 14, 1807, between the French army under Napoleon Bonaparte and the Russian army under General Levin August von Bennigsen",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Friedland"
+    },
+    {
+        "id": 76,
+        "title": "Battle of Berezina",
+        "date": "1812-11-26",
+        "location": "Studenka, Belarus",
+        "description": "Battle between Napoleon's Grande Armée and the Imperial Russian Army under Field Marshal Wittgenstein and Admiral Chichagov. Napoleon was retreating toward Poland in chaos after the aborted occupation of Moscow and trying to cross the Berezina River at Borisov.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Berezina"
+    },
+    {
+        "id": 77,
+        "title": "Battle of Ligny",
+        "date": "1815-06-16",
+        "location": "Ligny, Belgium",
+        "description": "Fought on 16 June 1815French troops of the Armée du Nord under the command of Napoleon I defeated part of a Prussian army under Field Marshal Blücher.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ligny"
+    },
+    {
+        "id": 78,
+        "title": "Battle of Quatre Bras",
+        "date": "1815-06-16",
+        "location": "Quatre Bras, Belgium",
+        "description": "Fought on 16 June 1815, as a preliminary engagement to the decisive Battle of Waterloo that occurred two days later.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Quatre_Bras"
+    },
+    {
+        "id": 79,
+        "title": "Battle of Pultusk",
+        "date": "1806-12-26",
+        "location": "Pultusk, Poland",
+        "description": "Took place on December 26th 1806 Despite their strong numerical superiority and artillery, the Russians under the lead of General of Cavalry Levin von Benningsen underwent heavy French attacks by Marshal Jean Lannes.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Pu%C5%82tusk_(1806)"
+    },
+    {
+        "id": 80,
+        "title": "Battle of Golymin",
+        "date": "1806-12-26",
+        "location": "Golymin, Poland",
+        "description": "Fought on the same day as Pultusk, December 26th, this was another intense winter engagement between French and Russian forces in Poland.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Golymin"
+    },
+    {
+        "id": 81,
+        "title": "Battle of Guttstadt-Deppen",
+        "date": "1807-02-07",
+        "location": "Guttstadt-Deppen, Poland",
+        "description": "A violent engagement in the Polish/Prussian region during the prelude to the final campaign of the Fourth Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Guttstadt-Deppen"
+    },
+    {
+        "id": 82,
+        "title": "Battle of Heilsberg",
+        "date": "1807-06-10",
+        "location": "Lidzbark Warmiński, Poland",
+        "description": "Took place on 10 June 1807. Napoleon confronted Russian general Bennigsen and his army. The battle was a bloody engagement that lasted for several hours, with heavy casualties on both sides.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Heilsberg"
+    },
+    {
+        "id": 83,
+        "title": "Siege of Danzig",
+        "date": "1807-03-19",
+        "location": "Gdańsk, Poland",
+        "description": "The Siege of Danzig (now Gdańsk, Poland) by French forces under Marshal Lefebvre, acting as the corps commander of the Grande Armée, during the War of the Fourth Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Danzig_(1807)"
+    },
+    {
+        "id": 84,
+        "title": "Battle of Ostrolenka",
+        "date": "1807-02-16",
+        "location": "Ostroleka, Poland",
+        "description": "Fought on 16 February 1807 between a French force under General of Division Anne Jean Marie René Savary and a Russian force under Lieutenant General Ivan Essen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ostro%C5%82%C4%99ka_(1807)"
+    },
+    {
+        "id": 85,
+        "title": "Battle of Znaim",
+        "date": "1809-07-10",
+        "location": "Znojmo, Czech Republic",
+        "description": "Following defeat at the Battle of Wagram, Archduke Charles retreated north into Bohemia hoping to regroup his battered forces. The French army had also suffered in the battle and did not give immediate pursuit. But two days after the battle, Napoleon ordered his troops north intending to defeat the Austrians once and for all. ",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Znaim"
+    },
+    {
+        "id": 86,
+        "title": "Walcheren Campaign",
+        "date": "1809-07-30",
+        "location": "Walcheren, Netherlands",
+        "description": "The Walcheren Campaign was an unsuccessful British expedition to the Kingdom of Holland in 1809 intended to open another front in the Austrian Empire's struggle with France during the War of the Fifth Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign"
+    },
+    {
+        "id": 87,
+        "title": "Attack of Flushing",
+        "date": "1809-07-30",
+        "location": "Flushing, Netherlands",
+        "description": "The British had captured Flushing on the day of his arrival to the war zone after a ferocious bombardment, and the surrounding towns on August 15th.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign"
     }
 ]

@@ -1,33 +1,35 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext } from '../context/AppContext';
-import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink, X, Navigation } from 'lucide-react';
-import NavigationModal from './NavigationModal';
+import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink, X, Navigation, Star } from 'lucide-react';
 import './CardView.css'; // Relying on existing CSS for site-card
 
 // Map categories to dynamic colors
 const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149';
-        case 'Battle site': return '#d29922';
+        case 'Sea Battle': return '#38bdf8';
+        case 'Battle landmark': return '#d29922';
         case 'Museum': return '#a371f7';
-        case 'Monument': return '#58a6ff';
+        case 'Monument': return '#10b981';
         case 'Building': return '#ff7b72';
-        case 'Art work': return '#d2a8ff';
-        case 'Event site': return '#79c0ff';
-        case 'Battle landmark': return '#e3b341';
-        case 'Landmark': return '#e6edf3';
+        case 'Artwork': return '#d2a8ff';
+        case 'Event site': return '#fde047';
+        case 'Landmark': return '#7b5a25ff';
         default: return '#8b949e';
     }
 };
 
-const getSignificanceColor = (sig) => {
-    switch (sig) {
-        case 'Major': return 'var(--accent-danger)';
-        case 'Medium': return 'var(--accent-warning)';
-        case 'Minor': return 'var(--accent-primary)';
-        default: return 'var(--text-secondary)';
-    }
+const renderSignificanceStars = (sig) => {
+    const numStars = sig === 'Major' ? 3 : sig === 'Medium' ? 2 : sig === 'Minor' ? 1 : 0;
+    if (numStars === 0) return null;
+    return (
+        <div style={{ display: 'flex', gap: '2px', alignItems: 'center', marginLeft: '4px' }} title={`${sig} Significance`}>
+            {[...Array(numStars)].map((_, i) => (
+                <Star key={i} size={16} fill="var(--accent-warning)" stroke="var(--accent-warning)" strokeWidth={1.5} />
+            ))}
+        </div>
+    );
 };
 
 const SiteCard = ({ site, onClose, isCompact = false }) => {
@@ -91,14 +93,16 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                         }}>
                             <strong>{site.distance} km</strong> away
                         </div>
-                        
+
                         {geolocationEnabled && userCoords && (
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    setShowNavigation(true);
+                                    e.preventDefault();
+                                    const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                    window.open(url, '_blank', 'noopener,noreferrer,width=1000,height=800,left=100,top=100');
                                 }}
-                                title="Navigate to site"
+                                title="Navigate to site via Google Maps"
                                 style={{
                                     display: 'flex',
                                     alignItems: 'center',
@@ -124,15 +128,18 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
             </div>
 
             <div className="card-content">
-                <h2>{site.name}</h2>
+                <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    {site.special === 'arc' && (
+                        <img src="/assets/Arc.png" alt="Arc" style={{ height: '1.2em', width: 'auto' }} />
+                    )}
+                    {site.name}
+                </h2>
                 <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                     <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                         <span className="badge category-badge" style={{ backgroundColor: getCategoryColor(site.category) }}>
                             {site.category}
                         </span>
-                        <span className="badge sig-badge" style={{ backgroundColor: getSignificanceColor(site.significance) }}>
-                            {site.significance}
-                        </span>
+                        {renderSignificanceStars(site.significance)}
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -199,14 +206,6 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
 
                 {/* The Details button was moved up to the badges section */}
             </div>
-
-            {showNavigation && (
-                <NavigationModal
-                    userCoords={userCoords}
-                    site={site}
-                    onClose={() => setShowNavigation(false)}
-                />
-            )}
 
             {isCompact && showFullDetails && createPortal(
                 <div style={{
