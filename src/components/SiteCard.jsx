@@ -1,0 +1,236 @@
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useAppContext } from '../context/AppContext';
+import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink, X, Navigation } from 'lucide-react';
+import NavigationModal from './NavigationModal';
+import './CardView.css'; // Relying on existing CSS for site-card
+
+// Map categories to dynamic colors
+const getCategoryColor = (category) => {
+    switch (category) {
+        case 'Battle site': return '#f85149';
+        case 'Battle site': return '#d29922';
+        case 'Museum': return '#a371f7';
+        case 'Monument': return '#58a6ff';
+        case 'Building': return '#ff7b72';
+        case 'Art work': return '#d2a8ff';
+        case 'Event site': return '#79c0ff';
+        case 'Battle landmark': return '#e3b341';
+        case 'Landmark': return '#e6edf3';
+        default: return '#8b949e';
+    }
+};
+
+const getSignificanceColor = (sig) => {
+    switch (sig) {
+        case 'Major': return 'var(--accent-danger)';
+        case 'Medium': return 'var(--accent-warning)';
+        case 'Minor': return 'var(--accent-primary)';
+        default: return 'var(--text-secondary)';
+    }
+};
+
+const SiteCard = ({ site, onClose, isCompact = false }) => {
+    const { toggleVisited, userCoords, geolocationEnabled } = useAppContext();
+    const [showNavigation, setShowNavigation] = useState(false);
+    const [showFullDetails, setShowFullDetails] = useState(false);
+
+    if (!site) return null;
+
+    return (
+        <div className={`site-card glass-panel ${site.visited ? 'visited' : ''}`} style={{ position: 'relative', width: '100%', maxWidth: '350px', margin: '0 auto', maxHeight: '90vh', overflowY: 'auto' }}>
+            {onClose && (
+                <button
+                    onClick={onClose}
+                    className="close-card-btn glass-panel"
+                    title="Close"
+                    style={{ position: 'absolute', top: '10px', left: '10px', zIndex: '20', background: 'rgba(0,0,0,0.6)', border: 'none', color: 'white', borderRadius: '50%', padding: '4px', cursor: 'pointer' }}
+                >
+                    <X size={20} />
+                </button>
+            )}
+
+            <div className="card-image-wrapper">
+                <img src={site.image} alt={site.name} className="card-image" />
+
+                {site.isNew && (
+                    <div className="new-site-badge">NEW</div>
+                )}
+
+                <div className="card-visited-overlay">
+                    <button
+                        className={`btn-visited ${site.visited ? 'active' : ''}`}
+                        onClick={() => toggleVisited(site.id)}
+                    >
+                        <CheckCircle size={18} />
+                        {site.visited ? 'Visited' : 'Mark as Visited'}
+                    </button>
+                </div>
+
+                {site.distance !== undefined && (
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '10px',
+                        left: '10px',
+                        zIndex: 15,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px'
+                    }}>
+                        <div style={{
+                            padding: '6px 10px',
+                            background: 'rgba(0, 0, 0, 0.65)',
+                            backdropFilter: 'blur(4px)',
+                            borderRadius: '6px',
+                            color: 'var(--text-primary)',
+                            fontSize: '0.85rem',
+                            fontWeight: '600',
+                            border: '1px solid rgba(255, 255, 255, 0.15)',
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+                            textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)'
+                        }}>
+                            <strong>{site.distance} km</strong> away
+                        </div>
+                        
+                        {geolocationEnabled && userCoords && (
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowNavigation(true);
+                                }}
+                                title="Navigate to site"
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'var(--accent-primary)',
+                                    color: '#000',
+                                    border: 'none',
+                                    width: '32px',
+                                    height: '32px',
+                                    borderRadius: '50%',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 4px 6px rgba(0,0,0,0.4)',
+                                    transition: 'transform 0.2s',
+                                }}
+                                onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                                onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                            >
+                                <Navigation size={16} />
+                            </button>
+                        )}
+                    </div>
+                )}
+            </div>
+
+            <div className="card-content">
+                <h2>{site.name}</h2>
+                <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                    <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                        <span className="badge category-badge" style={{ backgroundColor: getCategoryColor(site.category) }}>
+                            {site.category}
+                        </span>
+                        <span className="badge sig-badge" style={{ backgroundColor: getSignificanceColor(site.significance) }}>
+                            {site.significance}
+                        </span>
+                    </div>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        {isCompact && (
+                            <button
+                                onClick={() => setShowFullDetails(true)}
+                                style={{
+                                    background: 'transparent',
+                                    border: 'none',
+                                    color: 'var(--accent-primary)',
+                                    fontWeight: 'bold',
+                                    fontSize: '0.85rem',
+                                    cursor: 'pointer',
+                                    padding: '0 4px',
+                                    textDecoration: 'none',
+                                    transition: 'color 0.2s',
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}
+                                onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; }}
+                                onMouseOut={(e) => { e.currentTarget.style.color = 'var(--accent-primary)'; }}
+                            >
+                                Details &rarr;
+                            </button>
+                        )}
+                    </div>
+                </div>
+
+                <div className="card-meta">
+                    <span className="meta-item"><Calendar size={14} /> {site.year}</span>
+                    <span className="meta-item"><MapPin size={14} /> {site.location}, {site.country}</span>
+                </div>
+
+                {!isCompact && (
+                    <p className="description">{site.description}</p>
+                )}
+
+
+
+                {!isCompact && (site.wikipedia_link || site.site_link || site.youtube_link || site.more_info_link) && (
+                    <div className="card-external-links">
+                        {site.wikipedia_link && (
+                            <a href={site.wikipedia_link} target="_blank" rel="noopener noreferrer" className="external-link" title="Wikipedia">
+                                <BookOpen size={16} />
+                            </a>
+                        )}
+                        {site.site_link && (
+                            <a href={site.site_link} target="_blank" rel="noopener noreferrer" className="external-link" title="Official Site">
+                                <Globe size={16} />
+                            </a>
+                        )}
+                        {site.youtube_link && (
+                            <a href={site.youtube_link} target="_blank" rel="noopener noreferrer" className="external-link youtube-link" title="YouTube">
+                                <Youtube size={16} />
+                            </a>
+                        )}
+                        {site.more_info_link && (
+                            <a href={site.more_info_link} target="_blank" rel="noopener noreferrer" className="external-link" title="More Info">
+                                <ExternalLink size={16} />
+                            </a>
+                        )}
+                    </div>
+                )}
+
+                {/* The Details button was moved up to the badges section */}
+            </div>
+
+            {showNavigation && (
+                <NavigationModal
+                    userCoords={userCoords}
+                    site={site}
+                    onClose={() => setShowNavigation(false)}
+                />
+            )}
+
+            {isCompact && showFullDetails && createPortal(
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    backdropFilter: 'blur(5px)',
+                    zIndex: 9999,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px'
+                }} className="animate-fade-in" onClick={() => setShowFullDetails(false)}>
+                    <div onClick={(e) => e.stopPropagation()} style={{ width: '100%', maxWidth: '400px', maxHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+                        <SiteCard site={site} onClose={() => setShowFullDetails(false)} isCompact={false} />
+                    </div>
+                </div>,
+                document.body
+            )}
+        </div>
+    );
+};
+
+export default SiteCard;

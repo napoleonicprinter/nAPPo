@@ -1,0 +1,276 @@
+import React, { useState } from 'react';
+import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X } from 'lucide-react';
+import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
+import CustomCategorySelect from './CustomCategorySelect';
+import AuthModal from './AuthModal';
+import EventsModal from './EventsModal';
+import FiltersModal from './FiltersModal';
+import './Header.css';
+
+const CATEGORY_ORDER = [
+    'Battle site',
+    'Battle landmark',
+    'Museum',
+    'Monument',
+    'Building',
+    'Art work',
+    'Event site',
+    'Landmark'
+];
+
+const Header = () => {
+    const {
+        view, setView,
+        geolocationEnabled, requestGeolocation, disableGeolocation,
+        filterCategory, setFilterCategory,
+        filterSignificance, setFilterSignificance,
+        filterVisited, setFilterVisited,
+        filterRadius, setFilterRadius,
+        locationMode, handleLocationSelect,
+        currentUser, logout,
+        newSitesDays, setNewSitesDays,
+        showOnlyNew, setShowOnlyNew,
+        allSites, sites
+    } = useAppContext();
+    const [showSettings, setShowSettings] = useState(false);
+    const [showAuth, setShowAuth] = useState(false);
+    const [showEvents, setShowEvents] = useState(false);
+    const [showFilters, setShowFilters] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Derive and sort categories for the header filters
+    const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
+        const indexA = CATEGORY_ORDER.indexOf(a);
+        const indexB = CATEGORY_ORDER.indexOf(b);
+        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+        return indexA - indexB;
+    });
+
+    const significances = Array.from(new Set(allSites.map(s => s.significance)));
+
+    const handleViewChange = (newView) => {
+        setView(newView);
+        setIsMenuOpen(false);
+    };
+
+    const handleEventsClick = () => {
+        setShowEvents(true);
+        setIsMenuOpen(false);
+    };
+
+    return (
+        <header className="app-header glass-header">
+            <div className="header-brand">
+                <img src="/assets/NT_logo.png" alt="nAPPo Trails Logo" className="header-logo" />
+                <div className="sites-count-badge glass-panel">
+                    <span className="count-number">{sites.length}</span>
+                    <span className="count-label">sites</span>
+                </div>
+            </div>
+
+            <div className="filters-group">
+                <div className="filters-line">
+                    <select
+                        className="filter-select glass-panel"
+                        value={locationMode}
+                        onChange={(e) => handleLocationSelect(e.target.value)}
+                    >
+                        <option value="none">Set Location...</option>
+                        <option value="geo" style={{ color: 'var(--accent-primary)' }}>&#10148; Geo location on</option>
+                        <option value="none" style={{ color: 'var(--accent-danger)' }}>&#10005; Geo location off</option>
+                        <optgroup label="European Capitals">
+                            {EUROPEAN_CAPITALS.map(c => (
+                                <option key={c.name} value={c.name}>{c.name}</option>
+                            ))}
+                        </optgroup>
+                    </select>
+
+                    <div className="desktop-filters">
+                        <select
+                            className="filter-select glass-panel"
+                            value={filterRadius}
+                            onChange={(e) => setFilterRadius(e.target.value)}
+                            disabled={!geolocationEnabled}
+                            title={!geolocationEnabled ? "Enable Location Services to use this filter" : "Filter by Distance"}
+                        >
+                            <option value="all">All Areas</option>
+                            <option value="1">1 km area</option>
+                            <option value="5">5 km area</option>
+                            <option value="10">10 km area</option>
+                            <option value="25">25 km area</option>
+                            <option value="50">50 km area</option>
+                            <option value="100">100 km area</option>
+                            <option value="500">500 km area</option>
+                        </select>
+
+                        <CustomCategorySelect
+                            categories={categories}
+                            value={filterCategory}
+                            onChange={setFilterCategory}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className={`header-controls ${isMenuOpen ? 'mobile-open' : ''}`}>
+                <div className="header-actions">
+                    {currentUser ? (
+                        <div className="user-profile-btn glass-panel" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '8px' }}>
+                            <span style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>{currentUser.username}</span>
+                            <button onClick={logout} style={{ background: 'transparent', border: '1px solid var(--accent-danger)', color: 'var(--accent-danger)', borderRadius: '4px', padding: '4px 8px', fontSize: '0.8rem', cursor: 'pointer' }}>
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <button
+                            className="login-btn btn-primary"
+                            onClick={() => { setShowAuth(true); setIsMenuOpen(false); }}
+                            style={{ padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                            title="Sign In"
+                        >
+                            <UserCircle size={24} />
+                            <span className="mobile-only-label">Sign In</span>
+                        </button>
+                    )}
+
+                    <div className="settings-wrapper" style={{ position: 'relative' }}>
+                        <button
+                            className="settings-btn glass-panel"
+                            onClick={() => setShowSettings(!showSettings)}
+                            title="Location Settings"
+                        >
+                            <Settings size={20} />
+                            <span className="mobile-only-label">Settings</span>
+                        </button>
+
+                        {showSettings && (
+                            <div className="settings-dropdown animate-fade-in" style={{ backgroundColor: 'var(--bg-color)' }}>
+                                <div className="settings-section">
+                                    <h3>Location Services</h3>
+                                    <p>Allow access to show nearby historic sites.</p>
+                                    <div className="settings-actions">
+                                        {geolocationEnabled ? (
+                                            <button className="btn-outline" onClick={disableGeolocation} style={{ borderColor: 'var(--accent-danger)', color: 'var(--accent-danger)' }}>
+                                                Disable Location
+                                            </button>
+                                        ) : (
+                                            <button className="btn-primary" onClick={requestGeolocation}>
+                                                <MapPin size={16} /> Enable Location
+                                            </button>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <div className="settings-section" style={{ marginTop: '1.5rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <h3 style={{ margin: 0 }}>Show only NEW sites</h3>
+                                        <label className="switch" style={{ width: '40px', height: '20px', position: 'relative', display: 'inline-block' }}>
+                                            <input 
+                                                type="checkbox" 
+                                                checked={showOnlyNew}
+                                                onChange={(e) => setShowOnlyNew(e.target.checked)}
+                                                style={{ opacity: 0, width: 0, height: 0 }}
+                                            />
+                                            <span style={{
+                                                position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0,
+                                                backgroundColor: showOnlyNew ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)',
+                                                transition: '.4s', borderRadius: '20px',
+                                                border: '1px solid rgba(255,255,255,0.1)'
+                                            }}>
+                                                <span style={{
+                                                    position: 'absolute', content: '""', height: '14px', width: '14px', left: showOnlyNew ? '23px' : '3px', bottom: '2px',
+                                                    backgroundColor: showOnlyNew ? '#000' : '#fff', transition: '.4s', borderRadius: '50%'
+                                                }}></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <p style={{ marginTop: '4px', fontSize: '0.8rem', opacity: 0.8 }}>Only display sites added within your specified time frame.</p>
+                                </div>
+
+                                <div className="settings-section" style={{ marginTop: '1.5rem' }}>
+                                    <h3>"New" Sites Display</h3>
+                                    <p>Number of days a site is labeled as NEW:</p>
+                                    <input
+                                        type="number"
+                                        className="glass-panel settings-input"
+                                        value={newSitesDays}
+                                        onChange={(e) => setNewSitesDays(e.target.value === '' ? '' : Number(e.target.value))}
+                                        min="1"
+                                        style={{ width: '100%', padding: '8px', marginTop: '10px', borderRadius: '4px', border: '1px solid var(--border-color)', color: 'var(--text-primary)', background: 'rgba(255,255,255,0.05)' }}
+                                    />
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+
+                <div className="view-toggle glass-panel">
+                    <button
+                        className={`toggle-btn ${view === 'map' ? 'active' : ''}`}
+                        onClick={() => handleViewChange('map')}
+                        title="Map View"
+                    >
+                        <Map size={20} />
+                        <span className="mobile-only-label">Map</span>
+                    </button>
+                    <button
+                        className={`toggle-btn ${view === 'card' ? 'active' : ''}`}
+                        onClick={() => handleViewChange('card')}
+                        title="Card View"
+                    >
+                        <List size={20} />
+                        <span className="mobile-only-label">List</span>
+                    </button>
+                    <button
+                        className={`toggle-btn ${showFilters ? 'active' : ''}`}
+                        onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }}
+                        title="Filters"
+                    >
+                        <Filter size={20} />
+                        <span className="mobile-only-label">Filters</span>
+                    </button>
+                    <button
+                        className="toggle-btn"
+                        onClick={handleEventsClick}
+                        title="Today in nAPPo history"
+                    >
+                        <Calendar size={20} />
+                        <span className="mobile-only-label">Events</span>
+                    </button>
+                    <button
+                        className={`toggle-btn ${view === 'calendar' ? 'active' : ''}`}
+                        onClick={() => handleViewChange('calendar')}
+                        title="Shows Calendar"
+                    >
+                        <Ticket size={20} />
+                        <span className="mobile-only-label">Shows</span>
+                    </button>
+                    <button
+                        className={`toggle-btn ${view === 'shopping' ? 'active' : ''}`}
+                        onClick={() => handleViewChange('shopping')}
+                        title="Shopping"
+                    >
+                        <ShoppingCart size={20} />
+                        <span className="mobile-only-label">Shopping</span>
+                    </button>
+                </div>
+            </div>
+
+            <button 
+                className="mobile-menu-toggle glass-panel"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+            {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
+            {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
+        </header>
+    );
+};
+
+export default Header;

@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "title": "Battle of Raszyn",
+        "date": "1809-04-19",
+        "location": "Raszyn, Poland",
+        "description": " War of the Fifth Coalition. armies of the Austrian Empire under Archduke Ferdinand Karl Joseph of Austria-Este defeated the Duchy of Warsaw under Józef Antoni Poniatowski",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Raszyn_(1809)",
+        "more_info_link": ""
+    },
+    {
+        "id": 2,
+        "title": "Napoleon officially marries Marie Louise, Duchess of Parma.",
+        "date": "1810-04-01",
+        "location": "Paris, France",
+        "description": "This marriage was intended to secure an alliance between France and Austria and produce an heir for Napoleon.",
+        "wikipedia_link": "",
+        "more_info_link": ""
+    },
+    {
+        "id": 3,
+        "title": "Napoleon's abdication",
+        "date": "1814-04-06",
+        "location": "Fontainebleau, France",
+        "description": "In the night of 5-6 April, after long attempts at negotiations with the allies, Napoleon accepted defeat and wrote out a short text declaring that he had abdicated",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon%27s_first_abdication",
+        "more_info_link": ""
+    },
+    {
+        "id": 4,
+        "title": "Joseph Bonaparte becomes King of Naples",
+        "date": "1806-04-01",
+        "location": "Naples, Italy",
+        "description": "Joseph Bonaparte, Napoleon's older brother, is crowned King of Naples.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Joseph_Bonaparte",
+        "more_info_link": ""
+    },
+    {
+        "id": 5,
+        "title": "Batalla de Abensberg",
+        "date": "1809-04-20",
+        "location": "Abensberg, Bavaria",
+        "description": "The Battle of Abensberg was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abensberg",
+        "more_info_link": ""
+    },
+    {
+        "id": 6,
+        "title": "Battle of Landshut",
+        "date": "1809-04-21",
+        "location": "Landshut, Bavaria",
+        "description": "The Battle of Landshut was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)",
+        "more_info_link": ""
+    },
+    {
+        "id": 7,
+        "title": "Battle of Eggmühl",
+        "date": "1809-04-22",
+        "location": "Eggmühl, Bavaria",
+        "description": "The Battle of Eggmühl was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eckm%C3%BChl",
+        "more_info_link": ""
+    },
+    {
+        "id": 8,
+        "title": "Battle of Teugn-Hausen",
+        "date": "1809-04-19",
+        "location": "Teugn-Hausen, Bavaria",
+        "description": "The Battle of Teugn-Hausen was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Teugn-Hausen",
+        "more_info_link": ""
+    },
+    {
+        "id": 9,
+        "title": "Battle of Thann",
+        "date": "1809-04-23",
+        "location": "Thann, Bavaria",
+        "description": "The Battle of Thann was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Thann",
+        "more_info_link": ""
+    },
+    {
+        "id": 10,
+        "title": "Battle of Pfaffenhausen",
+        "date": "1809-04-23",
+        "location": "Pfaffenhausen, Bavaria",
+        "description": "The Battle of Pfaffenhausen was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Pfaffenhausen",
+        "more_info_link": ""
+    },
+    {
+        "id": 11,
+        "title": "Battle of Günzburg",
+        "date": "1809-04-23",
+        "location": "Günzburg, Bavaria",
+        "description": "The Battle of Günzburg was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_G%C3%BCnzburg",
+        "more_info_link": ""
+    },
+    {
+        "id": 12,
+        "title": "Battle of La Rothière",
+        "date": "1814-02-01",
+        "location": "La Rothière, France",
+        "description": "The Battle of La Rothière was a battle of the War of the Sixth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re",
+        "more_info_link": ""
+    },
+    {
+        "id": 13,
+        "title": "Battle of Corunna",
+        "date": "1809-01-16",
+        "location": "A Coruña, Spain",
+        "description": "The Battle of Corunna was a battle of the Peninsular War in which the French army under Napoleon Bonaparte defeated the British army under Arthur Wellesley.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Corunna",
+        "more_info_link": ""
+    },
+    {
+        "id": 14,
+        "title": "Battle of Copenhagen",
+        "date": "1801-04-02",
+        "location": "Port of Copenhagen, Denmark",
+        "description": "The Battle of Copenhagen was a naval battle of the Napoleonic Wars in which the British Royal Navy under the command of Admiral Sir Hyde Parker, with Horatio Nelson commanding the van, defeated the Danish-Norwegian fleet.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1801)",
+        "more_info_link": ""
+    },
+    {
+        "id": 15,
+        "title": "Battle of Sabugal",
+        "date": "1811-04-03",
+        "location": "Sabugal, Portugal",
+        "description": "The Battle of Sabugal was a battle of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal",
+        "more_info_link": ""
+    },
+    {
+        "id": 16,
+        "title": "Battle of Fuentes de Oñoro",
+        "date": "1811-05-03",
+        "location": "Fuentes de Oñoro, Spain",
+        "description": "The Battle of Fuentes de Oñoro was a battle of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro",
+        "more_info_link": ""
+    },
+    {
+        "id": 17,
+        "title": "Siege of Almeida",
+        "date": "1811-04-03",
+        "location": "Almeida, Portugal",
+        "description": "The Siege of Almeida was a siege of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Almeida",
+        "more_info_link": ""
+    },
+    {
+        "id": 18,
+        "title": "Battle of Almeida",
+        "date": "1811-05-03",
+        "location": "Fuentes de Oñoro, Spain",
+        "description": "The Battle of Fuentes de Oñoro was a battle of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro",
+        "more_info_link": ""
+    },
+    {
+        "id": 19,
+        "title": "Siege of Ferrara",
+        "date": "1815-04-03",
+        "location": "Ferrara, Italy",
+        "description": "The Siege of Ferrara was part of the Neapolitan War in which the Austrian army under the command of Lieutenant Field Marshal Friedrich Bianchi defeated the Neapolitan army under the command of Joachim Murat.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Neapolitan_War",
+        "more_info_link": ""
+    },
+    {
+        "id": 20,
+        "title": "Battle of Tolentino",
+        "date": "1815-05-03",
+        "location": "Tolentino, Italy",
+        "description": "The Battle of Tolentino was part of the Neapolitan War in which the Austrian army under the command of Lieutenant Field Marshal Friedrich Bianchi defeated the Neapolitan army under the command of Joachim Murat.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Neapolitan_War",
+        "more_info_link": ""
+    },
+    {
+        "id": 21,
+        "title": "Battle of Magnano",
+        "date": "1799-04-05",
+        "location": "Magnano, Italy",
+        "description": "The Battle of Magnano was part of the War of the Second Coalition in which the Austrian army under the command of Lieutenant Field Marshal Friedrich Bianchi defeated the Neapolitan army under the command of Joachim Murat.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Magnano",
+        "more_info_link": ""
+    },
+    {
+        "id": 22,
+        "title": "Battle of Trebbia",
+        "date": "1799-06-17",
+        "location": "Trebbia, Italy",
+        "description": "The Battle of Trebbia was part of the War of the Second Coalition in which the Austrian army under the command of Lieutenant Field Marshal Friedrich Bianchi defeated the Neapolitan army under the command of Joachim Murat.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Trebbia",
+        "more_info_link": ""
+    },
+    {
+        "id": 22,
+        "title": "Storming of Badajoz",
+        "date": "1812-04-06",
+        "location": "Badajoz, Spain",
+        "description": "The Storming of Badajoz was part of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Storming_of_Badajoz",
+        "more_info_link": ""
+    },
+    {
+        "id": 23,
+        "title": "Siege of Ciudad Rodrigo",
+        "date": "1812-01-07",
+        "location": "Ciudad Rodrigo, Spain",
+        "description": "The siege of Ciudad Rodrigo was the successful investment of the French-occupied city of Ciudad Rodrigo by Lord Wellington's Anglo-Portuguese Army from 7–20 January 1812.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Ciudad_Rodrigo_(1812)",
+        "more_info_link": ""
+    },
+    {
+        "id": 24,
+        "title": "Beginning of the Italian Campaign",
+        "date": "1796-04-10",
+        "location": "Italy",
+        "description": "Napoleon begins his offensive against the Austrian army.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Italian_campaign_of_1796%E2%80%931797",
+        "more_info_link": ""
+    },
+    {
+        "id": 25,
+        "title": "Battle of Marengo",
+        "date": "1800-06-14",
+        "location": "Spinetta Marengo,Italy",
+        "description": "The Battle of Marengo was a battle of the War of the Second Coalition in which First Consul Napoleon Bonaparte and Austrian forces near the city of Alessandria, in Piedmont, Italy. Near the end of the day, the French overcame General Michael von Melas's surprise attack, drove the Austrians out of Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Marengo",
+        "more_info_link": ""
+    },
+    {
+        "id": 26,
+        "title": "Battle of Montenotte",
+        "date": "1796-04-12",
+        "location": "near Cairo Montenotte,Italy",
+        "description": "Napoleon's first victory in his first Italian campaign.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montenotte",
+        "more_info_link": ""
+    },
+    {
+        "id": 27,
+        "title": "Battle of Toulouse",
+        "date": "1814-04-10",
+        "location": "Toulouse, France",
+        "description": "Wellington defeats Soult in France, unaware that Napoleon has already abdicated.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Toulouse_(1814)",
+        "more_info_link": ""
+    },
+    {
+        "id": 28,
+        "title": "Battle of Millesimo",
+        "date": "1796-04-13",
+        "location": "Millesimo, Italy",
+        "description": "The Battle of Millesimo, fought on 13 and 14 April 1796, was the name that Napoleon Bonaparte gave in his correspondence to one of a series of small battles that were fought in Liguria, Northern Italy.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Millesimo",
+        "more_info_link": ""
+    },
+    {
+        "id": 29,
+        "title": "Second Battle of Dego",
+        "date": "1796-04-14",
+        "location": "Dego, modern-day Italy",
+        "description": "The Second Battle of Dego was fought on 14 and 15 April 1796 during the French Revolutionary Wars between French forces and Austro-Sardinian forces. The battle was fought near Dego, a hamlet in northwestern Italy, and ended in a French victory.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Dego",
+        "more_info_link": ""
+    },
+    {
+        "id": 30,
+        "title": "Battle of Mount Tabor",
+        "date": "1799-04-16",
+        "location": "Mount Tabor, modern-day Israel",
+        "description": "Battle between French forces commanded by Napoleon Bonaparte and General Jean-Baptiste Kléber, against an Ottoman Army under Abdullah Pasha al-Azm, ruler of Damascus.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mount_Tabor_(1799)",
+        "more_info_link": ""
+    },
+    {
+        "id": 31,
+        "title": "Siege of Genoa begins",
+        "date": "1800-04-16",
+        "location": "Genoa, Italy",
+        "description": "The siege of Genoa saw an Austrian army led by Michael von Melas besiege the port of Genoa, which was occupied by a French garrison under the command of André Massena.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Genoa_(1800)",
+        "more_info_link": ""
+    },
+    {
+        "id": 32,
+        "title": "Storming of Ratisbon",
+        "date": "1809-04-23",
+        "location": "Regensburg, modern-day Germany",
+        "description": "Also called the Battle of Regensburg, was fought between the army of the French Empire, led by Napoleon I, and that of the Austrian Empire, led by Archduke Charles.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ratisbon",
+        "more_info_link": ""
+    },
+    {
+        "id": 33,
+        "title": "Battle of Neumarkt-Sankt Veit",
+        "date": "1809-04-24",
+        "location": "Neumarkt-Sankt Veit, modern-day Germany",
+        "description": "Austrian victory over Marshal Bessières.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neumarkt-Sankt_Veit",
+        "more_info_link": ""
+    },
+    {
+        "id": 34,
+        "title": "Armistice of Cherasco",
+        "date": "1796-04-26",
+        "location": "Cherasco, Piedmont, modern-day Italy",
+        "description": "Signed between Victor Amadeus III of Sardinia and Napoleon Bonaparte. It withdrew Sardinia from the War of the First Coalition",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Armistice_of_Cherasco",
+        "more_info_link": ""
+    },
+    {
+        "id": 35,
+        "title": "End of the Peninsular War",
+        "date": "1814-04-30",
+        "location": "Spain",
+        "description": "Official conclusion of fighting in the Peninsula.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Peninsular_War",
+        "more_info_link": ""
+    },
+    {
+        "id": 36,
+        "title": "Battle of Cassano",
+        "date": "1799-04-27",
+        "location": "Cassano d'Adda, Italy",
+        "description": "The clash is part of the battle of the Adda River or the so-called forcing of the Adda, which on the first day resulted in a minor victory for the Russians under the Count Suvorov over Barthélemy Schérer's French forces at Lecco.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Peninsular_War",
+        "more_info_link": ""
+    },
+    {
+        "id": 37,
+        "title": "Battle of Landshut",
+        "date": "1799-04-27",
+        "location": "Landshut, Bavaria",
+        "description": "Napoleon's capture of a major Austrian supply center.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)",
+        "more_info_link": ""
+    },
+    {
+        "id": 38,
+        "title": "Battle of Alcolea",
+        "date": "1808-06-07",
+        "location": "Alcolea, Córdoba, Spain",
+        "description": "This was the first pitched battle in Andalusia between a more or less organized Spanish army and French forces.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_puente_de_Alcolea_(1808)",
+        "more_info_link": ""
+    },
+    {
+        "id": 39,
+        "title": "Acción de la Fuensanta",
+        "date": "1810-11-12",
+        "location": "Villel,Teruel, Spain",
+        "description": "La acción de la Fuensanta fue un combate llevado a cabo el 12 de noviembre de 1810 entre las tropas de Pedro Villacampa y las del general Józef Chlopicki en el Santuario de la Fuensanta de Villel.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_la_Fuensanta",
+        "more_info_link": ""
+    },
+    {
+        "id": 40,
+        "title": "Acción de Orgaz",
+        "date": "1813-03-26",
+        "location": "Orgaz,Toledo, Spain",
+        "description": "Enfrentó a una columna del Tercer Ejército español compuesta por unos ciento veinte jinetes y doscientos infantes, al mando del coronel Marcelino Villa, con una fuerza francesa de unos ochocientos jinetes pertenecientes a unidades de húsares y cazadores a caballo.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_la_Fuensanta",
+        "more_info_link": ""
+    },
+    {
+        "id": 41,
+        "title": "Batalla de Alcañiz",
+        "date": "1809-05-23",
+        "location": "Alcañiz,Teruel, Spain",
+        "description": "Tuvo lugar en la localidad turolense de Alcañiz el 23 de mayo de 1809 y donde las tropas españolas al mando de Joaquín Blake vencieron a las francesas comandadas por Louis Gabriel Suchet..",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alca%C3%B1iz",
+        "more_info_link": ""
+    }
+]

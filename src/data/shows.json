@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Reenactment of the Battle of Bailén",
+    "date": "2026-10-02",
+    "month": "October",
+    "country": "Spain",
+    "venue": "Bailén, Jaén, Spain",
+    "organizer": "Ayuntamiento de Bailén",
+    "description": "Del 2026-10-02 al 2026-10-04",
+    "moreInfo": "https://en.andalucia.org/event/reenactment-of-the-battle-of-bail%C3%A9n/7084101/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/00/Guardia_real_espa%C3%B1ola_en_la_recreaci%C3%B3n_de_la_batalla_de_bailen_%282024%29.png",
+    "category": "Reenactment"
+  },
+  {
+    "id": 2,
+    "name": "Recreación Histórica del Dos de Mayo",
+    "date": "2026-05-01",
+    "month": "May",
+    "country": "Spain",
+    "venue": "Madrid, España",
+    "organizer": "Asociación Histórico Cultural Voluntarios de Madrid",
+    "description": "Del 1 al 3 de mayo de 2026",
+    "moreInfo": "https://www.verkami.com/projects/40807-recreacion-historica-eventos-del-2-de-mayo-en-madrid",
+    "image": "https://www.madrid.org/fiestasdel2demayo/2024/fotos/fichas/11-recreacion-historica.jpg",
+    "category": "Reenactment"
+  },
+  {
+    "id": 3,
+    "name": "Scharnhorstfest",
+    "date": "2026-05-01",
+    "month": "May",
+    "country": "Germany",
+    "venue": "Großgörschen, Lutzen, Germany",
+    "organizer": "Scharnhorstkomitee Großgörschen e.V.",
+    "description": "Vom 1. Mai bis zum 3. Mai",
+    "moreInfo": "https://scharnhorstkomitee.de/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scharnhorstfest_Gro%C3%9Fg%C3%B6rschen_2013_by_Stepro_IMG_1688_DxO.jpg",
+    "category": "Reenactment"
+  },
+  {
+    "id": 4,
+    "name": "Recreación Histórica de la batalla de la Albuera",
+    "date": "2026-05-09",
+    "month": "May",
+    "country": "Spain",
+    "venue": "Albuera, Badajoz, Spain",
+    "organizer": "Recreación Histórica de la batalla de la Albuera",
+    "description": "Del 9 al 10 de mayo de 2026",
+    "moreInfo": "",
+    "image": "https://turismo.laalbuera.com/wp-content/uploads/2022/07/La-Batalla-14-scaled.jpg",
+    "category": "Reenactment"
+  },
+  {
+    "id": 5,
+    "name": "Recreación Histórica de la batalla de Puente Cruzul",
+    "date": "2026-05-15",
+    "month": "May",
+    "country": "Spain",
+    "venue": "Becerreá, Lugo, Spain",
+    "organizer": "Asociación Histórica, Cultural, Deportiva Recreadores de Galicia",
+    "description": "Del 15 al 17 de mayo de 2026",
+    "moreInfo": "https://www.facebook.com/recregalicia/",
+    "image": "https://img.lavdg.com/sc/goiBpG3jcgRCMlhwGz374RFFNnc=/1280x/2024/05/18/00121716060002001421121/Foto/L_20240518_204710000.jpg",
+    "category": "Reenactment"
+  }
+]

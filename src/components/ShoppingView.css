@@ -1,0 +1,227 @@
+.shopping-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--text-primary);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.shopping-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shopping-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.shopping-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--accent-primary), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.shopping-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.shopping-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.shopping-card {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.shopping-card-content {
+    display: flex;
+    flex-direction: row;
+    min-height: 250px;
+    height: 100%;
+}
+
+.shopping-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.shopping-image-container {
+    width: 300px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.shopping-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.shopping-card:hover .shopping-image {
+    transform: scale(1.05);
+}
+
+.shopping-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.shopping-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--accent-primary);
+    line-height: 1.2;
+}
+
+.shopping-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.meta-item svg {
+    color: var(--accent-primary);
+}
+
+.shopping-description {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.shop-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: auto;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.shop-link-btn:hover {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.ext-icon {
+    opacity: 0.7;
+}
+
+.shopping-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: var(--text-secondary);
+    gap: 1rem;
+}
+
+/* Scrollbar Styling */
+.shopping-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.shopping-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.shopping-container::-webkit-scrollbar-thumb {
+    background: rgba(88, 166, 255, 0.3);
+    border-radius: 10px;
+}
+
+.shopping-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(88, 166, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .shopping-container {
+        padding: 1.5rem;
+    }
+    
+.shopping-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+    
+    .shopping-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shopping-card-content {
+        flex-direction: column;
+    }
+
+    .shopping-image-container {
+        width: 100%;
+        height: 200px;
+    }
+}
+.no-items-found {
+    text-align: center;
+    padding: 3rem;
+    opacity: 0.6;
+    font-style: italic;
+    grid-column: 1 / -1;
+}

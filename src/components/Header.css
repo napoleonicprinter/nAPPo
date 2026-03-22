@@ -1,0 +1,432 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.sites-count-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 80px;
+    height: 64px; /* Matches logo height */
+}
+
+.count-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    line-height: 1;
+}
+
+.count-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    line-height: 1;
+    margin-top: 4px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.filters-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filters-line {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-select {
+    padding: 8px 30px 8px 12px;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    appearance: none;
+    background: var(--bg-acrylic) url('data:image/svg+xml;utf8,<svg fill="%23f0f6fc" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 8px center;
+    background-size: 16px;
+    outline: none;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.filter-select:hover,
+.filter-select:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+.filter-select option {
+    background: var(--bg-color);
+    color: var(--text-primary);
+}
+
+/* Custom Select Dropdown for Categories */
+.custom-select-container {
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    min-width: 180px;
+}
+
+.custom-select-trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-select-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.custom-select-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 3001; /* High z-index to stay above Map and Header controls */
+    padding: 4px 0;
+    background: var(--bg-color); /* Solid opaque background */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-sm);
+}
+
+.custom-select-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: left;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-select-option:hover {
+    background: rgba(240, 246, 252, 0.1);
+}
+
+.custom-select-option.selected {
+    background: rgba(88, 166, 255, 0.15);
+}
+
+.view-toggle {
+    display: flex;
+    padding: 4px;
+    gap: 4px;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.toggle-btn:hover {
+    color: var(--text-primary);
+    background: rgba(240, 246, 252, 0.05);
+}
+
+.toggle-btn.active {
+    background: var(--accent-primary);
+    color: #000;
+    box-shadow: var(--shadow-glow);
+}
+
+.settings-btn {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.settings-btn:hover {
+    color: var(--text-primary);
+    background: rgba(240, 246, 252, 0.1);
+}
+
+.settings-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 280px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 3000; /* Reliable foreground placement */
+    background: var(--bg-color); /* Fully opaque */
+    border: 1px solid var(--accent-primary); /* Themed border to make it pop */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(88, 166, 255, 0.2);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Ensure the wrapper doesn't collapse */
+.settings-wrapper {
+    display: inline-block;
+}
+
+.settings-dropdown h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.settings-dropdown p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.settings-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-only-label {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+/* Desktop/Tablet Harmony for Filters */
+.filters-line {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.desktop-filters {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Base style for all header selects to ensure "armony" */
+.filter-select, 
+.custom-select-trigger {
+    height: 40px; /* Slightly taller for more presence */
+    padding: 0 16px;
+    font-size: 0.9rem;
+    font-weight: 600; /* Balanced bold */
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+}
+
+.filter-select:hover,
+.custom-select-trigger:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-primary);
+}
+
+/* Specific widths for desktop to keep it balanced */
+.filter-select[value*="Set Location"], 
+.filter-select option[value="none"] { min-width: 180px; }
+.filter-select:not([value*="Set Location"]) { min-width: 140px; }
+.custom-select-container { min-width: 190px; }
+
+/* Desktop View Adjustments (Large Screens) */
+@media (min-width: 1025px) {
+    .header-controls {
+        display: flex !important;
+    }
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 1024px) {
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+    }
+
+    .header-controls {
+        display: none; /* Hidden by default when navigation is collapsed */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: rgba(13, 17, 23, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .header-controls.mobile-open {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .view-toggle, .header-actions {
+        width: 100%;
+    }
+
+    .view-toggle {
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .toggle-btn {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 16px;
+    }
+
+    .mobile-only-label {
+        display: inline;
+    }
+
+    .header-actions {
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}
+
+/* Filter Harmony - Desktop & Tablet (>600px) */
+@media (min-width: 601px) {
+    .filters-group {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 2rem;
+    }
+
+    /* Scaling for tablets to avoid overcrowding */
+    @media (max-width: 900px) {
+        .filters-group { margin-left: 1rem; }
+        .filter-select[value*="Set Location"] { min-width: 140px; }
+        .filter-select:not([value*="Set Location"]) { min-width: 110px; }
+        .custom-select-container { min-width: 160px; }
+        .filters-line { gap: 0.5rem; }
+    }
+}
+
+/* Smartphone Specifics (<600px) */
+@media (max-width: 600px) {
+    .app-header {
+        padding: 0.75rem 1rem;
+        gap: 0.5rem;
+    }
+
+    .header-logo { height: 40px; }
+    .sites-count-badge { height: 40px; min-width: 50px; padding: 2px 6px; }
+    .count-number { font-size: 1.1rem; }
+    .count-label { font-size: 0.6rem; }
+
+    .filters-group {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin: 0 4px;
+    }
+
+    .desktop-filters {
+        display: none; /* Only Location filter visible on small mobile header */
+    }
+
+    .filter-select {
+        min-width: 140px !important;
+        width: 100%;
+        padding: 6px 24px 6px 8px;
+        font-size: 0.8rem;
+        height: 36px;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
