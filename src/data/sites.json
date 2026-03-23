@@ -3426,5 +3426,22 @@
     "youtube_link": "https://youtu.be/ER2b8YEDnqU?si=_Hq8KkOJydUessgd",
     "createDate": "2025-03-21T10:00:00Z",
     "special": "arc"
+  },
+  {
+    "id": "200",
+    "name": "Battle of Ebelsberg",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": 1809,
+    "location": "Ebelsberg",
+    "country": "Austria",
+    "description": "A bloody French assault to take a key bridge over the Traun River, clearing the way to Vienna.",
+    "latitude": 48.22999,
+    "longitude": 14.331,
+    "visited": false,
+    "image": "assets/images/Sites/Ebelsberg.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": "arc"
   }
 ]

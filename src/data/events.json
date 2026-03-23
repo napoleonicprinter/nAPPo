@@ -765,5 +765,13 @@
         "location": "Flushing, Netherlands",
         "description": "The British had captured Flushing on the day of his arrival to the war zone after a ferocious bombardment, and the surrounding towns on August 15th.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign"
+    },
+    {
+        "id": 88,
+        "title": "Battle of Ebelsberg",
+        "date": "1809-05-03",
+        "location": "Ebelsberg, Austria",
+        "description": "A bloody French assault to take a key bridge over the Traun River, clearing the way to Vienna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg"
     }
 ]
