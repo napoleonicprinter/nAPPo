@@ -474,7 +474,7 @@
 @media (max-width: 1024px) {
     .app-header {
         display: grid;
-        grid-template-columns: 1fr auto auto;
+        grid-template-columns: 1fr auto 1fr;
         grid-template-areas:
             "brand location hamburger"
             "categories areas areas";
@@ -493,7 +493,7 @@
     /* Target Location Select */
     .filters-line > .custom-select-container:first-of-type {
         grid-area: location;
-        justify-self: end;
+        justify-self: center;
     }
 
     /* Target Areas Select */
@@ -515,6 +515,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        justify-self: end;
         z-index: 1001;
     }
 
@@ -545,8 +546,9 @@
     /* Moving Year and Commander filters to the map area */
     .mobile-overlay-filters {
         display: flex;
-        position: fixed;
-        top: calc(var(--header-height, 80px) + 10px);
+        position: absolute;
+        top: 100%;
+        margin-top: 10px;
         left: 10px;
         z-index: 1000;
         gap: 0.75rem; /* Balanced gap for horizontal layout */
@@ -556,6 +558,11 @@
     .mobile-tag-filter {
         pointer-events: auto; /* Re-enable for the actual tags */
         max-width: 130px;
+    }
+
+    /* Make the Year tag (first filter) narrower on tablet */
+    .year-filter-mobile {
+        max-width: 90px;
     }
 
     .mobile-tag-filter .custom-select-trigger {
@@ -696,7 +703,6 @@
     .mobile-overlay-filters {
         gap: 0.5rem; /* Tighter on small mobile */
         flex-direction: row; /* Ensure horizontal alignment even on small screens */
-        top: 85px; /* Hardcoded for small screens if var fails */
     }
 
     .mobile-tag-filter {

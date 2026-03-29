@@ -138,9 +138,8 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* Mobile/Tablet Overlay Filters (Fixed to top-left of map) */}
                 <div className="mobile-overlay-filters">
-                    <YearFilter className="mobile-tag-filter" />
+                    <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter" />
                 </div>
             </div>
