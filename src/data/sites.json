@@ -3443,5 +3443,22 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg",
     "createDate": "2025-03-21T10:00:00Z",
     "special": "arc"
+  },
+  {
+    "id": "201",
+    "name": "Captain Antonio Costa grave",
+    "category": "Landmark",
+    "significance": "Minor",
+    "year": "",
+    "location": "Fredericia",
+    "country": "Denmark",
+    "description": "Grave of Captain Antonio Costa, member of Spaniard expedition to Denmark in 1807.",
+    "latitude": 55.563910,
+    "longitude": 9.755823,
+    "visited": false,
+    "image": "assets/images/Sites/A_Costa.webp",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Antonio_Costa_(militar_espa%C3%B1ol)",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": false
   }
 ]

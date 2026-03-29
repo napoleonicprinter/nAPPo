@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import CustomCategorySelect from './CustomCategorySelect';
+import CustomSimpleSelect from './CustomSimpleSelect';
 import AuthModal from './AuthModal';
 import EventsModal from './EventsModal';
 import FiltersModal from './FiltersModal';
@@ -78,38 +79,33 @@ const Header = () => {
 
             <div className="filters-group">
                 <div className="filters-line">
-                    <select
-                        className="filter-select glass-panel"
+                    <CustomSimpleSelect
+                        options={[
+                            { value: 'none', label: 'Set Location...' },
+                            { value: 'geo', label: '⮞ My Location' },
+                            ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))
+                        ]}
                         value={locationMode}
-                        onChange={(e) => handleLocationSelect(e.target.value)}
-                    >
-                        <option value="none">Set Location...</option>
-                        <option value="geo" style={{ color: 'var(--accent-primary)' }}>&#10148; Geo location on</option>
-                        <option value="none" style={{ color: 'var(--accent-danger)' }}>&#10005; Geo location off</option>
-                        <optgroup label="European Capitals">
-                            {EUROPEAN_CAPITALS.map(c => (
-                                <option key={c.name} value={c.name}>{c.name}</option>
-                            ))}
-                        </optgroup>
-                    </select>
+                        onChange={handleLocationSelect}
+                    />
 
                     <div className="desktop-filters custom-desktop-layout">
-                        <select
-                            className="filter-select glass-panel"
+                        <CustomSimpleSelect
+                            options={[
+                                { value: 'all', label: 'All Areas' },
+                                { value: '1',   label: '1 km area' },
+                                { value: '5',   label: '5 km area' },
+                                { value: '10',  label: '10 km area' },
+                                { value: '25',  label: '25 km area' },
+                                { value: '50',  label: '50 km area' },
+                                { value: '100', label: '100 km area' },
+                                { value: '500', label: '500 km area' },
+                            ]}
                             value={filterRadius}
-                            onChange={(e) => setFilterRadius(e.target.value)}
-                            disabled={!geolocationEnabled}
-                            title={!geolocationEnabled ? "Enable Location Services to use this filter" : "Filter by Distance"}
-                        >
-                            <option value="all">All Areas</option>
-                            <option value="1">1 km area</option>
-                            <option value="5">5 km area</option>
-                            <option value="10">10 km area</option>
-                            <option value="25">25 km area</option>
-                            <option value="50">50 km area</option>
-                            <option value="100">100 km area</option>
-                            <option value="500">500 km area</option>
-                        </select>
+                            onChange={setFilterRadius}
+                            disabled={locationMode === 'none'}
+                            title={locationMode === 'none' ? 'Select a Location first to use this filter' : 'Filter by Distance'}
+                        />
 
                         <div className="category-filters-wrapper">
                             <CustomCategorySelect

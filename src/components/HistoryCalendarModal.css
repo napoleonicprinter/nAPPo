@@ -25,13 +25,27 @@
 }
 
 .history-calendar-header {
-    padding: 1.5rem;
+    padding: 1rem 1.25rem 0.75rem;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* Row 1: Month title + close button */
+.calendar-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Row 2: Prev arrow | year select | next arrow */
+.calendar-header-bottom {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0,0,0,0.3);
-    position: relative;
+    gap: 1rem;
 }
 
 .calendar-nav-controls {
@@ -44,6 +58,24 @@
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.calendar-year-select {
+    background: rgba(255,255,255,0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.calendar-year-select:hover,
+.calendar-year-select:focus {
+    border-color: var(--accent-primary);
 }
 
 .calendar-nav-btn {
@@ -68,9 +100,10 @@
 
 .calendar-title {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .history-calendar-body {
@@ -222,17 +255,20 @@
 }
 
 .calendar-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    flex-shrink: 0;
     background: transparent;
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
     transition: color 0.2s;
-    z-index: 5;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .calendar-close-btn:hover {
     color: var(--text-primary);
+    background: rgba(255,255,255,0.08);
 }

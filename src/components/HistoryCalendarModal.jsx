@@ -122,41 +122,29 @@ const HistoryCalendarModal = ({ onClose }) => {
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="history-calendar-header">
-                    <div className="calendar-nav-controls">
-                        <button className="calendar-nav-btn" onClick={prevMonth} title="Previous Month">
-                            <ChevronLeft size={24} />
-                        </button>
-                        <div className="calendar-month-year">
-                            <h2 className="calendar-title">{MONTHS[month]}</h2>
-                            <select 
-                                value={selectedYear} 
-                                onChange={(e) => setSelectedYear(e.target.value === 'All years' ? 'All years' : parseInt(e.target.value))}
-                                className="glass-panel"
-                                style={{
-                                    background: 'rgba(255,255,255,0.1)',
-                                    color: 'var(--text-primary)',
-                                    border: '1px solid rgba(255,255,255,0.2)',
-                                    padding: '6px 10px',
-                                    borderRadius: '8px',
-                                    fontSize: '1.1rem',
-                                    outline: 'none',
-                                    cursor: 'pointer',
-                                    fontFamily: 'inherit'
-                                }}
-                            >
-                                {YEARS.map(y => (
-                                    <option key={y} value={y} style={{ background: 'var(--bg-color)', color: 'var(--text-primary)' }}>{y}</option>
-                                ))}
-                            </select>
-                        </div>
-                        <button className="calendar-nav-btn" onClick={nextMonth} title="Next Month">
-                            <ChevronRight size={24} />
+                    <div className="calendar-header-top">
+                        <h2 className="calendar-title">{MONTHS[month]}</h2>
+                        <button className="calendar-close-btn" onClick={onClose} title="Close">
+                            <X size={22} />
                         </button>
                     </div>
-                    
-                    <button className="calendar-close-btn" onClick={onClose}>
-                        <X size={24} />
-                    </button>
+                    <div className="calendar-header-bottom">
+                        <button className="calendar-nav-btn" onClick={prevMonth} title="Previous Month">
+                            <ChevronLeft size={22} />
+                        </button>
+                        <select
+                            value={selectedYear}
+                            onChange={(e) => setSelectedYear(e.target.value === 'All years' ? 'All years' : parseInt(e.target.value))}
+                            className="calendar-year-select glass-panel"
+                        >
+                            {YEARS.map(y => (
+                                <option key={y} value={y} style={{ background: 'var(--bg-color)', color: 'var(--text-primary)' }}>{y}</option>
+                            ))}
+                        </select>
+                        <button className="calendar-nav-btn" onClick={nextMonth} title="Next Month">
+                            <ChevronRight size={22} />
+                        </button>
+                    </div>
                 </div>
 
                 <div className="history-calendar-body">
@@ -174,7 +162,7 @@ const HistoryCalendarModal = ({ onClose }) => {
                         <div className="day-popup-content" onClick={(e) => e.stopPropagation()}>
                             <div className="day-popup-header">
                                 <h3>{MONTHS[month]} {selectedDateEvents.day} in History</h3>
-                                <button className="calendar-close-btn" style={{position: 'static'}} onClick={() => setSelectedDateEvents(null)}>
+                                <button className="calendar-close-btn" onClick={() => setSelectedDateEvents(null)}>
                                     <X size={20} />
                                 </button>
                             </div>

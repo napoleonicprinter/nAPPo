@@ -65,11 +65,70 @@ export const EUROPEAN_CAPITALS = [
     { name: "Zagreb", lat: 45.8150, lon: 15.9819 }
 ];
 
+// Constants for remote data
+const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
+
 const AppContext = createContext();
 
 export const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
+    // Data states initialized from localStorage or bundled fallbacks
+    const [sitesBaseData, setSitesBaseData] = useState(() => {
+        const saved = localStorage.getItem('sitesData');
+        return saved ? JSON.parse(saved) : sitesData;
+    });
+
+    const [showsBaseData, setShowsBaseData] = useState(() => {
+        const saved = localStorage.getItem('showsData');
+        return saved ? JSON.parse(saved) : showsData;
+    });
+
+    const [shoppingBaseData, setShoppingBaseData] = useState(() => {
+        const saved = localStorage.getItem('shoppingData');
+        return saved ? JSON.parse(saved) : shoppingData;
+    });
+
+    // Update check from GitHub
+    useEffect(() => {
+        const syncData = async () => {
+            try {
+                // Fetching in parallel
+                const fetchRes = await Promise.all([
+                    fetch(`${GITHUB_RAW_BASE_URL}/sites.json`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/shows.json`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json`)
+                ]);
+
+                const [resSites, resShows, resShopping] = fetchRes;
+
+                if (resSites.ok) {
+                    const data = await resSites.json();
+                    setSitesBaseData(data);
+                    localStorage.setItem('sitesData', JSON.stringify(data));
+                }
+                if (resShows.ok) {
+                    const data = await resShows.json();
+                    setShowsBaseData(data);
+                    localStorage.setItem('showsData', JSON.stringify(data));
+                }
+                if (resShopping.ok) {
+                    const data = await resShopping.json();
+                    setShoppingBaseData(data);
+                    localStorage.setItem('shoppingData', JSON.stringify(data));
+                }
+
+                console.log("Data sync with GitHub check complete.");
+            } catch (error) {
+                console.warn("Failed to sync data with GitHub. Using local/cached version.", error);
+            }
+        };
+        
+        // Give the app a second to settle before fetching to avoid blocking initial render
+        const timer = setTimeout(syncData, 2000);
+        return () => clearTimeout(timer);
+    }, []);
+
     const [view, setView] = useState('map'); // 'map', 'card', 'calendar', or 'shopping'
 
     const [users, setUsers] = useState(() => {
@@ -117,7 +176,7 @@ export const AppProvider = ({ children }) => {
     });
 
     // Derived sites ensuring visited status and "NEW" status is fresh
-    const sites = sitesData.map(site => {
+    const derivedSites = sitesBaseData.map(site => {
         const isNew = (() => {
             if (!site.createDate || !newSitesDays) return false;
             const createDate = new Date(site.createDate);
@@ -144,7 +203,7 @@ export const AppProvider = ({ children }) => {
     });
 
     // Calculate distance and filter sites
-    const filteredSites = sites.map(site => {
+    const filteredSites = derivedSites.map(site => {
         if (geolocationEnabled && userCoords) {
             return {
                 ...site,
@@ -163,8 +222,8 @@ export const AppProvider = ({ children }) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
         if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
-        // Filter by radius if geolocation is enabled and user has coordinates
-        if (geolocationEnabled && userCoords && filterRadius !== 'all' && site.distance !== undefined) {
+        // Filter by radius if user has coordinates (geo or capital city)
+        if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
         }
         return true;
@@ -270,6 +329,19 @@ export const AppProvider = ({ children }) => {
             return;
         }
 
+        // Check for secure context (HTTPS)
+        if (!window.isSecureContext) {
+             alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
+             // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
+        }
+
+        // Options to improve mobile reliability
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000, // 10 seconds
+            maximumAge: 60000 // Allow a location up to 1 minute old
+        };
+
         // Attempt to get location
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -285,8 +357,24 @@ export const AppProvider = ({ children }) => {
                 setGeolocationEnabled(false);
                 setLocationMode('none');
                 setFilterRadius('all');
-                alert("Failed to get location. Please allow permissions in your browser.");
-            }
+                
+                let message = "Failed to get location.";
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        message = "Location permission denied. Please ensure you have allowed location access in your browser and OS settings.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        message = "Location information is unavailable. Your device might not have a clear view of satellites or a stable network.";
+                        break;
+                    case error.TIMEOUT:
+                        message = "The request to get your location timed out. Please try again (ideally outdoors or near a window).";
+                        break;
+                    default:
+                        message = "An unknown error occurred while trying to get your location.";
+                }
+                alert(message);
+            },
+            options
         );
     };
 
@@ -315,7 +403,7 @@ export const AppProvider = ({ children }) => {
     return (
         <AppContext.Provider value={{
             sites: filteredSites,
-            allSites: sites,
+            allSites: derivedSites,
             view,
             setView,
             toggleVisited,
@@ -346,8 +434,8 @@ export const AppProvider = ({ children }) => {
             setNewSitesDays,
             showOnlyNew,
             setShowOnlyNew,
-            showsToCome: showsData,
-            shoppingItems: shoppingData
+            showsToCome: showsBaseData,
+            shoppingItems: shoppingBaseData
         }}>
             {children}
         </AppContext.Provider>

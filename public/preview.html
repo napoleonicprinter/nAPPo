@@ -4,119 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nAPPo Trails - Device Previewer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0d1117;
-            --bg-panel: #161b22;
+            --bg-panel: rgba(22, 27, 34, 0.8);
+            --bg-accent: #161b22;
             --text-primary: #f0f6fc;
             --text-secondary: #8b949e;
             --accent: #58a6ff;
-            --border: #30363d;
+            --accent-hover: #79c0ff;
+            --border: rgba(240, 246, 252, 0.1);
+            --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.7);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            height: 100vh;
             overflow: hidden;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(88, 166, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(88, 166, 255, 0.1) 0%, transparent 40%),
+                var(--bg-color);
+        }
+
+        /* Grid Background Overlay */
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
         }
 
         .header {
-            background-color: var(--bg-panel);
+            position: relative;
+            z-index: 10;
+            background: var(--bg-panel);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 12px 24px;
+            padding: 0 40px;
+            height: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .header h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            margin: 0;
-            color: var(--text-primary);
-        }
-
-        .device-toggles {
+        .logo {
             display: flex;
-            background: #0d1117;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
-        .device-btn {
+        .logo-symbol {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .control-btn {
             background: transparent;
             border: none;
             color: var(--text-secondary);
             padding: 8px 16px;
+            border-radius: 8px;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .device-btn:hover {
+        .control-btn:hover {
             color: var(--text-primary);
             background: rgba(255, 255, 255, 0.05);
         }
 
-        .device-btn.active {
-            background: rgba(88, 166, 255, 0.15);
-            color: var(--accent);
+        .control-btn.active {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
         }
 
-        .preview-container {
-            flex: 1;
+        .control-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .header-actions {
             display: flex;
-            padding: 40px;
-            background-image: 
-                linear-gradient(var(--border) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: center center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .url-input-container {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 50px;
+            gap: 8px;
+            width: 300px;
+            transition: var(--transition);
+        }
+
+        .url-input-container:focus-within {
+            border-color: var(--accent);
+            background: rgba(88, 166, 255, 0.05);
+            width: 400px;
+        }
+
+        .url-input-container svg {
+            color: var(--text-secondary);
+            width: 14px;
+        }
+
+        .url-input {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            width: 100%;
+            outline: none;
+        }
+
+        .main-stage {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
             overflow: auto;
+            perspective: 2000px;
+            z-index: 1;
+        }
+
+        .main-stage.desktop-mode {
+            padding: 24px;
+            align-items: stretch;
+        }
+
+        /* Device Frames */
+        .device-container {
+            position: relative;
+            transition: var(--transition);
+            transform-origin: center center;
+        }
+
+        .device-container.desktop-mode {
+            width: 100%;
+            height: 100%;
+            transform: none !important;
         }
 
         .device-frame {
-            margin: auto;
+            position: relative;
             background: #000;
-            border: 12px solid #21262d;
-            border-radius: 24px;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: var(--shadow-premium);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             overflow: hidden;
             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .device-frame.pc {
+        .device-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Phone Frame Specifics */
+        .device-phone {
+            width: 393px;
+            height: 852px;
+            border-radius: 55px;
+        }
+        
+        .device-phone .dynamic-island {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 35px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 20;
+        }
+
+        /* Tablet Frame Specifics */
+        .device-tablet {
+            width: 820px;
+            height: 1180px;
+            border-radius: 40px;
+        }
+
+        /* Desktop Frame Specifics */
+        .device-desktop {
             width: 100%;
             height: 100%;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
+            padding: 0;
+            border-width: 1px;
         }
 
-        .device-frame.tablet {
-            width: 768px;
-            height: 1024px;
+        /* Landscape Mode */
+        .landscape.device-phone {
+            width: 852px;
+            height: 393px;
         }
-
-        .device-frame.smartphone {
-            width: 375px;
-            height: 812px;
-            border-radius: 40px;
-            border-width: 14px;
+        .landscape.device-tablet {
+            width: 1180px;
+            height: 820px;
         }
 
         iframe {
@@ -124,55 +280,182 @@
             height: 100%;
             border: none;
             background: var(--bg-color);
+            border-radius: inherit;
         }
 
-        /* Icons */
-        svg {
-            width: 16px;
-            height: 16px;
+        /* Scale Controls */
+        .stage-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-panel);
+            backdrop-filter: blur(12px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 20;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .zoom-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            min-width: 45px;
+        }
+
+        .rotate-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .rotate-btn:hover {
+            background: var(--accent);
+            color: #000;
+            transform: rotate(90deg);
+        }
+
+        /* Responsive stages */
+        @media (max-width: 1200px) {
+            .device-desktop { width: 100%; height: 600px; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>nAPPo Trails Previewer</h1>
-        <div class="device-toggles">
-            <button class="device-btn" onclick="setDevice('smartphone')" id="btn-smartphone">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+    <div class="grid-overlay"></div>
+
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-symbol">N</div>
+            nAPPo Preview
+        </a>
+
+        <div class="controls">
+            <button class="control-btn" onclick="setDevice('phone')" id="btn-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
                 Mobile
             </button>
-            <button class="device-btn" onclick="setDevice('tablet')" id="btn-tablet">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <button class="control-btn" onclick="setDevice('tablet')" id="btn-tablet">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
                 Tablet
             </button>
-            <button class="device-btn active" onclick="setDevice('pc')" id="btn-pc">
+            <button class="control-btn active" onclick="setDevice('desktop')" id="btn-desktop">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                PC
+                Desktop
             </button>
         </div>
-        <a href="/" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 4px;">
-            Open App
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-        </a>
+
+        <div class="header-actions">
+            <div class="url-input-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="urlInput" class="url-input" value="/" onchange="updateIframeUrl(this.value)" placeholder="Enter URL to preview...">
+            </div>
+            <a href="/" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                Open App
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="main-stage desktop-mode">
+        <div id="deviceContainer" class="device-container desktop-mode">
+            <div id="deviceFrame" class="device-frame device-desktop">
+                <!-- Inner parts for phone -->
+                <div class="dynamic-island" id="phoneNotch" style="display: none;"></div>
+                
+                <iframe id="previewIframe" src="/"></iframe>
+            </div>
+        </div>
     </div>
 
-    <div class="preview-container">
-        <div id="deviceFrame" class="device-frame pc">
-            <!-- Loads the React app from the root -->
-            <iframe src="/"></iframe>
-        </div>
+    <div class="stage-controls">
+        <button class="rotate-btn" onclick="toggleOrientation()" title="Rotate Device">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9l-3-3-3 3"></path><path d="M17 6V4a2 2 0 00-2-2h-3"></path><path d="M20 15l-3 3-3-3"></path><path d="M17 18v2a2 2 0 01-2 2h-3"></path><path d="M4 11l3 3 3-3"></path><path d="M7 14V8a2 2 0 012-2h3"></path></svg>
+        </button>
+        <input type="range" min="0.3" max="1.5" step="0.05" value="0.9" oninput="updateScale(this.value)">
+        <span class="zoom-label" id="zoomLabel">90%</span>
     </div>
 
     <script>
-        function setDevice(deviceType) {
-            // Update button states
-            document.querySelectorAll('.device-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${deviceType}`).classList.add('active');
+        let currentScale = 0.9;
+        let isLandscape = false;
+        let currentDevice = 'desktop';
 
-            // Update frame class
+        function setDevice(device) {
+            currentDevice = device;
             const frame = document.getElementById('deviceFrame');
-            frame.className = `device-frame ${deviceType}`;
+            const notch = document.getElementById('phoneNotch');
+            const container = document.getElementById('deviceContainer');
+            const stage = document.querySelector('.main-stage');
+            
+            // Update buttons
+            document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${device}`).classList.add('active');
+
+            // Desktop mode: fill the stage, no scaling
+            const isDesktop = device === 'desktop';
+            container.classList.toggle('desktop-mode', isDesktop);
+            stage.classList.toggle('desktop-mode', isDesktop);
+
+            // Reset frame classes
+            frame.className = `device-frame device-${device}`;
+            if (isLandscape && (device === 'phone' || device === 'tablet')) {
+                frame.classList.add('landscape');
+            }
+
+            // Notch visibility
+            notch.style.display = device === 'phone' ? 'block' : 'none';
+
+            // Auto-adjust scale for phone/tablet; desktop ignores scale
+            if (device === 'phone') updateScale(0.8);
+            else if (device === 'tablet') updateScale(0.5);
+            else updateScale(1);
         }
+
+        function toggleOrientation() {
+            if (currentDevice === 'desktop') return;
+            
+            isLandscape = !isLandscape;
+            const frame = document.getElementById('deviceFrame');
+            
+            if (isLandscape) {
+                frame.classList.add('landscape');
+            } else {
+                frame.classList.remove('landscape');
+            }
+        }
+
+        function updateScale(val) {
+            currentScale = val;
+            document.getElementById('deviceContainer').style.transform = `scale(${val})`;
+            document.getElementById('zoomLabel').innerText = `${Math.round(val * 100)}%`;
+            
+            // Sync slider if updated programmatically
+            const slider = document.querySelector('input[type="range"]');
+            if (slider.value != val) slider.value = val;
+        }
+
+        function updateIframeUrl(url) {
+            if (!url.startsWith('/') && !url.startsWith('http')) {
+                url = '/' + url;
+            }
+            document.getElementById('previewIframe').src = url;
+        }
+
+        // Initialize
+        setDevice('desktop');
     </script>
 </body>
 </html>

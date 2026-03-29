@@ -1,10 +1,10 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
+import CustomSimpleSelect from './CustomSimpleSelect';
 
 const YearFilter = ({ compact, style, className }) => {
     const { filterYear, setFilterYear, allSites } = useAppContext();
     
-    // Extract unique years from sites, treating both strings and numbers properly
     const years = Array.from(
         new Set(
             allSites
@@ -13,19 +13,21 @@ const YearFilter = ({ compact, style, className }) => {
         )
     ).sort();
 
+    const options = [
+        { value: 'all', label: 'All Years' },
+        ...years.map(y => ({ value: y, label: y }))
+    ];
+
     return (
-        <select
-            className={`filter-select glass-panel year-filter-tag ${compact ? 'compact' : ''} ${className || ''}`}
-            value={filterYear || 'all'}
-            onChange={(e) => setFilterYear(e.target.value)}
-            style={style}
-            title="Filter by Year"
-        >
-            <option value="all">All years</option>
-            {years.map(y => (
-                <option key={y} value={y}>{y}</option>
-            ))}
-        </select>
+        <div style={style} className={className}>
+            <CustomSimpleSelect
+                options={options}
+                value={filterYear || 'all'}
+                onChange={(val) => setFilterYear(val)}
+                placeholder="All Years"
+                title="Filter by Year"
+            />
+        </div>
     );
 };
 
