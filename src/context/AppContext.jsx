@@ -238,8 +238,11 @@ export const AppProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        if (!(filterCategory.length === 1 && filterCategory[0] === 'Battle site')) {
+        const allowedCategories = ['Battle site', 'Sea Battle', 'Battle landmark'];
+        const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
+        if (!showFilter) {
             setFilterCommander('all');
+            setFilterYear('all');
         }
     }, [filterCategory]);
 

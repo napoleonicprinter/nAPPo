@@ -79,6 +79,20 @@ const Header = () => {
                 </div>
             </div>
 
+            <button 
+                className="mobile-menu-toggle glass-panel" 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                style={{
+                    background: 'transparent',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    cursor: 'pointer',
+                    padding: '8px',
+                    borderRadius: '8px',
+                }}
+            >
+                {isMenuOpen ? <X size={24} color="#f0f6fc" /> : <Menu size={24} color="#f0f6fc" />}
+            </button>
+
             <div className="filters-group">
                 <div className="filters-line">
                     <CustomSimpleSelect
@@ -92,22 +106,23 @@ const Header = () => {
                     />
 
                     <div className="desktop-filters custom-desktop-layout">
-                        <CustomSimpleSelect
-                            options={[
-                                { value: 'all', label: 'All Areas' },
-                                { value: '1',   label: '1 km area' },
-                                { value: '5',   label: '5 km area' },
-                                { value: '10',  label: '10 km area' },
-                                { value: '25',  label: '25 km area' },
-                                { value: '50',  label: '50 km area' },
-                                { value: '100', label: '100 km area' },
-                                { value: '500', label: '500 km area' },
-                            ]}
-                            value={filterRadius}
-                            onChange={setFilterRadius}
-                            disabled={locationMode === 'none'}
-                            title={locationMode === 'none' ? 'Select a Location first to use this filter' : 'Filter by Distance'}
-                        />
+                        {locationMode !== 'none' && (
+                            <CustomSimpleSelect
+                                options={[
+                                    { value: 'all', label: 'All Areas' },
+                                    { value: '1',   label: '1 km area' },
+                                    { value: '5',   label: '5 km area' },
+                                    { value: '10',  label: '10 km area' },
+                                    { value: '25',  label: '25 km area' },
+                                    { value: '50',  label: '50 km area' },
+                                    { value: '100', label: '100 km area' },
+                                    { value: '500', label: '500 km area' },
+                                ]}
+                                value={filterRadius}
+                                onChange={setFilterRadius}
+                                title={'Filter by Distance'}
+                            />
+                        )}
 
                         <div className="category-filters-wrapper">
                             <CustomCategorySelect

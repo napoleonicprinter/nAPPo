@@ -236,9 +236,7 @@ const RemoveDefaultZoom = () => {
     return null;
 };
 
-import CustomCategorySelect from './CustomCategorySelect';
-import SignificanceFilter from './SignificanceFilter';
-import YearFilter from './YearFilter';
+
 
 const MapView = () => {
     const {
@@ -266,82 +264,7 @@ const MapView = () => {
 
     return (
         <div style={{ height: '100%', width: '100%', position: 'relative' }} className="animate-fade-in">
-            {/* Map Filters Overlay - Mobile only */}
-            <div className="map-overlay-filters" style={{
-                position: 'absolute',
-                top: '8px',
-                left: '8px',
-                right: '8px',
-                zIndex: 1000,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                padding: '6px 12px',
-                background: 'rgba(13, 17, 23, 0.4)',
-                backdropFilter: 'blur(12px)',
-                borderRadius: '10px',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)'
-            }}>
-                <select
-                    className="filter-select glass-panel"
-                    value={filterRadius}
-                    onChange={(e) => setFilterRadius(e.target.value)}
-                    disabled={!geolocationEnabled}
-                    title={!geolocationEnabled ? "Enable Location Services to use this filter" : "Filter by Distance"}
-                    style={{
-                        minWidth: '90px',
-                        flexShrink: 0,
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        color: 'var(--text-primary)',
-                        padding: '6px 12px',
-                        borderRadius: '8px',
-                        cursor: 'pointer'
-                    }}
-                >
-                    <option value="all">All Areas</option>
-                    <option value="1">1 km area</option>
-                    <option value="5">5 km area</option>
-                    <option value="10">10 km area</option>
-                    <option value="25">25 km area</option>
-                    <option value="50">50 km area</option>
-                    <option value="100">100 km area</option>
-                    <option value="500">500 km area</option>
-                </select>
 
-                {/* Categories always centred */}
-                <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                    <CustomCategorySelect
-                        categories={categories}
-                        value={filterCategory}
-                        onChange={setFilterCategory}
-                    />
-                </div>
-
-                <SignificanceFilter compact={true} />
-            </div>
-
-            <div className="map-overlay-filters mobile-year-filter-container" style={{
-                position: 'absolute',
-                top: '58px', /* Below the main overlay container */
-                left: '8px', /* Left margin */
-                zIndex: 1000,
-                display: 'flex'
-            }}>
-                <YearFilter compact={true} style={{ 
-                    background: 'rgba(13, 17, 23, 0.4)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
-                    color: 'var(--text-primary)',
-                    padding: '4px 10px',
-                    borderRadius: '10px',
-                    fontSize: '0.8rem',
-                    height: '34px'
-                }} />
-            </div>
 
             <MapContainer
                 center={defaultCenter}

@@ -6,15 +6,18 @@ import CustomSimpleSelect from './CustomSimpleSelect';
 const CommanderFilter = ({ compact, style, className }) => {
     const { filterCommander, setFilterCommander, allSites, filterCategory } = useAppContext();
     
-    // Only show if "Battle site" is the only selected category
-    if (!(filterCategory.length === 1 && filterCategory[0] === 'Battle site')) {
+    const allowedCategories = ['Battle site', 'Sea Battle', 'Battle landmark'];
+    const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
+    
+    // Only show if selected categories consist ONLY of the allowed battle types
+    if (!showFilter) {
         return null;
     }
 
     const commanders = Array.from(
         new Set(
             allSites
-                .filter(s => s.category === 'Battle site' && s.commanders)
+                .filter(s => allowedCategories.includes(s.category) && s.commanders)
                 .flatMap(s => s.commanders)
         )
     ).sort();

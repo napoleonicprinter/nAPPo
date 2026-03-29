@@ -139,7 +139,7 @@
     "special": "arc",
     "commanders": [
       "Napoleon",
-      "Mikhail Kutuzov"
+      "Kutuzov"
     ]
   },
   {
@@ -443,7 +443,10 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alcolea_Bridge",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Pedro Agustín de Echávarri",
+      "Pierre Dupont"
+    ]
   },
   {
     "id": "25",
@@ -633,7 +636,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_la_Fuensanta",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Józef Chlopicki",
+      "Pedro Villacampa"
+    ]
   },
   {
     "id": "36",
@@ -651,7 +657,9 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_Orgaz",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Marcelino Villa"
+    ]
   },
   {
     "id": "37",
@@ -898,7 +906,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Ordal",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "William Bentinck",
+      "Louis Suchet"
+    ]
   },
   {
     "id": "50",
@@ -985,7 +996,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Usagre",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Victor de Fay de Latour-Maubourg",
+      "William Lumley"
+    ]
   },
   {
     "id": "55",
@@ -1020,7 +1034,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bidasoa",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Wellington"
+    ]
   },
   {
     "id": "57",
@@ -1055,7 +1072,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Puente_de_Triana",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Juan de la Cruz Mourgeon"
+    ]
   },
   {
     "id": "59",
@@ -1090,7 +1110,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Cabez%C3%B3n",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Gregorio García de la Cuesta",
+      "Bessières"
+    ]
   },
   {
     "id": "61",
@@ -1108,7 +1131,10 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_C%C3%A1diz",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Victor"
+    ]
   },
   {
     "id": "62",
@@ -1211,7 +1237,10 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Schleiz",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Bogislav von Tauentzien",
+      "Jean-Baptiste Bernadotte"
+    ]
   },
   {
     "id": "68",
@@ -1229,7 +1258,10 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saalfeld",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "arc",
-    "commanders": []
+    "commanders": [
+      "Prince Louis Ferdinand",
+      "Jean Lannes"
+    ]
   },
   {
     "id": "69",
@@ -1266,7 +1298,10 @@
     "more_info_link": "https://www.batalladetrafalgar.com/2022/11/la-sorpresa-de-arroyomolinos-de.html",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Jean-Baptiste Girard",
+      "Rowland Hill"
+    ]
   },
   {
     "id": "71",
@@ -2287,7 +2322,7 @@
   {
     "id": "129",
     "name": "Battle of Marengo",
-    "category": "Battlefield",
+    "category": "Battle site",
     "significance": "Major",
     "year": "1800",
     "location": "Marengo, Alessandria",
@@ -2355,7 +2390,7 @@
   {
     "id": "133",
     "name": "Batalla de Majadahonda",
-    "category": "Battlefield",
+    "category": "Battle site",
     "significance": "Minor",
     "year": "1812",
     "location": "Majadahonda, Madrid",
