@@ -1279,7 +1279,10 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Erfurt",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
-    "commanders": []
+    "commanders": [
+      "Joachim Murat",
+      "Prince of Orange"
+    ]
   },
   {
     "id": "70",
