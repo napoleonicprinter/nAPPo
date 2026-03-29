@@ -17,7 +17,12 @@
     "youtube_link": "https://www.youtube.com/watch?v=1F2bSWeA-C0",
     "more_info_link": "https://www.napoleon.org/en/magazine/places/austerlitz-slavkov-u-brna-battlefield/",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Napoleon",
+      "Alexander I",
+      "Francis II"
+    ]
   },
   {
     "id": "2",
@@ -36,7 +41,12 @@
     "more_info_link": "https://www.waterloo1815.be/en/prepare-your-visit-2/",
     "youtube_link": "https://www.youtube.com/watch?v=gjp1ldJeY3E",
     "createDate": "2025-02-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": [
+      "Napoleon",
+      "Wellington",
+      "Blücher"
+    ]
   },
   {
     "id": "3",
@@ -86,7 +96,11 @@
     "longitude": 8.666,
     "visited": false,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Relation_de_la_Bataille_de_Marengo.jpg/1280px-Relation_de_la_Bataille_de_Marengo.jpg?_=20160228104246",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Napoleon",
+      "Michael von Melas"
+    ]
   },
   {
     "id": "6",
@@ -122,7 +136,11 @@
     "image": "assets/images/Sites/Borodino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borodino",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Napoleon",
+      "Mikhail Kutuzov"
+    ]
   },
   {
     "id": "8",
@@ -208,7 +226,11 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/AGAD_Plan_bitwy_pod_Raszynem.png",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Raszyn_(1809)",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": [
+      "Józef Antoni Poniatowski",
+      "Archduke Ferdinand Karl Joseph"
+    ]
   },
   {
     "id": "13",
@@ -280,7 +302,12 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/W._%26_A._K._Johnston%2C_Battle_of_Mount_Thabor.16th_April_1799_%28FL37129674_3911851%29.jpg/960px-W._%26_A._K._Johnston%2C_Battle_of_Mount_Thabor.16th_April_1799_%28FL37129674_3911851%29.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mount_Tabor_(1799)",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Napoleon",
+      "Jean-Baptiste Kléber",
+      "Abdullah Pasha al-Azm"
+    ]
   },
   {
     "id": "17",
@@ -415,7 +442,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Alcolea_map_1808.png/500px-Alcolea_map_1808.png",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alcolea_Bridge",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "25",
@@ -583,7 +611,11 @@
     "image": "https://s0.wklcdn.com/image_32/962476/128550332/81999918Master.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Ucl%C3%A9s_(1809)",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Victor",
+      "Venegas"
+    ]
   },
   {
     "id": "35",
@@ -600,7 +632,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/1801_Cary_Map_of_Spain_and_Portugal_-_Geographicus_-_SpainPortugal-cary-1801.jpg/1280px-1801_Cary_Map_of_Spain_and_Portugal_-_Geographicus_-_SpainPortugal-cary-1801.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_la_Fuensanta",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "36",
@@ -617,7 +650,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Algodor08112006.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_Orgaz",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "37",
@@ -634,7 +668,11 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Alcaniz-g.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alca%C3%B1iz",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": [
+      "Joaquín Blake",
+      "Louis-Gabriel Suchet"
+    ]
   },
   {
     "id": "38",
@@ -686,7 +724,11 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alba_de_Tormes_(1809)",
     "more_info_link": "https://arrecaballo.es/guerras-napoleonicas/guerra-de-la-independencia-1809/batalla-de-alba-de-tormes-28-de-noviembre-de-1809/",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Diego de Cañas y Portocarrero",
+      "François Étienne de Kellermann"
+    ]
   },
   {
     "id": "41",
@@ -722,7 +764,11 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Mapa_de_Alba_de_Tormes%2C_1867%2C_por_Francisco_Coello.jpg/640px-Mapa_de_Alba_de_Tormes%2C_1867%2C_por_Francisco_Coello.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alba_de_Tormes_(1812)",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Wellington"
+    ]
   },
   {
     "id": "43",
@@ -740,7 +786,11 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_los_Arapiles",
     "youtube_link": "https://youtu.be/SbkUI9Z-vfI?si=f_vZjsGQR7UvlG4t",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": [
+      "Wellington",
+      "Auguste Marmont"
+    ]
   },
   {
     "id": "44",
@@ -775,7 +825,11 @@
     "image": "assets/images/Sites/Astorga_1.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Astorga",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": [
+      "Junot",
+      "Santocildes"
+    ]
   },
   {
     "id": "46",
@@ -843,7 +897,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Battle_of_Ordal_map.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Ordal",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "50",
@@ -929,7 +984,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Combate_de_Usagre.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Usagre",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "55",
@@ -963,7 +1019,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Batalla_Bidasoa.png",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bidasoa",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "57",
@@ -997,7 +1054,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Battle_of_Seville.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Puente_de_Triana",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "59",
@@ -1031,7 +1089,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Cabezon.png",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Cabez%C3%B3n",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "61",
@@ -1048,7 +1107,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/SitiodeCadiz.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_C%C3%A1diz",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "62",
@@ -1150,7 +1210,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bataille_de_Schleiz.jpg/1280px-Bataille_de_Schleiz.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Schleiz",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "68",
@@ -1167,7 +1228,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Battle_of_Saalfeld_11.30AM.jpg/960px-Battle_of_Saalfeld_11.30AM.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saalfeld",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "69",
@@ -1184,7 +1246,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Reddition_des_troupes_prussiennes_apr%C3%A8s_la_prise_de_la_ville_d%27Erfurth%2C_16_octobre_1806.jpg/1280px-Reddition_des_troupes_prussiennes_apr%C3%A8s_la_prise_de_la_ville_d%27Erfurth%2C_16_octobre_1806.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Erfurt",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "70",
@@ -1202,7 +1265,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arroyo_dos_Molinos",
     "more_info_link": "https://www.batalladetrafalgar.com/2022/11/la-sorpresa-de-arroyomolinos-de.html",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "71",
@@ -1299,12 +1363,13 @@
     "country": "Belarus",
     "description": "took place from 26 to 29 November 1812, between Napoleon's Grande Armée and the Imperial Russian Army under Field Marshal Wittgenstein and Admiral Chichagov. Napoleon was retreating toward Poland in chaos after the aborted occupation of Moscow and trying to cross the Berezina River at Borisov.",
     "latitude": 54.32491,
-    "longitude": 28.38210,
+    "longitude": 28.3821,
     "visited": false,
     "image": "assets/images/Sites/Beresina.webp",
     "wikipedia_link": "hhttps://en.wikipedia.org/wiki/Battle_of_Berezina",
     "createDate": "2026-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "77",
@@ -1440,7 +1505,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Remond_-_Prise_de_Tarragone_en_Catalogne_par_le_g%C3%A9n%C3%A9ral_en_chef_Suchet%2C_le_28_juin_1811.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_Tarragona_(1811)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "85",
@@ -1457,7 +1523,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Battle_of_Albuera_%281811%29_map.jpg/1280px-Battle_of_Albuera_%281811%29_map.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_La_Albuera",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "86",
@@ -1475,7 +1542,8 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Chiclana",
     "more_info_link": "https://www.wikiloc.com/hiking-trails/parque-de-la-batalla-chiclana-de-la-frontera-cadiz-163462771",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "87",
@@ -1492,7 +1560,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Second_Siege_of_Ciudad_Rodrigo.jpg/1280px-Second_Siege_of_Ciudad_Rodrigo.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Asedio_de_Ciudad_Rodrigo_(1812)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "88",
@@ -1509,7 +1578,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Siege_of_Badajoz%2C_by_Richard_Caton_Woodville_Jr.jpg/1280px-Siege_of_Badajoz%2C_by_Richard_Caton_Woodville_Jr.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Asedio_de_Badajoz_(1812)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "89",
@@ -1526,7 +1596,8 @@
     "image": "assets/images/Sites/Vitoria.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Vitoria",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "90",
@@ -1543,7 +1614,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Battle_of_San_Marcial_%28F._Per%C3%A9z%2C_c._1844%29.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_San_Marcial",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "91",
@@ -1560,7 +1632,8 @@
     "image": "assets/images/Sites/Toulouse.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Toulouse_(1814)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "92",
@@ -1577,7 +1650,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/First_battle_of_El_Bruch_%28Jos%C3%A9_Coromina_Faralt%29.png/960px-First_battle_of_El_Bruch_%28Jos%C3%A9_Coromina_Faralt%29.png",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bruc",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "93",
@@ -1594,7 +1668,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/6-de-junio-1808.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Resistencia_de_Valdepe%C3%B1as",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "94",
@@ -1697,7 +1772,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Batalla_de_Bailen.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Bail%C3%A9n",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "100",
@@ -1714,7 +1790,8 @@
     "image": "assets/images/Sites/Espinosa.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Espinosa_de_los_Monteros",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "101",
@@ -1731,7 +1808,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Campo_batalla224.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Tudela",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "102",
@@ -1750,7 +1828,8 @@
     "youtube_link": "https://youtu.be/FvyubyEzq-w?si=sYa3Ba7slK2jQAfo",
     "more_info_link": "https://www.batalladetrafalgar.com/2009/05/el-fuerte-frances-de-somosierra.html",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "103",
@@ -1767,7 +1846,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Zaragoza_-_Primer_Sitio.jpg/1280px-Zaragoza_-_Primer_Sitio.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Zaragoza",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "104",
@@ -1784,7 +1864,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Zaragoza_-_Segundo_Sitio.jpg/1280px-Zaragoza_-_Segundo_Sitio.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Zaragoza",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "105",
@@ -1801,7 +1882,8 @@
     "image": "https://www.ign.es/web/BibliotecaIGN/Miniatura/t0026350.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Medell%C3%ADn_(1809)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "106",
@@ -1818,7 +1900,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Batalla_de_Talavera%2C_1809.jpg/1280px-Batalla_de_Talavera%2C_1809.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Talavera",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "107",
@@ -1835,7 +1918,8 @@
     "image": "https://www.ign.es/web/BibliotecaIGN/Miniatura/t0035375.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Almonacid",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "108",
@@ -1852,7 +1936,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg/1280px-Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Almonacid",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "109",
@@ -1869,7 +1954,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Escena_de_la_Guerra_del_Franc%C3%A8s.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Medina_de_Rioseco",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "110",
@@ -1886,7 +1972,8 @@
     "image": "https://voluntariosdeleon.com/wp-content/uploads/2023/08/Bicentenario-toma-rastrillar-de-Laredo-2014-1-1-scaled.jpg",
     "more_info_link": "https://voluntariosdeleon.com/toma-del-fuerte-del-rastrillar-de-laredo-21-de-febrero-de-1814/",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "111",
@@ -1904,7 +1991,8 @@
     "more_info_link": "https://voluntariosdeleon.com/combate-de-turienzo-de-los-caballeros-2-de-enero-de-1809/",
     "youtube_link": "https://youtu.be/a8Gpx0TfXi8?si=xO8gLeCk1zTkGDdc",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "112",
@@ -2003,7 +2091,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Fuentes_de_O%C3%B1oro_-_mapa_2.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Fuentes_de_O%C3%B1oro",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "118",
@@ -2020,7 +2109,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Battle_of_Roli%C3%A7a_map.jpg",
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Batalla_de_Roli%C3%A7a",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "119",
@@ -2037,7 +2127,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Battle_of_Vimieiro.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "120",
@@ -2071,7 +2162,8 @@
     "image": "/assets/images/Sites/Oporto.webp",
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Segona_Batalla_de_Porto",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "122",
@@ -2088,7 +2180,8 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Garcia_Hernandez.svg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Garc%C3%ADa_Hern%C3%A1ndez",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "123",
@@ -2460,7 +2553,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Caldiero_(1796)",
     "youtube_link": "https://youtu.be/Vtt6-uYwt2Q?si=z9nMONzViun0STYx",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "145",
@@ -2544,7 +2638,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Aspern-Essling",
     "youtube_link": "https://www.youtube.com/watch?v=2qMYCpyy1LU",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "150",
@@ -2561,7 +2656,8 @@
     "image": "assets/images/Sites/Wagram.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wagram",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "151",
@@ -2632,7 +2728,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Trafalgar_Square",
     "youtube_link": "https://www.youtube.com/watch?v=laI-LocEGvM",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "155",
@@ -2650,7 +2747,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Leipzig",
     "youtube_link": "https://youtu.be/8oh3lUYxKqI?si=d1F3OuEdAFZfz3qx",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "156",
@@ -2759,7 +2857,8 @@
     "image": "assets/images/Sites/Quatre_Bras.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Quatre_Bras",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "162",
@@ -2842,7 +2941,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Corunna",
     "youtube_link": "https://youtu.be/xcYKSAEwD5c?si=P_hKeuHC-dRGuZTw",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "167",
@@ -2910,7 +3010,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Pyramids",
     "youtube_link": "https://youtu.be/RlrfzH3NKCE?si=MAvBOYVAelUvQTPX",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "171",
@@ -3050,7 +3151,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jena%E2%80%93Auerstedt",
     "youtube_link": "https://www.youtube.com/watch?v=bhtO3Ha0ToQ",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "179",
@@ -3119,7 +3221,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcis-sur-Aube",
     "youtube_link": "https://www.youtube.com/watch?v=PzbPnnaLwkU&pp=ygUYQmF0dGxlIG9mIEFyY2lzLXN1ci1BdWJl",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "183",
@@ -3153,7 +3256,8 @@
     "image": "assets/images/Sites/Bautzen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bautzen_(1813)",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "185",
@@ -3170,7 +3274,8 @@
     "image": "assets/images/Sites/Auerstsedt.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_d%27Auerstaedt",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "186",
@@ -3187,7 +3292,8 @@
     "tier": false,
     "image": "assets/images/Sites/Friedland.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Friedland",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commanders": []
   },
   {
     "id": "187",
@@ -3204,7 +3310,8 @@
     "tier": false,
     "image": "assets/images/Sites/Ulm.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ulm",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commanders": []
   },
   {
     "id": "188",
@@ -3216,7 +3323,7 @@
     "country": "Spain",
     "description": "The Battle of Trafalgar was fought on October 21, 1805, between the British Royal Navy and the combined fleets of the French and Spanish Navies.",
     "latitude": 36.239983,
-    "longitude": -6.187960,
+    "longitude": -6.18796,
     "tier": false,
     "image": "assets/images/Sites/Trafalgar.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar",
@@ -3237,7 +3344,8 @@
     "tier": false,
     "image": "assets/images/Sites/Eylau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eylau",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commanders": []
   },
   {
     "id": "190",
@@ -3254,7 +3362,8 @@
     "image": "assets/images/Sites/Ligny.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ligny",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "191",
@@ -3271,7 +3380,8 @@
     "image": "assets/images/Sites/Pultusk.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Pu%C5%82tusk_(1806)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "192",
@@ -3288,7 +3398,8 @@
     "image": "assets/images/Sites/Golymin.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Golymin",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "192",
@@ -3305,7 +3416,8 @@
     "image": "assets/images/Sites/Guttstadt-Deppen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Guttstadt-Deppen",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "193",
@@ -3322,7 +3434,8 @@
     "image": "assets/images/Sites/Heilsberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Heilsberg",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "194",
@@ -3339,7 +3452,8 @@
     "image": "assets/images/Sites/Danzig.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Danzig_(1807)",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "195",
@@ -3356,7 +3470,8 @@
     "image": "assets/images/Sites/Ostrolenka.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ostro%C5%82%C4%99ka_(1807)",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "196",
@@ -3373,7 +3488,8 @@
     "image": "assets/images/Sites/Znaim.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Znaim",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "197",
@@ -3390,7 +3506,8 @@
     "image": "assets/images/Sites/Walcheren.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "198",
@@ -3407,7 +3524,8 @@
     "image": "assets/images/Sites/Flushing.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": false,
+    "commanders": []
   },
   {
     "id": "199",
@@ -3425,7 +3543,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcole",
     "youtube_link": "https://youtu.be/ER2b8YEDnqU?si=_Hq8KkOJydUessgd",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "200",
@@ -3442,7 +3561,8 @@
     "image": "assets/images/Sites/Ebelsberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc"
+    "special": "arc",
+    "commanders": []
   },
   {
     "id": "201",
@@ -3453,7 +3573,7 @@
     "location": "Fredericia",
     "country": "Denmark",
     "description": "Grave of Captain Antonio Costa, member of Spaniard expedition to Denmark in 1807.",
-    "latitude": 55.563910,
+    "latitude": 55.56391,
     "longitude": 9.755823,
     "visited": false,
     "image": "assets/images/Sites/A_Costa.webp",

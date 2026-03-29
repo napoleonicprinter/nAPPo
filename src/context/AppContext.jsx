@@ -155,6 +155,7 @@ export const AppProvider = ({ children }) => {
     const [filterRadius, setFilterRadius] = useState('all');
     const [filterSearch, setFilterSearch] = useState('');
     const [filterYear, setFilterYear] = useState('all');
+    const [filterCommander, setFilterCommander] = useState('all');
 
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
@@ -222,12 +223,20 @@ export const AppProvider = ({ children }) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
         if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
+        if (filterCommander !== 'all' && (!site.commanders || !site.commanders.includes(filterCommander))) return false;
+
         // Filter by radius if user has coordinates (geo or capital city)
         if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
         }
         return true;
     });
+
+    useEffect(() => {
+        if (!(filterCategory.length === 1 && filterCategory[0] === 'Battle site')) {
+            setFilterCommander('all');
+        }
+    }, [filterCategory]);
 
     // Sync user data on change
     useEffect(() => {
@@ -425,6 +434,8 @@ export const AppProvider = ({ children }) => {
             setFilterRadius,
             filterYear,
             setFilterYear,
+            filterCommander,
+            setFilterCommander,
             currentUser,
             login,
             signup,

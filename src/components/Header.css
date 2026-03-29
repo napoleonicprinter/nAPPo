@@ -128,16 +128,75 @@
     top: calc(100% + 5px);
     left: 0;
     width: 100%;
-    max-height: 300px;
-    overflow-y: auto;
+    max-height: 350px;
     display: flex;
     flex-direction: column;
     z-index: 3001; /* High z-index to stay above Map and Header controls */
-    padding: 4px 0;
+    padding: 0;
     background: var(--bg-color); /* Solid opaque background */
     border: 1px solid var(--border-color);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-sm);
+    overflow: hidden; /* Prevent menu overflow, scrolling handled by list */
+}
+
+.select-search-wrapper {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.select-search-icon {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.select-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.select-search-clear {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.select-search-clear:hover {
+    background: var(--accent-danger);
+    color: #fff;
+}
+
+.select-options-list {
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 4px 0;
+}
+
+.no-options-found {
+    padding: 12px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-style: italic;
 }
 
 .custom-select-option {
@@ -506,13 +565,15 @@
             grid-template-columns: auto auto;
             grid-template-areas: 
                 "areas categories"
-                "year significance";
+                "year significance"
+                "commander .";
             gap: 0.5rem;
             align-items: center;
         }
         
         .filter-select[title*="Distance"] { grid-area: areas; margin-bottom: 0; }
         .desktop-year-filter { grid-area: year; width: 100%; margin-top: 0; }
+        .desktop-commander-filter { grid-area: commander; width: 100%; margin-top: 0; }
         
         .category-filters-wrapper { 
             display: contents; 

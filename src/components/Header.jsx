@@ -8,6 +8,7 @@ import EventsModal from './EventsModal';
 import FiltersModal from './FiltersModal';
 import SignificanceFilter from './SignificanceFilter';
 import YearFilter from './YearFilter';
+import CommanderFilter from './CommanderFilter';
 import './Header.css';
 
 const CATEGORY_ORDER = [
@@ -117,6 +118,7 @@ const Header = () => {
                             <SignificanceFilter />
                         </div>
                         <YearFilter className="desktop-year-filter" />
+                        <CommanderFilter className="desktop-commander-filter" />
                     </div>
                 </div>
             </div>
