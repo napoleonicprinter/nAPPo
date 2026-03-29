@@ -510,7 +510,7 @@
         top: calc(var(--header-height, 80px) + 10px);
         left: 10px;
         z-index: 1000;
-        gap: 8.5rem; /* Large enough gap for the Year filter width */
+        gap: 0.75rem; /* Balanced gap for horizontal layout */
         pointer-events: none; /* Allow clicks through the container set */
     }
 
@@ -681,7 +681,7 @@
 
     .mobile-overlay-filters {
         gap: 0.5rem; /* Tighter on small mobile */
-        flex-direction: column;
+        flex-direction: row; /* Ensure horizontal alignment even on small screens */
         top: 85px; /* Hardcoded for small screens if var fails */
     }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+// Filter for commanders specifically at battle sites
 import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
