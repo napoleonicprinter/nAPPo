@@ -121,6 +121,12 @@ const Header = () => {
                         <CommanderFilter className="desktop-commander-filter" />
                     </div>
                 </div>
+
+                {/* Mobile/Tablet Overlay Filters (Fixed to top-left of map) */}
+                <div className="mobile-overlay-filters">
+                    <YearFilter className="mobile-tag-filter" />
+                    <CommanderFilter className="mobile-tag-filter" />
+                </div>
             </div>
 
             <div className={`header-controls ${isMenuOpen ? 'mobile-open' : ''}`}>

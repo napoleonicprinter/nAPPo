@@ -411,6 +411,10 @@
     transition: all var(--transition-fast);
 }
 
+.mobile-overlay-filters {
+    display: none;
+}
+
 /* Desktop/Tablet Harmony for Filters */
 .filters-line {
     display: flex;
@@ -477,8 +481,8 @@
 
     .header-controls {
         display: none; /* Hidden by default when navigation is collapsed */
-        position: absolute;
-        top: calc(100% + 5px);
+        position: fixed;
+        top: calc(var(--header-height, 80px) + 5px);
         right: 1rem;
         left: auto;
         width: 260px;
@@ -497,6 +501,35 @@
     .header-controls.mobile-open {
         display: flex;
         animation: slideDown 0.3s ease-out;
+    }
+
+    /* Moving Year and Commander filters to the map area */
+    .mobile-overlay-filters {
+        display: flex;
+        position: fixed;
+        top: calc(var(--header-height, 80px) + 10px);
+        left: 10px;
+        z-index: 1000;
+        gap: 8.5rem; /* Large enough gap for the Year filter width */
+        pointer-events: none; /* Allow clicks through the container set */
+    }
+
+    .mobile-tag-filter {
+        pointer-events: auto; /* Re-enable for the actual tags */
+        max-width: 130px;
+    }
+
+    .mobile-tag-filter .custom-select-trigger {
+        height: 34px;
+        font-size: 0.8rem;
+        padding: 0 10px;
+        background: rgba(13, 17, 23, 0.9);
+        border: 1px solid var(--accent-primary);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .desktop-year-filter, .desktop-commander-filter {
+        display: none !important;
     }
 
     .view-toggle, .header-actions {
@@ -644,6 +677,16 @@
     .custom-select-option {
         white-space: nowrap;
         font-size: 0.8rem;
+    }
+
+    .mobile-overlay-filters {
+        gap: 0.5rem; /* Tighter on small mobile */
+        flex-direction: column;
+        top: 85px; /* Hardcoded for small screens if var fails */
+    }
+
+    .mobile-tag-filter {
+        max-width: 150px;
     }
 
     /* Push Leaflet right controls down to align with the Year filter and avoid overlay tags */
