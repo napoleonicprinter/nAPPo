@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search } from 'lucide-react';
+import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search, Smartphone } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import CustomCategorySelect from './CustomCategorySelect';
 import CustomSimpleSelect from './CustomSimpleSelect';
@@ -34,6 +34,7 @@ const Header = () => {
         currentUser, logout, deleteCurrentUser,
         newSitesDays, setNewSitesDays,
         showOnlyNew, setShowOnlyNew,
+        developerMode, setDeveloperMode,
         filterSearch, setFilterSearch,
         allSites, sites
     } = useAppContext();
@@ -228,6 +229,32 @@ const Header = () => {
                                         />
                                     </div>
                                 </div>
+                                
+                                <div className="settings-section" style={{ marginTop: '1.5rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                        <h3 style={{ margin: 0 }}>Developer Mode</h3>
+                                        <label className="switch" style={{ width: '40px', height: '20px', position: 'relative', display: 'inline-block' }}>
+                                            <input
+                                                type="checkbox"
+                                                checked={developerMode}
+                                                onChange={(e) => setDeveloperMode(e.target.checked)}
+                                                style={{ opacity: 0, width: 0, height: 0 }}
+                                            />
+                                            <span style={{
+                                                position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0,
+                                                backgroundColor: developerMode ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)',
+                                                transition: '.4s', borderRadius: '20px',
+                                                border: '1px solid rgba(255,255,255,0.1)'
+                                            }}>
+                                                <span style={{
+                                                    position: 'absolute', content: '""', height: '14px', width: '14px', left: developerMode ? '23px' : '3px', bottom: '2px',
+                                                    backgroundColor: developerMode ? '#000' : '#fff', transition: '.4s', borderRadius: '50%'
+                                                }}></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <p style={{ marginTop: '4px', fontSize: '0.8rem', opacity: 0.8 }}>Enable specialized tools for testing and previewing.</p>
+                                </div>
 
                                 {currentUser && (
                                     <div className="settings-section" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
@@ -290,6 +317,7 @@ const Header = () => {
 
                 <div className="view-toggle glass-panel">
                     <button
+                        key="view-map"
                         className={`toggle-btn ${view === 'map' ? 'active' : ''}`}
                         onClick={() => handleViewChange('map')}
                         title="Map View"
@@ -298,6 +326,7 @@ const Header = () => {
                         <span className="mobile-only-label">Map</span>
                     </button>
                     <button
+                        key="view-card"
                         className={`toggle-btn ${view === 'card' ? 'active' : ''}`}
                         onClick={() => handleViewChange('card')}
                         title="Card View"
@@ -307,7 +336,7 @@ const Header = () => {
                     </button>
 
                     {/* Search */}
-                    <div className="search-toggle-wrapper">
+                    <div key="view-search" className="search-toggle-wrapper">
                         <button
                             className={`toggle-btn ${showSearch || filterSearch ? 'active' : ''}`}
                             onClick={() => {
@@ -346,6 +375,7 @@ const Header = () => {
                     </div>
 
                     <button
+                        key="view-filters"
                         className={`toggle-btn ${showFilters ? 'active' : ''}`}
                         onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }}
                         title="Filters"
@@ -354,6 +384,7 @@ const Header = () => {
                         <span className="mobile-only-label">Filters</span>
                     </button>
                     <button
+                        key="view-events"
                         className="toggle-btn"
                         onClick={handleEventsClick}
                         title="Today in nAPPo history"
@@ -362,6 +393,7 @@ const Header = () => {
                         <span className="mobile-only-label">Events</span>
                     </button>
                     <button
+                        key="view-calendar"
                         className={`toggle-btn ${view === 'calendar' ? 'active' : ''}`}
                         onClick={() => handleViewChange('calendar')}
                         title="Shows Calendar"
@@ -370,6 +402,7 @@ const Header = () => {
                         <span className="mobile-only-label">Shows</span>
                     </button>
                     <button
+                        key="view-shopping"
                         className={`toggle-btn ${view === 'shopping' ? 'active' : ''}`}
                         onClick={() => handleViewChange('shopping')}
                         title="Shopping"
@@ -377,6 +410,19 @@ const Header = () => {
                         <ShoppingCart size={20} />
                         <span className="mobile-only-label">Shopping</span>
                     </button>
+
+                    {developerMode && (
+                        <button
+                            key="view-preview"
+                            className={`toggle-btn dev-preview-btn ${view === 'preview' ? 'active' : ''}`}
+                            onClick={() => handleViewChange('preview')}
+                            title="Device Previewer"
+                            style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', marginLeft: '4px', paddingLeft: '8px' }}
+                        >
+                            <Smartphone size={20} style={{ color: 'var(--accent-primary)' }} />
+                            <span className="mobile-only-label">Preview</span>
+                        </button>
+                    )}
                 </div>
             </div>
 

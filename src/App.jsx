@@ -5,6 +5,7 @@ import MapView from './components/MapView';
 import CardView from './components/CardView';
 import CalendarView from './components/CalendarView';
 import ShoppingView from './components/ShoppingView';
+import DevicePreviewer from './components/DevicePreviewer';
 
 const MainApp = () => {
   const { view } = useAppContext();
@@ -16,6 +17,7 @@ const MainApp = () => {
         {view === 'map' ? <MapView /> : 
          view === 'calendar' ? <CalendarView /> : 
          view === 'shopping' ? <ShoppingView /> : 
+         view === 'preview' ? <DevicePreviewer /> :
          <CardView />}
       </main>
     </div>

@@ -203,6 +203,11 @@ export const AppProvider = ({ children }) => {
         return saved === 'true';
     });
 
+    const [developerMode, setDeveloperMode] = useState(() => {
+        const saved = localStorage.getItem('developerMode');
+        return saved === 'true';
+    });
+
     // Calculate distance and filter sites
     const filteredSites = derivedSites.map(site => {
         if (geolocationEnabled && userCoords) {
@@ -275,6 +280,11 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('showOnlyNew', showOnlyNew.toString());
     }, [showOnlyNew]);
+
+    // Persist developerMode whenever it changes
+    useEffect(() => {
+        localStorage.setItem('developerMode', developerMode.toString());
+    }, [developerMode]);
 
     const toggleVisited = (id) => {
         if (!currentUser) {
@@ -445,6 +455,8 @@ export const AppProvider = ({ children }) => {
             setNewSitesDays,
             showOnlyNew,
             setShowOnlyNew,
+            developerMode,
+            setDeveloperMode,
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData
         }}>
