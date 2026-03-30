@@ -773,5 +773,13 @@
         "location": "Ebelsberg, Austria",
         "description": "A bloody French assault to take a key bridge over the Traun River, clearing the way to Vienna.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg"
+    },
+    {
+        "id": 89,
+        "title": "Battle of Paris",
+        "date": "1814-03-30",
+        "location": "Paris, France",
+        "description": "Allied forces  including Prussian, Russian, and Austrian troops, marched into Paris, effectively ending French domination in Europe.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Paris_(1814)"
     }
 ]

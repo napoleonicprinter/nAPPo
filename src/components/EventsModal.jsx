@@ -1,9 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays } from 'lucide-react';
-import eventsData from '../data/events.json';
+// import eventsData from '../data/events.json';
 import HistoryCalendarModal from './HistoryCalendarModal';
 import './CardView.css';
+// LINEAS AGREGADAS ANDROID START
+// jsx
+import React, { useState, useEffect } from 'react';
+// URL Real de tu GitHub para Eventos
+const GITHUB_EVENTS_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data/events.json';
+// LINEAS AGREGADAS ANDROID END
 
 const EventsModal = ({ onClose }) => {
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -185,4 +191,46 @@ const EventsModal = ({ onClose }) => {
     );
 };
 
+// LINEAS AGREGADAS ANDROID START
+// const EventsModal = () => {
+const [events, setEvents] = useState([]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+    // Esta función descarga los datos de GitHub en tiempo real
+    fetch(GITHUB_EVENTS_URL)
+        .then(response => {
+            if (!response.ok) throw new Error('Error al conectar con GitHub');
+            return response.json();
+        })
+        .then(data => {
+            setEvents(data);
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error("Error cargando eventos:", error);
+            setLoading(false);
+        });
+}, []);
+
+if (loading) return <div style={{ padding: '20px' }}>Cargando eventos actualizados...</div>;
+
+return (
+    <div className="events-container">
+        {events.length === 0 ? (
+            <p>No hay eventos disponibles actualmente.</p>
+        ) : (
+            events.map((event, index) => (
+                <div key={index} className="event-card" style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
+                    <h3>{event.title}</h3>
+                    <p>{event.description}</p>
+                    {/* Asegúrate de que los nombres (name, description) coincidan con tu JSON */}
+                </div>
+            ))
+        )}
+    </div>
+);
+// };
+// LINEAS AGREGADAS ANDROID END
+// DUPLICADA export default EventsModal;
 export default EventsModal;
