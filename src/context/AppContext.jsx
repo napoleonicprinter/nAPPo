@@ -220,6 +220,11 @@ export const AppProvider = ({ children }) => {
         return saved === 'true';
     });
 
+    // Map style: 'dark' (night), 'light' (day), 'satellite'
+    const [mapStyle, setMapStyle] = useState(() => {
+        return localStorage.getItem('mapStyle') || 'dark';
+    });
+
     // Calculate distance and filter sites
     const filteredSites = derivedSites.map(site => {
         if (geolocationEnabled && userCoords) {
@@ -300,6 +305,11 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('developerMode', developerMode.toString());
     }, [developerMode]);
+
+    // Persist mapStyle whenever it changes
+    useEffect(() => {
+        localStorage.setItem('mapStyle', mapStyle);
+    }, [mapStyle]);
 
     const toggleVisited = (id) => {
         if (!currentUser) {
@@ -472,6 +482,8 @@ export const AppProvider = ({ children }) => {
             setShowOnlyNew,
             developerMode,
             setDeveloperMode,
+            mapStyle,
+            setMapStyle,
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData,
             eventsData: eventsBaseData

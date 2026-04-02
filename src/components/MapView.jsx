@@ -17,6 +17,31 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
+// ─── Map Tile Layers ─────────────────────────────────────────────────────────
+const TILE_LAYERS = {
+    dark: {
+        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        label: 'Night',
+        icon: '🌙',
+        next: 'light',
+    },
+    light: {
+        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        label: 'Day',
+        icon: '☀️',
+        next: 'satellite',
+    },
+    satellite: {
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        attribution: '&copy; <a href="https://www.esri.com">Esri</a>, Maxar, Earthstar Geographics',
+        label: 'Satellite',
+        icon: '🛰️',
+        next: 'dark',
+    },
+};
+
 // Map categories to dynamic colors
 const getCategoryColor = (category) => {
     switch (category) {
@@ -182,6 +207,52 @@ const GeolocationControl = () => {
     return null;
 };
 
+// ─── Map Style Toggle Control (Day / Night / Satellite) ───────────────────────
+const MapStyleControl = () => {
+    const { mapStyle, setMapStyle } = useAppContext();
+    const map = useMap();
+
+    useEffect(() => {
+        if (!map) return;
+
+        const layer = TILE_LAYERS[mapStyle];
+
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        container.style.cssText = [
+            'background-color: white',
+            'width: 34px',
+            'height: 34px',
+            'cursor: pointer',
+            'display: flex',
+            'align-items: center',
+            'justify-content: center',
+            'font-size: 16px',
+            'line-height: 1',
+            'transition: background-color 0.2s',
+            'user-select: none',
+        ].join(';');
+        container.title = `Map style: ${layer.label} — click to switch to ${TILE_LAYERS[layer.next].label}`;
+        container.innerHTML = layer.icon;
+
+        container.onmouseover = () => { container.style.backgroundColor = '#f4f4f4'; };
+        container.onmouseout  = () => { container.style.backgroundColor = 'white'; };
+
+        container.onclick = function (e) {
+            L.DomEvent.stopPropagation(e);
+            e.preventDefault();
+            setMapStyle(layer.next);
+        };
+
+        const control = L.control({ position: 'topright' });
+        control.onAdd = () => container;
+        control.addTo(map);
+
+        return () => { control.remove(); };
+    }, [map, mapStyle, setMapStyle]);
+
+    return null;
+};
+
 const CenterControl = () => {
     const { userCoords } = useAppContext();
     const map = useMap();
@@ -243,7 +314,8 @@ const MapView = () => {
         sites, allSites, toggleVisited, userCoords,
         filterCategory, setFilterCategory,
         filterRadius, setFilterRadius,
-        geolocationEnabled
+        geolocationEnabled,
+        mapStyle,
     } = useAppContext();
     const [selectedSite, setSelectedSite] = useState(null);
     const [navigatingSite, setNavigatingSite] = useState(null);
@@ -275,11 +347,13 @@ const MapView = () => {
                 <RemoveDefaultZoom />
                 <ZoomControl position="topright" />
                 <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                    key={mapStyle}
+                    attribution={TILE_LAYERS[mapStyle].attribution}
+                    url={TILE_LAYERS[mapStyle].url}
                 />
 
                 <LocationMarker />
+                <MapStyleControl />
                 <GeolocationControl />
                 <CenterControl />
                 <ClusteringController setMaxClusterRadius={setMaxClusterRadius} />

@@ -821,5 +821,13 @@
         "location": "London, England",
         "description": "England declares an embargo against France and its allies, including Denmark-Norway.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Orders_in_Council_(1807)"
+    },
+    {
+        "id": 95,
+        "title": "Napoleon's first abdication",
+        "date": "1814-04-04",
+        "location": "Fontainebleau, France",
+        "description": "Napoleon abdicates the French throne in favor of his son, who is not accepted by the Allies occupying Paris.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon%27s_first_abdication"
     }
 ]
