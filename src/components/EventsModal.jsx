@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays } from 'lucide-react';
-import eventsData from '../data/events.json';
+import { useAppContext } from '../context/AppContext';
 import HistoryCalendarModal from './HistoryCalendarModal';
 import './CardView.css';
 
 const EventsModal = ({ onClose }) => {
+    const { eventsData } = useAppContext();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
     const todaysEvents = useMemo(() => {
@@ -13,7 +14,7 @@ const EventsModal = ({ onClose }) => {
         const currentMonth = today.getMonth() + 1; // 1-12
         const currentDay = today.getDate(); // 1-31
 
-        return eventsData.filter(event => {
+        return (eventsData || []).filter(event => {
             if (!event.date) return false;
             const parts = event.date.split('-');
             if (parts.length >= 3) {
@@ -179,7 +180,7 @@ const EventsModal = ({ onClose }) => {
                     )}
                 </div>
             </div>
-            {isCalendarOpen && <HistoryCalendarModal onClose={() => setIsCalendarOpen(false)} />}
+            {isCalendarOpen && <HistoryCalendarModal eventsData={eventsData} onClose={() => setIsCalendarOpen(false)} />}
         </div>,
         document.body
     );

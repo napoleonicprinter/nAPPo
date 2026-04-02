@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink } from 'lucide-react';
-import eventsData from '../data/events.json';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -13,7 +12,7 @@ const YEARS = ['All years', ...Array.from({length: 1815 - 1793 + 1}, (_, i) => 1
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const HistoryCalendarModal = ({ onClose }) => {
+const HistoryCalendarModal = ({ onClose, eventsData }) => {
     const [month, setMonth] = useState(new Date().getMonth());
     const [selectedYear, setSelectedYear] = useState('All years');
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
@@ -24,7 +23,7 @@ const HistoryCalendarModal = ({ onClose }) => {
     const currentYearEvents = useMemo(() => {
         // Find all events for the currently viewed month
         const monthEvents = {};
-        eventsData.forEach(event => {
+        (eventsData || []).forEach(event => {
             if (!event.date) return;
             const parts = event.date.split('-');
             if (parts.length >= 3) {

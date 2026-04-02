@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import sitesData from '../data/sites.json';
 import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
+import eventsDataFallback from '../data/events.json';
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -89,6 +90,11 @@ export const AppProvider = ({ children }) => {
         return saved ? JSON.parse(saved) : shoppingData;
     });
 
+    const [eventsBaseData, setEventsBaseData] = useState(() => {
+        const saved = localStorage.getItem('eventsData');
+        return saved ? JSON.parse(saved) : eventsDataFallback;
+    });
+
     // Update check from GitHub
     useEffect(() => {
         const syncData = async () => {
@@ -97,10 +103,11 @@ export const AppProvider = ({ children }) => {
                 const fetchRes = await Promise.all([
                     fetch(`${GITHUB_RAW_BASE_URL}/sites.json`),
                     fetch(`${GITHUB_RAW_BASE_URL}/shows.json`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json`)
+                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/events.json`)
                 ]);
 
-                const [resSites, resShows, resShopping] = fetchRes;
+                const [resSites, resShows, resShopping, resEvents] = fetchRes;
 
                 if (resSites.ok) {
                     const data = await resSites.json();
@@ -116,6 +123,11 @@ export const AppProvider = ({ children }) => {
                     const data = await resShopping.json();
                     setShoppingBaseData(data);
                     localStorage.setItem('shoppingData', JSON.stringify(data));
+                }
+                if (resEvents.ok) {
+                    const data = await resEvents.json();
+                    setEventsBaseData(data);
+                    localStorage.setItem('eventsData', JSON.stringify(data));
                 }
 
                 console.log("Data sync with GitHub check complete.");
@@ -461,7 +473,8 @@ export const AppProvider = ({ children }) => {
             developerMode,
             setDeveloperMode,
             showsToCome: showsBaseData,
-            shoppingItems: shoppingBaseData
+            shoppingItems: shoppingBaseData,
+            eventsData: eventsBaseData
         }}>
             {children}
         </AppContext.Provider>

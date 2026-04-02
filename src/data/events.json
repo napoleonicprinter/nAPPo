@@ -789,5 +789,37 @@
         "location": "Côa River, Portugal",
         "description": "Took place on 24 July 1810, on the banks of the Côa River, in the borderlands between Portugal and Spain. It was fought between a French division under Marshal Auguste de Marmont and a British division under General Robert Craufurd.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a"
+    },
+    {
+        "id": 91,
+        "title": "Landing at Vedbæk",
+        "date": "1807-08-16",
+        "location": "Vedbæk, Denmark",
+        "description": "British troops landed at Vedbæk on August 16th 1807 and began besieging Copenhagen.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/1807_in_Denmark"
+    },
+    {
+        "id": 92,
+        "title": "Battle of Køge",
+        "date": "1807-08-29",
+        "location": "Køge, Denmark",
+        "description": "Fought on 29 August 1807 between British troops besieging Copenhagen and Danish militia raised on Sjælland.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B8ge"
+    },
+    {
+        "id": 93,
+        "title": "Battle of Classens Have",
+        "date": "1807-08-31",
+        "location": "Copenhagen, Denmark",
+        "description": "Fought on August 31st 1807 between British troops and Danish volunteers.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B8ge"
+    },
+    {
+        "id": 94,
+        "title": "Embargo against Franceis declared.",
+        "date": "1807-01-07",
+        "location": "London, England",
+        "description": "England declares an embargo against France and its allies, including Denmark-Norway.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Orders_in_Council_(1807)"
     }
 ]

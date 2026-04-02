@@ -3649,7 +3649,7 @@
     "year": "1810",
     "location": "Côa River",
     "country": "Portugal",
-    "description": "Rather than retreat and cross the river as ordered by Wellington, Craufurd chose to engage but was forced to continue its withdrawal further that night..",
+    "description": "Rather than retreat and cross the river as ordered by Wellington, Craufurd chose to engage but was forced to continue its withdrawal further that night.",
     "latitude": 40.7078,
     "longitude": -6.9190,
     "visited": false,
@@ -3661,6 +3661,81 @@
       "Michel Ney",
       "Robert Craufurd",
       "Louis H. Loison"
+    ]
+  },
+  {
+    "id": "204",
+    "name": "Church of Our Lady",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1807",
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "description": "In September 1807, the cathedral was destroyed during the bombardment of Copenhagen by a British Royal Navy fleet under Admiral James Gambier",
+    "latitude": 55.6794,
+    "longitude": 12.5723,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Copenhagen_on_fire_1807_by_CW_Eckersberg.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Church_of_Our_Lady,_Copenhagen",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": false
+  },
+  {
+    "id": "205",
+    "name": "Landing at Vedbæk",
+    "category": "Landmark",
+    "significance": "Minor",
+    "year": "1807",
+    "location": "Vedbæk",
+    "country": "Denmark",
+    "description": "British troops landed at Vedbæk on August 16th 1807 and began besieging Copenhage.",
+    "latitude": 55.859883,
+    "longitude": 12.56,
+    "visited": false,
+    "image": "https://en.wikipedia.org/wiki/1807_in_Denmark#/media/File:De_Engelskes_Landgang_i_Vedb%C3%A6k_1807.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/1807_in_Denmark",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": false
+  },
+  {
+    "id": "206",
+    "name": "Battlefield of Køge",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1807",
+    "location": "Køge",
+    "country": "Denmark",
+    "description": "Fought on 29 August 1807 between British troops besieging Copenhagen and Danish militia raised on Sjælland",
+    "latitude": 55.46,
+    "longitude": 12.177,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Kaart_over_Slaget_ved_Kj%C3%B6ge%2C_den_29de_August_1807.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B8ge",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": false,
+    "commanders": [
+      "Joachim Castenschiold",
+      "Wellington"
+    ]
+  },
+  {
+    "id": "207",
+    "name": "Battlefield of Classens Have",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1807",
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "description": "Fought on August 31st 1807 between British troops and Danish volunteers",
+    "latitude": 55.6978,
+    "longitude": 12.5889,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Classens_Have_Livjaegerudfald_31aug1807.JPG",
+    "wikipedia_link": "https://www.classens-have.dk/",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": false,
+    "commanders": [
+      "Steen Andersen Bille"
     ]
   }
 ]
