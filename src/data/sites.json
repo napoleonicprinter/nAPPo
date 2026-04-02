@@ -3618,5 +3618,27 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Antonio_Costa_(militar_espa%C3%B1ol)",
     "createDate": "2025-03-21T10:00:00Z",
     "special": false
+  },
+  {
+    "id": "202",
+    "name": "Battlefield Combat of the Côa",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1810",
+    "location": "Côa River",
+    "country": "Portugal",
+    "description": "Took place on 24 July 1810, on the banks of the Côa River, in the borderlands between Portugal and Spain. It was fought between a French division under Marshal Auguste de Marmont and a British division under General Robert Craufurd.",
+    "latitude": 40.703531,
+    "longitude": -6.931731,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Mapa_do_Combate_do_C%C3%B4a.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a",
+    "createDate": "2025-03-21T10:00:00Z",
+    "special": false,
+    "commanders": [
+      "Michel Ney",
+      "Robert Craufurd",
+      "Louis H. Loison"
+    ]
   }
 ]
