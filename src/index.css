@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
 
 :root {
-  /* Color Palette - Premium Dark Mode Inspired */
+  /* Default Dark Mode Inspired (Night Vision) */
   --bg-color: #0d1117;
   --bg-card: rgba(30, 35, 45, 0.7);
   --bg-acrylic: rgba(22, 27, 34, 0.6);
@@ -25,6 +25,23 @@
   
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-mode {
+  /* Day Light Mode */
+  --bg-color: #f6f8fa;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-acrylic: rgba(240, 246, 252, 0.7); /* Slightly bluish white */
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  
+  --accent-primary: #0969da; /* Deeper blue for better contrast on white */
+  --accent-hover: #0a4ebd;
+  
+  --border-color: rgba(31, 35, 40, 0.15);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 15px rgba(9, 105, 218, 0.1);
 }
 
 * {
@@ -59,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-header {
-  background: rgba(13, 17, 23, 0.85);
+  background: var(--bg-acrylic);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);

@@ -27,8 +27,8 @@ const TILE_LAYERS = {
         next: 'light',
     },
     light: {
-        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         label: 'Day',
         icon: '☀️',
         next: 'satellite',
@@ -47,13 +47,13 @@ const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149'; // Red
         case 'Sea Battle': return '#38bdf8'; // Light Blue
-        case 'Battle landmark': return '#d29922'; // Orange/Gold
+        case 'Battle landmark': return '#ff6092'; // Pink
         case 'Museum': return '#a371f7'; // Purple
         case 'Monument': return '#10b981'; // Emerald Green
         case 'Building': return '#ff7b72'; // Light Coral
         case 'Artwork': return '#d2a8ff'; // Light Purple
         case 'Event site': return '#fde047'; // Light Yellow
-        case 'Landmark': return '#7b5a25ff'; // Brown
+        case 'Landmark': return '#99f000'; // Neon Green
         default: return '#8b949e'; // Grey
     }
 };
@@ -73,8 +73,8 @@ const CATEGORY_ORDER = [
 // Create a custom styled HTML icon depending on visited status and category
 const createCustomIcon = (site) => {
     const bgColor = getCategoryColor(site.category);
-    // Green outer rim if visited, else white
-    const borderColor = site.visited ? '#3fb950' : '#ffffff';
+    // Green outer rim if visited, else white/grey depending on theme
+    const borderColor = site.visited ? '#3fb950' : (document.body.classList.contains('light-mode') ? '#a0a0a0' : '#ffffff');
     const borderWidth = site.visited ? '3px' : '2px';
 
     return new L.divIcon({
@@ -235,7 +235,7 @@ const MapStyleControl = () => {
         container.innerHTML = layer.icon;
 
         container.onmouseover = () => { container.style.backgroundColor = '#f4f4f4'; };
-        container.onmouseout  = () => { container.style.backgroundColor = 'white'; };
+        container.onmouseout = () => { container.style.backgroundColor = 'white'; };
 
         container.onclick = function (e) {
             L.DomEvent.stopPropagation(e);
@@ -316,6 +316,7 @@ const MapView = () => {
         filterRadius, setFilterRadius,
         geolocationEnabled,
         mapStyle,
+        theme,
     } = useAppContext();
     const [selectedSite, setSelectedSite] = useState(null);
     const [navigatingSite, setNavigatingSite] = useState(null);
@@ -432,7 +433,7 @@ const MapView = () => {
                                             )}
                                         </div>
                                     )}
-                                    <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: '#f0f6fc', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                         {site.special === 'arc' && (
                                             <img src="/assets/Arc.png" alt="Arc" style={{ height: '1.2em', width: 'auto' }} />
                                         )}

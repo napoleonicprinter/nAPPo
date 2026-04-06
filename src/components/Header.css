@@ -241,7 +241,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(13, 17, 23, 0.95);
+    background: var(--bg-acrylic);
     border: 1px solid var(--accent-primary);
     border-radius: 20px;
     padding: 4px 10px 4px 10px;
@@ -527,7 +527,7 @@
         left: auto;
         width: 260px;
         padding: 1.25rem;
-        background: rgba(13, 17, 23, 0.98);
+        background: var(--bg-acrylic);
         backdrop-filter: blur(20px);
         border: 1px solid var(--border-color);
         border-radius: 16px;
@@ -569,7 +569,7 @@
         height: 34px;
         font-size: 0.8rem;
         padding: 0 10px;
-        background: rgba(13, 17, 23, 0.9);
+        background: var(--bg-acrylic);
         border: 1px solid var(--accent-primary);
         box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }

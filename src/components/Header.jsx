@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search, Smartphone } from 'lucide-react';
+import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon, LogOut } from 'lucide-react';
+import { App } from '@capacitor/app';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import CustomCategorySelect from './CustomCategorySelect';
 import CustomSimpleSelect from './CustomSimpleSelect';
@@ -36,7 +37,9 @@ const Header = () => {
         showOnlyNew, setShowOnlyNew,
         developerMode, setDeveloperMode,
         filterSearch, setFilterSearch,
-        allSites, sites
+        allSites, sites,
+        theme, toggleTheme,
+        syncStatus, lastSyncTime
     } = useAppContext();
     const [showSettings, setShowSettings] = useState(false);
     const [showAuth, setShowAuth] = useState(false);
@@ -415,6 +418,18 @@ const Header = () => {
                         <Ticket size={20} />
                         <span className="mobile-only-label">Shows</span>
                     </button>
+
+                    <button
+                        key="theme-toggle"
+                        className="toggle-btn theme-toggle-btn"
+                        onClick={toggleTheme}
+                        title={theme === 'dark' ? 'Switch to Day Light' : 'Switch to Night Vision'}
+                        style={{ color: theme === 'dark' ? '#fde047' : '#58a6ff' }}
+                    >
+                        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                        <span className="mobile-only-label">{theme === 'dark' ? 'Day Mode' : 'Night Mode'}</span>
+                    </button>
+
                     <button
                         key="view-shopping"
                         className={`toggle-btn ${view === 'shopping' ? 'active' : ''}`}
@@ -423,6 +438,26 @@ const Header = () => {
                     >
                         <ShoppingCart size={20} />
                         <span className="mobile-only-label">Shopping</span>
+                    </button>
+
+                    <button
+                        key="exit-app"
+                        className="toggle-btn exit-app-btn"
+                        onClick={async () => {
+                            if (window.confirm("Are you sure you want to close the app?")) {
+                                try {
+                                    await App.exitApp();
+                                } catch (e) {
+                                    console.warn("Capacitor App Exit not available in this environment.");
+                                    alert("Exiting is only supported on mobile devices.");
+                                }
+                            }
+                        }}
+                        title="Close Application"
+                        style={{ color: 'var(--accent-danger)', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '8px', paddingTop: '12px' }}
+                    >
+                        <LogOut size={20} />
+                        <span className="mobile-only-label">Close App</span>
                     </button>
 
                     {developerMode && (

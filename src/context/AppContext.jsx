@@ -95,16 +95,26 @@ export const AppProvider = ({ children }) => {
         return saved ? JSON.parse(saved) : eventsDataFallback;
     });
 
+    const [syncStatus, setSyncStatus] = useState('idle'); // 'idle', 'syncing', 'success', 'error'
+    const [lastSyncTime, setLastSyncTime] = useState(() => {
+        return localStorage.getItem('lastSyncTime') || null;
+    });
+
     // Update check from GitHub
     useEffect(() => {
         const syncData = async () => {
+            setSyncStatus('syncing');
             try {
+                // Cache-busting timestamp to avoid stale GitHub/Browser caches
+                const t = new Date().getTime();
+                const fetchOpts = { cache: 'no-store', pragma: 'no-cache' };
+
                 // Fetching in parallel
                 const fetchRes = await Promise.all([
-                    fetch(`${GITHUB_RAW_BASE_URL}/sites.json`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shows.json`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/events.json`)
+                    fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts)
                 ]);
 
                 const [resSites, resShows, resShopping, resEvents] = fetchRes;
@@ -130,9 +140,14 @@ export const AppProvider = ({ children }) => {
                     localStorage.setItem('eventsData', JSON.stringify(data));
                 }
 
-                console.log("Data sync with GitHub check complete.");
+                const now = new Date().toLocaleString();
+                setLastSyncTime(now);
+                localStorage.setItem('lastSyncTime', now);
+                setSyncStatus('success');
+                console.log("Data sync with GitHub check complete. Version:", t);
             } catch (error) {
                 console.warn("Failed to sync data with GitHub. Using local/cached version.", error);
+                setSyncStatus('error');
             }
         };
         
@@ -222,8 +237,27 @@ export const AppProvider = ({ children }) => {
 
     // Map style: 'dark' (night), 'light' (day), 'satellite'
     const [mapStyle, setMapStyle] = useState(() => {
-        return localStorage.getItem('mapStyle') || 'dark';
+        const saved = localStorage.getItem('mapStyle');
+        if (saved) return saved;
+        // Default map style based on system preference
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
+
+    // Global UI Theme: 'dark' or 'light'
+    const [theme, setTheme] = useState(() => {
+        const saved = localStorage.getItem('appTheme');
+        if (saved) return saved;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    });
+
+    const toggleTheme = () => {
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+        // If current map style is 'dark' or 'light', sync it with the new theme
+        if (mapStyle === 'dark' || mapStyle === 'light') {
+            setMapStyle(newTheme);
+        }
+    };
 
     // Calculate distance and filter sites
     const filteredSites = derivedSites.map(site => {
@@ -306,10 +340,16 @@ export const AppProvider = ({ children }) => {
         localStorage.setItem('developerMode', developerMode.toString());
     }, [developerMode]);
 
-    // Persist mapStyle whenever it changes
+    // Persist mapStyle and theme whenever they change
     useEffect(() => {
         localStorage.setItem('mapStyle', mapStyle);
     }, [mapStyle]);
+
+    useEffect(() => {
+        localStorage.setItem('appTheme', theme);
+        // Apply theme class to body
+        document.body.className = theme === 'light' ? 'light-mode' : '';
+    }, [theme]);
 
     const toggleVisited = (id) => {
         if (!currentUser) {
@@ -484,6 +524,10 @@ export const AppProvider = ({ children }) => {
             setDeveloperMode,
             mapStyle,
             setMapStyle,
+            theme,
+            toggleTheme,
+            syncStatus,
+            lastSyncTime,
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData,
             eventsData: eventsBaseData

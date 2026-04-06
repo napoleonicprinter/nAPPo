@@ -141,7 +141,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(240, 246, 252, 0.05);
+    background: var(--border-color);
     color: var(--text-secondary);
     text-decoration: none;
     transition: all var(--transition-fast);
