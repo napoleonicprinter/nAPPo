@@ -85,27 +85,24 @@ const Header = () => {
             <button 
                 className="mobile-menu-toggle glass-panel" 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                style={{
-                    background: 'transparent',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    cursor: 'pointer',
-                    padding: '8px',
-                    borderRadius: '8px',
-                }}
             >
-                {isMenuOpen ? <X size={24} color="#f0f6fc" /> : <Menu size={24} color="#f0f6fc" />}
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
             <div className="filters-group">
                 <div className="filters-line">
                     <CustomSimpleSelect
                         options={[
-                            { value: 'none', label: 'Set Location...' },
+                            { value: 'none', label: 'Location...' },
                             { value: 'geo', label: '⮞ My Location' },
                             ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))
                         ]}
                         value={locationMode}
                         onChange={handleLocationSelect}
+                        searchable={true}
+                        persistentValues={['none', 'geo']}
+                        title="Set Search Location"
+                        placeholder="Search Location..."
                     />
 
                     <div className="desktop-filters custom-desktop-layout">
@@ -430,6 +427,20 @@ const Header = () => {
                         <span className="mobile-only-label">{theme === 'dark' ? 'Day Mode' : 'Night Mode'}</span>
                     </button>
 
+                    <a
+                        key="view-patreon"
+                        href="https://www.patreon.com/c/nAPPoTrails"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="toggle-btn patreon-btn"
+                        title="Support this project at Patreon"
+                    >
+                        <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z"/>
+                        </svg>
+                        <span className="mobile-only-label">Support this project at Patreon</span>
+                    </a>
+
                     <button
                         key="view-shopping"
                         className={`toggle-btn ${view === 'shopping' ? 'active' : ''}`}
@@ -474,13 +485,6 @@ const Header = () => {
                     )}
                 </div>
             </div>
-
-            <button
-                className="mobile-menu-toggle glass-panel"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
 
             {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
             {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}

@@ -17,6 +17,7 @@ const CustomCategorySelect = ({ categories, value, onChange }) => {
             case 'Artwork': return '#d2a8ff';
             case 'Event site': return '#fde047';
             case 'Landmark': return '#99f000';
+            case 'Store': return '#ffffff';
             default: return '#8b949e';
         }
     };

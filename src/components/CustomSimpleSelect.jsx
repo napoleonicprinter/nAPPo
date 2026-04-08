@@ -11,7 +11,7 @@ import { ChevronDown, Search, X } from 'lucide-react';
  *   disabled?: boolean
  *   title?: string
  */
-const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false }) => {
+const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false, persistentValues = ['all'] }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const dropdownRef = useRef(null);
@@ -46,7 +46,10 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
     };
 
     const filteredOptions = searchable 
-        ? options.filter(opt => opt.label.toLowerCase().includes(searchQuery.toLowerCase()) || opt.value === 'all')
+        ? options.filter(opt => 
+            opt.label.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            (persistentValues && persistentValues.includes(opt.value))
+          )
         : options;
 
     return (

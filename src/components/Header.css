@@ -5,7 +5,7 @@
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 5000; /* Stays above Leaflet controls and cluster layers */
 }
 
 .header-brand {
@@ -131,7 +131,7 @@
     max-height: 350px;
     display: flex;
     flex-direction: column;
-    z-index: 3001; /* High z-index to stay above Map and Header controls */
+    z-index: 6001; /* Extremely high to guarantee foreground over all map layers */
     padding: 0;
     background: var(--bg-color); /* Solid opaque background */
     border: 1px solid var(--border-color);
@@ -331,6 +331,15 @@
     background: rgba(240, 246, 252, 0.05);
 }
 
+.patreon-btn:hover {
+    color: #FF424D !important;
+    background: rgba(255, 66, 77, 0.1) !important;
+}
+
+.patreon-btn svg {
+    color: inherit;
+}
+
 .toggle-btn.active {
     background: var(--accent-primary);
     color: #000;
@@ -359,7 +368,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    z-index: 3000; /* Reliable foreground placement */
+    z-index: 6005; /* Consistent with other dropdowns */
     background: var(--bg-color); /* Fully opaque */
     border: 1px solid var(--accent-primary); /* Themed border to make it pop */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(88, 166, 255, 0.2);
@@ -457,8 +466,8 @@
 }
 
 /* Specific widths for desktop to keep it balanced */
-.custom-select-container { min-width: 155px; }
-.filters-line > .custom-select-container:first-child { min-width: 185px; } /* Location */
+.custom-select-container { min-width: 130px; }
+.filters-line > .custom-select-container:first-child { min-width: 160px; } /* Location */
 
 /* Desktop View Adjustments (Large Screens) */
 @media (min-width: 1025px) {
@@ -478,7 +487,8 @@
         grid-template-areas:
             "brand location hamburger"
             "categories areas areas";
-        gap: 0.5rem 0.75rem;
+        gap: 0.5rem 0.5rem;
+        padding: 0.75rem 0; /* Full width content alignment */
     }
 
     .filters-group, .filters-line, .desktop-filters, .custom-desktop-layout {
@@ -488,6 +498,7 @@
     .header-brand {
         grid-area: brand;
         justify-self: start;
+        padding-left: 0.75rem; /* Internal padding for safe edges */
     }
 
     /* Target Location Select */
@@ -501,6 +512,7 @@
         grid-area: areas;
         display: block !important;
         justify-self: end;
+        padding-right: 0.75rem;
     }
 
     /* Target Categories/Significance Wrapper */
@@ -508,6 +520,7 @@
         grid-area: categories;
         display: flex !important;
         justify-self: start;
+        padding-left: 0.75rem;
     }
 
     .mobile-menu-toggle {
@@ -516,13 +529,21 @@
         align-items: center;
         justify-content: center;
         justify-self: end;
+        padding: 8px;
+        margin-right: 0.75rem;
         z-index: 1001;
+        background: var(--bg-acrylic);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        width: 40px;
+        height: 40px;
+        transition: all var(--transition-normal);
     }
 
     .header-controls {
         display: none; /* Hidden by default when navigation is collapsed */
         position: fixed;
-        top: calc(var(--header-height, 80px) + 5px);
+        top: 60px; /* Reliable fallback for mobile header height */
         right: 1rem;
         left: auto;
         width: 260px;
@@ -534,7 +555,7 @@
         flex-direction: column;
         gap: 1.25rem;
         align-items: stretch;
-        z-index: 1000;
+        z-index: 6010; /* Absolute foreground */
         box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
@@ -550,8 +571,8 @@
         top: 100%;
         margin-top: 10px;
         left: 10px;
-        z-index: 1000;
-        gap: 0.75rem; /* Balanced gap for horizontal layout */
+        z-index: 5005; /* Just above the app-header base layer */
+        gap: 1.25rem; /* Increased gap to prevent overlap between Year and Commander tags */
         pointer-events: none; /* Allow clicks through the container set */
     }
 
@@ -644,20 +665,22 @@
 /* Smartphone Specifics (<600px) */
 @media (max-width: 600px) {
     .app-header {
-        padding: 0.75rem 1rem;
-        gap: 0.5rem;
+        padding: 0.5rem 0; /* Full width on smartphone */
+        gap: 0.4rem;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); /* Prevent columns from pushing width */
+        max-width: 100vw; /* Prevent overflow without clipping dropdowns */
     }
 
-    .header-logo { height: 40px; }
-    .sites-count-badge { height: 40px; min-width: 50px; padding: 2px 6px; }
-    .count-number { font-size: 1.1rem; }
-    .count-label { font-size: 0.6rem; }
+    .header-logo { height: 36px; }
+    .sites-count-badge { height: 36px; min-width: 45px; padding: 2px 4px; }
+    .count-number { font-size: 1rem; }
+    .count-label { font-size: 0.55rem; }
 
     .filters-group {
         flex: 1;
         display: flex;
         justify-content: center;
-        margin: 0 4px;
+        margin: 0;
     }
 
     .desktop-filters {
@@ -677,7 +700,18 @@
     }
 
     .custom-select-container {
-        min-width: 145px !important;
+        min-width: 140px !important;
+    }
+    
+    /* Specific narrow width for Year filter trigger and menu */
+    .year-filter-mobile .custom-select-container {
+        min-width: 85px !important;
+        max-width: 85px;
+    }
+
+    .year-filter-mobile .custom-select-menu {
+        width: 100px !important;
+        min-width: 100px !important;
     }
 
     .custom-select-trigger {
@@ -707,6 +741,47 @@
 
     .mobile-tag-filter {
         max-width: 150px;
+    }
+
+    /* Ultra-small screen optimizations (< 360px) */
+    @media (max-width: 360px) {
+        .header-logo {
+            height: 28px;
+        }
+        .sites-count-badge {
+            height: 28px;
+            min-width: 36px;
+            padding: 1px 4px;
+        }
+        .count-number {
+            font-size: 0.85rem;
+        }
+        .count-label {
+            font-size: 0.45rem;
+        }
+        .header-brand {
+            padding-left: 0.4rem;
+            gap: 0.4rem;
+        }
+        .mobile-menu-toggle {
+            width: 34px;
+            height: 34px;
+            padding: 6px;
+            margin-right: 0.4rem;
+        }
+        .mobile-menu-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+        .category-filters-wrapper {
+            padding-left: 0.4rem;
+        }
+        .desktop-filters > .custom-select-container:first-of-type {
+            padding-right: 0.4rem;
+        }
+        .custom-select-container {
+            min-width: 120px !important;
+        }
     }
 
     /* Push Leaflet right controls down to align with the Year filter and avoid overlay tags */

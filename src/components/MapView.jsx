@@ -54,6 +54,7 @@ const getCategoryColor = (category) => {
         case 'Artwork': return '#d2a8ff'; // Light Purple
         case 'Event site': return '#fde047'; // Light Yellow
         case 'Landmark': return '#99f000'; // Neon Green
+        case 'Store': return '#ffffff'; // White
         default: return '#8b949e'; // Grey
     }
 };
@@ -67,7 +68,8 @@ const CATEGORY_ORDER = [
     'Building',
     'Artwork',
     'Event site',
-    'Landmark'
+    'Landmark',
+    'Store'
 ];
 
 // Create a custom styled HTML icon depending on visited status and category
@@ -492,7 +494,7 @@ const MapView = () => {
                     bottom: 0,
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
                     backdropFilter: 'blur(4px)',
-                    zIndex: 1000,
+                    zIndex: 7000,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
