@@ -3,6 +3,7 @@ import sitesData from '../data/sites.json';
 import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
 import eventsDataFallback from '../data/events.json';
+import newsDataFallback from '../data/news.json';
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -95,6 +96,11 @@ export const AppProvider = ({ children }) => {
         return saved ? JSON.parse(saved) : eventsDataFallback;
     });
 
+    const [newsBaseData, setNewsBaseData] = useState(() => {
+        const saved = localStorage.getItem('newsData');
+        return saved ? JSON.parse(saved) : newsDataFallback;
+    });
+
     const [syncStatus, setSyncStatus] = useState('idle'); // 'idle', 'syncing', 'success', 'error'
     const [lastSyncTime, setLastSyncTime] = useState(() => {
         return localStorage.getItem('lastSyncTime') || null;
@@ -114,10 +120,11 @@ export const AppProvider = ({ children }) => {
                     fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts)
+                    fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts)
                 ]);
 
-                const [resSites, resShows, resShopping, resEvents] = fetchRes;
+                const [resSites, resShows, resShopping, resEvents, resNews] = fetchRes;
 
                 if (resSites.ok) {
                     const data = await resSites.json();
@@ -138,6 +145,11 @@ export const AppProvider = ({ children }) => {
                     const data = await resEvents.json();
                     setEventsBaseData(data);
                     localStorage.setItem('eventsData', JSON.stringify(data));
+                }
+                if (resNews && resNews.ok) {
+                    const data = await resNews.json();
+                    setNewsBaseData(data);
+                    localStorage.setItem('newsData', JSON.stringify(data));
                 }
 
                 const now = new Date().toLocaleString();
@@ -530,7 +542,8 @@ export const AppProvider = ({ children }) => {
             lastSyncTime,
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData,
-            eventsData: eventsBaseData
+            eventsData: eventsBaseData,
+            newsData: newsBaseData
         }}>
             {children}
         </AppContext.Provider>

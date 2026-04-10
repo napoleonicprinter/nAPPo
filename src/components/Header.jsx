@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon, LogOut } from 'lucide-react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket, ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon, LogOut, Newspaper } from 'lucide-react';
 import { App } from '@capacitor/app';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import CustomCategorySelect from './CustomCategorySelect';
@@ -10,6 +10,7 @@ import FiltersModal from './FiltersModal';
 import SignificanceFilter from './SignificanceFilter';
 import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
+import NewsModal from './NewsModal';
 import './Header.css';
 
 const CATEGORY_ORDER = [
@@ -44,11 +45,26 @@ const Header = () => {
     const [showSettings, setShowSettings] = useState(false);
     const [showAuth, setShowAuth] = useState(false);
     const [showEvents, setShowEvents] = useState(false);
+    const [showNews, setShowNews] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const searchInputRef = useRef(null);
+
+    const { newsData } = useAppContext();
+    const recentNewsCount = useMemo(() => {
+        if (!newsData) return 0;
+        const now = new Date();
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(now.getDate() - 6); // Last 7 days including today means today and 6 days before.
+        sevenDaysAgo.setHours(0, 0, 0, 0);
+
+        return newsData.filter(item => {
+            const itemDate = new Date(item.date);
+            return itemDate >= sevenDaysAgo && itemDate <= now;
+        }).length;
+    }, [newsData]);
 
     // Derive and sort categories for the header filters
     const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
@@ -72,6 +88,11 @@ const Header = () => {
         setIsMenuOpen(false);
     };
 
+    const handleNewsClick = () => {
+        setShowNews(true);
+        setIsMenuOpen(false);
+    };
+
     return (
         <header className="app-header glass-header">
             <div className="header-brand">
@@ -82,8 +103,8 @@ const Header = () => {
                 </div>
             </div>
 
-            <button 
-                className="mobile-menu-toggle glass-panel" 
+            <button
+                className="mobile-menu-toggle glass-panel"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,11 +131,11 @@ const Header = () => {
                             <CustomSimpleSelect
                                 options={[
                                     { value: 'all', label: 'All Areas' },
-                                    { value: '1',   label: '1 km area' },
-                                    { value: '5',   label: '5 km area' },
-                                    { value: '10',  label: '10 km area' },
-                                    { value: '25',  label: '25 km area' },
-                                    { value: '50',  label: '50 km area' },
+                                    { value: '1', label: '1 km area' },
+                                    { value: '5', label: '5 km area' },
+                                    { value: '10', label: '10 km area' },
+                                    { value: '25', label: '25 km area' },
+                                    { value: '50', label: '50 km area' },
                                     { value: '100', label: '100 km area' },
                                     { value: '500', label: '500 km area' },
                                 ]}
@@ -205,13 +226,13 @@ const Header = () => {
                                             />
                                             <span style={{
                                                 position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0,
-                                                backgroundColor: showOnlyNew ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)',
+                                                backgroundColor: showOnlyNew ? 'var(--accent-primary)' : 'var(--bg-acrylic)',
                                                 transition: '.4s', borderRadius: '20px',
-                                                border: '1px solid rgba(255,255,255,0.1)'
+                                                border: '1px solid var(--border-color)'
                                             }}>
                                                 <span style={{
                                                     position: 'absolute', content: '""', height: '14px', width: '14px', left: showOnlyNew ? '23px' : '3px', bottom: '2px',
-                                                    backgroundColor: showOnlyNew ? '#000' : '#fff', transition: '.4s', borderRadius: '50%'
+                                                    backgroundColor: showOnlyNew ? '#000' : 'var(--text-secondary)', transition: '.4s', borderRadius: '50%'
                                                 }}></span>
                                             </span>
                                         </label>
@@ -223,7 +244,7 @@ const Header = () => {
                                     <h3 style={{ marginBottom: '8px' }}>"New" Sites Display</h3>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'space-between' }}>
                                         <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.9, lineHeight: '1.3', maxWidth: '75%' }}>
-                                            Number of days a site is labeled as NEW:
+                                            Select the number of days a site is labeled as NEW:
                                         </p>
                                         <input
                                             type="number"
@@ -243,7 +264,7 @@ const Header = () => {
                                         />
                                     </div>
                                 </div>
-                                
+
                                 <div className="settings-section" style={{ marginTop: '1.5rem' }}>
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                         <h3 style={{ margin: 0 }}>Developer Mode</h3>
@@ -256,13 +277,13 @@ const Header = () => {
                                             />
                                             <span style={{
                                                 position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0,
-                                                backgroundColor: developerMode ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)',
+                                                backgroundColor: developerMode ? 'var(--accent-primary)' : 'var(--bg-acrylic)',
                                                 transition: '.4s', borderRadius: '20px',
-                                                border: '1px solid rgba(255,255,255,0.1)'
+                                                border: '1px solid var(--border-color)'
                                             }}>
                                                 <span style={{
                                                     position: 'absolute', content: '""', height: '14px', width: '14px', left: developerMode ? '23px' : '3px', bottom: '2px',
-                                                    backgroundColor: developerMode ? '#000' : '#fff', transition: '.4s', borderRadius: '50%'
+                                                    backgroundColor: developerMode ? '#000' : 'var(--text-secondary)', transition: '.4s', borderRadius: '50%'
                                                 }}></span>
                                             </span>
                                         </label>
@@ -274,14 +295,14 @@ const Header = () => {
                                     <div className="settings-section" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
                                         <h3 style={{ color: 'var(--accent-danger)', marginBottom: '8px' }}>Account Management</h3>
                                         <p style={{ fontSize: '0.8rem', opacity: 0.8 }}>Permanently delete your account and all associated data.</p>
-                                        
+
                                         {!showDeleteConfirm ? (
-                                            <button 
-                                                className="btn-outline" 
+                                            <button
+                                                className="btn-outline"
                                                 onClick={() => setShowDeleteConfirm(true)}
-                                                style={{ 
-                                                    width: '100%', 
-                                                    borderColor: 'var(--accent-danger)', 
+                                                style={{
+                                                    width: '100%',
+                                                    borderColor: 'var(--accent-danger)',
                                                     color: 'var(--accent-danger)',
                                                     marginTop: '8px'
                                                 }}
@@ -289,10 +310,10 @@ const Header = () => {
                                                 Delete My Account
                                             </button>
                                         ) : (
-                                            <div className="delete-confirmation animate-fade-in" style={{ 
-                                                background: 'rgba(248, 81, 73, 0.1)', 
-                                                padding: '12px', 
-                                                borderRadius: '8px', 
+                                            <div className="delete-confirmation animate-fade-in" style={{
+                                                background: 'rgba(248, 81, 73, 0.1)',
+                                                padding: '12px',
+                                                borderRadius: '8px',
                                                 border: '1px solid var(--accent-danger)',
                                                 marginTop: '8px'
                                             }}>
@@ -300,8 +321,8 @@ const Header = () => {
                                                     Your user name and data will be deleted. Do you want to proceed?
                                                 </p>
                                                 <div style={{ display: 'flex', gap: '8px' }}>
-                                                    <button 
-                                                        className="btn-primary" 
+                                                    <button
+                                                        className="btn-primary"
                                                         onClick={() => {
                                                             deleteCurrentUser();
                                                             setShowSettings(false);
@@ -311,8 +332,8 @@ const Header = () => {
                                                     >
                                                         Yes, Delete
                                                     </button>
-                                                    <button 
-                                                        className="btn-outline" 
+                                                    <button
+                                                        className="btn-outline"
                                                         onClick={() => setShowDeleteConfirm(false)}
                                                         style={{ flex: 1, fontSize: '0.8rem', padding: '6px' }}
                                                     >
@@ -330,6 +351,33 @@ const Header = () => {
 
 
                 <div className="view-toggle glass-panel">
+                    <button
+                        key="view-news"
+                        className="toggle-btn"
+                        onClick={handleNewsClick}
+                        title="News"
+                    >
+                        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                            <Newspaper size={20} />
+                            {recentNewsCount > 0 && (
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-6px',
+                                    right: '-8px',
+                                    backgroundColor: 'var(--accent-danger)',
+                                    color: '#fff',
+                                    borderRadius: '50%',
+                                    fontSize: '0.65rem',
+                                    padding: '1px 5px',
+                                    fontWeight: 'bold',
+                                    lineHeight: 1
+                                }}>
+                                    {recentNewsCount}
+                                </span>
+                            )}
+                        </div>
+                        <span className="mobile-only-label">News</span>
+                    </button>
                     <button
                         key="view-map"
                         className={`toggle-btn ${view === 'map' ? 'active' : ''}`}
@@ -436,7 +484,7 @@ const Header = () => {
                         title="Support this project at Patreon"
                     >
                         <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z"/>
+                            <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z" />
                         </svg>
                         <span className="mobile-only-label">Support this project at Patreon</span>
                     </a>
@@ -488,6 +536,7 @@ const Header = () => {
 
             {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
             {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
+            {showNews && <NewsModal onClose={() => setShowNews(false)} />}
             {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
         </header>
     );
