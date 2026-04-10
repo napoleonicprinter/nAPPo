@@ -5,7 +5,8 @@
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
-    z-index: 5000; /* Stays above Leaflet controls and cluster layers */
+    z-index: 5000;
+    /* Stays above Leaflet controls and cluster layers */
 }
 
 .header-brand {
@@ -31,7 +32,8 @@
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     min-width: 80px;
-    height: 64px; /* Matches logo height */
+    height: 64px;
+    /* Matches logo height */
 }
 
 .count-number {
@@ -84,8 +86,10 @@
 }
 
 .filter-select:hover,
-.filter-select:focus {
-    border-color: var(--accent-primary);
+.filter-select:focus,
+.arc-filter-btn:hover,
+.arc-filter-btn:focus {
+    border-color: var(--accent-primary) !important;
     box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
 }
 
@@ -131,13 +135,16 @@
     max-height: 350px;
     display: flex;
     flex-direction: column;
-    z-index: 6001; /* Extremely high to guarantee foreground over all map layers */
+    z-index: 6001;
+    /* Extremely high to guarantee foreground over all map layers */
     padding: 0;
-    background: var(--bg-color); /* Solid opaque background */
+    background: var(--bg-color);
+    /* Solid opaque background */
     border: 1px solid var(--border-color);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-sm);
-    overflow: hidden; /* Prevent menu overflow, scrolling handled by list */
+    overflow: hidden;
+    /* Prevent menu overflow, scrolling handled by list */
 }
 
 .select-search-wrapper {
@@ -368,9 +375,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    z-index: 6005; /* Consistent with other dropdowns */
-    background: var(--bg-color); /* Fully opaque */
-    border: 1px solid var(--accent-primary); /* Themed border to make it pop */
+    z-index: 6005;
+    /* Consistent with other dropdowns */
+    background: var(--bg-color);
+    /* Fully opaque */
+    border: 1px solid var(--accent-primary);
+    /* Themed border to make it pop */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(88, 166, 255, 0.2);
     border-radius: var(--border-radius-sm);
 }
@@ -444,12 +454,14 @@
 }
 
 /* Base style for all header selects to ensure "armony" */
-.filter-select, 
+.filter-select,
 .custom-select-trigger {
-    height: 40px; /* Slightly taller for more presence */
+    height: 40px;
+    /* Slightly taller for more presence */
     padding: 0 16px;
     font-size: 0.9rem;
-    font-weight: 600; /* Balanced bold */
+    font-weight: 600;
+    /* Balanced bold */
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -466,14 +478,22 @@
 }
 
 /* Specific widths for desktop to keep it balanced */
-.custom-select-container { min-width: 130px; }
-.filters-line > .custom-select-container:first-child { min-width: 160px; } /* Location */
+.custom-select-container {
+    min-width: 130px;
+}
+
+.filters-line>.custom-select-container:first-child {
+    min-width: 160px;
+}
+
+/* Location */
 
 /* Desktop View Adjustments (Large Screens) */
 @media (min-width: 1025px) {
     .header-controls {
         display: flex !important;
     }
+
     .mobile-menu-toggle {
         display: none !important;
     }
@@ -488,27 +508,32 @@
             "brand location hamburger"
             "categories areas areas";
         gap: 0.5rem 0.5rem;
-        padding: 0.75rem 0; /* Full width content alignment */
+        padding: 0.75rem 0;
+        /* Full width content alignment */
     }
 
-    .filters-group, .filters-line, .desktop-filters, .custom-desktop-layout {
+    .filters-group,
+    .filters-line,
+    .desktop-filters,
+    .custom-desktop-layout {
         display: contents !important;
     }
 
     .header-brand {
         grid-area: brand;
         justify-self: start;
-        padding-left: 0.75rem; /* Internal padding for safe edges */
+        padding-left: 0.75rem;
+        /* Internal padding for safe edges */
     }
 
     /* Target Location Select */
-    .filters-line > .custom-select-container:first-of-type {
+    .filters-line>.custom-select-container:first-of-type {
         grid-area: location;
         justify-self: center;
     }
 
     /* Target Areas Select */
-    .desktop-filters > .custom-select-container:first-of-type {
+    .desktop-filters>.custom-select-container:first-of-type {
         grid-area: areas;
         display: block !important;
         justify-self: end;
@@ -541,9 +566,11 @@
     }
 
     .header-controls {
-        display: none; /* Hidden by default when navigation is collapsed */
+        display: none;
+        /* Hidden by default when navigation is collapsed */
         position: fixed;
-        top: 60px; /* Reliable fallback for mobile header height */
+        top: 60px;
+        /* Reliable fallback for mobile header height */
         right: 1rem;
         left: auto;
         width: 260px;
@@ -555,8 +582,9 @@
         flex-direction: column;
         gap: 1.25rem;
         align-items: stretch;
-        z-index: 6010; /* Absolute foreground */
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        z-index: 6010;
+        /* Absolute foreground */
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     }
 
     .header-controls.mobile-open {
@@ -571,13 +599,17 @@
         top: 100%;
         margin-top: 10px;
         left: 10px;
-        z-index: 5005; /* Just above the app-header base layer */
-        gap: 1.25rem; /* Increased gap to prevent overlap between Year and Commander tags */
-        pointer-events: none; /* Allow clicks through the container set */
+        z-index: 5005;
+        /* Just above the app-header base layer */
+        gap: 1.25rem;
+        /* Increased gap to prevent overlap between Year and Commander tags */
+        pointer-events: none;
+        /* Allow clicks through the container set */
     }
 
     .mobile-tag-filter {
-        pointer-events: auto; /* Re-enable for the actual tags */
+        pointer-events: auto;
+        /* Re-enable for the actual tags */
         max-width: 130px;
     }
 
@@ -592,14 +624,16 @@
         padding: 0 10px;
         background: var(--bg-acrylic);
         border: 1px solid var(--accent-primary);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
-    .desktop-year-filter, .desktop-commander-filter {
+    .desktop-year-filter,
+    .desktop-commander-filter {
         display: none !important;
     }
 
-    .view-toggle, .header-actions {
+    .view-toggle,
+    .header-actions {
         width: 100%;
     }
 
@@ -623,7 +657,7 @@
         align-items: center;
         gap: 0.75rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .user-profile-btn {
@@ -654,27 +688,57 @@
 
     /* Scaling for tablets to avoid overcrowding */
     @media (max-width: 900px) {
-        .filters-group { margin-left: 1rem; }
-        .filter-select[value*="Set Location"] { min-width: 140px; }
-        .filter-select:not([value*="Set Location"]) { min-width: 110px; }
-        .custom-select-container { min-width: 160px; }
-        .filters-line { gap: 0.5rem; }
+        .filters-group {
+            margin-left: 1rem;
+        }
+
+        .filter-select[value*="Set Location"] {
+            min-width: 140px;
+        }
+
+        .filter-select:not([value*="Set Location"]) {
+            min-width: 110px;
+        }
+
+        .custom-select-container {
+            min-width: 160px;
+        }
+
+        .filters-line {
+            gap: 0.5rem;
+        }
     }
 }
 
 /* Smartphone Specifics (<600px) */
 @media (max-width: 600px) {
     .app-header {
-        padding: 0.5rem 0; /* Full width on smartphone */
+        padding: 0.5rem 0;
+        /* Full width on smartphone */
         gap: 0.4rem;
-        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); /* Prevent columns from pushing width */
-        max-width: 100vw; /* Prevent overflow without clipping dropdowns */
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        /* Prevent columns from pushing width */
+        max-width: 100vw;
+        /* Prevent overflow without clipping dropdowns */
     }
 
-    .header-logo { height: 36px; }
-    .sites-count-badge { height: 36px; min-width: 45px; padding: 2px 4px; }
-    .count-number { font-size: 1rem; }
-    .count-label { font-size: 0.55rem; }
+    .header-logo {
+        height: 36px;
+    }
+
+    .sites-count-badge {
+        height: 36px;
+        min-width: 45px;
+        padding: 2px 4px;
+    }
+
+    .count-number {
+        font-size: 1rem;
+    }
+
+    .count-label {
+        font-size: 0.55rem;
+    }
 
     .filters-group {
         flex: 1;
@@ -684,11 +748,13 @@
     }
 
     .desktop-filters {
-        display: contents; /* Changed from none to show areas/categories naturally */
+        display: contents;
+        /* Changed from none to show areas/categories naturally */
     }
 
     .category-filters-wrapper {
-        gap: 6px !important; /* Move significance star exactly 6px to category */
+        gap: 6px !important;
+        /* Move significance star exactly 6px to category */
     }
 
     .filter-select {
@@ -702,7 +768,7 @@
     .custom-select-container {
         min-width: 140px !important;
     }
-    
+
     /* Specific narrow width for Year filter trigger and menu */
     .year-filter-mobile .custom-select-container {
         min-width: 85px !important;
@@ -735,8 +801,10 @@
     }
 
     .mobile-overlay-filters {
-        gap: 0.5rem; /* Tighter on small mobile */
-        flex-direction: row; /* Ensure horizontal alignment even on small screens */
+        gap: 0.5rem;
+        /* Tighter on small mobile */
+        flex-direction: row;
+        /* Ensure horizontal alignment even on small screens */
     }
 
     .mobile-tag-filter {
@@ -748,37 +816,46 @@
         .header-logo {
             height: 28px;
         }
+
         .sites-count-badge {
             height: 28px;
             min-width: 36px;
             padding: 1px 4px;
         }
+
         .count-number {
             font-size: 0.85rem;
         }
+
         .count-label {
             font-size: 0.45rem;
         }
+
         .header-brand {
             padding-left: 0.4rem;
             gap: 0.4rem;
         }
+
         .mobile-menu-toggle {
             width: 34px;
             height: 34px;
             padding: 6px;
             margin-right: 0.4rem;
         }
+
         .mobile-menu-toggle svg {
             width: 20px;
             height: 20px;
         }
+
         .category-filters-wrapper {
             padding-left: 0.4rem;
         }
-        .desktop-filters > .custom-select-container:first-of-type {
+
+        .desktop-filters>.custom-select-container:first-of-type {
             padding-right: 0.4rem;
         }
+
         .custom-select-container {
             min-width: 120px !important;
         }
@@ -795,6 +872,7 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

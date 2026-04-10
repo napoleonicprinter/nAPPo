@@ -153,11 +153,11 @@ const EventsModal = ({ onClose }) => {
                                             </h3>
                                         </div>
 
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '12px' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)', fontSize: '0.85rem', marginBottom: '12px' }}>
                                             <MapPin size={14} /> {event.location}
                                         </div>
 
-                                        <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: '#c9d1d9' }}>
+                                        <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-primary)' }}>
                                             {event.description}
                                         </p>
 

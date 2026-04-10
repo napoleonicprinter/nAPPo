@@ -7,7 +7,11 @@ const ShoppingView = () => {
     const { shoppingItems } = useAppContext();
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
-    const categories = ['All Categories', 'Figures', 'Wargaming', 'Books', 'Store', 'Reenactment', 'Collectibles'];
+    const categories = useMemo(() => {
+        if (!shoppingItems) return ['All Categories'];
+        const uniqueCategories = new Set(shoppingItems.map(item => item.category).filter(Boolean));
+        return ['All Categories', ...Array.from(uniqueCategories).sort()];
+    }, [shoppingItems]);
 
     const filteredItems = useMemo(() => {
         return shoppingItems.filter(item => {

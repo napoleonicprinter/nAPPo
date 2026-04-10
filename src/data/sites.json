@@ -277,7 +277,7 @@
     "year": "",
     "location": "National Museum, Warsaw",
     "country": "Poland",
-    "description": "Suchodolski specialised in battle scenes. This paining is a representative example of his later work. In the centre of his compositions, he laces the most famous of the battle’s participants, in this case Colonel Kozietulski, on a white horse. ",
+    "description": "Suchodolski specialised in battle scenes. This painting is a representative example of his later work. In the centre of his compositions, he laces the most famous of the battle’s participants, in this case Colonel Kozietulski, on a white horse. ",
     "latitude": 52.231667,
     "longitude": 21.024722,
     "visited": false,
@@ -293,7 +293,7 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1799",
-    "location": "Mount Tabor, modern-day Israel",
+    "location": "Mount Tabor",
     "country": "Israel",
     "description": "The Battle of Mount Tabor was fought on 16 April 1799 between French forces commanded by Napoleon Bonaparte and General Jean-Baptiste Kléber, against an Ottoman Army under Abdullah Pasha al-Azm, ruler of Damascus.",
     "latitude": 32.6125,
@@ -2622,7 +2622,7 @@
     "latitude": 55.752222,
     "longitude": 37.616944,
     "visited": false,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Map_of_the_Battle_of_Arcole%2C_November_1796.jpg/960px-Map_of_the_Battle_of_Arcole%2C_November_1796.jpg?20250516152645",
+    "image": "assets/images/Sites/Alex_Coron.webp",
     "more_info_link": "https://rusmuseumvrm.ru/data/collections/painting/17_19/verne_e._zh._o._koronaciya_aleksandra_i_15_sentyabrya_1801_goda._posle_1826_1836._zh-5973/index.php?lang=en",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -3440,24 +3440,6 @@
     "commanders": []
   },
   {
-    "id": "192",
-    "name": "Battle of Guttstadt-Deppen",
-    "category": "Battle site",
-    "significance": "Medium",
-    "year": "1807",
-    "location": "Dobre Miasto, Warmian-Masurian Voivodeship",
-    "country": "Poland",
-    "description": "A violent engagement in the Polish/Prussian region during the prelude to the final campaign of the Fourth Coalition.",
-    "latitude": 53.975,
-    "longitude": 20.367273,
-    "visited": false,
-    "image": "assets/images/Sites/Guttstadt-Deppen.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Guttstadt-Deppen",
-    "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
-    "commanders": []
-  },
-  {
     "id": "193",
     "name": "Battle of Heilsberg",
     "category": "Battle site",
@@ -3614,7 +3596,7 @@
     "latitude": 55.56391,
     "longitude": 9.755823,
     "visited": false,
-    "image": "assets/images/Sites/A_Costa.webp",
+    "image": "assets/images/Sites/Antonio_Costa.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Antonio_Costa_(militar_espa%C3%B1ol)",
     "createDate": "2025-03-21T10:00:00Z",
     "special": false
@@ -3737,5 +3719,23 @@
     "commanders": [
       "Steen Andersen Bille"
     ]
+  },
+  {
+    "id": "208",
+    "name": "Battle of Guttstadt-Deppen",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1807",
+    "location": "Dobre Miasto, Warmian-Masurian Voivodeship",
+    "country": "Poland",
+    "description": "A violent engagement in the Polish/Prussian region during the prelude to the final campaign of the Fourth Coalition.",
+    "latitude": 53.975,
+    "longitude": 20.367273,
+    "visited": false,
+    "image": "assets/images/Sites/Guttstadt-Deppen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Guttstadt-Deppen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false,
+    "commanders": []
   }
 ]

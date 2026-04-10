@@ -114,12 +114,12 @@
     align-items: center;
     gap: 6px;
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .description {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.6;
     margin-bottom: 1rem;
     flex: 1;

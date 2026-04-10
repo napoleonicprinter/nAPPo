@@ -103,7 +103,7 @@ const NewsModal = ({ onClose }) => {
                                                 })}</span>
                                             </div>
 
-                                            <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: '#c9d1d9', flex: 1 }}>
+                                            <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-primary)', flex: 1 }}>
                                                 {item.description}
                                             </p>
 

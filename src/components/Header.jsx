@@ -11,6 +11,7 @@ import SignificanceFilter from './SignificanceFilter';
 import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
 import NewsModal from './NewsModal';
+import ArcFilter from './ArcFilter';
 import './Header.css';
 
 const CATEGORY_ORDER = [
@@ -156,12 +157,14 @@ const Header = () => {
                         </div>
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
+                        <ArcFilter className="desktop-arc-filter" />
                     </div>
                 </div>
 
                 <div className="mobile-overlay-filters">
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter" />
+                    <ArcFilter className="mobile-tag-filter" />
                 </div>
             </div>
 

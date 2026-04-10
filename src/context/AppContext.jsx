@@ -195,6 +195,7 @@ export const AppProvider = ({ children }) => {
     const [filterSearch, setFilterSearch] = useState('');
     const [filterYear, setFilterYear] = useState('all');
     const [filterCommander, setFilterCommander] = useState('all');
+    const [showArcOnly, setShowArcOnly] = useState(false);
 
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
@@ -293,6 +294,8 @@ export const AppProvider = ({ children }) => {
 
         if (filterCommander !== 'all' && (!site.commanders || !site.commanders.includes(filterCommander))) return false;
 
+        if (showArcOnly && site.special !== 'arc') return false;
+
         // Filter by radius if user has coordinates (geo or capital city)
         if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
@@ -306,6 +309,7 @@ export const AppProvider = ({ children }) => {
         if (!showFilter) {
             setFilterCommander('all');
             setFilterYear('all');
+            setShowArcOnly(false);
         }
     }, [filterCategory]);
 
@@ -523,6 +527,9 @@ export const AppProvider = ({ children }) => {
             setFilterYear,
             filterCommander,
             setFilterCommander,
+            showArcOnly,
+            setShowArcOnly,
+            visitedSites,
             currentUser,
             login,
             signup,

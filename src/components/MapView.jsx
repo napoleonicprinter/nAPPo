@@ -437,11 +437,11 @@ const MapView = () => {
                                     )}
                                     <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                         {site.special === 'arc' && (
-                                            <img src="/assets/Arc.png" alt="Arc" style={{ height: '1.2em', width: 'auto' }} />
+                                            <img src="/assets/Arc.png" alt="Listed at the Arch de Triomphe - Paris" title="Listed at the Arch de Triomphe - Paris" style={{ height: '1.2em', width: 'auto' }} />
                                         )}
                                         {site.name}
                                     </h3>
-                                    <p style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: '#8b949e' }}>
+                                    <p style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
                                         {site.category} &bull; {site.year}
                                     </p>
                                     <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
@@ -467,8 +467,8 @@ const MapView = () => {
                                                 flex: 1,
                                                 padding: '8px',
                                                 background: 'rgba(240, 246, 252, 0.1)',
-                                                color: '#c9d1d9',
-                                                border: '1px solid #30363d',
+                                                color: 'var(--text-primary)',
+                                                border: '1px solid var(--border-color)',
                                                 borderRadius: '4px',
                                                 cursor: 'pointer',
                                                 fontWeight: 'bold',
