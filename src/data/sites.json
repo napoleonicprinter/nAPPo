@@ -3737,5 +3737,22 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": false,
     "commanders": []
+  },
+  {
+    "id": "209",
+    "name": "Musée de l'Empéri",
+    "category": "Museum",
+    "significance": "Major",
+    "year": "",
+    "location": "Salon-de-Provence",
+    "country": "France",
+    "description": "It is a historic castle contains faithful representations of the various army corps from the Napoleonic Wars",
+    "latitude": 43.6398,
+    "longitude": 5.0973,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Emperi.jpg",
+    "site_link": "https://www.salondeprovence.fr/bouger-et-decouvrir/culture/musee-de-lemperi/",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
   }
 ]
