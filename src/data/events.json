@@ -837,5 +837,13 @@
         "location": "Fontainebleau, France",
         "description": "Signed between Napoleon Bonaparte and the Allies, ending the War of the Sixth Coalition.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Treaty_of_Fontainebleau_(1814)"
+    },
+    {
+        "id": 97,
+        "title": "Treaty of Saint Petersburg",
+        "date": "1815-04-11",
+        "location": "Saint Petersburg, Russia",
+        "description": "England and Russia signed the Treaty of Saint Petersburg, sealing an alliance against France",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Treaty_of_Saint_Petersburg_(1805)"
     }
 ]

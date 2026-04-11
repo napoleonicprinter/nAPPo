@@ -1,30 +1,56 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 // import sitesData from '../data/sites.json';
-import showsData from '../data/shows.json';
-import shoppingData from '../data/shopping.json';
-import eventsDataFallback from '../data/events.json';
-import newsDataFallback from '../data/news.json';
+// import showsData from '../data/shows.json';
+// import shoppingData from '../data/shopping.json';
+// import eventsDataFallback from '../data/events.json';
+// import newsDataFallback from '../data/news.json';
 
 // 1. Crea un estado para guardar los sitios (empieza vacío o con los datos de fallback)
 const [sites, setSites] = useState([]);
+const [shows, setShows] = useState([]);
+const [shopping, setShopping] = useState([]);
+const [events, setEvents] = useState([]);
+const [news, setNews] = useState([]);
 
 // 2. Usa useEffect para descargar los datos de GitHub al arrancar
 useEffect(() => {
-    const fetchSites = async () => {
+    const fetchAllData = async () => {
+        const URL_BASE = "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/src/data/";
+
         try {
-            // Usa la URL "RAW" de tu archivo en GitHub
-            const response = await fetch('https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/src/data/sites.json');
-            const data = await response.json();
-            setSites(data);
+            // Ejecutamos todas las descargas al mismo tiempo
+            const [resSites, resShows, resShopping, resEvents, resNews] = await Promise.all([
+                fetch(`${URL_BASE}sites.json`),
+                fetch(`${URL_BASE}shows.json`),
+                fetch(`${URL_BASE}shopping.json`),
+                fetch(`${URL_BASE}events.json`),
+                fetch(`${URL_BASE}news.json`)
+            ]);
+
+            // Convertimos las respuestas a JSON
+            const sitesData = await resSites.json();
+            const showsData = await resShows.json();
+            const shoppingData = await resShopping.json();
+            const eventsData = await resEvents.json();
+            const newsData = await resNews.json();
+
+            // Guardamos los datos en sus respectivos estados
+            setSites(sitesData);
+            setShows(showsData);
+            setShopping(shoppingData);
+            setEvents(eventsData);
+            setNews(newsData);
+
+            console.log("¡Todos los datos de GitHub se han cargado correctamente!");
+
         } catch (error) {
-            console.error("Error cargando sitios de GitHub:", error);
-            // Opcional: Cargar un backup local si falla internet
+            console.error("Error cargando los datos de GitHub:", error);
+            // Aquí podrías cargar tus archivos locales como "fallback" si falla el internet
         }
     };
 
-    fetchSites();
+    fetchAllData();
 }, []);
-
 
 
 
