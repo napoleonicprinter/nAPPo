@@ -1,32 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-// import sitesData from '../data/sites.json';
+import sitesData from '../data/sites.json';
 import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
 import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
-
-// 1. Crea un estado para guardar los sitios (empieza vacío o con los datos de fallback)
-const [sites, setSites] = useState([]);
-
-// 2. Usa useEffect para descargar los datos de GitHub al arrancar
-useEffect(() => {
-    const fetchSites = async () => {
-        try {
-            // Usa la URL "RAW" de tu archivo en GitHub
-            const response = await fetch('https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/src/data/sites.json');
-            const data = await response.json();
-            setSites(data);
-        } catch (error) {
-            console.error("Error cargando sitios de GitHub:", error);
-            // Opcional: Cargar un backup local si falla internet
-        }
-    };
-
-    fetchSites();
-}, []);
-
-
-
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -185,7 +162,7 @@ export const AppProvider = ({ children }) => {
                 setSyncStatus('error');
             }
         };
-
+        
         // Give the app a second to settle before fetching to avoid blocking initial render
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
@@ -311,7 +288,7 @@ export const AppProvider = ({ children }) => {
         if (filterVisited === 'visited' && !site.visited) return false;
         if (filterVisited === 'unvisited' && site.visited) return false;
         if (filterSearch && !site.name.toLowerCase().includes(filterSearch.toLowerCase())) return false;
-
+        
         const siteYearStr = site.year ? String(site.year).trim() : '';
         if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
@@ -454,8 +431,8 @@ export const AppProvider = ({ children }) => {
 
         // Check for secure context (HTTPS)
         if (!window.isSecureContext) {
-            alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
-            // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
+             alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
+             // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
         }
 
         // Options to improve mobile reliability
@@ -480,7 +457,7 @@ export const AppProvider = ({ children }) => {
                 setGeolocationEnabled(false);
                 setLocationMode('none');
                 setFilterRadius('all');
-
+                
                 let message = "Failed to get location.";
                 switch (error.code) {
                     case error.PERMISSION_DENIED:
