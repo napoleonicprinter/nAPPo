@@ -256,7 +256,7 @@
     "organizer": "Constant Laurent, Mylene Palisse y Christophe Crochet",
     "description": "1-3 May 2026",
     "moreInfo": "https://www.facebook.com/events/1536122407708576/?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22group%22%7D]%7D",
-    "image": "/assets/images/Shows/WE_immersion.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/WE_immersion.jpg",
     "category": "Reenactment"
   },
   {
@@ -269,7 +269,7 @@
     "organizer": "Ligny 1815 Museum",
     "description": "30-31 May 2026",
     "moreInfo": "https://www.ligny1815.be/agenda",
-    "image": "/assets/images/Shows/Ligny_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Ligny_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -282,7 +282,7 @@
     "organizer": "TeBeDePa z.s.",
     "description": "8 August 2026",
     "moreInfo": "https://l.facebook.com/l.php?u=https%3A%2F%2Fnapoleonske-slavnosti-plzen---krimice.webnode.cz%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExMjQyRWNFTUNEYWFnZUFCQnNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4j4FZ9SFKXq1DVfpHvw8me6j3WPfdo2AoNis0BA5RYv--Yt5BUubFMV0OlEg_aem_cF9gPoPWzDUprT00SQrHhg&h=AT62Qb9O956hIeIpxjS0XtXu-XwojD-VypI-boJeWFhQjrqlebgVDQkBymPQgilp3G5kvXlGg2SCECNbYukyFeY-8pmza9nQrPXvJHpY--87MWZKjP2xhpHj43Dk_rwqF78DwLmsXkUtcb-4&__tn__=q&c[0]=AT5VVzSpxCdxU1UWIDnYhMKZzE-6CUK_GYWYubO-uvyybk7KhQOzW6aOIrjRnQ8Oq5J6hDpdgjzyqbERHbVM5qIcJ5SuetYkMYp3LvxT328CaRUddfHo1rSVIjxTu5uo",
-    "image": "/assets/images/Shows/Krimice_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Krimice_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -295,7 +295,7 @@
     "organizer": "město Chlumec, Historický spolek města Bíliny, Klub vojenské historie 1. Artillerie, Colloredo Mansfeld Teplice",
     "description": "5 September 2026",
     "moreInfo": "https://www.ligny1815.be/agenda",
-    "image": "/assets/images/Shows/Chlumec_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Chlumec_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -308,7 +308,7 @@
     "organizer": "Der Große Jane Austen Ball",
     "description": "6 June 2026",
     "moreInfo": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.jane-austen-ball.de%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExMjQyRWNFTUNEYWFnZUFCQnNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR51ip6Le0U-slHTqWKdGSBbELW8kV_-P8Yr9MuwizWvf735C2YsXkQbxohicQ_aem_eKUTVFX9MPgw1z7HZ4XUNg&h=AT7badibkfv_fppgb9gMFa39R9k7LI-UmkJnQ4PiDVf3tPcPEwrKqIjtUxZEVIBZBGwbLxsyX9V4tmEfMJG1CZ1qoMY-9-SQ4S9nxvmPXLP-Fx9mynwbmO41bFHsXENU37_RKg",
-    "image": "/assets/images/Shows/Austen_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Austen_2026.webp",
     "category": "Ball"
   },
   {
@@ -321,7 +321,7 @@
     "organizer": "Associação Napoleónica Portuguesa",
     "description": "17-19 July 2026",
     "moreInfo": "https://www.facebook.com/ANP.Portugal/",
-    "image": "/assets/images/Shows/Vimeiro_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Vimeiro_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -334,7 +334,7 @@
     "organizer": "Ehrenlegion der Artillerie",
     "description": "11-13 September 2026",
     "moreInfo": "https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.1-triptiser-schuetzenverein.de%2FEhrenlegion-der-Artillerie%2FZitadelle-Spandau%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExMjQyRWNFTUNEYWFnZUFCQnNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR6ZzLdckx_FJl9fHcIRgGnGCO-8HgCVuK64KO_k0BtLhHUmucsJdh4_2_lY_Q_aem_xbg299O60fXzavUdeAnCAg&h=AT7PeHs95aCgjiqu6otlPaL7xt0DAcp7uiFqsFWaSFGiuN75WXgFy21IvsdkedplLTNWzALEPDbYIWPbini87Mmrp-Gx3hO58KGTcIzWXwXWqvar9XULGodfoHpstZI6i99p4_fsEzgvt-dZ&__tn__=q&c[0]=AT4DtuU8ew6hgxsv2LKpldNI-dPqBBNrDr_-sIUk04pEmI2PNyK3bf9SrBfx9PBpO5jKvyG4yH4CG5Bx4xxRYxgcVjOq1hV_FHgmpNrb-aorDLvMRr9zDUcpA2HbQxw0CWcGSOdK_OBXTcAga1AcjKSaU8nuNOZfTyw",
-    "image": "/assets/images/Shows/Spandau_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Spandau_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -347,7 +347,7 @@
     "organizer": " La Charte d'Histoire Vivante",
     "description": "20-23 November 2026",
     "moreInfo": "https://allevents.in/montbeliard/200029684428834",
-    "image": "/assets/images/Shows/Belfort_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Belfort_2026.webp",
     "category": "Reenactment"
   }
 ]
