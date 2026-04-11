@@ -163,8 +163,8 @@ const Header = () => {
 
                 <div className="mobile-overlay-filters">
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
-                    <CommanderFilter className="mobile-tag-filter" />
-                    <ArcFilter className="mobile-tag-filter" />
+                    <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
+                    <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
                 </div>
             </div>
 

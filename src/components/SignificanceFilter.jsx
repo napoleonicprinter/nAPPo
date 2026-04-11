@@ -3,7 +3,7 @@ import { Star } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import './SignificanceFilter.css';
 
-const SignificanceFilter = ({ compact = false }) => {
+const SignificanceFilter = ({ compact = false, className = '' }) => {
     const { filterSignificance, setFilterSignificance } = useAppContext();
 
     const handleStarClick = (rank) => {
@@ -32,7 +32,7 @@ const SignificanceFilter = ({ compact = false }) => {
     const currentRank = getRank(filterSignificance);
 
     return (
-        <div className={`significance-filter glass-panel${compact ? ' significance-filter--compact' : ''}`}>
+        <div className={`significance-filter glass-panel${compact ? ' significance-filter--compact' : ''} ${className}`.trim()}>
             {[1, 2, 3].map((star) => (
                 <button
                     key={star}

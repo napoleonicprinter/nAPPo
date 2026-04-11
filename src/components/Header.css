@@ -86,10 +86,8 @@
 }
 
 .filter-select:hover,
-.filter-select:focus,
-.arc-filter-btn:hover,
-.arc-filter-btn:focus {
-    border-color: var(--accent-primary) !important;
+.filter-select:focus {
+    border-color: var(--accent-primary);
     box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
 }
 
@@ -353,17 +351,24 @@
     box-shadow: var(--shadow-glow);
 }
 
-.settings-btn {
+.settings-btn,
+.arc-filter-btn {
     padding: 8px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.settings-btn:hover {
+.settings-btn:hover,
+.arc-filter-btn:hover,
+.arc-filter-btn:focus {
     color: var(--text-primary);
-    background: rgba(240, 246, 252, 0.1);
+    background: rgba(240, 246, 252, 0.1) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
 }
 
 .settings-dropdown {
@@ -809,6 +814,13 @@
 
     .mobile-tag-filter {
         max-width: 150px;
+    }
+
+    /* Arc filter stays at desktop size on mobile */
+    .arc-filter-btn {
+        height: auto !important;
+        padding: 8px 12px !important;
+        font-size: inherit !important;
     }
 
     /* Ultra-small screen optimizations (< 360px) */

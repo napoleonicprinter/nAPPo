@@ -8,21 +8,16 @@ const ArcFilter = ({ className, style }) => {
 
     return (
         <button
-            className={`arc-filter-btn glass-panel ${className}`}
+            className={`arc-filter-btn glass-panel ${className ?? ''}`}
             onClick={() => setShowArcOnly(!showArcOnly)}
             title="Show only sites listed at the Arch de Triomphe - Paris"
             style={{
                 ...style,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0 12px',
-                background: showArcOnly ? 'var(--accent-primary)' : 'var(--bg-acrylic)',
-                border: showArcOnly ? '1px solid var(--accent-primary)' : '1px solid var(--border-color)',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                height: '38px',
+                ...(showArcOnly ? {
+                    background: 'var(--accent-primary)',
+                    border: '1px solid var(--accent-primary)',
+                    color: '#000',
+                } : {}),
             }}
         >
             <img
@@ -40,3 +35,4 @@ const ArcFilter = ({ className, style }) => {
 };
 
 export default ArcFilter;
+
