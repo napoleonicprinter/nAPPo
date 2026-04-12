@@ -1,9 +1,58 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import sitesData from '../data/sites.json';
-import showsData from '../data/shows.json';
-import shoppingData from '../data/shopping.json';
-import eventsDataFallback from '../data/events.json';
-import newsDataFallback from '../data/news.json';
+// import sitesData from '../data/sites.json';
+// import showsData from '../data/shows.json';
+// import shoppingData from '../data/shopping.json';
+// import eventsDataFallback from '../data/events.json';
+// import newsDataFallback from '../data/news.json';
+
+// 1. Crea un estado para guardar los sitios (empieza vacío o con los datos de fallback)
+const [sites, setSites] = useState([]);
+const [shows, setShows] = useState([]);
+const [shopping, setShopping] = useState([]);
+const [events, setEvents] = useState([]);
+const [news, setNews] = useState([]);
+
+// 2. Usa useEffect para descargar los datos de GitHub al arrancar
+useEffect(() => {
+    const fetchAllData = async () => {
+        const URL_BASE = "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/src/data/";
+
+        try {
+            // Ejecutamos todas las descargas al mismo tiempo
+            const [resSites, resShows, resShopping, resEvents, resNews] = await Promise.all([
+                fetch(`${URL_BASE}sites.json`),
+                fetch(`${URL_BASE}shows.json`),
+                fetch(`${URL_BASE}shopping.json`),
+                fetch(`${URL_BASE}events.json`),
+                fetch(`${URL_BASE}news.json`)
+            ]);
+
+            // Convertimos las respuestas a JSON
+            const sitesData = await resSites.json();
+            const showsData = await resShows.json();
+            const shoppingData = await resShopping.json();
+            const eventsData = await resEvents.json();
+            const newsData = await resNews.json();
+
+            // Guardamos los datos en sus respectivos estados
+            setSites(sitesData);
+            setShows(showsData);
+            setShopping(shoppingData);
+            setEvents(eventsData);
+            setNews(newsData);
+
+            console.log("¡Todos los datos de GitHub se han cargado correctamente!");
+
+        } catch (error) {
+            console.error("Error cargando los datos de GitHub:", error);
+            // Aquí podrías cargar tus archivos locales como "fallback" si falla el internet
+        }
+    };
+
+    fetchAllData();
+}, []);
+
+
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -162,7 +211,7 @@ export const AppProvider = ({ children }) => {
                 setSyncStatus('error');
             }
         };
-        
+
         // Give the app a second to settle before fetching to avoid blocking initial render
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
@@ -288,7 +337,7 @@ export const AppProvider = ({ children }) => {
         if (filterVisited === 'visited' && !site.visited) return false;
         if (filterVisited === 'unvisited' && site.visited) return false;
         if (filterSearch && !site.name.toLowerCase().includes(filterSearch.toLowerCase())) return false;
-        
+
         const siteYearStr = site.year ? String(site.year).trim() : '';
         if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
@@ -431,8 +480,8 @@ export const AppProvider = ({ children }) => {
 
         // Check for secure context (HTTPS)
         if (!window.isSecureContext) {
-             alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
-             // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
+            alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
+            // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
         }
 
         // Options to improve mobile reliability
@@ -457,7 +506,7 @@ export const AppProvider = ({ children }) => {
                 setGeolocationEnabled(false);
                 setLocationMode('none');
                 setFilterRadius('all');
-                
+
                 let message = "Failed to get location.";
                 switch (error.code) {
                     case error.PERMISSION_DENIED:
