@@ -1,5 +1,6 @@
 {
-  "appId": "com.nappo.trails",
+  "appId": "com.nappo.trails.app",
   "appName": "nAPPo Trails",
-  "webDir": "dist"
+  "webDir": "dist",
+  "bundledWebRuntime": false
 }

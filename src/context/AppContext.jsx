@@ -1,58 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-// import sitesData from '../data/sites.json';
-// import showsData from '../data/shows.json';
-// import shoppingData from '../data/shopping.json';
-// import eventsDataFallback from '../data/events.json';
-// import newsDataFallback from '../data/news.json';
+import sitesData from '../data/sites.json';
+import showsData from '../data/shows.json';
+import shoppingData from '../data/shopping.json';
+import eventsDataFallback from '../data/events.json';
+import newsDataFallback from '../data/news.json';
 
-// 1. Crea un estado para guardar los sitios (empieza vacío o con los datos de fallback)
-const [sites, setSites] = useState([]);
-const [shows, setShows] = useState([]);
-const [shopping, setShopping] = useState([]);
-const [events, setEvents] = useState([]);
-const [news, setNews] = useState([]);
+// Constants for remote data
+const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
 
-// 2. Usa useEffect para descargar los datos de GitHub al arrancar
-useEffect(() => {
-    const fetchAllData = async () => {
-        const URL_BASE = "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/src/data/";
+const AppContext = createContext();
 
-        try {
-            // Ejecutamos todas las descargas al mismo tiempo
-            const [resSites, resShows, resShopping, resEvents, resNews] = await Promise.all([
-                fetch(`${URL_BASE}sites.json`),
-                fetch(`${URL_BASE}shows.json`),
-                fetch(`${URL_BASE}shopping.json`),
-                fetch(`${URL_BASE}events.json`),
-                fetch(`${URL_BASE}news.json`)
-            ]);
-
-            // Convertimos las respuestas a JSON
-            const sitesData = await resSites.json();
-            const showsData = await resShows.json();
-            const shoppingData = await resShopping.json();
-            const eventsData = await resEvents.json();
-            const newsData = await resNews.json();
-
-            // Guardamos los datos en sus respectivos estados
-            setSites(sitesData);
-            setShows(showsData);
-            setShopping(shoppingData);
-            setEvents(eventsData);
-            setNews(newsData);
-
-            console.log("¡Todos los datos de GitHub se han cargado correctamente!");
-
-        } catch (error) {
-            console.error("Error cargando los datos de GitHub:", error);
-            // Aquí podrías cargar tus archivos locales como "fallback" si falla el internet
-        }
-    };
-
-    fetchAllData();
-}, []);
-
-
+export const useAppContext = () => useContext(AppContext);
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -116,41 +74,34 @@ export const EUROPEAN_CAPITALS = [
     { name: "Zagreb", lat: 45.8150, lon: 15.9819 }
 ];
 
-// Constants for remote data
-const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
-
-const AppContext = createContext();
-
-export const useAppContext = () => useContext(AppContext);
-
 export const AppProvider = ({ children }) => {
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
         const saved = localStorage.getItem('sitesData');
-        return saved ? JSON.parse(saved) : sitesData;
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : sitesData;
     });
 
     const [showsBaseData, setShowsBaseData] = useState(() => {
         const saved = localStorage.getItem('showsData');
-        return saved ? JSON.parse(saved) : showsData;
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : showsData;
     });
 
     const [shoppingBaseData, setShoppingBaseData] = useState(() => {
         const saved = localStorage.getItem('shoppingData');
-        return saved ? JSON.parse(saved) : shoppingData;
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : shoppingData;
     });
 
     const [eventsBaseData, setEventsBaseData] = useState(() => {
         const saved = localStorage.getItem('eventsData');
-        return saved ? JSON.parse(saved) : eventsDataFallback;
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : eventsDataFallback;
     });
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
         const saved = localStorage.getItem('newsData');
-        return saved ? JSON.parse(saved) : newsDataFallback;
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
 
-    const [syncStatus, setSyncStatus] = useState('idle'); // 'idle', 'syncing', 'success', 'error'
+    const [syncStatus, setSyncStatus] = useState('idle');
     const [lastSyncTime, setLastSyncTime] = useState(() => {
         return localStorage.getItem('lastSyncTime') || null;
     });
@@ -160,11 +111,9 @@ export const AppProvider = ({ children }) => {
         const syncData = async () => {
             setSyncStatus('syncing');
             try {
-                // Cache-busting timestamp to avoid stale GitHub/Browser caches
                 const t = new Date().getTime();
                 const fetchOpts = { cache: 'no-store', pragma: 'no-cache' };
 
-                // Fetching in parallel
                 const fetchRes = await Promise.all([
                     fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
@@ -205,20 +154,17 @@ export const AppProvider = ({ children }) => {
                 setLastSyncTime(now);
                 localStorage.setItem('lastSyncTime', now);
                 setSyncStatus('success');
-                console.log("Data sync with GitHub check complete. Version:", t);
             } catch (error) {
                 console.warn("Failed to sync data with GitHub. Using local/cached version.", error);
                 setSyncStatus('error');
             }
         };
 
-        // Give the app a second to settle before fetching to avoid blocking initial render
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
     }, []);
 
-    const [view, setView] = useState('map'); // 'map', 'card', 'calendar', or 'shopping'
-
+    const [view, setView] = useState('map');
     const [users, setUsers] = useState(() => {
         const saved = localStorage.getItem('appUsers');
         return saved ? JSON.parse(saved) : [];
@@ -226,13 +172,8 @@ export const AppProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(() => {
         const saved = localStorage.getItem('currentUser');
-        if (saved) {
-            try {
-                return JSON.parse(saved);
-            } catch (e) {
-                // Handle legacy non-JSON strings left over from old state
-                return null;
-            }
+        if (saved && saved !== "undefined") {
+            try { return JSON.parse(saved); } catch (e) { return null; }
         }
         return null;
     });
@@ -249,24 +190,18 @@ export const AppProvider = ({ children }) => {
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
         const saved = localStorage.getItem(`visitedSites_${currentUser.username}`);
-        if (saved) {
-            try {
-                return JSON.parse(saved);
-            } catch (e) {
-                return [];
-            }
+        if (saved && saved !== "undefined") {
+            try { return JSON.parse(saved); } catch (e) { return []; }
         }
         return [];
     });
 
-    // Time frame for showing "NEW" tags (in days)
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
-        return saved ? parseInt(saved, 10) : 30; // default 30 days
+        return saved ? parseInt(saved, 10) : 30;
     });
 
-    // Derived sites ensuring visited status and "NEW" status is fresh
-    const derivedSites = sitesBaseData.map(site => {
+    const derivedSites = (sitesBaseData || []).map(site => {
         const isNew = (() => {
             if (!site.createDate || !newSitesDays) return false;
             const createDate = new Date(site.createDate);
@@ -285,7 +220,7 @@ export const AppProvider = ({ children }) => {
 
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
-    const [locationMode, setLocationMode] = useState('none'); // 'none', 'geo', or capital name
+    const [locationMode, setLocationMode] = useState('none');
 
     const [showOnlyNew, setShowOnlyNew] = useState(() => {
         const saved = localStorage.getItem('showOnlyNew');
@@ -297,15 +232,12 @@ export const AppProvider = ({ children }) => {
         return saved === 'true';
     });
 
-    // Map style: 'dark' (night), 'light' (day), 'satellite'
     const [mapStyle, setMapStyle] = useState(() => {
         const saved = localStorage.getItem('mapStyle');
         if (saved) return saved;
-        // Default map style based on system preference
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
 
-    // Global UI Theme: 'dark' or 'light'
     const [theme, setTheme] = useState(() => {
         const saved = localStorage.getItem('appTheme');
         if (saved) return saved;
@@ -315,13 +247,11 @@ export const AppProvider = ({ children }) => {
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
-        // If current map style is 'dark' or 'light', sync it with the new theme
         if (mapStyle === 'dark' || mapStyle === 'light') {
             setMapStyle(newTheme);
         }
     };
 
-    // Calculate distance and filter sites
     const filteredSites = derivedSites.map(site => {
         if (geolocationEnabled && userCoords) {
             return {
@@ -345,7 +275,6 @@ export const AppProvider = ({ children }) => {
 
         if (showArcOnly && site.special !== 'arc') return false;
 
-        // Filter by radius if user has coordinates (geo or capital city)
         if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
         }
@@ -362,57 +291,43 @@ export const AppProvider = ({ children }) => {
         }
     }, [filterCategory]);
 
-    // Sync user data on change
     useEffect(() => {
         if (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            const saved = localStorage.getItem(`visitedSites_${currentUser.username}`);
-            if (saved) {
-                try { setVisitedSites(JSON.parse(saved)); } catch (e) { setVisitedSites([]); }
-            } else {
-                setVisitedSites([]);
-            }
         } else {
             localStorage.removeItem('currentUser');
             setVisitedSites([]);
         }
     }, [currentUser]);
 
-    // Persist visited sites whenever it changes
     useEffect(() => {
         if (currentUser) {
             localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(visitedSites));
         }
     }, [visitedSites, currentUser]);
 
-    // Sync auth users
     useEffect(() => {
         localStorage.setItem('appUsers', JSON.stringify(users));
     }, [users]);
 
-    // Persist newSitesDays whenever it changes
     useEffect(() => {
-        localStorage.setItem('newSitesDays', newSitesDays.toString());
+        localStorage.setItem('newSitesDays', (newSitesDays || 30).toString());
     }, [newSitesDays]);
 
-    // Persist showOnlyNew whenever it changes
     useEffect(() => {
         localStorage.setItem('showOnlyNew', showOnlyNew.toString());
     }, [showOnlyNew]);
 
-    // Persist developerMode whenever it changes
     useEffect(() => {
         localStorage.setItem('developerMode', developerMode.toString());
     }, [developerMode]);
 
-    // Persist mapStyle and theme whenever they change
     useEffect(() => {
         localStorage.setItem('mapStyle', mapStyle);
     }, [mapStyle]);
 
     useEffect(() => {
         localStorage.setItem('appTheme', theme);
-        // Apply theme class to body
         document.body.className = theme === 'light' ? 'light-mode' : '';
     }, [theme]);
 
@@ -441,9 +356,7 @@ export const AppProvider = ({ children }) => {
     };
 
     const signup = (username, password) => {
-        if (users.find(u => u.username === username)) {
-            return false; // Username exists
-        }
+        if (users.find(u => u.username === username)) return false;
         setUsers([...users, { username, password }]);
         setCurrentUser({ username });
         return true;
@@ -455,20 +368,9 @@ export const AppProvider = ({ children }) => {
 
     const deleteCurrentUser = () => {
         if (!currentUser) return;
-
         const usernameToDelete = currentUser.username;
-        const timestamp = new Date().toLocaleString();
-
-        // Log deletion (in console for now, and I'll also create a file-based log)
-        console.log(`[USER DELETED] Username: ${usernameToDelete}, Date: ${timestamp}`);
-
-        // Update users list
         setUsers(prev => prev.filter(u => u.username !== usernameToDelete));
-
-        // Purge user-specific data from localStorage
         localStorage.removeItem(`visitedSites_${usernameToDelete}`);
-
-        // Clear session
         setCurrentUser(null);
     };
 
@@ -477,66 +379,25 @@ export const AppProvider = ({ children }) => {
             alert("Geolocation is not supported by your browser");
             return;
         }
-
-        // Check for secure context (HTTPS)
-        if (!window.isSecureContext) {
-            alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
-            // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
-        }
-
-        // Options to improve mobile reliability
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 10000, // 10 seconds
-            maximumAge: 60000 // Allow a location up to 1 minute old
-        };
-
-        // Attempt to get location
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                setUserCoords({
-                    lat: position.coords.latitude,
-                    lon: position.coords.longitude
-                });
+                setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
                 setGeolocationEnabled(true);
                 setLocationMode('geo');
             },
             (error) => {
                 console.error("Error getting location:", error);
-                setGeolocationEnabled(false);
-                setLocationMode('none');
-                setFilterRadius('all');
-
-                let message = "Failed to get location.";
-                switch (error.code) {
-                    case error.PERMISSION_DENIED:
-                        message = "Location permission denied. Please ensure you have allowed location access in your browser and OS settings.";
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                        message = "Location information is unavailable. Your device might not have a clear view of satellites or a stable network.";
-                        break;
-                    case error.TIMEOUT:
-                        message = "The request to get your location timed out. Please try again (ideally outdoors or near a window).";
-                        break;
-                    default:
-                        message = "An unknown error occurred while trying to get your location.";
-                }
-                alert(message);
+                alert("Failed to get location.");
             },
-            options
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
         );
-    };
-
-    const disableGeolocation = () => {
-        setGeolocationEnabled(false);
-        setUserCoords(null);
-        setLocationMode('none');
-        setFilterRadius('all');
     };
 
     const handleLocationSelect = (mode) => {
         if (mode === 'none') {
-            disableGeolocation();
+            setGeolocationEnabled(false);
+            setUserCoords(null);
+            setLocationMode('none');
         } else if (mode === 'geo') {
             requestGeolocation();
         } else {
@@ -553,49 +414,29 @@ export const AppProvider = ({ children }) => {
         <AppContext.Provider value={{
             sites: filteredSites,
             allSites: derivedSites,
-            view,
-            setView,
+            view, setView,
             toggleVisited,
             geolocationEnabled,
             userCoords,
-            requestGeolocation,
-            disableGeolocation,
             locationMode,
             handleLocationSelect,
-            filterSearch,
-            setFilterSearch,
-            filterCategory,
-            setFilterCategory,
-            filterSignificance,
-            setFilterSignificance,
-            filterVisited,
-            setFilterVisited,
-            filterRadius,
-            setFilterRadius,
-            filterYear,
-            setFilterYear,
-            filterCommander,
-            setFilterCommander,
-            showArcOnly,
-            setShowArcOnly,
+            filterSearch, setFilterSearch,
+            filterCategory, setFilterCategory,
+            filterSignificance, setFilterSignificance,
+            filterVisited, setFilterVisited,
+            filterRadius, setFilterRadius,
+            filterYear, setFilterYear,
+            filterCommander, setFilterCommander,
+            showArcOnly, setShowArcOnly,
             visitedSites,
             currentUser,
-            login,
-            signup,
-            logout,
-            deleteCurrentUser,
-            newSitesDays,
-            setNewSitesDays,
-            showOnlyNew,
-            setShowOnlyNew,
-            developerMode,
-            setDeveloperMode,
-            mapStyle,
-            setMapStyle,
-            theme,
-            toggleTheme,
-            syncStatus,
-            lastSyncTime,
+            login, signup, logout, deleteCurrentUser,
+            newSitesDays, setNewSitesDays,
+            showOnlyNew, setShowOnlyNew,
+            developerMode, setDeveloperMode,
+            mapStyle, setMapStyle,
+            theme, toggleTheme,
+            syncStatus, lastSyncTime,
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData,
             eventsData: eventsBaseData,

@@ -845,5 +845,13 @@
         "location": "Saint Petersburg, Russia",
         "description": "England and Russia signed the Treaty of Saint Petersburg, sealing an alliance against France",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Treaty_of_Saint_Petersburg_(1805)"
+    },
+    {
+        "id": 98,
+        "title": "Departure of the expedition to Egypt.",
+        "date": "1798-05-19",
+        "location": "Toulon, France",
+        "description": "Aboard a fleet of 55 warships and 280 transport vessels, Napoleon sailed to Egypt.",
+        "link": "https://www.napoleon-empire.org/en/battles/egyptian-campaign.php"
     }
 ]
