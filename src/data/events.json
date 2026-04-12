@@ -859,7 +859,39 @@
         "title": "Battle of Polotsk",
         "date": "1812-10-18",
         "location": "Polotsk, Belarus",
-        "description": "It tool place from October 18th to the 20th during Napoleon's invasion of Russia.in 1812 In this encounter the Russians under General Peter Wittgenstein attacked and defeated a Franco-Bavarian force under Laurent Gouvion Saint-Cyr.",
+        "description": "It tool place from October 18th to the 20th during Napoleon's invasion of Russia.In this encounter the Russians under General Peter Wittgenstein attacked and defeated a Franco-Bavarian force under Laurent Gouvion Saint-Cyr.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Polotsk"
+    },
+    {
+        "id": 100,
+        "title": "Battle of Blanc-Nez and Gris-Nez",
+        "date": "1805-07-18",
+        "location": "English Channel",
+        "description": "Fought on 18 July 1805 between a combined flotilla of the Batavian Navy and French Imperial Navy under Carel Hendrik Ver Huell and a Royal Navy fleet under Lord Keith during the War of the Third Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blanc-Nez_and_Gris-Nez"
+    },
+    {
+        "id": 101,
+        "title": "Invasion of Surinam",
+        "date": "1804-04-25",
+        "location": "Paramaribo, Suriname",
+        "description": "The invasion of Surinam, on April 25th 1804, was a British military campaign which resulted in the capture and occupation of the Dutch colony of Surinam in 1804.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Surinam_(1804)"
+    },
+    {
+        "id": 102,
+        "title": "Battle of Diamond Rock",
+        "date": "1805-05-31",
+        "location": "Diamond Rock, Martinique",
+        "description": "Took place between 31 May and 2 June 1805 during the Napoleonic Wars, when a Franco-Spanish force dispatched under Captain Julien Cosmao was able to retake Diamond Rock, on the approach to Fort-de-France, from the British forces that had occupied it over a year before.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Diamond_Rock"
+    },
+    {
+        "id": 103,
+        "title": "Battle of Cape Finisterre",
+        "date": "1805-07-22",
+        "location": "Cape Finisterre, Spain",
+        "description": "On July 22nd 1805, the British fleet under Admiral Robert Calder fought an indecisive naval battle against the combined Franco-Spanish fleet which was returning from the West Indies.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Finisterre_(1805)"
     }
 ]

@@ -3807,5 +3807,82 @@
     ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": false
+  },
+  {
+    "id": "213",
+    "name": "Battle of Blanc-Nez and Gris-Nez",
+    "category": "Sea Battle",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "English Channel",
+    "country": "France",
+    "description": "Fought on 18 July 1805 between a combined flotilla of the Batavian Navy and French Imperial Navy under Carel Hendrik Ver Huell and a Royal Navy fleet under Lord Keith during the War of the Third Coalition.",
+    "latitude": 50.942,
+    "longitude": 1.588,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Het_treffen_tussen_de_Hollandse_en_de_Britse_vloot_tijdens_de_tocht_van_de_Hollandse_flottielje_naar_Boulogne%2C_1804%2C_Martinus_Schouman%2C_1806.jpg",
+    "commanders": [
+      "Carel Hendrik Ver Huell",
+      "Lord Keith"
+    ],
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blanc-Nez_and_Gris-Nez",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
+  },
+  {
+    "id": "213",
+    "name": "Invasion of Surinam",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1804",
+    "location": "Paramaribo",
+    "country": "Suriname",
+    "description": "The invasion of Surinam, on April 25th 1804, was a British military campaign which resulted in the capture and occupation of the Dutch colony of Surinam in 1804.",
+    "latitude": 5.857,
+    "longitude": -55.15,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/AMH-8054-KB_Map_of_Surinam.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Surinam_(1804)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
+  },
+  {
+    "id": "214",
+    "name": "Battle of Diamond Rock",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Diamond Rock",
+    "country": "Martinique",
+    "description": "Took place between 31 May and 2 June 1805 during the Napoleonic Wars, when a Franco-Spanish force dispatched under Captain Julien Cosmao was able to retake Diamond Rock, on the approach to Fort-de-France, from the British forces that had occupied it over a year before.",
+    "latitude": 14.44305,
+    "longitude": -61.04,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Taking_of_the_rock_Le_Diamant%2C_near_Martinique%2C_2_June_1805_%28by_Auguste_Etienne_Fran%C3%A7ois_Mayer%29.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Diamond_Rock",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
+  },
+  {
+    "id": "215",
+    "name": "Battle of Cape Finisterre",
+    "category": "Sea Battle",
+    "significance": "Medium",
+    "year": "1805",
+    "location": "Cape Finisterre",
+    "country": "Spain",
+    "description": "On July 22nd 1805, the British fleet under Admiral Robert Calder fought an indecisive naval battle against the combined Franco-Spanish fleet which was returning from the West Indies.",
+    "latitude": 42.8941,
+    "longitude": -9.2711,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Finisterre.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Finisterre_(1805)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Robert Calder",
+      "Pierre-Charles Villeneuve",
+      "Federico Gravina"
+    ],
+    "special": false
   }
 ]
