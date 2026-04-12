@@ -3884,5 +3884,71 @@
       "Federico Gravina"
     ],
     "special": false
+  },
+  {
+    "id": "216",
+    "name": "Battle of Donauwörth",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Donauwörth",
+    "country": "Germany",
+    "description": "This was the first engagement of Napoleon's 1805 Austrian campaign. French forces under marshals Joachim Murat and Nicolas Soult beat an Austrian army corps under Kienmayer on October 7th 1805 at Donauwörth and crossed the Danube.",
+    "latitude": 48.7167,
+    "longitude": 10.7,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ulm_campaign_-_French_strategic_envelopment%2C_26_September-9_October_1805.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Donauw%C3%B6rth",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Joachim Murat",
+      "Nicolas Soult",
+      "Kienmayer"
+    ],
+    "special": false
+  },
+  {
+    "id": "217",
+    "name": "Battle of Wertingen",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Wertingen",
+    "country": "Germany",
+    "description": "On October 8th 1805, French forces led by Marshals Murat and Jean Lannes attacked a small Austrian corps commanded by Feldmarschall-Leutnant Franz Xaver von Auffenberg.",
+    "latitude": 48.55,
+    "longitude": 10.6792,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wertingen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wertingen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Joachim Murat",
+      "Jean Lannes",
+      "Franz von Auffenberg"
+    ],
+    "special": "arc"
+  },
+  {
+    "id": "218",
+    "name": "Battle of Gunzburg",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Guntzburg",
+    "country": "Germany",
+    "description": "On October 9th 1805,Marshall Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Habsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
+    "latitude": 48.45,
+    "longitude": 10.3,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gunzburg.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_G%C3%BCnzburg",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Jean-Pierre Firmin Malher",
+      "Michel Ney",
+      "Karl Mack von Lieberich"
+    ],
+    "special": "arc"
   }
 ]

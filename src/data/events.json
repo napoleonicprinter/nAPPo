@@ -893,5 +893,29 @@
         "location": "Cape Finisterre, Spain",
         "description": "On July 22nd 1805, the British fleet under Admiral Robert Calder fought an indecisive naval battle against the combined Franco-Spanish fleet which was returning from the West Indies.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Finisterre_(1805)"
+    },
+    {
+        "id": 104,
+        "title": "Battle of Donauwörth",
+        "date": "1805-10-07",
+        "location": "Donauwörth, Germany",
+        "description": "This was the first engagement of Napoleon's 1805 Austrian campaign. French forces under marshals Joachim Murat and Nicolas Soult beat an Austrian army corps under Kienmayer on October 7th 1805 at Donauwörth and crossed the Danube.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Donauw%C3%B6rth"
+    },
+    {
+        "id": 105,
+        "title": "Battle of Wertingen",
+        "date": "1805-10-08",
+        "location": "Wertingen, Germany",
+        "description": "On October 8th 1805, French forces led by Marshals Murat and Jean Lannes attacked a small Austrian corps commanded by Feldmarschall-Leutnant Franz Xaver von Auffenberg.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wertingen"
+    },
+    {
+        "id": 106,
+        "title": "Battle of Günzburg",
+        "date": "1805-10-09",
+        "location": "Günzburg, Germany",
+        "description": "On October 9th 1805, Marshall Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Habsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_G%C3%BCnzburg"
     }
 ]
