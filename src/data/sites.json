@@ -3754,5 +3754,22 @@
     "site_link": "https://www.salondeprovence.fr/bouger-et-decouvrir/culture/musee-de-lemperi/",
     "createDate": "2025-03-22T10:00:00Z",
     "special": false
+  },
+  {
+    "id": "210",
+    "name": "Museum of the Patriotic War of 1812",
+    "category": "Museum",
+    "significance": "Major",
+    "year": "",
+    "location": "Moscow",
+    "country": "Russia",
+    "description": "Opened in honor of the 200 Anniversary of the war. The exhibition consists of several thematic sections and is arranged in chronological order: from the events before the War of 1812 to foreign campaigns of Russian Army in 1813–1814.",
+    "latitude": 55.7562,
+    "longitude": 37.6185,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Former_Lenin_museum_%28Moscow%29_by_shakko_01.jpg",
+    "site_link": "https://shm.ru/",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
   }
 ]
