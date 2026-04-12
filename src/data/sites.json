@@ -3771,5 +3771,41 @@
     "site_link": "https://shm.ru/",
     "createDate": "2025-03-22T10:00:00Z",
     "special": false
+  },
+  {
+    "id": "211",
+    "name": "Marshall Davout's Birthplace",
+    "category": "Landmark",
+    "significance": "Major",
+    "year": "",
+    "location": "Annoux, Burgundy",
+    "country": "France",
+    "description": "The birthplace of Marshal Davout, one of Napoleon's most trusted commanders.",
+    "latitude": 47.628,
+    "longitude": 4.052,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Davout_bp.webp",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
+  },
+  {
+    "id": "212",
+    "name": "Second Battle of Polotsk",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1812",
+    "location": "Polotsk",
+    "country": "Belarus",
+    "description": "It tool place from October 18th to the 20th during Napoleon's invasion of Russia.In this encounter the Russians under General Peter Wittgenstein attacked and defeated a Franco-Bavarian force under Laurent Gouvion Saint-Cyr.",
+    "latitude": 55.49,
+    "longitude": 28.79,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polotsk_1812.webp",
+    "commanders": [
+      "Laurent Gouvion Saint-Cyr",
+      "Peter Wittgenstein"
+    ],
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": false
   }
 ]

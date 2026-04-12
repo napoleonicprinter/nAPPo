@@ -853,5 +853,13 @@
         "location": "Toulon, France",
         "description": "Aboard a fleet of 55 warships and 280 transport vessels, Napoleon sailed to Egypt.",
         "link": "https://www.napoleon-empire.org/en/battles/egyptian-campaign.php"
+    },
+    {
+        "id": 99,
+        "title": "Battle of Polotsk",
+        "date": "1812-10-18",
+        "location": "Polotsk, Belarus",
+        "description": "It tool place from October 18th to the 20th during Napoleon's invasion of Russia.in 1812 In this encounter the Russians under General Peter Wittgenstein attacked and defeated a Franco-Bavarian force under Laurent Gouvion Saint-Cyr.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Polotsk"
     }
 ]
