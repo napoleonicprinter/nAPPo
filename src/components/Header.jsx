@@ -154,17 +154,16 @@ const Header = () => {
                             />
 
                             <SignificanceFilter />
+                            <ArcFilter className="desktop-arc-filter" />
                         </div>
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
-                        <ArcFilter className="desktop-arc-filter" />
                     </div>
                 </div>
 
                 <div className="mobile-overlay-filters">
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
-                    <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
                 </div>
             </div>
 

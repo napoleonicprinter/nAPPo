@@ -351,9 +351,18 @@
     box-shadow: var(--shadow-glow);
 }
 
-.settings-btn,
-.arc-filter-btn {
+.settings-btn {
     padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.arc-filter-btn {
+    padding: 8px 8px; /* Narrow padding as requested */
     display: flex;
     align-items: center;
     justify-content: center;
