@@ -3346,7 +3346,7 @@
     "latitude": 48.396,
     "longitude": 9.9862,
     "tier": false,
-    "image": "assets/images/Sites/Ulm.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ulm.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ulm",
     "createDate": "2025-03-15T10:00:00Z",
     "commanders": []
@@ -3937,7 +3937,7 @@
     "year": "1805",
     "location": "Guntzburg",
     "country": "Germany",
-    "description": "On October 9th 1805,Marshall Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Habsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
+    "description": "On October 9th 1805,Marshall Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Ha  bsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
     "latitude": 48.45,
     "longitude": 10.3,
     "visited": false,
@@ -3950,5 +3950,123 @@
       "Karl Mack von Lieberich"
     ],
     "special": "arc"
+  },
+  {
+    "id": "219",
+    "name": "Battle of Haslach-Jungingen",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Ulm-Jungingen",
+    "country": "Germany",
+    "description": "Also known as the Battle of Albeck, fought on October 11th 1805 at Ulm-Jungingen north of Ulm at the Danube between French and Austrian forces, was part of the Ulm campaign.",
+    "latitude": 48.425,
+    "longitude": 9.98,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ulm_campaign_-_French_strategic_envelopment%2C_26_September-9_October_1805.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haslach-Jungingen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Pierre Dupont",
+      "Karl Mack von Lieberich"
+    ]
+  },
+  {
+    "id": "220",
+    "name": "Battle of Memmingen",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Memmingen",
+    "country": "Germany",
+    "description": "It occurred on 14 October that year and culminated in the surrender of Karl Spangen to Jean-de-Dieu Soult's 4th Army Corps.",
+    "latitude": 47.98,
+    "longitude": 10.18,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Schlacht_von_Elchingen.JPG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Memmingen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Karl Spangen"
+    ]
+  },
+  {
+    "id": "221",
+    "name": "Battle of Elchingen",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Elchingen",
+    "country": "Germany",
+    "description": "Fought on 14th October 1805, French forces under Michel Ney routed an Austrian corps led by Johann Sigismund Riesch.",
+    "latitude": 48.4566,
+    "longitude": 10.087,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Elchingen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Elchingen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc",
+    "commanders": [
+      "Michel Ney",
+      "Johann Sigismund Riesch"
+    ]
+  },
+  {
+    "id": "222",
+    "name": "Battle of Verona",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Verona",
+    "country": "Italy",
+    "description": "Fought on October 18th 1805 between the French Army of Italy under the command of André Masséna and an Austrian army led by Archduke Charles. (image:Djmaschek)",
+    "latitude": 45.46,
+    "longitude": 10.99,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Verona_Battle_Map_1805.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Verona_(1805)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "André Masséna",
+      "Archduke Charles"
+    ]
+  },
+  {
+    "id": "223",
+    "name": "Ponte di Castelvecchio",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Verona",
+    "country": "Italy",
+    "description": "In the early hours of October 18th 1805, Masséna led his storming column silently onto the Castelvecchio Bridge starting the Battle of Verona.",
+    "latitude": 45.44,
+    "longitude": 10.987,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ponte_di_Castelvecchio_%28Verona%29.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Verona_(1805)",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "224",
+    "name": "Battle of Caldiero",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1805",
+    "location": "Caldiero",
+    "country": "Italy",
+    "description": "Took place on October 30th 1805, pitting the French Armée d'Italie under Marshal André Masséna against an Austrian army under the command of Archduke Charles.",
+    "latitude": 45.42,
+    "longitude": 11.17,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Caldiero.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Caldiero_(1805)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc",
+    "commanders": [
+      "André Masséna",
+      "Archduke Charles"
+    ]
   }
 ]

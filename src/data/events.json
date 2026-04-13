@@ -917,5 +917,45 @@
         "location": "Günzburg, Germany",
         "description": "On October 9th 1805, Marshall Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Habsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_G%C3%BCnzburg"
+    },
+    {
+        "id": 107,
+        "title": "Battle of Haslach-Jungingen",
+        "date": "1805-10-11",
+        "location": "Ulm-Jungingen, Germany",
+        "description": "Also known as the Battle of Albeck, fought on October 11th 1805 at Ulm-Jungingen north of Ulm at the Danube between French and Austrian forces, was part of the Ulm campaign ",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haslach-Jungingen"
+    },
+    {
+        "id": 108,
+        "title": "Battle of Memmingen",
+        "date": "1805-10-14",
+        "location": "Memmingen, Germany",
+        "description": "It occurred on 14 October that year and culminated in the surrender of Karl Spangen to Jean-de-Dieu Soult's 4th Army Corps.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Memmingen"
+    },
+    {
+        "id": 109,
+        "title": "Battle of Elchingen",
+        "date": "1805-10-14",
+        "location": "Elchingen, Germany",
+        "description": "Fought on 14th October 1805, French forces under Michel Ney routed an Austrian corps led by Johann Sigismund Riesch.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Elchingen"
+    },
+    {
+        "id": 110,
+        "title": "Battle of Verona",
+        "date": "1805-10-18",
+        "location": "Verona, Italy",
+        "description": "Fought on October 18th 1805 between the French Army of Italy under the command of André Masséna and an Austrian army led by Archduke Charles.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Verona_(1805)"
+    },
+    {
+        "id": 111,
+        "title": "Battle of Caldiero",
+        "date": "1805-10-30",
+        "location": "Caldiero, Italy",
+        "description": "Took place on October 30th 1805, pitting the French Armée d'Italie under Marshal André Masséna against an Austrian army under the command of Archduke Charles.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Caldiero_(1805)"
     }
 ]

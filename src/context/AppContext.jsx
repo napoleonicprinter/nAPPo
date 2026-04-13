@@ -4,6 +4,7 @@ import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
 import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
+import { Geolocation } from '@capacitor/geolocation';
 
 // Constants for remote data
 const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
@@ -374,23 +375,45 @@ export const AppProvider = ({ children }) => {
         setCurrentUser(null);
     };
 
-    const requestGeolocation = () => {
-        if (!navigator.geolocation) {
-            alert("Geolocation is not supported by your browser");
-            return;
+    const requestGeolocation = async () => {
+        try {
+            // First check/request permissions via Capacitor for mobile compatibility
+            const permissions = await Geolocation.checkPermissions();
+            if (permissions.location !== 'granted') {
+                await Geolocation.requestPermissions();
+            }
+
+            const position = await Geolocation.getCurrentPosition({
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 60000
+            });
+            
+            setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
+            setGeolocationEnabled(true);
+            setLocationMode('geo');
+        } catch (error) {
+            console.warn("Capacitor Geolocation failed, trying navigator.geolocation", error);
+            
+            // Fallback to browser geolocation
+            if (!navigator.geolocation) {
+                alert("Geolocation is not supported by your device/browser");
+                return;
+            }
+            
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
+                    setGeolocationEnabled(true);
+                    setLocationMode('geo');
+                },
+                (err) => {
+                    console.error("All location methods failed:", err);
+                    alert("Failed to get location. Please ensure location services are enabled.");
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+            );
         }
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
-                setGeolocationEnabled(true);
-                setLocationMode('geo');
-            },
-            (error) => {
-                console.error("Error getting location:", error);
-                alert("Failed to get location.");
-            },
-            { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-        );
     };
 
     const handleLocationSelect = (mode) => {
