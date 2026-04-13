@@ -508,10 +508,21 @@ const Header = () => {
                         onClick={async () => {
                             if (window.confirm("Are you sure you want to close the app?")) {
                                 try {
+                                    // Primary: Capacitor App plugin
                                     await App.exitApp();
                                 } catch (e) {
-                                    console.warn("Capacitor App Exit not available in this environment.");
-                                    alert("Exiting is only supported on mobile devices.");
+                                    console.warn("Capacitor App Exit failed", e);
+                                    // Secondary: Cordova legacy fallback if applicable
+                                    if (window.navigator && window.navigator['app'] && window.navigator['app'].exitApp) {
+                                        window.navigator['app'].exitApp();
+                                    } else {
+                                        // Final fallback attempt
+                                        window.close();
+                                        // On some mobile environments, this alert helps user know it failed
+                                        setTimeout(() => {
+                                            alert("Exiting is only supported on native mobile devices.");
+                                        }, 500);
+                                    }
                                 }
                             }
                         }}

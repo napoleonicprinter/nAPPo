@@ -4044,7 +4044,7 @@
     "latitude": 45.44,
     "longitude": 10.987,
     "visited": false,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ponte_di_Castelvecchio_%28Verona%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ponte_Castelvecchio.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Verona_(1805)",
     "createDate": "2025-03-22T10:00:00Z"
   },
