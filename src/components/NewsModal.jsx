@@ -12,77 +12,33 @@ const NewsModal = ({ onClose }) => {
     }, [newsData]);
 
     return createPortal(
-        <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
-            backdropFilter: 'blur(5px)',
-            zIndex: 10002,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
-        }} className="animate-fade-in" onClick={onClose}>
-            <div
-                className="glass-panel"
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                    width: '100%',
-                    maxWidth: '800px',
-                    maxHeight: '85vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    padding: '0',
-                    position: 'relative',
-                    overflow: 'hidden'
-                }}
-            >
+        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
+            <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
-                <div style={{
-                    padding: '1.5rem',
-                    borderBottom: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    backgroundColor: 'rgba(0,0,0,0.2)'
-                }}>
-                    <div style={{
-                        background: 'var(--accent-primary)',
-                        color: '#000',
-                        padding: '10px',
-                        borderRadius: '12px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
-                        <Newspaper size={24} />
+                <div className="shopping-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                    <div className="modal-title-row">
+                        <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
+                            <Newspaper size={24} />
+                        </div>
+                        <div className="modal-title-info">
+                            <h2>Latest nAPPo Trails News</h2>
+                            <p>Discover latest nAPPO Trails updates</p>
+                        </div>
+                        <button className="modal-close-btn" onClick={onClose}>
+                            <X size={24} />
+                        </button>
                     </div>
-                    <div>
-                        <h2 style={{ margin: 0, fontSize: '1.4rem', color: 'var(--text-primary)' }}>
-                            Latest News
-                        </h2>
-                    </div>
-
-                    <button
-                        onClick={onClose}
-                        style={{ position: 'absolute', top: '15px', right: '15px', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
-                    >
-                        <X size={24} />
-                    </button>
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: '1.5rem', overflowY: 'auto' }}>
+                <div className="calendar-modal-body" style={{ padding: '2rem' }}>
                     {sortedNews.length === 0 ? (
                         <div style={{ textAlign: 'center', color: 'var(--text-secondary)', padding: '2rem 0' }}>
                             <Newspaper size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
                             <p>No news available.</p>
                         </div>
                     ) : (
-                        <div className="shows-grid" style={{ gridTemplateColumns: '1fr', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        <div className="shows-grid">
                             {sortedNews.map(item => (
                                 <div key={item.id} className="show-card glass-panel news-card">
                                     <div className="show-content">
@@ -93,7 +49,7 @@ const NewsModal = ({ onClose }) => {
                                         )}
                                         <div className="show-info" style={{ padding: '1rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                             <h3 style={{ margin: '0 0 8px 0', fontSize: '1.2rem', color: 'var(--text-primary)' }}>{item.title}</h3>
-                                            
+
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '12px' }}>
                                                 <CalendarIcon size={14} />
                                                 <span>{new Date(item.date).toLocaleDateString(undefined, {

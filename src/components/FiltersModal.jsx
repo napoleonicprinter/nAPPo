@@ -20,91 +20,64 @@ const FiltersModal = ({ onClose }) => {
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
 
     return createPortal(
-        <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
-            backdropFilter: 'blur(5px)',
-            zIndex: 10002,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
-        }} className="animate-fade-in" onClick={onClose}>
-            <div
-                className="glass-panel"
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                    width: '100%',
-                    maxWidth: '450px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    padding: '0',
-                    position: 'relative',
-                    overflow: 'hidden'
-                }}
-            >
+        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
+            <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '450px' }}>
                 {/* Header */}
-                <div style={{
-                    padding: '1.2rem',
-                    borderBottom: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    backgroundColor: 'rgba(0,0,0,0.2)'
-                }}>
-                    <div style={{
-                        background: 'var(--accent-primary)',
-                        color: '#000',
-                        padding: '8px',
-                        borderRadius: '10px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
-                        <Filter size={20} />
+                <div className="shopping-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                    <div className="modal-title-row">
+                        <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
+                            <Filter size={24} />
+                        </div>
+                        <div className="modal-title-info">
+                            <h2>Refine Map & List</h2>
+                            <p>Customize your exploration filters.</p>
+                        </div>
+                        <button className="modal-close-btn" onClick={onClose}>
+                            <X size={24} />
+                        </button>
                     </div>
-                    <h2 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
-                        Refine Map & List
-                    </h2>
-
-                    <button
-                        onClick={onClose}
-                        style={{ position: 'absolute', top: '15px', right: '15px', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
-                    >
-                        <X size={24} />
-                    </button>
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-
+                <div className="calendar-modal-body" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Visit Status</label>
+                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            Visit Status
+                        </label>
                         <select
                             className="filter-select glass-panel"
                             value={filterVisited}
                             onChange={(e) => setFilterVisited(e.target.value)}
-                            style={{ width: '100%' }}
+                            style={{ width: '100%', padding: '12px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: 'var(--text-primary)', outline: 'none' }}
                         >
-                            <option value="all">All Status</option>
-                            <option value="visited">Visited</option>
-                            <option value="unvisited">Not Visited</option>
+                            <option value="all" style={{ background: 'var(--bg-color)' }}>All Status</option>
+                            <option value="visited" style={{ background: 'var(--bg-color)' }}>Visited</option>
+                            <option value="unvisited" style={{ background: 'var(--bg-color)' }}>Not Visited</option>
                         </select>
                     </div>
 
+                    <button 
+                        className="btn-primary" 
+                        onClick={onClose}
+                        style={{ 
+                            marginTop: '1rem',
+                            padding: '14px', 
+                            borderRadius: '12px', 
+                            fontWeight: 'bold',
+                            fontSize: '1rem',
+                            background: 'var(--accent-primary)',
+                            color: '#000',
+                            border: 'none',
+                            cursor: 'pointer',
+                            transition: 'transform 0.2s',
+                            boxShadow: '0 4px 12px rgba(88, 166, 255, 0.2)'
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                    >
+                        Apply Filters
+                    </button>
                 </div>
-                
-                <button 
-                    className="btn-primary" 
-                    onClick={onClose}
-                    style={{ margin: '1rem 1.5rem 1.5rem 1.5rem', padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}
-                >
-                    Apply Filters
-                </button>
             </div>
         </div>,
         document.body

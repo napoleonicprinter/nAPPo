@@ -136,10 +136,11 @@
     z-index: 6001;
     /* Extremely high to guarantee foreground over all map layers */
     padding: 0;
-    background: var(--bg-color);
-    /* Solid opaque background */
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: var(--bg-acrylic);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     border-radius: var(--border-radius-sm);
     overflow: hidden;
     /* Prevent menu overflow, scrolling handled by list */
@@ -152,7 +153,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 12px;
-    background: var(--bg-color);
+    background: rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid var(--border-color);
     z-index: 10;
 }
@@ -371,9 +372,22 @@
     transition: all 0.2s;
 }
 
+.desktop-header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
 .settings-btn:hover,
 .arc-filter-btn:hover,
-.arc-filter-btn:focus {
+.arc-filter-btn:focus,
+.desktop-header-btn:hover {
     color: var(--text-primary);
     background: rgba(240, 246, 252, 0.1) !important;
     border-color: var(--accent-primary) !important;
@@ -461,10 +475,20 @@
     gap: 0.75rem;
 }
 
+.mobile-header-actions {
+    display: none;
+}
+
 .category-filters-wrapper {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+}
+
+.location-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Base style for all header selects to ensure "armony" */
@@ -540,8 +564,8 @@
         /* Internal padding for safe edges */
     }
 
-    /* Target Location Select */
-    .filters-line>.custom-select-container:first-of-type {
+    /* Target Location Select Group */
+    .filters-line>.location-toggle-group {
         grid-area: location;
         justify-self: center;
     }
@@ -562,20 +586,27 @@
         padding-left: 0.75rem;
     }
 
-    .mobile-menu-toggle {
+    .mobile-header-actions {
         grid-area: hamburger;
         display: flex;
         align-items: center;
-        justify-content: center;
+        gap: 0.5rem;
         justify-self: end;
-        padding: 8px;
         margin-right: 0.75rem;
         z-index: 1001;
+    }
+
+    .mobile-header-btn,
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
         background: var(--bg-acrylic);
         border: 1px solid var(--border-color);
         color: var(--text-primary);
-        width: 40px;
-        height: 40px;
+        border-radius: 10px;
         transition: all var(--transition-normal);
     }
 
@@ -588,13 +619,13 @@
         right: 1rem;
         left: auto;
         width: 260px;
-        padding: 1.25rem;
+        padding: 1rem;
         background: var(--bg-acrylic);
         backdrop-filter: blur(20px);
         border: 1px solid var(--border-color);
         border-radius: 16px;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 0.75rem;
         align-items: stretch;
         z-index: 6010;
         /* Absolute foreground */
@@ -615,8 +646,8 @@
         left: 10px;
         z-index: 5005;
         /* Just above the app-header base layer */
-        gap: 1.25rem;
-        /* Increased gap to prevent overlap between Year and Commander tags */
+        gap: 3.5rem;
+        /* Significantly increased gap to prevent overlap between Year and Commander tags */
         pointer-events: none;
         /* Allow clicks through the container set */
     }
@@ -627,9 +658,11 @@
         max-width: 130px;
     }
 
-    /* Make the Year tag (first filter) narrower on tablet */
+    /* Fix the Year tag width on mobile to ensure all text is visible and doesn't change on rotation */
     .year-filter-mobile {
-        max-width: 90px;
+        width: 105px;
+        min-width: 105px;
+        max-width: 105px;
     }
 
     .mobile-tag-filter .custom-select-trigger {
@@ -641,8 +674,27 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
+    /* Target Arc filter to match height and style of the CustomSelect triggers */
+    .mobile-arc-filter {
+        height: 34px !important;
+        min-height: 34px !important;
+        max-height: 34px !important;
+        padding: 0 12px;
+        border-radius: 12px !important;
+        background: var(--bg-acrylic);
+        border: 1px solid var(--accent-primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
     .desktop-year-filter,
-    .desktop-commander-filter {
+    .desktop-commander-filter,
+    .desktop-arc-filter,
+    .desktop-events-btn {
         display: none !important;
     }
 
@@ -783,10 +835,11 @@
         min-width: 140px !important;
     }
 
-    /* Specific narrow width for Year filter trigger and menu */
+    /* Specific fixed width for Year filter trigger and menu */
     .year-filter-mobile .custom-select-container {
-        min-width: 85px !important;
-        max-width: 85px;
+        width: 105px !important;
+        min-width: 105px !important;
+        max-width: 105px;
     }
 
     .year-filter-mobile .custom-select-menu {

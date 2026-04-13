@@ -12,6 +12,9 @@ import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
 import NewsModal from './NewsModal';
 import ArcFilter from './ArcFilter';
+import FloatingViewToggle from './FloatingViewToggle';
+import CalendarView from './CalendarView';
+import ShoppingView from './ShoppingView';
 import './Header.css';
 
 const CATEGORY_ORDER = [
@@ -51,6 +54,8 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+    const [showShoppingView, setShowShoppingView] = useState(false);
+    const [showCalendarView, setShowCalendarView] = useState(false);
     const searchInputRef = useRef(null);
 
     const { newsData } = useAppContext();
@@ -80,7 +85,13 @@ const Header = () => {
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
 
     const handleViewChange = (newView) => {
-        setView(newView);
+        if (newView === 'calendar') {
+            setShowCalendarView(true);
+        } else if (newView === 'shopping') {
+            setShowShoppingView(true);
+        } else {
+            setView(newView);
+        }
         setIsMenuOpen(false);
     };
 
@@ -104,28 +115,40 @@ const Header = () => {
                 </div>
             </div>
 
-            <button
-                className="mobile-menu-toggle glass-panel"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="mobile-header-actions">
+                <button
+                    className="mobile-header-btn glass-panel"
+                    onClick={handleEventsClick}
+                    title="Today in nAPPo history"
+                >
+                    <Calendar size={20} />
+                </button>
+                <button
+                    className="mobile-menu-toggle glass-panel"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </div>
 
             <div className="filters-group">
                 <div className="filters-line">
-                    <CustomSimpleSelect
-                        options={[
-                            { value: 'none', label: 'Location...' },
-                            { value: 'geo', label: '⮞ My Location' },
-                            ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))
-                        ]}
-                        value={locationMode}
-                        onChange={handleLocationSelect}
-                        searchable={true}
-                        persistentValues={['none', 'geo']}
-                        title="Set Search Location"
-                        placeholder="Search Location..."
-                    />
+                    <div className="location-toggle-group">
+                        <CustomSimpleSelect
+                            options={[
+                                { value: 'none', label: 'Location...' },
+                                { value: 'geo', label: '⮞ My Location' },
+                                ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))
+                            ]}
+                            value={locationMode}
+                            onChange={handleLocationSelect}
+                            searchable={true}
+                            persistentValues={['none', 'geo']}
+                            title="Set Search Location"
+                            placeholder="Search Location..."
+                        />
+                        <FloatingViewToggle />
+                    </div>
 
                     <div className="desktop-filters custom-desktop-layout">
                         {locationMode !== 'none' && (
@@ -154,16 +177,24 @@ const Header = () => {
                             />
 
                             <SignificanceFilter />
-                            <ArcFilter className="desktop-arc-filter" />
                         </div>
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
+                        <ArcFilter className="desktop-arc-filter" />
+                        <button
+                            className="desktop-header-btn glass-panel desktop-events-btn"
+                            onClick={handleEventsClick}
+                            title="Today in nAPPo history"
+                        >
+                            <Calendar size={20} />
+                        </button>
                     </div>
                 </div>
 
                 <div className="mobile-overlay-filters">
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
+                    <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
                 </div>
             </div>
 
@@ -192,7 +223,7 @@ const Header = () => {
                         <button
                             className="settings-btn glass-panel"
                             onClick={() => setShowSettings(!showSettings)}
-                            title="Location Settings"
+                            title="Settings"
                         >
                             <Settings size={20} />
                             <span className="mobile-only-label">Settings</span>
@@ -353,6 +384,20 @@ const Header = () => {
 
 
                 <div className="view-toggle glass-panel">
+                    <a
+                        key="view-patreon"
+                        href="https://www.patreon.com/c/nAPPoTrails"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="toggle-btn patreon-btn"
+                        title="Support this project at Patreon"
+                    >
+                        <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z" />
+                        </svg>
+                        <span className="mobile-only-label">Support at Patreon</span>
+                    </a>
+
                     <button
                         key="view-news"
                         className="toggle-btn"
@@ -380,23 +425,35 @@ const Header = () => {
                         </div>
                         <span className="mobile-only-label">News</span>
                     </button>
+
                     <button
-                        key="view-map"
-                        className={`toggle-btn ${view === 'map' ? 'active' : ''}`}
-                        onClick={() => handleViewChange('map')}
-                        title="Map View"
+                        key="view-shopping"
+                        className={`toggle-btn ${view === 'shopping' ? 'active' : ''}`}
+                        onClick={() => handleViewChange('shopping')}
+                        title="Marketplace"
                     >
-                        <Map size={20} />
-                        <span className="mobile-only-label">Map</span>
+                        <ShoppingCart size={20} />
+                        <span className="mobile-only-label">Marketplace</span>
                     </button>
+
                     <button
-                        key="view-card"
-                        className={`toggle-btn ${view === 'card' ? 'active' : ''}`}
-                        onClick={() => handleViewChange('card')}
-                        title="Card View"
+                        key="view-calendar"
+                        className={`toggle-btn ${view === 'calendar' ? 'active' : ''}`}
+                        onClick={() => handleViewChange('calendar')}
+                        title="Shows Calendar"
                     >
-                        <List size={20} />
-                        <span className="mobile-only-label">List</span>
+                        <Ticket size={20} />
+                        <span className="mobile-only-label">Shows</span>
+                    </button>
+
+                    <button
+                        key="view-filters"
+                        className={`toggle-btn ${showFilters ? 'active' : ''}`}
+                        onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }}
+                        title="Filters"
+                    >
+                        <Filter size={20} />
+                        <span className="mobile-only-label">Filters</span>
                     </button>
 
                     {/* Search */}
@@ -439,34 +496,6 @@ const Header = () => {
                     </div>
 
                     <button
-                        key="view-filters"
-                        className={`toggle-btn ${showFilters ? 'active' : ''}`}
-                        onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }}
-                        title="Filters"
-                    >
-                        <Filter size={20} />
-                        <span className="mobile-only-label">Filters</span>
-                    </button>
-                    <button
-                        key="view-events"
-                        className="toggle-btn"
-                        onClick={handleEventsClick}
-                        title="Today in nAPPo history"
-                    >
-                        <Calendar size={20} />
-                        <span className="mobile-only-label">Events</span>
-                    </button>
-                    <button
-                        key="view-calendar"
-                        className={`toggle-btn ${view === 'calendar' ? 'active' : ''}`}
-                        onClick={() => handleViewChange('calendar')}
-                        title="Shows Calendar"
-                    >
-                        <Ticket size={20} />
-                        <span className="mobile-only-label">Shows</span>
-                    </button>
-
-                    <button
                         key="theme-toggle"
                         className="toggle-btn theme-toggle-btn"
                         onClick={toggleTheme}
@@ -475,30 +504,6 @@ const Header = () => {
                     >
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                         <span className="mobile-only-label">{theme === 'dark' ? 'Day Mode' : 'Night Mode'}</span>
-                    </button>
-
-                    <a
-                        key="view-patreon"
-                        href="https://www.patreon.com/c/nAPPoTrails"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="toggle-btn patreon-btn"
-                        title="Support this project at Patreon"
-                    >
-                        <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z" />
-                        </svg>
-                        <span className="mobile-only-label">Support this project at Patreon</span>
-                    </a>
-
-                    <button
-                        key="view-shopping"
-                        className={`toggle-btn ${view === 'shopping' ? 'active' : ''}`}
-                        onClick={() => handleViewChange('shopping')}
-                        title="Shopping"
-                    >
-                        <ShoppingCart size={20} />
-                        <span className="mobile-only-label">Shopping</span>
                     </button>
 
                     <button
@@ -551,6 +556,8 @@ const Header = () => {
             {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
             {showNews && <NewsModal onClose={() => setShowNews(false)} />}
             {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
+            {showShoppingView && <ShoppingView onClose={() => setShowShoppingView(false)} />}
+            {showCalendarView && <CalendarView onClose={() => setShowCalendarView(false)} />}
         </header>
     );
 };

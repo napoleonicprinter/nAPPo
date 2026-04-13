@@ -957,5 +957,37 @@
         "location": "Caldiero, Italy",
         "description": "Took place on October 30th 1805, pitting the French Armée d'Italie under Marshal André Masséna against an Austrian army under the command of Archduke Charles.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Caldiero_(1805)"
+    },
+    {
+        "id": 112,
+        "title": "Battle of Mehrnbach",
+        "date": "1805-10-30",
+        "location": "Mehrnbach, Austria",
+        "description": "Took place on October 30th 1805, shortly after the surrender of the Austrian troops in Ulm, from where the road to Vienna lay open to the Grande Armée.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mehrnbach"
+    },
+    {
+        "id": 113,
+        "title": "Battle of Wischau",
+        "date": "1805-11-28",
+        "location": "Wischau, Czech Republic",
+        "description": "Occurred on November 28th 1805 between the Russian and French armies. The conflict resulted in a minor Russian success.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wischau"
+    },
+    {
+        "id": 114,
+        "title": "Battle of Saltanovka",
+        "date": "1812-07-23",
+        "location": "Saltanovka, Belarus",
+        "description": "Also known as the Battle of Mohilew, took place on 23 July 1812 during the early stages of the 1812 French invasion of Russia.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saltanovka"
+    },
+    {
+        "id": 115,
+        "title": "Battle of Klyastitsy",
+        "date": "1812-07-30",
+        "location": "Klyastitsy, Belarus",
+        "description": "Also called the Battle of Yakubovo or the Battle of Oboyarshchina, was a series of military engagements that took place on 30 July [O.S. 18 July] 1812 – 1 August 1812.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Klyastitsy"
     }
 ]

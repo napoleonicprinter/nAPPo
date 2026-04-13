@@ -71,7 +71,7 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
             </button>
 
             {isOpen && (
-                <div className="custom-select-menu animate-fade-in" style={{ backgroundColor: 'var(--bg-color)' }}>
+                <div className="custom-select-menu animate-fade-in">
                     {searchable && (
                         <div className="select-search-wrapper">
                             <Search size={14} className="select-search-icon" />

@@ -76,28 +76,35 @@ export const EUROPEAN_CAPITALS = [
 ];
 
 export const AppProvider = ({ children }) => {
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
+        if (isDevelopment) return sitesData;
         const saved = localStorage.getItem('sitesData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : sitesData;
     });
 
     const [showsBaseData, setShowsBaseData] = useState(() => {
+        if (isDevelopment) return showsData;
         const saved = localStorage.getItem('showsData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : showsData;
     });
 
     const [shoppingBaseData, setShoppingBaseData] = useState(() => {
+        if (isDevelopment) return shoppingData;
         const saved = localStorage.getItem('shoppingData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : shoppingData;
     });
 
     const [eventsBaseData, setEventsBaseData] = useState(() => {
+        if (isDevelopment) return eventsDataFallback;
         const saved = localStorage.getItem('eventsData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : eventsDataFallback;
     });
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
+        if (isDevelopment) return newsDataFallback;
         const saved = localStorage.getItem('newsData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
@@ -127,27 +134,27 @@ export const AppProvider = ({ children }) => {
 
                 if (resSites.ok) {
                     const data = await resSites.json();
-                    setSitesBaseData(data);
+                    if (!isDevelopment) setSitesBaseData(data);
                     localStorage.setItem('sitesData', JSON.stringify(data));
                 }
                 if (resShows.ok) {
                     const data = await resShows.json();
-                    setShowsBaseData(data);
+                    if (!isDevelopment) setShowsBaseData(data);
                     localStorage.setItem('showsData', JSON.stringify(data));
                 }
                 if (resShopping.ok) {
                     const data = await resShopping.json();
-                    setShoppingBaseData(data);
+                    if (!isDevelopment) setShoppingBaseData(data);
                     localStorage.setItem('shoppingData', JSON.stringify(data));
                 }
                 if (resEvents.ok) {
                     const data = await resEvents.json();
-                    setEventsBaseData(data);
+                    if (!isDevelopment) setEventsBaseData(data);
                     localStorage.setItem('eventsData', JSON.stringify(data));
                 }
                 if (resNews && resNews.ok) {
                     const data = await resNews.json();
-                    setNewsBaseData(data);
+                    if (!isDevelopment) setNewsBaseData(data);
                     localStorage.setItem('newsData', JSON.stringify(data));
                 }
 
@@ -254,7 +261,7 @@ export const AppProvider = ({ children }) => {
     };
 
     const filteredSites = derivedSites.map(site => {
-        if (geolocationEnabled && userCoords) {
+        if (userCoords) {
             return {
                 ...site,
                 distance: calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude)

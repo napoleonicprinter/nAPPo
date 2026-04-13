@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { Navigation } from 'lucide-react';
+import { Navigation, Star } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -98,6 +98,18 @@ const createCustomIcon = (site) => {
         iconAnchor: [12, 29],
         popupAnchor: [0, -32]
     });
+};
+
+const renderSignificanceStars = (sig) => {
+    const numStars = sig === 'Major' ? 3 : sig === 'Medium' ? 2 : sig === 'Minor' ? 1 : 0;
+    if (numStars === 0) return null;
+    return (
+        <div style={{ display: 'flex', gap: '2px', alignItems: 'center', marginLeft: '6px' }} title={`${sig} Significance`}>
+            {[...Array(numStars)].map((_, i) => (
+                <Star key={i} size={14} fill="var(--accent-warning)" stroke="var(--accent-warning)" strokeWidth={1.5} />
+            ))}
+        </div>
+    );
 };
 
 // Helper component to center map on user location if available
@@ -441,9 +453,10 @@ const MapView = () => {
                                         )}
                                         {site.name}
                                     </h3>
-                                    <p style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
-                                        {site.category} &bull; {site.year}
-                                    </p>
+                                    <div style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
+                                        <span>{site.category} &bull; {site.year}</span>
+                                        {renderSignificanceStars(site.significance)}
+                                    </div>
                                     <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
                                         <button
                                             onClick={() => toggleVisited(site.id)}

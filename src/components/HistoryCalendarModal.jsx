@@ -115,16 +115,19 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
     }
 
     return createPortal(
-        <div className="history-calendar-overlay animate-fade-in" onClick={onClose}>
+        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
             <div 
-                className="history-calendar-panel glass-panel" 
+                className="view-modal-content glass-panel" 
                 onClick={(e) => e.stopPropagation()}
+                style={{ maxWidth: '800px' }}
             >
-                <div className="history-calendar-header">
-                    <div className="calendar-header-top">
-                        <h2 className="calendar-title">{MONTHS[month]}</h2>
-                        <button className="calendar-close-btn" onClick={onClose} title="Close">
-                            <X size={22} />
+                <div className="calendar-modal-header">
+                    <div className="modal-title-row">
+                        <div className="modal-title-info">
+                            <h2 className="calendar-title">{MONTHS[month]}</h2>
+                        </div>
+                        <button className="modal-close-btn" onClick={onClose} title="Close">
+                            <X size={24} />
                         </button>
                     </div>
                     <div className="calendar-header-bottom">
@@ -161,8 +164,8 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                         <div className="day-popup-content" onClick={(e) => e.stopPropagation()}>
                             <div className="day-popup-header">
                                 <h3>{MONTHS[month]} {selectedDateEvents.day} in History</h3>
-                                <button className="calendar-close-btn" onClick={() => setSelectedDateEvents(null)}>
-                                    <X size={20} />
+                                <button className="modal-close-btn" onClick={() => setSelectedDateEvents(null)}>
+                                    <X size={24} />
                                 </button>
                             </div>
                             <div className="day-popup-events">

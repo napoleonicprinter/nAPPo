@@ -33,101 +33,49 @@ const EventsModal = ({ onClose }) => {
     const todayString = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
     return createPortal(
-        <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
-            backdropFilter: 'blur(5px)',
-            zIndex: 10002, // above standard modals
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
-        }} className="animate-fade-in" onClick={onClose}>
-            <div
-                className="glass-panel"
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                    width: '100%',
-                    maxWidth: '600px',
-                    maxHeight: '85vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    padding: '0',
-                    position: 'relative',
-                    overflow: 'hidden'
-                }}
-            >
+        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
+            <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
-                <div style={{
-                    padding: '1.5rem',
-                    borderBottom: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    backgroundColor: 'rgba(0,0,0,0.2)'
-                }}>
-                    <div style={{
-                        background: 'var(--accent-primary)',
-                        color: '#000',
-                        padding: '10px',
-                        borderRadius: '12px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
-                        <CalendarIcon size={24} />
-                    </div>
-                    <div>
-                        <h2 style={{ margin: 0, fontSize: '1.4rem', color: 'var(--text-primary)' }}>
-                            Today in nAPPo History
-                        </h2>
-                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{todayString}</span>
-                    </div>
+                <div className="calendar-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                    <div className="modal-title-row">
+                        <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
+                            <CalendarIcon size={24} />
+                        </div>
+                        <div className="modal-title-info">
+                            <h2>Today in nAPPo History</h2>
+                            <p>{todayString}</p>
+                        </div>
+                        
+                        <div style={{ marginLeft: 'auto', marginRight: '1rem' }}>
+                            <button
+                                onClick={() => setIsCalendarOpen(true)}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    background: 'rgba(255,255,255,0.1)',
+                                    border: '1px solid rgba(255,255,255,0.2)',
+                                    color: 'var(--text-primary)',
+                                    padding: '6px 12px',
+                                    borderRadius: '16px',
+                                    cursor: 'pointer',
+                                    fontSize: '0.9rem',
+                                    transition: 'all 0.2s'
+                                }}
+                            >
+                                <CalendarDays size={16} />
+                                View Calendar
+                            </button>
+                        </div>
 
-                    <div style={{ marginLeft: 'auto', marginRight: '40px' }}>
-                        <button
-                            onClick={() => setIsCalendarOpen(true)}
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                background: 'rgba(255,255,255,0.1)',
-                                border: '1px solid rgba(255,255,255,0.2)',
-                                color: 'var(--text-primary)',
-                                padding: '6px 12px',
-                                borderRadius: '16px',
-                                cursor: 'pointer',
-                                fontSize: '0.9rem',
-                                transition: 'all 0.2s'
-                            }}
-                            onMouseOver={(e) => {
-                                e.currentTarget.style.background = 'var(--accent-primary)';
-                                e.currentTarget.style.color = '#000';
-                            }}
-                            onMouseOut={(e) => {
-                                e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                                e.currentTarget.style.color = 'var(--text-primary)';
-                            }}
-                        >
-                            <CalendarDays size={16} />
-                            View Calendar
+                        <button className="modal-close-btn" onClick={onClose}>
+                            <X size={24} />
                         </button>
                     </div>
-
-                    <button
-                        onClick={onClose}
-                        style={{ position: 'absolute', top: '15px', right: '15px', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
-                    >
-                        <X size={24} />
-                    </button>
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: '1.5rem', overflowY: 'auto' }}>
+                <div className="calendar-modal-body" style={{ padding: '2rem' }}>
                     {todaysEvents.length === 0 ? (
                         <div style={{ textAlign: 'center', color: 'var(--text-secondary)', padding: '2rem 0' }}>
                             <CalendarIcon size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />

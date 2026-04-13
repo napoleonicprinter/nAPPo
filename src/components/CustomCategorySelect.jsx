@@ -78,7 +78,7 @@ const CustomCategorySelect = ({ categories, value, onChange }) => {
             </button>
 
             {isOpen && (
-                <div className="custom-select-menu animate-fade-in" style={{ backgroundColor: 'var(--bg-color)' }}>
+                <div className="custom-select-menu animate-fade-in">
                     <button
                         className={`custom-select-option ${(!value || value.length === 0) ? 'selected' : ''}`}
                         onClick={() => handleSelect('')}
