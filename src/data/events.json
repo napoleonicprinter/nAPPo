@@ -1029,5 +1029,45 @@
         "location": "Radzymin, Poland",
         "description": "Took place on 25 April 1809, during the brief Polish–Austrian War. The battle occurred at Radzymin, some 20 kilometres (12 mi) north-east of Warsaw.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Radzymin_(1809)"
+    },
+    {
+        "id": 121,
+        "title": "Battle of Gospic",
+        "date": "1809-05-21",
+        "location": "Gospic, Croatia",
+        "description": "On May 21st 1809, Marmont located Rebrovich's forces deployed behind the Lika River near Gospić. ",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gospic"
+    },
+    {
+        "id": 122,
+        "title": "Battle of La Piave",
+        "date": "1809-05-08",
+        "location": "Nervesa della Battaglia, Italy",
+        "description": "Fought on May 8th 1809 between the Franco-Italian army under the command of Eugène de Beauharnais and an Austrian army led by Archduke John of Austria.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Piave_River_(1809)"
+    },
+    {
+        "id": 123,
+        "title": "Battle of Wörgl",
+        "date": "1809-05-13",
+        "location": "Wörgl, Austria",
+        "description": "Fought on May 13th 1809, when a Bavarian force under French Marshal François Joseph Lefebvre attacked an Austrian Empire detachment commanded by Johann Gabriel Chasteler de Courcelles.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_W%C3%B6rgl"
+    },
+    {
+        "id": 124,
+        "title": "Battle of Tarvis",
+        "date": "1809-05-16",
+        "location": "Tarvis, Italy",
+        "description": "The two day battle took place from May 16th to May 17th 1809.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tarvis_(1809)"
+    },
+    {
+        "id": 125,
+        "title": "Battle of Malborghetto",
+        "date": "1809-05-17",
+        "location": "Malborghetto Val Canale, Italy",
+        "description": "The fortress was stormed by French troops on May 15th to May 17th 1809.",
+        "link": "https://www.turismofvg.it/en/grandeguerra-the-julian-alps-forti-ed-appostamenti-per-batterie-austro-ungarici/fort-hensel"
     }
 ]
