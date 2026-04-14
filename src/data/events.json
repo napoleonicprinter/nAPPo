@@ -1069,5 +1069,53 @@
         "location": "Malborghetto Val Canale, Italy",
         "description": "The fortress was stormed by French troops on May 15th to May 17th 1809.",
         "link": "https://www.turismofvg.it/en/grandeguerra-the-julian-alps-forti-ed-appostamenti-per-batterie-austro-ungarici/fort-hensel"
+    },
+    {
+        "id": 126,
+        "title": "Battle of Linz-Urfahr",
+        "date": "1809-05-17",
+        "location": "Linz-Urfahr, Austria",
+        "description": "The Battle of Linz-Urfahr was fought on May 17th 1809, where the Austrian Empire Army fought against troops from two of Emperor Napoleon's allies, the Kingdom of Württemberg and the Kingdom of Saxony.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Linz-Urfahr"
+    },
+    {
+        "id": 127,
+        "title": "Battle of Sankt Michael",
+        "date": "1809-05-25",
+        "location": "Sankt Michael, Austria",
+        "description": "On May 25th 1809, Paul Grenier's French corps crushed Franz Jellacic's Austrian division at Sankt Michael in Obersteiermark, Austria.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sankt_Michael"
+    },
+    {
+        "id": 128,
+        "title": "Battle of the Basque Roads",
+        "date": "1809-04-11",
+        "location": "Île-d'Aix, Basque Roads, France",
+        "description": "The battle lasted from April 11th to the 24th 1809 and was a major naval battle of the Napoleonic Wars, fought in the narrow Basque Roads at the mouth of the Charente River on the Biscay coast of France.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Basque_Roads#Gambier's_blockade"
+    },
+    {
+        "id": 129,
+        "title": "Battle of Raab",
+        "date": "1809-06-14",
+        "location": "Győr, Hungary",
+        "description": "It was fought on June 14th 1809 between Franco-Italian forces and Habsburg forces. Most of the Habsburg army consisted of poorly trained Landwehr and militia.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Raab_(1809)"
+    },
+    {
+        "id": 130,
+        "title": "Battle of Graz",
+        "date": "1809-06-24",
+        "location": "Graz, Austria",
+        "description": "It was fought on June 14th 1809 between Franco-Italian forces and Habsburg forces. Most of the Habsburg army consisted of poorly trained Landwehr and militia.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Graz_(1809)"
+    },
+    {
+        "id": 131,
+        "title": "Combat of Korneuburg",
+        "date": "1809-07-03",
+        "location": "Korneuburg, Austria",
+        "description": "It was a relatively minor rearguard action fought by Austrian VI Korps of the Kaiserlich-königliche Hauptarmee under Johann von Klenau against elements of the French IV Corps of the Armée d'Allemagne, under the command of Claude Legrand.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_Korneuburg"
     }
 ]

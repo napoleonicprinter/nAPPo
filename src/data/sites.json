@@ -7,8 +7,9 @@
     "year": 1805,
     "location": "Austerlitz (Slavkov u Brna)",
     "country": "Czech Republic",
-    "description": "Widely regarded as the greatest victory achieved by Napoleon, the Battle of Austerlitz (also known as the Battle of the Three Emperors) destroyed the Third Coalition.",
-    "latitude": 49.128,
+    "description": "Widely regarded as the 
+    
+    eatest victory achieved by Napoleon, the Battle of Austerlitz (also known as the Battle of the Three Emperors) destroyed the Third Coalition.","latitude": 49.128,
     "longitude": 16.762,
     "tier": false,
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Alison%27s_history_of_Europe_atlas_1850_%2892102511%29.jpg",
@@ -2664,7 +2665,7 @@
   },
   {
     "id": "149",
-    "name": "Battle of Aspern-Essling",
+    "name": "Battlefield of Aspern-Essling",
     "category": "Battle site",
     "significance": "Major",
     "year": "1809",
@@ -4398,5 +4399,163 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hermannsdorfu.webp",
     "wikipedia_link": "https://de.wikipedia.org/wiki/Johann_Hermann_von_Hermannsdorf",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "243",
+    "name": "Battlefield of Linz-Urfahr",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1809",
+    "location": "Linz",
+    "country": "Austria",
+    "description": "The Battle of Linz-Urfahr was fought on May 17th 1809, where the Austrian Empire Army fought against troops from two of Emperor Napoleon's allies, the Kingdom of Württemberg and the Kingdom of Saxony.",
+    "latitude": 48.34,
+    "longitude": 14.30,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_campaign.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Linz-Urfahr",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Johann Kollowrat",
+      "Jean Bernadotte",
+      "Dominique Vandamme"
+    ]
+  },
+  {
+    "id": "244",
+    "name": "Pfennigberg hill",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1809",
+    "location": "Linz",
+    "country": "Austria",
+    "description": "The Württemberg Duke Louis Jäger zu Pferde Regiment and the Saxon Hussars overran an Austrian artillery battery at Pfennigberg hill, capturing six guns. ",
+    "latitude": 48.3127,
+    "longitude": 14.3553,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pfennigberg_hill.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Linz-Urfahr",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "245",
+    "name": "Battle of Sankt Michael",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1809",
+    "location": "Sankt Michael",
+    "country": "Austria",
+    "description": "On May 25th 1809, Paul Grenier's French corps crushed Franz Jellacic's Austrian division at Sankt Michael in Obersteiermark, Austria.",
+    "latitude": 47.343,
+    "longitude": 14.992,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Battle_of_Sankt_Michael_1809_Map.JPG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sankt_Michael",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Paul Grenier",
+      "Franz Jellacic"
+    ]
+  },
+  {
+    "id": "246",
+    "name": "Battle of the Basque Roads",
+    "category": "Sea battle",
+    "significance": "Major",
+    "year": "1809",
+    "location": "Île-d'Aix, Basque Roads",
+    "country": "France",
+    "description": "The battle lasted from April 11th to the 24th 1809 and was a major naval battle of the Napoleonic Wars, fought in the narrow Basque Roads at the mouth of the Charente River on the Biscay coast of France.(image by BarretBonden)",
+    "latitude": 45.98,
+    "longitude": -1.187391,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Battle_of_Basque_Roads_11_April.svg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Basque_Roads#Gambier's_blockade",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "James Gambier",
+      "Thomas Cochrane",
+      "Zacharie Allemand"
+    ]
+  },
+  {
+    "id": "247",
+    "name": "Battlefield of Raab / Győr",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Győr, Hungary",
+    "country": "Hungary",
+    "description": "It was fought on June 14th 1809 between Franco-Italian forces and Habsburg forces. Most of the Habsburg army consisted of poorly trained Landwehr and militia.",
+    "latitude": 47.577,
+    "longitude": 17.6879,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Raab.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Raab_(1809)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Eugène de Beauharnais",
+      "Archduke John of Austria",
+      "Archduke Joseph of Austria"
+    ],
+    "special": "arc"
+  },
+  {
+    "id": "248",
+    "name": "Battlefield of Graz (Gratz)",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Graz",
+    "country": "Austria",
+    "description": "took place on June 24th to 26th 1809 between an Austrian corps commanded by Ignaz Gyulai and a French division led by Jean-Baptiste Broussier who was later reinforced by a corps under Auguste Marmont.",
+    "latitude": 47.07,
+    "longitude": 15.46,
+    "visited": false,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Austerlitz1805_Alombert1.jpg",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Graz",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Ignaz Gyulai",
+      "Auguste Marmont",
+      "Jean Broussier"
+    ],
+    "special": "arc"
+  },
+  {
+    "id": "249",
+    "name": "Saint Leonhard Church and cemetery",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1809",
+    "location": "Graz",
+    "country": "Austria",
+    "description": "Austrian strongpoint at the battle of Graz attacked by Colonel Jean Hugues Gambin with 1,200 men.",
+    "latitude": 47.0783,
+    "longitude": 15.46598,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/StLeonhard_Graz.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Graz",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "250",
+    "name": "Battlefield Combat of Korneuburg",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1809",
+    "location": "Korneuburg",
+    "country": "Austria",
+    "description": "It was a relatively minor rearguard action fought by Austrian VI Korps of the Kaiserlich-königliche Hauptarmee under Johann von Klenau against elements of the French IV Corps of the Armée d'Allemagne, under the command of Claude Legrand.",
+    "latitude": 48.34,
+    "longitude": 16.34,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austria_Campaign.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_Korneuburg",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Johann von Klenau",
+      "Claude Legrand"
+    ]
   }
 ]
