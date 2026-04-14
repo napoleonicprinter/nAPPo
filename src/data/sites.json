@@ -4133,5 +4133,47 @@
     ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": "arc"
+  },
+  {
+    "id": "229",
+    "name": "Battlefield of Abensberg",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Abensberg",
+    "country": "Germany",
+    "description": "Took place on April 20th 1809 between a Franco-German force under the command of Emperor Napoleon I of France and a reinforced Austrian corps led by Feldmarschall-Leutnant Archduke Louis of Austria.",
+    "latitude": 48.84,
+    "longitude": 11.90,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Abensberg.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abensberg",
+    "commanders": [
+      "Napoleon",
+      "Archduke Charles"
+    ],
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc"
+  },
+  {
+    "id": "230",
+    "name": "Battlefield of Echmühl",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Eckmühl",
+    "country": "Germany",
+    "description": "Fought on 21–22 April 1809, was the turning point of the 1809 Campaign.",
+    "latitude": 48.88,
+    "longitude": 12.18,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Echmuhl.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eckm%C3%BChl",
+    "commanders": [
+      "Napoleon",
+      "Archduke Charles"
+    ],
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc"
   }
 ]
