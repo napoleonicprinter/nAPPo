@@ -1005,5 +1005,13 @@
         "location": "Abensberg, Germany",
         "description": "Took place on April 20th 1809 between a Franco-German force under the command of Emperor Napoleon I of France and a reinforced Austrian corps led by Feldmarschall-Leutnant Archduke Louis of Austria.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abensberg"
+    },
+    {
+        "id": 118,
+        "title": "Battle of Landshut",
+        "date": "1809-04-21",
+        "location": "Landshut, Germany",
+        "description": "Took place on April 21st 1809 between the French, Württembergers (VIII Corps) and Bavarians (VII Corps) under Napoleon, and the Austrians under the General Johann von Hiller.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)"
     }
 ]

@@ -295,6 +295,10 @@ export const AppProvider = ({ children }) => {
         if (!showFilter) {
             setFilterCommander('all');
             setFilterYear('all');
+        }
+
+        const isBattleSiteAlone = filterCategory.length === 1 && filterCategory[0] === 'Battle site';
+        if (!isBattleSiteAlone) {
             setShowArcOnly(false);
         }
     }, [filterCategory]);

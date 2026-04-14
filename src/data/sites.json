@@ -4167,8 +4167,50 @@
     "latitude": 48.88,
     "longitude": 12.18,
     "visited": false,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Echmuhl.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Echmul.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eckm%C3%BChl",
+    "commanders": [
+      "Napoleon",
+      "Archduke Charles"
+    ],
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc"
+  },
+  {
+    "id": "231",
+    "name": "Battlefield of Landshut",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Landshut",
+    "country": "Germany",
+    "description": "Took place on April 21st 1809 between the French, Württembergers (VIII Corps) and Bavarians (VII Corps) under Napoleon, and the Austrians under the General Johann von Hiller.",
+    "latitude": 48.549,
+    "longitude": 12.139,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Landshut.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)",
+    "commanders": [
+      "Napoleon",
+      "Johann von Hiller"
+    ],
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc"
+  },
+  {
+    "id": "232",
+    "name": "Battlefield of Ratisbon",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Ratisbon",
+    "country": "Germany",
+    "description": "Also called the Battle of Regensburg, fought on 23 April 1809, between the army of the French Empire, led by Napoleon I, and that of the Austrian Empire, led by Archduke Charles.",
+    "latitude": 48.84,
+    "longitude": 12.01,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ratisbon.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ratisbon",
     "commanders": [
       "Napoleon",
       "Archduke Charles"

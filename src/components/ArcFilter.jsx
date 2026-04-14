@@ -4,7 +4,8 @@ import { useAppContext } from '../context/AppContext';
 const ArcFilter = ({ className, style }) => {
     const { filterCategory, showArcOnly, setShowArcOnly } = useAppContext();
 
-    if (!filterCategory.includes('Battle site')) return null;
+    const isBattleSiteAlone = filterCategory.length === 1 && filterCategory[0] === 'Battle site';
+    if (!isBattleSiteAlone) return null;
 
     return (
         <button
