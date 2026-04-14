@@ -4217,5 +4217,45 @@
     ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": "arc"
+  },
+  {
+    "id": "233",
+    "name": "Battlefield of Neumarkt-Sankt Veit",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Neumarkt-Sankt Veit",
+    "country": "Germany",
+    "description": "On April 24th 1809 saw a Franco-Bavarian force led by Marshal Jean-Baptiste Bessières face an Austrian Empire army commanded by Johann von Hiller.",
+    "latitude": 48.3429,
+    "longitude": 12.535,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Neumarkt.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neumarkt-Sankt_Veit",
+    "commanders": [
+      "Jean Bessières",
+      "Johann von Hiller"
+    ],
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "234",
+    "name": "Battlefield of Radzymin",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Radzymin",
+    "country": "Poland",
+    "description": "Took place on 25 April 1809, during the brief Polish–Austrian War. The battle occurred at Radzymin, some 20 kilometres (12 mi) north-east of Warsaw.",
+    "latitude": 52.393,
+    "longitude": 21.157,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Radzymin.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Radzymin_(1809)",
+    "commanders": [
+      "Józef Poniatowski",
+      "Johann Friedrich von Mohr"
+    ],
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]

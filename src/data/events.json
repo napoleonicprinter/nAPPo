@@ -1013,5 +1013,21 @@
         "location": "Landshut, Germany",
         "description": "Took place on April 21st 1809 between the French, Württembergers (VIII Corps) and Bavarians (VII Corps) under Napoleon, and the Austrians under the General Johann von Hiller.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)"
+    },
+    {
+        "id": 119,
+        "title": "Battle of Neumarkt-Sankt Veit",
+        "date": "1809-04-24",
+        "location": "Neumarkt-Sankt Veit, Germany",
+        "description": "On April 24th 1809 saw a Franco-Bavarian force led by Marshal Jean-Baptiste Bessières face an Austrian Empire army commanded by Johann von Hiller.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neumarkt-Sankt_Veit"
+    },
+    {
+        "id": 120,
+        "title": "Battle of Radzymin",
+        "date": "1809-04-25",
+        "location": "Radzymin, Poland",
+        "description": "Took place on 25 April 1809, during the brief Polish–Austrian War. The battle occurred at Radzymin, some 20 kilometres (12 mi) north-east of Warsaw.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Radzymin_(1809)"
     }
 ]
