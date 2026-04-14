@@ -1,28 +1,18 @@
 [
   {
     "id": 1,
-    "title": "Historical Reenactment",
-    "description": "High-quality canvas tent for historical reenactments. Period-accurate design and durable materials.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Reenactment_tent_01.jpg",
-    "link": "https://example.com/shop/tent",
-    "email": "contact@napoleonic-tent.com",
-    "category": "Reenactment"
+    "title": "28MM NAPOLEONIC ITALIAN ARTILLERY STL files",
+    "description": "STL files for 28 mm miniatures for italian artillery crew in 1809 uniforms as depicted by drawing at the library of the Museo del Risorgimento at Milano in shako and gaiters.",
+    "image": "https://images.cults3d.com/jp_N-YtjFv7zCM2jVe-rrROSJfE=/516x516/filters:no_upscale():format(webp)/https://fbi.cults3d.com/uploaders/25022776/illustration-file/651e9a1c-5e81-48ef-9f20-339a599716c6/ITA_LFA_1809.jpg",
+    "link": "https://cults3d.com/en/3d-model/game/28mm-napoleonic-italian-artillery-crew-in-shako-gaiters-1809-uniform",
+    "category": "Wargaming"
   },
   {
     "id": 2,
-    "title": "Napoleonic Era Replica Musket",
-    "description": "Non-firing collector's replica of a French Charleville musket. Perfect for displays and museum collections.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Fusil_Charleville_1766.png/1280px-Fusil_Charleville_1766.png",
-    "link": "https://example.com/shop/musket",
-    "email": "sales@napoleonic-museum.com",
-    "category": "Collectibles"
-  },
-  {
-    "id": 3,
-    "title": "Battle of Waterloo Strategy Map",
-    "description": "Large scale reproduction of original planning maps used during the 1815 campaign.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Waterloo_Campaign_Map.jpg",
-    "email": "nAPPoTrails@proton.me",
-    "category": "Books"
+    "title": "France 1813-15 Chasseurs à cheval 6mm to 20mm- STL files.",
+    "description": "STL files for 6mm to 20mm miniatures for French Chasseurs à cheval in 1813-15 campaign dress.",
+    "image": "https://images.playableprints.io/model/7e8d2caf-6681-43fd-9337-e03a69c76695/c3257b7b-4ac0-4ec9-baaa-92cb75f9e503/NMV_FR_CC_1813_Trooper_charge_foto.jpg",
+    "link": "https://www.wargaming3d.com/product/nap-wars-france-1813-chasseurs-a-cheval-6mm-to-20mm-trooper-charging-campaign-dress",
+    "category": "Wargaming"
   }
 ]

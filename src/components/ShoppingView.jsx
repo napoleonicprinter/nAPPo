@@ -47,7 +47,7 @@ const ShoppingView = ({ onClose }) => {
                             <ShoppingCart size={24} />
                         </div>
                         <div className="modal-title-info">
-                            <h2>nAPPo Marketplace</h2>
+                            <h2>nAPPo Trails Marketplace</h2>
                             <p>If you want to place an ad here email us to nAPPoTrails@proton.me</p>
                         </div>
                         <button className="modal-close-btn" onClick={onClose}>
