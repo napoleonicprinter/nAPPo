@@ -989,5 +989,13 @@
         "location": "Klyastitsy, Belarus",
         "description": "Also called the Battle of Yakubovo or the Battle of Oboyarshchina, was a series of military engagements that took place on 30 July [O.S. 18 July] 1812 – 1 August 1812.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Klyastitsy"
+    },
+    {
+        "id": 116,
+        "title": "Battle of Aboukir",
+        "date": "1799-07-25",
+        "location": "Aboukir, Egypt",
+        "description": "Fought on July 25th 1799 between the French Army of the Orient under Napoleon Bonaparte and an Ottoman army under Mustafa Pasha.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abukir_(1799)"
     }
 ]
