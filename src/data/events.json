@@ -1117,5 +1117,69 @@
         "location": "Korneuburg, Austria",
         "description": "It was a relatively minor rearguard action fought by Austrian VI Korps of the Kaiserlich-königliche Hauptarmee under Johann von Klenau against elements of the French IV Corps of the Armée d'Allemagne, under the command of Claude Legrand.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_Korneuburg"
+    },
+    {
+        "id": 132,
+        "title": "Armistice of Cherasco",
+        "date": "1796-04-26",
+        "location": "Cherasco, Italy",
+        "description": "The Armistice of Cherasco was a treaty signed on April 26th 1796 between Napoleon Bonaparte and the Savoy kingdom.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Armistice_of_Cherasco"
+    },
+    {
+        "id": 133,
+        "title": "Battle of Gefrees",
+        "date": "1809-07-08",
+        "location": "Gefrees, Germany",
+        "description": "Fought on July 8th 1809 during the War of the Fifth Coalition between a joint force of Austrians and Brunswickers under the command of General Kienmayer and a French force under the command of General Junot.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gefrees"
+    },
+    {
+        "id": 134,
+        "title": "Battle of Hollabrunn",
+        "date": "1809-07-09",
+        "location": "Hollabrunn, Austria",
+        "description": "Was a rearguard action fought on July 9th 1809 by Austrian VI Korps of the Kaiserlich-königliche Hauptarmee under Johann von Klenau against elements of the French IV Corps of the Armée d'Allemagne, under the command of André Masséna",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hollabrunn_(1809)"
+    },
+    {
+        "id": 135,
+        "title": "Battle of Möckern",
+        "date": "1813-10-16",
+        "location": "Möckern, Germany",
+        "description": "Was a series of heavy clashes on April 5th 1813 between allied Prusso-Russian troops under Russian commander Peter Wittgenstein and Napoleonic French forces under Eugène de Beauharnais.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_M%C3%B6ckern"
+    },
+    {
+        "id": 136,
+        "title": "Battle of Luneburg",
+        "date": "1813-04-02",
+        "location": "Luneburg, Germany",
+        "description": "On April 2nd 1813, Allied Russians and Prussians were victorious over a French and Saxon division.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCneburg"
+    },
+    {
+        "id": 137,
+        "title": "Battle of Luckau",
+        "date": "1813-06-04",
+        "location": "Luckau, Germany",
+        "description": "Prussian and Russian forces under General Friedrich Wilhelm von Bülow defeated part of a French-Allied corps under Marshal Nicolas Oudinot on June 4th 1813.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Luckau"
+    },
+    {
+        "id": 138,
+        "title": "Battle of Lützen",
+        "date": "1813-05-02",
+        "location": "Lützen, Germany",
+        "description": "Prussian and Russian forces under General Friedrich Wilhelm von Bülow defeated part of a French-Allied corps under Marshal Nicolas Oudinot on June 4th 1813.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCtzen_(1813)"
+    },
+    {
+        "id": 139,
+        "title": "Battle of Haynau",
+        "date": "1813-05-26",
+        "location": "Haynau, Germany",
+        "description": "Fought on May 26th 1813, between Prussian cavalry under the command of General Gebhard Leberecht von Blücher and a French infantry division under the command of General Nicolas Joseph Maison",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haynau"
     }
 ]
