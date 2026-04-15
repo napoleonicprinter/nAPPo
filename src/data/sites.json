@@ -4798,5 +4798,19 @@
       "Gebhard Leberecht von Blücher",
       "Nicolas Joseph Maison"
     ]
+  },
+  {
+    "id": "264",
+    "name": "Blucher monument at Chojnów",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Chojnów",
+    "country": "Poland",
+    "description": "To commemorate Blücher's first victory in Silesia, a monument was erected in the Chojnów market square with the inscription: 'The glorious victory of Blücher's cavalry at Haynau, 26 May 1813'.",
+    "latitude": 51.271974,
+    "longitude": 15.932268,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Haynau_Blucher.webp",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
