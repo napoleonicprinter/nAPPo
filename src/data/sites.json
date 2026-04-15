@@ -4556,5 +4556,20 @@
       "Johann von Klenau",
       "Claude Legrand"
     ]
+  },
+  {
+    "id": "251",
+    "name": "Louis Braun",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Innsbruck",
+    "country": "Austria",
+    "description": "The baroque Innsbruck hospital church on Maria-Theresien-Strasse in the oil canvas by Louis Braun still standing today, was at the centre of the fighting.",
+    "latitude": 47.266812,
+    "longitude": 11.3937,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Innsbruck_Louis Braun.webp",
+    "link": "https://www.dorotheum.com/en/l/7393624/#:~:text=Private%20Collection%20Vienna.-,The%20important%20German%20history%20painter%20Louis%20Braun%20concentrated%20on%20the,church%20windows%20are%20clearly%20visible.",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
