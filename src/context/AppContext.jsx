@@ -76,7 +76,7 @@ export const EUROPEAN_CAPITALS = [
 ];
 
 export const AppProvider = ({ children }) => {
-    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const isDevelopment = import.meta.env.DEV;
 
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {

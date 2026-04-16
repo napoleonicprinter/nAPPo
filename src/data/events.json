@@ -1187,7 +1187,55 @@
         "title": "Battle of Grobbeeren",
         "date": "1813-08-23",
         "location": "Großbeeren, Germany",
-        "description": "Occurred on August 23rd 1813 in neighboring Blankenfelde and Sputendorf [de] between the Prussian III Corps under Friedrich von Bülow and the Franco-Saxon VII Corps under Jean Reynier.",
+        "description": "Occurred on August 23rd 1813 in neighboring Blankenfelde and Sputendorf between the Prussian III Corps under Friedrich von Bülow and the Franco-Saxon VII Corps under Jean Reynier.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gro%C3%9Fbeeren"
+    },
+    {
+        "id": 141,
+        "title": "Battle of the Katzbach",
+        "date": "1813-08-26",
+        "location": "Liegnitz, Poland",
+        "description": "Fought on August 26th 1813, was a major battle of the Napoleonic Wars between the forces of the First French Empire under Marshal MacDonald and a Russo-Prussian army of the Sixth Coalition under Prussian Marshal Graf von Blücher.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Katzbach"
+    },
+    {
+        "id": 142,
+        "title": "Battle of Dresden",
+        "date": "1813-08-26",
+        "location": "Dresden, Germany",
+        "description": "Fought on August 26th - 27th 1813, was a major engagement of the Napoleonic Wars. The battle took place around the city of Dresden in modern-day Germany, then the capital of the Kingdom of Saxony.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dresden"
+    },
+    {
+        "id": 143,
+        "title": "Battle of Hagelberg",
+        "date": "1813-08-27",
+        "location": "Hagelberg, Germany",
+        "description": "Fought on August 27th 1813, was a major engagement of the Napoleonic Wars. The battle took place around the village of Hagelberg in modern-day Germany, then the capital of the Kingdom of Saxony.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hagelberg"
+    },
+    {
+        "id": 144,
+        "title": "Battle of Kulm",
+        "date": "1813-08-29",
+        "location": "Kulm, Czech Republic",
+        "description": "Fought on August 29th - 30th 1813, was a major engagement of the Napoleonic Wars. The battle took place around the village of Kulm in modern-day Czech Republic, then the capital of the Kingdom of Bohemia.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Kulm"
+    },
+    {
+        "id": 145,
+        "title": "Battle of Dennewitz",
+        "date": "1813-09-06",
+        "location": "Dennewitz, Germany",
+        "description": "Fought on September 6th 1813, was a major engagement of the Napoleonic Wars. The battle took place around the village of Dennewitz in modern-day Germany, then the capital of the Kingdom of Saxony.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dennewitz"
+    },
+    {
+        "id": 146,
+        "title": "Battle of Wartenburg",
+        "date": "1813-10-03",
+        "location": "Wartenburg, Germany",
+        "description": "Took place on October 3rd 1813 between the French IV Corps commanded by General Henri Gatien Bertrand and the Allied Army of Silesia, principally the I Corps of General Ludwig von Yorck with the personal participation of the army commander, Gebhard L. von Blücher.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wartenburg"
     }
 ]
