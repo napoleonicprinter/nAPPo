@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Navigation, Star } from 'lucide-react';
@@ -167,56 +167,97 @@ const ClusteringController = ({ setMaxClusterRadius }) => {
     return null;
 };
 
-// Helper component to toggle geolocation directly from the map
-const GeolocationControl = () => {
-    const { geolocationEnabled, requestGeolocation, disableGeolocation } = useAppContext();
+// Helper component to provide a search input directly from the map
+const SearchControl = () => {
+    const { filterSearch, setFilterSearch } = useAppContext();
     const map = useMap();
+    const filterSearchRef = useRef(filterSearch);
+    
+    useEffect(() => {
+        filterSearchRef.current = filterSearch;
+    }, [filterSearch]);
 
     useEffect(() => {
         if (!map) return;
 
         const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
-        container.style.backgroundColor = geolocationEnabled ? 'var(--accent-primary)' : 'white';
-        container.style.width = '34px';
-        container.style.height = '34px';
-        container.style.cursor = 'pointer';
+        container.style.backgroundColor = 'white';
         container.style.display = 'flex';
         container.style.alignItems = 'center';
-        container.style.justifyContent = 'center';
-        container.style.color = geolocationEnabled ? '#000' : '#333';
-        container.title = geolocationEnabled ? 'Disable Location Services' : 'Enable Location Services';
+        container.style.cursor = 'pointer';
         container.style.transition = 'all 0.2s';
+        container.style.height = '34px';
+        container.title = 'Search Sites';
 
-        container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
+        let isExpanded = false;
 
-        container.onmouseover = () => {
-            if (!geolocationEnabled) container.style.backgroundColor = '#f4f4f4';
-        };
-        container.onmouseout = () => {
-            container.style.backgroundColor = geolocationEnabled ? 'var(--accent-primary)' : 'white';
+        const getIconHtml = (color = '#333') => `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
+
+        const renderClosed = () => {
+             container.innerHTML = `<div style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">${getIconHtml('#333')}</div>`;
+             container.style.width = '34px';
         };
 
-        container.onclick = function (e) {
-            L.DomEvent.stopPropagation(e);
-            e.preventDefault();
-            if (geolocationEnabled) {
-                disableGeolocation();
-            } else {
-                requestGeolocation();
-            }
+        const renderExpanded = () => {
+             container.innerHTML = `
+                 <div style="display: flex; align-items: center; padding: 0 5px; height: 100%;">
+                     ${getIconHtml('red')}
+                     <input type="text" id="map-search-input" placeholder="Search sites…" style="border: none; background: transparent; outline: none; width: 140px; margin-left: 5px; font-size: 14px; color: #333;" />
+                     <button id="map-search-clear" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; padding: 2px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                 </div>
+             `;
+             container.style.width = 'auto';
+             const input = container.querySelector('#map-search-input');
+             input.value = filterSearchRef.current || '';
+             input.focus();
+
+             input.oninput = (e) => {
+                 setFilterSearch(e.target.value);
+             };
+             
+             container.querySelector('#map-search-clear').onclick = (e) => {
+                 e.stopPropagation();
+                 setFilterSearch('');
+                 input.value = '';
+                 input.focus();
+             };
         };
+
+        renderClosed();
+        
+        if (filterSearchRef.current) {
+             isExpanded = true;
+             renderExpanded();
+        }
+
+        container.onclick = (e) => {
+             L.DomEvent.stopPropagation(e);
+             e.preventDefault();
+             if (!isExpanded) {
+                 isExpanded = true;
+                 renderExpanded();
+             } else if (!filterSearchRef.current) {
+                 if (e.target === container || e.target.tagName.toLowerCase() === 'div' || e.target.tagName.toLowerCase() === 'svg' || e.target.tagName.toLowerCase() === 'circle' || e.target.tagName.toLowerCase() === 'line') {
+                     isExpanded = false;
+                     renderClosed();
+                 }
+             }
+        };
+
+        container.onmouseover = () => { if (!isExpanded) container.style.backgroundColor = '#f4f4f4'; };
+        container.onmouseout = () => { if (!isExpanded) container.style.backgroundColor = 'white'; };
+
+        L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.disableScrollPropagation(container);
 
         const control = L.control({ position: 'topright' });
-        control.onAdd = function () {
-            return container;
-        };
-
+        control.onAdd = () => container;
         control.addTo(map);
 
         return () => {
             control.remove();
         };
-    }, [map, geolocationEnabled, requestGeolocation, disableGeolocation]);
+    }, [map, setFilterSearch]);
 
     return null;
 };
@@ -328,7 +369,6 @@ const MapView = () => {
         sites, allSites, toggleVisited, userCoords,
         filterCategory, setFilterCategory,
         filterRadius, setFilterRadius,
-        geolocationEnabled,
         mapStyle,
         theme,
     } = useAppContext();
@@ -360,7 +400,6 @@ const MapView = () => {
                 zoomControl={false}
             >
                 <RemoveDefaultZoom />
-                <ZoomControl position="topright" />
                 <TileLayer
                     key={mapStyle}
                     attribution={TILE_LAYERS[mapStyle].attribution}
@@ -368,8 +407,9 @@ const MapView = () => {
                 />
 
                 <LocationMarker />
+                <SearchControl />
+                <ZoomControl position="topright" />
                 <MapStyleControl />
-                <GeolocationControl />
                 <CenterControl />
                 <ClusteringController setMaxClusterRadius={setMaxClusterRadius} />
 

@@ -52,11 +52,9 @@ const Header = () => {
     const [showNews, setShowNews] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [showSearch, setShowSearch] = useState(false);
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
-    const searchInputRef = useRef(null);
 
     const { newsData } = useAppContext();
     const recentNewsCount = useMemo(() => {
@@ -456,44 +454,7 @@ const Header = () => {
                         <span className="mobile-only-label">Filters</span>
                     </button>
 
-                    {/* Search */}
-                    <div key="view-search" className="search-toggle-wrapper">
-                        <button
-                            className={`toggle-btn ${showSearch || filterSearch ? 'active' : ''}`}
-                            onClick={() => {
-                                const next = !showSearch;
-                                setShowSearch(next);
-                                if (!next) setFilterSearch('');
-                                else setTimeout(() => searchInputRef.current?.focus(), 50);
-                            }}
-                            title="Search Sites"
-                        >
-                            <Search size={20} />
-                            <span className="mobile-only-label">Search</span>
-                        </button>
-                        {showSearch && (
-                            <div className="search-input-wrapper animate-fade-in">
-                                <Search size={14} className="search-input-icon" />
-                                <input
-                                    ref={searchInputRef}
-                                    type="text"
-                                    className="search-input"
-                                    placeholder="Search sites…"
-                                    value={filterSearch}
-                                    onChange={(e) => setFilterSearch(e.target.value)}
-                                />
-                                {filterSearch && (
-                                    <button
-                                        className="search-clear-btn"
-                                        onClick={() => setFilterSearch('')}
-                                        title="Clear search"
-                                    >
-                                        <X size={12} />
-                                    </button>
-                                )}
-                            </div>
-                        )}
-                    </div>
+                    {/* Search feature was moved to MapView */}
 
                     <button
                         key="theme-toggle"
