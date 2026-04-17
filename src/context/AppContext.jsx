@@ -301,7 +301,7 @@ export const AppProvider = ({ children }) => {
 
 
     useEffect(() => {
-        const allowedCategories = ['Battle site', 'Naval Battle', 'Battle landmark'];
+        const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
         const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
         if (!showFilter) {
             setFilterCommander('all');

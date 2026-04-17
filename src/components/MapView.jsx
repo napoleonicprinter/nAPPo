@@ -46,7 +46,7 @@ const TILE_LAYERS = {
 const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149'; // Red
-        case 'Naval Battle': return '#38bdf8'; // Light Blue
+        case 'Naval battle': return '#38bdf8'; // Light Blue
         case 'Battle landmark': return '#ff6092'; // Pink
         case 'Museum': return '#a371f7'; // Purple
         case 'Monument': return '#10b981'; // Emerald Green
@@ -61,8 +61,8 @@ const getCategoryColor = (category) => {
 
 const CATEGORY_ORDER = [
     'Battle site',
-    'Naval Battle',
     'Battle landmark',
+    'Naval battle',
     'Museum',
     'Monument',
     'Building',

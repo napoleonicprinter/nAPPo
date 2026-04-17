@@ -19,8 +19,8 @@ import './Header.css';
 
 const CATEGORY_ORDER = [
     'Battle site',
-    'Naval Battle',
     'Battle landmark',
+    'Naval battle',
     'Museum',
     'Artwork',
     'Monument',

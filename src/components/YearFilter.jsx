@@ -5,7 +5,7 @@ import CustomSimpleSelect from './CustomSimpleSelect';
 const YearFilter = ({ compact, style, className }) => {
     const { filterYear, setFilterYear, allSites, filterCategory } = useAppContext();
 
-    const allowedCategories = ['Battle site', 'Naval Battle', 'Battle landmark'];
+    const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
     const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
 
     if (!showFilter) {
