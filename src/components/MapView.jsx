@@ -147,12 +147,12 @@ const ClusteringController = ({ setMaxClusterRadius }) => {
         const center = map.getCenter();
 
         // At zoom Level z, 1 pixel = (40075 * cos(lat)) / (256 * 2^z) km
-        // So pixels for 10 km = 10 / ((40075 * cos(lat)) / (256 * 2^z))
+        // So pixels for 3 km = 3 / ((40075 * cos(lat)) / (256 * 2^z))
         const kmPerPixel = (40075 * Math.cos(center.lat * Math.PI / 180)) / (256 * Math.pow(2, zoom));
-        const pixelsFor10Km = 10 / kmPerPixel;
+        const pixelsFor3Km = 3 / kmPerPixel;
 
-        // We set a minimum of 20px and a maximum of 200px to keep it usable
-        const radius = Math.min(Math.max(Math.round(pixelsFor10Km), 20), 200);
+        // We set a minimum of 20px and a maximum of 80px to keep it usable
+        const radius = Math.min(Math.max(Math.round(pixelsFor3Km), 20), 80);
         setMaxClusterRadius(radius);
     };
 

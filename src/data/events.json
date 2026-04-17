@@ -1259,5 +1259,21 @@
         "location": "Cadiz, Spain",
         "description": "Also known as the capture of the Rosily squadron, took place on June 14th 1808 in Cádiz following the Dos de Mayo Uprising against French troops in Madrid.",
         "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_la_Poza_de_Santa_Isabel"
+    },
+    {
+        "id": 150,
+        "title": "Action of 4 April 1808",
+        "date": "1808-04-04",
+        "location": "Rota, Cadiz, Spain",
+        "description": "The Royal Navy warships HMS Alceste, HMS Mercury and HMS Grasshopper intercepted and defeated a large Spanish convoy protected by twenty gunboats and a train of batteries close to shore.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_4_April_1808"
+    },
+    {
+        "id": 151,
+        "title": "Action of 2 June 1807",
+        "date": "1807-06-02",
+        "location": "Río de la Plata, Argentina",
+        "description": "During the British invasions of the River Plate between a Royal Navy schooner and two Spanish small vessels, a privateer sloop and naval felucca, at the mouth of the Paraná Guazú.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_2_June_1807"
     }
 ]
