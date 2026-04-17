@@ -1237,5 +1237,11 @@
         "location": "Wartenburg, Germany",
         "description": "Took place on October 3rd 1813 between the French IV Corps commanded by General Henri Gatien Bertrand and the Allied Army of Silesia, principally the I Corps of General Ludwig von Yorck with the personal participation of the army commander, Gebhard L. von Blücher.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wartenburg"
+    },
+    {
+        "id": 147,
+        "title": "Appointment of the Commander of the Army of Portugal",
+        "date": "1810-04-17",
+        "description": " Marshal André Masséna was appointed to command the Army of Portugal on April 17, 1810.",
     }
 ]
