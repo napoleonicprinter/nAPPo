@@ -45,9 +45,9 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
             {onClose && (
                 <button
                     onClick={onClose}
-                    className="close-card-btn glass-panel"
+                    className="modal-close-btn"
                     title="Close"
-                    style={{ position: 'absolute', top: '10px', left: '10px', zIndex: '20', background: 'rgba(0,0,0,0.6)', border: 'none', color: 'white', borderRadius: '50%', padding: '4px', cursor: 'pointer' }}
+                    style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 20 }}
                 >
                     <X size={20} />
                 </button>
@@ -60,7 +60,8 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                     <div className="new-site-badge">NEW</div>
                 )}
 
-                <div className="card-visited-overlay">
+                {/* Mark as Visited — top-left corner */}
+                <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 10 }}>
                     <button
                         className={`btn-visited ${site.visited ? 'active' : ''}`}
                         onClick={() => toggleVisited(site.id)}

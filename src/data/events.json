@@ -1283,5 +1283,29 @@
         "location": "Slipshavn, Denmark",
         "description": "On August 10th 1808 the Spaniard troops commanded by the Marquis of La Romana defected from the armies of the First French Empire.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Evacuation_of_La_Romana%27s_division"
+    },
+    {
+        "id": 153,
+        "title": "Battle of Cape Santa Maria",
+        "date": "1804-10-05",
+        "location": "Cabo de Santa María, Portugal",
+        "description": "Took place on October 5th 1804. In this confrontation, a British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804"
+    },
+    {
+        "id": 154,
+        "title": "Action of 23 August 1806",
+        "date": "1806-08-23",
+        "location": "La Habana, Cuba",
+        "description": "In the engagement on August 23 1806, the Spanish frigate Pomona was captured by the British frigates HMS Anson and HMS Arethusa under the commands of Captain Charles Lydiard and Charles Brisbane",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_23_August_1806"
+    },
+    {
+        "id": 155,
+        "title": "Battle of Cape Ortegal",
+        "date": "1805-11-04",
+        "location": "Cape Ortegal, Spain",
+        "description": "On November 4th 1805 took place the final action of the Trafalgar campaign, and was fought between a squadron of the Royal Navy and a remnant of the fleet that had been defeated earlier at the Battle of Trafalgar. ",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Ortegal"
     }
 ]

@@ -9,7 +9,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
     const getCategoryColor = (category) => {
         switch (category) {
             case 'Battle site': return '#f85149';
-            case 'Naval Battle': return '#38bdf8';
+            case 'Naval battle': return '#38bdf8';
             case 'Battle landmark': return '#ff6092';
             case 'Museum': return '#a371f7';
             case 'Monument': return '#10b981';

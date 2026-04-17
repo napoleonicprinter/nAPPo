@@ -3362,7 +3362,7 @@
   {
     "id": "188",
     "name": "Battle of Trafalgar",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Major",
     "year": "1805",
     "location": "Cabo Trafalgar",
@@ -3819,7 +3819,7 @@
   {
     "id": "213",
     "name": "Battle of Blanc-Nez and Gris-Nez",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Minor",
     "year": "1805",
     "location": "English Channel",
@@ -3857,12 +3857,12 @@
   {
     "id": "215",
     "name": "Battle of Cape Finisterre",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Medium",
     "year": "1805",
     "location": "Cape Finisterre",
     "country": "Spain",
-    "description": "On July 22nd 1805, the British fleet under Admiral Robert Calder fought an indecisive naval battle against the combined Franco-Spanish fleet which was returning from the West Indies.",
+    "description": "On July 22nd 1805, the British fleet under Admiral Robert Calder fought an indecisive Naval battle against the combined Franco-Spanish fleet which was returning from the West Indies.",
     "latitude": 42.8941,
     "longitude": -9.2711,
     "visited": false,
@@ -4464,12 +4464,12 @@
   {
     "id": "246",
     "name": "Battle of the Basque Roads",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Major",
     "year": "1809",
     "location": "Île-d'Aix, Basque Roads",
     "country": "France",
-    "description": "The battle lasted from April 11th to the 24th 1809 and was a major naval battle of the Napoleonic Wars, fought in the narrow Basque Roads at the mouth of the Charente River on the Biscay coast of France.(image by BarretBonden)",
+    "description": "The battle lasted from April 11th to the 24th 1809 and was a major Naval battle of the Napoleonic Wars, fought in the narrow Basque Roads at the mouth of the Charente River on the Biscay coast of France.(image by BarretBonden)",
     "latitude": 45.98,
     "longitude": -1.187391,
     "visited": false,
@@ -5059,7 +5059,7 @@
   {
     "id": "278",
     "name": "Batalla de la Poza de Sta Isabel",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Medium",
     "year": "1808",
     "location": "Cadiz",
@@ -5080,7 +5080,7 @@
   {
     "id": "279",
     "name": "Action of 4 April 1808",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Minor",
     "year": "1808",
     "location": "Rota",
@@ -5099,7 +5099,7 @@
   {
     "id": "280",
     "name": "Action of 2 June 1807",
-    "category": "Naval Battle",
+    "category": "Naval battle",
     "significance": "Minor",
     "year": "1807",
     "location": "Río de la Plata",
@@ -5147,5 +5147,83 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Embarque_LaRomana.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Evacuation_of_La_Romana%27s_division",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "283",
+    "name": "Battle of Nazareth",
+    "category": "Artwork",
+    "significance": "Major",
+    "location": "Nantes",
+    "country": "France",
+    "description": "Musée d'Arts de Nantes. Canvas by Antoine-Jean Gros depicting the Battle of Nazareth.",
+    "latitude": 47.2193,
+    "longitude": -1.547,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Battle_Nazaret.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/The_Battle_of_Nazareth_%28Gros%29",
+    "site_link": "https://museedartsdenantes.nantesmetropole.fr",
+    "more_info_link": "https://www.artera.ae/artworks/cee322cf-b185-489e-b05d-543d045f965b",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "284",
+    "name": "Battle of Cape Santa Maria",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": "1804",
+    "location": "Cabo de Santa María",
+    "country": "Portugal",
+    "description": "Took place on October 5th 1804. In this confrontation, a British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
+    "latitude": 36.89663,
+    "longitude": -7.895033,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CaboStaMaria.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Graham Moore",
+      "José de Bustamante"
+    ]
+  },
+  {
+    "id": "285",
+    "name": "Action of 23 August 1806",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1806",
+    "location": "La Habana",
+    "country": "Cuba",
+    "description": "In the engagement on August 23 1806, the Spanish frigate Pomona was captured by the British frigates HMS Anson and HMS Arethusa under the commands of Captain Charles Lydiard and Charles Brisbane.",
+    "latitude": 23.15333,
+    "longitude": -82.366894,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Habana.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_23_August_1806",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Charles Lydiard",
+      "Charles Brisbane",
+      "Pedro Pablo de Sanguineto y Basso"
+    ]
+  },
+  {
+    "id": "286",
+    "name": "Battle of Cape Ortegal",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1805",
+    "location": "Cape Ortegal",
+    "country": "Spain",
+    "description": "On November 4th 1805 took place the final action of the Trafalgar campaign, and was fought between a squadron of the Royal Navy and a remnant of the fleet that had been defeated earlier at the Battle of Trafalgar. ",
+    "latitude": 43.7995,
+    "longitude": -7.887,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ortegal.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Ortegal",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Richard Strachan",
+      "Pierre Dumanoir le Pelley"
+    ]
   }
 ]
