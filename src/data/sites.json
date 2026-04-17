@@ -5132,5 +5132,20 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nyborg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Evacuation_of_La_Romana%27s_division",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "282",
+    "name": "Embarque del Marqués de La Romana y sus tropas",
+    "category": "Artwork",
+    "significance": "Medium",
+    "location": "Madrid",
+    "country": "Spain",
+    "description": "Museo Nacional del Romanticismo. Obra de Juan Rodríguez Jiménez que escenifica el momento en el que el marqués de la Romana, en el centro de la escena, arenga a las tropas, preparadas para embarcar en los navíos ingleses.",
+    "latitude": 40.425895,
+    "longitude": -3.698764,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Embarque_LaRomana.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Evacuation_of_La_Romana%27s_division",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
