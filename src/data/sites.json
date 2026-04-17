@@ -5116,5 +5116,21 @@
       "Francisco de Castro",
       "Francisco Pareja"
     ]
+  },
+  {
+    "id": "281",
+    "name": "La Romana's division evacuation",
+    "category": "Landmark",
+    "significance": "Minor",
+    "year": "1808",
+    "location": "Slipshavn",
+    "country": "Denmark",
+    "description": "On August 10th 1808 the Spaniard troops commanded by the Marquis of La Romana defected from the armies of the First French Empire.",
+    "latitude": 55.28666,
+    "longitude": 10.82511,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nyborg.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Evacuation_of_La_Romana%27s_division",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]

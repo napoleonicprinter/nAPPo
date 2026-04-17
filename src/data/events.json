@@ -1275,5 +1275,13 @@
         "location": "Río de la Plata, Argentina",
         "description": "During the British invasions of the River Plate between a Royal Navy schooner and two Spanish small vessels, a privateer sloop and naval felucca, at the mouth of the Paraná Guazú.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_2_June_1807"
+    },
+    {
+        "id": 152,
+        "title": "Evacuation of La Romana's division",
+        "date": "1808-08-10",
+        "location": "Slipshavn, Denmark",
+        "description": "On August 10th 1808 the Spaniard troops commanded by the Marquis of La Romana defected from the armies of the First French Empire.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Evacuation_of_La_Romana%27s_division"
     }
 ]
