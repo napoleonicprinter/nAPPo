@@ -1242,6 +1242,14 @@
         "id": 147,
         "title": "Appointment of the Commander of the Army of Portugal",
         "date": "1810-04-17",
-        "description": " Marshal André Masséna was appointed to command the Army of Portugal on April 17, 1810.",
+        "description": " Marshal André Masséna was appointed to command the Army of Portugal on April 17, 1810."
+    },
+    {
+        "id": 148,
+        "title": "Battle of Sacile",
+        "date": "1809-04-16",
+        "location": "Ronche, Italy",
+        "description": "Also known as the Battle of Fontana Fredda, saw an Austrian army commanded by Archduke John of Austria defeat a Franco-Italian army led by Eugène de Beauharnais and force it to retreat on April 16th 1809.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sacile"
     }
 ]

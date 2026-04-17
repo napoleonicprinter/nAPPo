@@ -173,6 +173,7 @@ export const AppProvider = ({ children }) => {
     }, []);
 
     const [view, setView] = useState('map');
+    const [mapBounds, setMapBounds] = useState(null);
     const [users, setUsers] = useState(() => {
         const saved = localStorage.getItem('appUsers');
         return saved ? JSON.parse(saved) : [];
@@ -260,7 +261,7 @@ export const AppProvider = ({ children }) => {
         }
     };
 
-    const filteredSites = derivedSites.map(site => {
+    const sitesFilteredWithoutCategory = derivedSites.map(site => {
         if (userCoords) {
             return {
                 ...site,
@@ -270,7 +271,6 @@ export const AppProvider = ({ children }) => {
         return site;
     }).filter(site => {
         if (showOnlyNew && !site.isNew) return false;
-        if (filterCategory.length > 0 && !filterCategory.includes(site.category)) return false;
         if (filterSignificance && site.significance !== filterSignificance) return false;
         if (filterVisited === 'visited' && !site.visited) return false;
         if (filterVisited === 'unvisited' && site.visited) return false;
@@ -288,6 +288,17 @@ export const AppProvider = ({ children }) => {
         }
         return true;
     });
+
+    const categoryCounts = sitesFilteredWithoutCategory.reduce((acc, site) => {
+        acc[site.category] = (acc[site.category] || 0) + 1;
+        return acc;
+    }, {});
+
+    const filteredSites = sitesFilteredWithoutCategory.filter(site => {
+        if (filterCategory.length > 0 && !filterCategory.includes(site.category)) return false;
+        return true;
+    });
+
 
     useEffect(() => {
         const allowedCategories = ['Battle site', 'Sea Battle', 'Battle landmark'];
@@ -471,6 +482,7 @@ export const AppProvider = ({ children }) => {
             mapStyle, setMapStyle,
             theme, toggleTheme,
             syncStatus, lastSyncTime,
+            mapBounds, setMapBounds,
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData,
             eventsData: eventsBaseData,

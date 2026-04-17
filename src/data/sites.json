@@ -5039,5 +5039,21 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dennewitz_monument.webp",
     "wikipedia_link": "https://de.wikipedia.org/wiki/Denkmal_zur_Erinnerung_an_die_Schlacht_bei_Dennewitz#:~:text=Das%20Denkmal%20zur%20Erinnerung%20an,der%20Dorfstra%C3%9Fe%20auf%20dem%20Anger.",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "277",
+    "name": "Battlefield of Sacile",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Ronche",
+    "country": "Italy",
+    "description": "Also known as the Battle of Fontana Fredda, saw an Austrian army commanded by Archduke John of Austria defeat a Franco-Italian army led by Eugène de Beauharnais and force it to retreat on April 16th 1809.",
+    "latitude": 45.9696,
+    "longitude": 12.5980,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sacile.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sacile",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]

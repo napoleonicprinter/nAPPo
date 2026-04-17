@@ -167,6 +167,27 @@ const ClusteringController = ({ setMaxClusterRadius }) => {
     return null;
 };
 
+// Helper component to track map bounds
+const BoundsTracker = () => {
+    const { setMapBounds } = useAppContext();
+    const map = useMap();
+
+    useEffect(() => {
+        const updateBounds = () => {
+            setMapBounds(map.getBounds());
+        };
+        updateBounds(); // Initial calculation
+        map.on('moveend', updateBounds);
+        map.on('zoomend', updateBounds);
+        return () => {
+            map.off('moveend', updateBounds);
+            map.off('zoomend', updateBounds);
+        };
+    }, [map, setMapBounds]);
+
+    return null;
+};
+
 // Helper component to provide a search input directly from the map
 const SearchControl = () => {
     const { filterSearch, setFilterSearch } = useAppContext();
@@ -412,6 +433,7 @@ const MapView = () => {
                 <MapStyleControl />
                 <CenterControl />
                 <ClusteringController setMaxClusterRadius={setMaxClusterRadius} />
+                <BoundsTracker />
 
                 <MarkerClusterGroup
                     chunkedLoading

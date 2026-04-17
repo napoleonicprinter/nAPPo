@@ -22,16 +22,47 @@ const getCategoryColor = (category) => {
 };
 
 const CardView = () => {
-    const { sites, userCoords, geolocationEnabled } = useAppContext();
+    const { sites, userCoords, geolocationEnabled, mapBounds } = useAppContext();
 
-    // Sort sites primarily by distance if geolocation is enabled
+    // Sort sites primarily by bounds (if in map view bounds, rank higher), then distance if geolocation is enabled
     const sortedSites = React.useMemo(() => {
         let sorted = [...sites];
-        if (geolocationEnabled && userCoords) {
-            sorted = sorted.sort((a, b) => (a.distance || 0) - (b.distance || 0));
-        }
+
+        // Helper to check if a site is in map bounds
+        const isSiteInBounds = (site) => {
+            if (!mapBounds) return false;
+            const lat = site.latitude;
+            const lng = site.longitude;
+            const north = mapBounds.getNorth();
+            const south = mapBounds.getSouth();
+            const east = mapBounds.getEast();
+            const west = mapBounds.getWest();
+
+            // Handle map wrapping for longitude
+            const inLng = west <= east 
+                ? (lng >= west && lng <= east) 
+                : (lng >= west || lng <= east);
+                
+            return lat >= south && lat <= north && inLng;
+        };
+
+        sorted = sorted.sort((a, b) => {
+            if (mapBounds) {
+                const aInBounds = isSiteInBounds(a);
+                const bInBounds = isSiteInBounds(b);
+
+                if (aInBounds && !bInBounds) return -1;
+                if (!aInBounds && bInBounds) return 1;
+            }
+
+            if (geolocationEnabled && userCoords) {
+                return (a.distance || 0) - (b.distance || 0);
+            }
+            return 0;
+        });
+
         return sorted;
-    }, [sites, userCoords, geolocationEnabled]);
+    }, [sites, userCoords, geolocationEnabled, mapBounds]);
 
     return (
         <div className="card-view-container animate-fade-in">
