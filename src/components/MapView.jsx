@@ -46,7 +46,7 @@ const TILE_LAYERS = {
 const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149'; // Red
-        case 'Sea Battle': return '#38bdf8'; // Light Blue
+        case 'Naval Battle': return '#38bdf8'; // Light Blue
         case 'Battle landmark': return '#ff6092'; // Pink
         case 'Museum': return '#a371f7'; // Purple
         case 'Monument': return '#10b981'; // Emerald Green
@@ -61,7 +61,7 @@ const getCategoryColor = (category) => {
 
 const CATEGORY_ORDER = [
     'Battle site',
-    'Sea Battle',
+    'Naval Battle',
     'Battle landmark',
     'Museum',
     'Monument',
@@ -193,7 +193,7 @@ const SearchControl = () => {
     const { filterSearch, setFilterSearch } = useAppContext();
     const map = useMap();
     const filterSearchRef = useRef(filterSearch);
-    
+
     useEffect(() => {
         filterSearchRef.current = filterSearch;
     }, [filterSearch]);
@@ -215,54 +215,54 @@ const SearchControl = () => {
         const getIconHtml = (color = '#333') => `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
 
         const renderClosed = () => {
-             container.innerHTML = `<div style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">${getIconHtml('#333')}</div>`;
-             container.style.width = '34px';
+            container.innerHTML = `<div style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">${getIconHtml('#333')}</div>`;
+            container.style.width = '34px';
         };
 
         const renderExpanded = () => {
-             container.innerHTML = `
+            container.innerHTML = `
                  <div style="display: flex; align-items: center; padding: 0 5px; height: 100%;">
                      ${getIconHtml('red')}
                      <input type="text" id="map-search-input" placeholder="Search sites…" style="border: none; background: transparent; outline: none; width: 140px; margin-left: 5px; font-size: 14px; color: #333;" />
                      <button id="map-search-clear" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; padding: 2px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                  </div>
              `;
-             container.style.width = 'auto';
-             const input = container.querySelector('#map-search-input');
-             input.value = filterSearchRef.current || '';
-             input.focus();
+            container.style.width = 'auto';
+            const input = container.querySelector('#map-search-input');
+            input.value = filterSearchRef.current || '';
+            input.focus();
 
-             input.oninput = (e) => {
-                 setFilterSearch(e.target.value);
-             };
-             
-             container.querySelector('#map-search-clear').onclick = (e) => {
-                 e.stopPropagation();
-                 setFilterSearch('');
-                 input.value = '';
-                 input.focus();
-             };
+            input.oninput = (e) => {
+                setFilterSearch(e.target.value);
+            };
+
+            container.querySelector('#map-search-clear').onclick = (e) => {
+                e.stopPropagation();
+                setFilterSearch('');
+                input.value = '';
+                input.focus();
+            };
         };
 
         renderClosed();
-        
+
         if (filterSearchRef.current) {
-             isExpanded = true;
-             renderExpanded();
+            isExpanded = true;
+            renderExpanded();
         }
 
         container.onclick = (e) => {
-             L.DomEvent.stopPropagation(e);
-             e.preventDefault();
-             if (!isExpanded) {
-                 isExpanded = true;
-                 renderExpanded();
-             } else if (!filterSearchRef.current) {
-                 if (e.target === container || e.target.tagName.toLowerCase() === 'div' || e.target.tagName.toLowerCase() === 'svg' || e.target.tagName.toLowerCase() === 'circle' || e.target.tagName.toLowerCase() === 'line') {
-                     isExpanded = false;
-                     renderClosed();
-                 }
-             }
+            L.DomEvent.stopPropagation(e);
+            e.preventDefault();
+            if (!isExpanded) {
+                isExpanded = true;
+                renderExpanded();
+            } else if (!filterSearchRef.current) {
+                if (e.target === container || e.target.tagName.toLowerCase() === 'div' || e.target.tagName.toLowerCase() === 'svg' || e.target.tagName.toLowerCase() === 'circle' || e.target.tagName.toLowerCase() === 'line') {
+                    isExpanded = false;
+                    renderClosed();
+                }
+            }
         };
 
         container.onmouseover = () => { if (!isExpanded) container.style.backgroundColor = '#f4f4f4'; };

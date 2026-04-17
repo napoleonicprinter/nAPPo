@@ -3362,7 +3362,7 @@
   {
     "id": "188",
     "name": "Battle of Trafalgar",
-    "category": "Sea Battle",
+    "category": "Naval Battle",
     "significance": "Major",
     "year": "1805",
     "location": "Cabo Trafalgar",
@@ -3819,7 +3819,7 @@
   {
     "id": "213",
     "name": "Battle of Blanc-Nez and Gris-Nez",
-    "category": "Sea Battle",
+    "category": "Naval Battle",
     "significance": "Minor",
     "year": "1805",
     "location": "English Channel",
@@ -3857,7 +3857,7 @@
   {
     "id": "215",
     "name": "Battle of Cape Finisterre",
-    "category": "Sea Battle",
+    "category": "Naval Battle",
     "significance": "Medium",
     "year": "1805",
     "location": "Cape Finisterre",
@@ -4464,7 +4464,7 @@
   {
     "id": "246",
     "name": "Battle of the Basque Roads",
-    "category": "Sea Battle",
+    "category": "Naval Battle",
     "significance": "Major",
     "year": "1809",
     "location": "Île-d'Aix, Basque Roads",
@@ -5054,6 +5054,22 @@
     "visited": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sacile.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sacile",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "278",
+    "name": "Batalla de la Poza de Sta Isabel",
+    "category": "Naval Battle",
+    "significance": "Medium",
+    "year": "1808",
+    "location": "Cadiz",
+    "country": "Spain",
+    "description": "Also known as the capture of the Rosily squadron, took place on June 14th 1808 in Cádiz following the Dos de Mayo Uprising against French troops in Madrid.",
+    "latitude": 36.4988,
+    "longitude": -6.224311,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cadiz.webp",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_la_Poza_de_Santa_Isabel",
     "createDate": "2025-03-22T10:00:00Z"
   }
 ]

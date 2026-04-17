@@ -1251,5 +1251,13 @@
         "location": "Ronche, Italy",
         "description": "Also known as the Battle of Fontana Fredda, saw an Austrian army commanded by Archduke John of Austria defeat a Franco-Italian army led by Eugène de Beauharnais and force it to retreat on April 16th 1809.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sacile"
+    },
+    {
+        "id": 149,
+        "title": "Batalla de la Poza de Sta Isabel",
+        "date": "1808-06-14",
+        "location": "Cadiz, Spain",
+        "description": "Also known as the capture of the Rosily squadron, took place on June 14th 1808 in Cádiz following the Dos de Mayo Uprising against French troops in Madrid.",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_la_Poza_de_Santa_Isabel"
     }
 ]

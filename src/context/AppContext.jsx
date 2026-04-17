@@ -301,7 +301,7 @@ export const AppProvider = ({ children }) => {
 
 
     useEffect(() => {
-        const allowedCategories = ['Battle site', 'Sea Battle', 'Battle landmark'];
+        const allowedCategories = ['Battle site', 'Naval Battle', 'Battle landmark'];
         const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
         if (!showFilter) {
             setFilterCommander('all');
@@ -410,19 +410,19 @@ export const AppProvider = ({ children }) => {
                 timeout: 10000,
                 maximumAge: 60000
             });
-            
+
             setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
             setGeolocationEnabled(true);
             setLocationMode('geo');
         } catch (error) {
             console.warn("Capacitor Geolocation failed, trying navigator.geolocation", error);
-            
+
             // Fallback to browser geolocation
             if (!navigator.geolocation) {
                 alert("Geolocation is not supported by your device/browser");
                 return;
             }
-            
+
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
@@ -481,6 +481,7 @@ export const AppProvider = ({ children }) => {
             developerMode, setDeveloperMode,
             mapStyle, setMapStyle,
             theme, toggleTheme,
+            categoryCounts,
             syncStatus, lastSyncTime,
             mapBounds, setMapBounds,
             showsToCome: showsBaseData,

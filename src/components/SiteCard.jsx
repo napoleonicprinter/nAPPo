@@ -8,7 +8,7 @@ import './CardView.css'; // Relying on existing CSS for site-card
 const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149';
-        case 'Sea Battle': return '#38bdf8';
+        case 'Naval Battle': return '#38bdf8';
         case 'Battle landmark': return '#ff6092';
         case 'Museum': return '#a371f7';
         case 'Monument': return '#10b981';
@@ -85,7 +85,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                             background: 'rgba(0, 0, 0, 0.65)',
                             backdropFilter: 'blur(4px)',
                             borderRadius: '6px',
-                            color: 'var(--text-primary)',
+                            color: '#ffffff',
                             fontSize: '0.85rem',
                             fontWeight: '600',
                             border: '1px solid rgba(255, 255, 255, 0.15)',

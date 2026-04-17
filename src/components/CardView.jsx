@@ -8,7 +8,7 @@ import './CardView.css';
 const getCategoryColor = (category) => {
     switch (category) {
         case 'Battle site': return '#f85149';
-        case 'Sea Battle': return '#38bdf8';
+        case 'Naval Battle': return '#38bdf8';
         case 'Battle landmark': return '#d29922';
         case 'Museum': return '#a371f7';
         case 'Monument': return '#10b981';
@@ -39,10 +39,10 @@ const CardView = () => {
             const west = mapBounds.getWest();
 
             // Handle map wrapping for longitude
-            const inLng = west <= east 
-                ? (lng >= west && lng <= east) 
+            const inLng = west <= east
+                ? (lng >= west && lng <= east)
                 : (lng >= west || lng <= east);
-                
+
             return lat >= south && lat <= north && inLng;
         };
 

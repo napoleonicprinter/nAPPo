@@ -162,7 +162,7 @@ export const AppProvider = ({ children }) => {
                 setSyncStatus('error');
             }
         };
-        
+
         // Give the app a second to settle before fetching to avoid blocking initial render
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
@@ -288,7 +288,7 @@ export const AppProvider = ({ children }) => {
         if (filterVisited === 'visited' && !site.visited) return false;
         if (filterVisited === 'unvisited' && site.visited) return false;
         if (filterSearch && !site.name.toLowerCase().includes(filterSearch.toLowerCase())) return false;
-        
+
         const siteYearStr = site.year ? String(site.year).trim() : '';
         if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
@@ -304,7 +304,7 @@ export const AppProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        const allowedCategories = ['Battle site', 'Sea Battle', 'Battle landmark'];
+        const allowedCategories = ['Battle site', 'Naval Battle', 'Battle landmark'];
         const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
         if (!showFilter) {
             setFilterCommander('all');
@@ -431,8 +431,8 @@ export const AppProvider = ({ children }) => {
 
         // Check for secure context (HTTPS)
         if (!window.isSecureContext) {
-             alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
-             // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
+            alert("Geolocation requires a secure context (HTTPS). If you are testing on mobile via a local IP, it may be blocked for security.");
+            // Non-secure contexts will likely have navigator.geolocation undefined anyway, but this is a good secondary check.
         }
 
         // Options to improve mobile reliability
@@ -457,7 +457,7 @@ export const AppProvider = ({ children }) => {
                 setGeolocationEnabled(false);
                 setLocationMode('none');
                 setFilterRadius('all');
-                
+
                 let message = "Failed to get location.";
                 switch (error.code) {
                     case error.PERMISSION_DENIED:

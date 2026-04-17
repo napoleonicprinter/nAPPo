@@ -227,6 +227,17 @@
     background: rgba(88, 166, 255, 0.15);
 }
 
+.category-count-badge {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    opacity: 0.75;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    padding-left: 6px;
+    flex-shrink: 0;
+}
+
 .view-toggle {
     display: flex;
     padding: 4px;
@@ -522,6 +533,15 @@
 
 .filters-line>.custom-select-container:first-child {
     min-width: 160px;
+}
+
+/* Category dropdown needs extra width on desktop to avoid wrapping */
+.category-filters-wrapper .custom-select-container {
+    min-width: 210px;
+}
+
+.category-filters-wrapper .custom-select-menu {
+    min-width: 210px;
 }
 
 /* Location */

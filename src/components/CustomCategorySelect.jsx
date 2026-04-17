@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-const CustomCategorySelect = ({ categories, value, onChange }) => {
+const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {} }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -9,7 +9,7 @@ const CustomCategorySelect = ({ categories, value, onChange }) => {
     const getCategoryColor = (category) => {
         switch (category) {
             case 'Battle site': return '#f85149';
-            case 'Sea Battle': return '#38bdf8';
+            case 'Naval Battle': return '#38bdf8';
             case 'Battle landmark': return '#ff6092';
             case 'Museum': return '#a371f7';
             case 'Monument': return '#10b981';
@@ -85,7 +85,10 @@ const CustomCategorySelect = ({ categories, value, onChange }) => {
                         type="button"
                     >
                         <span className="category-dot" style={{ backgroundColor: 'transparent', border: '1px solid var(--border-color)' }} />
-                        All Categories
+                        <span style={{ flex: 1 }}>All Categories</span>
+                        <span className="category-count-badge">
+                            [{Object.values(categoryCounts).reduce((a, b) => a + b, 0)}]
+                        </span>
                     </button>
                     {categories.map(cat => (
                         <button
@@ -98,7 +101,10 @@ const CustomCategorySelect = ({ categories, value, onChange }) => {
                                 className="category-dot"
                                 style={{ backgroundColor: getCategoryColor(cat) }}
                             />
-                            {cat}
+                            <span style={{ flex: 1 }}>{cat}</span>
+                            <span className="category-count-badge">
+                                [{categoryCounts[cat] ?? 0}]
+                            </span>
                         </button>
                     ))}
                 </div>

@@ -19,7 +19,7 @@ import './Header.css';
 
 const CATEGORY_ORDER = [
     'Battle site',
-    'Sea Battle',
+    'Naval Battle',
     'Battle landmark',
     'Museum',
     'Artwork',
@@ -44,7 +44,8 @@ const Header = () => {
         filterSearch, setFilterSearch,
         allSites, sites,
         theme, toggleTheme,
-        syncStatus, lastSyncTime
+        syncStatus, lastSyncTime,
+        categoryCounts
     } = useAppContext();
     const [showSettings, setShowSettings] = useState(false);
     const [showAuth, setShowAuth] = useState(false);
@@ -172,6 +173,7 @@ const Header = () => {
                                 categories={categories}
                                 value={filterCategory}
                                 onChange={setFilterCategory}
+                                categoryCounts={categoryCounts}
                             />
 
                             <SignificanceFilter />
