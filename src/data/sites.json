@@ -5245,5 +5245,24 @@
       "George Bettesworth",
       "Bielke"
     ]
+  },
+  {
+    "id": "288",
+    "name": "The Naval Battle of Alvøen",
+    "category": "Artwork",
+    "significance": "Minor",
+    "location": "Bergen",
+    "country": "Norway",
+    "description": "The Kode Bergen Art Museum houeses this canvas by Johan Christian Claussen Dahl painted in 1808",
+    "latitude": 60.3892,
+    "longitude": 5.328982,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Battle_Alvoen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alv%C3%B8en",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "George Bettesworth",
+      "Bielke"
+    ]
   }
 ]
