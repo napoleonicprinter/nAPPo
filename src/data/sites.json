@@ -5536,5 +5536,77 @@
       "Horatio Nelson",
       "Brueys d'Aigalliers"
     ]
+  },
+  {
+    "id": "303",
+    "name": "Battle of the Nile (Aboukir Bay)",
+    "category": "Naval battle",
+    "year": "1798",
+    "significance": "Major",
+    "location": "Aboukir Bay",
+    "country": "Egypt",
+    "description": "Also known as the Battle of Aboukir Bay, was fought between the Royal Navy and the French Navy at Aboukir Bay in Egypt between August 1st and 3rd 1798. It was the climax of the Mediterranean campaign of 1798.",
+    "latitude": 31.352209,
+    "longitude": 30.203293,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nile.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nile",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Horatio Nelson",
+      "Brueys d'Aigalliers"
+    ]
+  },
+  {
+    "id": "304",
+    "name": "Battle of Brienne",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Major",
+    "location": "Petit-Mesnil",
+    "country": "France",
+    "description": "On January 29th 1814,an Imperial French army led by Emperor Napoleon attack Prussian and Russian forces commanded by Prussian Field Marshal Gebhard Leberecht von Blücher.",
+    "latitude": 48.3541,
+    "longitude": 4.588952,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Brienne.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Brienne",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Gebhard Leberecht von Blücher",
+      "Zakhar Olsufiev",
+      "Fabian Osten-Sacken"
+    ]
+  },
+  {
+    "id": "305",
+    "name": "Musée Napoléon de Brienne",
+    "category": "Museum",
+    "significance": "Major",
+    "location": "Brienne-le-Château",
+    "country": "France",
+    "description": "Arms, ammunition, uniforms and complete kit from these battle sites complete the exhibition. Of particular interest is the statue of Napoleon above the entrance to the school and the plaque listing the names of the pupils who graduated from the school between 1776 and 1790.",
+    "latitude": 48.389,
+    "longitude": 4.528399,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Brienne_Museo.webp",
+    "site_link": "https://www.musee-napoleon-brienne.fr/",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "306",
+    "name": "Military School in Brienne",
+    "category": "Landmark",
+    "significance": "Major",
+    "location": "Brienne-le-Château",
+    "country": "France",
+    "description": "Venue of the Military School in Brienne, where Napoleon Bonaparte spent part of his youth, from May 1779 to October 1784.",
+    "latitude": 48.389049,
+    "longitude": 4.527762,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Brienne_Military.webp",
+    "link": "https://www.napoleon.org/en/history-of-the-two-empires/objects/napoleon-bonaparte-student-of-the-royal-military-school-in-brienne-aged-15-years-old/",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]

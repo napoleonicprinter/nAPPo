@@ -1408,5 +1408,14 @@
         "country": "Egypt",
         "description": "Also known as the Battle of Aboukir Bay, was fought between the Royal Navy and the French Navy at Aboukir Bay in Egypt between August 1st and 3rd 1798. It was the climax of the Mediterranean campaign of 1798.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nile"
+    },
+    {
+        "id": 168,
+        "title": "Battle of Brienne",
+        "date": "1814-01-29",
+        "location": "Petit-Mesnil",
+        "country": "France",
+        "description": "On January 29th 1814,an Imperial French army led by Emperor Napoleon attack Prussian and Russian forces commanded by Prussian Field Marshal Gebhard Leberecht von Blücher.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Brienne"
     }
 ]
