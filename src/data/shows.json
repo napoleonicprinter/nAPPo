@@ -349,5 +349,18 @@
     "moreInfo": "https://allevents.in/montbeliard/200029684428834",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Belfort_2026.webp",
     "category": "Reenactment"
+  },
+  {
+    "id": 27,
+    "name": "Le chatteau d'Heeswijk Libere VII",
+    "date": "2026-08-21",
+    "month": "August",
+    "country": "Netherlands",
+    "venue": "Kasteel Heeswijk, Heeswijk-Dinther, Netherlands",
+    "organizer": " La Charte d'Histoire Vivante",
+    "description": "21-23 August 2026",
+    "moreInfo": "https://www.facebook.com/events/800751159295678?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22group%22%7D]%7D",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Heeswijk_2026.webp",
+    "category": "Reenactment"
   }
 ]
