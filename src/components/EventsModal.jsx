@@ -42,10 +42,10 @@ const EventsModal = ({ onClose }) => {
                             <CalendarIcon size={24} />
                         </div>
                         <div className="modal-title-info">
-                            <h2>Today in nAPPo History</h2>
+                            <h2>Today in History</h2>
                             <p>{todayString}</p>
                         </div>
-                        
+
                         <div style={{ marginLeft: 'auto', marginRight: '1rem' }}>
                             <button
                                 onClick={() => setIsCalendarOpen(true)}

@@ -1390,5 +1390,23 @@
         "country": "Madagascar",
         "description": "It was fought off Tamatave in the Indian Ocean between British and French frigate squadrons during the Napoleonic Wars. The action was the final engagement of the Mauritius campaign of 1809/1811.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tamatave"
+    },
+    {
+        "id": 166,
+        "title": "Battle of Les Sables-d'Olonne",
+        "date": "1809-02-23",
+        "location": "Les Sables-d'Olonne",
+        "country": "France",
+        "description": "It was a minor naval battle fought on February 23rd 1809 off the town of Les Sables-d'Olonne on the Biscay Coast of France between a French Navy squadron of three frigates and a larger British squadron of ships of the line. ",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Les_Sables-d%27Olonne"
+    },
+    {
+        "id": 167,
+        "title": "Battle of the Nile (Aboukir Bay)",
+        "date": "1798-08-01",
+        "location": "Aboukir Bay",
+        "country": "Egypt",
+        "description": "Also known as the Battle of Aboukir Bay, was fought between the Royal Navy and the French Navy at Aboukir Bay in Egypt between August 1st and 3rd 1798. It was the climax of the Mediterranean campaign of 1798.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nile"
     }
 ]

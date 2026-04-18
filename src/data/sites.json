@@ -5496,5 +5496,45 @@
     "visited": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sjaellands_memorial.webp",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "301",
+    "name": "Battle of Les Sables-d'Olonne",
+    "category": "Naval battle",
+    "year": "1809",
+    "significance": "Minor",
+    "location": "Les Sables-d'Olonne",
+    "country": "France",
+    "description": "It was a minor naval battle fought on February 23rd 1809 off the town of Les Sables-d'Olonne on the Biscay Coast of France between a French Navy squadron of three frigates and a larger British squadron of ships of the line. ",
+    "latitude": 46.46918,
+    "longitude": -1.788445,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Les_Sables.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Les_Sables-d%27Olonne",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Robert Stopford",
+      "Pierre Jurien"
+    ]
+  },
+  {
+    "id": "302",
+    "name": "Battle of the Nile (Aboukir Bay)",
+    "category": "Naval battle",
+    "year": "1798",
+    "significance": "Major",
+    "location": "Aboukir Bay",
+    "country": "Egypt",
+    "description": "Also known as the Battle of Aboukir Bay, was fought between the Royal Navy and the French Navy at Aboukir Bay in Egypt between August 1st and 3rd 1798. It was the climax of the Mediterranean campaign of 1798.",
+    "latitude": 31.352209,
+    "longitude": 30.203293,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Les_Sables.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nile",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Horatio Nelson",
+      "Brueys d'Aigalliers"
+    ]
   }
 ]
