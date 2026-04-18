@@ -5404,7 +5404,7 @@
   {
     "id": "296",
     "name": "Battle of Jobourg",
-    "category": "Battle",
+    "category": "Naval battle",
     "year": "1814",
     "significance": "Minor",
     "location": "Jobourg",
@@ -5422,5 +5422,79 @@
       "Pierre-Henri Philibert",
       "Abel Aubert du Petit-Thouars"
     ]
+  },
+  {
+    "id": "297",
+    "name": "Battle of Lissa",
+    "category": "Naval battle",
+    "year": "1811",
+    "significance": "Medium",
+    "location": "Lissa",
+    "country": "Adriatic Sea",
+    "description": "Also known as the Battle of Vis, was fought between a British frigate squadron and a much larger squadron of French and Italian frigates and smaller vessels on Wednesday, March 13th 1811 during the Adriatic campaign.",
+    "latitude": 43.1026,
+    "longitude": 16.124449,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lissa.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lissa_(1811)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Bernard Dubourdieu",
+      "William Hoste"
+    ]
+  },
+  {
+    "id": "298",
+    "name": "Battle of Zealand Point",
+    "category": "Naval battle",
+    "year": "1808",
+    "significance": "Medium",
+    "location": "Zealand Point",
+    "country": "Denmark",
+    "description": "It was fought off Zealand on March 22nd 1808 during the Gunboat War. Three ships of the line and one frigate of the Royal Navy intercepted and destroyed a Danish ship of the line.",
+    "latitude": 55.1523,
+    "longitude": 11.923735,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zealand.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Zealand_Point",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "George Parker",
+      "Carl Wilhelm Jessen"
+    ]
+  },
+  {
+    "id": "299",
+    "name": "Battle of Tamatave",
+    "category": "Naval battle",
+    "year": "1811",
+    "significance": "Minor",
+    "location": "off ToamasinaIndian Ocean",
+    "country": "Madagascar",
+    "description": "It was fought off Tamatave in the Indian Ocean between British and French frigate squadrons during the Napoleonic Wars. The action was the final engagement of the Mauritius campaign of 1809/1811.",
+    "latitude": -18.18555,
+    "longitude": 49.983547,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tamatave.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tamatave",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Charles Schomberg",
+      "Dominique Roquebert"
+    ]
+  },
+  {
+    "id": "300",
+    "name": "Memorial Zealand Point Battle",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Sjaellands Odde",
+    "country": "Denmark",
+    "description": "At the Odden churchyard was erected a monument commemorating the battle fought on March 22nd 1808.",
+    "latitude": 55.9589,
+    "longitude": 11.3985,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sjaellands_memorial.webp",
+    "createDate": "2025-03-22T10:00:00Z",
   }
 ]

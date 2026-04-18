@@ -1363,5 +1363,32 @@
         "location": "Jobourg, France",
         "description": "It was a minor naval engagement on March 26th to 27th 1814 between the British and French navies during the last weeks of the War of the Sixth Coalition.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jobourg"
+    },
+    {
+        "id": 163,
+        "title": "Battle of Lissa",
+        "date": "1811-03-13",
+        "location": "Lissa",
+        "country": "Adriatic Sea",
+        "description": "Also known as the Battle of Vis, was fought between a British frigate squadron and a much larger squadron of French and Italian frigates and smaller vessels on Wednesday, March 13th 1811 during the Adriatic campaign.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lissa_(1811)"
+    },
+    {
+        "id": 164,
+        "title": "Battle of Zealand Point",
+        "date": "1808-03-22",
+        "location": "Zealand Point",
+        "country": "Denmark",
+        "description": "It was fought off Zealand on March 22nd 1808 during the Gunboat War. Three ships of the line and one frigate of the Royal Navy intercepted and destroyed a Danish ship of the line.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Zealand_Point"
+    },
+    {
+        "id": 165,
+        "title": "Battle of Tamatave",
+        "date": "1811-05-20",
+        "location": "off Toamasina Indian Ocean",
+        "country": "Madagascar",
+        "description": "It was fought off Tamatave in the Indian Ocean between British and French frigate squadrons during the Napoleonic Wars. The action was the final engagement of the Mauritius campaign of 1809/1811.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tamatave"
     }
 ]
