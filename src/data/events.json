@@ -1417,5 +1417,14 @@
         "country": "France",
         "description": "On January 29th 1814,an Imperial French army led by Emperor Napoleon attack Prussian and Russian forces commanded by Prussian Field Marshal Gebhard Leberecht von Blücher.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Brienne"
+    },
+    {
+        "id": 169,
+        "title": "Battle of Castiglione",
+        "date": "1796-08-05",
+        "location": "Castiglione delle Stiviere",
+        "country": "Italy",
+        "description": "The French Army of Italy under General Napoleon Bonaparte attack an army of the Habsburg monarchy led by Feldmarschall Dagobert Sigmund von Wurmser on August 5th 1796.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione"
     }
 ]

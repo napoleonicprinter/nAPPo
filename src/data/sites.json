@@ -5608,5 +5608,40 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Brienne_Military.webp",
     "link": "https://www.napoleon.org/en/history-of-the-two-empires/objects/napoleon-bonaparte-student-of-the-royal-military-school-in-brienne-aged-15-years-old/",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "307",
+    "name": "Battlefield of Castiglione",
+    "category": "Battle site",
+    "significance": "Major",
+    "location": "Castiglione delle Stiviere",
+    "country": "Italy",
+    "description": "A battle fought between French forces under the First Consul Napoleon Bonaparte and Austrian forces near the city of Alessandria, in Piedmont, Italy.",
+    "latitude": 45.3554,
+    "longitude": 10.527141,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castiglione.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Dagobert-Sigismond von Wurmser"
+    ],
+    "special": "arc"
+  },
+  {
+    "id": "308",
+    "name": "Monte Medolano",
+    "category": "Battle landmark",
+    "significance": "Major",
+    "location": "Freddi",
+    "country": "Italy",
+    "description": "Locally called 'Monte della Barcaccia'. Around al 10am Marmont moved his artillery onto Mount Medolano while Augereau's division begins the attack in the central plain.",
+    "latitude": 45.3554,
+    "longitude": 10.527141,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Medolano.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
