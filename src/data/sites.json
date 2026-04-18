@@ -5400,5 +5400,27 @@
       "Edward Pellew",
       "William Cowell"
     ]
+  },
+  {
+    "id": "296",
+    "name": "Battle of Jobourg",
+    "category": "Battle",
+    "year": "1814",
+    "significance": "Minor",
+    "location": "Jobourg",
+    "country": "France",
+    "description": "It was a minor naval engagement on March 26th to 27th 1814 between the British and French navies during the last weeks of the War of the Sixth Coalition.",
+    "latitude": 49.6467,
+    "longitude": -1.957468,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jobourg.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jobourg",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Sir Michael Seymour",
+      "Edmund Palmer",
+      "Pierre-Henri Philibert",
+      "Abel Aubert du Petit-Thouars"
+    ]
   }
 ]

@@ -1355,5 +1355,13 @@
         "location": "Gresik, Java",
         "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie"
+    },
+    {
+        "id": 162,
+        "title": "Battle of Jobourg",
+        "date": "1814-03-26",
+        "location": "Jobourg, France",
+        "description": "It was a minor naval engagement on March 26th to 27th 1814 between the British and French navies during the last weeks of the War of the Sixth Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jobourg"
     }
 ]
