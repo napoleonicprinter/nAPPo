@@ -1307,5 +1307,13 @@
         "location": "Cape Ortegal, Spain",
         "description": "On November 4th 1805 took place the final action of the Trafalgar campaign, and was fought between a squadron of the Royal Navy and a remnant of the fleet that had been defeated earlier at the Battle of Trafalgar. ",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Ortegal"
+    },
+    {
+        "id": 156,
+        "title": "Battle of Alvøen",
+        "date": "1808-05-16",
+        "location": "near Hakonshella, Norway",
+        "description": "On May 16th 1808 the British frigate HMS Tartar and five Norwegian gunboats off Bergen clashed as part of the Gunboat War.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alv%C3%B8en"
     }
 ]

@@ -5214,7 +5214,7 @@
     "year": "1805",
     "location": "Cape Ortegal",
     "country": "Spain",
-    "description": "On November 4th 1805 took place the final action of the Trafalgar campaign, and was fought between a squadron of the Royal Navy and a remnant of the fleet that had been defeated earlier at the Battle of Trafalgar. ",
+    "description": "On November 4th 1805 took place the final action of the Trafalgar campaign, and was fought between a squadron of the Royal Navy and a remnant of the fleet that had been defeated earlier at the Battle of Trafalgar.",
     "latitude": 43.7995,
     "longitude": -7.887,
     "visited": false,
@@ -5224,6 +5224,26 @@
     "commanders": [
       "Richard Strachan",
       "Pierre Dumanoir le Pelley"
+    ]
+  },
+  {
+    "id": "287",
+    "name": "Battle of Alvøen",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1808",
+    "location": "near Hakonshella",
+    "country": "Norway",
+    "description": "On May 16th 1808 the British frigate HMS Tartar and five Norwegian gunboats off Bergen clashed as part of the Gunboat War.",
+    "latitude": 60.347,
+    "longitude": 5.169889,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alvoen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alv%C3%B8en",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "George Bettesworth",
+      "Bielke"
     ]
   }
 ]
