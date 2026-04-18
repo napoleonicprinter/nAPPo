@@ -25,7 +25,9 @@ const CATEGORY_ORDER = [
     'Artwork',
     'Monument',
     'Building',
-    'Landmark'
+    'Landmark',
+    'Movie tip',
+    'Store'
 ];
 
 const Header = () => {

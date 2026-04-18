@@ -18,6 +18,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             case 'Event site': return '#fde047';
             case 'Landmark': return '#99f000';
             case 'Store': return '#ffffff';
+            case 'Movie tip': return '#2c0d55ff';
             default: return '#8b949e';
         }
     };

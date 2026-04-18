@@ -1315,5 +1315,45 @@
         "location": "near Hakonshella, Norway",
         "description": "On May 16th 1808 the British frigate HMS Tartar and five Norwegian gunboats off Bergen clashed as part of the Gunboat War.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alv%C3%B8en"
+    },
+    {
+        "id": 157,
+        "title": "Battle of Anholt",
+        "date": "1811-03-27",
+        "location": "Anholt, Denmark",
+        "description": "Fought on March 27th 1811, during the Gunboat War, it was an attempt by the Dano-Norwegians to recapture Anholt, a small Danish island off the coast of Jutland which the British had captured in 1809.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Anholt"
+    },
+    {
+        "id": 158,
+        "title": "Battle of Copenhagen",
+        "date": "1807-08-16",
+        "location": "Copenhagen, Denmark",
+        "description": "Also known as the Bombardment of Copenhagen, it occurred between August 16th and September 7th 1807. British forces bombarded the Danish capital in order to capture or destroy the Royal Dano-Norwegian Navy.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1807)"
+    },
+    {
+        "id": 159,
+        "title": "Battle of Grand Port",
+        "date": "1810-08-20",
+        "location": "Grand Port, Mauritius",
+        "description": "Was fought from August 20th to the 27th 1810 between the British and French navies over the harbour of Grand Port, Isle de France, as part of the Mauritius campaign.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grand_Port"
+    },
+    {
+        "id": 160,
+        "title": "Invasion of Isle Bonaparte",
+        "date": "1810-07-08",
+        "location": "Saint-Marie, Reunion island",
+        "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Île_de_France"
+    },
+    {
+        "id": 161,
+        "title": "Raid on Griessie",
+        "date": "1807-08-27",
+        "location": "Gresik, Java",
+        "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie"
     }
 ]

@@ -5259,10 +5259,146 @@
     "visited": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Battle_Alvoen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alv%C3%B8en",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "289",
+    "name": "Battle of Anholt",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1811",
+    "location": "Anholt",
+    "country": "Denmark",
+    "description": "Fought on March 27th 1811, during the Gunboat War, it was an attempt by the Dano-Norwegians to recapture Anholt, a small Danish island off the coast of Jutland which the British had captured in 1809.",
+    "latitude": 56.7279,
+    "longitude": 11.589656,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Anholt.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Anholt",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "George Bettesworth",
-      "Bielke"
+      "James Wilkes Maurice",
+      "Jørgen Conrad de Falsen"
+    ]
+  },
+  {
+    "id": "290",
+    "name": "Battle of Copenhagen (1807)",
+    "category": "Naval battle",
+    "year": "1807",
+    "significance": "Major",
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "description": "Also known as the Bombardment of Copenhagen, it occurred between August 16th and September 7th 1807. British forces bombarded the Danish capital in order to capture or destroy the Royal Dano-Norwegian Navy.",
+    "latitude": 55.700,
+    "longitude": 12.6082,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Copenagen_1807.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1807)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "James Gambier",
+      "Lord Cathcart",
+      "Ernst Peymann"
+    ]
+  },
+  {
+    "id": "291",
+    "name": "Battle of Copenhagen (1801)",
+    "category": "Naval battle",
+    "year": "1801",
+    "significance": "Major",
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "description": "Also known as the First Battle of Copenhagen, was a naval battle in which a British fleet fought and defeated a smaller force of the Dano-Norwegian Navy anchored near Copenhagen on April 2nd 1801.",
+    "latitude": 55.685,
+    "longitude": 12.658217,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Copenagen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1801)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Horatio Nelson",
+      "Hyde Parker",
+      "Steen Andersen Bille",
+      "Olfert Fischer"
+    ]
+  },
+  {
+    "id": "292",
+    "name": "Battle of Grand Port",
+    "category": "Naval battle",
+    "year": "1810",
+    "significance": "Medium",
+    "location": "Grand Port",
+    "country": "Mauritius",
+    "description": "Was fought from August 20th to the 27th 1810 between the British and French navies over the harbour of Grand Port, Isle de France, as part of the Mauritius campaign.",
+    "latitude": -20.388,
+    "longitude": 57.726,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/GrandPort.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grand_Port",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Guy-Victor Duperré",
+      "Jacques Hamelin",
+      "Samuel Pym"
+    ]
+  },
+  {
+    "id": "293",
+    "name": "Combat du Grand Port, 23 août 1810",
+    "category": "Artwork",
+    "significance": "Minor",
+    "location": "Paris",
+    "country": "France",
+    "description": "The Musée national de la Marine de Paris houses this canvas by Pierre-Julien Gilbert, where the HMS Magicienne and the HMS Sirius being scuttled by fire",
+    "latitude": 48.8621,
+    "longitude": 2.287323,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CombatGrandPort.webp",
+    "site_link": "https://www.musee-marine.fr/en/our-museums/paris/practical-information.html",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "294",
+    "name": "Invasion of Isle Bonaparte",
+    "category": "Naval battle",
+    "year": "1810",
+    "significance": "Minor",
+    "location": "Saint-Marie",
+    "country": "Reunion island",
+    "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
+    "latitude": -20.855663,
+    "longitude": 55.5570,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CombatGrandPort.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Isle_Bonaparte",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Josias Rowley",
+      "Chrysostôme de Sainte-Suzanne",
+      "Henry Sheehy Keating"
+    ]
+  },
+  {
+    "id": "295",
+    "name": "Raid on Griessie",
+    "category": "Naval battle",
+    "year": "1807",
+    "significance": "Minor",
+    "location": "Gresik",
+    "country": "Java",
+    "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
+    "latitude": -7.1341,
+    "longitude": 112.657554,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Java.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Edward Pellew",
+      "William Cowell"
     ]
   }
 ]
