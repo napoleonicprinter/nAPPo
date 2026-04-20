@@ -1453,5 +1453,14 @@
         "country": "Italy",
         "description": "It was fought on April 21st 1796 between the French army of Napoleon Bonaparte and the army of the Kingdom of Sardinia-Piedmont led by Michelangelo Alessandro Colli-Marchi.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mondov%C3%AC"
+    },
+    {
+        "id": 173,
+        "title": "Battle of Dego",
+        "date": "1796-04-14",
+        "location": "Dego",
+        "country": "Italy",
+        "description": "The Second Battle of Dego was fought on April 14th and 15th 1796 during the French Revolutionary Wars between French forces and Austro-Sardinian forces.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Dego"
     }
 ]

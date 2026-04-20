@@ -5613,6 +5613,7 @@
     "id": "307",
     "name": "Battlefield of Castiglione",
     "category": "Battle site",
+    "year": "1796",
     "significance": "Major",
     "location": "Castiglione delle Stiviere",
     "country": "Italy",
@@ -5648,6 +5649,7 @@
     "id": "307",
     "name": "Siege of Wittenberg",
     "category": "Battle site",
+    "year": "1813",
     "significance": "Medium",
     "location": "Wittenberg",
     "country": "Germany",
@@ -5670,6 +5672,7 @@
     "id": "309",
     "name": "Battlefield of Hoyerswerda",
     "category": "Battle site",
+    "year": "1813",
     "significance": "Medium",
     "location": "Hoyerswerda",
     "country": "Germany",
@@ -5689,6 +5692,7 @@
     "id": "310",
     "name": "Battlefield of Mondovi",
     "category": "Battle site",
+    "year": "1796",
     "significance": "Medium",
     "location": "Mondovi",
     "country": "Italy",
@@ -5703,6 +5707,27 @@
     "commanders": [
       "Napoleon",
       "Kingdom of Sardinia Michelangelo Colli-Marchi"
+    ]
+  },
+  {
+    "id": "311",
+    "name": "Battlefield of Dego",
+    "category": "Battle site",
+    "year": "1796",
+    "significance": "Minor",
+    "location": "Dego",
+    "country": "Italy",
+    "description": "The Second Battle of Dego was fought on April 14th and 15th 1796 during the French Revolutionary Wars between French forces and Austro-Sardinian forces.",
+    "latitude": 44.450,
+    "longitude": 8.310,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dego.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Dego",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc",
+    "commanders": [
+      "Napoleon",
+      "Eugène Argenteau"
     ]
   }
 ]
