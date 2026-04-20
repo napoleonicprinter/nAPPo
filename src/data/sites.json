@@ -5684,5 +5684,24 @@
       "Nicolas Oudinot",
       "Friedrich Wilhelm Bülow von Dennewitz"
     ]
+  },
+  {
+    "id": "310",
+    "name": "Battlefield of Mondovi",
+    "category": "Battle site",
+    "significance": "Medium",
+    "location": "Mondovi",
+    "country": "Italy",
+    "description": "It was fought on April 21st 1796 between the French army of Napoleon Bonaparte and the army of the Kingdom of Sardinia-Piedmont led by Michelangelo Alessandro Colli-Marchi.",
+    "latitude": 44.433658,
+    "longitude": 7.83,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mondovi.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mondov%C3%AC",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Napoleon",
+      "Kingdom of Sardinia Michelangelo Colli-Marchi"
+    ]
   }
 ]

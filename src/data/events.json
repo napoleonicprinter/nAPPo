@@ -1444,5 +1444,14 @@
         "country": "Germany",
         "description": "It was a French victory on May 23rd 1813, which encouraged Marshal Oudinot to advance towards Berlin, after a Prussian attack on his positions was repulsed.",
         "wikipedia_link": "https://www.historyofwar.org/articles/combat_hoyerswerda.html"
+    },
+    {
+        "id": 172,
+        "title": "Battle of Mondovì",
+        "date": "1796-04-21",
+        "location": "Mondovì",
+        "country": "Italy",
+        "description": "It was fought on April 21st 1796 between the French army of Napoleon Bonaparte and the army of the Kingdom of Sardinia-Piedmont led by Michelangelo Alessandro Colli-Marchi.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mondov%C3%AC"
     }
 ]
