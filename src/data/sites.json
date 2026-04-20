@@ -4344,7 +4344,7 @@
   },
   {
     "id": "239",
-    "name": "Forte di Malborghetto",
+    "nameo": "Forte di Malborghetto",
     "category": "Landmark",
     "significance": "Minor",
     "year": "1809",
@@ -5699,6 +5699,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mondovi.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mondov%C3%AC",
     "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc",
     "commanders": [
       "Napoleon",
       "Kingdom of Sardinia Michelangelo Colli-Marchi"
