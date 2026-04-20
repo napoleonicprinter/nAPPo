@@ -5643,5 +5643,46 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Medolano.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "307",
+    "name": "Siege of Wittenberg",
+    "category": "Battle site",
+    "significance": "Medium",
+    "location": "Wittenberg",
+    "country": "Germany",
+    "description": "By 1813, the fortress had become an important assembly point and supply depot for the French fighting in eastern Germany. On January 15th 1814, the fortress was surrendered to the allied forces.",
+    "latitude": 51.8676,
+    "longitude": 12.638712,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wittensberg.webp",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Belagerung_von_Wittenberg_(1813/14)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Jean François Cornu de Lapoype",
+      "Ludwig Adolf Peter zu Sayn-Wittgenstein",
+      "Bogislav Friedrich Emanuel von Tauentzien",
+      "Leopold Wilhelm von Dobschütz",
+      "Friedrich Wilhelm Bülow von Dennewitz"
+    ]
+  },
+  {
+    "id": "309",
+    "name": "Battlefield of Hoyerswerda",
+    "category": "Battle site",
+    "significance": "Medium",
+    "location": "Hoyerswerda",
+    "country": "Germany",
+    "description": "It was a French victory on May 23rd 1813, which encouraged Marshal Oudinot to advance towards Berlin, after a Prussian attack on his positions was repulsed.",
+    "latitude": 51.44945,
+    "longitude": 14.227741,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hoyeswerda.webp",
+    "link": "https://www.historyofwar.org/articles/combat_hoyerswerda.html",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Nicolas Oudinot",
+      "Friedrich Wilhelm Bülow von Dennewitz"
+    ]
   }
 ]

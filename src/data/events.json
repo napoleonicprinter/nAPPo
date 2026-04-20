@@ -1426,5 +1426,23 @@
         "country": "Italy",
         "description": "The French Army of Italy under General Napoleon Bonaparte attack an army of the Habsburg monarchy led by Feldmarschall Dagobert Sigmund von Wurmser on August 5th 1796.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione"
+    },
+    {
+        "id": 170,
+        "title": "Siege of Wittenberg ends",
+        "date": "1814-01-15",
+        "location": "Wittenberg",
+        "country": "Germany",
+        "description": "By 1813, the fortress had become an important assembly point and supply depot for the French fighting in eastern Germany. On January 15th 1814, the fortress was surrendered to the allied forces.",
+        "wikipedia_link": "https://de.wikipedia.org/wiki/Belagerung_von_Wittenberg_(1813/14)"
+    },
+    {
+        "id": 171,
+        "title": "Combat of Hoyerswerda",
+        "date": "1813-05-23",
+        "location": "Hoyerswerda",
+        "country": "Germany",
+        "description": "It was a French victory on May 23rd 1813, which encouraged Marshal Oudinot to advance towards Berlin, after a Prussian attack on his positions was repulsed.",
+        "wikipedia_link": "https://www.historyofwar.org/articles/combat_hoyerswerda.html"
     }
 ]
