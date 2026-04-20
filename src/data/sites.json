@@ -5646,7 +5646,7 @@
     "createDate": "2025-03-22T10:00:00Z"
   },
   {
-    "id": "307",
+    "id": "309",
     "name": "Siege of Wittenberg",
     "category": "Battle site",
     "year": "1813",
@@ -5669,7 +5669,7 @@
     ]
   },
   {
-    "id": "309",
+    "id": "310",
     "name": "Battlefield of Hoyerswerda",
     "category": "Battle site",
     "year": "1813",
@@ -5689,7 +5689,7 @@
     ]
   },
   {
-    "id": "310",
+    "id": "311",
     "name": "Battlefield of Mondovi",
     "category": "Battle site",
     "year": "1796",
@@ -5710,7 +5710,7 @@
     ]
   },
   {
-    "id": "311",
+    "id": "312",
     "name": "Battlefield of Dego",
     "category": "Battle site",
     "year": "1796",
@@ -5731,7 +5731,7 @@
     ]
   },
   {
-    "id": "312",
+    "id": "313",
     "name": "Battlefield of Halle (1806)",
     "category": "Battle site",
     "year": "1806",
@@ -5752,7 +5752,7 @@
     ]
   },
   {
-    "id": "312",
+    "id": "314",
     "name": "Battlefield of Halle (1813)",
     "category": "Battle site",
     "year": "1813",
@@ -5770,5 +5770,20 @@
       "Donatien de Rochambeau",
       "Friedrich Wilhelm v. Bülow"
     ]
+  },
+  {
+    "id": "315",
+    "name": "Alcazar de Segovia",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Segovia",
+    "country": "Spain",
+    "description": "Fue ocupado por las tropas francesas, quienes utilizaron el edificio como fortaleza y prisión, sufriendo daños considerables en su estructura y tesoros artísticos",
+    "latitude": 40.9535,
+    "longitude": -4.1325,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alcazar_Segovia.webp",
+    "site_link": "https://www.alcazardesegovia.com/",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
