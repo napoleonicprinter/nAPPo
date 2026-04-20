@@ -5729,5 +5729,46 @@
       "Napoleon",
       "Eugène Argenteau"
     ]
+  },
+  {
+    "id": "312",
+    "name": "Battlefield of Halle (1806)",
+    "category": "Battle site",
+    "year": "1806",
+    "significance": "Minor",
+    "location": "Halle",
+    "country": "Germany",
+    "description": "On October 17th 1806, a French corps led by Jean-Baptiste Bernadotte fought the Prussian Reserve under Eugene Frederick Henry, Duke of Württemberg.",
+    "latitude": 51.4797,
+    "longitude": 11.94374,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Halle_1806.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "arc",
+    "commanders": [
+      "Jean-Baptiste Bernadotte",
+      "Eugene Frederick Henry, Duke of Württemberg"
+    ]
+  },
+  {
+    "id": "312",
+    "name": "Battlefield of Halle (1813)",
+    "category": "Battle site",
+    "year": "1813",
+    "significance": "Minor",
+    "location": "Halle",
+    "country": "Germany",
+    "description": "The Battle of Halle was a spring campaign battle of the German War of Liberation, which took place on May 2nd 1813, at Halle on the Saale River in Germany.",
+    "latitude": 51.4877,
+    "longitude": 11.9698,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Halle_1813.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle_(1813)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Donatien de Rochambeau",
+      "Friedrich Wilhelm v. Bülow"
+    ]
   }
 ]

@@ -1462,5 +1462,23 @@
         "country": "Italy",
         "description": "The Second Battle of Dego was fought on April 14th and 15th 1796 during the French Revolutionary Wars between French forces and Austro-Sardinian forces.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Dego"
+    },
+    {
+        "id": 174,
+        "title": "Battle of Halle (1806)",
+        "date": "1806-10-17",
+        "location": "Halle",
+        "country": "Germany",
+        "description": "On October 17th 1806, a French corps led by Jean-Baptiste Bernadotte fought the Prussian Reserve under Eugene Frederick Henry, Duke of Württemberg.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle"
+    },
+    {
+        "id": 175,
+        "title": "Battle of Halle (1813)",
+        "date": "1813-05-02",
+        "location": "Halle",
+        "country": "Germany",
+        "description": "The Battle of Halle was a spring campaign battle of the German War of Liberation, which took place on May 2nd 1813, at Halle on the Saale River in Germany.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle_(1813)"
     }
 ]
