@@ -1480,5 +1480,14 @@
         "country": "Germany",
         "description": "The Battle of Halle was a spring campaign battle of the German War of Liberation, which took place on May 2nd 1813, at Halle on the Saale River in Germany.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle_(1813)"
+    },
+    {
+        "id": 176,
+        "title": "Battle of Wavre",
+        "date": "1815-06-18",
+        "location": "Wavre",
+        "country": "Belgium",
+        "description": "It was fought on June 18th and 19th 1815 and was the final major military action of the Hundred Days campaign and the Napoleonic Wars.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wavre"
     }
 ]
