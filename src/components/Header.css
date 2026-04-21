@@ -490,6 +490,10 @@
     display: none;
 }
 
+.mobile-header-btn {
+    display: none;
+}
+
 .category-filters-wrapper {
     display: flex;
     align-items: center;
@@ -626,7 +630,7 @@
         background: var(--bg-acrylic);
         border: 1px solid var(--border-color);
         color: var(--text-primary);
-        border-radius: 10px;
+        border-radius: 50%;
         transition: all var(--transition-normal);
     }
 

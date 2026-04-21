@@ -124,7 +124,15 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                 <div className="calendar-modal-header">
                     <div className="modal-title-row">
                         <div className="modal-title-info">
-                            <h2 className="calendar-title">{MONTHS[month]}</h2>
+                            <select
+                                value={selectedYear}
+                                onChange={(e) => setSelectedYear(e.target.value === 'All years' ? 'All years' : parseInt(e.target.value))}
+                                className="calendar-year-select glass-panel"
+                            >
+                                {YEARS.map(y => (
+                                    <option key={y} value={y} style={{ background: 'var(--bg-color)', color: 'var(--text-primary)' }}>{y}</option>
+                                ))}
+                            </select>
                         </div>
                         <button className="modal-close-btn" onClick={onClose} title="Close">
                             <X size={24} />
@@ -134,15 +142,7 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                         <button className="calendar-nav-btn" onClick={prevMonth} title="Previous Month">
                             <ChevronLeft size={22} />
                         </button>
-                        <select
-                            value={selectedYear}
-                            onChange={(e) => setSelectedYear(e.target.value === 'All years' ? 'All years' : parseInt(e.target.value))}
-                            className="calendar-year-select glass-panel"
-                        >
-                            {YEARS.map(y => (
-                                <option key={y} value={y} style={{ background: 'var(--bg-color)', color: 'var(--text-primary)' }}>{y}</option>
-                            ))}
-                        </select>
+                        <h2 className="calendar-title">{MONTHS[month]}</h2>
                         <button className="calendar-nav-btn" onClick={nextMonth} title="Next Month">
                             <ChevronRight size={22} />
                         </button>

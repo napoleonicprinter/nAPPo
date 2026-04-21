@@ -1516,5 +1516,50 @@
         "country": "France",
         "description": "Prussian surprise night attack by General Pirch II on June 28th 1815.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(25_June_%E2%80%93_1_July)#Battle_of_Villers-Cotter%C3%AAts"
+    },
+    {
+        "id": 180,
+        "title": "Battle of Ostrovno",
+        "date": "1812-07-25",
+        "location": "Ostrovno",
+        "country": "Belarus",
+        "description": "It took place on July 25th 1812, between French forces under the command of King of Naples Joachim Murat and Russian forces under General Ostermann-Tolstoy and ended with the Russian forces retreating from the battlefield.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ostrovno"
+    },
+    {
+        "id": 181,
+        "title": "Battle of Vitebsk",
+        "date": "1812-07-28",
+        "location": "Vitebsk",
+        "country": "Belarus",
+        "description": "Took place on July 26th and 27th 1812 and ended with the Russian forces making a strategic retreat from the battlefield.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vitebsk_(1812)"
+    },
+    {
+        "id": 182,
+        "title": "Battle of Shevardino",
+        "date": "1812-09-05",
+        "location": "Shevardino",
+        "country": "Russia",
+        "description": "Took place on September 5th [O.S. August 24th] 1812 between French and Russian troops, with a victory of the French army.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shevardino"
+    },
+    {
+        "id": 183,
+        "title": "Battle of Krasnoi",
+        "date": "1812-11-15",
+        "location": "Krasnoi",
+        "country": "Russia",
+        "description": "It unfolded from November 15th to the 18th 1812 marking a critical episode in Napoleon's arduous retreat from Moscow.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi"
+    },
+    {
+        "id": 184,
+        "title": "Battle of Vyazma",
+        "date": "1812-11-03",
+        "location": "Vyazma",
+        "country": "Russia",
+        "description": "It unfolded from November 15th to the 18th 1812 marking a critical episode in Napoleon's arduous retreat from Moscow.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi"
     }
 ]

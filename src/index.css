@@ -267,6 +267,20 @@ button {
 }
 
 /* Custom Dropdowns (Glassmorphic) */
+.filter-select {
+    height: 48px !important;
+    display: flex;
+    align-items: center;
+    font-size: 1rem !important;
+    padding: 0 16px !important;
+    width: 100%;
+}
+
+.custom-select-trigger {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
 .custom-dropdown-container {
     position: relative;
     flex: 1;

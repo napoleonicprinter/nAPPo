@@ -1,4 +1,4 @@
-.history-calendar-header {
+.calendar-modal-header {
     padding: 1rem 1.25rem 0.75rem;
     border-bottom: 1px solid var(--border-color);
     display: flex;
@@ -8,18 +8,35 @@
 }
 
 /* Row 1: Month title + close button */
-.calendar-header-top {
+/* Row 1: Year select (centered) + close button (absolute right) */
+.modal-title-row {
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
+    min-height: 48px;
+}
+
+.modal-title-info {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Row 2: Prev arrow | year select | next arrow */
+/* Row 2: Prev arrow | Month title | next arrow */
 .calendar-header-bottom {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .calendar-nav-controls {

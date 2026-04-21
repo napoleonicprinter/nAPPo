@@ -12,13 +12,14 @@ const FiltersModal = ({ onClose }) => {
         filterCategory, setFilterCategory,
         filterSignificance, setFilterSignificance,
         filterVisited, setFilterVisited,
-        filterRadius, setFilterRadius,
-        filterCountry, setFilterCountry,
-        isFiltered, clearAllFilters,
-        locationMode, handleLocationSelect,
-        allSites,
-        filterCoalition, setFilterCoalition,
-        filterCampaign, setFilterCampaign
+    isFiltered, clearAllFilters,
+    filterRadius, setFilterRadius,
+    filterCountry, setFilterCountry,
+    locationMode, handleLocationSelect,
+    allSites,
+    filterCoalition, setFilterCoalition,
+    filterCampaign, setFilterCampaign,
+    filterSearch
     } = useAppContext();
 
     // Derive unique categories and significances from allSites
@@ -47,43 +48,20 @@ const FiltersModal = ({ onClose }) => {
 
                 {/* Content */}
                 <div className="calendar-modal-body" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    {isFiltered && (
-                        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '-0.5rem' }}>
-                            <button
-                                className="glass-panel"
-                                onClick={clearAllFilters}
-                                style={{
-                                    fontSize: '0.75rem',
-                                    color: 'var(--accent-danger)',
-                                    padding: '6px 12px',
-                                    borderRadius: '8px',
-                                    border: '1px solid rgba(248, 81, 73, 0.3)',
-                                    background: 'rgba(248, 81, 73, 0.1)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '6px',
-                                    fontWeight: '600',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                <X size={14} /> Clear all filters
-                            </button>
-                        </div>
-                    )}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                             Visit Status
                         </label>
-                        <select
-                            className="filter-select glass-panel"
+                        <CustomSimpleSelect
+                            options={[
+                                { value: 'all', label: 'All Status' },
+                                { value: 'visited', label: 'Visited' },
+                                { value: 'unvisited', label: 'Not Visited' }
+                            ]}
                             value={filterVisited}
-                            onChange={(e) => setFilterVisited(e.target.value)}
-                            style={{ width: '100%', padding: '12px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: 'var(--text-primary)', outline: 'none' }}
-                        >
-                            <option value="all" style={{ background: 'var(--bg-color)' }}>All Status</option>
-                            <option value="visited" style={{ background: 'var(--bg-color)' }}>Visited</option>
-                            <option value="unvisited" style={{ background: 'var(--bg-color)' }}>Not Visited</option>
-                        </select>
+                            onChange={setFilterVisited}
+                            title="Filter by Visit Status"
+                        />
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -132,27 +110,72 @@ const FiltersModal = ({ onClose }) => {
                         <CampaignFilter />
                     </div>
 
-                    <button
-                        className="btn-primary"
-                        onClick={onClose}
-                        style={{
-                            marginTop: '1rem',
-                            padding: '14px',
-                            borderRadius: '12px',
-                            fontWeight: 'bold',
-                            fontSize: '1rem',
-                            background: 'var(--accent-primary)',
-                            color: '#000',
-                            border: 'none',
-                            cursor: 'pointer',
-                            transition: 'transform 0.2s',
-                            boxShadow: '0 4px 12px rgba(88, 166, 255, 0.2)'
-                        }}
-                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                    >
-                        Apply Filters
-                    </button>
+                    <div style={{
+                        display: 'flex',
+                        gap: '12px',
+                        marginTop: '1.5rem',
+                        width: '100%'
+                    }}>
+                        <button
+                            className="btn-primary"
+                            onClick={onClose}
+                            style={{
+                                flex: 1,
+                                padding: '14px',
+                                borderRadius: '12px',
+                                fontWeight: 'bold',
+                                fontSize: '1rem',
+                                background: 'var(--accent-primary)',
+                                color: '#000',
+                                border: 'none',
+                                cursor: 'pointer',
+                                transition: 'transform 0.2s, background 0.2s',
+                                boxShadow: '0 4px 12px rgba(88, 166, 255, 0.2)',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+                            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                        >
+                            Apply Filters
+                        </button>
+
+                        <button
+                            onClick={clearAllFilters}
+                            style={{
+                                flex: 1,
+                                padding: '14px',
+                                borderRadius: '12px',
+                                fontWeight: 'bold',
+                                fontSize: '1rem',
+                                border: '1px solid var(--accent-danger)',
+                                background: 'rgba(248, 81, 73, 0.1)',
+                                color: 'var(--accent-danger)',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                opacity: isFiltered ? 1 : 0.4,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                            }}
+                            onMouseOver={(e) => {
+                                if (isFiltered) {
+                                    e.currentTarget.style.background = 'rgba(248, 81, 73, 0.2)';
+                                    e.currentTarget.style.transform = 'scale(1.02)';
+                                }
+                            }}
+                            onMouseOut={(e) => {
+                                e.currentTarget.style.background = 'rgba(248, 81, 73, 0.1)';
+                                e.currentTarget.style.transform = 'scale(1)';
+                            }}
+                        >
+                            <X size={18} style={{ marginRight: '6px' }} />
+                            Clear All
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>,

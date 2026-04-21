@@ -12,7 +12,6 @@ import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
 import NewsModal from './NewsModal';
 import ArcFilter from './ArcFilter';
-import CampaignFilter from './CampaignFilter';
 import FloatingViewToggle from './FloatingViewToggle';
 import CalendarView from './CalendarView';
 import ShoppingView from './ShoppingView';
@@ -120,13 +119,6 @@ const Header = () => {
 
             <div className="mobile-header-actions">
                 <button
-                    className="mobile-header-btn glass-panel"
-                    onClick={handleEventsClick}
-                    title="Today in nAPPo history"
-                >
-                    <Calendar size={20} />
-                </button>
-                <button
                     className="mobile-menu-toggle glass-panel"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
@@ -151,6 +143,14 @@ const Header = () => {
                             placeholder="Search Location..."
                         />
                         <FloatingViewToggle />
+                        <button
+                            className="mobile-header-btn glass-panel mobile-only"
+                            onClick={handleEventsClick}
+                            title="Today in nAPPo history"
+                            style={{ marginLeft: '4px' }}
+                        >
+                            <Calendar size={20} />
+                        </button>
                     </div>
 
                     <div className="desktop-filters custom-desktop-layout">
@@ -185,7 +185,6 @@ const Header = () => {
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
                         <ArcFilter className="desktop-arc-filter" />
-                        <CampaignFilter className="desktop-campaign-filter" />
                         <button
                             className="desktop-header-btn glass-panel desktop-events-btn"
                             onClick={handleEventsClick}
@@ -200,7 +199,6 @@ const Header = () => {
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
                     <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
-                    <CampaignFilter className="mobile-tag-filter mobile-campaign-filter" />
                 </div>
             </div>
 

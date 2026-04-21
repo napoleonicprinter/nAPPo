@@ -27,6 +27,7 @@ const CalendarView = ({ onClose }) => {
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
     const [isMonthDropdownOpen, setIsMonthDropdownOpen] = useState(false);
+    const [selectedDay, setSelectedDay] = useState(null);
 
     // Identify months/categories/countries that have at least one show
     const activeStats = useMemo(() => {
@@ -55,8 +56,51 @@ const CalendarView = ({ onClose }) => {
 
                 return categoryMatch && monthMatch && countryMatch;
             })
+            .filter(show => {
+                if (!selectedDay) return true;
+                const showDay = new Date(show.date).getDate();
+                return showDay === selectedDay;
+            })
             .sort((a, b) => new Date(a.date) - new Date(b.date));
-    }, [showsToCome, selectedCategory, selectedMonth, selectedCountry]);
+    }, [showsToCome, selectedCategory, selectedMonth, selectedCountry, selectedDay]);
+
+    // Calendar generation logic
+    const calendarDays = useMemo(() => {
+        if (selectedMonth === 'All Months') return null;
+
+        const monthIndex = SHOW_MONTHS.indexOf(selectedMonth) - 1; // 0-indexed
+        const year = 2026; // Shows are mostly 2026
+        
+        const firstDay = new Date(year, monthIndex, 1).getDay();
+        const lastDate = new Date(year, monthIndex + 1, 0).getDate();
+        
+        const days = [];
+        // Empty slots
+        for (let i = 0; i < firstDay; i++) days.push({ type: 'empty' });
+        
+        // Actual days
+        for (let d = 1; d <= lastDate; d++) {
+            const showsOnThisDay = filteredShows.filter(s => {
+                const dateObj = new Date(s.date);
+                return dateObj.getDate() === d && dateObj.getMonth() === monthIndex;
+            });
+            
+            days.push({
+                type: 'day',
+                day: d,
+                hasShows: showsOnThisDay.length > 0,
+                showCount: showsOnThisDay.length
+            });
+        }
+        
+        return days;
+    }, [selectedMonth, filteredShows]);
+
+    const handleMonthChange = (month) => {
+        setSelectedMonth(month);
+        setSelectedDay(null);
+        setIsMonthDropdownOpen(false);
+    };
 
     return createPortal(
         <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
@@ -67,7 +111,7 @@ const CalendarView = ({ onClose }) => {
                             <Calendar size={24} />
                         </div>
                         <div className="modal-title-info">
-                            <h2>Upcoming nAPPo Events</h2>
+                            <h2>Upcoming Events</h2>
                             <p>Discover Napoleonic events and reenactments worlwide</p>
                         </div>
                         <button className="modal-close-btn" onClick={onClose}>
@@ -170,8 +214,7 @@ const CalendarView = ({ onClose }) => {
                                             key={month}
                                             className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'All Months' && activeStats.months[month] ? 'has-items' : ''}`}
                                             onClick={() => {
-                                                setSelectedMonth(month);
-                                                setIsMonthDropdownOpen(false);
+                                                handleMonthChange(month);
                                             }}
                                         >
                                             {month}
@@ -188,6 +231,42 @@ const CalendarView = ({ onClose }) => {
                 </div>
 
                 <div className="calendar-modal-body">
+                    {selectedMonth !== 'All Months' && calendarDays && (
+                        <div className="shows-calendar-container animate-fade-in">
+                            <div className="calendar-grid-header">
+                                <h3>{selectedMonth} 2026</h3>
+                                {selectedDay && (
+                                    <button 
+                                        className="clear-day-btn"
+                                        onClick={() => setSelectedDay(null)}
+                                    >
+                                        Show All Days
+                                    </button>
+                                )}
+                            </div>
+                            <div className="calendar-weekdays">
+                                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(d => <div key={d}>{d}</div>)}
+                            </div>
+                            <div className="calendar-grid">
+                                {calendarDays.map((d, index) => (
+                                    <div 
+                                        key={index}
+                                        className={`calendar-day ${d.type === 'empty' ? 'empty' : ''} ${d.hasShows ? 'has-shows' : ''} ${selectedDay === d.day ? 'selected' : ''}`}
+                                        onClick={() => d.hasShows && setSelectedDay(d.day)}
+                                    >
+                                        {d.type === 'day' && (
+                                            <>
+                                                <span className="day-number">{d.day}</span>
+                                                {d.showCount > 0 && <span className="show-count">({d.showCount})</span>}
+                                            </>
+                                        )}
+                                        {d.hasShows && <div className="show-dot" />}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     <div className="shows-grid">
                         {filteredShows.length > 0 ? (
                             filteredShows.map(show => (

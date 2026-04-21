@@ -76,6 +76,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                         "All Categories"
                     )}
                 </div>
+                <ChevronDown size={14} style={{ marginLeft: 'auto', flexShrink: 0, opacity: 0.6, transition: 'transform 0.2s', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
             </button>
 
             {isOpen && (

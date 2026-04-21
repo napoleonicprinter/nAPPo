@@ -6051,10 +6051,11 @@
     "id": "330",
     "name": "Battlefield of Vitebsk",
     "category": "Battle site",
+    "year": "1812",
     "significance": "Minor",
     "location": "Vitebsk",
     "country": "Belarus",
-    "description": "Took place on July 26th and 27th 181 and ended with the Russian forces making a strategic retreat from the battlefield.",
+    "description": "Took place on July 26th and 27th 1812 and ended with the Russian forces making a strategic retreat from the battlefield.",
     "latitude": 55.20899,
     "longitude": 30.232605,
     "special": "Russian Campaign",
@@ -6066,6 +6067,94 @@
       "Peter von der Pahlen",
       "Pyotr Konovnitsyn",
       "Napoleon"
+    ]
+  },
+  {
+    "id": "331",
+    "name": "Battlefield of Ostrovno",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Minor",
+    "location": "Ostrovno",
+    "country": "Belarus",
+    "description": "It took place on July 25th 1812, between French forces under the command of King of Naples Joachim Murat and Russian forces under General Ostermann-Tolstoy and ended with the Russian forces retreating from the battlefield.",
+    "latitude": 55.1414,
+    "longitude": 29.866201,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ostrovno.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ostrovno",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "A. Ostermann-Tolstoy",
+      "Étienne de Nansouty",
+      "Joachim Murat"
+    ]
+  },
+  {
+    "id": "332",
+    "name": "Battlefield of Shevardino",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Medium",
+    "location": "Shevardino",
+    "country": "Russia",
+    "description": "Took place on September 5th [O.S. August 24th] 1812 between French and Russian troops, with a victory of the French army.",
+    "latitude": 55.50349,
+    "longitude": 35.792295,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Shevardino.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shevardino",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Napoleon",
+      "Andrei Gorchakov",
+      "Pyotr Bagration"
+    ]
+  },
+  {
+    "id": "333",
+    "name": "Battlefield of Krasnoi",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Major",
+    "location": "Krasnoi",
+    "country": "Russia",
+    "description": "It unfolded from November 15th to the 18th 1812 marking a critical episode in Napoleon's arduous retreat from Moscow.",
+    "latitude": 53.71667,
+    "longitude": 31.81667,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Napoleon",
+      "Mikhail Kutuzov"
+    ]
+  },
+  {
+    "id": "334",
+    "name": "Battlefield of Vyazma",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Medium",
+    "location": "Vyazma",
+    "country": "Russia",
+    "description": "occurred at the beginning of Napoleon's retreat from Moscow on November 3rd 1812 (22 October by OS).",
+    "latitude": 55.2076,
+    "longitude": 34.40694,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Viasma.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vyazma",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Matvei Platov",
+      "Ivan Paskevich",
+      "Mikhail Miloradovich",
+      "Louis-Nicolas Davout",
+      "Eugéne de Beauharnais",
+      "Michel Ney",
+      "Józef Antoni Poniatowski",
+      "Józef Zajączek"
     ]
   }
 ]
