@@ -17,7 +17,10 @@
     "youtube_link": "https://www.youtube.com/watch?v=1F2bSWeA-C0",
     "more_info_link": "https://www.napoleon.org/en/magazine/places/austerlitz-slavkov-u-brna-battlefield/",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc",
+    "special": [
+      "arc",
+      "3"
+    ],
     "commanders": [
       "Napoleon",
       "Alexander I",
@@ -41,7 +44,7 @@
     "more_info_link": "https://www.waterloo1815.be/en/prepare-your-visit-2/",
     "youtube_link": "https://www.youtube.com/watch?v=gjp1ldJeY3E",
     "createDate": "2025-02-15T10:00:00Z",
-    "special": false,
+    "special": "7",
     "commanders": [
       "Napoleon",
       "Wellington",
@@ -96,7 +99,11 @@
     "longitude": 8.666,
     "visited": false,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Relation_de_la_Bataille_de_Marengo.jpg/1280px-Relation_de_la_Bataille_de_Marengo.jpg?_=20160228104246",
-    "special": "arc",
+    "special": [
+      "arc",
+      "2",
+      "Marengo Campaign"
+    ],
     "commanders": [
       "Napoleon",
       "Michael von Melas"
@@ -4344,7 +4351,7 @@
   },
   {
     "id": "239",
-    "nameo": "Forte di Malborghetto",
+    "name": "Forte di Malborghetto",
     "category": "Landmark",
     "significance": "Minor",
     "year": "1809",
@@ -5904,7 +5911,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Genappe",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Marshal Lobau",
+      "Marshal Lobau"
     ]
   },
   {
@@ -5923,7 +5930,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Namur",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Colonel Zastrow",
+      "Colonel Zastrow"
     ]
   },
   {
@@ -5981,11 +5988,84 @@
     "visited": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tomb_Marie.webp",
     "link": "https://www.lunion.fr/art/92706/article/2018-05-23/la-tombe-d-un-soldat-napoleonien-restauree-en-foret-de-villers-cotterets#:~:text=La%20s%C3%A9pulture%20du%20sous%2Dlieutenant%20Marie%2C%20situ%C3%A9e%20en,est%20mort%20le%2028%20juin%201815%20dans",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "327",
+    "name": "Battlefield of Ölper",
+    "category": "Battle site",
+    "significance": "Minor",
+    "location": "Braunschweig",
+    "country": "Germany",
+    "description": "Took place on August 1st 1809 in Ölper (currently a district of the town of Brunswick). It pitched troops of the Kingdom of Westphalia against the Black Brunswickers under Frederick William, Duke of Brunswick-Wolfenbüttel.",
+    "latitude": 52.2827,
+    "longitude": 10.484985,
+    "special": [
+      "5",
+      "Brunswick Rebellion"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Olper.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%96lper_(1809)",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Henri-Pierre Delaage",
-      "Auguste de La Rochejaquelein",
-      "Simon Canuel"
+      "Frederick William",
+      "Jean-Jacques Reubell"
+    ]
+  },
+  {
+    "id": "328",
+    "name": "Ölper Battle Memorial",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Braunschweig",
+    "country": "Germany",
+    "description": "The obelisk is 22 meters high and made of ore. It served the memory of the two fallen dukes Carl Wilhelm Ferdinand and Friedrich Wilhelm.",
+    "latitude": 52.282471,
+    "longitude": 10.504269,
+    "special": [
+      "5",
+      "Brunswick Rebellion"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Olper_memorial.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "329",
+    "name": "Suvorov Monument",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Andermatt",
+    "country": "Switzerland",
+    "description": "Erected in 1898, commemorates the battles of 1799 between the Napoleonic troops under Lecourbe and the Russians under Suvorov.",
+    "latitude": 46.7356,
+    "longitude": 8.591898,
+    "special": [
+      "2",
+      "Suvorov's Italian campaign"
+    ],
+    "link": "https://www.andermatt-sedrun-disentis.ch/en/products/suvorov-monument-202426",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suvorov_memorial.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "330",
+    "name": "Battlefield of Vitebsk",
+    "category": "Battle site",
+    "significance": "Minor",
+    "location": "Vitebsk",
+    "country": "Belarus",
+    "description": "Took place on July 26th and 27th 181 and ended with the Russian forces making a strategic retreat from the battlefield.",
+    "latitude": 55.20899,
+    "longitude": 30.232605,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vitebsk.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vitebsk_(1812)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Mikhail Barclay de Tolly",
+      "Peter von der Pahlen",
+      "Pyotr Konovnitsyn",
+      "Napoleon"
     ]
   }
 ]

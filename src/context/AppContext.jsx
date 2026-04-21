@@ -194,6 +194,9 @@ export const AppProvider = ({ children }) => {
     const [filterSearch, setFilterSearch] = useState('');
     const [filterYear, setFilterYear] = useState('all');
     const [filterCommander, setFilterCommander] = useState('all');
+    const [filterCountry, setFilterCountry] = useState('all');
+    const [filterCoalition, setFilterCoalition] = useState('all');
+    const [filterCampaign, setFilterCampaign] = useState('all');
     const [showArcOnly, setShowArcOnly] = useState(false);
 
     const [visitedSites, setVisitedSites] = useState(() => {
@@ -223,7 +226,8 @@ export const AppProvider = ({ children }) => {
         return {
             ...site,
             visited: visitedSites.includes(site.id),
-            isNew
+            isNew,
+            special: site.special ? (Array.isArray(site.special) ? site.special : [String(site.special)]) : []
         };
     });
 
@@ -274,14 +278,17 @@ export const AppProvider = ({ children }) => {
         if (filterSignificance && site.significance !== filterSignificance) return false;
         if (filterVisited === 'visited' && !site.visited) return false;
         if (filterVisited === 'unvisited' && site.visited) return false;
-        if (filterSearch && !site.name.toLowerCase().includes(filterSearch.toLowerCase())) return false;
+        if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
+        if (filterCountry !== 'all' && site.country !== filterCountry) return false;
+        if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
+        if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
 
         const siteYearStr = site.year ? String(site.year).trim() : '';
         if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
 
         if (filterCommander !== 'all' && (!site.commanders || !site.commanders.includes(filterCommander))) return false;
 
-        if (showArcOnly && site.special !== 'arc') return false;
+        if (showArcOnly && !site.special.includes('arc')) return false;
 
         if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
@@ -298,6 +305,35 @@ export const AppProvider = ({ children }) => {
         if (filterCategory.length > 0 && !filterCategory.includes(site.category)) return false;
         return true;
     });
+
+    const isFiltered = 
+        filterCategory.length > 0 ||
+        filterSignificance !== '' ||
+        filterVisited !== 'all' ||
+        filterRadius !== 'all' ||
+        filterSearch !== '' ||
+        filterYear !== 'all' ||
+        filterCommander !== 'all' ||
+        filterCountry !== 'all' ||
+        filterCoalition !== 'all' ||
+        filterCampaign !== 'all' ||
+        showArcOnly ||
+        showOnlyNew;
+ 
+    const clearAllFilters = () => {
+        setFilterCategory([]);
+        setFilterSignificance('');
+        setFilterVisited('all');
+        setFilterRadius('all');
+        setFilterSearch('');
+        setFilterYear('all');
+        setFilterCommander('all');
+        setFilterCountry('all');
+        setFilterCoalition('all');
+        setFilterCampaign('all');
+        setShowArcOnly(false);
+        setShowOnlyNew(false);
+    };
 
 
     useEffect(() => {
@@ -467,6 +503,11 @@ export const AppProvider = ({ children }) => {
             handleLocationSelect,
             filterSearch, setFilterSearch,
             filterCategory, setFilterCategory,
+            filterCountry, setFilterCountry,
+            filterCoalition, setFilterCoalition,
+            filterCampaign, setFilterCampaign,
+            isFiltered,
+            clearAllFilters,
             filterSignificance, setFilterSignificance,
             filterVisited, setFilterVisited,
             filterRadius, setFilterRadius,

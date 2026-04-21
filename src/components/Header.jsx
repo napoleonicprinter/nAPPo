@@ -12,6 +12,7 @@ import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
 import NewsModal from './NewsModal';
 import ArcFilter from './ArcFilter';
+import CampaignFilter from './CampaignFilter';
 import FloatingViewToggle from './FloatingViewToggle';
 import CalendarView from './CalendarView';
 import ShoppingView from './ShoppingView';
@@ -47,7 +48,8 @@ const Header = () => {
         allSites, sites,
         theme, toggleTheme,
         syncStatus, lastSyncTime,
-        categoryCounts
+        categoryCounts,
+        isFiltered
     } = useAppContext();
     const [showSettings, setShowSettings] = useState(false);
     const [showAuth, setShowAuth] = useState(false);
@@ -111,7 +113,7 @@ const Header = () => {
             <div className="header-brand">
                 <img src="/assets/NT_logo.png" alt="nAPPo Trails Logo" className="header-logo" />
                 <div className="sites-count-badge glass-panel">
-                    <span className="count-number">{sites.length}</span>
+                    <span className="count-number" style={{ color: isFiltered ? 'var(--accent-danger)' : 'var(--accent-primary)' }}>{sites.length}</span>
                     <span className="count-label">sites</span>
                 </div>
             </div>
@@ -183,6 +185,7 @@ const Header = () => {
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
                         <ArcFilter className="desktop-arc-filter" />
+                        <CampaignFilter className="desktop-campaign-filter" />
                         <button
                             className="desktop-header-btn glass-panel desktop-events-btn"
                             onClick={handleEventsClick}
@@ -197,6 +200,7 @@ const Header = () => {
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
                     <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
+                    <CampaignFilter className="mobile-tag-filter mobile-campaign-filter" />
                 </div>
             </div>
 

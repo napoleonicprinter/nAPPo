@@ -72,12 +72,31 @@ const CATEGORY_ORDER = [
     'Store'
 ];
 
+// Get size based on significance
+const getSignificanceSize = (sig) => {
+    switch (sig) {
+        case 'Major': return 30;
+        case 'Medium': return 25;
+        case 'Minor':
+        default: return 20;
+    }
+};
+
 // Create a custom styled HTML icon depending on visited status and category
 const createCustomIcon = (site) => {
+    const size = getSignificanceSize(site.significance);
+    const k = size / 20; // scale factor based on 20px base size
+
+    const iconW = Math.round(24 * k);
+    const iconH = Math.round(24 * k);
+    const anchorX = Math.round(12 * k);
+    const anchorY = Math.round(29 * k);
+    const popupY = Math.round(-32 * k);
+
     const bgColor = getCategoryColor(site.category);
     // Green outer rim if visited, else white/grey depending on theme
     const borderColor = site.visited ? '#3fb950' : (document.body.classList.contains('light-mode') ? '#a0a0a0' : '#ffffff');
-    const borderWidth = site.visited ? '3px' : '2px';
+    const borderWidth = site.visited ? `${Math.round(3 * k)}px` : `${Math.round(2 * k)}px`;
 
     return new L.divIcon({
         className: 'custom-map-icon',
@@ -85,18 +104,18 @@ const createCustomIcon = (site) => {
             <div style="
                 box-sizing: border-box;
                 background-color: ${bgColor};
-                width: 20px;
-                height: 20px;
+                width: ${size}px;
+                height: ${size}px;
                 border-radius: 50% 50% 50% 0;
                 border: ${borderWidth} solid ${borderColor};
-                box-shadow: ${site.visited ? '0 0 10px rgba(63, 185, 80, 0.8)' : '2px 2px 4px rgba(0,0,0,0.4)'};
+                box-shadow: ${site.visited ? `0 0 ${Math.round(10 * k)}px rgba(63, 185, 80, 0.8)` : `${Math.round(2 * k)}px ${Math.round(2 * k)}px ${Math.round(4 * k)}px rgba(0,0,0,0.4)`};
                 transform: rotate(-45deg);
                 margin: 0;
             "></div>
         `,
-        iconSize: [24, 24],
-        iconAnchor: [12, 29],
-        popupAnchor: [0, -32]
+        iconSize: [iconW, iconH],
+        iconAnchor: [anchorX, anchorY],
+        popupAnchor: [0, popupY]
     });
 };
 
