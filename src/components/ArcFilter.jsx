@@ -21,6 +21,7 @@ const ArcFilter = ({ className, style }) => {
                 } : {}),
             }}
         >
+
             <img
                 src="/assets/Arc.png"
                 alt="Arc Filter"

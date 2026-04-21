@@ -1489,5 +1489,32 @@
         "country": "Belgium",
         "description": "It was fought on June 18th and 19th 1815 and was the final major military action of the Hundred Days campaign and the Napoleonic Wars.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wavre"
+    },
+    {
+        "id": 177,
+        "title": "Action of Namur",
+        "date": "1815-06-20",
+        "location": "Namur",
+        "country": "Belgium",
+        "description": "The Prussians took the town of Namur after a heavy fight.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Namur"
+    },
+    {
+        "id": 178,
+        "title": "Battle of Thouars",
+        "date": "1815-06-20",
+        "location": "Thouars",
+        "country": "France",
+        "description": "This battle of Thouars took place on June 20th 1815 during the War in the Vendée of 1815; it was won by the army of the First Empire.",
+        "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_de_Thouars_(1815)"
+    },
+    {
+        "id": 179,
+        "title": "Battle of Villers-Cotterêts",
+        "date": "1815-06-28",
+        "location": "Villers-Cotterêts",
+        "country": "France",
+        "description": "Prussian surprise night attack by General Pirch II on June 28th 1815.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(25_June_%E2%80%93_1_July)#Battle_of_Villers-Cotter%C3%AAts"
     }
 ]

@@ -5867,5 +5867,125 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wavre_Pont_Christ.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Monument_au_g%C3%A9n%C3%A9ral_G%C3%A9rard",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "321",
+    "name": "Battlefield 1st Action of Genappe",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Minor",
+    "location": "Genappe",
+    "country": "Belgium",
+    "description": "On June 17th 1815, Uxbridge halted the Heavy Brigades and posted them so as to cover the retirement of the light cavalry. He formed them in line; Somerset's on the right, and Ponsonby's on the left about 660 yards from the river.",
+    "latitude": 50.6116,
+    "longitude": 4.45,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Genappe.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Quatre_Bras_to_Waterloo#Action_at_Genappe",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "William Ponsonby",
+      "Lord Somerset"
+    ]
+  },
+  {
+    "id": "322",
+    "name": "Battlefield 2nd Action of Genappe",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Minor",
+    "location": "Genappe",
+    "country": "Belgium",
+    "description": "On June 18th 1815, it was here that Marshal Lobau collected three hundred men together and tried to make a stand to cover the French Army retreat.",
+    "latitude": 50.6098,
+    "longitude": 4.4506,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Genappe2.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Genappe",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Marshal Lobau",
+    ]
+  },
+  {
+    "id": "323",
+    "name": "Battlefield Action of Namur",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Minor",
+    "location": "Namur",
+    "country": "Belgium",
+    "description": "On June 20th 1815, The Prussian columns of attack, advancing at the pas de charge (at the double), drove the French out of the Namur suburb, and endeavoured to gain possession of the gates of the town.",
+    "latitude": 50.4669,
+    "longitude": 4.85985,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Namur.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Namur",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Colonel Zastrow",
+    ]
+  },
+  {
+    "id": "324",
+    "name": "Battlefield of Thouars",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Minor",
+    "location": "Thouars",
+    "country": "France",
+    "description": "This battle of Thouars took place on June 20th 1815 during the War in the Vendée of 1815; it was won by the army of the First Empire.",
+    "latitude": 46.976154,
+    "longitude": -0.2168,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Thouars.webp",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_de_Thouars_(1815)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Henri-Pierre Delaage",
+      "Auguste de La Rochejaquelein",
+      "Simon Canuel"
+    ]
+  },
+  {
+    "id": "325",
+    "name": "Battlefield of Villers-Coterêts",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Minor",
+    "location": "Villers-Coterêts",
+    "country": "France",
+    "description": "Prussian surprise night attack by General Pirch II on June 28th 1815.",
+    "latitude": 49.25306,
+    "longitude": 3.09033,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Villers_Cotterets.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(25_June_%E2%80%93_1_July)#Battle_of_Villers-Cotter%C3%AAts",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Henri-Pierre Delaage",
+      "Auguste de La Rochejaquelein",
+      "Simon Canuel"
+    ]
+  },
+  {
+    "id": "326",
+    "name": "Sépulture du sous-lieutenant Marie",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Villers-Coterêts",
+    "country": "France",
+    "description": "Second Lieutenant Marie Étienne Maximin died on June 28th 1815 in the Retz forest.",
+    "latitude": 49.25817,
+    "longitude": 3.109630,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tomb_Marie.webp",
+    "link": "https://www.lunion.fr/art/92706/article/2018-05-23/la-tombe-d-un-soldat-napoleonien-restauree-en-foret-de-villers-cotterets#:~:text=La%20s%C3%A9pulture%20du%20sous%2Dlieutenant%20Marie%2C%20situ%C3%A9e%20en,est%20mort%20le%2028%20juin%201815%20dans",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Henri-Pierre Delaage",
+      "Auguste de La Rochejaquelein",
+      "Simon Canuel"
+    ]
   }
 ]
