@@ -6157,4 +6157,25 @@
       "Józef Zajączek"
     ]
   }
+  {
+    "id": "335",
+    "name": "Battlefield of Gorodechno",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Medium",
+    "location": "Gorodechno",
+    "country": "Belarus",
+    "description": "It took place on August 12th 1812 between an army of the Austrian and Saxon allies of Napoleonic France under the overall command of the Prince of Schwarzenberg and Russian troops under Alexander Tormasov at Gorodechno.",
+    "latitude": 52.3903,
+    "longitude": 24.280845,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gorodechno.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gorodechno",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Alexander Tormasov",
+      "Prince of Schwarzenberg",
+      "Jean Reynier"
+    ]
+  }
 ]
