@@ -6177,5 +6177,109 @@
       "Prince of Schwarzenberg",
       "Jean Reynier"
     ]
+  },
+  {
+    "id": "336",
+    "name": "Battlefield of Valutino (Lubino)",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Medium",
+    "location": "Valutino",
+    "country": "Russia",
+    "description": "Also called the battle of Lubino, took place on August 19th 1812 near Valutino and Lubino, between a corps of French and allied troops led by Marshal Ney, about 35,000 strong, and a strong rear-guard of General Barclay de Tolly's Russian army of about 25,000.",
+    "latitude": 54.8012,
+    "longitude": 32.182583,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valutino.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valutino",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Michel Ney",
+      "Barclay de Tolly"
+    ]
+  },
+  {
+    "id": "337",
+    "name": "Battlefield of Dahlenkirchen",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Minor",
+    "location": "Iecava",
+    "country": "Latvia",
+    "description": "took place on August 21st 1812, between French and allied troops, with a victory of the Russian army of about 6,000 against the French about 1,500 strong.",
+    "latitude": 56.5966,
+    "longitude": 24.20361,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dahlenkirchen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dahlenkirchen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Jacques MacDonald",
+      "Magnus Gustav von Essen",
+      "Julius von Grawert"
+    ]
+  },
+  {
+    "id": "338",
+    "name": "Battlefield of Mesothen (Mesoten)",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Minor",
+    "location": "Mežotne",
+    "country": "Latvia",
+    "description": "Took place from September 26th to October 1st 1812, between the Russian Corps of Finland and the French-allied Prussian Auxiliary Corps.",
+    "latitude": 56.3961,
+    "longitude": 24.029172,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mesoten.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mesoten",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Fabian Steinheil",
+      "Ludwig von Yorck"
+    ]
+  },
+  {
+    "id": "339",
+    "name": "Battlefield of Tarutino",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Medium",
+    "location": "Tarutino",
+    "country": "Russia",
+    "description": "Russian troops under the general command of Bennigsen attacked and defeated French troops under Murat's command on October 18th 1812.",
+    "latitude": 55.135389,
+    "longitude": 36.942257,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tarutino.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tarutino",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Joachim Murat",
+      "Mikhail Kutuzov",
+      "Leonty Bennigsen",
+      "Józef Poniatowski"
+    ]
+  },
+  {
+    "id": "340",
+    "name": "Battlefield of Chashniki",
+    "category": "Battle site",
+    "year": "1812",
+    "significance": "Medium",
+    "location": "Chashniki",
+    "country": "Russia",
+    "description": "Fought on October 31st 1812, between Russian forces under General Wittgenstein, and the French Army, commanded by Marshal Victor.",
+    "latitude": 54.843897,
+    "longitude": 29.147385,
+    "special": "Russian Campaign",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Chashniki.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Chashniki",
+    "createDate": "2025-03-22T10:00:00Z",
+    "commanders": [
+      "Peter Wittgenstein",
+      "Lev Yashvil",
+      "Claude Victor"
+    ]
   }
 ]

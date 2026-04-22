@@ -1570,5 +1570,50 @@
         "country": "Belarus",
         "description": "It took place on August 12th 1812 between an army of the Austrian and Saxon allies of Napoleonic France under the overall command of the Prince of Schwarzenberg and Russian troops under Alexander Tormasov at Gorodechno.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gorodechno"
+    },
+    {
+        "id": 186,
+        "title": "Battle of Valutino",
+        "date": "1812-08-19",
+        "location": "Valutino",
+        "country": "Russia",
+        "description": "Also called the battle of Lubino, took place on August 19th 1812 near Valutino and Lubino, between a corps of French and allied troops led by Marshal Ney, about 35,000 strong, and a strong rear-guard of General Barclay de Tolly's Russian army of about 25,000.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valutino"
+    },
+    {
+        "id": 187,
+        "title": "Battle of Dahlenkirchen",
+        "date": "1812-08-21",
+        "location": "Iecava",
+        "country": "Latvia",
+        "description": "It took place on August 21st 1812, between French and allied troops, with a victory of the Russian army of about 6,000 against the French about 1,500 strong.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dahlenkirchen"
+    },
+    {
+        "id": 188,
+        "title": "Battle of Mesothen",
+        "date": "1812-09-26",
+        "location": "Mežotne",
+        "country": "Latvia",
+        "description": "It took place from September 26th to October 1st 1812, between the Russian Corps of Finland and the French-allied Prussian Auxiliary Corps.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mesoten"
+    },
+    {
+        "id": 189,
+        "title": "Battle of Tarutino",
+        "date": "1812-10-18",
+        "location": "Tarutino",
+        "country": "Russia",
+        "description": "Russian troops under the general command of Bennigsen attacked and defeated French troops under Murat's command on October 18th 1812.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tarutino"
+    },
+    {
+        "id": 190,
+        "title": "Battle of Chashniki",
+        "date": "1812-10-31",
+        "location": "Chashniki",
+        "country": "Russia",
+        "description": "Fought on October 31st 1812, between Russian forces under General Wittgenstein, and the French Army, commanded by Marshal Victor.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Chashniki"
     }
 ]
