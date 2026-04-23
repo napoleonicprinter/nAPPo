@@ -411,6 +411,7 @@ const MapView = () => {
         filterRadius, setFilterRadius,
         mapStyle,
         theme,
+        isFiltered, clearAllFilters
     } = useAppContext();
     const [selectedSite, setSelectedSite] = useState(null);
     const [navigatingSite, setNavigatingSite] = useState(null);
@@ -529,7 +530,7 @@ const MapView = () => {
                                         </div>
                                     )}
                                     <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {site.special === 'arc' && (
+                                        {site.special?.includes('arc') && (
                                             <img src="/assets/Arc.png" alt="Listed at the Arch de Triomphe - Paris" title="Listed at the Arch de Triomphe - Paris" style={{ height: '1.2em', width: 'auto' }} />
                                         )}
                                         {site.name}
@@ -598,6 +599,16 @@ const MapView = () => {
                         <SiteCard site={selectedSite} onClose={() => setSelectedSite(null)} />
                     </div>
                 </div>
+            )}
+
+            {isFiltered && (
+                <button
+                    className="mobile-clear-filters glass-panel"
+                    onClick={clearAllFilters}
+                    title="Clear All Filters"
+                >
+                    Clear Filters
+                </button>
             )}
 
         </div>

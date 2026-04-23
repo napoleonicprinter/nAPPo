@@ -48,7 +48,7 @@ const Header = () => {
         theme, toggleTheme,
         syncStatus, lastSyncTime,
         categoryCounts,
-        isFiltered
+        isFiltered, clearAllFilters
     } = useAppContext();
     const [showSettings, setShowSettings] = useState(false);
     const [showAuth, setShowAuth] = useState(false);
@@ -118,6 +118,14 @@ const Header = () => {
             </div>
 
             <div className="mobile-header-actions">
+                <FloatingViewToggle className="mobile-header-btn" />
+                <button
+                    className="mobile-header-btn glass-panel"
+                    onClick={handleEventsClick}
+                    title="Today in nAPPo history"
+                >
+                    <Calendar size={20} />
+                </button>
                 <button
                     className="mobile-menu-toggle glass-panel"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -142,15 +150,7 @@ const Header = () => {
                             title="Set Search Location"
                             placeholder="Search Location..."
                         />
-                        <FloatingViewToggle />
-                        <button
-                            className="mobile-header-btn glass-panel mobile-only"
-                            onClick={handleEventsClick}
-                            title="Today in nAPPo history"
-                            style={{ marginLeft: '4px' }}
-                        >
-                            <Calendar size={20} />
-                        </button>
+                        <FloatingViewToggle className="desktop-only" />
                     </div>
 
                     <div className="desktop-filters custom-desktop-layout">
@@ -185,6 +185,15 @@ const Header = () => {
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
                         <ArcFilter className="desktop-arc-filter" />
+                        {isFiltered && (
+                            <button
+                                className="desktop-clear-filters filter-select glass-panel"
+                                onClick={clearAllFilters}
+                                title="Clear all filters"
+                            >
+                                Clear Filters
+                            </button>
+                        )}
                         <button
                             className="desktop-header-btn glass-panel desktop-events-btn"
                             onClick={handleEventsClick}

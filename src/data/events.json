@@ -298,11 +298,11 @@
     },
     {
         "id": 33,
-        "title": "Battle of Neumarkt-Sankt Veit",
-        "date": "1809-04-24",
-        "location": "Neumarkt-Sankt Veit, modern-day Germany",
-        "description": "Austrian victory over Marshal Bessières.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neumarkt-Sankt_Veit",
+        "title": "Battle of Vauchamps",
+        "date": "1814-02-14",
+        "location": "Vauchamps, modern-day France",
+        "description": "Napoleon's last major victory of the campaign.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vauchamps",
         "more_info_link": ""
     },
     {
@@ -1615,5 +1615,23 @@
         "country": "Russia",
         "description": "Fought on October 31st 1812, between Russian forces under General Wittgenstein, and the French Army, commanded by Marshal Victor.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Chashniki"
+    },
+    {
+        "id": 191,
+        "title": "Battle of La Rothière",
+        "date": "1814-02-01",
+        "location": "La Rothière",
+        "country": "France",
+        "description": "February 1st 1814 saw the Coalition forces of the Austrian Empire, Russian Empire, Kingdom of Prussia, Kingdom of Bavaria, and Kingdom of Württemberg attack a French army led by Emperor Napoleon.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re"
+    },
+    {
+        "id": 192,
+        "title": "Combat of Lesmont",
+        "date": "1814-02-02",
+        "location": "Lesmont",
+        "country": "France",
+        "description": "A Coalition force of Russians and Bavarians under generals Eugen of Wurtemberg and Carl Philipp von Wrede was defeated on February 2nd 1814 by a French force under general Joseph Lagrange.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lesmont"
     }
 ]

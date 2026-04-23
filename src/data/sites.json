@@ -1996,7 +1996,7 @@
     "latitude": 41.8994,
     "longitude": -4.9936,
     "visited": false,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Escena_de_la_Guerra_del_Franc%C3%A8s.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Medina.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Medina_de_Rioseco",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "arc",
@@ -4491,11 +4491,11 @@
   },
   {
     "id": "247",
-    "name": "Battlefield of Raab / Győr",
+    "name": "Battlefield of Raab/Győr",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1809",
-    "location": "Győr, Hungary",
+    "location": "Győr",
     "country": "Hungary",
     "description": "It was fought on June 14th 1809 between Franco-Italian forces and Habsburg forces. Most of the Habsburg army consisted of poorly trained Landwehr and militia.",
     "latitude": 47.577,
@@ -4509,7 +4509,10 @@
       "Archduke John of Austria",
       "Archduke Joseph of Austria"
     ],
-    "special": "arc"
+    "special": [
+      "arc",
+      "5"
+    ]
   },
   {
     "id": "248",
@@ -6281,5 +6284,137 @@
       "Lev Yashvil",
       "Claude Victor"
     ]
+  },
+  {
+    "id": "341",
+    "name": "Battle of La Rothière",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Major",
+    "location": "La Rothière",
+    "country": "France",
+    "description": "February 1st 1814 saw the Coalition forces of the Austrian Empire, Russian Empire, Kingdom of Prussia, Kingdom of Bavaria, and Kingdom of Württemberg attack a French army led by Emperor Napoleon.",
+    "latitude": 48.3396,
+    "longitude": 4.628627,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/La_Rothiere.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "6",
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Gebhard Leberecht von Blücher"
+    ]
+  },
+  {
+    "id": "342",
+    "name": "Battlefield combat of Lesmont",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Minor",
+    "location": "Lesmont",
+    "country": "France",
+    "description": "A Coalition force of Russians and Bavarians under generals Eugen of Wurtemberg and Carl Philipp von Wrede was defeated on February 2nd 1814 by a French force under general Joseph Lagrange.",
+    "latitude": 48.4279,
+    "longitude": 4.411731,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lesmont.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lesmont",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "6",
+    "commanders": [
+      "Joseph Lagrange",
+      "Karl Philipp von Wrede",
+      "Eugen of Württemberg"
+    ]
+  },
+  {
+    "id": "343",
+    "name": "Battlefield of Champaubert",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Minor",
+    "location": "Champaubert",
+    "country": "France",
+    "description": "February 10th 1814 was the opening engagement of the Six Days' Campaign. It was fought between a French army led by Emperor Napoleon and a small Russian corps commanded by Lieutenant General Count Zakhar Dmitrievich Olsufiev.",
+    "latitude": 48.4279,
+    "longitude": 4.411731,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Champaubert.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Champaubert",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Six Days' Campaign",
+      "6"
+    ],
+    "commanders": [
+      "Zakhar Olsufiev",
+      "Napoleon Bonaparte",
+      "Auguste de Marmont"
+    ]
+  },
+  {
+    "id": "344",
+    "name": "Battlefield of Vauchamps",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Vauchamps",
+    "country": "France",
+    "description": "February 14th 1814, was the final major engagement of the Six Days Campaign. It resulted in a part of the Grande Armée under Napoleon I defeating a superior Prussian and Russian force.",
+    "latitude": 48.88067,
+    "longitude": 3.615927,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Champaubert.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vauchamps",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Six Days' Campaign",
+      "6"
+    ],
+    "commanders": [
+      "Zakhar Olsufiev",
+      "Napoleon Bonaparte",
+      "Auguste de Marmont",
+      "Emmanuel de Grouchy",
+      "Gebhard Leberecht von Blücher",
+      "Friedrich von Kleist",
+      "Peter Kaptzevich"
+    ]
+  },
+  {
+    "id": "345",
+    "name": "Colonne commémorative de la bataille de Champaubert",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Champaubert",
+    "country": "France",
+    "description": "Column erected in 1865-1867 in Euville stone based on plans by architects Louis Visconti (author of the Emperor's tomb at Les Invalides).",
+    "latitude": 48.8807,
+    "longitude": 3.776056,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Champaubert_colonne.webp",
+    "link": "https://e-monumen.net/patrimoine-monumental/colonne-commemorative-de-la-bataille-de-champaubert-champaubert/",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Six Days' Campaign",
+      "6"
+    ]
+  },
+  {
+    "id": "346",
+    "name": "Monument Battle of Raab",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Győr",
+    "country": "Hungary",
+    "description": "erected in 1897 on the site where, on the morning of the Battle of Raab (June 14th, 1809), the infantry of Prince Eugene's Army of Italy had deployed.(Photo: Judit Juhász)",
+    "latitude": 47.6441,
+    "longitude": 17.662624,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Raab_monument.webp",
+    "link": "https://napoleon-monuments.eu/MONUMENTSENPERIL/Hongrie.htm",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "5"
   }
 ]

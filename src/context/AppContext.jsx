@@ -29,7 +29,7 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
 
 export const EUROPEAN_CAPITALS = [
     { name: "Amsterdam", lat: 52.3676, lon: 4.9041 },
-    { name: "Andorra la Vella", lat: 42.5063, lon: 1.5218 },
+    { name: "Andorra Vella", lat: 42.5063, lon: 1.5218 },
     { name: "Athens", lat: 37.9838, lon: 23.7275 },
     { name: "Belgrade", lat: 44.7866, lon: 20.4489 },
     { name: "Berlin", lat: 52.5200, lon: 13.4050 },
@@ -306,7 +306,7 @@ export const AppProvider = ({ children }) => {
         return true;
     });
 
-    const isFiltered = 
+    const isFiltered =
         filterCategory.length > 0 ||
         filterSignificance !== '' ||
         filterVisited !== 'all' ||
@@ -319,7 +319,7 @@ export const AppProvider = ({ children }) => {
         filterCampaign !== 'all' ||
         showArcOnly ||
         showOnlyNew;
- 
+
     const clearAllFilters = () => {
         setFilterCategory([]);
         setFilterSignificance('');
