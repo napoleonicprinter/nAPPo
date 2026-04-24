@@ -37,35 +37,36 @@ const EventsModal = ({ onClose }) => {
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
                 <div className="calendar-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
-                    <div className="modal-title-row">
+                    <div className="modal-title-row" style={{ gap: '8px' }}>
                         <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
                             <CalendarIcon size={24} />
                         </div>
-                        <div className="modal-title-info">
-                            <h2>Today in History</h2>
-                            <p>{todayString}</p>
-                        </div>
-
-                        <div style={{ marginLeft: 'auto', marginRight: '1rem' }}>
-                            <button
-                                onClick={() => setIsCalendarOpen(true)}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '6px',
-                                    background: 'rgba(255,255,255,0.1)',
-                                    border: '1px solid rgba(255,255,255,0.2)',
-                                    color: 'var(--text-primary)',
-                                    padding: '6px 12px',
-                                    borderRadius: '16px',
-                                    cursor: 'pointer',
-                                    fontSize: '0.9rem',
-                                    transition: 'all 0.2s'
-                                }}
-                            >
-                                <CalendarDays size={16} />
-                                View Calendar
-                            </button>
+                        <div className="modal-title-info" style={{ display: 'flex', flexDirection: 'column', minWidth: '0' }}>
+                            <h2 style={{ whiteSpace: 'nowrap', letterSpacing: '-0.5px' }}>Today in History</h2>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '2px' }}>
+                                <p style={{ margin: 0, fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: '600', opacity: 1, whiteSpace: 'nowrap' }}>
+                                    {todayString}
+                                </p>
+                                <button
+                                    onClick={() => setIsCalendarOpen(true)}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '6px',
+                                        background: 'rgba(255,255,255,0.1)',
+                                        border: '1px solid rgba(255,255,255,0.2)',
+                                        color: 'var(--text-primary)',
+                                        padding: '4px 10px',
+                                        borderRadius: '16px',
+                                        cursor: 'pointer',
+                                        fontSize: '0.85rem',
+                                        transition: 'all 0.2s'
+                                    }}
+                                >
+                                    <CalendarDays size={16} />
+                                    <span style={{ whiteSpace: 'nowrap' }} className="hide-on-mobile">Calendar</span>
+                                </button>
+                            </div>
                         </div>
 
                         <button className="modal-close-btn" onClick={onClose}>

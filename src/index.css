@@ -415,6 +415,10 @@ button {
     max-height: 100vh;
     border-radius: 0;
   }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
 }
 
 /* --- Global Clear Filters Adjustments --- */
