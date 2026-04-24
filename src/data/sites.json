@@ -6416,5 +6416,103 @@
     "link": "https://napoleon-monuments.eu/MONUMENTSENPERIL/Hongrie.htm",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "5"
+  },
+  {
+    "id": "347",
+    "name": "Battlefield of Montmirail",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Montmirail",
+    "country": "France",
+    "description": "It was fought on February 11th 1814 between a French force led by Emperor Napoleon and two Allied corps commanded by Fabian Wilhelm von Osten-Sacken and Ludwig Yorck von Wartenburg.",
+    "latitude": 48.8695,
+    "longitude": 3.484478,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Montmirail.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montmirail",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Six Days' Campaign",
+      "6"
+    ],
+    "commanders": [
+      "Fabian Osten-Sacken",
+      "Napoleon Bonaparte",
+      "Ludwig von Yorck"
+    ]
+  },
+  {
+    "id": "348",
+    "name": "Battlefield of Montereau",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Montereau",
+    "country": "France",
+    "description": "An Imperial French army led by Emperor Napoleon fought a corps of Austrians and Württembergers commanded by Crown Prince Frederick William of Württemberg.",
+    "latitude": 48.4154,
+    "longitude": 2.935546,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Montereau.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montereau",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Prince of Schwarzenberg",
+      "Napoleon Bonaparte",
+      "Prince of Württemberg"
+    ]
+  },
+  {
+    "id": "349",
+    "name": "Battlefield of Lippa",
+    "category": "Battle site",
+    "year": "1813",
+    "significance": "Minor",
+    "location": "Rupa",
+    "country": "Croatia",
+    "description": "It was an engagement which took place on September 7th 1813 in what is now Croatia where the Austrians defeated the Franco-Italians. ",
+    "latitude": 45.4846,
+    "longitude": 14.243617,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lippa",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Adriatic campaign",
+      "6"
+    ],
+    "commanders": [
+      "Gillot Rougier",
+      "Laval Nugent von Westmeath"
+    ]
+  },
+  {
+    "id": "350",
+    "name": "Battlefield of Arnhem",
+    "category": "Battle site",
+    "year": "1813",
+    "significance": "Minor",
+    "location": "Arnhem",
+    "country": "Netherlands",
+    "description": "Also known as the storming of Arnhem, saw Friedrich Wilhelm Freiherr von Bülow's Prussian corps fight an Imperial French division under Henri François Marie Charpentier on November 30th 1813",
+    "latitude": 51.982778,
+    "longitude": 5.908333,
+    "visited": false,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Arnhem.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arnhem_(1813)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "German campaign",
+      "6"
+    ],
+    "commanders": [
+      "Henri Charpentier",
+      "Friedrich Wilhelm von Bülow"
+    ]
   }
 ]

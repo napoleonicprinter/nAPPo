@@ -4,6 +4,7 @@ import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
 import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
+import messagesDataFallback from '../data/messages.json';
 import { Geolocation } from '@capacitor/geolocation';
 
 // Constants for remote data
@@ -109,6 +110,12 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
 
+    const [messagesBaseData, setMessagesBaseData] = useState(() => {
+        if (isDevelopment) return messagesDataFallback;
+        const saved = localStorage.getItem('messagesData');
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : messagesDataFallback;
+    });
+
     const [syncStatus, setSyncStatus] = useState('idle');
     const [lastSyncTime, setLastSyncTime] = useState(() => {
         return localStorage.getItem('lastSyncTime') || null;
@@ -127,10 +134,11 @@ export const AppProvider = ({ children }) => {
                     fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts)
+                    fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts)
                 ]);
 
-                const [resSites, resShows, resShopping, resEvents, resNews] = fetchRes;
+                const [resSites, resShows, resShopping, resEvents, resNews, resMessages] = fetchRes;
 
                 if (resSites.ok) {
                     const data = await resSites.json();
@@ -156,6 +164,11 @@ export const AppProvider = ({ children }) => {
                     const data = await resNews.json();
                     if (!isDevelopment) setNewsBaseData(data);
                     localStorage.setItem('newsData', JSON.stringify(data));
+                }
+                if (resMessages && resMessages.ok) {
+                    const data = await resMessages.json();
+                    if (!isDevelopment) setMessagesBaseData(data);
+                    localStorage.setItem('messagesData', JSON.stringify(data));
                 }
 
                 const now = new Date().toLocaleString();
@@ -528,7 +541,8 @@ export const AppProvider = ({ children }) => {
             showsToCome: showsBaseData,
             shoppingItems: shoppingBaseData,
             eventsData: eventsBaseData,
-            newsData: newsBaseData
+            newsData: newsBaseData,
+            messagesData: messagesBaseData
         }}>
             {children}
         </AppContext.Provider>

@@ -7,30 +7,23 @@
     background-color: rgba(0,0,0,0.3);
 }
 
-/* Row 1: Month title + close button */
-/* Row 1: Year select (centered) + close button (absolute right) */
-.modal-title-row {
-    position: relative;
+/* Row 1: Year dropdown (centered) */
+.history-year-row {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    min-height: 48px;
 }
 
-.modal-title-info {
-    display: flex;
-    justify-content: center;
+.history-year-dropdown {
+    min-width: auto;
+    max-width: 140px;
 }
 
-.modal-close-btn {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+.history-year-dropdown .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Row 2: Prev arrow | year select | next arrow */
 /* Row 2: Prev arrow | Month title | next arrow */
 .calendar-header-bottom {
     display: flex;
@@ -51,23 +44,8 @@
     gap: 12px;
 }
 
-.calendar-year-select {
-    background: rgba(255,255,255,0.1);
-    color: var(--text-primary);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    cursor: pointer;
-    font-family: inherit;
-    transition: border-color 0.2s;
-}
 
-.calendar-year-select:hover,
-.calendar-year-select:focus {
-    border-color: var(--accent-primary);
-}
+
 
 .calendar-nav-btn {
     background: rgba(255,255,255,0.1);

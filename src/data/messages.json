@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to nAPPo Trails!",
+    "description": "Explore over 340 Napoleonic sites across Europe. Plan your visits, track your progress, and discover the history behind each battlefield, monument, and museum.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa.webp",
+    "link": "https://github.com/napoleonicprinter/nAPPo",
+    "email": "napoleonicprinter@gmail.com",
+    "from": "2026-04-20",
+    "until": "2026-05-30",
+    "maxShows": 3
+  }
+]

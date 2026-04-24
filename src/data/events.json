@@ -1633,5 +1633,41 @@
         "country": "France",
         "description": "A Coalition force of Russians and Bavarians under generals Eugen of Wurtemberg and Carl Philipp von Wrede was defeated on February 2nd 1814 by a French force under general Joseph Lagrange.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lesmont"
+    },
+    {
+        "id": 193,
+        "title": "Battle of Montmirail",
+        "date": "1814-02-11",
+        "location": "Montmirail",
+        "country": "France",
+        "description": "It was fought on February 11th 1814 between a French force led by Emperor Napoleon and two Allied corps commanded by Fabian Wilhelm von Osten-Sacken and Ludwig Yorck von Wartenburg.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montmirail"
+    },
+    {
+        "id": 194,
+        "title": "Battle of Montereau",
+        "date": "1814-02-18",
+        "location": "Montereau",
+        "country": "France",
+        "description": "An Imperial French army led by Emperor Napoleon fought a corps of Austrians and Württembergers commanded by Crown Prince Frederick William of Württemberg.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montereau"
+    },
+    {
+        "id": 195,
+        "title": "Battle of Lippa",
+        "date": "1813-09-07",
+        "location": "Rupa",
+        "country": "Croatia",
+        "description": "It was an engagement which took place on September 7th 1813 in what is now Croatia where the Austrians defeated the Franco-Italians. ",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lippa"
+    },
+    {
+        "id": 196,
+        "title": "Battle of Arnhem",
+        "date": "1813-11-30",
+        "location": "Arnhem",
+        "country": "Netherlands",
+        "description": "Also known as the storming of Arnhem, saw Friedrich Wilhelm Freiherr von Bülow's Prussian corps fight an Imperial French division under Henri François Marie Charpentier on November 30th 1813",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arnhem_(1813)"
     }
 ]

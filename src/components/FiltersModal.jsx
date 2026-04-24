@@ -12,14 +12,14 @@ const FiltersModal = ({ onClose }) => {
         filterCategory, setFilterCategory,
         filterSignificance, setFilterSignificance,
         filterVisited, setFilterVisited,
-    isFiltered, clearAllFilters,
-    filterRadius, setFilterRadius,
-    filterCountry, setFilterCountry,
-    locationMode, handleLocationSelect,
-    allSites,
-    filterCoalition, setFilterCoalition,
-    filterCampaign, setFilterCampaign,
-    filterSearch
+        isFiltered, clearAllFilters,
+        filterRadius, setFilterRadius,
+        filterCountry, setFilterCountry,
+        locationMode, handleLocationSelect,
+        allSites,
+        filterCoalition, setFilterCoalition,
+        filterCampaign, setFilterCampaign,
+        filterSearch
     } = useAppContext();
 
     // Derive unique categories and significances from allSites
@@ -33,6 +33,8 @@ const FiltersModal = ({ onClose }) => {
                 {/* Header */}
                 <div className="shopping-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
                     <div className="modal-title-row">
+
+
                         <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
                             <Filter size={24} />
                         </div>

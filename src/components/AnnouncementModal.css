@@ -1,0 +1,209 @@
+.announcement-modal-content {
+    max-width: 500px;
+}
+
+.announcement-image-container {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.announcement-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.announcement-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    pointer-events: none;
+}
+
+.announcement-body {
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.announcement-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.announcement-description {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.announcement-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.announcement-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--accent-primary);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.25);
+}
+
+.announcement-link-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(88, 166, 255, 0.35);
+}
+
+.announcement-email-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.announcement-email-row svg {
+    flex-shrink: 0;
+    color: var(--accent-primary);
+}
+
+.announcement-email-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.announcement-copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.announcement-copy-btn:hover {
+    background: var(--accent-primary);
+    color: #000;
+    border-color: var(--accent-primary);
+}
+
+.announcement-copy-btn.copied {
+    background: var(--accent-success);
+    color: white;
+    border-color: var(--accent-success);
+}
+
+/* Retrieval card in Events modal */
+.announcement-retrieval-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(88, 166, 255, 0.08);
+    border: 1px solid rgba(88, 166, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+}
+
+.announcement-retrieval-card:hover {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: rgba(88, 166, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.announcement-retrieval-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent-primary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.announcement-retrieval-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.announcement-retrieval-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.announcement-retrieval-info p {
+    margin: 2px 0 0 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.announcement-retrieval-arrow {
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .announcement-modal-content {
+        max-height: 60vh;
+        overflow-y: auto;
+        border-radius: 16px;
+    }
+
+    .announcement-body {
+        padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .announcement-title {
+        font-size: 1.2rem;
+    }
+
+    .announcement-image-container {
+        max-height: 140px;
+    }
+}

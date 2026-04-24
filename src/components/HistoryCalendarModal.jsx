@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon } from 'lucide-react';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -16,6 +16,7 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
     const [month, setMonth] = useState(new Date().getMonth());
     const [selectedYear, setSelectedYear] = useState('All years');
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
+    const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
 
     // Use selected year to align weekdays, or 2024 (leap year) for 'All years' to ensure all days fit
     const gridYear = selectedYear === 'All years' ? 2024 : selectedYear;
@@ -122,22 +123,42 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                 style={{ maxWidth: '800px' }}
             >
                 <div className="calendar-modal-header">
-                    <div className="modal-title-row">
-                        <div className="modal-title-info">
-                            <select
-                                value={selectedYear}
-                                onChange={(e) => setSelectedYear(e.target.value === 'All years' ? 'All years' : parseInt(e.target.value))}
-                                className="calendar-year-select glass-panel"
+                    {/* Year dropdown row — centered */}
+                    <div className="history-year-row">
+                        <div className="custom-dropdown-container history-year-dropdown">
+                            <button
+                                className="category-filter-wrapper glass-panel dropdown-trigger"
+                                onClick={() => setIsYearDropdownOpen(!isYearDropdownOpen)}
                             >
-                                {YEARS.map(y => (
-                                    <option key={y} value={y} style={{ background: 'var(--bg-color)', color: 'var(--text-primary)' }}>{y}</option>
-                                ))}
-                            </select>
+                                <CalendarIcon size={18} className="filter-icon" />
+                                <span className="selected-text">{selectedYear}</span>
+                                <ChevronDown size={16} className={`chevron-icon ${isYearDropdownOpen ? 'rotated' : ''}`} />
+                            </button>
+
+                            {isYearDropdownOpen && (
+                                <div className="dropdown-menu glass-panel animate-fade-in" style={{ maxHeight: '280px', overflowY: 'auto' }}>
+                                    {YEARS.map(y => (
+                                        <button
+                                            key={y}
+                                            className={`dropdown-option ${selectedYear === y ? 'selected' : ''}`}
+                                            onClick={() => {
+                                                setSelectedYear(y === 'All years' ? 'All years' : parseInt(y));
+                                                setIsYearDropdownOpen(false);
+                                            }}
+                                        >
+                                            {y}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                         </div>
-                        <button className="modal-close-btn" onClick={onClose} title="Close">
-                            <X size={24} />
-                        </button>
                     </div>
+
+                    <button className="modal-close-btn" onClick={onClose} title="Close">
+                        <X size={24} />
+                    </button>
+
+                    {/* Month navigation row */}
                     <div className="calendar-header-bottom">
                         <button className="calendar-nav-btn" onClick={prevMonth} title="Previous Month">
                             <ChevronLeft size={22} />

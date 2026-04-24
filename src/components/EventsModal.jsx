@@ -1,13 +1,28 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays } from 'lucide-react';
+import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import HistoryCalendarModal from './HistoryCalendarModal';
+import AnnouncementModal from './AnnouncementModal';
+import './AnnouncementModal.css';
 import './CardView.css';
 
 const EventsModal = ({ onClose }) => {
-    const { eventsData } = useAppContext();
+    const { eventsData, messagesData } = useAppContext();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+    const [showAnnouncement, setShowAnnouncement] = useState(null);
+
+    // Find active announcements within date range
+    const activeMessages = useMemo(() => {
+        if (!messagesData || messagesData.length === 0) return [];
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        return messagesData.filter(msg => {
+            const from = new Date(msg.from + 'T00:00:00');
+            const until = new Date(msg.until + 'T23:59:59');
+            return today >= from && today <= until;
+        });
+    }, [messagesData]);
 
     const todaysEvents = useMemo(() => {
         const today = new Date();
@@ -77,6 +92,24 @@ const EventsModal = ({ onClose }) => {
 
                 {/* Content */}
                 <div className="calendar-modal-body" style={{ padding: '2rem' }}>
+                    {/* Announcement retrieval cards */}
+                    {activeMessages.map(msg => (
+                        <div
+                            key={msg.id}
+                            className="announcement-retrieval-card"
+                            onClick={() => setShowAnnouncement(msg)}
+                        >
+                            <div className="announcement-retrieval-icon">
+                                <Megaphone size={20} />
+                            </div>
+                            <div className="announcement-retrieval-info">
+                                <h4>{msg.title}</h4>
+                                <p>Tap to view announcement</p>
+                            </div>
+                            <ChevronRight size={20} className="announcement-retrieval-arrow" />
+                        </div>
+                    ))}
+
                     {todaysEvents.length === 0 ? (
                         <div style={{ textAlign: 'center', color: 'var(--text-secondary)', padding: '2rem 0' }}>
                             <CalendarIcon size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
@@ -130,6 +163,12 @@ const EventsModal = ({ onClose }) => {
                 </div>
             </div>
             {isCalendarOpen && <HistoryCalendarModal eventsData={eventsData} onClose={() => setIsCalendarOpen(false)} />}
+            {showAnnouncement && (
+                <AnnouncementModal
+                    message={showAnnouncement}
+                    onClose={() => setShowAnnouncement(null)}
+                />
+            )}
         </div>,
         document.body
     );
