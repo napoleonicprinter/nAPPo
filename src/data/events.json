@@ -1705,5 +1705,14 @@
         "country": "Poland",
         "description": "At 4pm on December 23rd 1806 French troops under the eye of Emperor Napoleon I launched an evening assault crossing of the Wkra River against Lieutenant General Alexander Ivanovich Ostermann-Tolstoy's defending Russian Empire forces.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Czarnowo"
+    },
+    {
+        "id": 201,
+        "title": "Battle of Laon",
+        "date": "1814-03-09",
+        "location": "Laon",
+        "country": "France",
+        "description": "On March 9th 1814 Blücher's Prusso-Russian force, occupying a tough defensive position at the town of Laon, repelled attacks by and successfully counterattacked French Emperor Napoleon and his subordinate corps commander, Marshal Marmont.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Laon"
     }
 ]

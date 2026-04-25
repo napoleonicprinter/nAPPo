@@ -6628,5 +6628,35 @@
       "Karl La Roche-Aymon",
       "Anton von L'Estocq"
     ]
+  },
+  {
+    "id": "355",
+    "name": "Battlefield of Laon",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Laon",
+    "country": "France",
+    "description": "On March 9th 1814 Blücher's Prusso-Russian force, occupying a tough defensive position at the town of Laon, repelled attacks by and successfully counterattacked French Emperor Napoleon and his subordinate corps commander, Marshal Marmont.",
+    "latitude": 49.564133,
+    "longitude": 3.619890,
+    "date": "1814-03-09",
+    "victor": [
+      "Prussia",
+      "Russia"
+    ],
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Laon.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Laon",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Napoleon",
+      "Gebhard Leberecht von Blücher",
+      "Ferdinand von Wintzingerode"
+    ]
   }
 ]
