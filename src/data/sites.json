@@ -6548,5 +6548,55 @@
       "Peter de Lamotte",
       "Peter Wittgenstein"
     ]
+  },
+  {
+    "id": "352",
+    "name": "Battlefield of Bayonne",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Major",
+    "location": "Bayonne",
+    "country": "France",
+    "description": "It was the last major battle of the Peninsular War, ensued when the French garrison of Bayonne led by General of Division Pierre Thouvenot launched a sortie against a besieging force of British, Portuguese, and Spanish troops on April 14th 1814.",
+    "latitude": 43.49338,
+    "longitude": -1.475739,
+    "date": "1814-04-14",
+    "victor": "Peninsular War Allies",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bayona.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bayonne",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Pierre Thouvenot",
+      "Louis Abbé",
+      "John Hope",
+      "Andrew Hay",
+      "Henry de Hinuber"
+    ]
+  },
+  {
+    "id": "353",
+    "name": "Battlefield of Nive",
+    "category": "Battle site",
+    "year": "1813",
+    "significance": "Major",
+    "location": "Arcangues",
+    "country": "France",
+    "description": "It was fought towards the end of the Peninsular War from December 9th to December 13th 1813. Arthur Wellesley, Marquess of Wellington's Anglo-Portuguese and Spanish army defeated Marshal Nicolas Soult's French army.",
+    "latitude": 43.438876,
+    "longitude": -1.517865,
+    "date": "1813-12-09",
+    "victor": "Peninsular War Allies",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bayona.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nive",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Arthur Wellesley",
+      "Luís do Rego"
+    ]
   }
 ]

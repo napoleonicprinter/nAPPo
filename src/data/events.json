@@ -1678,5 +1678,23 @@
         "country": "France",
         "description": "Emperor Napoleon I and a division of Russians under Count Peter Petrovich Pahlen clashed near the town of Mormant, some 50 km (31 mi) southeast of Paris on February 17th 1814.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mormant"
+    },
+    {
+        "id": 198,
+        "title": "Battle of Bayonne",
+        "date": "1814-04-14",
+        "location": "Bayonne",
+        "country": "France",
+        "description": "It was the last major battle of the Peninsular War, ensued when the French garrison of Bayonne led by General of Division Pierre Thouvenot launched a sortie against a besieging force of British, Portuguese, and Spanish troops on April 14th 1814.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bayonne"
+    },
+    {
+        "id": 199,
+        "title": "Battle of Arcangues",
+        "date": "1813-12-09",
+        "location": "Arcangues",
+        "country": "France",
+        "description": "It was fought towards the end of the Peninsular War from December 9th to December 13th 1813. Arthur Wellesley, Marquess of Wellington's Anglo-Portuguese and Spanish army defeated Marshal Nicolas Soult's French army.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcangues"
     }
 ]
