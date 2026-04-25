@@ -1690,11 +1690,20 @@
     },
     {
         "id": 199,
-        "title": "Battle of Arcangues",
+        "title": "Battle of Nive",
         "date": "1813-12-09",
         "location": "Arcangues",
         "country": "France",
         "description": "It was fought towards the end of the Peninsular War from December 9th to December 13th 1813. Arthur Wellesley, Marquess of Wellington's Anglo-Portuguese and Spanish army defeated Marshal Nicolas Soult's French army.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcangues"
+    },
+    {
+        "id": 200,
+        "title": "Battle of Czarnowo",
+        "date": "1806-12-23",
+        "location": "Pomiechówek",
+        "country": "Poland",
+        "description": "At 4pm on December 23rd 1806 French troops under the eye of Emperor Napoleon I launched an evening assault crossing of the Wkra River against Lieutenant General Alexander Ivanovich Ostermann-Tolstoy's defending Russian Empire forces.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Czarnowo"
     }
 ]

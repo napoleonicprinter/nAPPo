@@ -6598,5 +6598,35 @@
       "Arthur Wellesley",
       "Luís do Rego"
     ]
+  },
+  {
+    "id": "354",
+    "name": "Battlefield of Czarnowo",
+    "category": "Battle site",
+    "year": "1806",
+    "significance": "Medium",
+    "location": "Pomiechówek",
+    "country": "Poland",
+    "description": "At 4pm on December 23rd 1806 French troops under the eye of Emperor Napoleon I launched an evening assault crossing of the Wkra River against Lieutenant General Alexander Ivanovich Ostermann-Tolstoy's defending Russian Empire forces.",
+    "latitude": 52.462755,
+    "longitude": 20.749092,
+    "date": "1806-12-23",
+    "victor": "France",
+    "defeated": [
+      "Prussia",
+      "Russia"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Czarnowo.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Czarnowo",
+    "link": "https://historiapomiechowka.pl/wojny/do-i-wojny-swiatowej/",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "4",
+    "commanders": [
+      "Napoleon",
+      "Mikhail Kamensky",
+      "Alexander Ostermann-Tolstoy",
+      "Karl La Roche-Aymon",
+      "Anton von L'Estocq"
+    ]
   }
 ]
