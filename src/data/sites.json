@@ -2504,7 +2504,7 @@
   },
   {
     "id": "139",
-    "name": "Lugar de la escena de la obra del pintor Eugenio Álvarez Dumont",
+    "name": "Lugar de la escena 'Malasaña' del pintor Eugenio Álvarez Dumont",
     "category": "Landmark",
     "significance": "Minor",
     "year": "",
@@ -6515,6 +6515,38 @@
     "commanders": [
       "Henri Charpentier",
       "Friedrich Wilhelm von Bülow"
+    ]
+  },
+  {
+    "id": "351",
+    "name": "Battlefield of Mormant",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Minor",
+    "location": "Mormant",
+    "country": "France",
+    "description": "Emperor Napoleon I and a division of Russians under Count Peter Petrovich Pahlen clashed near the town of Mormant, some 50 km (31 mi) southeast of Paris on February 17th 1814.",
+    "latitude": 48.5929,
+    "longitude": 2.899218,
+    "date": "1814-02-17",
+    "victor": "France",
+    "defeated": [
+      "Russia",
+      "Austria",
+      "Bavaria"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mormant.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mormant",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Karl von Schwarzenberg",
+      "Peter de Lamotte",
+      "Peter Wittgenstein"
     ]
   }
 ]

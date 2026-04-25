@@ -1669,5 +1669,14 @@
         "country": "Netherlands",
         "description": "Also known as the storming of Arnhem, saw Friedrich Wilhelm Freiherr von Bülow's Prussian corps fight an Imperial French division under Henri François Marie Charpentier on November 30th 1813",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arnhem_(1813)"
+    },
+    {
+        "id": 197,
+        "title": "Battle of Mormant",
+        "date": "1814-02-17",
+        "location": "Mormant",
+        "country": "France",
+        "description": "Emperor Napoleon I and a division of Russians under Count Peter Petrovich Pahlen clashed near the town of Mormant, some 50 km (31 mi) southeast of Paris on February 17th 1814.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mormant"
     }
 ]
