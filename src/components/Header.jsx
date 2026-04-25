@@ -158,13 +158,13 @@ const Header = () => {
                             <CustomSimpleSelect
                                 options={[
                                     { value: 'all', label: 'All Areas' },
-                                    { value: '1', label: '1 km area' },
-                                    { value: '5', label: '5 km area' },
-                                    { value: '10', label: '10 km area' },
-                                    { value: '25', label: '25 km area' },
-                                    { value: '50', label: '50 km area' },
-                                    { value: '100', label: '100 km area' },
-                                    { value: '500', label: '500 km area' },
+                                    { value: '1', label: '1 km' },
+                                    { value: '5', label: '5 km' },
+                                    { value: '10', label: '10 km' },
+                                    { value: '25', label: '25 km' },
+                                    { value: '50', label: '50 km' },
+                                    { value: '100', label: '100 km' },
+                                    { value: '500', label: '500 km' },
                                 ]}
                                 value={filterRadius}
                                 onChange={setFilterRadius}
