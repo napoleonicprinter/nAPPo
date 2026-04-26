@@ -1120,11 +1120,12 @@
     },
     {
         "id": 132,
-        "title": "Armistice of Cherasco",
-        "date": "1796-04-26",
-        "location": "Cherasco, Italy",
-        "description": "The Armistice of Cherasco was a treaty signed on April 26th 1796 between Napoleon Bonaparte and the Savoy kingdom.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Armistice_of_Cherasco"
+        "title": "Masséna created Duke of Rivoli",
+        "date": "1808-04-24",
+        "location": "Paris",
+        "country": "France",
+        "description": "On April 24, 1808, André Masséna was elevated to the rank of Duke of Rivoli by Napoleon Bonaparte for his role in crushing the Austrian forces in Italy.",
+        "link": "https://military-history.fandom.com/wiki/Duke_of_Rivoli"
     },
     {
         "id": 133,
