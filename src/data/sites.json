@@ -6818,5 +6818,28 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bayern_museum.webp",
     "site_link": "https://www.armeemuseum.de/de/ausstellungen/armeemuseum-im-neuen-schloss/formen-des-krieges-1600-1815.html",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "362",
+    "name": "Battlefield of Nivelle",
+    "category": "Battle site",
+    "year": "1813",
+    "significance": "Major",
+    "location": "Ascain",
+    "country": "France",
+    "description": "It took place in front of the river Nivelle with a 30 km front (20 miles) near the end of the Peninsular War.",
+    "latitude": 43.3451,
+    "longitude": -1.631322,
+    "date": "1813-11-10",
+    "victor": "Peninsular War Allies",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nivelle.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nivelle",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Nicolas Jean de Dieu Soult",
+      "Wellington"
+    ]
   }
 ]

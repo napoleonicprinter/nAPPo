@@ -1751,5 +1751,14 @@
         "country": "France",
         "description": "It was fought on January 24th 1814 between Marshal Édouard Mortier, duc de Trévise's corps of French Imperial Guards defended against an Austrians corps under Ignaz Gyulai and a Württemberger corps led by Crown Prince Frederick William of Württemberg.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Bar-sur-Aube"
+    },
+    {
+        "id": 206,
+        "title": "Battle of Nivelle",
+        "date": "1813-11-10",
+        "location": "Ascain",
+        "country": "France",
+        "description": "It took place in front of the river Nivelle with a 30 km front (20 miles) near the end of the Peninsular War.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nivelle"
     }
 ]
