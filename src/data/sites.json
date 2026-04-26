@@ -6780,8 +6780,8 @@
     "location": "Baroville",
     "country": "France",
     "description": "Fought on February 27th 1814, between the First French Empire and the Austrian Empire. French forces were led by Jacques MacDonald, while the Austrians and their Bavarian allies, forming the Army of Bohemia, were led by Karl Philipp Fürst zu Schwarzenberg.",
-    "latitude": 48.2040,
-    "longitude": 4.746494,
+    "latitude": 48.250320,
+    "longitude": 4.724867,
     "date": "1814-02-27",
     "victor": [
       "Austria",
@@ -6804,5 +6804,19 @@
       "Nicolas Oudinot",
       "Étienne Maurice Gérard"
     ]
+  },
+  {
+    "id": "361",
+    "name": "Bavarian Army Museum Ingolstadt",
+    "category": "Museum",
+    "significance": "Medium",
+    "location": "Ingolstadt",
+    "country": "Germany",
+    "description": "Part of the exhibition 'Forms of War 1600-1815' includes items from the Napoleonic Wars.",
+    "latitude": 48.764679,
+    "longitude": 11.4312,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bayern_museum.webp",
+    "site_link": "https://www.armeemuseum.de/de/ausstellungen/armeemuseum-im-neuen-schloss/formen-des-krieges-1600-1815.html",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
