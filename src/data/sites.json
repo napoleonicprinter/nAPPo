@@ -6673,5 +6673,136 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Finckenstein_Palace.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Finckenstein_Palace",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "357",
+    "name": "Battlefield of Fère-Champenoise",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Fère-Champenoise",
+    "country": "France",
+    "description": "It was fought on march 25th 1814 between two Imperial French corps led by Marshals Auguste de Marmont and Édouard Mortier, duc de Trévise and a larger Coalition force composed of cavalry from the Austrian Empire, Kingdom of Prussia, Kingdom of Württemberg, and Russian Empire.",
+    "latitude": 48.769459,
+    "longitude": 4.052317,
+    "date": "1814-03-25",
+    "victor": [
+      "Prussia",
+      "Russia",
+      "Württemberg",
+      "Austria"
+    ],
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fere_Champenoise.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_F%C3%A8re-Champenoise",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Auguste de Marmont",
+      "Édouard Mortier",
+      "Michel Pacthod",
+      "Alexander I",
+      "Frederick William III",
+      "Karl von Schwarzenberg",
+      "Crown Prince William"
+    ]
+  },
+  {
+    "id": "358",
+    "name": "Battlefield of Craonne",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Major",
+    "location": "Paissy",
+    "country": "France",
+    "description": "This battle between an Imperial French army under Emperor Napoleon I opposing a combined army of Imperial Russians and Prussians led by Prussian Field Marshal Gebhard Leberecht von Blücher fought on March 7th 1814",
+    "latitude": 49.437874,
+    "longitude": 3.704106,
+    "date": "1814-03-07",
+    "victor": "France",
+    "defeated": [
+      "Prussia",
+      "Russia"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Craonne.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Craonne",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Napoleon",
+      "Gebhard Leberecht von Blücher",
+      "Ferdinand Fyodorovich Wintzingerode"
+    ]
+  },
+  {
+    "id": "359",
+    "name": "Battlefield of 1st Bar-sur-Aube",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Baroville",
+    "country": "France",
+    "description": "Also named Colombey-les-Deux-Églises. It took place on January 24, 1814. It began when the French Imperial Guard corps of the Duke of Trévise, Marshal Édouard Mortier, defended itself against an Austrian corps commanded by Ignácz Gyulay and a Württemberg corps.",
+    "latitude": 48.2040,
+    "longitude": 4.746494,
+    "date": "1814-01-24",
+    "victor": [
+      "Austria",
+      "Württemberg"
+    ],
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bar_first.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Bar-sur-Aube",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Édouard Mortier",
+      "Louis-Michel Letort de Lorville",
+      "Ignácz Gyulay",
+      "Frédéric-Guillaume de Wurtemberg"
+    ]
+  },
+  {
+    "id": "360",
+    "name": "Battlefield of 2nd Bar-sur-Aube",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Baroville",
+    "country": "France",
+    "description": "Fought on February 27th 1814, between the First French Empire and the Austrian Empire. French forces were led by Jacques MacDonald, while the Austrians and their Bavarian allies, forming the Army of Bohemia, were led by Karl Philipp Fürst zu Schwarzenberg.",
+    "latitude": 48.2040,
+    "longitude": 4.746494,
+    "date": "1814-02-27",
+    "victor": [
+      "Austria",
+      "Bavaria",
+      "Russia"
+    ],
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bar_second.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bar-sur-Aube",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Karl von Schwarzenberg",
+      "Karl Philipp von Wrede",
+      "Peter Wittgenstein",
+      "Jacques MacDonald",
+      "Nicolas Oudinot",
+      "Étienne Maurice Gérard"
+    ]
   }
 ]

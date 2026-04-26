@@ -1715,5 +1715,41 @@
         "country": "France",
         "description": "On March 9th 1814 Blücher's Prusso-Russian force, occupying a tough defensive position at the town of Laon, repelled attacks by and successfully counterattacked French Emperor Napoleon and his subordinate corps commander, Marshal Marmont.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Laon"
+    },
+    {
+        "id": 202,
+        "title": "Battle of Fère-Champenoise",
+        "date": "1814-03-25",
+        "location": "Fère-Champenoise",
+        "country": "France",
+        "description": "It was fought on march 25th 1814 between two Imperial French corps led by Marshals Auguste de Marmont and Édouard Mortier, duc de Trévise and a larger Coalition force composed of cavalry from the Austrian Empire, Kingdom of Prussia, Kingdom of Württemberg, and Russian Empire.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_F%C3%A8re-Champenoise"
+    },
+    {
+        "id": 203,
+        "title": "Battle of Craonne",
+        "date": "1814-03-07",
+        "location": "Paissy",
+        "country": "France",
+        "description": "This battle between an Imperial French army under Emperor Napoleon I opposing a combined army of Imperial Russians and Prussians led by Prussian Field Marshal Gebhard Leberecht von Blücher fought on March 7th 1814",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Craonne"
+    },
+    {
+        "id": 204,
+        "title": "2nd Battle of Bar-sur-Aube",
+        "date": "1814-02-27",
+        "location": "Bar-sur-Aube",
+        "country": "France",
+        "description": "It was fought on February 27th 1814 between a French army led by Marshal Nicolas Oudinot and a Coalition army of Austrians, Bavarians, Russians, and Württembergers led by Austrian Field Marshal Karl von Schwarzenberg.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bar-sur-Aube"
+    },
+    {
+        "id": 205,
+        "title": "1st Battle of Bar-sur-Aube",
+        "date": "1814-01-24",
+        "location": "Baroville",
+        "country": "France",
+        "description": "It was fought on January 24th 1814 between Marshal Édouard Mortier, duc de Trévise's corps of French Imperial Guards defended against an Austrians corps under Ignaz Gyulai and a Württemberger corps led by Crown Prince Frederick William of Württemberg.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Bar-sur-Aube"
     }
 ]
