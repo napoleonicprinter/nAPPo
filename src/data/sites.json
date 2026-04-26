@@ -6658,5 +6658,20 @@
       "Gebhard Leberecht von Blücher",
       "Ferdinand von Wintzingerode"
     ]
+  },
+  {
+    "id": "356",
+    "name": "Finckenstein Palace",
+    "category": "Landmark",
+    "year": "1807",
+    "significance": "Medium",
+    "location": "Kamieniec",
+    "country": "Poland",
+    "description": "Napoleon's residence from April through June of 1807.",
+    "latitude": 53.767157,
+    "longitude": 19.375527,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Finckenstein_Palace.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Finckenstein_Palace",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
