@@ -1787,5 +1787,14 @@
         "country": "France",
         "description": "On February 11th 1814, Victor's troops at Nogent held out admirably against those of Wittgenstein and Wrede, but as Wrede troops corssed the Sena river, the French abandonned Nogent to the Russians.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nogent-sur-Seine"
+    },
+    {
+        "id": 210,
+        "title": "Battle of Gilly",
+        "date": "1815-06-15",
+        "location": "Gilly",
+        "country": "Belgium",
+        "description": "The Prussian commanded by General Pirch on June 15th 1815, retreat had scarcely begun when his retreating columns were vigorously assaulted by four Squadrons de Service of the Imperial Guard commanded by General Letort.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_start_of_hostilities#Action_at_Gilly"
     }
 ]

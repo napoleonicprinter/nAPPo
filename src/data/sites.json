@@ -6933,5 +6933,72 @@
       "Claude Victor",
       "Karl von Wrede"
     ]
+  },
+  {
+    "id": "367",
+    "name": "Battlefield of Gilly",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Minor",
+    "location": "Gilly",
+    "country": "Belgium",
+    "description": "The Prussian commanded by General Pirch on June 15th 1815, retreat had scarcely begun when his retreating columns were vigorously assaulted by four Squadrons de Service of the Imperial Guard commanded by General Letort.",
+    "latitude": 50.419745,
+    "longitude": 4.4856,
+    "date": "1815-06-15",
+    "victor": "France",
+    "defeated": "Prussia",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gilly.webp",
+    "link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_start_of_hostilities#Action_at_Gilly",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "100 Days"
+    ],
+    "commanders": [
+      "Georg Dubislav Ludwig von Pirch",
+      "Louis-Michel Letort de Lorville"
+    ]
+  },
+  {
+    "id": "368",
+    "name": "General von Pirch tomb",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Invalidenfriedhof Berlin",
+    "country": "Germany",
+    "description": "He began his career in the Prussian army in 1775. At Waterloo Pirch handed over the command of II Corps to Prince Augustus of Prussia.",
+    "latitude": 52.532250,
+    "longitude": 13.371667,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pirch.webp",
+    "link": "https://en.wikipedia.org/wiki/Georg_Dubislav_Ludwig_von_Pirch",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "369",
+    "name": "Gerhard von Scharnhorst tomb",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Invalidenfriedhof Berlin",
+    "country": "Germany",
+    "description": "He was a Prussian general and the most important military theorist and reformer of the Prussian army in the Napoleonic Wars.",
+    "latitude": 52.531667,
+    "longitude": 13.371528,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scharnhorst.webp",
+    "link": "https://en.wikipedia.org/wiki/Gerhard_von_Scharnhorst",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "370",
+    "name": "Statue General Gerhard von Scharnhorst",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Berlin",
+    "country": "Germany",
+    "description": "He was a Prussian general and the most important military theorist and reformer of the Prussian army in the Napoleonic Wars.",
+    "latitude": 52.517161,
+    "longitude": 13.395496,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scharnhorst_statue.webp",
+    "link": "https://en.wikipedia.org/wiki/Gerhard_von_Scharnhorst",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
