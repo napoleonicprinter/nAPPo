@@ -1769,5 +1769,14 @@
         "country": "Italy",
         "description": "was fought from May 2nd to May 3rd 1815 and it was the decisive battle in the Neapolitan War.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tolentino"
+    },
+    {
+        "id": 208,
+        "title": "Battle of the Mincio River",
+        "date": "1814-02-08",
+        "location": "Valeggio sul Mincio",
+        "country": "Italy",
+        "description": "Fought on February 8th 1814 on the same ground as Napoleon's victory at the Battle of Borghetto in 1796 resulted in an inconclusive engagement between the French under Eugène de Beauharnais and the Austrians under Field Marshal Heinrich von Bellegarde.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Mincio_River_(1814)"
     }
 ]

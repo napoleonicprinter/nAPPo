@@ -6867,7 +6867,7 @@
   },
   {
     "id": "364",
-    "name": "Rancia Castle- Battle of Tolentino",
+    "name": "Rancia Castle - Battle of Tolentino",
     "category": "Battle landmark",
     "year": "1815",
     "significance": "Medium",
@@ -6880,5 +6880,27 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Castello_della_Rancia",
     "site_link": "https://www.tolentinomuseicivici.it/castello-della-rancia-tolentino-2/",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "363",
+    "name": "Battlefield of Mincio River",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Valeggio sul Mincio",
+    "country": "Italy",
+    "description": "Fought on February 8th 1814 on the same ground as Napoleon's victory at the Battle of Borghetto in 1796 resulted in an inconclusive engagement between the French under Eugène de Beauharnais and the Austrians under Field Marshal Heinrich von Bellegarde.",
+    "latitude": 45.328485,
+    "longitude": 10.735637,
+    "date": "1814-02-08",
+    "victor": "inconclusive",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mincio.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Mincio_River_(1814)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "6",
+    "commanders": [
+      "Eugène de Beauharnais",
+      "Heinrich von Bellegarde"
+    ]
   }
 ]
