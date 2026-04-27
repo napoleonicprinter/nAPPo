@@ -7015,5 +7015,33 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Gerhard_von_Scharnhorst",
     "link": "https://www.vanderkrogt.net/statues/object.php?webpage=ST&record=dens172",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "372",
+    "name": "Hesse Haus",
+    "category": "Landmark",
+    "significance": "Minor  ",
+    "location": "Ottweiler",
+    "country": "Germany",
+    "description": "House were it is said Genaral von Blücher stayed for on January 10th 1814.",
+    "latitude": 49.404336,
+    "longitude": 7.1615,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hesse_haus.webp",
+    "link": "https://www.landkreis-neunkirchen.de/landrat-politik/landkreis-in-vergangenheit-und-geschichte/der-historische-sitzungssaal/ankunft-von-bluechers-truppen-in-ottweiler",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "373",
+    "name": "Ottweiler old castle square",
+    "category": "Landmark",
+    "significance": "Minor  ",
+    "location": "Ottweiler",
+    "country": "Germany",
+    "description": "Place where the scene portrayed by Christian Sell for his 'Prince Blücher's address to the population, January 1814' in a series of historical postcards for the District Veterans' Association (Bezirkskriegerverband) in the early 20th century.",
+    "latitude": 49.404132,
+    "longitude": 7.16189,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hesse_haus2.webp",
+    "link": "https://www.landkreis-neunkirchen.de/landrat-politik/landkreis-in-vergangenheit-und-geschichte/der-historische-sitzungssaal/ankunft-von-bluechers-truppen-in-ottweiler",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
