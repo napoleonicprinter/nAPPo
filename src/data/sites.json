@@ -6841,5 +6841,44 @@
       "Nicolas Jean de Dieu Soult",
       "Wellington"
     ]
+  },
+  {
+    "id": "363",
+    "name": "Battlefield of Tolentino",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Medium",
+    "location": "Tolentino",
+    "country": "Italy",
+    "description": "was fought from May 2nd to May 3rd 1815 and it was the decisive battle in the Neapolitan War.",
+    "latitude": 43.226059,
+    "longitude": 13.3347,
+    "date": "1815-05-02",
+    "victor": "Austria",
+    "defeated": "Kingdom of Naples",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tolentino.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tolentino",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Neapolitan War",
+    "commanders": [
+      "Joachim Murat",
+      "Frederick Bianchi"
+    ]
+  },
+  {
+    "id": "364",
+    "name": "Rancia Castle- Battle of Tolentino",
+    "category": "Battle landmark",
+    "year": "1815",
+    "significance": "Medium",
+    "location": "Tolentino",
+    "country": "Italy",
+    "description": "The castle was hotly contested during the Battle of Tolentino.",
+    "latitude": 43.230817,
+    "longitude": 13.355834,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Rancia.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Castello_della_Rancia",
+    "site_link": "https://www.tolentinomuseicivici.it/castello-della-rancia-tolentino-2/",
+    "createDate": "2025-03-22T10:00:00Z",
   }
 ]

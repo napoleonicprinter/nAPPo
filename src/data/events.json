@@ -1760,5 +1760,14 @@
         "country": "France",
         "description": "It took place in front of the river Nivelle with a 30 km front (20 miles) near the end of the Peninsular War.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nivelle"
+    },
+    {
+        "id": 207,
+        "title": "Battle of Tolentino",
+        "date": "1815-05-02",
+        "location": "Tolentino",
+        "country": "Italy",
+        "description": "was fought from May 2nd to May 3rd 1815 and it was the decisive battle in the Neapolitan War.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tolentino"
     }
 ]
