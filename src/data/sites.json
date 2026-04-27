@@ -6882,7 +6882,7 @@
     "createDate": "2025-03-22T10:00:00Z"
   },
   {
-    "id": "363",
+    "id": "365",
     "name": "Battlefield of Mincio River",
     "category": "Battle site",
     "year": "1814",
@@ -6901,6 +6901,37 @@
     "commanders": [
       "Eugène de Beauharnais",
       "Heinrich von Bellegarde"
+    ]
+  },
+  {
+    "id": "366",
+    "name": "Battlefield of Nogent",
+    "category": "Battle site",
+    "year": "1814",
+    "significance": "Medium",
+    "location": "Nogent-sur-Seine",
+    "country": "France",
+    "description": "On February 11th 1814, Victor's troops at Nogent held out admirably against those of Wittgenstein and Wrede, but as Wrede troops corssed the Sena river, the French abandonned Nogent to the Russians.",
+    "latitude": 48.4848,
+    "longitude": 3.491922,
+    "date": "1814-02-11",
+    "victor": [
+      "Russia",
+      "Austria"
+    ],
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nogent.webp",
+    "link": "https://www.napoleon-series.org/military-info/battles/1814/c_nogent.html",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "6",
+      "Campaign of France"
+    ],
+    "commanders": [
+      "Peter Wittgenstein",
+      "Nicolas Oudinot",
+      "Claude Victor",
+      "Karl von Wrede"
     ]
   }
 ]

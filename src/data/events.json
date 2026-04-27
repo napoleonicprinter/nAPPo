@@ -1778,5 +1778,14 @@
         "country": "Italy",
         "description": "Fought on February 8th 1814 on the same ground as Napoleon's victory at the Battle of Borghetto in 1796 resulted in an inconclusive engagement between the French under Eugène de Beauharnais and the Austrians under Field Marshal Heinrich von Bellegarde.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Mincio_River_(1814)"
+    },
+    {
+        "id": 209,
+        "title": "Battle of Nogent-sur-Seine",
+        "date": "1814-02-11",
+        "location": "Nogent-sur-Seine",
+        "country": "France",
+        "description": "On February 11th 1814, Victor's troops at Nogent held out admirably against those of Wittgenstein and Wrede, but as Wrede troops corssed the Sena river, the French abandonned Nogent to the Russians.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nogent-sur-Seine"
     }
 ]
