@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Navigation, Star } from 'lucide-react';
@@ -138,7 +138,10 @@ const LocationMarker = () => {
 
     useEffect(() => {
         if (userCoords) {
-            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom());
+            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), {
+                duration: 1.5,
+                easeLinearity: 0.25
+            });
         }
     }, [userCoords, map]);
 
@@ -416,6 +419,7 @@ const MapView = () => {
     const [selectedSite, setSelectedSite] = useState(null);
     const [navigatingSite, setNavigatingSite] = useState(null);
     const [maxClusterRadius, setMaxClusterRadius] = useState(80);
+    const iconsCache = useRef({});
 
     // Derive unique categories from allSites and sort them
     const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
@@ -458,125 +462,136 @@ const MapView = () => {
                 <MarkerClusterGroup
                     chunkedLoading
                     maxClusterRadius={maxClusterRadius}
-                    key={`cluster-group-${maxClusterRadius}`} // Re-mount when radius changes significantly to force clustering update
+                    key={`cluster-group-${maxClusterRadius}`} // Re-mount when radius changes significantly
                 >
-                    {sites.map(site => (
-                        <Marker
-                            key={site.id}
-                            position={[site.latitude, site.longitude]}
-                            icon={createCustomIcon(site)}
-                        >
-                            <Popup>
-                                <div style={{ padding: '0px', minWidth: '200px', maxWidth: '240px' }}>
-                                    {site.image && (
-                                        <div style={{ position: 'relative', width: '100%', height: '120px', marginBottom: '10px', borderRadius: '4px', overflow: 'hidden' }}>
-                                            <img src={site.image} alt={site.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                            {site.distance !== undefined && (
-                                                <div style={{
-                                                    position: 'absolute',
-                                                    bottom: '6px',
-                                                    left: '6px',
-                                                    zIndex: 15,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    gap: '8px'
-                                                }}>
-                                                    <div style={{
-                                                        padding: '4px 8px',
-                                                        background: 'rgba(0, 0, 0, 0.65)',
-                                                        backdropFilter: 'blur(4px)',
-                                                        borderRadius: '6px',
-                                                        color: '#f0f6fc',
-                                                        fontSize: '0.75rem',
-                                                        fontWeight: '600',
-                                                        border: '1px solid rgba(255, 255, 255, 0.15)',
-                                                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-                                                        textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)'
-                                                    }}>
-                                                        <strong>{site.distance} km</strong> away
-                                                    </div>
+                    {useMemo(() => sites.map(site => {
+                        const iconKey = `${site.category}-${site.significance}-${site.visited}-${theme}`;
+                        if (!iconsCache.current[iconKey]) {
+                            iconsCache.current[iconKey] = createCustomIcon(site);
+                        }
+                        const icon = iconsCache.current[iconKey];
 
-                                                    {userCoords && (
-                                                        <button
-                                                            onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                e.preventDefault();
-                                                                const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
-                                                                window.open(url, '_blank', 'noopener,noreferrer,width=1000,height=800,left=100,top=100');
-                                                            }}
-                                                            title="Navigate to site via Google Maps"
-                                                            style={{
-                                                                display: 'flex',
-                                                                alignItems: 'center',
-                                                                justifyContent: 'center',
-                                                                background: 'var(--accent-primary)',
-                                                                color: '#000',
-                                                                border: 'none',
-                                                                width: '28px',
-                                                                height: '28px',
-                                                                borderRadius: '50%',
-                                                                cursor: 'pointer',
-                                                                boxShadow: '0 4px 6px rgba(0,0,0,0.4)',
-                                                                transition: 'transform 0.2s',
-                                                            }}
-                                                            onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                                            onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                                                        >
-                                                            <Navigation size={14} />
-                                                        </button>
-                                                    )}
-                                                </div>
-                                            )}
-                                        </div>
-                                    )}
-                                    <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {site.special?.includes('arc') && (
-                                            <img src="/assets/Arc.png" alt="Listed at the Arch de Triomphe - Paris" title="Listed at the Arch de Triomphe - Paris" style={{ height: '1.2em', width: 'auto' }} />
+                        return (
+                            <Marker
+                                key={site.id}
+                                position={[site.latitude, site.longitude]}
+                                icon={icon}
+                            >
+                                <Popup 
+                                    autoPanPadding={[50, 50]} 
+                                    autoPanOptions={{ duration: 0.5, easeLinearity: 0.25 }}
+                                >
+                                    <div style={{ padding: '0px', minWidth: '200px', maxWidth: '240px' }}>
+                                        {site.image && (
+                                            <div style={{ position: 'relative', width: '100%', height: '120px', marginBottom: '10px', borderRadius: '4px', overflow: 'hidden' }}>
+                                                <img src={site.image} alt={site.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                {site.distance !== undefined && (
+                                                    <div style={{
+                                                        position: 'absolute',
+                                                        bottom: '6px',
+                                                        left: '6px',
+                                                        zIndex: 15,
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '8px'
+                                                    }}>
+                                                        <div style={{
+                                                            padding: '4px 8px',
+                                                            background: 'rgba(0, 0, 0, 0.65)',
+                                                            backdropFilter: 'blur(4px)',
+                                                            borderRadius: '6px',
+                                                            color: '#f0f6fc',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: '600',
+                                                            border: '1px solid rgba(255, 255, 255, 0.15)',
+                                                            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                                                            textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)'
+                                                        }}>
+                                                            <strong>{site.distance} km</strong> away
+                                                        </div>
+
+                                                        {userCoords && (
+                                                            <button
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    e.preventDefault();
+                                                                    const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                                                    window.open(url, '_blank', 'noopener,noreferrer,width=1000,height=800,left=100,top=100');
+                                                                }}
+                                                                title="Navigate to site via Google Maps"
+                                                                style={{
+                                                                    display: 'flex',
+                                                                    alignItems: 'center',
+                                                                    justifyContent: 'center',
+                                                                    background: 'var(--accent-primary)',
+                                                                    color: '#000',
+                                                                    border: 'none',
+                                                                    width: '28px',
+                                                                    height: '28px',
+                                                                    borderRadius: '50%',
+                                                                    cursor: 'pointer',
+                                                                    boxShadow: '0 4px 6px rgba(0,0,0,0.4)',
+                                                                    transition: 'transform 0.2s',
+                                                                }}
+                                                                onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                                                                onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                                                            >
+                                                                <Navigation size={14} />
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </div>
                                         )}
-                                        {site.name}
-                                    </h3>
-                                    <div style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
-                                        <span>{site.category} &bull; {site.year}</span>
-                                        {renderSignificanceStars(site.significance)}
+                                        <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                            {site.special?.includes('arc') && (
+                                                <img src="/assets/Arc.png" alt="Listed at the Arch de Triomphe - Paris" title="Listed at the Arch de Triomphe - Paris" style={{ height: '1.2em', width: 'auto' }} />
+                                            )}
+                                            {site.name}
+                                        </h3>
+                                        <div style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
+                                            <span>{site.category} &bull; {site.year}</span>
+                                            {renderSignificanceStars(site.significance)}
+                                        </div>
+                                        <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
+                                            <button
+                                                onClick={() => toggleVisited(site.id)}
+                                                style={{
+                                                    flex: 1,
+                                                    padding: '8px',
+                                                    background: site.visited ? 'rgba(46, 160, 67, 0.2)' : 'var(--accent-primary)',
+                                                    color: site.visited ? '#2ea043' : '#000',
+                                                    border: site.visited ? '1px solid #2ea043' : 'none',
+                                                    borderRadius: '4px',
+                                                    cursor: 'pointer',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '0.8rem'
+                                                }}
+                                            >
+                                                {site.visited ? '✓ Visited' : 'Mark Visited'}
+                                            </button>
+                                            <button
+                                                onClick={() => setSelectedSite(site)}
+                                                style={{
+                                                    flex: 1,
+                                                    padding: '8px',
+                                                    background: 'rgba(240, 246, 252, 0.1)',
+                                                    color: 'var(--text-primary)',
+                                                    border: '1px solid var(--border-color)',
+                                                    borderRadius: '4px',
+                                                    cursor: 'pointer',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '0.8rem'
+                                                }}
+                                            >
+                                                View Details
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
-                                        <button
-                                            onClick={() => toggleVisited(site.id)}
-                                            style={{
-                                                flex: 1,
-                                                padding: '8px',
-                                                background: site.visited ? 'rgba(46, 160, 67, 0.2)' : 'var(--accent-primary)',
-                                                color: site.visited ? '#2ea043' : '#000',
-                                                border: site.visited ? '1px solid #2ea043' : 'none',
-                                                borderRadius: '4px',
-                                                cursor: 'pointer',
-                                                fontWeight: 'bold',
-                                                fontSize: '0.8rem'
-                                            }}
-                                        >
-                                            {site.visited ? '✓ Visited' : 'Mark Visited'}
-                                        </button>
-                                        <button
-                                            onClick={() => setSelectedSite(site)}
-                                            style={{
-                                                flex: 1,
-                                                padding: '8px',
-                                                background: 'rgba(240, 246, 252, 0.1)',
-                                                color: 'var(--text-primary)',
-                                                border: '1px solid var(--border-color)',
-                                                borderRadius: '4px',
-                                                cursor: 'pointer',
-                                                fontWeight: 'bold',
-                                                fontSize: '0.8rem'
-                                            }}
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </Popup>
-                        </Marker>
-                    ))}
+                                </Popup>
+                            </Marker>
+                        );
+                    }), [sites, theme, userCoords])}
                 </MarkerClusterGroup>
             </MapContainer>
 

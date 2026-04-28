@@ -1904,5 +1904,14 @@
         "country": "Poland",
         "description": "Also known as the Battle of Jonkowo and the Battle of Bergfriede. The battle on February 3rd 1807 resulted in a French field victory and allowed for a successful pursuit of the Russian army.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein"
+    },
+    {
+        "id": 223,
+        "title": "Battle of Dürenstein",
+        "date": "1805-11-11",
+        "location": "Dürenstein",
+        "country": "Austria",
+        "description": "Also known as he Battle of Krems. On November 11th 1805 a combined force of Russian and Austrian troops trapped a French division commanded by Théodore Maxime Gazan.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_D%C3%BCrenstein"
     }
 ]
