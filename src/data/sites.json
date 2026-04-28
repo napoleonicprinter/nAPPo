@@ -7062,6 +7062,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Heliopolis_(1800)",
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
+      "arc",
       "2",
       "Egyptian Campaign"
     ],
@@ -7341,5 +7342,102 @@
       "Jean-Baptiste Kléber",
       "Abdallah Bey"
     ]
+  },
+  {
+    "id": "386",
+    "name": "Battlefield of Mohrungen",
+    "category": "Battle site",
+    "year": "1807",
+    "significance": "Medium",
+    "location": "Gmina Morąg",
+    "country": "Poland",
+    "description": "On January 25th 1807, most of a First French Empire corps under the leadership of Marshal Jean-Baptiste Bernadotte fought a strong Russian Empire advance guard led by Major General Yevgeni Ivanovich Markov.",
+    "latitude": 53.941619,
+    "longitude": 19.92344,
+    "date": "1807-01-25",
+    "victor": "France",
+    "defeated": [
+      "Russia",
+      "Prussia"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mohrungen.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mohrungen",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "4",
+    "commanders": [
+      "Jean-Baptiste Bernadotte",
+      "Yevgeni Ivanovich Markov",
+      "Anton von L'Estocq"
+    ]
+  },
+  {
+    "id": "387",
+    "name": "Battlefield of Allenstein",
+    "category": "Battle site",
+    "year": "1807",
+    "significance": "Medium",
+    "location": "Olsztyn",
+    "country": "Poland",
+    "description": "Also known as the Battle of Jonkowo and the Battle of Bergfriede. The battle on February 3rd 1807 resulted in a French field victory and allowed for a successful pursuit of the Russian army.",
+    "latitude": 53.754662,
+    "longitude": 20.4451,
+    "date": "1807-02-03",
+    "victor": "France",
+    "defeated": "Russia",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Allenstein.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "4",
+    "commanders": [
+      "Napoleon",
+      "Joachim Murat",
+      "Jean-de-Dieu Soult",
+      "Levin Bennigsen",
+      "Nikolay Kamensky"
+    ]
+  },
+  {
+    "id": "388",
+    "name": "Bergfriede bridge - Allenstein",
+    "category": "Battle landmark",
+    "year": "1807",
+    "significance": "Medium",
+    "location": "Iławka Lake District",
+    "country": "Poland",
+    "description": "Towards the end of the afternoon, Soult, with the 24th Light and 4th Line regiments began his flanking attack and, after some ferocious combat, pushed the Russians beyond the Alle, capturing the Bergfriede bridge.",
+    "latitude": 53.864906,
+    "longitude": 20.38,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bergfriede_bridge.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "389",
+    "name": "Napoleon's observation point - Allenstein",
+    "category": "Battle landmark",
+    "year": "1807",
+    "significance": "Medium",
+    "location": "Olsztyn",
+    "country": "Poland",
+    "description": "From the church tower, Napoleon observed the disposition of the main Russian army, spread between Jonkowo, Redykajny, and Gutkowo, which influenced his decision to avoid a general engagement (he had previously thought it was only a small detachment).",
+    "latitude": 53.80192,
+    "longitude": 20.4060,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Olsztyn_church.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "390",
+    "name": "Napoleon's memorial - Allenstein",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Olsztyn",
+    "country": "Poland",
+    "description": "Napoleon's Memorial Stone in Olsztyn, next to Łyna (Alle) river, with a bilingual Polish and French inscription.",
+    "latitude": 53.774774,
+    "longitude": 20.473715,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Olsztyn_church.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]

@@ -1886,5 +1886,23 @@
         "country": "Israel",
         "description": "The French laid siege to the city of Jaffa, which was under Ottoman control. It was fought from March 3rd to the 7th 1799, when French forces managed to capture the city.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Jaffa"
+    },
+    {
+        "id": 221,
+        "title": "Battle of Mohrungen",
+        "date": "1807-01-25",
+        "location": "Gmina Morąg",
+        "country": "Poland",
+        "description": "On January 25th 1807, most of a First French Empire corps under the leadership of Marshal Jean-Baptiste Bernadotte fought a strong Russian Empire advance guard led by Major General Yevgeni Ivanovich Markov.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mohrungen"
+    },
+    {
+        "id": 222,
+        "title": "Battle of Allenstein",
+        "date": "1807-02-03",
+        "location": "Olsztyn",
+        "country": "Poland",
+        "description": "Also known as the Battle of Jonkowo and the Battle of Bergfriede. The battle on February 3rd 1807 resulted in a French field victory and allowed for a successful pursuit of the Russian army.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein"
     }
 ]
