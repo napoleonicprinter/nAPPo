@@ -1850,5 +1850,41 @@
         "country": "Germany",
         "description": "It was fought on November 6th 1806 between French troops under Marshals Murat, Bernadotte, and Soult and Prussian troops under Blücher.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lübeck"
+    },
+    {
+        "id": 217,
+        "title": "Capture of Alexandria",
+        "date": "1798-07-02",
+        "location": "Alexandria",
+        "country": "Egypt",
+        "description": "On July 2nd 1798, the French army landed and took the city of Alexandria from the hands of the Janissaries.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Capture_of_Alexandria_(1798)"
+    },
+    {
+        "id": 218,
+        "title": "Battle of Shubra Khit",
+        "date": "1798-07-13",
+        "location": "Shubra Khit",
+        "country": "Egypt",
+        "description": "Also known as Shubra Khit,was the second major engagement of the French invasion of Egypt and Syria and took place on July 13th 1798.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shubra_Khit"
+    },
+    {
+        "id": 219,
+        "title": "Battle of Sediman",
+        "date": "1798-10-07",
+        "location": "Sidmant al-Jabal",
+        "country": "Egypt",
+        "description": "Also known as Battle of El Lahun,  took place on October 7, 1798, during the French invasion of Egypt. French troops under General Louis Desaix defeated the Mamluk forces led by Murad Bey, securing control over Upper Egypt.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sediman"
+    },
+    {
+        "id": 220,
+        "title": "Siege of Jaffa",
+        "date": "1799-03-03",
+        "location": "Jaffa",
+        "country": "Israel",
+        "description": "The French laid siege to the city of Jaffa, which was under Ottoman control. It was fought from March 3rd to the 7th 1799, when French forces managed to capture the city.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Jaffa"
     }
 ]

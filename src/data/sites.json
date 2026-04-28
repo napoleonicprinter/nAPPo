@@ -7229,5 +7229,117 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ratisbonne_Rugendas.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCbeck",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "382",
+    "name": "Capture of Alexandria",
+    "category": "Battle site",
+    "year": "1798",
+    "significance": "Minor",
+    "location": "Alexandria",
+    "country": "Egypt",
+    "description": "On July 2nd 1798, the French army landed and took the city of Alexandria from the hands of the Janissaries.",
+    "latitude": 31.19891,
+    "longitude": 29.883285,
+    "date": "1798-07-02",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alexandria_1798.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capture_of_Alexandria_(1798)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "arc",
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Jean-Baptiste Kléber",
+      "Mohammed El-Koraïm"
+    ]
+  },
+  {
+    "id": "383",
+    "name": "Battlefield of Chebreiss",
+    "category": "Battle site",
+    "year": "1798",
+    "significance": "Major",
+    "location": "Shubra Khit",
+    "country": "Egypt",
+    "description": "Also known as Shubra Khit,was the second major engagement of the French invasion of Egypt and Syria and took place on July 13th 1798.",
+    "latitude": 31.0294,
+    "longitude": 30.707658,
+    "date": "1798-07-02",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sediman.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shubra_Khit",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "arc",
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Jean-Baptiste Perrée",
+      "Murad Bey"
+    ]
+  },
+  {
+    "id": "384",
+    "name": "Battlefield of Sediman",
+    "category": "Battle site",
+    "year": "1798",
+    "significance": "Medium",
+    "location": "Sidmant al-Jabal",
+    "country": "Egypt",
+    "description": "Also known as Battle of El Lahun,  took place on October 7, 1798, during the French invasion of Egypt. French troops under General Louis Desaix defeated the Mamluk forces led by Murad Bey, securing control over Upper Egypt.",
+    "latitude": 29.1693,
+    "longitude": 30.885181,
+    "date": "1798-07-02",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jaffa.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shubra_Khit",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "arc",
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Louis Desaix",
+      "Murad Bey"
+    ]
+  },
+  {
+    "id": "385",
+    "name": "Battlefield of Jaffa",
+    "category": "Battle site",
+    "year": "1799",
+    "significance": "Medium",
+    "location": "Jaffa",
+    "country": "Israel",
+    "description": "The French laid siege to the city of Jaffa, which was under Ottoman control. It was fought from March 3rd to the 7th 1799, when French forces managed to capture the city.",
+    "latitude": 29.1693,
+    "longitude": 30.885181,
+    "date": "1799-03-03",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jaffa.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Jaffa",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "arc",
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Ahmed al-Jazzar",
+      "Napoleon Bonaparte",
+      "Jean-Baptiste Kléber",
+      "Abdallah Bey"
+    ]
   }
 ]
