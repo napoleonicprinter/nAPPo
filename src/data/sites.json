@@ -7043,5 +7043,177 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hesse_haus2.webp",
     "link": "https://www.landkreis-neunkirchen.de/landrat-politik/landkreis-in-vergangenheit-und-geschichte/der-historische-sitzungssaal/ankunft-von-bluechers-truppen-in-ottweiler",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "374",
+    "name": "Battlefield of Heliópolis",
+    "category": "Battle site",
+    "year": "1800",
+    "significance": "Minor",
+    "location": "El Marg, Cairo",
+    "country": "Egypt",
+    "description": "French forces under General Kléber defeated the Ottoman army led by Nassif Pasha on March 20th 1800.",
+    "latitude": 30.1667,
+    "longitude": 31.333,
+    "date": "1800-03-20",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Heliopolis.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Heliopolis_(1800)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Jean-Baptiste Kléber",
+      "Nassif Pasha"
+    ]
+  },
+  {
+    "id": "375",
+    "name": "Battlefield of Alexandria",
+    "category": "Battle site",
+    "year": "1801",
+    "significance": "Medium",
+    "location": "Alexandria",
+    "country": "Egypt",
+    "description": "Also known as the Battle of Canope/Canopus. It was fought on March 21st 1801, where the British army and naval forces repelled an assault by the French army.",
+    "latitude": 31.210301,
+    "longitude": 29.970161,
+    "date": "1801-03-21",
+    "victor": "British",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alexandria.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alexandria_(1801)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Jacques-François Menou ",
+      "Ralph Abercromby"
+    ]
+  },
+  {
+    "id": "376",
+    "name": "Siege of El Arish",
+    "category": "Battle site",
+    "year": "1801",
+    "significance": "Medium",
+    "location": "El Arish",
+    "country": "Egypt",
+    "description": "The Siege of El Arish was a siege of the Ottoman fortress of El Arish by the French army, which took place from February 8th to 20th 1801 during the French campaign in Egypt.",
+    "latitude": 31.1217,
+    "longitude": 33.798253,
+    "date": "1801-02-08",
+    "victor": "British",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/El_Arish.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_El_Arish",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Jacques-François Menou ",
+      "Ralph Abercromby"
+    ]
+  },
+  {
+    "id": "377",
+    "name": "Battlefield of Mandora",
+    "category": "Battle site",
+    "year": "1801",
+    "significance": "Minor",
+    "location": "Alexandria",
+    "country": "Egypt",
+    "description": "It was a minor battle fought on March 13th 1801 between French forces under François Lanusse and the British expeditionary corps under Ralph Abercromby.",
+    "latitude": 31.2086,
+    "longitude": 29.987,
+    "date": "1801-03-13",
+    "victor": "British",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mandora.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mandora",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Jacques-François Menou",
+      "Ralph Abercromby"
+    ]
+  },
+  {
+    "id": "378",
+    "name": "Napoleon's monument",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Mount Carmel, Haifa",
+    "country": "Israel",
+    "description": "A pyramid-shaped memorial located directly in front of the Stella Maris Monastery on Mount Carmel. It commemorates French soldiers from Napoleon Bonaparte's army sick of the plague in 1799 and were burried there.",
+    "latitude": 32.8274,
+    "longitude": 34.969578,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_haifa.webp",
+    "createDate": "2025-03-22T10:00:00Z",
+    "link": "https://dannythedigger.com/stella-maris/"
+  },
+  {
+    "id": "379",
+    "name": "Siege of Acre  ",
+    "category": "Battle site",
+    "year": "1799",
+    "significance": "Major",
+    "location": "Acre",
+    "country": "Israel",
+    "description": "It was an unsuccessful French two month siege of the Ottoman city started on March 20th 1799 and was the turning point of Napoleon's invasion of Egypt and Syria",
+    "latitude": 32.9262,
+    "longitude": 35.071584,
+    "date": "1799-03-20",
+    "victor": "Ottoman Empire",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mandora.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mandora",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "2",
+      "Egyptian Campaign"
+    ],
+    "commanders": [
+      "Jazzar Pasha",
+      "Napoleon Bonaparte"
+    ]
+  },
+  {
+    "id": "380",
+    "name": "Battlefield of Lübeck ",
+    "category": "Battle site",
+    "year": "1806",
+    "significance": "Major",
+    "location": "Lübeck",
+    "country": "Germany",
+    "description": "It took place on November 6th 1806 between soldiers of of Prussia led by Blücher, who were retreating from defeat at the Battle of Jena-Auerstedt, and French troops under Marshals Murat, Bernadotte, and Soult",
+    "latitude": 53.863472,
+    "longitude": 10.686559,
+    "date": "1806-11-06",
+    "victor": "France",
+    "defeated": "Prussia",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lubeck.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCbeck",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "4",
+      "Franco Swedish War"
+    ],
+    "commanders": [
+      "Jean-Baptiste Bernadotte",
+      "Joachim Murat",
+      "Johann Ewald",
+      "Jean-de-Dieu Soult"
+    ]
   }
 ]

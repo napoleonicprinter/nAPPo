@@ -1796,5 +1796,59 @@
         "country": "Belgium",
         "description": "The Prussian commanded by General Pirch on June 15th 1815, retreat had scarcely begun when his retreating columns were vigorously assaulted by four Squadrons de Service of the Imperial Guard commanded by General Letort.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_start_of_hostilities#Action_at_Gilly"
+    },
+    {
+        "id": 211,
+        "title": "Battle of Heliopolis",
+        "date": "1800-03-20",
+        "location": "El Marg, Cairo",
+        "country": "Egypt",
+        "description": "French forces under General Kléber defeated the Ottoman army led by Nassif Pasha on March 20th 1800.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Heliopolis_(1800)"
+    },
+    {
+        "id": 212,
+        "title": "Battle of Alexandria",
+        "date": "1801-03-21",
+        "location": "Alexandria",
+        "country": "Egypt",
+        "description": "Also known as the Battle of Canope/Canopus[4]) was fought on March 21st 1801, where the British army and naval forces repelled an assault by the French army.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alexandria_(1801)"
+    },
+    {
+        "id": 213,
+        "title": "Siege of El Arish",
+        "date": "1801-02-08",
+        "location": "El Arish",
+        "country": "Egypt",
+        "description": "The Siege of El Arish was a siege of the Ottoman fortress of El Arish by the French army, which took place from February 8th to 20th 1801 during the French campaign in Egypt.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_El_Arish"
+    },
+    {
+        "id": 214,
+        "title": "Battle of Mandora",
+        "date": "1801-03-13",
+        "location": "Alexandria",
+        "country": "Egypt",
+        "description": "It was a minor battle fought on March 13th 1801 between French forces under François Lanusse and the British expeditionary corps under Ralph Abercromby.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mandora"
+    },
+    {
+        "id": 215,
+        "title": "Siege of Acre",
+        "date": "1799-03-20",
+        "location": "Acre",
+        "country": "Israel",
+        "description": "It was an unsuccessful French two month siege of the Ottoman city started on March 20th 1799 and was the turning point of Napoleon's invasion of Egypt and Syria",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Acre"
+    },
+    {
+        "id": 216,
+        "title": "Battle of Lübeck",
+        "date": "1806-11-06",
+        "location": "Lübeck",
+        "country": "Germany",
+        "description": "It was fought on November 6th 1806 between French troops under Marshals Murat, Bernadotte, and Soult and Prussian troops under Blücher.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lübeck"
     }
 ]
