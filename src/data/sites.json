@@ -7215,5 +7215,19 @@
       "Johann Ewald",
       "Jean-de-Dieu Soult"
     ]
+  },
+  {
+    "id": "381",
+    "name": "Prise de Ratisbonne",
+    "category": "Artwork",
+    "significance": "Minor",
+    "location": "Bavarian Army Museum, Ingolstadt",
+    "country": "Germany",
+    "description": "Canvas by Johann Lorenz Rugendas the Younger. It depicts the storming of Ratisbon by the French army on April 23rd 1809 during the War of the Fifth Coalition.",
+    "latitude": 48.764679,
+    "longitude": 11.4312,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ratisbonne_Rugendas.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCbeck",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]
