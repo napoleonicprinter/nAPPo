@@ -1913,5 +1913,23 @@
         "country": "Austria",
         "description": "Also known as he Battle of Krems. On November 11th 1805 a combined force of Russian and Austrian troops trapped a French division commanded by Théodore Maxime Gazan.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_D%C3%BCrenstein"
+    },
+    {
+        "id": 224,
+        "title": "Battle of Sabugal",
+        "date": "1811-04-03",
+        "location": "Sabugal",
+        "country": "Portugal",
+        "description": "It was a meeting engagement of the Peninsular War which took place on April 3rd 1811 between Anglo-Portuguese forces under Arthur Wellesley (later the Duke of Wellington) and French troops under the command of Marshal André Masséna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal"
+    },
+    {
+        "id": 225,
+        "title": "Battle of Bussaco",
+        "date": "1810-09-27",
+        "location": "Cácemes",
+        "country": "Portugal",
+        "description": "It was fought on September 27th 1810 during the Peninsular War in the Portuguese mountain range of Serra do Buçaco, resulting in the defeat of French forces by Lord Wellington's Anglo-Portuguese Army.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal"
     }
 ]
