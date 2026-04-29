@@ -2158,8 +2158,9 @@
     "id": "118",
     "name": "Batalla de Roliça",
     "category": "Battle site",
-    "significance": "Major",
+    "significance": "Minor",
     "year": "1808",
+    "date": "1808-08-17",
     "location": "Columbeira",
     "country": "Portugal",
     "description": "17 August 1808, was the first battle fought by the British army during the Peninsular War.",
@@ -2170,7 +2171,12 @@
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Batalla_de_Roli%C3%A7a",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": []
+    "commanders": [
+      "Henri François Delaborde",
+      "Arthur Wellesley"
+    ],
+    "victor": "Anglo Portuguese",
+    "defeated": "France"
   },
   {
     "id": "119",
@@ -7710,11 +7716,25 @@
     "significance": "Medium",
     "location": "Freineda",
     "country": "Portugal",
-    "description": "During the winters of 1811-1812 and 1812-1813, Wellington set his headquarters in a small Portuguese village about 25 kilometers from the Spanish border fortress of Ciudad Rodrigo. ",
+    "description": "During the winters of 1811-1812 and 1812-1813, Wellington set his headquarters in a small Portuguese village about 25 kilometers from the Spanish border fortress of Ciudad Rodrigo.",
     "latitude": 40.583791,
     "longitude": -6.890254,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Freineda.webp",
     "link": "https://www.napoleon-series.org/military-info/virtual/c_freineda.html",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "407",
+    "name": "Núcleo Interpretativo da Batalha da Roliça",
+    "category": "Museum",
+    "significance": "Medium",
+    "location": "Roliça",
+    "country": "Portugal",
+    "description": "Inaugurado a 17 de novembro de 2024 a memória do histórico confronto militar, ocorrido a 17 de agosto de 1808",
+    "latitude": 39.304352,
+    "longitude": -9.197513,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Rolica_museum.webp",
+    "site_link": "https://rm-bombarral.pt/nucleo-interpretativo-da-rolica/",
     "createDate": "2025-03-22T10:00:00Z"
   }
 ]
