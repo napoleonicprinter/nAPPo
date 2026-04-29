@@ -1384,15 +1384,14 @@
     "id": "75",
     "name": "Museu Militar do Bussaco",
     "category": "Museum",
-    "significance": "Major",
-    "year": "",
+    "significance": "Medium",
     "location": "Bussaco,",
     "country": "Portugal",
     "description": "",
     "latitude": 40.3788,
     "longitude": -8.35971,
     "visited": false,
-    "image": "https://napoctep.eu/wp-content/uploads/2021/03/museo_militar_bucaco.png",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco_museo.webp",
     "more_info_link": "https://www.cm-mealhada.pt/menu/438/museu_militar",
     "createDate": "2026-03-15T10:00:00Z",
     "special": false
@@ -1926,8 +1925,15 @@
     "image": "https://www.ign.es/web/BibliotecaIGN/Miniatura/t0026350.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Medell%C3%ADn_(1809)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Gregorio García de la Cuesta",
+      "Claude Perrin Victor"
+    ]
   },
   {
     "id": "106",
@@ -1935,6 +1941,7 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1809",
+    "date": "1809-07-27",
     "location": "Talavera de la Reina, Toledo",
     "country": "Spain",
     "description": "Victoria táctica aliada bajo el mando de Wellington.",
@@ -1944,8 +1951,17 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Batalla_de_Talavera%2C_1809.jpg/1280px-Batalla_de_Talavera%2C_1809.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Talavera",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Arthur Wellesley",
+      "Gregorio García de la Cuesta",
+      "Claude-Victor Perrin",
+      "Joseph Bonaparte",
+      "Jean-Baptiste Jourdan"
+    ]
   },
   {
     "id": "107",
@@ -2153,7 +2169,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Battle_of_Roli%C3%A7a_map.jpg",
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Batalla_de_Roli%C3%A7a",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": "Peninsular War",
     "commanders": []
   },
   {
@@ -2171,7 +2187,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Battle_of_Vimieiro.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": "Peninsular War",
     "commanders": []
   },
   {
@@ -2197,6 +2213,7 @@
     "category": "Battle site",
     "significance": "Medium",
     "year": "1809",
+    "date": "1809-05-12",
     "location": "Oporto",
     "country": "Portugal",
     "description": "El 12 de maig de 1809 va ser una contesa que va acabar amb la victòria per a l'exèrcit anglo-portuguès comandat per Sir Arthur Wellesley sobre l'exèrcit francès del mariscal Nicolas Jean de Dieu Soult.",
@@ -7567,12 +7584,12 @@
   },
   {
     "id": "398",
-    "name": "Crawford's Command Post - Bussaco ",
+    "name": "Crauford's Command Post - Bussaco ",
     "category": "Battle landmark",
     "significance": "Medium",
     "location": "Sula",
     "country": "Portugal",
-    "description": "General's Crawford command post during the battle.",
+    "description": "General's Crauford command post during the battle.",
     "latitude": 40.377923,
     "longitude": -8.354341,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sula.webp",
@@ -7615,6 +7632,89 @@
     "latitude": 40.377923,
     "longitude": -8.354341,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco_obelisk.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "401",
+    "name": "Massena's Command Post - Bussaco ",
+    "category": "Battle landmark",
+    "significance": "Major",
+    "location": "Moura",
+    "country": "Portugal",
+    "description": "Remains of the windmill which served as Masséna's command post at Moura.",
+    "latitude": 40.371996,
+    "longitude": -8.344956,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moura.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "402",
+    "name": "English Cemetery at Elvas",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Elvas",
+    "country": "Portugal",
+    "description": "It is one of the oldest British Military Cemeteries in existence. It holds only five known graves but two of these for the tallen at Albuera and another for the fallen at Badajoz.",
+    "latitude": 38.8833,
+    "longitude": -7.161426,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Elvas.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_Cemetery,_Elvas",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "403",
+    "name": "Lines of Torres Vedras",
+    "category": "Landmark",
+    "significance": "Major",
+    "location": "Torres Vedras",
+    "country": "Portugal",
+    "description": "Lines of Torres Vedras were lines of forts and other military defences built in secrecy to defend Lisbon during the Peninsular War.",
+    "latitude": 38.8833,
+    "longitude": -7.161426,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Torres_Vedras.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Lines_of_Torres_Vedras",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "404",
+    "name": "Duke of Wellington's Headquarters at Pero Negro",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Pero nero",
+    "country": "Portugal",
+    "description": "During the construction of the fortificaions of Lines of Arthur Wellesley established his headquarters at this residence.",
+    "latitude": 38.8833,
+    "longitude": -7.161426,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pero_nero.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Lines_of_Torres_Vedras",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "405",
+    "name": "Puente de Barba del Puerco",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "San Felices de los Gallegos, Salamanca",
+    "country": "Spain",
+    "description": "Uno de los cuatro cruces del río Águeda, fue volado en abril de 1811 por un ingeniero Portugués para cortar el paso a las tropas del General Marmont.",
+    "latitude": 40.826960,
+    "longitude": -6.747897,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Puente_argueda.webp",
+    "link": "https://www.batalladetrafalgar.com/2016/02/destuccion-del-puente-de-los-franceses.html",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "406",
+    "name": "Wellington's Headquarters in Freineda",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Freineda",
+    "country": "Portugal",
+    "description": "During the winters of 1811-1812 and 1812-1813, Wellington set his headquarters in a small Portuguese village about 25 kilometers from the Spanish border fortress of Ciudad Rodrigo. ",
+    "latitude": 40.583791,
+    "longitude": -6.890254,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Freineda.webp",
+    "link": "https://www.napoleon-series.org/military-info/virtual/c_freineda.html",
     "createDate": "2025-03-22T10:00:00Z"
   }
 ]
