@@ -48,7 +48,7 @@
     "commanders": [
       "Napoleon",
       "Wellington",
-      "Blücher"
+      "Gebhard von Blücher"
     ]
   },
   {
@@ -56,7 +56,6 @@
     "name": "Arc de Triomphe",
     "category": "Monument",
     "significance": "Major",
-    "year": "",
     "location": "Paris",
     "country": "France",
     "description": "Commissioned by Napoleon after his victory at Austerlitz, the monument honors those who fought and died for France in the French Revolutionary and Napoleonic Wars.",
@@ -4769,7 +4768,7 @@
       "Napoleon",
       "Peter Wittgenstein",
       "Alexande I",
-      "Blücher"
+      "Gebhard von Blücher"
     ],
     "special": "arc"
   },
@@ -4802,7 +4801,7 @@
     "year": "1813",
     "location": "Chojnów",
     "country": "Poland",
-    "description": "Fought on May 26th 1813, between Prussian cavalry under the command of General Gebhard Leberecht von Blücher and a French infantry division under the command of General Nicolas Joseph Maison",
+    "description": "Fought on May 26th 1813, between Prussian cavalry under the command of General Gebhard von Blücher and a French infantry division under the command of General Nicolas Joseph Maison",
     "latitude": 51.246,
     "longitude": 15.9804,
     "visited": false,
@@ -4810,7 +4809,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haynau",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Gebhard Leberecht von Blücher",
+      "Gebhard von Blücher",
       "Nicolas Joseph Maison"
     ]
   },
@@ -4874,7 +4873,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Katzbach",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Gebhard Leberecht von Blücher",
+      "Gebhard von Blücher",
       "Osten-Sacken",
       "Jacques MacDonald",
       "Jacques Lauriston",
@@ -5296,6 +5295,7 @@
     "name": "Battle of Copenhagen (1807)",
     "category": "Naval battle",
     "year": "1807",
+    "date": "1807-08-16",
     "significance": "Major",
     "location": "Copenhagen",
     "country": "Denmark",
@@ -5317,6 +5317,7 @@
     "name": "Battle of Copenhagen (1801)",
     "category": "Naval battle",
     "year": "1801",
+    "date": "1801-04-02",
     "significance": "Major",
     "location": "Copenhagen",
     "country": "Denmark",
@@ -5339,6 +5340,7 @@
     "name": "Battle of Grand Port",
     "category": "Naval battle",
     "year": "1810",
+    "date": "1810-08-20",
     "significance": "Medium",
     "location": "Grand Port",
     "country": "Mauritius",
@@ -5375,6 +5377,7 @@
     "name": "Invasion of Isle Bonaparte",
     "category": "Naval battle",
     "year": "1810",
+    "date": "1810-07-08",
     "significance": "Minor",
     "location": "Saint-Marie",
     "country": "Reunion island",
@@ -5395,11 +5398,12 @@
     "id": "295",
     "name": "Raid on Griessie",
     "category": "Naval battle",
+    "date": "1807-12-05",
     "year": "1807",
     "significance": "Minor",
     "location": "Gresik",
     "country": "Java",
-    "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
+    "description": "The raid on Griessie was a British attack on the port of Griessie in the Dutch East Indies on December 5th to the 11th 1807 during the Java campaign of 1806-1807.",
     "latitude": -7.1341,
     "longitude": 112.657554,
     "visited": false,
@@ -5575,7 +5579,7 @@
     "significance": "Major",
     "location": "Petit-Mesnil",
     "country": "France",
-    "description": "On January 29th 1814,an Imperial French army led by Emperor Napoleon attack Prussian and Russian forces commanded by Prussian Field Marshal Gebhard Leberecht von Blücher.",
+    "description": "On January 29th 1814,an Imperial French army led by Emperor Napoleon attack Prussian and Russian forces commanded by Prussian Field Marshal Gebhard von Blücher.",
     "latitude": 48.3541,
     "longitude": 4.588952,
     "visited": false,
@@ -5583,8 +5587,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Brienne",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Napoleon Bonaparte",
-      "Gebhard Leberecht von Blücher",
+      "Napoleon",
+      "Gebhard von Blücher",
       "Zakhar Olsufiev",
       "Fabian Osten-Sacken"
     ]
@@ -5635,7 +5639,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Dagobert-Sigismond von Wurmser"
     ],
     "special": "arc"
@@ -6302,8 +6306,8 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": "6",
     "commanders": [
-      "Napoleon Bonaparte",
-      "Gebhard Leberecht von Blücher"
+      "Napoleon",
+      "Gebhard von Blücher"
     ]
   },
   {
@@ -6349,7 +6353,7 @@
     ],
     "commanders": [
       "Zakhar Olsufiev",
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Auguste de Marmont"
     ]
   },
@@ -6374,10 +6378,10 @@
     ],
     "commanders": [
       "Zakhar Olsufiev",
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Auguste de Marmont",
       "Emmanuel de Grouchy",
-      "Gebhard Leberecht von Blücher",
+      "Gebhard von Blücher",
       "Friedrich von Kleist",
       "Peter Kaptzevich"
     ]
@@ -6438,7 +6442,7 @@
     ],
     "commanders": [
       "Fabian Osten-Sacken",
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Ludwig von Yorck"
     ]
   },
@@ -6463,7 +6467,7 @@
     ],
     "commanders": [
       "Prince of Schwarzenberg",
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Prince of Württemberg"
     ]
   },
@@ -6543,7 +6547,7 @@
       "6"
     ],
     "commanders": [
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Karl von Schwarzenberg",
       "Peter de Lamotte",
       "Peter Wittgenstein"
@@ -6655,7 +6659,7 @@
     ],
     "commanders": [
       "Napoleon",
-      "Gebhard Leberecht von Blücher",
+      "Gebhard von Blücher",
       "Ferdinand von Wintzingerode"
     ]
   },
@@ -6718,7 +6722,7 @@
     "significance": "Major",
     "location": "Paissy",
     "country": "France",
-    "description": "This battle between an Imperial French army under Emperor Napoleon I opposing a combined army of Imperial Russians and Prussians led by Prussian Field Marshal Gebhard Leberecht von Blücher fought on March 7th 1814",
+    "description": "This battle between an Imperial French army under Emperor Napoleon I opposing a combined army of Imperial Russians and Prussians led by Prussian Field Marshal Gebhard von Blücher fought on March 7th 1814",
     "latitude": 49.437874,
     "longitude": 3.704106,
     "date": "1814-03-07",
@@ -6736,7 +6740,7 @@
     ],
     "commanders": [
       "Napoleon",
-      "Gebhard Leberecht von Blücher",
+      "Gebhard von Blücher",
       "Ferdinand Fyodorovich Wintzingerode"
     ]
   },
@@ -7186,7 +7190,7 @@
     ],
     "commanders": [
       "Jazzar Pasha",
-      "Napoleon Bonaparte"
+      "Napoleon"
     ]
   },
   {
@@ -7254,7 +7258,7 @@
       "Egyptian Campaign"
     ],
     "commanders": [
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Jean-Baptiste Kléber",
       "Mohammed El-Koraïm"
     ]
@@ -7282,7 +7286,7 @@
       "Egyptian Campaign"
     ],
     "commanders": [
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Jean-Baptiste Perrée",
       "Murad Bey"
     ]
@@ -7338,7 +7342,7 @@
     ],
     "commanders": [
       "Ahmed al-Jazzar",
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Jean-Baptiste Kléber",
       "Abdallah Bey"
     ]
@@ -7523,6 +7527,94 @@
     "latitude": 48.39139,
     "longitude": 15.531450,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Durenstein_memorial.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "396",
+    "name": "Battlefield of Sabugal",
+    "category": "Battle site",
+    "year": "1811",
+    "significance": "Minor",
+    "location": "Sabugal",
+    "country": "Portugal",
+    "description": "It was a meeting engagement of the Peninsular War which took place on April 3rd 1811 between Anglo-Portuguese forces under Arthur Wellesley (later the Duke of Wellington) and French troops under the command of Marshal André Masséna.",
+    "latitude": 40.3266,
+    "longitude": -7.070474,
+    "date": "1811-04-03",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sabugal.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Arthur Wellesley",
+      "André Masséna"
+    ]
+  },
+  {
+    "id": "397",
+    "name": "Wellington's Command Post - Bussaco ",
+    "category": "Battle landmark",
+    "significance": "Major",
+    "location": "Bussaco",
+    "country": "Portugal",
+    "description": "Wellington's command post during the battle.",
+    "latitude": 40.358268,
+    "longitude": -8.346260,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco_post.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "398",
+    "name": "Crawford's Command Post - Bussaco ",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Sula",
+    "country": "Portugal",
+    "description": "General's Crawford command post during the battle.",
+    "latitude": 40.377923,
+    "longitude": -8.354341,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sula.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "399",
+    "name": "Battlefield of Bussaco",
+    "category": "Battle site",
+    "year": "1810",
+    "significance": "Major",
+    "location": "Cácemes",
+    "country": "Portugal",
+    "description": "It was fought on September 27th 1810 during the Peninsular War in the Portuguese mountain range of Serra do Buçaco, resulting in the defeat of French forces by Lord Wellington's Anglo-Portuguese Army.",
+    "latitude": 40.34411,
+    "longitude": -8.338082,
+    "date": "1810-09-27",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bussaco",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Arthur Wellesley",
+      "André Masséna",
+      "Michel Ney",
+      "Luís do Rego",
+      "Abdullah Pasha al-Azm"
+    ]
+  },
+  {
+    "id": "400",
+    "name": "Monument Battle of Bussaco ",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Bussaco",
+    "country": "Portugal",
+    "description": "Constructed in 1873, the obelisk was greatly damaged by lightning in 1876 and was restored in 1878-1879.",
+    "latitude": 40.377923,
+    "longitude": -8.354341,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco_obelisk.webp",
     "createDate": "2025-03-22T10:00:00Z"
   }
 ]
