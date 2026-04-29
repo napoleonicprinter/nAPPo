@@ -7524,5 +7524,94 @@
     "longitude": 15.531450,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Durenstein_memorial.webp",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "396",
+    "name": "Battlefield of Sabugal",
+    "category": "Battle site",
+    "year": "1811",
+    "significance": "Minor",
+    "location": "Sabugal",
+    "country": "Portugal",
+    "description": "It was a meeting engagement of the Peninsular War which took place on April 3rd 1811 between Anglo-Portuguese forces under Arthur Wellesley (later the Duke of Wellington) and French troops under the command of Marshal André Masséna.",
+    "latitude": 40.3266,
+    "longitude": -7.070474,
+    "date": "1811-04-03",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sabugal.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Arthur Wellesley",
+      "André Masséna"
+    ]
+  },
+  {
+    "id": "397",
+    "name": "Wellington's Command Post - Bussaco ",
+    "category": "Battle landmark",
+    "significance": "Major",
+    "location": "Bussaco",
+    "country": "Portugal",
+    "description": "Wellington's command post during the battle.",
+    "latitude": 40.358268,
+    "longitude": -8.346260,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco_post.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "398",
+    "name": "Crawford's Command Post - Bussaco ",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Sula",
+    "country": "Portugal",
+    "description": "General's Crawford command post during the battle.",
+    "latitude": 40.377923,
+    "longitude": -8.354341,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sula.webp",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "399",
+    "name": "Battlefield of Bussaco",
+    "category": "Battle site",
+    "year": "1810",
+    "significance": "Major",
+    "location": "Cácemes",
+    "country": "Portugal",
+    "description": "It was fought on September 27th 1810 during the Peninsular War in the Portuguese mountain range of Serra do Buçaco, resulting in the defeat of French forces by Lord Wellington's Anglo-Portuguese Army.",
+    "latitude": 40.34411,
+    "longitude": -8.338082,
+    "date": "1810-09-27",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bussaco",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Arthur Wellesley",
+      "André Masséna",
+      "Michel Ney",
+      "Luís do Rego",
+      "Abdullah Pasha al-Azm"
+    ]
+  },
+  {
+    "id": "400",
+    "name": "Monument Battle of Bussaco ",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Bussaco",
+    "country": "Portugal",
+    "description": "Constructed in 1873, the obelisk was greatly damaged by lightning in 1876 and was restored in 1878-1879.",
+    "latitude": 40.377923,
+    "longitude": -8.354341,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco_obelisk.webp",
+    "createDate": "2025-03-22T10:00:00Z"
   }
+] }
 ]
