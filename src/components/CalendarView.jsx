@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext } from '../context/AppContext';
-import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X } from 'lucide-react';
+import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X, CalendarDays } from 'lucide-react';
+import ShowsCalendarModal from './ShowsCalendarModal';
 import './CalendarView.css';
 
 const SHOW_CATEGORIES = ['All Categories', 'Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
@@ -27,7 +28,8 @@ const CalendarView = ({ onClose }) => {
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
     const [isMonthDropdownOpen, setIsMonthDropdownOpen] = useState(false);
-    const [selectedDay, setSelectedDay] = useState(null);
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [isShowsCalendarOpen, setIsShowsCalendarOpen] = useState(false);
 
     // Identify months/categories/countries that have at least one show
     const activeStats = useMemo(() => {
@@ -57,61 +59,39 @@ const CalendarView = ({ onClose }) => {
                 return categoryMatch && monthMatch && countryMatch;
             })
             .filter(show => {
-                if (!selectedDay) return true;
-                const showDay = new Date(show.date).getDate();
-                return showDay === selectedDay;
+                if (!selectedDate) return true;
+                return show.date === selectedDate;
             })
             .sort((a, b) => new Date(a.date) - new Date(b.date));
-    }, [showsToCome, selectedCategory, selectedMonth, selectedCountry, selectedDay]);
-
-    // Calendar generation logic
-    const calendarDays = useMemo(() => {
-        if (selectedMonth === 'All Months') return null;
-
-        const monthIndex = SHOW_MONTHS.indexOf(selectedMonth) - 1; // 0-indexed
-        const year = 2026; // Shows are mostly 2026
-        
-        const firstDay = new Date(year, monthIndex, 1).getDay();
-        const lastDate = new Date(year, monthIndex + 1, 0).getDate();
-        
-        const days = [];
-        // Empty slots
-        for (let i = 0; i < firstDay; i++) days.push({ type: 'empty' });
-        
-        // Actual days
-        for (let d = 1; d <= lastDate; d++) {
-            const showsOnThisDay = filteredShows.filter(s => {
-                const dateObj = new Date(s.date);
-                return dateObj.getDate() === d && dateObj.getMonth() === monthIndex;
-            });
-            
-            days.push({
-                type: 'day',
-                day: d,
-                hasShows: showsOnThisDay.length > 0,
-                showCount: showsOnThisDay.length
-            });
-        }
-        
-        return days;
-    }, [selectedMonth, filteredShows]);
+    }, [showsToCome, selectedCategory, selectedMonth, selectedCountry, selectedDate]);
 
     const handleMonthChange = (month) => {
         setSelectedMonth(month);
-        setSelectedDay(null);
         setIsMonthDropdownOpen(false);
     };
 
     return createPortal(
         <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
-            <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
+            <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ display: isShowsCalendarOpen ? 'none' : 'flex' }}>
                 <div className="calendar-modal-header">
                     <div className="modal-title-row">
                         <div className="modal-icon-container">
                             <Calendar size={24} />
                         </div>
                         <div className="modal-title-info">
-                            <h2>Upcoming Events</h2>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                                <h2>Upcoming Events</h2>
+                                {selectedDate && (
+                                    <span 
+                                        className="badge" 
+                                        style={{ backgroundColor: 'var(--accent-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#000' }} 
+                                        onClick={() => setSelectedDate(null)}
+                                        title="Clear date filter"
+                                    >
+                                        {selectedDate} <X size={12} style={{ marginLeft: '4px' }} />
+                                    </span>
+                                )}
+                            </div>
                             <p>Discover Napoleonic events and reenactments worlwide</p>
                         </div>
                         <button className="modal-close-btn" onClick={onClose}>
@@ -192,80 +172,57 @@ const CalendarView = ({ onClose }) => {
                             )}
                         </div>
 
-                        {/* Month Dropdown */}
-                        <div className="custom-dropdown-container">
-                            <button
-                                className="category-filter-wrapper glass-panel dropdown-trigger"
-                                onClick={() => {
-                                    setIsMonthDropdownOpen(!isMonthDropdownOpen);
-                                    setIsCategoryDropdownOpen(false);
-                                    setIsCountryDropdownOpen(false);
-                                }}
-                            >
-                                <Calendar size={18} className="filter-icon" />
-                                <span className="selected-text">{selectedMonth}</span>
-                                <ChevronDown size={16} className={`chevron-icon ${isMonthDropdownOpen ? 'rotated' : ''}`} />
-                            </button>
+                        {/* Month Dropdown & Calendar View */}
+                        <div style={{ display: 'flex', gap: '0.8rem', flex: 1, minWidth: '260px' }}>
+                            <div className="custom-dropdown-container" style={{ flex: 1 }}>
+                                <button
+                                    className="category-filter-wrapper glass-panel dropdown-trigger"
+                                    onClick={() => {
+                                        setIsMonthDropdownOpen(!isMonthDropdownOpen);
+                                        setIsCategoryDropdownOpen(false);
+                                        setIsCountryDropdownOpen(false);
+                                    }}
+                                    style={{ width: '100%', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
+                                >
+                                    <Calendar size={16} className="filter-icon" />
+                                    <span className="selected-text" style={{ fontSize: '0.85rem' }}>{selectedMonth}</span>
+                                    <ChevronDown size={14} className={`chevron-icon ${isMonthDropdownOpen ? 'rotated' : ''}`} />
+                                </button>
 
-                            {isMonthDropdownOpen && (
-                                <div className="dropdown-menu glass-panel animate-fade-in">
-                                    {SHOW_MONTHS.map(month => (
-                                        <button
-                                            key={month}
-                                            className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'All Months' && activeStats.months[month] ? 'has-items' : ''}`}
-                                            onClick={() => {
-                                                handleMonthChange(month);
-                                            }}
-                                        >
-                                            {month}
-                                            {month !== 'All Months' && activeStats.months[month] > 0 && (
-                                                <span className="item-count-indicator">{activeStats.months[month]}</span>
-                                            )}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
+                                {isMonthDropdownOpen && (
+                                    <div className="dropdown-menu glass-panel animate-fade-in">
+                                        {SHOW_MONTHS.map(month => (
+                                            <button
+                                                key={month}
+                                                className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'All Months' && activeStats.months[month] ? 'has-items' : ''}`}
+                                                onClick={() => {
+                                                    handleMonthChange(month);
+                                                }}
+                                            >
+                                                {month}
+                                                {month !== 'All Months' && activeStats.months[month] > 0 && (
+                                                    <span className="item-count-indicator">{activeStats.months[month]}</span>
+                                                )}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            <button 
+                                className="category-filter-wrapper glass-panel"
+                                onClick={() => setIsShowsCalendarOpen(true)}
+                                style={{ flex: 1, justifyContent: 'center', cursor: 'pointer', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
+                            >
+                                <CalendarDays size={16} className="filter-icon" />
+                                <span className="selected-text" style={{ fontSize: '0.85rem' }}>Calendar View</span>
+                            </button>
                         </div>
                     </div>
 
                 </div>
 
                 <div className="calendar-modal-body">
-                    {selectedMonth !== 'All Months' && calendarDays && (
-                        <div className="shows-calendar-container animate-fade-in">
-                            <div className="calendar-grid-header">
-                                <h3>{selectedMonth} 2026</h3>
-                                {selectedDay && (
-                                    <button 
-                                        className="clear-day-btn"
-                                        onClick={() => setSelectedDay(null)}
-                                    >
-                                        Show All Days
-                                    </button>
-                                )}
-                            </div>
-                            <div className="calendar-weekdays">
-                                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(d => <div key={d}>{d}</div>)}
-                            </div>
-                            <div className="calendar-grid">
-                                {calendarDays.map((d, index) => (
-                                    <div 
-                                        key={index}
-                                        className={`calendar-day ${d.type === 'empty' ? 'empty' : ''} ${d.hasShows ? 'has-shows' : ''} ${selectedDay === d.day ? 'selected' : ''}`}
-                                        onClick={() => d.hasShows && setSelectedDay(d.day)}
-                                    >
-                                        {d.type === 'day' && (
-                                            <>
-                                                <span className="day-number">{d.day}</span>
-                                                {d.showCount > 0 && <span className="show-count">({d.showCount})</span>}
-                                            </>
-                                        )}
-                                        {d.hasShows && <div className="show-dot" />}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
 
                     <div className="shows-grid">
                         {filteredShows.length > 0 ? (
@@ -330,6 +287,17 @@ const CalendarView = ({ onClose }) => {
                     </div>
                 </div>
             </div>
+            
+            {isShowsCalendarOpen && (
+                <ShowsCalendarModal 
+                    showsData={filteredShows} 
+                    onClose={() => setIsShowsCalendarOpen(false)} 
+                    onDayClick={(date) => {
+                        setIsShowsCalendarOpen(false);
+                        setSelectedDate(date);
+                    }}
+                />
+            )}
         </div>,
         document.body
     );

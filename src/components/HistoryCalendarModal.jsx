@@ -109,8 +109,12 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                 key={`day-${day}`} 
                 className={`calendar-day ${hasEvents ? 'has-events' : ''} ${isToday ? 'today' : ''}`}
                 onClick={() => handleDayClick(day)}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
             >
                 <span className="day-number">{day}</span>
+                {hasEvents && (
+                    <span className="day-count" style={{ fontSize: '0.75em', marginTop: '2px', opacity: 0.8 }}>({currentYearEvents[day].length})</span>
+                )}
             </div>
         );
     }

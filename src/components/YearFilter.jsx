@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
 const YearFilter = ({ compact, style, className }) => {
-    const { filterYear, setFilterYear, allSites, filterCategory } = useAppContext();
+    const { filterYear, setFilterYear, availableYears, filterCategory } = useAppContext();
 
     const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
     const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
@@ -12,18 +12,9 @@ const YearFilter = ({ compact, style, className }) => {
         return null;
     }
 
-    const years = Array.from(
-        new Set(
-            allSites
-                .filter(s => allowedCategories.includes(s.category))
-                .map(s => s.year ? String(s.year).trim() : '')
-                .filter(y => y !== '')
-        )
-    ).sort();
-
     const options = [
         { value: 'all', label: 'All Years' },
-        ...years.map(y => ({ value: y, label: y }))
+        ...availableYears.map(y => ({ value: y, label: y }))
     ];
 
     return (

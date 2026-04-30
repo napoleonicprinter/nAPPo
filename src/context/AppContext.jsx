@@ -187,6 +187,8 @@ export const AppProvider = ({ children }) => {
 
     const [view, setView] = useState('map');
     const [mapBounds, setMapBounds] = useState(null);
+    const [selectedSite, setSelectedSite] = useState(null);
+    const [siteToOpenPopup, setSiteToOpenPopup] = useState(null);
     const [users, setUsers] = useState(() => {
         const saved = localStorage.getItem('appUsers');
         return saved ? JSON.parse(saved) : [];
@@ -226,23 +228,25 @@ export const AppProvider = ({ children }) => {
         return saved ? parseInt(saved, 10) : 30;
     });
 
-    const derivedSites = (sitesBaseData || []).map(site => {
-        const isNew = (() => {
-            if (!site.createDate || !newSitesDays) return false;
-            const createDate = new Date(site.createDate);
-            const today = new Date();
-            const diffTime = Math.abs(today - createDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            return diffDays <= newSitesDays;
-        })();
+    const derivedSites = useMemo(() => {
+        return (sitesBaseData || []).map(site => {
+            const isNew = (() => {
+                if (!site.createDate || !newSitesDays) return false;
+                const createDate = new Date(site.createDate);
+                const today = new Date();
+                const diffTime = Math.abs(today - createDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return diffDays <= newSitesDays;
+            })();
 
-        return {
-            ...site,
-            visited: visitedSites.includes(site.id),
-            isNew,
-            special: site.special ? (Array.isArray(site.special) ? site.special : [String(site.special)]) : []
-        };
-    });
+            return {
+                ...site,
+                visited: visitedSites.includes(site.id),
+                isNew,
+                special: site.special ? (Array.isArray(site.special) ? site.special : [String(site.special)]) : []
+            };
+        });
+    }, [sitesBaseData, visitedSites, newSitesDays]);
 
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
@@ -278,46 +282,80 @@ export const AppProvider = ({ children }) => {
         }
     };
 
-    const sitesFilteredWithoutCategory = derivedSites.map(site => {
-        if (userCoords) {
-            return {
-                ...site,
-                distance: calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude)
-            };
-        }
-        return site;
-    }).filter(site => {
-        if (showOnlyNew && !site.isNew) return false;
-        if (filterSignificance && site.significance !== filterSignificance) return false;
-        if (filterVisited === 'visited' && !site.visited) return false;
-        if (filterVisited === 'unvisited' && site.visited) return false;
-        if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
-        if (filterCountry !== 'all' && site.country !== filterCountry) return false;
-        if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
-        if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
+    const sitesFilteredBase = useMemo(() => {
+        return derivedSites.map(site => {
+            if (userCoords) {
+                return {
+                    ...site,
+                    distance: calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude)
+                };
+            }
+            return site;
+        }).filter(site => {
+            if (showOnlyNew && !site.isNew) return false;
+            if (filterSignificance && site.significance !== filterSignificance) return false;
+            if (filterVisited === 'visited' && !site.visited) return false;
+            if (filterVisited === 'unvisited' && site.visited) return false;
+            if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
+            if (filterCountry !== 'all' && site.country !== filterCountry) return false;
+            if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
+            if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
+            if (showArcOnly && !site.special.includes('arc')) return false;
 
+            if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
+                if (site.distance > parseInt(filterRadius, 10)) return false;
+            }
+            return true;
+        });
+    }, [
+        derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, 
+        filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius
+    ]);
+
+    const passYear = (site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
-        if (filterYear !== 'all' && siteYearStr !== filterYear) return false;
+        return filterYear === 'all' || siteYearStr === filterYear;
+    };
+    
+    const passCmd = (site) => {
+        return filterCommander === 'all' || (site.commanders && site.commanders.includes(filterCommander));
+    };
 
-        if (filterCommander !== 'all' && (!site.commanders || !site.commanders.includes(filterCommander))) return false;
+    const passCat = (site) => {
+        return filterCategory.length === 0 || filterCategory.includes(site.category);
+    };
 
-        if (showArcOnly && !site.special.includes('arc')) return false;
+    const availableYears = Array.from(
+        new Set(
+            sitesFilteredBase
+                .filter(site => passCmd(site) && passCat(site))
+                .map(s => s.year ? String(s.year).trim() : '')
+                .filter(y => y !== '')
+        )
+    ).sort();
 
-        if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
-            if (site.distance > parseInt(filterRadius, 10)) return false;
-        }
-        return true;
-    });
+    const availableCommanders = Array.from(
+        new Set(
+            sitesFilteredBase
+                .filter(site => passYear(site) && passCat(site))
+                .flatMap(s => s.commanders || [])
+        )
+    ).sort();
 
-    const categoryCounts = sitesFilteredWithoutCategory.reduce((acc, site) => {
-        acc[site.category] = (acc[site.category] || 0) + 1;
-        return acc;
-    }, {});
+    const sitesForCategoryCounts = useMemo(() => {
+        return sitesFilteredBase.filter(site => passYear(site) && passCmd(site));
+    }, [sitesFilteredBase, passYear, passCmd]);
 
-    const filteredSites = sitesFilteredWithoutCategory.filter(site => {
-        if (filterCategory.length > 0 && !filterCategory.includes(site.category)) return false;
-        return true;
-    });
+    const categoryCounts = useMemo(() => {
+        return sitesForCategoryCounts.reduce((acc, site) => {
+            acc[site.category] = (acc[site.category] || 0) + 1;
+            return acc;
+        }, {});
+    }, [sitesForCategoryCounts]);
+
+    const filteredSites = useMemo(() => {
+        return sitesForCategoryCounts.filter(site => passCat(site));
+    }, [sitesForCategoryCounts, passCat]);
 
     const isFiltered =
         filterCategory.length > 0 ||
@@ -509,6 +547,8 @@ export const AppProvider = ({ children }) => {
             sites: filteredSites,
             allSites: derivedSites,
             view, setView,
+            selectedSite, setSelectedSite,
+            siteToOpenPopup, setSiteToOpenPopup,
             toggleVisited,
             geolocationEnabled,
             userCoords,
@@ -524,8 +564,8 @@ export const AppProvider = ({ children }) => {
             filterSignificance, setFilterSignificance,
             filterVisited, setFilterVisited,
             filterRadius, setFilterRadius,
-            filterYear, setFilterYear,
-            filterCommander, setFilterCommander,
+            filterYear, setFilterYear, availableYears,
+            filterCommander, setFilterCommander, availableCommanders,
             showArcOnly, setShowArcOnly,
             visitedSites,
             currentUser,

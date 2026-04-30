@@ -160,34 +160,9 @@ const LocationMarker = () => {
 };
 
 // Helper component to center map manually on user location via control button
-// Helper component to calculate and update clustering radius based on zoom
-const ClusteringController = ({ setMaxClusterRadius }) => {
-    const map = useMap();
-
-    const updateRadius = () => {
-        const zoom = map.getZoom();
-        const center = map.getCenter();
-
-        // At zoom Level z, 1 pixel = (40075 * cos(lat)) / (256 * 2^z) km
-        // So pixels for 3 km = 3 / ((40075 * cos(lat)) / (256 * 2^z))
-        const kmPerPixel = (40075 * Math.cos(center.lat * Math.PI / 180)) / (256 * Math.pow(2, zoom));
-        const pixelsFor3Km = 3 / kmPerPixel;
-
-        // We set a minimum of 20px and a maximum of 80px to keep it usable
-        const radius = Math.min(Math.max(Math.round(pixelsFor3Km), 20), 80);
-        setMaxClusterRadius(radius);
-    };
-
-    useEffect(() => {
-        updateRadius(); // Initial calculation
-        map.on('zoomend', updateRadius);
-        return () => {
-            map.off('zoomend', updateRadius);
-        };
-    }, [map]);
-
-    return null;
-};
+// Dynamic clustering radius was removed because it forces MarkerClusterGroup to remount
+// on every zoom, which breaks popup animations and zoomToShowLayer.
+// A fixed maxClusterRadius of 45 provides the requested high sensitivity.
 
 // Helper component to track map bounds
 const BoundsTracker = () => {
@@ -405,6 +380,80 @@ const RemoveDefaultZoom = () => {
     return null;
 };
 
+const CenterOnSelectedSite = () => {
+    const { selectedSite } = useAppContext();
+    const map = useMap();
+    useEffect(() => {
+        if (selectedSite && map) {
+            map.flyTo([selectedSite.latitude, selectedSite.longitude], 12, { duration: 1 });
+        }
+    }, [selectedSite, map]);
+    return null;
+};
+
+// Helper component to handle programmatic popup opening
+const PopupOpener = ({ markerRefs, clusterRef }) => {
+    const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
+    const map = useMap();
+
+    useEffect(() => {
+        if (!siteToOpenPopup || !clusterRef.current) return;
+
+        let isCancelled = false;
+        let attempts = 0;
+        let activeTimeout;
+
+        const tryOpenPopup = () => {
+            if (isCancelled) return;
+
+            if (markerRefs.current[siteToOpenPopup.id]) {
+                const marker = markerRefs.current[siteToOpenPopup.id];
+                
+                if (clusterRef.current.hasLayer(marker)) {
+                    // Fly to the marker location first. This ensures unclustered markers are centered.
+                    // It also ensures we don't conflict with zoomToShowLayer's own zooming,
+                    // which was causing dense clusters to "open and close" when flyTo finished AFTER spiderfying.
+                    map.flyTo([siteToOpenPopup.latitude, siteToOpenPopup.longitude], 15, { duration: 1.5 });
+                    
+                    activeTimeout = setTimeout(() => {
+                        if (isCancelled || !clusterRef.current) return;
+                        
+                        // zoomToShowLayer will now cleanly spiderfy if it's a dense cluster,
+                        // without being interrupted by a concurrent map flight.
+                        clusterRef.current.zoomToShowLayer(marker, () => {
+                            setTimeout(() => {
+                                if (!isCancelled) {
+                                    marker.openPopup();
+                                    setSiteToOpenPopup(null); // Clear after opening
+                                }
+                            }, 250); // small delay to allow spiderfy animations to finish
+                        });
+                    }, 1600); // Wait for the 1.5s flyTo to finish
+                } else if (attempts < 50) {
+                    attempts++;
+                    activeTimeout = setTimeout(tryOpenPopup, 100);
+                } else {
+                    setSiteToOpenPopup(null);
+                }
+            } else if (attempts < 50) {
+                attempts++;
+                activeTimeout = setTimeout(tryOpenPopup, 100);
+            } else {
+                setSiteToOpenPopup(null);
+            }
+        };
+
+        tryOpenPopup();
+
+        return () => {
+            isCancelled = true;
+            clearTimeout(activeTimeout);
+        };
+    }, [siteToOpenPopup, setSiteToOpenPopup, map, clusterRef, markerRefs]);
+
+    return null;
+};
+
 
 
 const MapView = () => {
@@ -414,12 +463,14 @@ const MapView = () => {
         filterRadius, setFilterRadius,
         mapStyle,
         theme,
-        isFiltered, clearAllFilters
+        isFiltered, clearAllFilters,
+        selectedSite, setSelectedSite,
+        siteToOpenPopup, setSiteToOpenPopup
     } = useAppContext();
-    const [selectedSite, setSelectedSite] = useState(null);
     const [navigatingSite, setNavigatingSite] = useState(null);
-    const [maxClusterRadius, setMaxClusterRadius] = useState(80);
     const iconsCache = useRef({});
+    const markerRefs = useRef({});
+    const clusterRef = useRef();
 
     // Derive unique categories from allSites and sort them
     const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
@@ -452,17 +503,18 @@ const MapView = () => {
                 />
 
                 <LocationMarker />
+                <CenterOnSelectedSite />
                 <SearchControl />
                 <ZoomControl position="topright" />
                 <MapStyleControl />
                 <CenterControl />
-                <ClusteringController setMaxClusterRadius={setMaxClusterRadius} />
                 <BoundsTracker />
+                <PopupOpener markerRefs={markerRefs} clusterRef={clusterRef} />
 
                 <MarkerClusterGroup
+                    ref={clusterRef}
                     chunkedLoading
-                    maxClusterRadius={maxClusterRadius}
-                    key={`cluster-group-${maxClusterRadius}`} // Re-mount when radius changes significantly
+                    maxClusterRadius={45}
                 >
                     {useMemo(() => sites.map(site => {
                         const iconKey = `${site.category}-${site.significance}-${site.visited}-${theme}`;
@@ -476,6 +528,7 @@ const MapView = () => {
                                 key={site.id}
                                 position={[site.latitude, site.longitude]}
                                 icon={icon}
+                                ref={(r) => { if (r) markerRefs.current[site.id] = r; }}
                             >
                                 <Popup 
                                     autoPanPadding={[50, 50]} 

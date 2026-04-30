@@ -3395,7 +3395,7 @@
     "significance": "Major",
     "year": "1805",
     "location": "Cabo Trafalgar",
-    "country": "Spain",
+    "country": "Atlantic Ocean",
     "description": "The Battle of Trafalgar was fought on October 21, 1805, between the British Royal Navy and the combined fleets of the French and Spanish Navies.",
     "latitude": 36.239983,
     "longitude": -6.18796,
@@ -7805,5 +7805,89 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Malta_3.webp",
     "link": "https://en.wikipedia.org/wiki/French_invasion_of_Malta",
     "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "412",
+    "name": "French Memorial Fallen in Egypt Campaing",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Cairo",
+    "country": "Egypt",
+    "description": "A memorial stone commemorating the French soldiers and participants of Napoleon's Egyptian Expedition located in the Latin Cemetery in Cairo.",
+    "latitude": 30.057,
+    "longitude": 31.297570,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cairo_cemetery.webp",
+    "link": "https://en.wikipedia.org/wiki/French_invasion_of_Malta",
+    "createDate": "2025-03-22T10:00:00Z"
+  },
+  {
+    "id": "413",
+    "name": "Action of 5 October 1804",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": "1804",
+    "date": "1804-10-05",
+    "location": "Cabo de Santa María, Portugal",
+    "country": "Atlantic Ocean",
+    "description": "a British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
+    "latitude": 36.725764,
+    "longitude": -7.921993,
+    "special": "3",
+    "commanders": [
+      "Graham Moore",
+      "José de Bustamante"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cabo_Sta_Maria.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "414",
+    "name": "Battle of Sandöström",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": "1808",
+    "date": "1808-08-02",
+    "location": "Finnish archipelago, near Kimito",
+    "country": "Baltic sea",
+    "description": "The Swedes, whose fleet controlled the open sea, attempted to remove the Russian reinforcements.",
+    "latitude": 60.211606,
+    "longitude": 22.506170,
+    "special": "Finish War",
+    "victor": "Russia",
+    "defeated": "Sweeden",
+    "commanders": [
+      "Lodewijk van Heiden",
+      "Pyotr Dodt",
+      "Klas Hjelmstjerna",
+      "Önnert Jönsson",
+      "Sölfverarm"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sandostrom.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sand%C3%B6str%C3%B6m",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "415",
+    "name": "Battle of Palva Sound",
+    "description": "The Battle of Palva Sund was fought between Sweden and Russia on September 18th 1808.",
+    "date": "1808-09-18",
+    "location": "Finnish archipelago, near Veluka",
+    "country": "Baltic sea",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Palva_Sund",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": "1808",
+    "latitude": 60.448492,
+    "longitude": 21.649572,
+    "special": "Finish War",
+    "victor": "Russia",
+    "defeated": "Sweeden",
+    "commanders": [
+      "Salomon von Rajalin",
+      "Aleksey Yefimovich Myasoyedov"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palva_sound.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

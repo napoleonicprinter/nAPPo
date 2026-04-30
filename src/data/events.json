@@ -1940,5 +1940,32 @@
         "country": "Malta",
         "description": "The French First Republic led by Napoleon Bonaparte successfully invaded the islands of Malta and Gozo, then ruled by the Knights Hospitaller, in June 10th 1798 as part of the Mediterranean campaign of the French Revolutionary Wars.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/French_invasion_of_Malta"
+    },
+    {
+        "id": 227,
+        "title": "Naval Battle of Sandöström",
+        "date": "1808-08-02",
+        "location": "Finnish archipelago, near Kimito",
+        "country": "Baltic Sea",
+        "description": "The Swedes, whose fleet controlled the open sea, attempted to remove the Russian reinforcements.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sand%C3%B6str%C3%B6m"
+    },
+    {
+        "id": 228,
+        "title": "Naval Action of 5 October 1804",
+        "date": "1804-10-05",
+        "location": "Cabo de Santa María, Portugal",
+        "country": "Atlantic Ocean",
+        "description": "a British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804"
+    },
+    {
+        "id": "229",
+        "title": "Naval Battle of Palva Sound",
+        "description": "The Battle of Palva Sund was fought between Sweden and Russia on September 18th 1808.",
+        "date": "1808-09-18",
+        "location": "Finnish archipelago, near Veluka",
+        "country": "Baltic Sea",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Palva_Sund"
     }
 ]

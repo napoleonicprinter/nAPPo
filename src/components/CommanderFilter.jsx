@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
 const CommanderFilter = ({ compact, style, className }) => {
-    const { filterCommander, setFilterCommander, allSites, filterCategory } = useAppContext();
+    const { filterCommander, setFilterCommander, availableCommanders, filterCategory } = useAppContext();
 
     const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
     const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
@@ -14,17 +14,9 @@ const CommanderFilter = ({ compact, style, className }) => {
         return null;
     }
 
-    const commanders = Array.from(
-        new Set(
-            allSites
-                .filter(s => allowedCategories.includes(s.category) && s.commanders)
-                .flatMap(s => s.commanders)
-        )
-    ).sort();
-
     const options = [
         { value: 'all', label: 'All Commanders' },
-        ...commanders.map(c => ({ value: c, label: c }))
+        ...availableCommanders.map(c => ({ value: c, label: c }))
     ];
 
     return (

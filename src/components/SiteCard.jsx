@@ -34,7 +34,7 @@ const renderSignificanceStars = (sig) => {
 };
 
 const SiteCard = ({ site, onClose, isCompact = false }) => {
-    const { toggleVisited, userCoords, geolocationEnabled } = useAppContext();
+    const { toggleVisited, userCoords, geolocationEnabled, setView, setSiteToOpenPopup } = useAppContext();
     const [showNavigation, setShowNavigation] = useState(false);
     const [showFullDetails, setShowFullDetails] = useState(false);
 
@@ -146,26 +146,53 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         {isCompact && (
-                            <button
-                                onClick={() => setShowFullDetails(true)}
-                                style={{
-                                    background: 'transparent',
-                                    border: 'none',
-                                    color: 'var(--accent-primary)',
-                                    fontWeight: 'bold',
-                                    fontSize: '0.85rem',
-                                    cursor: 'pointer',
-                                    padding: '0 4px',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.2s',
-                                    display: 'flex',
-                                    alignItems: 'center'
-                                }}
-                                onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; }}
-                                onMouseOut={(e) => { e.currentTarget.style.color = 'var(--accent-primary)'; }}
-                            >
-                                Details &rarr;
-                            </button>
+                            <>
+                                <button
+                                    onClick={() => {
+                                        setSiteToOpenPopup(site);
+                                        setView('map');
+                                    }}
+                                    style={{
+                                        background: 'transparent',
+                                        border: 'none',
+                                        color: 'var(--text-secondary)',
+                                        fontWeight: 'bold',
+                                        fontSize: '0.85rem',
+                                        cursor: 'pointer',
+                                        padding: '0 4px',
+                                        textDecoration: 'none',
+                                        transition: 'color 0.2s',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '4px'
+                                    }}
+                                    onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; }}
+                                    onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
+                                    title="Show on Map"
+                                >
+                                    <MapPin size={14} /> Map
+                                </button>
+                                <button
+                                    onClick={() => setShowFullDetails(true)}
+                                    style={{
+                                        background: 'transparent',
+                                        border: 'none',
+                                        color: 'var(--accent-primary)',
+                                        fontWeight: 'bold',
+                                        fontSize: '0.85rem',
+                                        cursor: 'pointer',
+                                        padding: '0 4px',
+                                        textDecoration: 'none',
+                                        transition: 'color 0.2s',
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}
+                                    onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; }}
+                                    onMouseOut={(e) => { e.currentTarget.style.color = 'var(--accent-primary)'; }}
+                                >
+                                    Details &rarr;
+                                </button>
+                            </>
                         )}
                     </div>
                 </div>

@@ -234,11 +234,11 @@ const Header = () => {
 
                     <div className="settings-wrapper" style={{ position: 'relative' }}>
                         <button
-                            className="settings-btn glass-panel"
+                            className={`settings-btn glass-panel ${showSettings ? 'active' : ''}`}
                             onClick={() => setShowSettings(!showSettings)}
                             title="Settings"
                         >
-                            <Settings size={20} />
+                            <Settings size={20} style={{ color: showSettings ? 'var(--accent-danger)' : 'inherit' }} />
                             <span className="mobile-only-label">Settings</span>
                         </button>
 
