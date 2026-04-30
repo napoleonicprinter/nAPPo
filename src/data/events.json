@@ -1931,5 +1931,14 @@
         "country": "Portugal",
         "description": "It was fought on September 27th 1810 during the Peninsular War in the Portuguese mountain range of Serra do Buçaco, resulting in the defeat of French forces by Lord Wellington's Anglo-Portuguese Army.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal"
+    },
+    {
+        "id": 226,
+        "title": "French invasion of Malta",
+        "date": "1798-06-10",
+        "location": "La Valetta",
+        "country": "Malta",
+        "description": "The French First Republic led by Napoleon Bonaparte successfully invaded the islands of Malta and Gozo, then ruled by the Knights Hospitaller, in June 10th 1798 as part of the Mediterranean campaign of the French Revolutionary Wars.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/French_invasion_of_Malta"
     }
 ]
