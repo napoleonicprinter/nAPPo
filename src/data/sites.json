@@ -2777,10 +2777,10 @@
     "location": "Madrid, Madrid",
     "country": "Spain",
     "description": "In 1808, Napoleon's armies converted this Royal Porcelain Factory into a barracks. In August 1812, it was captured by Wellington's troops, who ordered that, once the troops left the fort, all the fortifications of El Retiro Park be destroyed, including this Royal Porcelain Factory, which had made Madrid porcelain a favorite among the nobility and royal houses of much of Europe.",
-    "latitude": 40.4165,
-    "longitude": -3.70256,
+    "latitude": 40.41065,
+    "longitude": -3.6836,
     "visited": false,
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqN7RmfHizSIDwIkDVlrB3HGH6dZqGFPm4kKltBwjWjG8G3wu0XBuXm4ZV3EmVptawavr5p5YDAlBh6xoETQ6YT4cpry4VfJquZ2ka25eQG-gGXI6a0rU0iRSuxeteQACZx6BzA=w408-h306-k-no",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Porcelana_madrid.webp",
     "more_info_link": "https://www.revivemadrid.com/lugares-de-la-memoria/real-fabrica-porcelana",
     "youtube_link": "https://youtu.be/Ca9LxUF50Y4?si=8kPxtrKmg0tixMqX",
     "createDate": "2025-03-15T10:00:00Z",
@@ -3044,10 +3044,10 @@
     "location": "Madrid",
     "country": "Spain",
     "description": "The citadel of Madrid was a star fort with three fortified enceintes[1] constructed by the French Army during the Peninsular War, in the grounds of the Palacio del Buen Retiro, on the Retiro heights,[note 1] outside the eastern gate of the city of Madrid.",
-    "latitude": 40.4025,
-    "longitude": -3.70425,
+    "latitude": 40.410980,
+    "longitude": -3.681990,
     "visited": false,
-    "image": "https://amigosdelbuenretiro.com/wp-content/uploads/2022/10/Plano_de_las_fortificaciones_francesas_en_el_Buen_Retiro_circa_1813_OPT.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Citadel_madrid.webp",
     "youtube_link": "https://www.youtube.com/watch?v=JE1y6bjoUb8",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -7915,5 +7915,18 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gamonal.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "417",
+    "name": "General Jirčik Memorial - Austerlitz",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Pratzen heights. Prace",
+    "country": "Czech Republic",
+    "description": "This memorial commemorates the soldiers of Jirčík's Brigade who were killed in the Battle of Austerlitz.",
+    "latitude": 49.128496,
+    "longitude": 19.763029,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jircik_memorial.webp",
+    "createDate": "2025-03-22T10:00:00Z"
   }
 ]

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import sitesData from '../data/sites.json';
 import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
