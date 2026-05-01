@@ -1967,5 +1967,14 @@
         "location": "Finnish archipelago, near Veluka",
         "country": "Baltic Sea",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Palva_Sund"
+    },
+    {
+        "id": "230",
+        "title": "Battlefield of Gamonal",
+        "description": "On November 11th 1808, a French army under Soult overwhelmed the outnumbered Spanish troops under General Belvedere, opening central Spain, including Madrid, to invasion.",
+        "date": "1808-11-10",
+        "location": "Gamonal",
+        "country": "Spain",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gamonal"
     }
 ]

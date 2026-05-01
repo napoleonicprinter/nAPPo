@@ -771,7 +771,7 @@
     "year": "1812",
     "location": "Alba de Tormes,Salamanca",
     "country": "Spain",
-    "description": "La batalla de Alba de Tormes fue una batalla librada entre los días 8 y 16 de noviembre de 1812 entre las fuerzas francesas al mando del Mariscal Jean-de-Dieu Soult y las fuerzas aliadas (británicas, portuguesas y españolas) al mando del Duque de Wellington.",
+    "description": "La batalla de Alba de Tormes fue una batalla librada entre los días 8 y 16 de noviembre de 1812 entre las fuerzas francesas al mando del Mariscal Jean de Dieu Soult y las fuerzas aliadas (británicas, portuguesas y españolas) al mando del Duque de Wellington.",
     "latitude": 40.824058,
     "longitude": -5.508833,
     "visited": false,
@@ -780,7 +780,7 @@
     "createDate": "2025-02-26T10:00:00Z",
     "special": false,
     "commanders": [
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Wellington"
     ]
   },
@@ -1041,7 +1041,7 @@
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
     "commanders": [
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Wellington"
     ]
   },
@@ -1079,7 +1079,7 @@
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
     "commanders": [
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Juan de la Cruz Mourgeon"
     ]
   },
@@ -1091,7 +1091,7 @@
     "year": "1812",
     "location": "Sevilla, Andalucía, España",
     "country": "Spain",
-    "description": "El Alcázar fue utilizado como cuartel general por el general francés Jean-de-Dieu Soult durante la ocupación francesa de Sevilla.",
+    "description": "El Alcázar fue utilizado como cuartel general por el general francés Jean de Dieu Soult durante la ocupación francesa de Sevilla.",
     "latitude": 37.383052,
     "longitude": -5.990226,
     "visited": false,
@@ -1138,7 +1138,7 @@
     "createDate": "2025-03-15T10:00:00Z",
     "special": false,
     "commanders": [
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Victor"
     ]
   },
@@ -2222,7 +2222,7 @@
     "date": "1809-05-12",
     "location": "Oporto",
     "country": "Portugal",
-    "description": "El 12 de maig de 1809 va ser una contesa que va acabar amb la victòria per a l'exèrcit anglo-portuguès comandat per Sir Arthur Wellesley sobre l'exèrcit francès del mariscal Nicolas Jean de Dieu Soult.",
+    "description": "El 12 de maig de 1809 va ser una contesa que va acabar amb la victòria per a l'exèrcit anglo-portuguès comandat per Sir Arthur Wellesley sobre l'exèrcit francès del mariscal Jean de Dieu Soult.",
     "latitude": 41.149852,
     "longitude": -8.574079,
     "visited": false,
@@ -3999,7 +3999,7 @@
     "year": "1805",
     "location": "Memmingen",
     "country": "Germany",
-    "description": "It occurred on 14 October that year and culminated in the surrender of Karl Spangen to Jean-de-Dieu Soult's 4th Army Corps.",
+    "description": "It occurred on 14 October that year and culminated in the surrender of Karl Spangen to Jean de Dieu Soult's 4th Army Corps.",
     "latitude": 47.98,
     "longitude": 10.18,
     "visited": false,
@@ -4007,7 +4007,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Memmingen",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Karl Spangen"
     ]
   },
@@ -6621,7 +6621,7 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
     "commanders": [
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Arthur Wellesley",
       "Luís do Rego"
     ]
@@ -6865,7 +6865,7 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
     "commanders": [
-      "Nicolas Jean de Dieu Soult",
+      "Jean de Dieu Soult",
       "Wellington"
     ]
   },
@@ -7241,7 +7241,7 @@
       "Jean-Baptiste Bernadotte",
       "Joachim Murat",
       "Johann Ewald",
-      "Jean-de-Dieu Soult"
+      "Jean de Dieu Soult"
     ]
   },
   {
@@ -7418,7 +7418,7 @@
     "commanders": [
       "Napoleon",
       "Joachim Murat",
-      "Jean-de-Dieu Soult",
+      "Jean de Dieu Soult",
       "Levin Bennigsen",
       "Nikolay Kamensky"
     ]
@@ -7888,6 +7888,32 @@
       "Aleksey Yefimovich Myasoyedov"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palva_sound.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "416",
+    "name": "Battlefield of Gamonal",
+    "description": "On November 11th 1808, a French army under Soult overwhelmed the outnumbered Spanish troops under General Belvedere, opening central Spain, including Madrid, to invasion.",
+    "date": "1808-11-10",
+    "location": "Gamonal",
+    "country": "Spain",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gamonal",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1808",
+    "latitude": 42.357666,
+    "longitude": -3.646871,
+    "special": [
+      "Guerra de Independencia",
+      "Peninsular War"
+    ],
+    "victor": "France",
+    "defeated": "Spain",
+    "commanders": [
+      "Conde de Belvedere",
+      "Jean de Dieu Soult"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gamonal.webp",
     "createDate": "2025-03-15T10:00:00Z"
   }
 ]
