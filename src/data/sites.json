@@ -7997,5 +7997,28 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Posta.webp",
     "createDate": "2025-03-22T10:00:00Z",
     "link": "https://www.morava-napoleonska.cz/en/localities/stara-posta/"
+  },
+  {
+    "id": "424",
+    "name": "Action of 25 September 1806",
+    "description": "A French squadron comprising five frigates and two corvettes, sailing to the French West Indies with supplies and reinforcements, was intercepted by a British squadron of six ships of the line.",
+    "date": "1806-09-25",
+    "location": "Bay of Viscay",
+    "country": "Atlantic Ocean",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_September_1806",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": "1806",
+    "latitude": 46.3031,
+    "longitude": -1.689863,
+    "special": "3",
+    "victor": "Britain",
+    "defeated": "France",
+    "commanders": [
+      "Samuel Hood",
+      "Éléonore Soleil"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/25_Sep_1806.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

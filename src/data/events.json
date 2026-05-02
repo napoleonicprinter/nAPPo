@@ -1976,5 +1976,14 @@
         "location": "Gamonal",
         "country": "Spain",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gamonal"
+    },
+    {
+        "id": "231",
+        "title": "Action of 25 September 1806",
+        "description": "A French squadron comprising five frigates and two corvettes, sailing to the French West Indies with supplies and reinforcements, was intercepted by a British squadron of six ships of the line.",
+        "date": "1806-09-25",
+        "location": "Bay of Viscay",
+        "country": "Atlantic Ocean",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_September_1806"
     }
 ]
