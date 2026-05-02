@@ -402,33 +402,101 @@ const PopupOpener = ({ markerRefs, clusterRef }) => {
         let isCancelled = false;
         let attempts = 0;
         let activeTimeout;
+        let spiderfyHandler = null;
+
+        const openPopupSafely = (marker) => {
+            // Temporarily override the popup's autoPan so that opening
+            // the popup does NOT trigger a map pan → moveend → unspiderfy chain.
+            const popup = marker.getPopup();
+            if (popup) {
+                popup.options.autoPan = false;
+            }
+            marker.openPopup();
+            // Restore autoPan after the popup is open so subsequent interactions behave normally.
+            setTimeout(() => {
+                if (popup) {
+                    popup.options.autoPan = true;
+                }
+            }, 300);
+        };
 
         const tryOpenPopup = () => {
             if (isCancelled) return;
 
             if (markerRefs.current[siteToOpenPopup.id]) {
                 const marker = markerRefs.current[siteToOpenPopup.id];
-                
+
                 if (clusterRef.current.hasLayer(marker)) {
-                    // Fly to the marker location first. This ensures unclustered markers are centered.
-                    // It also ensures we don't conflict with zoomToShowLayer's own zooming,
-                    // which was causing dense clusters to "open and close" when flyTo finished AFTER spiderfying.
-                    map.flyTo([siteToOpenPopup.latitude, siteToOpenPopup.longitude], 15, { duration: 1.5 });
-                    
-                    activeTimeout = setTimeout(() => {
-                        if (isCancelled || !clusterRef.current) return;
-                        
-                        // zoomToShowLayer will now cleanly spiderfy if it's a dense cluster,
-                        // without being interrupted by a concurrent map flight.
-                        clusterRef.current.zoomToShowLayer(marker, () => {
+                    // Check if the marker is already visible (not inside a cluster icon)
+                    const visibleParent = clusterRef.current.getVisibleParent(marker);
+                    const isAlreadyVisible = visibleParent === marker;
+
+                    if (isAlreadyVisible) {
+                        // Marker is already unclustered — just pan to it and open the popup
+                        map.flyTo([siteToOpenPopup.latitude, siteToOpenPopup.longitude], Math.max(map.getZoom(), 13), { duration: 1.2 });
+                        activeTimeout = setTimeout(() => {
+                            if (!isCancelled) {
+                                openPopupSafely(marker);
+                                setSiteToOpenPopup(null);
+                            }
+                        }, 1300);
+                    } else {
+                        // Marker is inside a cluster — need to expand/spiderfy.
+                        // Temporarily block the cluster group's zoom-triggered unspiderfy
+                        // handlers to prevent the spiderfied state from collapsing.
+                        // The actual handlers are:
+                        //   zoomstart → _unspiderfyZoomStart
+                        //   zoomend  → _noanimationUnspiderfy
+                        const clusterGroup = clusterRef.current;
+                        const origZoomStart = clusterGroup._unspiderfyZoomStart;
+                        const origNoAnimUnspiderfy = clusterGroup._noanimationUnspiderfy;
+
+                        // Unbind and replace with no-ops
+                        const noop = function() {};
+                        map.off('zoomstart', origZoomStart, clusterGroup);
+                        map.off('zoomend', origNoAnimUnspiderfy, clusterGroup);
+                        clusterGroup._unspiderfyZoomStart = noop;
+                        clusterGroup._noanimationUnspiderfy = noop;
+
+                        const restoreHandlers = () => {
+                            clusterGroup._unspiderfyZoomStart = origZoomStart;
+                            clusterGroup._noanimationUnspiderfy = origNoAnimUnspiderfy;
+                            // Re-bind after a delay so the spiderfied state is fully stable
                             setTimeout(() => {
-                                if (!isCancelled) {
-                                    marker.openPopup();
-                                    setSiteToOpenPopup(null); // Clear after opening
+                                if (clusterRef.current) {
+                                    map.on('zoomstart', origZoomStart, clusterGroup);
+                                    map.on('zoomend', origNoAnimUnspiderfy, clusterGroup);
                                 }
-                            }, 250); // small delay to allow spiderfy animations to finish
+                            }, 600);
+                        };
+
+                        // Listen for the actual spiderfied event so we know animation is done
+                        spiderfyHandler = () => {
+                            activeTimeout = setTimeout(() => {
+                                if (!isCancelled) {
+                                    openPopupSafely(marker);
+                                    setSiteToOpenPopup(null);
+                                    restoreHandlers();
+                                }
+                            }, 350);
+                        };
+                        clusterGroup.once('spiderfied', spiderfyHandler);
+
+                        // zoomToShowLayer handles zoom + spiderfy
+                        clusterGroup.zoomToShowLayer(marker, () => {
+                            // Callback fires when marker is visible.
+                            // If spiderfying wasn't needed, the spiderfied event
+                            // won't fire — handle via this fallback timeout.
+                            activeTimeout = setTimeout(() => {
+                                if (!isCancelled) {
+                                    clusterGroup.off('spiderfied', spiderfyHandler);
+                                    openPopupSafely(marker);
+                                    setSiteToOpenPopup(null);
+                                    restoreHandlers();
+                                }
+                            }, 800);
                         });
-                    }, 1600); // Wait for the 1.5s flyTo to finish
+                    }
                 } else if (attempts < 50) {
                     attempts++;
                     activeTimeout = setTimeout(tryOpenPopup, 100);
@@ -448,6 +516,9 @@ const PopupOpener = ({ markerRefs, clusterRef }) => {
         return () => {
             isCancelled = true;
             clearTimeout(activeTimeout);
+            if (spiderfyHandler && clusterRef.current) {
+                clusterRef.current.off('spiderfied', spiderfyHandler);
+            }
         };
     }, [siteToOpenPopup, setSiteToOpenPopup, map, clusterRef, markerRefs]);
 
