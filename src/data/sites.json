@@ -8020,5 +8020,17 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/25_Sep_1806.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "425",
+    "name": "'Jeune Voltigeur' - Toulouse battle",
+    "description": "The work of artist Sonia Queija was inaugurated on February 15, 2025. The monument pays tribute to the soldiers who participated in the Battle of Toulouse in 1814.",
+    "link": "https://actu.fr/occitanie/toulouse_31555/toulouse-quand-l-inauguration-d-une-statue-d-un-soldat-de-napoleon-tourne-a-la-bataille-politique_62259301.html",
+    "category": "Monument",
+    "significance": "Minor",
+    "latitude": 43.611557,
+    "longitude": 1.414579,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jeune_voltigeur.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]
