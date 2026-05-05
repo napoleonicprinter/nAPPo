@@ -392,74 +392,122 @@ const CenterOnSelectedSite = () => {
 };
 
 // Helper component to handle programmatic popup opening
-const PopupOpener = ({ markerRefs, clusterRef }) => {
+const PopupOpener = ({ markerRefs, clusterInstance }) => {
     const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
     const map = useMap();
 
     useEffect(() => {
-        if (!siteToOpenPopup || !clusterRef.current) return;
+        if (!siteToOpenPopup) return;
+        
+        console.log(`PopupOpener: Request to open site ${siteToOpenPopup.id}. ClusterInstance ready: ${!!clusterInstance}`);
+        
+        if (!clusterInstance) return;
 
         let isCancelled = false;
         let activeTimeout;
-        const clusterGroup = clusterRef.current;
+        const clusterGroup = clusterInstance;
 
         const tryOpenPopup = (attempts = 0) => {
             if (isCancelled) return;
 
-            const marker = markerRefs.current[siteToOpenPopup.id];
-            if (!marker) {
-                if (attempts < 100) {
+            // A marker is ready if it's found in our refs
+            const marker = markerRefs.current.get(siteToOpenPopup.id);
+            const isReady = marker && clusterGroup && clusterGroup._map;
+
+            if (!isReady) {
+                if (attempts % 10 === 0) {
+                    console.log(`PopupOpener (attempt ${attempts}): marker=${!!marker}, clusterGroup=${!!clusterGroup}, clusterMap=${!!(clusterGroup && clusterGroup._map)}`);
+                }
+                if (attempts < 150) {
                     activeTimeout = setTimeout(() => tryOpenPopup(attempts + 1), 100);
                 } else {
+                    console.warn(`PopupOpener: Timeout waiting for site ${siteToOpenPopup.id} to be ready on map.`);
                     setSiteToOpenPopup(null);
                 }
                 return;
             }
 
-            // Block automatic unspiderfying during the opening sequence
-            const origUnspiderfy = clusterGroup._unspiderfy;
-            if (typeof origUnspiderfy === 'function') {
-                clusterGroup._unspiderfy = function() {};
+            try {
+                // Stabilize spiderfying
+                const origUnspiderfy = clusterGroup._unspiderfy;
+                let blockUnspiderfy = true;
+                
+                // Override unspiderfy to be conditional
+                clusterGroup._unspiderfy = function() {
+                    if (blockUnspiderfy) {
+                        console.log("PopupOpener: Prevented automatic unspiderfy");
+                        return;
+                    }
+                    return origUnspiderfy.apply(this, arguments);
+                };
+
+                const restore = () => {
+                    blockUnspiderfy = false;
+                    clusterGroup._unspiderfy = origUnspiderfy;
+                };
+
+                if (typeof clusterGroup.zoomToShowLayer === 'function') {
+                    console.log(`PopupOpener: Calling zoomToShowLayer for site ${siteToOpenPopup.id}`);
+                    clusterGroup.zoomToShowLayer(marker, () => {
+                        if (isCancelled) {
+                            restore();
+                            return;
+                        }
+
+                        // For sites at identical coordinates, we may need to force spiderfy
+                        // if the marker is still not directly on the map.
+                        if (!marker._map && marker.__parent) {
+                            console.log("PopupOpener: Marker still clustered, forcing spiderfy");
+                            try {
+                                marker.__parent.spiderfy();
+                            } catch (e) {
+                                console.warn("Forced spiderfy failed:", e);
+                            }
+                        }
+
+                        activeTimeout = setTimeout(() => {
+                            if (!isCancelled) {
+                                const popup = marker.getPopup();
+                                if (popup) popup.options.autoPan = false;
+                                
+                                console.log(`PopupOpener: Opening popup for site ${siteToOpenPopup.id}`);
+                                marker.openPopup();
+                                setSiteToOpenPopup(null);
+                                // Keep it blocked for a few seconds so the user can interact
+                                setTimeout(restore, 5000);
+                            } else {
+                                restore();
+                            }
+                        }, 1000);
+                    });
+                } else {
+                    map.flyTo(marker.getLatLng(), 18);
+                    activeTimeout = setTimeout(() => {
+                        if (!isCancelled) {
+                            marker.openPopup();
+                            setSiteToOpenPopup(null);
+                        }
+                    }, 1000);
+                }
+            } catch (err) {
+                console.error("PopupOpener error:", err);
+                setSiteToOpenPopup(null);
             }
-
-            const restore = () => {
-                setTimeout(() => {
-                    if (clusterGroup && typeof origUnspiderfy === 'function') {
-                        clusterGroup._unspiderfy = origUnspiderfy;
-                    }
-                }, 4000);
-            };
-
-            // zoomToShowLayer is the most reliable way to navigate to a marker
-            // it handles zooming, panning, and spiderfying automatically.
-            clusterGroup.zoomToShowLayer(marker, () => {
-                if (isCancelled) return;
-
-                activeTimeout = setTimeout(() => {
-                    if (!isCancelled) {
-                        const popup = marker.getPopup();
-                        if (popup) popup.options.autoPan = false;
-                        marker.openPopup();
-                        setSiteToOpenPopup(null);
-                        restore();
-                        
-                        // Re-enable autoPan after a short delay
-                        setTimeout(() => { if (popup) popup.options.autoPan = true; }, 1000);
-                    }
-                }, 500);
-            });
         };
 
         tryOpenPopup();
 
         return () => {
             isCancelled = true;
-            clearTimeout(activeTimeout);
+            if (activeTimeout) clearTimeout(activeTimeout);
         };
-    }, [siteToOpenPopup, setSiteToOpenPopup, map, clusterRef, markerRefs]);
+    }, [siteToOpenPopup, setSiteToOpenPopup, map, clusterInstance, markerRefs]);
 
     return null;
 };
+
+
+
 
 
 
@@ -476,8 +524,10 @@ const MapView = () => {
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
     const iconsCache = useRef({});
-    const markerRefs = useRef({});
-    const clusterRef = useRef();
+    const markerRefs = useRef(new Map());
+    const [clusterInstance, setClusterInstance] = useState(null);
+
+
 
     // Derive unique categories from allSites and sort them
     const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
@@ -516,10 +566,11 @@ const MapView = () => {
                 <MapStyleControl />
                 <CenterControl />
                 <BoundsTracker />
-                <PopupOpener markerRefs={markerRefs} clusterRef={clusterRef} />
+                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
 
                 <MarkerClusterGroup
-                    ref={clusterRef}
+                    ref={setClusterInstance}
+
                     chunkedLoading
                     maxClusterRadius={45}
                 >
@@ -535,8 +586,17 @@ const MapView = () => {
                                 key={site.id}
                                 position={[site.latitude, site.longitude]}
                                 icon={icon}
-                                ref={(r) => { if (r) markerRefs.current[site.id] = r; }}
+                                siteId={site.id}
+                                ref={(r) => {
+                                    if (r) {
+                                        markerRefs.current.set(site.id, r);
+                                    } else {
+                                        markerRefs.current.delete(site.id);
+                                    }
+                                }}
                             >
+
+
                                 <Popup 
                                     autoPanPadding={[50, 50]} 
                                     autoPanOptions={{ duration: 0.5, easeLinearity: 0.25 }}

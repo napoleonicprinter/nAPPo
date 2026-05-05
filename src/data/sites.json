@@ -7914,7 +7914,7 @@
     "country": "Czech Republic",
     "description": "This memorial commemorates the soldiers of Jirčík's Brigade who were killed in the Battle of Austerlitz.",
     "latitude": 49.128496,
-    "longitude": 19.763029,
+    "longitude": 16.763029,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jircik_memorial.webp",
     "createDate": "2025-03-22T10:00:00Z"
   },
@@ -8030,7 +8030,37 @@
     "significance": "Minor",
     "latitude": 43.611557,
     "longitude": 1.414579,
+    "location": "Toulouse",
+    "country": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jeune_voltigeur.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "426",
+    "name": "Wellington's horse grave site",
+    "description": "Copenhagen died on 12 February 1836 at Stratfield Saye, Duke of Wellington property at Hampshire in England, at the age of 28 years, and is burried under a large Turkey Oak tree.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Copenhagen_(horse)",
+    "category": "Landmark",
+    "significance": "Minor",
+    "latitude": 51.350,
+    "longitude": -0.996635,
+    "location": "Hampshire",
+    "country": "England",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Copenhagen_grave.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "427",
+    "name": "Museo Storico Nazionale dell'Artiglieria",
+    "category": "Museum",
+    "significance": "Medium",
+    "wikipedia_link": "https://it.wikipedia.org/wiki/Museo_storico_nazionale_dell%27artiglieria",
+    "location": "Turin",
+    "country": "Italy",
+    "description": "The Museo Storico Nazionale dell'Artiglieria is a museum in Turin, Italy, that houses a collection of military artillery from the Napoleonic era.",
+    "latitude": 45.0709,
+    "longitude": 7.6733,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_art_Turin.webp",
+    "createDate": "2025-04-22T10:00:00Z"
   }
 ]
