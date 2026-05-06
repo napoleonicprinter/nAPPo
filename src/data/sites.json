@@ -8062,5 +8062,19 @@
     "longitude": 7.6733,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_art_Turin.webp",
     "createDate": "2025-04-22T10:00:00Z"
+  },
+  {
+    "id": "428",
+    "name": "Friedland field hospital ",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "wikipedia_link": "https://it.wikipedia.org/wiki/Museo_storico_nazionale_dell%27artiglieria",
+    "location": "Pravdinsk",
+    "country": "Russia",
+    "description": "During the Battle of Friedland, this building housed a hospital where wounded Russian soldiers were taken, and it is perhaps this building that L. N. Tolstoy describes in his novel War and Peace.",
+    "latitude": 54.4455,
+    "longitude": 21.012859,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pravdinsk_hospital.webp",
+    "createDate": "2025-04-22T10:00:00Z"
   }
 ]
