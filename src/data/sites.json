@@ -8083,5 +8083,33 @@
     "longitude": 21.012859,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pravdinsk_hospital.webp",
     "createDate": "2025-04-22T10:00:00Z"
+  },
+  {
+    "id": "429",
+    "name": "Friedland",
+    "category": "Artwork",
+    "significance": "Major",
+    "link": "https://www.metmuseum.org/art/collection/search/437052",
+    "location": "Metropolitan Museum of Arts, New york",
+    "country": "USA",
+    "description": "Friedland is a painting by the French artist Ernest Meissonier, depicting the Battle of Friedland in 1807. It is a gift of Henry Hilton to the Metropolitan Museum of Arts in 1887.",
+    "latitude": 40.7794,
+    "longitude": -73.963244,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Friedland_moma.webp",
+    "createDate": "2025-04-22T10:00:00Z"
+  },
+  {
+    "id": "430",
+    "name": "Napoleon in His Study at the Tuileries",
+    "category": "Artwork",
+    "significance": "Major",
+    "link": "https://www.nga.gov/artworks/46114-emperor-napoleon-his-study-tuileries",
+    "location": "National Gallery of Art, Washington",
+    "country": "USA",
+    "description": "Napoleon in His Study at the Tuileries is a painting by the French artist Jacques-Louis David, depicting Napoleon Bonaparte in his study at the Tuileries Palace in 1800. It is in the National Gallery of Art, West Building Main Floor, Gallery 56, in Washington D.C., USA.",
+    "latitude": 38.891223,
+    "longitude": -77.019512,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_nga.webp",
+    "createDate": "2025-04-22T10:00:00Z"
   }
 ]
