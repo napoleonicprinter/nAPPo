@@ -98,14 +98,24 @@ const ShoppingView = ({ onClose }) => {
                                     <div className="shopping-card-content">
                                         <div className="shopping-image-container">
                                             <img src={item.image} alt={item.title} className="shopping-image" />
+                                            <span 
+                                                className="badge category-badge" 
+                                                style={{ 
+                                                    backgroundColor: '#58a6ff', 
+                                                    position: 'absolute', 
+                                                    bottom: '12px', 
+                                                    right: '12px', 
+                                                    zIndex: 10,
+                                                    boxShadow: '0 4px 6px rgba(0,0,0,0.3)'
+                                                }}
+                                            >
+                                                <Tag size={12} />
+                                                {item.category}
+                                            </span>
                                         </div>
                                         <div className="shopping-content">
                                             <div className="shopping-header-row">
                                                 <h2 className="shopping-title">{item.title}</h2>
-                                                <span className="badge category-badge" style={{ backgroundColor: '#58a6ff' }}>
-                                                    <Tag size={12} />
-                                                    {item.category}
-                                                </span>
                                             </div>
 
                                             <p className="shopping-description">{item.description}</p>

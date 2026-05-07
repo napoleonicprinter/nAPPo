@@ -231,16 +231,26 @@ const CalendarView = ({ onClose }) => {
                                     <div className="show-content">
                                         <div className="show-image-container">
                                             <img src={show.image} alt={show.name} className="show-image" />
+                                            {show.category && (
+                                                <span 
+                                                    className="badge category-badge" 
+                                                    style={{ 
+                                                        backgroundColor: getEventCategoryColor(show.category),
+                                                        position: 'absolute',
+                                                        bottom: '12px',
+                                                        right: '12px',
+                                                        zIndex: 10,
+                                                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)'
+                                                    }}
+                                                >
+                                                    <Tag size={12} />
+                                                    {show.category}
+                                                </span>
+                                            )}
                                         </div>
                                         <div className="show-info">
                                             <div className="show-header-row">
                                                 <h2 className="show-title">{show.name}</h2>
-                                                {show.category && (
-                                                    <span className="badge category-badge" style={{ backgroundColor: getEventCategoryColor(show.category) }}>
-                                                        <Tag size={12} />
-                                                        {show.category}
-                                                    </span>
-                                                )}
                                             </div>
 
                                             <div className="show-meta">

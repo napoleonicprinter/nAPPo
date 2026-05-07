@@ -8,6 +8,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
     // Map categories to dynamic colors (same as MapView)
     const getCategoryColor = (category) => {
         switch (category) {
+            case "Today's Battle": return '#ff4500'; // Distinctive orange/red
             case 'Battle site': return '#f85149';
             case 'Naval battle': return '#38bdf8';
             case 'Battle landmark': return '#ff6092';

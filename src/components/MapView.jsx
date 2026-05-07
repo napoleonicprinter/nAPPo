@@ -465,7 +465,9 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                                     clusterGroup._unspiderfy = origUnspiderfy;
                                 }, 1500);
 
-                                setSiteToOpenPopup(null);
+                                // We intentionally DO NOT call setSiteToOpenPopup(null) here.
+                                // Resetting AppContext triggers a full re-render of MapView, 
+                                // which causes react-leaflet-cluster to lose its spiderfied state.
                             } else {
                                 blockUnspiderfy = false;
                                 clusterGroup._unspiderfy = origUnspiderfy;
@@ -477,13 +479,11 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                     activeTimeout = setTimeout(() => {
                         if (!isCancelled) {
                             marker.openPopup();
-                            setSiteToOpenPopup(null);
                         }
                     }, 1000);
                 }
             } catch (err) {
                 console.error("PopupOpener error:", err);
-                setSiteToOpenPopup(null);
             }
         };
 
@@ -522,14 +522,17 @@ const MapView = () => {
 
 
     // Derive unique categories from allSites and sort them
-    const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
-        const indexA = CATEGORY_ORDER.indexOf(a);
-        const indexB = CATEGORY_ORDER.indexOf(b);
-        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
-        if (indexA === -1) return 1;
-        if (indexB === -1) return -1;
-        return indexA - indexB;
-    });
+    const categories = [
+        "Today's Battle",
+        ...Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
+            const indexA = CATEGORY_ORDER.indexOf(a);
+            const indexB = CATEGORY_ORDER.indexOf(b);
+            if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+            if (indexA === -1) return 1;
+            if (indexB === -1) return -1;
+            return indexA - indexB;
+        })
+    ];
 
     // Default center (Europe)
     const defaultCenter = [48.8566, 2.3522]; // Paris

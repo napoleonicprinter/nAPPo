@@ -75,14 +75,17 @@ const Header = () => {
     }, [newsData]);
 
     // Derive and sort categories for the header filters
-    const categories = Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
-        const indexA = CATEGORY_ORDER.indexOf(a);
-        const indexB = CATEGORY_ORDER.indexOf(b);
-        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
-        if (indexA === -1) return 1;
-        if (indexB === -1) return -1;
-        return indexA - indexB;
-    });
+    const categories = [
+        "Today's Battle",
+        ...Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
+            const indexA = CATEGORY_ORDER.indexOf(a);
+            const indexB = CATEGORY_ORDER.indexOf(b);
+            if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+            if (indexA === -1) return 1;
+            if (indexB === -1) return -1;
+            return indexA - indexB;
+        })
+    ];
 
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
 

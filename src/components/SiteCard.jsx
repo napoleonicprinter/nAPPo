@@ -34,7 +34,7 @@ const renderSignificanceStars = (sig) => {
 };
 
 const SiteCard = ({ site, onClose, isCompact = false }) => {
-    const { toggleVisited, userCoords, geolocationEnabled, setView, setSiteToOpenPopup } = useAppContext();
+    const { toggleVisited, userCoords, geolocationEnabled, setView, setSiteToOpenPopup, theme } = useAppContext();
     const [showNavigation, setShowNavigation] = useState(false);
     const [showFullDetails, setShowFullDetails] = useState(false);
 
@@ -166,7 +166,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                                         alignItems: 'center',
                                         gap: '4px'
                                     }}
-                                    onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; }}
+                                    onMouseOver={(e) => { e.currentTarget.style.color = theme === 'light' ? '#ff0000' : '#fff'; }}
                                     onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
                                     title="Show on Map"
                                 >
@@ -187,7 +187,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                                         display: 'flex',
                                         alignItems: 'center'
                                     }}
-                                    onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; }}
+                                    onMouseOver={(e) => { e.currentTarget.style.color = theme === 'light' ? '#ff0000' : '#fff'; }}
                                     onMouseOut={(e) => { e.currentTarget.style.color = 'var(--accent-primary)'; }}
                                 >
                                     Details &rarr;

@@ -322,7 +322,35 @@ export const AppProvider = ({ children }) => {
     };
 
     const passCat = (site) => {
-        return filterCategory.length === 0 || filterCategory.includes(site.category);
+        if (filterCategory.length === 0) return true;
+
+        const hasTodaysBattle = filterCategory.includes("Today's Battle");
+        const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
+        
+        let matchesToday = false;
+        if (hasTodaysBattle) {
+            if ((site.category === 'Battle site' || site.category === 'Naval battle') && site.date) {
+                const today = new Date();
+                const parts = site.date.split('-');
+                if (parts.length >= 3) {
+                    const month = parseInt(parts[1], 10);
+                    const day = parseInt(parts[2], 10);
+                    if (month === today.getMonth() + 1 && day === today.getDate()) {
+                        matchesToday = true;
+                    }
+                }
+            }
+        }
+        
+        if (otherCategories.length > 0 && otherCategories.includes(site.category)) {
+            return true;
+        }
+        
+        if (hasTodaysBattle && matchesToday) {
+            return true;
+        }
+        
+        return false;
     };
 
     const availableYears = Array.from(
@@ -347,10 +375,26 @@ export const AppProvider = ({ children }) => {
     }, [sitesFilteredBase, passYear, passCmd]);
 
     const categoryCounts = useMemo(() => {
-        return sitesForCategoryCounts.reduce((acc, site) => {
+        const counts = sitesForCategoryCounts.reduce((acc, site) => {
             acc[site.category] = (acc[site.category] || 0) + 1;
             return acc;
         }, {});
+        
+        const today = new Date();
+        const currentMonth = today.getMonth() + 1;
+        const currentDay = today.getDate();
+        
+        counts["Today's Battle"] = sitesForCategoryCounts.filter(site => {
+            if ((site.category === 'Battle site' || site.category === 'Naval battle') && site.date) {
+                const parts = site.date.split('-');
+                if (parts.length >= 3) {
+                    return parseInt(parts[1], 10) === currentMonth && parseInt(parts[2], 10) === currentDay;
+                }
+            }
+            return false;
+        }).length;
+
+        return counts;
     }, [sitesForCategoryCounts]);
 
     const filteredSites = useMemo(() => {
