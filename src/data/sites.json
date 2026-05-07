@@ -8111,5 +8111,19 @@
     "longitude": -77.019512,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_nga.webp",
     "createDate": "2025-04-22T10:00:00Z"
+  },
+  {
+    "id": "431",
+    "name": "Louis Bonaparte's tomb",
+    "category": "Landmark",
+    "significance": "Medium",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/%C3%89glise_Saint-Leu-Saint_Gilles_(Saint-Leu-la-For%C3%AAt)",
+    "location": "Church of Saint-Leu-Saint-Gilles, Saint-Leu-la-Forêt",
+    "country": "France",
+    "description": "Louis Bonaparte's tomb is in the Church of Saint-Leu-Saint-Gilles, Saint-Leu-la-Forêt, France. It is a sarcophagus in the choir of the church, and it is a gift of Napoleon Bonaparte to his brother Louis.",
+    "latitude": 49.01815,
+    "longitude": 2.24540,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Louis_Napoleon.webp",
+    "createDate": "2025-04-22T10:00:00Z"
   }
 ]

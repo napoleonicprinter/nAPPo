@@ -454,12 +454,12 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                             return;
                         }
 
-                        // For sites at identical coordinates, we may need to force spiderfy
-                        // if the marker is still not directly on the map.
-                        if (!marker._map && marker.__parent) {
-                            console.log("PopupOpener: Marker still clustered, forcing spiderfy");
+                        // Ensure the cluster is spiderfied if the marker is not directly visible
+                        const visibleParent = clusterGroup.getVisibleParent(marker);
+                        if (visibleParent && visibleParent.spiderfy) {
+                            console.log("PopupOpener: Forcing spiderfy on visible parent");
                             try {
-                                marker.__parent.spiderfy();
+                                visibleParent.spiderfy();
                             } catch (e) {
                                 console.warn("Forced spiderfy failed:", e);
                             }
@@ -472,6 +472,8 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                                 
                                 console.log(`PopupOpener: Opening popup for site ${siteToOpenPopup.id}`);
                                 marker.openPopup();
+                                marker.fire('click'); // Backup to ensure popup opens if hooked by click event
+                                
                                 setSiteToOpenPopup(null);
                                 // Keep it blocked for a few seconds so the user can interact
                                 setTimeout(restore, 5000);
