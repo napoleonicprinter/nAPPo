@@ -428,59 +428,49 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
             }
 
             try {
-                // Stabilize spiderfying
-                const origUnspiderfy = clusterGroup._unspiderfy;
-                let blockUnspiderfy = true;
-                
-                // Override unspiderfy to be conditional
-                clusterGroup._unspiderfy = function() {
-                    if (blockUnspiderfy) {
-                        console.log("PopupOpener: Prevented automatic unspiderfy");
-                        return;
-                    }
-                    return origUnspiderfy.apply(this, arguments);
-                };
-
-                const restore = () => {
-                    blockUnspiderfy = false;
-                    clusterGroup._unspiderfy = origUnspiderfy;
-                };
-
                 if (typeof clusterGroup.zoomToShowLayer === 'function') {
                     console.log(`PopupOpener: Calling zoomToShowLayer for site ${siteToOpenPopup.id}`);
+                    
+                    // Temporarily block unspiderfy to survive the auto-pan 'moveend' event
+                    const origUnspiderfy = clusterGroup._unspiderfy;
+                    let blockUnspiderfy = true;
+                    clusterGroup._unspiderfy = function() {
+                        if (blockUnspiderfy) return;
+                        return origUnspiderfy.apply(this, arguments);
+                    };
+
                     clusterGroup.zoomToShowLayer(marker, () => {
                         if (isCancelled) {
-                            restore();
+                            blockUnspiderfy = false;
+                            clusterGroup._unspiderfy = origUnspiderfy;
                             return;
                         }
 
-                        // Ensure the cluster is spiderfied if the marker is not directly visible
+                        console.log(`PopupOpener: zoomToShowLayer callback for site ${siteToOpenPopup.id}`);
+                        
                         const visibleParent = clusterGroup.getVisibleParent(marker);
                         if (visibleParent && visibleParent.spiderfy) {
-                            console.log("PopupOpener: Forcing spiderfy on visible parent");
-                            try {
-                                visibleParent.spiderfy();
-                            } catch (e) {
-                                console.warn("Forced spiderfy failed:", e);
-                            }
+                            console.log("PopupOpener: Forcing spiderfy on parent");
+                            visibleParent.spiderfy();
                         }
-
+                        
                         activeTimeout = setTimeout(() => {
                             if (!isCancelled) {
-                                const popup = marker.getPopup();
-                                if (popup) popup.options.autoPan = false;
-                                
                                 console.log(`PopupOpener: Opening popup for site ${siteToOpenPopup.id}`);
                                 marker.openPopup();
-                                marker.fire('click'); // Backup to ensure popup opens if hooked by click event
                                 
+                                // Allow unspiderfy again after autoPan animation finishes (approx 1s)
+                                setTimeout(() => {
+                                    blockUnspiderfy = false;
+                                    clusterGroup._unspiderfy = origUnspiderfy;
+                                }, 1500);
+
                                 setSiteToOpenPopup(null);
-                                // Keep it blocked for a few seconds so the user can interact
-                                setTimeout(restore, 5000);
                             } else {
-                                restore();
+                                blockUnspiderfy = false;
+                                clusterGroup._unspiderfy = origUnspiderfy;
                             }
-                        }, 1000);
+                        }, 800); // Give enough time for spiderfy animation
                     });
                 } else {
                     map.flyTo(marker.getLatLng(), 18);
