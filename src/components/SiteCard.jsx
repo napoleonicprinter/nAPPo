@@ -127,6 +127,16 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                         )}
                     </div>
                 )}
+                {/* Category Badge - bottom-right corner */}
+                <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
+                    <span className="badge category-badge" style={{ 
+                        backgroundColor: getCategoryColor(site.category),
+                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                    }}>
+                        {site.category}
+                    </span>
+                </div>
             </div>
 
             <div className="card-content">
@@ -138,9 +148,6 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                 </h2>
                 <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                     <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                        <span className="badge category-badge" style={{ backgroundColor: getCategoryColor(site.category) }}>
-                            {site.category}
-                        </span>
                         {renderSignificanceStars(site.significance)}
                     </div>
 
@@ -198,7 +205,9 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                 </div>
 
                 <div className="card-meta">
-                    <span className="meta-item"><Calendar size={14} /> {site.year}</span>
+                    {site.year && site.year.trim() !== '' && (
+                        <span className="meta-item"><Calendar size={14} /> {site.year}</span>
+                    )}
                     <span className="meta-item"><MapPin size={14} /> {site.location}, {site.country}</span>
                 </div>
 

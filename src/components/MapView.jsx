@@ -665,7 +665,7 @@ const MapView = () => {
                                             {site.name}
                                         </h3>
                                         <div style={{ margin: '0 0 10px 0', fontSize: '0.9rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
-                                            <span>{site.category} &bull; {site.year}</span>
+                                            <span>{site.category}{site.year && site.year.trim() !== '' ? ` \u2022 ${site.year}` : ''}</span>
                                             {renderSignificanceStars(site.significance)}
                                         </div>
                                         <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
