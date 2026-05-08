@@ -7,6 +7,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { useAppContext } from '../context/AppContext';
 import SiteCard from './SiteCard';
+import BattleUnitsLayer from './BattleUnitsLayer';
 import L from 'leaflet';
 
 // Fix leaflet default icon issue
@@ -457,23 +458,48 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                         activeTimeout = setTimeout(() => {
                             if (!isCancelled) {
                                 console.log(`PopupOpener: Opening popup for site ${siteToOpenPopup.id}`);
+
+                                const popup = marker.getPopup();
+
+                                // 1. Patch _adjustPan directly on the popup instance.
+                                //    Leaflet's popup also re-fires _adjustPan from its
+                                //    internal moveend listener (after spiderfy/zoom events),
+                                //    so patching options.autoPan alone is not enough — the
+                                //    option is re-read asynchronously and the pan still fires.
+                                const origAdjustPan = popup && popup._adjustPan;
+                                if (popup && origAdjustPan) {
+                                    popup._adjustPan = function () { /* suppressed */ };
+                                }
+
+                                // 2. Block map clicks from closing the popup.
+                                //    On mobile, touch-end events from the list→map navigation
+                                //    reach the Leaflet canvas as synthetic clicks and trigger
+                                //    closePopup() before the user has a chance to read it.
+                                const origCloseOnClick = map.options.closePopupOnClick;
+                                map.options.closePopupOnClick = false;
+
                                 marker.openPopup();
 
-                                // Release _unspiderfy block only when the popup actually closes.
-                                // A fixed timeout was not reliable on mobile: the auto-pan from
-                                // marker.openPopup() pans the map more on small screens, and the
-                                // resulting moveend event could fire AFTER the old 1500ms window,
-                                // triggering _unspiderfy and immediately closing the popup.
-                                // Tying the release to popupclose is the definitive, device-agnostic fix.
+                                // Restore _adjustPan and closePopupOnClick after 2 s —
+                                // well past any ghost-tap window and post-open events.
+                                const restoreTimer = setTimeout(() => {
+                                    if (popup && origAdjustPan) popup._adjustPan = origAdjustPan;
+                                    map.options.closePopupOnClick = origCloseOnClick;
+                                }, 2000);
+
+                                // Release _unspiderfy block only when THIS marker's popup closes.
                                 const releaseBlock = () => {
                                     blockUnspiderfy = false;
                                     clusterGroup._unspiderfy = origUnspiderfy;
-                                    map.off('popupclose', onPopupClose);
+                                    marker.off('popupclose', onPopupClose);
                                     clearTimeout(fallbackRelease);
+                                    clearTimeout(restoreTimer);
+                                    if (popup && origAdjustPan) popup._adjustPan = origAdjustPan;
+                                    map.options.closePopupOnClick = origCloseOnClick;
                                 };
                                 const onPopupClose = () => releaseBlock();
                                 const fallbackRelease = setTimeout(releaseBlock, 30000);
-                                map.on('popupclose', onPopupClose);
+                                marker.on('popupclose', onPopupClose);
 
                                 // We intentionally DO NOT call setSiteToOpenPopup(null) here.
                                 // Resetting AppContext triggers a full re-render of MapView,
@@ -508,6 +534,39 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
     return null;
 };
 
+// ─── Battle Units Toggle Control ──────────────────────────────────────────────
+const BattleUnitsToggle = ({ active, onToggle }) => {
+    const map = useMap();
+
+    useEffect(() => {
+        if (!map) return;
+
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        container.title = active ? 'Hide battle formations' : 'Show battle formations';
+        container.style.cssText = [
+            `background-color: ${active ? '#1565c0' : 'white'}`,
+            'width: 34px', 'height: 34px', 'cursor: pointer',
+            'display: flex', 'align-items: center', 'justify-content: center',
+            'font-size: 15px', 'line-height: 1', 'transition: background-color 0.2s',
+            'user-select: none',
+        ].join(';');
+        // Crossed swords SVG icon
+        container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${active ? '#fff' : '#333'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>`;
+
+        container.onmouseover = () => { if (!active) container.style.backgroundColor = '#f4f4f4'; };
+        container.onmouseout  = () => { if (!active) container.style.backgroundColor = 'white'; };
+        container.onclick = (e) => { L.DomEvent.stopPropagation(e); e.preventDefault(); onToggle(); };
+
+        L.DomEvent.disableClickPropagation(container);
+        const control = L.control({ position: 'topright' });
+        control.onAdd = () => container;
+        control.addTo(map);
+        return () => { control.remove(); };
+    }, [map, active, onToggle]);
+
+    return null;
+};
+
 
 
 
@@ -528,6 +587,7 @@ const MapView = () => {
     const iconsCache = useRef({});
     const markerRefs = useRef(new Map());
     const [clusterInstance, setClusterInstance] = useState(null);
+    const [showBattleUnits, setShowBattleUnits] = useState(false);
 
 
 
@@ -570,8 +630,10 @@ const MapView = () => {
                 <ZoomControl position="topright" />
                 <MapStyleControl />
                 <CenterControl />
+                <BattleUnitsToggle active={showBattleUnits} onToggle={() => setShowBattleUnits(v => !v)} />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
+                <BattleUnitsLayer visible={showBattleUnits} />
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}

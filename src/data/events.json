@@ -1985,5 +1985,90 @@
         "location": "Bay of Viscay",
         "country": "Atlantic Ocean",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_September_1806"
+    },
+    {
+        "id": 232,
+        "title": "Napoleon enters in Milan",
+        "description": "Napoleon enters in Milan, capital of the Duchy of Milan, and the city is given in his hands.",
+        "date": "1796-05-15",
+        "location": "Milan",
+        "country": "Italy"
+    },
+    {
+        "id": 233,
+        "title": "Napoleon crowned Kinf of Italy",
+        "description": "Napoleon is crowned King of Italy at the Duomo in Milan.",
+        "date": "1805-05-26",
+        "location": "Milan",
+        "country": "Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Kingdom_of_Italy_(Napoleonic)"
+    },
+    {
+        "id": 234,
+        "title": "Louisiana Purchase",
+        "description": "The Louisiana Purchase treaty is signed. France sells the territory to the United States for $15 million to fund European wars.",
+        "date": "1803-04-30",
+        "location": "New Orleans",
+        "country": "United States",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Louisiana_Purchase"
+    },
+    {
+        "id": 235,
+        "title": "Napoleon's arrival on Elba",
+        "description": "Napoleon arrives at the Island of Elba to begin his first exile following his abdication at Fontainebleau.",
+        "date": "1814-05-04",
+        "location": "Portoferraio",
+        "country": "Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon%27s_first_abdication"
+    },
+    {
+        "id": "236",
+        "title": "Battle of Lodi",
+        "description": "Battle of Lodi, where Napoleon Bonaparte won a decisive victory against the Austrians in 1796.",
+        "date": "1796-05-10",
+        "location": "Revellino, Lodi, Italy",
+        "country": "Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lodi"
+    },
+    {
+        "id": "237",
+        "title": "Napoleon captures Vienna",
+        "description": "Napoleon captures Vienna fo r the second time during the War of the Fifth Coalition.",
+        "date": "1809-05-13",
+        "location": "Vienna",
+        "country": "Austria"
+    },
+    {
+        "id": "238",
+        "title": "Napoleon crosses the Alps",
+        "description": "Napoleon begins his famous Crossing of the Alps via the Great St Bernard Pass to surprise Austrian forces in Italy.",
+        "date": "1800-05-14",
+        "location": "Great St Bernard Pass",
+        "country": "Switzerland"
+    },
+    {
+        "id": "239",
+        "title": "Napoleon enters Milan",
+        "description": "Napoleon enters Milan in triumph after the victory at Lodi, establishing the Transpadane Republic.",
+        "date": "1796-05-15",
+        "location": "Milan",
+        "country": "Italy"
+    },
+    {
+        "id": "240",
+        "title": "Annexation of Papal States",
+        "description": "Napoleon decrees the annexation of the Papal States into the French Empire, leading to his excommunication by Pope Pius VII.",
+        "date": "1809-05-17",
+        "location": "Rome",
+        "country": "Italy"
+    },
+    {
+        "id": "241",
+        "title": "Napoleon becomes Emperor of the French",
+        "description": "The Senate proclaims Napoleon Emperor of the French, officially transitioning the Consulate into the First French Empire.",
+        "date": "1804-05-18",
+        "location": "Paris",
+        "country": "France",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/First_French_Empire"
     }
 ]

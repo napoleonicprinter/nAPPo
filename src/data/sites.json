@@ -8210,5 +8210,33 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_gerome.webp",
     "more_info_link": "https://artmuseum.princeton.edu/art/stories-perspectives/teach-collections-jean-leon-gerome-napoleon-egypt",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "438",
+    "name": "Battlefield of Lodi",
+    "category": "Battle site",
+    "significance": "Major",
+    "year": "1796",
+    "date": "1796-05-10",
+    "location": "Revellino, Lodi, Italy",
+    "country": "Italy",
+    "description": "Fought on May 10th 1796, Bonaparte won a decisive victory against the Austrians.",
+    "latitude": 45.325297,
+    "longitude": 9.517896,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lodi.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lodi",
+    "more_info_link": "https://artmuseum.princeton.edu/art/stories-perspectives/teach-collections-jean-leon-gerome-napoleon-egypt",
+    "createDate": "2025-03-15T10:00:00Z",
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Napoleon Bonaparte",
+      "Karl Sebottendorf"
+    ],
+    "special": [
+      "1",
+      "Italian campaign",
+      "arc"
+    ]
   }
 ]

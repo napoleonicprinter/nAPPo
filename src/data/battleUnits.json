@@ -1,0 +1,72 @@
+[
+  {
+    "siteId": "438",
+    "battleName": "Battle of Lodi",
+    "battleCenter": {
+      "lat": 45.3253,
+      "lng": 9.5179
+    },
+    "units": [
+      {
+        "id": "lodi-fr-1",
+        "label": "Div. Masséna",
+        "side": "french",
+        "lat": 45.3225,
+        "lng": 9.5090,
+        "widthM": 400,
+        "heightM": 90,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-fr-2",
+        "label": "Div. Augereau",
+        "side": "french",
+        "lat": 45.3190,
+        "lng": 9.5120,
+        "widthM": 380,
+        "heightM": 90,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-fr-3",
+        "label": "Cav. Beaumont",
+        "side": "french",
+        "lat": 45.3250,
+        "lng": 9.5060,
+        "widthM": 300,
+        "heightM": 70,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-au-1",
+        "label": "Sebottendorf",
+        "side": "coalition",
+        "lat": 45.3265,
+        "lng": 9.5230,
+        "widthM": 420,
+        "heightM": 90,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-au-2",
+        "label": "Vukassovich",
+        "side": "coalition",
+        "lat": 45.3230,
+        "lng": 9.528,
+        "widthM": 380,
+        "heightM": 90,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-au-3",
+        "label": "Cav. Coburg",
+        "side": "coalition",
+        "lat": 45.3295,
+        "lng": 9.5210,
+        "widthM": 280,
+        "heightM": 70,
+        "angleDeg": 60
+      }
+    ]
+  }
+]

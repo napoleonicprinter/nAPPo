@@ -190,22 +190,32 @@
 
 @media (max-width: 600px) {
     .announcement-modal-content {
-        height: auto !important;
         max-height: 50vh !important;
-        width: 90% !important;
-        overflow-y: auto;
+        width: 92% !important;
+        overflow: hidden !important;  /* clip to 50vh */
         border-radius: 16px !important;
-    }
-
-    .announcement-body {
-        padding: 1.25rem 1.5rem 1.5rem;
-    }
-
-    .announcement-title {
-        font-size: 1.2rem;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .announcement-image-container {
-        max-height: 140px;
+        max-height: 110px;
+        flex-shrink: 0; /* never compressed */
+    }
+
+    .announcement-body {
+        padding: 1rem 1.25rem 1.25rem;
+        overflow-y: auto;   /* scroll only this section */
+        -webkit-overflow-scrolling: touch;
+        flex: 1 1 auto;     /* fill remaining height */
+        min-height: 0;      /* required for flex overflow to work */
+    }
+
+    .announcement-title {
+        font-size: 1.15rem;
+    }
+
+    .announcement-description {
+        font-size: 0.9rem;
     }
 }

@@ -110,6 +110,8 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
 
+    const [showBattleUnits, setShowBattleUnits] = useState(false);
+
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
@@ -626,7 +628,8 @@ export const AppProvider = ({ children }) => {
             shoppingItems: shoppingBaseData,
             eventsData: eventsBaseData,
             newsData: newsBaseData,
-            messagesData: messagesBaseData
+            messagesData: messagesBaseData,
+            showBattleUnits, setShowBattleUnits
         }}>
             {children}
         </AppContext.Provider>
