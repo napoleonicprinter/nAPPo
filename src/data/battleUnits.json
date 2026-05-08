@@ -40,7 +40,7 @@
       {
         "id": "lodi-au-1",
         "label": "Sebottendorf",
-        "side": "coalition",
+        "side": "prussian",
         "lat": 45.3265,
         "lng": 9.5230,
         "widthM": 420,
@@ -50,7 +50,7 @@
       {
         "id": "lodi-au-2",
         "label": "Vukassovich",
-        "side": "coalition",
+        "side": "russian",
         "lat": 45.3230,
         "lng": 9.528,
         "widthM": 380,
@@ -60,7 +60,7 @@
       {
         "id": "lodi-au-3",
         "label": "Cav. Coburg",
-        "side": "coalition",
+        "side": "austrian",
         "lat": 45.3295,
         "lng": 9.5210,
         "widthM": 280,

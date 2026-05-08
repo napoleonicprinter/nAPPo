@@ -5,22 +5,37 @@ import battleUnitsData from '../data/battleUnits.json';
 
 // ─── Color by side ───────────────────────────────────────────────────────────
 const SIDE_COLORS = {
-    french:    { fill: '#1565c0', border: '#0d3f7a', text: '#1565c0' },
-    coalition: { fill: '#c62828', border: '#7b1010', text: '#c62828' },
-    other:     { fill: '#5d4037', border: '#3e2723', text: '#5d4037' },
+    french: { fill: '#1565c0', border: '#0d3f7a', text: '#1565c0' },
+    austrian: { fill: '#ffffffff', border: '#595a5aff', text: '#e7eaeeff' },
+    russian: { fill: '#2fbb5eff', border: '#0c3118ff', text: '#2fbb5eff' },
+    british: { fill: '#c62828', border: '#7b1010', text: '#c62828' },
+    prussian: { fill: '#1e1d1dff', border: '#000000ff', text: '#969696' },
+    spaniard: { fill: '#0c3b8cff', border: '#062882ff', text: '#0c3b8cff' },
+    portuguese: { fill: '#5d4037', border: '#3e2723', text: '#5d4037' },
 };
 
-const getColors = (unit) =>
-    unit.color
-        ? { fill: unit.color, border: unit.color, text: unit.color }
-        : (SIDE_COLORS[unit.side] || SIDE_COLORS.other);
+const getColors = (unit) => {
+    // If a specific color is provided (e.g. dark red/maroon for coalition), 
+    // use it for fill, border, AND text.
+
+    if (unit.color) {
+        return {
+            fill: unit.color,
+            border: unit.color,
+            text: unit.color
+        };
+    }
+    // Otherwise, fallback to the SIDE_COLORS map
+    return SIDE_COLORS[unit.side] || SIDE_COLORS.other;
+};
+
 
 // ─── Geometry: rotated rectangle corners ─────────────────────────────────────
 // Returns 4 [lat, lng] pairs for a rectangle centred at (lat, lng),
 // widthM × heightM metres, rotated angleDeg degrees clockwise from north.
 function rotatedRectCorners(lat, lng, widthM, heightM, angleDeg) {
     const θ = (angleDeg * Math.PI) / 180;
-    const hw = widthM  / 2;
+    const hw = widthM / 2;
     const hh = heightM / 2;
 
     // Unrotated local corners  (x = east, y = north)
@@ -36,7 +51,7 @@ function rotatedRectCorners(lat, lng, widthM, heightM, angleDeg) {
 
     return local.map(([x, y]) => {
         // Rotate clockwise by θ
-        const rx =  x * Math.cos(θ) + y * Math.sin(θ);
+        const rx = x * Math.cos(θ) + y * Math.sin(θ);
         const ry = -x * Math.sin(θ) + y * Math.cos(θ);
         return [lat + ry / mPerLat, lng + rx / mPerLng];
     });
@@ -57,7 +72,7 @@ function makeLabelIcon(label, textColor, fontSize) {
             font-family: Arial, Helvetica, sans-serif;
             letter-spacing: 0.4px;
         ">${label}</span>`,
-        iconSize:   [0, 0],
+        iconSize: [0, 0],
         iconAnchor: [0, fontSize + 2], // keep label just above unit center
     });
 }
@@ -91,7 +106,7 @@ const BattleUnitsLayer = ({ visible }) => {
             if (!bounds.pad(0.5).contains([lat, lng])) return;
 
             battle.units.forEach(unit => {
-                const colors  = getColors(unit);
+                const colors = getColors(unit);
                 const corners = rotatedRectCorners(
                     unit.lat, unit.lng,
                     unit.widthM, unit.heightM,
@@ -104,10 +119,10 @@ const BattleUnitsLayer = ({ visible }) => {
                         key={unit.id}
                         positions={corners}
                         pathOptions={{
-                            color:       colors.border,
-                            fillColor:   colors.fill,
+                            color: colors.border,
+                            fillColor: colors.fill,
                             fillOpacity: 0.55,
-                            weight:      1.5,
+                            weight: 1.5,
                         }}
                     />
                 );
@@ -124,8 +139,8 @@ const BattleUnitsLayer = ({ visible }) => {
         });
 
         return result;
-    // zoom is the key dependency — it drives label size and re-filters bounds
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // zoom is the key dependency — it drives label size and re-filters bounds
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [visible, map, zoom, fontSize]);
 
     return <>{elements}</>;
