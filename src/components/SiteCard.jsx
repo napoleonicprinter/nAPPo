@@ -205,7 +205,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                 </div>
 
                 <div className="card-meta">
-                    {site.year && site.year.trim() !== '' && (
+                    {site.year && String(site.year).trim() !== '' && (
                         <span className="meta-item"><Calendar size={14} /> {site.year}</span>
                     )}
                     <span className="meta-item"><MapPin size={14} /> {site.location}, {site.country}</span>
