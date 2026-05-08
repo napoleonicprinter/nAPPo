@@ -458,15 +458,25 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                             if (!isCancelled) {
                                 console.log(`PopupOpener: Opening popup for site ${siteToOpenPopup.id}`);
                                 marker.openPopup();
-                                
-                                // Allow unspiderfy again after autoPan animation finishes (approx 1s)
-                                setTimeout(() => {
+
+                                // Release _unspiderfy block only when the popup actually closes.
+                                // A fixed timeout was not reliable on mobile: the auto-pan from
+                                // marker.openPopup() pans the map more on small screens, and the
+                                // resulting moveend event could fire AFTER the old 1500ms window,
+                                // triggering _unspiderfy and immediately closing the popup.
+                                // Tying the release to popupclose is the definitive, device-agnostic fix.
+                                const releaseBlock = () => {
                                     blockUnspiderfy = false;
                                     clusterGroup._unspiderfy = origUnspiderfy;
-                                }, 1500);
+                                    map.off('popupclose', onPopupClose);
+                                    clearTimeout(fallbackRelease);
+                                };
+                                const onPopupClose = () => releaseBlock();
+                                const fallbackRelease = setTimeout(releaseBlock, 30000);
+                                map.on('popupclose', onPopupClose);
 
                                 // We intentionally DO NOT call setSiteToOpenPopup(null) here.
-                                // Resetting AppContext triggers a full re-render of MapView, 
+                                // Resetting AppContext triggers a full re-render of MapView,
                                 // which causes react-leaflet-cluster to lose its spiderfied state.
                             } else {
                                 blockUnspiderfy = false;
