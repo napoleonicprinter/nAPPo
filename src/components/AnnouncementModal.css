@@ -190,9 +190,11 @@
 
 @media (max-width: 600px) {
     .announcement-modal-content {
-        max-height: 60vh;
+        height: auto !important;
+        max-height: 50vh !important;
+        width: 90% !important;
         overflow-y: auto;
-        border-radius: 16px;
+        border-radius: 16px !important;
     }
 
     .announcement-body {

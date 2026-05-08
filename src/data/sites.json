@@ -8196,5 +8196,19 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Friedland_vernet.webp",
     "more_info_link": "https://en.chateauversailles.fr/discover/estate/palace/gallery-great-battles#the-historic-galleries-also-include",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "437",
+    "name": "Napoleon in Egypt",
+    "category": "Artwork",
+    "significance": "Medium",
+    "location": "Princeton University Art Museum, Princeton, New Jersey",
+    "country": "USA",
+    "description": "This artwork by Jean-Léon Gérôme, also called Napoleon in front of the Sphinx, represents Napoleon Bonaparte in Egypt.",
+    "latitude": 40.34722,
+    "longitude": -74.658171,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_gerome.webp",
+    "more_info_link": "https://artmuseum.princeton.edu/art/stories-perspectives/teach-collections-jean-leon-gerome-napoleon-egypt",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]
