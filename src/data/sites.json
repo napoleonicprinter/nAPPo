@@ -8238,5 +8238,33 @@
       "Italian campaign",
       "arc"
     ]
+  },
+  {
+    "id": "439",
+    "name": "Austrian position at Corte Palasio - Lodi",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1796",
+    "location": "Corte Palasio, Lodi",
+    "country": "Italy",
+    "description": "Sebotendorf located 2,100 infantes and 300 Austrian troopers near the villa of 'Corte Palasio' to protect a ford in the Adda river",
+    "latitude": 45.3039,
+    "longitude": 9.557588,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lodi_palaso.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "440",
+    "name": "Lodi - First action 9am",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1796",
+    "location": "Lodi",
+    "country": "Italy",
+    "description": "The French advance guard caught up with Josef Vukassovich's Austrian rear-guard at about 9 am on 10 May and after a clash followed them towards Lodi.",
+    "latitude": 45.3539,
+    "longitude": 9.512202,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lodi_9am.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

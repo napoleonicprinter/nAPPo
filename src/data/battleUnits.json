@@ -66,6 +66,166 @@
         "widthM": 280,
         "heightM": 70,
         "angleDeg": 60
+      },
+      {
+        "id": "lodi-ne-1",
+        "label": "Naples Cavalry Reg Re",
+        "side": "napolitan",
+        "lat": 45.328728,
+        "lng": 9.5312,
+        "widthM": 350,
+        "heightM": 60,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-ne-2",
+        "label": "Naples Cavalry Reg Regina",
+        "side": "napolitan",
+        "lat": 45.3331,
+        "lng": 9.5275,
+        "widthM": 350,
+        "heightM": 60,
+        "angleDeg": 60
+      },
+      {
+        "id": "lodi-au-10",
+        "label": "General Nicoletti",
+        "side": "austrian",
+        "lat": 45.3065,
+        "lng": 9.555,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "lodi-au-11",
+        "label": "",
+        "side": "austrian",
+        "lat": 45.303925,
+        "lng": 9.55588,
+        "widthM": 350,
+        "heightM": 60,
+        "angleDeg": 0
+      },
+      {
+        "id": "lodi-au-11bis",
+        "label": "Strassoldo Inf Rgt",
+        "side": "austrian",
+        "lat": 45.305,
+        "lng": 9.555,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "lodi-au-12",
+        "label": "",
+        "side": "austrian",
+        "lat": 45.303925,
+        "lng": 9.5595,
+        "widthM": 150,
+        "heightM": 60,
+        "angleDeg": 0
+      },
+      {
+        "id": "lodi-au-12bis",
+        "label": "Tuscany Inf Rgt",
+        "side": "austrian",
+        "lat": 45.3043,
+        "lng": 9.559,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "lodi-au-13",
+        "label": "",
+        "side": "austrian",
+        "lat": 45.3035,
+        "lng": 9.552,
+        "widthM": 100,
+        "heightM": 60,
+        "angleDeg": -20
+      },
+      {
+        "id": "lodi-au-13bis",
+        "label": "Erdödy Hussars",
+        "side": "austrian",
+        "lat": 45.3027,
+        "lng": 9.552,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": -20
+      },
+      {
+        "id": "lodi-au-14",
+        "label": "",
+        "side": "austrian",
+        "lat": 45.3038,
+        "lng": 9.5625,
+        "widthM": 100,
+        "heightM": 60,
+        "angleDeg": 20
+      },
+      {
+        "id": "lodi-au-14bis",
+        "label": "Erdödy Hussars",
+        "side": "austrian",
+        "lat": 45.3028,
+        "lng": 9.562,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": -20
+      },
+      {
+        "id": "lodi-au-20",
+        "label": "Vukassovich rearguard",
+        "side": "austrian",
+        "lat": 45.306623,
+        "lng": 9.5098,
+        "widthM": 500,
+        "heightM": 60,
+        "angleDeg": -30
+      },
+      {
+        "id": "lodi-au-21",
+        "label": "",
+        "side": "austrian",
+        "lat": 45.3095,
+        "lng": 9.5139,
+        "widthM": 200,
+        "heightM": 60,
+        "angleDeg": -30
+      },
+      {
+        "id": "lodi-au-21bis",
+        "label": "Erdody Hussars",
+        "side": "austrian",
+        "lat": 45.3095,
+        "lng": 9.5139,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "lodi-au-22",
+        "label": "",
+        "side": "austrian",
+        "lat": 45.3053,
+        "lng": 9.5035,
+        "widthM": 200,
+        "heightM": 60,
+        "angleDeg": -30
+      },
+      {
+        "id": "lodi-fr-20",
+        "label": "",
+        "side": "french",
+        "lat": 45.3025,
+        "lng": 9.513144,
+        "widthM": 700,
+        "heightM": 60,
+        "angleDeg": -30
       }
     ]
   }

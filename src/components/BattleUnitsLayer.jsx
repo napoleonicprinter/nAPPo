@@ -12,6 +12,7 @@ const SIDE_COLORS = {
     prussian: { fill: '#1e1d1dff', border: '#000000ff', text: '#969696' },
     spaniard: { fill: '#0c3b8cff', border: '#062882ff', text: '#0c3b8cff' },
     portuguese: { fill: '#5d4037', border: '#3e2723', text: '#5d4037' },
+    napolitan: { fill: '#b5c412ff', border: '#313506ff', text: '#b5c412ff' },
 };
 
 const getColors = (unit) => {
