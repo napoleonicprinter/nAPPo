@@ -5,14 +5,14 @@ import battleUnitsData from '../data/battleUnits.json';
 
 // ─── Color by side ───────────────────────────────────────────────────────────
 const SIDE_COLORS = {
-    french: { fill: '#1565c0', border: '#0d3f7a', text: '#1565c0' },
-    austrian: { fill: '#ffffffff', border: '#595a5aff', text: '#e7eaeeff' },
-    russian: { fill: '#2fbb5eff', border: '#0c3118ff', text: '#2fbb5eff' },
-    british: { fill: '#c62828', border: '#7b1010', text: '#c62828' },
-    prussian: { fill: '#1e1d1dff', border: '#000000ff', text: '#969696' },
-    spaniard: { fill: '#0c3b8cff', border: '#062882ff', text: '#0c3b8cff' },
-    portuguese: { fill: '#5d4037', border: '#3e2723', text: '#5d4037' },
-    napolitan: { fill: '#b5c412ff', border: '#313506ff', text: '#b5c412ff' },
+    french: { fill: '#1565c0', border: '#0d3f7a', text: '#000000ff' },
+    austrian: { fill: '#ffffffff', border: '#595a5aff', text: '#000000ff' },
+    russian: { fill: '#2fbb5eff', border: '#0c3118ff', text: '#000000ff' },
+    british: { fill: '#c62828', border: '#7b1010', text: '#000000ff' },
+    prussian: { fill: '#1e1d1dff', border: '#000000ff', text: '#000000ff' },
+    spaniard: { fill: '#0c3b8cff', border: '#062882ff', text: '#000000ff' },
+    portuguese: { fill: '#5d4037', border: '#3e2723', text: '#000000ff' },
+    napolitan: { fill: '#b5c412ff', border: '#313506ff', text: '#000000ff' },
 };
 
 const getColors = (unit) => {
@@ -66,9 +66,11 @@ function makeLabelIcon(label, textColor, fontSize) {
         html: `<span style="
             color: ${textColor};
             font-size: ${fontSize}px;
-            font-weight: 700;
+            font-weight: 100;
+            // font-weight: 700;
             white-space: nowrap;
-            text-shadow: 0 0 3px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7);
+            text-shadow: 0 0 2px rgba(255, 255, 255, 1), 0 0 4px rgba(255,255,255,1);
+            // text-shadow: 0 0 3px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7);
             pointer-events: none;
             font-family: Arial, Helvetica, sans-serif;
             letter-spacing: 0.4px;

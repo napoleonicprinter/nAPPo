@@ -2070,5 +2070,14 @@
         "location": "Paris",
         "country": "France",
         "wikipedia_link": "https://en.wikipedia.org/wiki/First_French_Empire"
+    },
+    {
+        "id": "242",
+        "title": "Battle of Borghetto",
+        "description": "On May 30th 1796, a French army led by General Napoleon Bonaparte forced a crossing of the Mincio River in the face of opposition from an Austrian army commanded by Feldzeugmeister Johann Peter Beaulieu.",
+        "date": "1796-05-30",
+        "location": "Paris",
+        "country": "France",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borghetto"
     }
 ]
