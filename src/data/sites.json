@@ -8262,9 +8262,23 @@
     "location": "Lodi",
     "country": "Italy",
     "description": "The French advance guard caught up with Josef Vukassovich's Austrian rear-guard at about 9 am on 10 May and after a clash followed them towards Lodi.",
-    "latitude": 45.3539,
+    "latitude": 45.30539,
     "longitude": 9.512202,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lodi_9am.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "441",
+    "name": "Neapolitan Cavlary position - Lodi",
+    "category": "Battle landmark",
+    "significance": "Minor",
+    "year": "1796",
+    "location": "Fontana",
+    "country": "Italy",
+    "description": "Sebottendorf had eight squadrons of Neapolitan cavalry at his disposal, Cavalry Regiments Re and Regina, and he positioned them around, just half hour form Lodi.",
+    "latitude": 45.30539,
+    "longitude": 9.512202,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lodi_fontana.webp",
     "createDate": "2025-03-15T10:00:00Z"
   }
 ]
