@@ -8661,7 +8661,7 @@
     "createDate": "2025-03-15T10:00:00Z"
   },
   {
-    "id": "464",
+    "id": "465",
     "name": "Marshall Kellerman Statue",
     "category": "Monument",
     "significance": "Medium",
@@ -8674,7 +8674,7 @@
     "createDate": "2025-03-15T10:00:00Z"
   },
   {
-    "id": "465",
+    "id": "466",
     "name": "Marshall Kellerman Tomb",
     "category": "Landmark",
     "significance": "Medium",
@@ -8684,6 +8684,74 @@
     "latitude": 48.8596,
     "longitude": 2.3947,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kellerman_tomb.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "467",
+    "name": "Apelstein Nr. 1 Victor - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "Victor, Duke of Beluno II Corps 20,000 men Erected: 1863 by Dr. Theodor Apel.",
+    "latitude": 51.2798,
+    "longitude": 12.431416,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein1.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "468",
+    "name": "Apelstein Nr. 2 original remains - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "Remains of the original milestone",
+    "latitude": 51.283044,
+    "longitude": 12.464035,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein2_remains.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "469",
+    "name": "Liebertwolkwitz Russian-Prussian Monument",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Großpösna",
+    "country": "Germany",
+    "description": "From here, the 2nd Column under General Prince Eugene of Württemberg opened the Battle of Wachau around 8 a.m. with 10,000 men.",
+    "latitude": 51.264887,
+    "longitude": 12.4470,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein2.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "470",
+    "name": "Apelstein Nr. 2 Prince Eugene - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Großpösna",
+    "country": "Germany",
+    "description": "Prince Eugene of Württemberg 10,000 men. Erected in 1863 by Dr. Theodor Apel.",
+    "latitude": 51.264870,
+    "longitude": 12.447067,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Leipzig_rus_prus_monument.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "471",
+    "name": "Apelstein Nr. 3 Prince Eugene - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "AUGEREAU Duke of Castiglione IX Corps 10000 M. Erected in 1863 by Dr. Theodor Apel.",
+    "latitude": 51.284338,
+    "longitude": 12.407945,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein3.webp",
     "createDate": "2025-03-15T10:00:00Z"
   }
 ]
