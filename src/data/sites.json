@@ -7505,8 +7505,8 @@
     "location": "Olsztyn",
     "country": "Poland",
     "description": "Place of burial of French and Russian soldiers who died at the battle of Allenstein",
-    "latitude": 53.8300,
-    "longitude": 20.341349,
+    "latitude": 53.780314,
+    "longitude": 20.480409,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Allenstein_burial.webp",
     "wikipedia_link": "http://www.polskaniezwykla.pl/web/place/36608,olsztyn-plac-trzech-krzyzy.html",
     "createDate": "2025-03-22T10:00:00Z"
@@ -7828,7 +7828,7 @@
     "date": "1804-10-05",
     "location": "Cabo de Santa María, Portugal",
     "country": "Atlantic Ocean",
-    "description": "a British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
+    "description": "A British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
     "latitude": 36.725764,
     "longitude": -7.921993,
     "special": "3",
@@ -8503,6 +8503,117 @@
     "longitude": 28.50128,
     "site_link": "https://borisov.museum.by/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borisov_museum.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "457",
+    "name": "Mass grave of Russian soldiers - Friedland",
+    "category": "Landmark",
+    "year": "1807",
+    "significance": "Minor",
+    "location": "Pravdinsk, Kaliningrad",
+    "country": "Russia",
+    "description": "The mass grave where the fallen at the Battle of Friedland in 1807 were buried.",
+    "latitude": 54.4454,
+    "longitude": 21.013021,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Friedland_mass_grave.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "458",
+    "name": "Action of 22 May 1812",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1812",
+    "date": "1812-05-22",
+    "location": "off the coast of Penmarch, France",
+    "country": "Atlantic Ocean",
+    "description": "A small French squadron comprising the French frigates Ariane and Andromaque, and the brig Mameluck returning from a commerce raiding campaign in the Atlantic, met the 74-gun HMS Northumberland while trying the slip to Lorient through the British blockade.",
+    "latitude": 47.6829,
+    "longitude": -4.480624,
+    "commanders": [
+      "Henry Hotham",
+      "John Weeks",
+      "Jean Féretier",
+      "Nicolas Morice"
+    ],
+    "victor": "Great Britain",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Action_of_22_May_1812.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_22_May_1812",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "459",
+    "name": "Battle of Lyngør",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1812",
+    "date": "1812-07-06",
+    "location": "off Lyngør, Norway",
+    "country": "North Sea",
+    "description": "Fought on 6 July 1812 between the British and Dano-Norwegian navies as part of the Gunboat War.",
+    "latitude": 58.633539,
+    "longitude": 9.128159,
+    "commanders": [
+      "James Stewart",
+      "Hans Peter Holm"
+    ],
+    "special": "Gunboat War",
+    "victor": "Great Britain",
+    "defeated": [
+      "Denmark",
+      "Norway"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lyngor.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lyng%C3%B8r",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "460",
+    "name": "Battle of Nargö",
+    "category": "Naval battle",
+    "significance": "Minor",
+    "year": "1811",
+    "date": "1811-07-11",
+    "location": "Off Naissaar",
+    "country": "Baltic sea",
+    "description": "Fought on July 11th 1811 between the Russian cutter Opyt and the British frigate HMS Salsette took place near the northern coast of Estonia by the island of Naissaar (Nargö) in the Baltic Sea, and ended in a British victory.",
+    "latitude": 59.574029,
+    "longitude": 24.6356,
+    "commanders": [
+      "Walter Bathurst",
+      "Gabriel Nevelsky"
+    ],
+    "special": "Anglo-Russian War",
+    "victor": "Great Britain",
+    "defeated": "Russia",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nargo.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Narg%C3%B6",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "461",
+    "name": "Battlefield of Blaauwberg",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1806",
+    "date": "1806-01-08",
+    "location": "Melkbosstrand",
+    "country": "South Africa",
+    "description": "Also known as the Battle of Cape Town, it was a successful British amphibious operation during the War of the Third Coalition which lasted from 8 to 18 January 1806 and resulted in the capture of the Dutch Cape Colony. ",
+    "latitude": -33.72748,
+    "longitude": 18.4467,
+    "commanders": [
+      "David Baird",
+      "Home Riggs Popham",
+      "Jan Willem Janssens"
+    ],
+    "special": "3",
+    "victor": "Great Britain",
+    "defeated": "Batavia",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blaauwberg.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg",
     "createDate": "2025-03-15T10:00:00Z"
   }
 ]

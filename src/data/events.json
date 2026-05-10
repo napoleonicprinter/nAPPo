@@ -2076,8 +2076,44 @@
         "title": "Battle of Borghetto",
         "description": "On May 30th 1796, a French army led by General Napoleon Bonaparte forced a crossing of the Mincio River in the face of opposition from an Austrian army commanded by Feldzeugmeister Johann Peter Beaulieu.",
         "date": "1796-05-30",
-        "location": "Paris",
-        "country": "France",
+        "location": "Borghetto",
+        "country": "Italy",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borghetto"
+    },
+    {
+        "id": "243",
+        "title": "Action of 22 May 1812",
+        "description": "A small French squadron comprising the French frigates Ariane and Andromaque, and the brig Mameluck returning from a commerce raiding campaign in the Atlantic, met the 74-gun HMS Northumberland while trying the slip to Lorient through the British blockade.",
+        "date": "1812-05-22",
+        "location": "off the coast of Penmarch, France",
+        "country": "Atlantic Ocean",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_22_May_1812"
+    },
+    {
+        "id": "244",
+        "title": "Battle of Lyngør",
+        "description": "Fought between the British and Dano-Norwegian navies as part of the Gunboat War.",
+        "date": "1812-05-22",
+        "location": "off Lyngør, Norway",
+        "country": "North Sea",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lyng%C3%B8r"
+    },
+    {
+        "id": "244",
+        "title": "Battle of Nargö",
+        "description": "The battle between the Russian cutter Opyt and the British frigate HMS Salsette took place near the northern coast of Estonia by the island of Naissaar (Nargö) in the Baltic Sea, and ended in a British victory.",
+        "date": "1808-07-11",
+        "location": "off Naissaar",
+        "country": "Baltic Sea",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Narg%C3%B6"
+    },
+    {
+        "id": "244",
+        "title": "Battle of Blaauwberg",
+        "description": "Also known as the Battle of Cape Town, it was a successful British amphibious operation during the War of the Third Coalition which lasted from 8–18 January 1806 and resulted in the capture of the Dutch Cape Colony.",
+        "date": "1806-01-08",
+        "location": "Melkbosstrand",
+        "country": "South Africa",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg"
     }
 ]
