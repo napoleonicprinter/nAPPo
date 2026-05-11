@@ -2124,5 +2124,14 @@
         "location": "Grijó",
         "country": "Portugal",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grij%C3%B3"
+    },
+    {
+        "id": "247",
+        "title": "Battle of Braga",
+        "description": "The Battle of Braga or Battle of Póvoa de Lanhoso or Battle of Carvalho d'Este (March 20th 1809) saw an Imperial French corps led by Marshal Jean-de-Dieu Soult attack a Portuguese army commanded by Baron Eben",
+        "date": "1809-03-20",
+        "location": "Adaúfe",
+        "country": "Portugal",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Braga_(1809)"
     }
 ]

@@ -8895,7 +8895,7 @@
     "id": "482",
     "name": "Battlefield of Grijó",
     "category": "Battle site",
-    "year": "1815",
+    "year": "1809",
     "significance": "Medium",
     "location": "Grijo",
     "country": "Portugal",
@@ -8911,6 +8911,29 @@
     "special": "Peninsular War",
     "commanders": [
       "Arthur Wellesley",
+      "Jean de Dieu Soult"
+    ]
+  },
+  {
+    "id": "483",
+    "name": "Battlefield of Braga",
+    "category": "Battle site",
+    "year": "1809",
+    "significance": "Minor",
+    "location": "Adaúfe",
+    "country": "Portugal",
+    "description": "The Battle of Braga or Battle of Póvoa de Lanhoso or Battle of Carvalho d'Este (March 20th 1809) saw an Imperial French corps led by Marshal Jean-de-Dieu Soult attack a Portuguese army commanded by Baron Eben",
+    "latitude": 41.5896,
+    "longitude": -8.396087,
+    "date": "1809-03-20",
+    "victor": "France",
+    "defeated": "Portugal",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Braga.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Braga_(1809)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Baron Eben",
       "Jean de Dieu Soult"
     ]
   }
