@@ -2115,5 +2115,14 @@
         "location": "Melkbosstrand",
         "country": "South Africa",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg"
+    },
+    {
+        "id": "246",
+        "title": "Battle of Grijó",
+        "description": "Fought on May 10th and 11th 1809, iteended in victory for the Anglo-Portuguese Army commanded by Lieutenant-General Sir Arthur Wellesley (the future 1st Duke of Wellington) over the French army commanded by Marshal Nicolas Soult during the Second French invasion of Portugal.",
+        "date": "1809-05-10",
+        "location": "Grijó",
+        "country": "Portugal",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grij%C3%B3"
     }
 ]

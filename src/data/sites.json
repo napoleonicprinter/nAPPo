@@ -6977,9 +6977,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gilly.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_start_of_hostilities#Action_at_Gilly",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": [
-      "100 Days"
-    ],
+    "special": "100 Days",
     "commanders": [
       "Georg Dubislav Ludwig von Pirch",
       "Louis-Michel Letort de Lorville"
@@ -8707,7 +8705,7 @@
     "significance": "Medium",
     "location": "Markkleeberg",
     "country": "Germany",
-    "description": "Remains of the original milestone",
+    "description": "Remains of the original milestone placed in a wrong location",
     "latitude": 51.283044,
     "longitude": 12.464035,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein2_remains.webp",
@@ -8850,5 +8848,70 @@
     "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein9.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "479",
+    "name": "Apelstein Nr. 10 Pahlen - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Großpösna",
+    "country": "Germany",
+    "description": "Count Pahlen III. 3000 cavalry. Erected in 1863 by Dr. Theodor Apel.",
+    "latitude": 51.258198,
+    "longitude": 12.459755,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein10.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "480",
+    "name": "Apelstein Nr. 11 Poniatovsky - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "Prince Poniatovsky VIII Corps 8000 men. Erected in 1863 by Dr. Theodor Apel.",
+    "latitude": 51.274992,
+    "longitude": 12.402363,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein11.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "481",
+    "name": "Apelstein Nr. 12 Bianchi - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Böhlen",
+    "country": "Germany",
+    "description": "General Bianchi Austrian Reserve. Erected in 1863 by Dr. Theodor Apel.",
+    "latitude": 51.239056,
+    "longitude": 12.387056,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein12.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "482",
+    "name": "Battlefield of Grijó",
+    "category": "Battle site",
+    "year": "1815",
+    "significance": "Medium",
+    "location": "Grijo",
+    "country": "Portugal",
+    "description": "Fought on May 10th and 11th 1809, iteended in victory for the Anglo-Portuguese Army commanded by Lieutenant-General Sir Arthur Wellesley (the future 1st Duke of Wellington) over the French army commanded by Marshal Nicolas Soult during the Second French invasion of Portugal.",
+    "latitude": 41.03044,
+    "longitude": -8.57777,
+    "date": "1809-05-10",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Grijo.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grij%C3%B3",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Arthur Wellesley",
+      "Jean de Dieu Soult"
+    ]
   }
 ]
