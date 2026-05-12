@@ -2133,5 +2133,14 @@
         "location": "Adaúfe",
         "country": "Portugal",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Braga_(1809)"
+    },
+    {
+        "id": "248",
+        "title": "Battle of Évora",
+        "description": "The Battle of Évora on July 29th 1808 saw an Imperial French division under Louis Henri Loison attack a combined Portuguese-Spanish force led by Francisco de Paula Leite de Sousa.",
+        "date": "1808-07-29",
+        "location": "Évora",
+        "country": "Portugal",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%89vora_(1808)"
     }
 ]

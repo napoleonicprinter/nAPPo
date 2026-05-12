@@ -8936,5 +8936,46 @@
       "Baron Eben",
       "Jean de Dieu Soult"
     ]
+  },
+  {
+    "id": "484",
+    "name": "Battlefield of Évora",
+    "category": "Battle site",
+    "year": "1808",
+    "significance": "Minor",
+    "location": "Évora",
+    "country": "Portugal",
+    "description": "An Imperial French division under Louis Henri Loison attacked a combined Portuguese-Spanish force led by Francisco de Paula Leite de Sousa.",
+    "latitude": 38.5713,
+    "longitude": -7.948238,
+    "date": "1808-07-29",
+    "victor": "France",
+    "defeated": [
+      "Portugal",
+      "Spain"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Evora.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%89vora_(1808)",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Louis Henri Loison",
+      "Francisco de Paula Leite",
+      "Colonel Moretti"
+    ]
+  },
+  {
+    "id": "485",
+    "name": "Apelstein Nr. 13 Oudinot - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig -Dölitz-Dösen",
+    "country": "Germany",
+    "description": "Oudinot, Duke of Reggio, 3rd and 4th Divisions of the Young Guard, 12,000 men. Erected in 1863 by Dr. Theodor Apel.",
+    "latitude": 51.283474,
+    "longitude": 12.416770,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein13.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]
