@@ -1,7 +1,9 @@
 [
   {
+    "id": "lodi-1",
     "siteId": "438",
     "battleName": "Battle of Lodi",
+    "phase": "8:00",
     "battleCenter": {
       "lat": 45.3253,
       "lng": 9.5179
@@ -101,17 +103,17 @@
       },
       {
         "id": "lodi-au-10",
+        "labelCategory": "Division",
         "label": "General Nicoletti",
         "side": "austrian",
         "lat": 45.3065,
-        "lng": 9.555,
+        "lng": 9.552,
         "widthM": 0,
         "heightM": 0,
         "angleDeg": 0
       },
       {
         "id": "lodi-au-11",
-        "label": "",
         "side": "austrian",
         "lat": 45.303925,
         "lng": 9.55588,
@@ -121,17 +123,16 @@
       },
       {
         "id": "lodi-au-11bis",
-        "label": "Strassoldo Inf Rgt",
+        "label": "Strassoldo Rgt",
         "side": "austrian",
-        "lat": 45.305,
-        "lng": 9.555,
+        "lat": 45.303925,
+        "lng": 9.55588,
         "widthM": 0,
         "heightM": 0,
-        "angleDeg": 0
+        "angleDeg": -30
       },
       {
         "id": "lodi-au-12",
-        "label": "",
         "side": "austrian",
         "lat": 45.303925,
         "lng": 9.5595,
@@ -141,17 +142,17 @@
       },
       {
         "id": "lodi-au-12bis",
-        "label": "Tuscany Inf Rgt",
+        "label": "Tuscany Rgt",
         "side": "austrian",
-        "lat": 45.3043,
-        "lng": 9.559,
+        "lat": 45.303925,
+        "lng": 9.5595,
         "widthM": 0,
         "heightM": 0,
-        "angleDeg": 0
+        "angleDeg": -30
       },
       {
         "id": "lodi-au-13",
-        "label": "",
+        "category": "cavalry",
         "side": "austrian",
         "lat": 45.3035,
         "lng": 9.552,
@@ -163,15 +164,13 @@
         "id": "lodi-au-13bis",
         "label": "Erdödy Hussars",
         "side": "austrian",
-        "lat": 45.3027,
+        "lat": 45.3035,
         "lng": 9.552,
-        "widthM": 0,
-        "heightM": 0,
-        "angleDeg": -20
+        "angleDeg": -30
       },
       {
         "id": "lodi-au-14",
-        "label": "",
+        "category": "cavalry",
         "side": "austrian",
         "lat": 45.3038,
         "lng": 9.5625,
@@ -183,11 +182,9 @@
         "id": "lodi-au-14bis",
         "label": "Erdödy Hussars",
         "side": "austrian",
-        "lat": 45.3028,
-        "lng": 9.562,
-        "widthM": 0,
-        "heightM": 0,
-        "angleDeg": -20
+        "lat": 45.3038,
+        "lng": 9.5625,
+        "angleDeg": -30
       },
       {
         "id": "lodi-au-20",
@@ -200,7 +197,7 @@
         "angleDeg": 0
       },
       {
-        "id": "lodi-au-20",
+        "id": "lodi-au-20bis",
         "label": "Carlstädter Grenz Inf Reg",
         "side": "austrian",
         "lat": 45.3065,
@@ -239,6 +236,29 @@
         "widthM": 800,
         "heightM": 60,
         "angleDeg": -30
+      }
+    ]
+  },
+  {
+    "id": "lodi-2",
+    "siteId": "438",
+    "battleName": "Battle of Lodi",
+    "phase": "12:00",
+    "battleCenter": {
+      "lat": 45.3253,
+      "lng": 9.5179
+    },
+    "units": [
+      {
+        "id": "lodi-fr-1-p2",
+        "label": "Div. Masséna",
+        "side": "french",
+        "category": "infantry",
+        "lat": 45.3225,
+        "lng": 9.5090,
+        "widthM": 400,
+        "heightM": 90,
+        "angleDeg": -20
       }
     ]
   }

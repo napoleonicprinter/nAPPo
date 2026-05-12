@@ -48,7 +48,8 @@ const Header = () => {
         theme, toggleTheme,
         syncStatus, lastSyncTime,
         categoryCounts,
-        isFiltered, clearAllFilters
+        isFiltered, clearAllFilters,
+        activeBattleSiteIds, setActiveBattleSiteIds
     } = useAppContext();
     const [showSettings, setShowSettings] = useState(false);
     const [showAuth, setShowAuth] = useState(false);
@@ -188,6 +189,15 @@ const Header = () => {
                         <YearFilter className="desktop-year-filter" />
                         <CommanderFilter className="desktop-commander-filter" />
                         <ArcFilter className="desktop-arc-filter" />
+                        {activeBattleSiteIds.length > 0 && (
+                            <button
+                                className="desktop-close-units filter-select glass-panel"
+                                onClick={() => setActiveBattleSiteIds([])}
+                                title="Close all battle units"
+                            >
+                                Close Units
+                            </button>
+                        )}
                         {isFiltered && (
                             <button
                                 className="desktop-clear-filters filter-select glass-panel"

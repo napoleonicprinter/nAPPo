@@ -741,32 +741,55 @@ const MapView = () => {
                                             {renderSignificanceStars(site.significance)}
                                         </div>
                                         
-                                        {/* Battle Formations Toggle in Popup */}
-                                        {battleUnitsData.some(b => b.siteId === site.id) && (
-                                            <div style={{ marginBottom: '10px' }}>
-                                                <button
-                                                    onClick={() => toggleBattleUnitsForSite(site.id)}
-                                                    style={{
-                                                        width: '100%',
-                                                        padding: '8px',
-                                                        background: activeBattleSiteIds.includes(site.id) ? 'rgba(21, 101, 192, 0.2)' : 'transparent',
-                                                        color: activeBattleSiteIds.includes(site.id) ? '#1565c0' : 'var(--text-primary)',
-                                                        border: `1px solid ${activeBattleSiteIds.includes(site.id) ? '#1565c0' : 'var(--border-color)'}`,
-                                                        borderRadius: '4px',
-                                                        cursor: 'pointer',
-                                                        fontWeight: 'bold',
-                                                        fontSize: '0.8rem',
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        justifyContent: 'center',
-                                                        gap: '6px'
-                                                    }}
-                                                >
-                                                    <Swords size={14} />
-                                                    {activeBattleSiteIds.includes(site.id) ? 'Hide Formations' : 'Show Formations'}
-                                                </button>
-                                            </div>
-                                        )}
+                                        {(() => {
+                                            const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
+                                            if (sitePhases.length === 0) return null;
+
+                                            const isOdd = sitePhases.length % 2 !== 0;
+
+                                            return (
+                                                <div style={{ 
+                                                    marginBottom: '10px', 
+                                                    display: 'flex', 
+                                                    flexWrap: 'wrap', 
+                                                    gap: '6px' 
+                                                }}>
+                                                    {sitePhases.map((phase, index) => {
+                                                        const pId = phase.id || phase.siteId;
+                                                        const isActive = activeBattleSiteIds.includes(pId);
+                                                        
+                                                        // Odd total -> first is full width, others half. 
+                                                        // Even total -> all half.
+                                                        const isFullWidth = isOdd && index === 0;
+                                                        const width = isFullWidth ? '100%' : 'calc(50% - 3px)';
+
+                                                        return (
+                                                            <button
+                                                                key={pId}
+                                                                onClick={() => toggleBattleUnitsForSite(pId)}
+                                                                style={{
+                                                                    width: width,
+                                                                    padding: '8px 4px',
+                                                                    background: isActive ? 'rgba(248, 81, 73, 0.15)' : 'transparent',
+                                                                    color: isActive ? 'var(--accent-danger)' : 'var(--text-primary)',
+                                                                    border: `1px solid ${isActive ? 'var(--accent-danger)' : 'var(--border-color)'}`,
+                                                                    borderRadius: '4px',
+                                                                    cursor: 'pointer',
+                                                                    fontWeight: 'bold',
+                                                                    fontSize: '0.75rem',
+                                                                    display: 'flex',
+                                                                    alignItems: 'center',
+                                                                    justifyContent: 'center',
+                                                                    textAlign: 'center'
+                                                                }}
+                                                            >
+                                                                {isActive ? `Hide ${phase.phase || ''}` : `Show ${phase.phase || ''}`}
+                                                            </button>
+                                                        );
+                                                    })}
+                                                </div>
+                                            );
+                                        })()}
                                         <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
                                             <button
                                                 onClick={() => toggleVisited(site.id)}
@@ -830,15 +853,27 @@ const MapView = () => {
                 </div>
             )}
 
-            {isFiltered && (
-                <button
-                    className="mobile-clear-filters glass-panel"
-                    onClick={clearAllFilters}
-                    title="Clear All Filters"
-                >
-                    Clear Filters
-                </button>
-            )}
+            <div className="mobile-action-buttons">
+                {activeBattleSiteIds.length > 0 && (
+                    <button
+                        className="mobile-close-units glass-panel"
+                        onClick={() => setActiveBattleSiteIds([])}
+                        title="Close all battle units"
+                    >
+                        Close Units
+                    </button>
+                )}
+
+                {isFiltered && (
+                    <button
+                        className="mobile-clear-filters glass-panel"
+                        onClick={clearAllFilters}
+                        title="Clear All Filters"
+                    >
+                        Clear Filters
+                    </button>
+                )}
+            </div>
 
         </div>
     );

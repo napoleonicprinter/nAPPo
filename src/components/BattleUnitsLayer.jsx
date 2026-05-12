@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useContext } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Polygon, Marker, useMap, Circle } from 'react-leaflet';
 import L from 'leaflet';
 import battleUnitsData from '../data/battleUnits.json';
@@ -18,9 +18,6 @@ const SIDE_COLORS = {
 };
 
 const getColors = (unit) => {
-    // If a specific color is provided (e.g. dark red/maroon for coalition), 
-    // use it for fill, border, AND text.
-
     if (unit.color) {
         return {
             fill: unit.color,
@@ -28,17 +25,14 @@ const getColors = (unit) => {
             text: unit.color
         };
     }
-    // Otherwise, fallback to the SIDE_COLORS map
     return SIDE_COLORS[unit.side] || SIDE_COLORS.other;
 };
 
 
 // ─── Geometry: rotated rectangle corners ─────────────────────────────────────
-// Returns 4 [lat, lng] pairs for a rectangle centred at (lat, lng),
-// widthM × heightM metres, rotated angleDeg degrees clockwise from north.
-function rotatedRectCorners(lat, lng, widthM, heightM, angleDeg = 0) {
-    const hw = widthM / 2;
-    const hh = heightM / 2;
+function rotatedRectCorners(lat, lng, widthM = 0, heightM = 0, angleDeg = 0) {
+    const hw = (widthM || 0) / 2;
+    const hh = (heightM || 0) / 2;
 
     // Unrotated local corners  (x = east, y = north)
     const local = [
@@ -53,7 +47,6 @@ function rotatedRectCorners(lat, lng, widthM, heightM, angleDeg = 0) {
     const θ = (angleDeg * Math.PI) / 180;
 
     return local.map(([x, y]) => {
-        // Rotate clockwise by θ
         const rx = x * Math.cos(θ) + y * Math.sin(θ);
         const ry = -x * Math.sin(θ) + y * Math.cos(θ);
         return [lat + ry / mPerLat, lng + rx / mPerLng];
@@ -61,84 +54,106 @@ function rotatedRectCorners(lat, lng, widthM, heightM, angleDeg = 0) {
 }
 
 // ─── Label divIcon ────────────────────────────────────────────────────────────
-// fontSize scales with the map zoom so labels stay readable at any detail level.
 function makeLabelIcon(label, textColor, fontSize, rotation = 0) {
     return L.divIcon({
         className: '',
         html: `<div style="
             position: absolute;
-            transform: translate(-50%, -50%) rotate(${rotation}deg);
+            transform: translateY(-50%) rotate(${rotation}deg);
+            transform-origin: left center;
+            color: ${textColor};
+            font-size: ${fontSize}px;
+            font-weight: bold;
             white-space: nowrap;
+            text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff;
+            padding-left: 4px;
             pointer-events: none;
-        ">
-            <span style="
-                color: ${textColor};
-                font-size: ${fontSize}px;
-                font-weight: 100;
-                text-shadow: 0 0 2px rgba(255, 255, 255, 1), 0 0 4px rgba(255,255,255,1);
-                font-family: Arial, Helvetica, sans-serif;
-                letter-spacing: 0.4px;
-            ">${label}</span>
-        </div>`,
+        ">${label}</div>`,
         iconSize: [0, 0],
-        iconAnchor: [0, 0],
+        iconAnchor: [0, 0]
     });
 }
 
-// ─── BattleUnitsLayer ─────────────────────────────────────────────────────────
-// Renders unit rectangles + labels for every battle whose center falls within
-// the current map bounds. Label font size scales with zoom level.
+
 const BattleUnitsLayer = () => {
     const map = useMap();
     const { activeBattleSiteIds } = useAppContext();
+    const [zoom, setZoom] = useState(map.getZoom());
 
-    // Track zoom so labels re-render at the right size on every zoom step
-    const [zoom, setZoom] = useState(() => map.getZoom());
     useEffect(() => {
         const onZoom = () => setZoom(map.getZoom());
-        map.on('zoom', onZoom);
-        return () => map.off('zoom', onZoom);
+        map.on('zoomend', onZoom);
+        return () => map.off('zoomend', onZoom);
     }, [map]);
-
-    // Font size: 14px at z12, ~18px at z14, ~24px at z16
-    const fontSize = Math.max(14, Math.round((zoom - 8) * 3));
 
     const elements = useMemo(() => {
         if (!activeBattleSiteIds || activeBattleSiteIds.length === 0) return [];
 
-        const bounds = map.getBounds();
         const result = [];
 
-        battleUnitsData.forEach(battle => {
-            if (!activeBattleSiteIds.includes(battle.siteId)) return;
-            
-            const { lat, lng } = battle.battleCenter;
-            // Only render battles whose center is in (or near) the viewport
-            if (!bounds.pad(0.5).contains([lat, lng])) return;
+        // Dynamic base sizes based on zoom
+        const getBaseFontSize = (zoomLevel) => Math.max(10, Math.round((zoomLevel - 8) * 2.2));
 
+        battleUnitsData.forEach(battle => {
+            if (!activeBattleSiteIds.includes(battle.id || battle.siteId)) return;
+            
             battle.units.forEach(unit => {
                 const colors = getColors(unit);
+                const uWidth = unit.widthM || 0;
+                const uHeight = unit.heightM || 0;
+                
                 const corners = rotatedRectCorners(
                     unit.lat, unit.lng,
-                    unit.widthM, unit.heightM,
-                    unit.angleDeg
+                    uWidth, uHeight,
+                    unit.angleDeg || 0
                 );
 
                 // Label handling
                 const lLat = unit.labelLat !== undefined ? unit.labelLat : unit.lat;
                 const lLng = unit.labelLng !== undefined ? unit.labelLng : unit.lng;
-                // If labelLat is provided but labelAngleDeg is not, default to 0 rotation.
-                // Otherwise default to unit rotation.
                 const lRot = unit.labelAngleDeg !== undefined 
                     ? unit.labelAngleDeg 
-                    : (unit.labelLat !== undefined ? 0 : unit.angleDeg);
+                    : (unit.labelLat !== undefined ? 0 : (unit.angleDeg || 0));
                 
-                const labelIcon = unit.label ? makeLabelIcon(unit.label, colors.text, fontSize, lRot) : null;
+                // Calculate font size based on labelCategory or individual fontSize
+                let unitFontSize;
+                const category = (unit.labelCategory || 'unit').toLowerCase();
+                const maxZoom = map.getMaxZoom() || 18;
 
-                // Render based on category
+                // Visibility logic based on category and zoom levels relative to max zoom
+                let isLabelVisible = true;
+                if (category === 'unit') {
+                    isLabelVisible = zoom >= (maxZoom - 3); // Top 4 levels (e.g. 15, 16, 17, 18)
+                } else if (category === 'division') {
+                    isLabelVisible = zoom >= (maxZoom - 5); // Top 6 levels (e.g. 13, 14, 15, 16, 17, 18)
+                }
+                // Army is always visible
+
+                if (unit.fontSize) {
+                    // If individual fontSize is provided, we can still make it somewhat dynamic 
+                    // by treating it as a base at zoom 15
+                    unitFontSize = Math.round(unit.fontSize * (zoom / 15));
+                } else {
+                    const base = getBaseFontSize(zoom);
+                    
+                    if (category === 'army') {
+                        unitFontSize = Math.round(base * 1.6);
+                    } else if (category === 'division') {
+                        unitFontSize = Math.round(base * 1.3);
+                    } else {
+                        // 'unit' or default
+                        unitFontSize = base;
+                    }
+                }
+                
+                const labelIcon = (unit.label && isLabelVisible) 
+                    ? makeLabelIcon(unit.label, colors.text, unitFontSize, lRot) 
+                    : null;
+
+                // Only render the shape if width or height is greater than 0
+                if (uWidth > 0 || uHeight > 0) {
+
                 if (unit.category === 'cavalry') {
-                    // Rectangle divided into two triangles
-                    // Triangle 1 (Colored): SW(0), NW(3), NE(2)
                     result.push(
                         <Polygon
                             key={`${unit.id}-tri1`}
@@ -151,7 +166,6 @@ const BattleUnitsLayer = () => {
                             }}
                         />
                     );
-                    // Triangle 2 (White): SW(0), SE(1), NE(2)
                     result.push(
                         <Polygon
                             key={`${unit.id}-tri2`}
@@ -159,16 +173,42 @@ const BattleUnitsLayer = () => {
                             pathOptions={{
                                 color: colors.border,
                                 fillColor: '#ffffff',
-                                fillOpacity: 0.7,
+                                fillOpacity: 0.4,
                                 weight: 1.5,
                             }}
                         />
                     );
                 } else if (unit.category === 'artillery') {
-                    // Square with white circle inside
                     result.push(
                         <Polygon
-                            key={`${unit.id}-sq`}
+                            key={`${unit.id}-art-bg`}
+                            positions={corners}
+                            pathOptions={{
+                                color: colors.border,
+                                fillColor: colors.fill,
+                                fillOpacity: 0.8,
+                                weight: 1.5,
+                            }}
+                        />
+                    );
+                    const innerRadius = Math.min(uWidth, uHeight) * 0.35;
+                    result.push(
+                        <Circle
+                            key={`${unit.id}-art-circle`}
+                            center={[unit.lat, unit.lng]}
+                            radius={innerRadius}
+                            pathOptions={{
+                                color: 'transparent',
+                                fillColor: '#ffffff',
+                                fillOpacity: 1.0,
+                                weight: 0
+                            }}
+                        />
+                    );
+                } else {
+                    result.push(
+                        <Polygon
+                            key={`${unit.id}-rect`}
                             positions={corners}
                             pathOptions={{
                                 color: colors.border,
@@ -178,43 +218,16 @@ const BattleUnitsLayer = () => {
                             }}
                         />
                     );
-                    const radiusM = Math.min(unit.widthM, unit.heightM) * 0.35;
-                    result.push(
-                        <Circle
-                            key={`${unit.id}-circ`}
-                            center={[unit.lat, unit.lng]}
-                            radius={radiusM}
-                            pathOptions={{
-                                stroke: false,
-                                fillColor: '#ffffff',
-                                fillOpacity: 0.9,
-                            }}
-                        />
-                    );
-                } else {
-                    // Infantry (default): Color rectangle
-                    result.push(
-                        <Polygon
-                            key={unit.id}
-                            positions={corners}
-                            pathOptions={{
-                                color: colors.border,
-                                fillColor: colors.fill,
-                                fillOpacity: 0.55,
-                                weight: 1.5,
-                            }}
-                        />
-                    );
                 }
+            }
 
-                if (labelIcon) {
+            if (labelIcon) {
                     result.push(
                         <Marker
-                            key={`${unit.id}-lbl`}
+                            key={`${unit.id}-label`}
                             position={[lLat, lLng]}
                             icon={labelIcon}
                             interactive={false}
-                            zIndexOffset={1000}
                         />
                     );
                 }
@@ -222,9 +235,7 @@ const BattleUnitsLayer = () => {
         });
 
         return result;
-        // zoom is the key dependency — it drives label size and re-filters bounds
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [visible, map, zoom, fontSize]);
+    }, [activeBattleSiteIds, zoom, map]);
 
     return <>{elements}</>;
 };

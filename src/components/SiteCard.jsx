@@ -159,30 +159,51 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        {hasBattleUnits && (
-                            <button
-                                onClick={() => toggleBattleUnitsForSite(site.id)}
-                                className={`btn-formations ${isBattleUnitsActive ? 'active' : ''}`}
-                                title={isBattleUnitsActive ? "Hide Battle Formations" : "Show Battle Formations"}
-                                style={{
-                                    background: isBattleUnitsActive ? 'rgba(21, 101, 192, 0.2)' : 'transparent',
-                                    border: `1px solid ${isBattleUnitsActive ? '#1565c0' : 'var(--border-color)'}`,
-                                    color: isBattleUnitsActive ? '#1565c0' : 'var(--text-secondary)',
-                                    borderRadius: '4px',
-                                    padding: '4px 8px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '6px',
-                                    cursor: 'pointer',
-                                    fontSize: '0.8rem',
-                                    fontWeight: 'bold',
-                                    transition: 'all 0.2s'
-                                }}
-                            >
-                                <Swords size={14} color={isBattleUnitsActive ? '#1565c0' : 'currentColor'} />
-                                {isBattleUnitsActive ? 'Hide Formations' : 'Show Formations'}
-                            </button>
-                        )}
+                        {(() => {
+                            const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
+                            if (sitePhases.length === 0) return null;
+
+                            const isOdd = sitePhases.length % 2 !== 0;
+
+                            return (
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', justifyContent: 'flex-end', width: '100%' }}>
+                                    {sitePhases.map((phase, index) => {
+                                        const pId = phase.id || phase.siteId;
+                                        const isActive = activeBattleSiteIds.includes(pId);
+                                        
+                                        const isFullWidth = isOdd && index === 0;
+                                        const width = isFullWidth ? '100%' : 'calc(50% - 2px)';
+
+                                        return (
+                                            <button
+                                                key={pId}
+                                                onClick={() => toggleBattleUnitsForSite(pId)}
+                                                className={`btn-formations ${isActive ? 'active' : ''}`}
+                                                title={isActive ? `Hide ${phase.phase || 'Formations'}` : `Show ${phase.phase || 'Formations'}`}
+                                                style={{
+                                                    width: width,
+                                                    background: isActive ? 'rgba(248, 81, 73, 0.15)' : 'transparent',
+                                                    border: `1px solid ${isActive ? 'var(--accent-danger)' : 'var(--border-color)'}`,
+                                                    color: isActive ? 'var(--accent-danger)' : 'var(--text-secondary)',
+                                                    borderRadius: '4px',
+                                                    padding: '4px 2px',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    cursor: 'pointer',
+                                                    fontSize: '0.7rem',
+                                                    fontWeight: 'bold',
+                                                    transition: 'all 0.2s',
+                                                    textAlign: 'center'
+                                                }}
+                                            >
+                                                {isActive ? `Hide ${phase.phase || ''}` : `Show ${phase.phase || ''}`}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })()}
                         {isCompact && (
                             <>
                                 <button

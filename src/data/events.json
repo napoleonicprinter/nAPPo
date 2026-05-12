@@ -2142,5 +2142,23 @@
         "location": "Évora",
         "country": "Portugal",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%89vora_(1808)"
+    },
+    {
+        "id": "249",
+        "title": "Battle of Redinha",
+        "description": "It was a rearguard action which took place on March 12th 1811, during Masséna's retreat from Portugal as part of the Peninsular War, by a French division under Marshal Ney against a considerably larger Anglo-Portuguese force under Wellington.",
+        "date": "1811-03-12",
+        "location": "Redinha",
+        "country": "Portugal",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Redinha"
+    },
+    {
+        "id": "250",
+        "title": "Battle of El Bodon",
+        "description": "It was a rearguard action fought on September 25th 1811 by elements of the Anglo-Portuguese army against waves of French cavalry, supported by a division of infantry of the French army.",
+        "date": "1811-09-25",
+        "location": "El Bodon, Salamanca",
+        "country": "Spain",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_El_Bod%C3%B3n"
     }
 ]

@@ -9089,5 +9089,75 @@
     "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein21.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "494",
+    "name": "Memorial crossing Duero River",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Vila Nova de Gaia",
+    "country": "Portugal",
+    "description": "Memorial erected in memory of the battles fought on the banks of the river Douro in 1809.",
+    "latitude": 41.137796,
+    "longitude": -8.608303,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Memorial_Duero.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "495",
+    "name": "Battlefield of Redinha",
+    "category": "Battle site",
+    "year": "1811",
+    "significance": "Medium",
+    "location": "Redinha",
+    "country": "Portugal",
+    "description": "It was a rearguard action which took place on March 12th 1811, during Masséna's retreat from Portugal as part of the Peninsular War, by a French division under Marshal Ney against a considerably larger Anglo-Portuguese force under Wellington.",
+    "latitude": 39.99622,
+    "longitude": -8.597676,
+    "date": "1811-03-12",
+    "victor": "inconclusive",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Redinha.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Redinha",
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "Peninsular War",
+    "commanders": [
+      "Michel Ney",
+      "Arthur Wellesley"
+    ]
+  },
+  {
+    "id": "496",
+    "name": "Memorial El Bodon",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "El Bodon",
+    "country": "Spain",
+    "description": "Memorial erected in 2011 to commemorate the battle on September 25th 1811, between the invading napoleonic army and the anglo-luso coalition.",
+    "latitude": 40.495799,
+    "longitude": -6.607420,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Memorial_Bodon.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "497",
+    "name": "Battlefield of El Bodon",
+    "category": "Battle site",
+    "significance": "Minor",
+    "location": "El Bodon, Salamanca",
+    "country": "Spain",
+    "description": "It was a rearguard action fought on September 25th 1811 by elements of the Anglo-Portuguese army against waves of French cavalry, supported by a division of infantry of the French army.",
+    "latitude": 40.49014,
+    "longitude": -6.604093,
+    "special": "Peninsular War",
+    "victor": "French",
+    "defeated": "Anglo-Portuguese",
+    "commanders": [
+      "Louis-Pierre Montbrun",
+      "Arthur Wellesley"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bodon.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_El_Bod%C3%B3n",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

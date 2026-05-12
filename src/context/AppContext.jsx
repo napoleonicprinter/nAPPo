@@ -6,6 +6,7 @@ import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
 import { Geolocation } from '@capacitor/geolocation';
+import testLocation from '../data/testLocation.json';
 
 // Constants for remote data
 const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
@@ -110,13 +111,15 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
 
-    const [activeBattleSiteIds, setActiveBattleSiteIds] = useState([]);
+    const [activeBattlePhaseIds, setActiveBattlePhaseIds] = useState([]);
+    const activeBattleSiteIds = activeBattlePhaseIds; // Temporary alias for compatibility
+    const setActiveBattleSiteIds = setActiveBattlePhaseIds; // Temporary alias for compatibility
 
-    const toggleBattleUnitsForSite = (siteId) => {
-        setActiveBattleSiteIds(prev => 
-            prev.includes(siteId) 
-                ? prev.filter(id => id !== siteId) 
-                : [...prev, siteId]
+    const toggleBattleUnitsForSite = (phaseId) => {
+        setActiveBattlePhaseIds(prev => 
+            prev.includes(phaseId) 
+                ? prev.filter(id => id !== phaseId) 
+                : [...prev, phaseId]
         );
     };
 
@@ -539,6 +542,15 @@ export const AppProvider = ({ children }) => {
     };
 
     const requestGeolocation = async () => {
+        // Check if a test location is forced via testLocation.json
+        if (typeof testLocation !== 'undefined' && testLocation && testLocation.enabled) {
+            console.log("Forcing test location:", testLocation.name);
+            setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
+            setGeolocationEnabled(true);
+            setLocationMode('geo');
+            return;
+        }
+
         try {
             // First check/request permissions via Capacitor for mobile compatibility
             const permissions = await Geolocation.checkPermissions();
