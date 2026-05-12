@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext } from '../context/AppContext';
-import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink, X, Navigation, Star } from 'lucide-react';
+import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink, X, Navigation, Star, Swords } from 'lucide-react';
+import battleUnitsData from '../data/battleUnits.json';
 import './CardView.css'; // Relying on existing CSS for site-card
 
 // Map categories to dynamic colors
@@ -34,11 +35,17 @@ const renderSignificanceStars = (sig) => {
 };
 
 const SiteCard = ({ site, onClose, isCompact = false }) => {
-    const { toggleVisited, userCoords, geolocationEnabled, setView, setSiteToOpenPopup, theme } = useAppContext();
+    const { 
+        toggleVisited, userCoords, geolocationEnabled, setView, 
+        setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite 
+    } = useAppContext();
     const [showNavigation, setShowNavigation] = useState(false);
     const [showFullDetails, setShowFullDetails] = useState(false);
 
     if (!site) return null;
+
+    const hasBattleUnits = battleUnitsData.some(b => b.siteId === site.id);
+    const isBattleUnitsActive = activeBattleSiteIds.includes(site.id);
 
     return (
         <div className={`site-card glass-panel ${site.visited ? 'visited' : ''}`} style={{ position: 'relative', width: '100%', maxWidth: '350px', margin: '0 auto', maxHeight: '90vh', overflowY: 'auto' }}>
@@ -152,6 +159,30 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        {hasBattleUnits && (
+                            <button
+                                onClick={() => toggleBattleUnitsForSite(site.id)}
+                                className={`btn-formations ${isBattleUnitsActive ? 'active' : ''}`}
+                                title={isBattleUnitsActive ? "Hide Battle Formations" : "Show Battle Formations"}
+                                style={{
+                                    background: isBattleUnitsActive ? 'rgba(21, 101, 192, 0.2)' : 'transparent',
+                                    border: `1px solid ${isBattleUnitsActive ? '#1565c0' : 'var(--border-color)'}`,
+                                    color: isBattleUnitsActive ? '#1565c0' : 'var(--text-secondary)',
+                                    borderRadius: '4px',
+                                    padding: '4px 8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    cursor: 'pointer',
+                                    fontSize: '0.8rem',
+                                    fontWeight: 'bold',
+                                    transition: 'all 0.2s'
+                                }}
+                            >
+                                <Swords size={14} color={isBattleUnitsActive ? '#1565c0' : 'currentColor'} />
+                                {isBattleUnitsActive ? 'Hide Formations' : 'Show Formations'}
+                            </button>
+                        )}
                         {isCompact && (
                             <>
                                 <button

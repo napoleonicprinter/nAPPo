@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { Navigation, Star } from 'lucide-react';
+import { Navigation, Star, Swords } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -9,6 +9,7 @@ import { useAppContext } from '../context/AppContext';
 import SiteCard from './SiteCard';
 import BattleUnitsLayer from './BattleUnitsLayer';
 import L from 'leaflet';
+import battleUnitsData from '../data/battleUnits.json';
 
 // Fix leaflet default icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -581,13 +582,13 @@ const MapView = () => {
         theme,
         isFiltered, clearAllFilters,
         selectedSite, setSelectedSite,
-        siteToOpenPopup, setSiteToOpenPopup
+        siteToOpenPopup, setSiteToOpenPopup,
+        activeBattleSiteIds, toggleBattleUnitsForSite
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
     const iconsCache = useRef({});
     const markerRefs = useRef(new Map());
     const [clusterInstance, setClusterInstance] = useState(null);
-    const [showBattleUnits, setShowBattleUnits] = useState(false);
 
 
 
@@ -630,10 +631,9 @@ const MapView = () => {
                 <ZoomControl position="topright" />
                 <MapStyleControl />
                 <CenterControl />
-                <BattleUnitsToggle active={showBattleUnits} onToggle={() => setShowBattleUnits(v => !v)} />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
-                <BattleUnitsLayer visible={showBattleUnits} />
+                <BattleUnitsLayer />
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}
@@ -740,6 +740,33 @@ const MapView = () => {
                                             <span>{site.category}{site.year && String(site.year).trim() !== '' ? ` \u2022 ${site.year}` : ''}</span>
                                             {renderSignificanceStars(site.significance)}
                                         </div>
+                                        
+                                        {/* Battle Formations Toggle in Popup */}
+                                        {battleUnitsData.some(b => b.siteId === site.id) && (
+                                            <div style={{ marginBottom: '10px' }}>
+                                                <button
+                                                    onClick={() => toggleBattleUnitsForSite(site.id)}
+                                                    style={{
+                                                        width: '100%',
+                                                        padding: '8px',
+                                                        background: activeBattleSiteIds.includes(site.id) ? 'rgba(21, 101, 192, 0.2)' : 'transparent',
+                                                        color: activeBattleSiteIds.includes(site.id) ? '#1565c0' : 'var(--text-primary)',
+                                                        border: `1px solid ${activeBattleSiteIds.includes(site.id) ? '#1565c0' : 'var(--border-color)'}`,
+                                                        borderRadius: '4px',
+                                                        cursor: 'pointer',
+                                                        fontWeight: 'bold',
+                                                        fontSize: '0.8rem',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        gap: '6px'
+                                                    }}
+                                                >
+                                                    <Swords size={14} />
+                                                    {activeBattleSiteIds.includes(site.id) ? 'Hide Formations' : 'Show Formations'}
+                                                </button>
+                                            </div>
+                                        )}
                                         <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
                                             <button
                                                 onClick={() => toggleVisited(site.id)}
@@ -778,7 +805,7 @@ const MapView = () => {
                                 </Popup>
                             </Marker>
                         );
-                    }), [sites, theme, userCoords])}
+                    }), [sites, theme, userCoords, activeBattleSiteIds, toggleBattleUnitsForSite])}
                 </MarkerClusterGroup>
             </MapContainer>
 

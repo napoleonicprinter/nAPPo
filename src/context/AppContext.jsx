@@ -110,7 +110,15 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
 
-    const [showBattleUnits, setShowBattleUnits] = useState(false);
+    const [activeBattleSiteIds, setActiveBattleSiteIds] = useState([]);
+
+    const toggleBattleUnitsForSite = (siteId) => {
+        setActiveBattleSiteIds(prev => 
+            prev.includes(siteId) 
+                ? prev.filter(id => id !== siteId) 
+                : [...prev, siteId]
+        );
+    };
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         if (isDevelopment) return messagesDataFallback;
@@ -629,7 +637,9 @@ export const AppProvider = ({ children }) => {
             eventsData: eventsBaseData,
             newsData: newsBaseData,
             messagesData: messagesBaseData,
-            showBattleUnits, setShowBattleUnits
+            activeBattleSiteIds, 
+            toggleBattleUnitsForSite,
+            setActiveBattleSiteIds
         }}>
             {children}
         </AppContext.Provider>
