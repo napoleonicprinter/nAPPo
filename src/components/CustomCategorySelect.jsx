@@ -90,7 +90,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                         <span className="category-dot" style={{ backgroundColor: 'transparent', border: '1px solid var(--border-color)' }} />
                         <span style={{ flex: 1 }}>All Categories</span>
                         <span className="category-count-badge">
-                            [{Object.values(categoryCounts).reduce((a, b) => a + b, 0)}]
+                            [{Object.entries(categoryCounts).filter(([k]) => k !== "Today's Battle").reduce((a, [_, b]) => a + b, 0)}]
                         </span>
                     </button>
                     {categories.map(cat => (

@@ -9100,7 +9100,6 @@
     "description": "Memorial erected in memory of the battles fought on the banks of the river Douro in 1809.",
     "latitude": 41.137796,
     "longitude": -8.608303,
-    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Memorial_Duero.webp",
     "createDate": "2025-03-15T10:00:00Z"
   },
@@ -9144,6 +9143,8 @@
     "name": "Battlefield of El Bodon",
     "category": "Battle site",
     "significance": "Minor",
+    "year": "1811",
+    "date": "1811-09-25",
     "location": "El Bodon, Salamanca",
     "country": "Spain",
     "description": "It was a rearguard action fought on September 25th 1811 by elements of the Anglo-Portuguese army against waves of French cavalry, supported by a division of infantry of the French army.",
@@ -9158,6 +9159,48 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bodon.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_El_Bod%C3%B3n",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "498",
+    "name": "Apelstein Nr. 22 Gyulai- Battle of Lindenau",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "General Count Gyulai. III. Austrian Corps. 17,000 men. Erected: 1862 by Dr. Theodor Apel",
+    "latitude": 51.392491,
+    "longitude": 12.316976,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein22.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "499",
+    "name": "Apelstein Nr. 23 Bertrand- Battle of Lindenau",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "General Count Bertrand, IV Corps, 10,000 men. Erected: 1862 by Dr. Theodor Apel",
+    "latitude": 51.332219,
+    "longitude": 12.336429,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein23.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "500",
+    "name": "Apelstein Nr. 24 Frederick VI - Battle of Lindenau",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "Prince of Hesse-Homburg, 1st Colonel of the 3rd Austrian Corps. Erected: 1862 by Dr. Theodor Apel",
+    "latitude": 51.346708,
+    "longitude": 12.312056,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein24.webp",
     "createDate": "2025-03-15T10:00:00Z"
   }
 ]
