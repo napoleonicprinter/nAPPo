@@ -9202,5 +9202,47 @@
     "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein24.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "501",
+    "name": "Monument to Colonel George Lake",
+    "category": "Monument",
+    "significance": "Minor",
+    "location": "Columbeira",
+    "country": "Portugal",
+    "description": "This monument marks either where he fell or where he was buried by his men after the battle. It was erected by his brother officers as testimony of high regard and esteem.",
+    "latitude": 39.29654,
+    "longitude": -9.192947,
+    "more_info_link": "https://commons.wikimedia.org/wiki/File:Roli%C3%A7a_%E2%80%93_Monument_to_Colonel_George_Lake.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lake.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "502",
+    "name": "Apelstein Nr. 25 Marmont - Battle of Möckern",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "Marmont Hereditary Duke of Ragusa IV Corps 18000 M. Erected: 1862 by Dr. Theodor Apel",
+    "latitude": 51.346708,
+    "longitude": 12.312056,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein25.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "503",
+    "name": "Apelstein Nr. 26 Liechtenstein - Battle of Lindenau",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "Prince M. Liechtenstein I. Austrian Light Division 5500 M. Erected: 1862 by Dr. Theodor Apel",
+    "latitude": 51.365987,
+    "longitude": 12.349872,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein26.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]
