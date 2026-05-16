@@ -1,89 +1,24 @@
 [
   {
-    "id": "lodi-1",
+    "id": "lodi-9:00",
     "siteId": "438",
     "battleName": "Battle of Lodi",
-    "phase": "8:00",
+    "phase": "9:00",
     "battleCenter": {
       "lat": 45.3253,
       "lng": 9.5179
     },
     "units": [
       {
-        "id": "lodi-fr-1",
-        "label": "Div. Masséna",
-        "side": "french",
-        "category": "infantry",
-        "lat": 45.3225,
-        "lng": 9.5090,
-        "widthM": 400,
-        "heightM": 90,
-        "angleDeg": 60,
-        "labelLat": 45.3235,
-        "labelLng": 9.5100,
-        "labelAngleDeg": -30
-      },
-      {
-        "id": "lodi-fr-2",
-        "label": "Div. Augereau",
-        "side": "french",
-        "lat": 45.3190,
-        "lng": 9.5120,
-        "widthM": 380,
-        "heightM": 90,
-        "angleDeg": 60
-      },
-      {
-        "id": "lodi-fr-3",
-        "label": "Cav. Beaumont",
-        "side": "french",
-        "category": "cavalry",
-        "lat": 45.3250,
-        "lng": 9.5060,
-        "widthM": 300,
-        "heightM": 70,
-        "angleDeg": 60
-      },
-      {
-        "id": "lodi-au-1",
-        "label": "Sebottendorf",
-        "side": "prussian",
-        "category": "artillery",
-        "lat": 45.3265,
-        "lng": 9.5230,
-        "widthM": 100,
-        "heightM": 100,
-        "angleDeg": 60
-      },
-      {
-        "id": "lodi-au-2",
-        "label": "Vukassovich",
-        "side": "russian",
-        "lat": 45.3230,
-        "lng": 9.528,
-        "widthM": 380,
-        "heightM": 90,
-        "angleDeg": 60
-      },
-      {
-        "id": "lodi-au-3",
-        "label": "Cav. Coburg",
-        "side": "austrian",
-        "category": "cavalry",
-        "lat": 45.3295,
-        "lng": 9.5210,
-        "widthM": 280,
-        "heightM": 70,
-        "angleDeg": 60,
-        "labelLat": 45.3305,
-        "labelLng": 9.5200,
-        "labelAngleDeg": 15
-      },
-      {
-        "id": "lodi-ne-1",
-        "label": "Naples Cavalry Reg Re",
+        "id": "Naples-Reg Re",
         "side": "napolitan",
         "category": "cavalry",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00",
+          "lodi-19:00"
+        ],
         "lat": 45.328728,
         "lng": 9.5312,
         "widthM": 350,
@@ -91,10 +26,29 @@
         "angleDeg": 60
       },
       {
-        "id": "lodi-ne-2",
-        "label": "Naples Cavalry Reg Regina",
+        "id": "Naples-Reg Re-label",
+        "label": "Naples-Reg Re",
+        "side": "napolitan",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00",
+          "lodi-19:00"
+        ],
+        "lat": 45.328728,
+        "lng": 9.5312,
+        "angleDeg": 0
+      },
+      {
+        "id": "Naples-Reg Regina",
         "side": "napolitan",
         "category": "cavalry",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00",
+          "lodi-19:00"
+        ],
         "lat": 45.3331,
         "lng": 9.5275,
         "widthM": 350,
@@ -102,38 +56,68 @@
         "angleDeg": 60
       },
       {
-        "id": "lodi-au-10",
+        "id": "Naples-Reg Regina-label",
+        "label": "Naples-Reg Regina",
+        "side": "napolitan",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00",
+          "lodi-19:00"
+        ],
+        "lat": 45.3331,
+        "lng": 9.5275,
+        "angleDeg": 0
+      },
+      {
+        "id": "Nicoletti Division",
         "labelCategory": "Division",
         "label": "General Nicoletti",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
         "side": "austrian",
-        "lat": 45.3065,
-        "lng": 9.552,
+        "lat": 45.3068,
+        "lng": 9.559,
         "widthM": 0,
         "heightM": 0,
         "angleDeg": 0
       },
       {
-        "id": "lodi-au-11",
+        "id": "Strassoldo Rgt",
         "side": "austrian",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
         "lat": 45.303925,
-        "lng": 9.55588,
+        "lng": 9.555,
         "widthM": 350,
         "heightM": 60,
         "angleDeg": 0
       },
       {
-        "id": "lodi-au-11bis",
+        "id": "Strassoldo Rgt-label",
         "label": "Strassoldo Rgt",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
         "side": "austrian",
-        "lat": 45.303925,
-        "lng": 9.55588,
+        "lat": 45.305,
+        "lng": 9.556,
         "widthM": 0,
         "heightM": 0,
         "angleDeg": -30
       },
       {
-        "id": "lodi-au-12",
+        "id": "Tuscany Rgt",
         "side": "austrian",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
         "lat": 45.303925,
         "lng": 9.5595,
         "widthM": 150,
@@ -141,64 +125,58 @@
         "angleDeg": 0
       },
       {
-        "id": "lodi-au-12bis",
+        "id": "Tuscany Rgt-label",
         "label": "Tuscany Rgt",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
         "side": "austrian",
-        "lat": 45.303925,
-        "lng": 9.5595,
+        "lat": 45.305,
+        "lng": 9.5605,
         "widthM": 0,
         "heightM": 0,
         "angleDeg": -30
       },
       {
-        "id": "lodi-au-13",
+        "id": "Erdödy Hussars",
         "category": "cavalry",
         "side": "austrian",
-        "lat": 45.3035,
-        "lng": 9.552,
-        "widthM": 100,
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
+        "lat": 45.3045,
+        "lng": 9.5628,
+        "widthM": 150,
         "heightM": 60,
-        "angleDeg": -20
-      },
-      {
-        "id": "lodi-au-13bis",
-        "label": "Erdödy Hussars",
-        "side": "austrian",
-        "lat": 45.3035,
-        "lng": 9.552,
-        "angleDeg": -30
-      },
-      {
-        "id": "lodi-au-14",
-        "category": "cavalry",
-        "side": "austrian",
-        "lat": 45.3038,
-        "lng": 9.5625,
-        "widthM": 100,
-        "heightM": 60,
-        "angleDeg": 20
-      },
-      {
-        "id": "lodi-au-14bis",
-        "label": "Erdödy Hussars",
-        "side": "austrian",
-        "lat": 45.3038,
-        "lng": 9.5625,
-        "angleDeg": -30
-      },
-      {
-        "id": "lodi-au-20",
-        "label": "Gral Vukassovich",
-        "side": "austrian",
-        "lat": 45.307623,
-        "lng": 9.506,
-        "widthM": 0,
-        "heightM": 0,
         "angleDeg": 0
       },
       {
-        "id": "lodi-au-20bis",
-        "label": "Carlstädter Grenz Inf Reg",
+        "id": "Erdödy Hussars-label",
+        "label": "Erdödy Hussars",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00"
+        ],
+        "side": "austrian",
+        "lat": 45.3058,
+        "lng": 9.5644,
+        "angleDeg": -30
+      },
+      {
+        "id": "Vukassovich Division",
+        "labelCategory": "Division",
+        "label": "General Vukassovich",
+        "side": "austrian",
+        "lat": 45.3085,
+        "lng": 9.509,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": -30
+      },
+      {
+        "id": "Carlstädter Grenz Reg",
         "side": "austrian",
         "lat": 45.3065,
         "lng": 9.5108,
@@ -207,8 +185,26 @@
         "angleDeg": -30
       },
       {
-        "id": "lodi-au-21",
-        "label": "Mészáros Uhlan Reg",
+        "id": "Carlstädter Grenz Reg-label",
+        "label": "Carlstädter Grenz Reg",
+        "side": "austrian",
+        "lat": 45.3075,
+        "lng": 9.510,
+        "angleDeg": -30
+      },
+      {
+        "id": "Rosselmini Division",
+        "labelCategory": "Division",
+        "label": "General Rosselmini",
+        "side": "austrian",
+        "lat": 45.3148,
+        "lng": 9.5065,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": -30
+      },
+      {
+        "id": "Mészáros Uhlan Reg",
         "side": "austrian",
         "category": "cavalry",
         "lat": 45.313,
@@ -218,8 +214,15 @@
         "angleDeg": -30
       },
       {
-        "id": "lodi-au-22",
-        "label": "Nádasdy Inf Reg",
+        "id": "Mészáros Uhlan Reg-label",
+        "label": "Mészáros Uhlans",
+        "side": "austrian",
+        "lat": 45.3139,
+        "lng": 9.5104,
+        "angleDeg": -30
+      },
+      {
+        "id": "Nádasdy Reg",
         "side": "austrian",
         "lat": 45.3115,
         "lng": 9.506,
@@ -228,37 +231,951 @@
         "angleDeg": -30
       },
       {
-        "id": "lodi-fr-20",
-        "label": "French advance guard",
+        "id": "Nádasdy Reg-label",
+        "label": "Nádasdy Reg",
+        "side": "austrian",
+        "lat": 45.3123,
+        "lng": 9.5054,
+        "angleDeg": -30
+      },
+      {
+        "id": "d'Allemange Division",
+        "labelCategory": "Division",
+        "label": "General D'Allemange",
+        "side": "french",
+        "lat": 45.299,
+        "lng": 9.52,
+        "angleDeg": 0
+      },
+      {
+        "id": "French advance guard",
         "side": "french",
         "lat": 45.3045,
         "lng": 9.513144,
         "widthM": 800,
         "heightM": 60,
         "angleDeg": -30
+      },
+      {
+        "id": "French advance guard-label",
+        "label": "French advance guard",
+        "side": "french",
+        "lat": 45.3035,
+        "lng": 9.514,
+        "angleDeg": -30
+      },
+      {
+        "id": "Lannes Brigade",
+        "side": "french",
+        "lat": 45.295,
+        "lng": 9.522,
+        "widthM": 800,
+        "heightM": 60,
+        "angleDeg": -30
+      },
+      {
+        "id": "Lannes Brigade-label",
+        "label": "Lannes Brigade",
+        "side": "french",
+        "lat": 45.294,
+        "lng": 9.523,
+        "angleDeg": -30
+      },
+      {
+        "id": "Gardanne Brigade",
+        "side": "french",
+        "lat": 45.29,
+        "lng": 9.527,
+        "widthM": 800,
+        "heightM": 60,
+        "angleDeg": -30
+      },
+      {
+        "id": "Gardanne Brigade-label",
+        "label": "Gardanne Brigade",
+        "side": "french",
+        "lat": 45.289,
+        "lng": 9.528,
+        "angleDeg": -30
+      },
+      {
+        "id": "Beaumont's Brigade ",
+        "side": "french",
+        "category": "cavalry",
+        "lat": 45.285,
+        "lng": 9.531,
+        "widthM": 800,
+        "heightM": 60,
+        "angleDeg": -30
+      },
+      {
+        "id": "Beaumont's Brigade-label",
+        "label": "Beaumont's Brigade",
+        "side": "french",
+        "lat": 45.2841,
+        "lng": 9.5323,
+        "angleDeg": -30
+      },
+      {
+        "id": "Austrian artillery 1",
+        "side": "austrian",
+        "category": "artillery",
+        "lat": 45.3195,
+        "lng": 9.51015,
+        "widthM": 50,
+        "heightM": 50,
+        "angleDeg": -55
+      },
+      {
+        "id": "Austrian artillery 2",
+        "side": "austrian",
+        "category": "artillery",
+        "lat": 45.3201,
+        "lng": 9.5088,
+        "widthM": 50,
+        "heightM": 50,
+        "angleDeg": -55
+      },
+      {
+        "id": "Terzi Reg. 9:00",
+        "side": "austrian",
+        "lat": 45.3217,
+        "lng": 9.5132,
+        "widthM": 800,
+        "heightM": 60,
+        "angleDeg": 35
+      },
+      {
+        "id": "Terzi Reg.-label",
+        "label": "Terzi Reg.",
+        "side": "austrian",
+        "lat": 45.3217,
+        "lng": 9.5132,
+        "angleDeg": 0
+      },
+      {
+        "id": "Belgiojoso Reg.",
+        "side": "austrian",
+        "lat": 45.3182,
+        "lng": 9.52,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Belgiojoso Reg.-label",
+        "label": "Belgiojoso Reg.",
+        "side": "austrian",
+        "lat": 45.3182,
+        "lng": 9.521,
+        "angleDeg": 0
+      },
+      {
+        "id": "Thurn Reg.",
+        "side": "austrian",
+        "lat": 45.325,
+        "lng": 9.506,
+        "widthM": 400,
+        "heightM": 60,
+        "angleDeg": 35
+      },
+      {
+        "id": "Thurn Reg.-label",
+        "label": "Thurn Reg.",
+        "side": "austrian",
+        "lat": 45.325,
+        "lng": 9.506,
+        "angleDeg": 0
+      },
+      {
+        "id": "Archduke Joseph Hussars",
+        "side": "austrian",
+        "category": "cavalry",
+        "lat": 45.328,
+        "lng": 9.505,
+        "widthM": 300,
+        "heightM": 60,
+        "angleDeg": 30
+      },
+      {
+        "id": "Archduke Joseph Hussars-label",
+        "label": "Archduke Joseph Hussars",
+        "side": "austrian",
+        "lat": 45.328,
+        "lng": 9.505,
+        "angleDeg": 0
+      },
+      {
+        "id": "Marshall Sebottendorf",
+        "label": "Marshall Sebottendorf",
+        "labelCategory": "Division",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.335,
+        "lng": 9.515,
+        "angleDeg": 0
+      },
+      {
+        "id": "Austrian Army",
+        "label": "Austrian-Neapolitan Army: Beaulieu",
+        "labelCategory": "Army",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.339,
+        "lng": 9.515,
+        "angleDeg": 0
+      },
+      {
+        "id": "French Army",
+        "label": "French Army: Napoleon",
+        "labelCategory": "Army",
+        "phases": [
+          "lodi-9:00",
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.295,
+        "lng": 9.5,
+        "angleDeg": 0
       }
     ]
   },
   {
-    "id": "lodi-2",
+    "id": "lodi-17:00",
     "siteId": "438",
     "battleName": "Battle of Lodi",
-    "phase": "12:00",
+    "phase": "17:00",
     "battleCenter": {
       "lat": 45.3253,
       "lng": 9.5179
     },
     "units": [
       {
-        "id": "lodi-fr-1-p2",
-        "label": "Div. Masséna",
-        "side": "french",
-        "category": "infantry",
-        "lat": 45.3225,
-        "lng": 9.5090,
+        "id": "Austrian artillery",
+        "side": "austrian",
+        "category": "artillery",
+        "lat": 45.3195,
+        "lng": 9.51015,
+        "widthM": 50,
+        "heightM": 50,
+        "angleDeg": -55
+      },
+      {
+        "id": "Austrian artillery 2",
+        "side": "austrian",
+        "category": "artillery",
+        "lat": 45.3201,
+        "lng": 9.5088,
+        "widthM": 50,
+        "heightM": 50,
+        "angleDeg": -55
+      },
+      {
+        "id": "Terzi Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.3250,
+        "lng": 9.5190,
+        "widthM": 800,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Terzi Reg.-label",
+        "label": "Terzi Reg.",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.325,
+        "lng": 9.519,
+        "angleDeg": 0
+      },
+      {
+        "id": "Belgiojoso Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.321,
+        "lng": 9.525,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Belgiojoso Reg.-label",
+        "label": "Belgiojoso Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.321,
+        "lng": 9.5248,
+        "angleDeg": 0
+      },
+      {
+        "id": "Mészáros Uhlan Regiment",
+        "side": "austrian",
+        "category": "cavalry",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.319,
+        "lng": 9.529,
+        "widthM": 150,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Mészáros Uhlan Regiment-label",
+        "label": "Mészáros Uhlans",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.319,
+        "lng": 9.529,
+        "angleDeg": 0
+      },
+      {
+        "id": "Thurn Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.32925,
+        "lng": 9.513,
         "widthM": 400,
-        "heightM": 90,
-        "angleDeg": -20
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Thurn Reg.-label",
+        "label": "Thurn Reg.",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.329,
+        "lng": 9.51350,
+        "angleDeg": 0
+      },
+      {
+        "id": "Archduke Joseph Hussars",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "category": "cavalry",
+        "lat": 45.331,
+        "lng": 9.507,
+        "widthM": 300,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Archduke Joseph Hussars-label",
+        "label": "Archduke Joseph Hussars",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.331,
+        "lng": 9.507,
+        "angleDeg": 0
+      },
+      {
+        "id": "Carlstädter Grenz Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.323,
+        "lng": 9.513,
+        "widthM": 500,
+        "heightM": 60,
+        "angleDeg": 35
+      },
+      {
+        "id": "Carlstädter Grenz Reg.-label",
+        "label": "Carlstädter Grenz Reg.",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.323,
+        "lng": 9.513,
+        "angleDeg": 0
+      },
+      {
+        "id": "Warasdiner Grenz Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.32,
+        "lng": 9.5185,
+        "widthM": 250,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Warasdiner Grenz Reg.-label",
+        "label": "Warasdiner Grenz Reg.",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "side": "austrian",
+        "lat": 45.32,
+        "lng": 9.5185,
+        "angleDeg": 0
+      },
+      {
+        "id": "Nadasdy Inf Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.3255,
+        "lng": 9.507,
+        "widthM": 250,
+        "heightM": 60,
+        "angleDeg": 30
+      },
+      {
+        "id": "Nadasdy Inf Reg -label",
+        "label": "Nadasdy Inf Reg.",
+        "side": "austrian",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.3255,
+        "lng": 9.507,
+        "angleDeg": 0
+      },
+      {
+        "id": "french artillery 1",
+        "side": "french",
+        "category": "artillery",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.3176,
+        "lng": 9.5085,
+        "widthM": 60,
+        "heightM": 60,
+        "angleDeg": -60
+      },
+      {
+        "id": "french artillery 2",
+        "side": "french",
+        "category": "artillery",
+        "phases": [
+          "lodi-17:00",
+          "lodi-18:00"
+        ],
+        "lat": 45.319,
+        "lng": 9.505,
+        "widthM": 60,
+        "heightM": 60,
+        "angleDeg": -55
+      },
+      {
+        "id": "Beaumont's Brigade",
+        "side": "french",
+        "category": "cavalry",
+        "lat": 45.32,
+        "lng": 9.488,
+        "widthM": 120,
+        "heightM": 400,
+        "angleDeg": -30
+      },
+      {
+        "id": "Beaumont's Brigade-label",
+        "label": "Beaumont Brigade",
+        "side": "french",
+        "lat": 45.32,
+        "lng": 9.488,
+        "angleDeg": -30
+      },
+      {
+        "id": "lodi-fr-arrow-1",
+        "label": "",
+        "side": "french",
+        "category": "arrow",
+        "type": "right SHARP",
+        "lat": 45.322,
+        "lng": 9.486,
+        "widthM": 200,
+        "longitud": 1600,
+        "angleDeg": -30
+      },
+      {
+        "id": "D'Allemagne's Division",
+        "side": "french",
+        "lat": 45.316,
+        "lng": 9.5066,
+        "widthM": 800,
+        "heightM": 150,
+        "angleDeg": 25
+      },
+      {
+        "id": "D'Allemagne's Division-label",
+        "label": "D'Allemagne Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.314,
+        "lng": 9.5066,
+        "angleDeg": 25
+      },
+      {
+        "id": "Augereau Division",
+        "side": "french",
+        "lat": 45.312,
+        "lng": 9.505,
+        "widthM": 800,
+        "heightM": 150,
+        "angleDeg": 25
+      },
+      {
+        "id": "Augereau Division-label",
+        "label": "Augereau Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.31,
+        "lng": 9.5035,
+        "angleDeg": 25
+      },
+      {
+        "id": "Massena Division",
+        "side": "french",
+        "lat": 45.29,
+        "lng": 9.531,
+        "widthM": 800,
+        "heightM": 400,
+        "angleDeg": -30
+      },
+      {
+        "id": "Massena Division-label",
+        "label": "Massena Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.287,
+        "lng": 9.5335,
+        "angleDeg": -30
+      }
+    ]
+  },
+  {
+    "id": "lodi-18:00",
+    "siteId": "438",
+    "battleName": "Battle of Lodi",
+    "phase": "18:00",
+    "battleCenter": {
+      "lat": 45.3253,
+      "lng": 9.5179
+    },
+    "units": [
+      {
+        "id": "Beaumont's Brigade",
+        "side": "french",
+        "category": "cavalry",
+        "lat": 45.334,
+        "lng": 9.4922,
+        "widthM": 400,
+        "heightM": 120,
+        "angleDeg": 300
+      },
+      {
+        "id": "Beaumont's Brigade-label",
+        "label": "Beaumont Brigade",
+        "side": "french",
+        "lat": 45.334,
+        "lng": 9.4922,
+        "angleDeg": 0
+      },
+      {
+        "id": "Massena Division",
+        "side": "french",
+        "lat": 45.315,
+        "lng": 9.505,
+        "widthM": 800,
+        "heightM": 400,
+        "angleDeg": 25
+      },
+      {
+        "id": "Massena Division-label",
+        "label": "Massena Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.313,
+        "lng": 9.5035,
+        "angleDeg": 25
+      },
+      {
+        "id": "D'Allemagne's Division",
+        "side": "french",
+        "lat": 45.323,
+        "lng": 9.5066,
+        "widthM": 800,
+        "heightM": 150,
+        "angleDeg": 25
+      },
+      {
+        "id": "D'Allemagne's Division-label",
+        "label": "D'Allemagne Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.3218,
+        "lng": 9.5063,
+        "angleDeg": 25
+      },
+      {
+        "id": "Augereau Division",
+        "side": "french",
+        "lat": 45.318,
+        "lng": 9.516,
+        "widthM": 800,
+        "heightM": 150,
+        "angleDeg": 40
+      },
+      {
+        "id": "Augereau Division-label",
+        "label": "Augereau Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.317,
+        "lng": 9.515,
+        "angleDeg": 40
+      },
+      {
+        "id": "Nicoletti Division",
+        "labelCategory": "Division",
+        "label": "General Nicoletti",
+        "side": "austrian",
+        "lat": 45.32,
+        "lng": 9.55,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "Strassoldo Rgt",
+        "side": "austrian",
+        "lat": 45.3165,
+        "lng": 9.547,
+        "widthM": 100,
+        "heightM": 200,
+        "angleDeg": -40
+      },
+      {
+        "id": "Strassoldo Rgt-label",
+        "label": "Strassoldo Rgt",
+        "side": "austrian",
+        "lat": 45.3165,
+        "lng": 9.547,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "Tuscany Rgt",
+        "side": "austrian",
+        "lat": 45.315,
+        "lng": 9.5488,
+        "widthM": 80,
+        "heightM": 120,
+        "angleDeg": -40
+      },
+      {
+        "id": "Tuscany Rgt-label",
+        "label": "Tuscany Rgt",
+        "side": "austrian",
+        "lat": 45.315,
+        "lng": 9.5489,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "Erdödy Hussars",
+        "category": "cavalry",
+        "side": "austrian",
+        "lat": 45.318,
+        "lng": 9.545,
+        "widthM": 150,
+        "heightM": 60,
+        "angleDeg": -40
+      },
+      {
+        "id": "Erdödy Hussars-label",
+        "label": "Erdödy Hussars",
+        "side": "austrian",
+        "lat": 45.318,
+        "lng": 9.546,
+        "angleDeg": 0
+      }
+    ]
+  },
+  {
+    "id": "lodi-19:00",
+    "siteId": "438",
+    "battleName": "Battle of Lodi",
+    "phase": "19:00",
+    "battleCenter": {
+      "lat": 45.3253,
+      "lng": 9.5179
+    },
+    "units": [
+      {
+        "id": "Terzi Reg.",
+        "side": "austrian",
+        "lat": 45.33,
+        "lng": 9.527,
+        "widthM": 800,
+        "heightM": 60,
+        "angleDeg": 55
+      },
+      {
+        "id": "Terzi Reg.-label",
+        "label": "Terzi Reg.",
+        "lat": 45.33,
+        "lng": 9.527,
+        "angleDeg": 0
+      },
+      {
+        "id": "Infantry Reg. retreating",
+        "side": "austrian",
+        "lat": 45.342,
+        "lng": 9.5575,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Infantry Reg. retreating.",
+        "side": "austrian",
+        "lat": 45.341,
+        "lng": 9.5555,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Infantry Reg.retreating.",
+        "side": "austrian",
+        "lat": 45.340,
+        "lng": 9.5535,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Infantry orderly retreat",
+        "side": "austrian",
+        "lat": 45.3375,
+        "lng": 9.55,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Infantry orderly retreat.",
+        "side": "austrian",
+        "lat": 45.3365,
+        "lng": 9.5477,
+        "widthM": 260,
+        "heightM": 60,
+        "angleDeg": 45
+      },
+      {
+        "id": "Austrian Covering retreat",
+        "side": "austrian",
+        "category": "cavalry",
+        "lat": 45.338,
+        "lng": 9.538,
+        "widthM": 130,
+        "heightM": 60,
+        "angleDeg": 55
+      },
+      {
+        "id": "Austrian orderly retreat",
+        "side": "austrian",
+        "category": "cavalry",
+        "lat": 45.333,
+        "lng": 9.536,
+        "widthM": 300,
+        "heightM": 60,
+        "angleDeg": 55
+      },
+      {
+        "id": "Marshall Sebottendorf",
+        "label": "Marshall Sebottendorf",
+        "labelCategory": "Division",
+        "side": "austrian",
+        "lat": 45.340,
+        "lng": 9.54,
+        "angleDeg": 0
+      },
+      {
+        "id": "French Army",
+        "label": "French Army: Napoleon",
+        "labelCategory": "Army",
+        "side": "french",
+        "lat": 45.315,
+        "lng": 9.52,
+        "angleDeg": 0
+      },
+      {
+        "id": "Austrian Army",
+        "label": "Austrian-Neapolitan Army: Beaulieu",
+        "labelCategory": "Army",
+        "side": "austrian",
+        "lat": 45.345,
+        "lng": 9.538,
+        "angleDeg": 0
+      },
+      {
+        "id": "Nicoletti Division",
+        "labelCategory": "Division",
+        "label": "General Nicoletti",
+        "side": "austrian",
+        "lat": 45.329,
+        "lng": 9.5475,
+        "widthM": 0,
+        "heightM": 0,
+        "angleDeg": 0
+      },
+      {
+        "id": "Nicoletti Division retreat",
+        "side": "austrian",
+        "lat": 45.327,
+        "lng": 9.547,
+        "widthM": 150,
+        "heightM": 300,
+        "angleDeg": -40
+      },
+      {
+        "id": "Austrian retreat route",
+        "side": "austrian",
+        "category": "arrow",
+        "type": "straight",
+        "lat": 45.3425,
+        "lng": 9.56,
+        "widthM": 250,
+        "heightM": 1500,
+        "angleDeg": 80
+      },
+      {
+        "id": "Nicoletti Division retreat route",
+        "side": "austrian",
+        "category": "arrow",
+        "type": "straight",
+        "lat": 45.328,
+        "lng": 9.548,
+        "widthM": 250,
+        "heightM": 1500,
+        "angleDeg": 55
+      },
+      {
+        "id": "Beaumont's Brigade",
+        "side": "french",
+        "category": "cavalry",
+        "lat": 45.334,
+        "lng": 9.52,
+        "widthM": 400,
+        "heightM": 120,
+        "angleDeg": 300
+      },
+      {
+        "id": "Beaumont's Brigade-label",
+        "label": "Beaumont Brigade",
+        "side": "french",
+        "lat": 45.334,
+        "lng": 9.52,
+        "angleDeg": 0
+      },
+      {
+        "id": "Augereau Division",
+        "side": "french",
+        "lat": 45.322,
+        "lng": 9.535,
+        "widthM": 800,
+        "heightM": 150,
+        "angleDeg": 40
+      },
+      {
+        "id": "Augereau Division-label",
+        "label": "Augereau Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.321,
+        "lng": 9.5335,
+        "angleDeg": 40
+      },
+      {
+        "id": "D'Allemagne's Division",
+        "side": "french",
+        "lat": 45.328,
+        "lng": 9.523,
+        "widthM": 800,
+        "heightM": 150,
+        "angleDeg": 40
+      },
+      {
+        "id": "D'Allemagne's Division-label",
+        "label": "D'Allemagne Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.3265,
+        "lng": 9.5215,
+        "angleDeg": 40
+      },
+      {
+        "id": "Massena Division",
+        "side": "french",
+        "lat": 45.32,
+        "lng": 9.525,
+        "widthM": 1800,
+        "heightM": 150,
+        "angleDeg": 35
+      },
+      {
+        "id": "Massena Division-label",
+        "label": "Massena Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 45.319,
+        "lng": 9.5232,
+        "angleDeg": 35
       }
     ]
   }

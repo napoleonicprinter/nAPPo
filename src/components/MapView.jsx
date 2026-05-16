@@ -156,7 +156,7 @@ const LocationMarker = () => {
                 iconAnchor: [12, 41],
             })}
         >
-            <Popup>You are here</Popup>
+            <Popup autoPan={false}>You are here</Popup>
         </Marker>
     );
 };
@@ -286,11 +286,10 @@ const SearchControl = () => {
 const MapStyleControl = () => {
     const { mapStyle, setMapStyle } = useAppContext();
     const map = useMap();
+    const containerRef = useRef(null);
 
     useEffect(() => {
         if (!map) return;
-
-        const layer = TILE_LAYERS[mapStyle];
 
         const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
         container.style.cssText = [
@@ -306,24 +305,34 @@ const MapStyleControl = () => {
             'transition: background-color 0.2s',
             'user-select: none',
         ].join(';');
-        container.title = `Map style: ${layer.label} — click to switch to ${TILE_LAYERS[layer.next].label}`;
-        container.innerHTML = layer.icon;
+        
+        containerRef.current = container;
 
         container.onmouseover = () => { container.style.backgroundColor = '#f4f4f4'; };
         container.onmouseout = () => { container.style.backgroundColor = 'white'; };
-
-        container.onclick = function (e) {
-            L.DomEvent.stopPropagation(e);
-            e.preventDefault();
-            setMapStyle(layer.next);
-        };
 
         const control = L.control({ position: 'topright' });
         control.onAdd = () => container;
         control.addTo(map);
 
-        return () => { control.remove(); };
-    }, [map, mapStyle, setMapStyle]);
+        return () => { 
+            control.remove(); 
+            containerRef.current = null;
+        };
+    }, [map]);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+        const layer = TILE_LAYERS[mapStyle];
+        containerRef.current.title = `Map style: ${layer.label} — click to switch to ${TILE_LAYERS[layer.next].label}`;
+        containerRef.current.innerHTML = layer.icon;
+
+        containerRef.current.onclick = function (e) {
+            L.DomEvent.stopPropagation(e);
+            e.preventDefault();
+            setMapStyle(layer.next);
+        };
+    }, [mapStyle, setMapStyle]);
 
     return null;
 };
@@ -331,6 +340,7 @@ const MapStyleControl = () => {
 const CenterControl = () => {
     const { userCoords } = useAppContext();
     const map = useMap();
+    const containerRef = useRef(null);
 
     useEffect(() => {
         if (!map || !userCoords) return;
@@ -345,8 +355,9 @@ const CenterControl = () => {
         container.style.justifyContent = 'center';
         container.style.color = '#333';
         container.title = 'Center map on my location';
-
         container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><circle cx="12" cy="12" r="7"></circle></svg>`;
+
+        containerRef.current = container;
 
         container.onmouseover = () => { container.style.backgroundColor = '#f4f4f4'; };
         container.onmouseout = () => { container.style.backgroundColor = 'white'; };
@@ -354,7 +365,7 @@ const CenterControl = () => {
         container.onclick = function (e) {
             L.DomEvent.stopPropagation(e);
             e.preventDefault();
-            map.flyTo([userCoords.lat, userCoords.lon], 12);
+            // Note: map.flyTo depends on current coords from context
         };
 
         const control = L.control({ position: 'topright' });
@@ -366,6 +377,17 @@ const CenterControl = () => {
 
         return () => {
             control.remove();
+            containerRef.current = null;
+        };
+    }, [map, !!userCoords]); // Only re-add if userCoords existence changes
+
+    useEffect(() => {
+        if (!containerRef.current || !userCoords) return;
+        
+        containerRef.current.onclick = function (e) {
+            L.DomEvent.stopPropagation(e);
+            e.preventDefault();
+            map.flyTo([userCoords.lat, userCoords.lon], 12);
         };
     }, [map, userCoords]);
 
@@ -665,6 +687,7 @@ const MapView = () => {
 
 
                                 <Popup 
+                                    autoPan={false}
                                     autoPanPadding={[50, 50]} 
                                     autoPanOptions={{ duration: 0.5, easeLinearity: 0.25 }}
                                 >
