@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Polygon, Marker, useMap, Circle, Tooltip, Polyline } from 'react-leaflet';
 import L from 'leaflet';
-import battleUnitsData from '../data/battleUnits.json';
 import { useAppContext } from '../context/AppContext';
 
 // ─── Color by side ───────────────────────────────────────────────────────────
@@ -178,7 +177,7 @@ function makeLabelIcon(label, textColor, fontSize, rotation = 0) {
 
 const BattleUnitsLayer = () => {
     const map = useMap();
-    const { activeBattleSiteIds } = useAppContext();
+    const { activeBattleSiteIds, battleUnitsData } = useAppContext();
     const [zoom, setZoom] = useState(map.getZoom());
 
     useEffect(() => {
@@ -420,7 +419,7 @@ const BattleUnitsLayer = () => {
     });
 
     return result;
-}, [activeBattleSiteIds, zoom, map]);
+}, [activeBattleSiteIds, zoom, map, battleUnitsData]);
 
 return <>{elements}</>;
 };

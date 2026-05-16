@@ -9,7 +9,6 @@ import { useAppContext } from '../context/AppContext';
 import SiteCard from './SiteCard';
 import BattleUnitsLayer from './BattleUnitsLayer';
 import L from 'leaflet';
-import battleUnitsData from '../data/battleUnits.json';
 
 // Fix leaflet default icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -603,9 +602,10 @@ const MapView = () => {
         mapStyle,
         theme,
         isFiltered, clearAllFilters,
+        locationMode, handleLocationSelect,
         selectedSite, setSelectedSite,
         siteToOpenPopup, setSiteToOpenPopup,
-        activeBattleSiteIds, toggleBattleUnitsForSite
+        activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
     const iconsCache = useRef({});
@@ -851,7 +851,7 @@ const MapView = () => {
                                 </Popup>
                             </Marker>
                         );
-                    }), [sites, theme, userCoords, activeBattleSiteIds, toggleBattleUnitsForSite])}
+                    }), [sites, theme, userCoords, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData])}
                 </MarkerClusterGroup>
             </MapContainer>
 

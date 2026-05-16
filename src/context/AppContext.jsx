@@ -5,6 +5,7 @@ import shoppingData from '../data/shopping.json';
 import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
+import battleUnitsDataFallback from '../data/battleUnits.json';
 import { Geolocation } from '@capacitor/geolocation';
 import testLocation from '../data/testLocation.json';
 
@@ -129,6 +130,12 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : messagesDataFallback;
     });
 
+    const [battleUnitsBaseData, setBattleUnitsBaseData] = useState(() => {
+        if (isDevelopment) return battleUnitsDataFallback;
+        const saved = localStorage.getItem('battleUnitsData');
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : battleUnitsDataFallback;
+    });
+
     const [syncStatus, setSyncStatus] = useState('idle');
     const [lastSyncTime, setLastSyncTime] = useState(() => {
         return localStorage.getItem('lastSyncTime') || null;
@@ -148,10 +155,11 @@ export const AppProvider = ({ children }) => {
                     fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts)
+                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/battleUnits.json?t=${t}`, fetchOpts)
                 ]);
 
-                const [resSites, resShows, resShopping, resEvents, resNews, resMessages] = fetchRes;
+                const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resBattleUnits] = fetchRes;
 
                 if (resSites.ok) {
                     const data = await resSites.json();
@@ -182,6 +190,11 @@ export const AppProvider = ({ children }) => {
                     const data = await resMessages.json();
                     if (!isDevelopment) setMessagesBaseData(data);
                     localStorage.setItem('messagesData', JSON.stringify(data));
+                }
+                if (resBattleUnits && resBattleUnits.ok) {
+                    const data = await resBattleUnits.json();
+                    if (!isDevelopment) setBattleUnitsBaseData(data);
+                    localStorage.setItem('battleUnitsData', JSON.stringify(data));
                 }
 
                 const now = new Date().toLocaleString();
@@ -649,6 +662,7 @@ export const AppProvider = ({ children }) => {
             eventsData: eventsBaseData,
             newsData: newsBaseData,
             messagesData: messagesBaseData,
+            battleUnitsData: battleUnitsBaseData,
             activeBattleSiteIds, 
             toggleBattleUnitsForSite,
             setActiveBattleSiteIds

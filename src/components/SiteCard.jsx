@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext } from '../context/AppContext';
 import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink, X, Navigation, Star, Swords } from 'lucide-react';
-import battleUnitsData from '../data/battleUnits.json';
 import './CardView.css'; // Relying on existing CSS for site-card
 
 // Map categories to dynamic colors
@@ -37,7 +36,7 @@ const renderSignificanceStars = (sig) => {
 const SiteCard = ({ site, onClose, isCompact = false }) => {
     const { 
         toggleVisited, userCoords, geolocationEnabled, setView, 
-        setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite 
+        setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData 
     } = useAppContext();
     const [showNavigation, setShowNavigation] = useState(false);
     const [showFullDetails, setShowFullDetails] = useState(false);
