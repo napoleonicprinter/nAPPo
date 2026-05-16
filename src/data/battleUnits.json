@@ -1178,33 +1178,5 @@
         "angleDeg": 35
       }
     ]
-  },
-  {
-    "id": "lodi-21:00",
-    "siteId": "438",
-    "battleName": "Battle of Lodi",
-    "phase": "21:00",
-    "battleCenter": {
-      "lat": 45.3253,
-      "lng": 9.5179
-    },
-    "units": [
-      {
-        "id": "Terzi Reg.",
-        "side": "austrian",
-        "lat": 45.33,
-        "lng": 9.527,
-        "widthM": 800,
-        "heightM": 60,
-        "angleDeg": 55
-      },
-      {
-        "id": "Terzi Reg.-label",
-        "label": "Terzi Reg.",
-        "lat": 45.33,
-        "lng": 9.527,
-        "angleDeg": 0
-      }
-    ]
   }
 ]
