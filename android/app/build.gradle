@@ -16,6 +16,20 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+
+    flavorDimensions "version"
+    productFlavors {
+        free {
+            dimension "version"
+            applicationIdSuffix ".free"
+            resValue "string", "app_name", "nAPPo Trails Free"
+        }
+        paid {
+            dimension "version"
+            resValue "string", "app_name", "nAPPo Trails"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

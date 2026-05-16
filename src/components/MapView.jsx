@@ -605,7 +605,8 @@ const MapView = () => {
         locationMode, handleLocationSelect,
         selectedSite, setSelectedSite,
         siteToOpenPopup, setSiteToOpenPopup,
-        activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData
+        activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
+        battleUnitsEnabled, setActiveBattleSiteIds
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
     const iconsCache = useRef({});
@@ -655,7 +656,7 @@ const MapView = () => {
                 <CenterControl />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
-                <BattleUnitsLayer />
+                {battleUnitsEnabled && <BattleUnitsLayer />}
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}
@@ -764,7 +765,7 @@ const MapView = () => {
                                             {renderSignificanceStars(site.significance)}
                                         </div>
                                         
-                                        {(() => {
+                                        {battleUnitsEnabled && (() => {
                                             const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
                                             if (sitePhases.length === 0) return null;
 
@@ -851,7 +852,7 @@ const MapView = () => {
                                 </Popup>
                             </Marker>
                         );
-                    }), [sites, theme, userCoords, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData])}
+                    }), [sites, theme, userCoords, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData, battleUnitsEnabled])}
                 </MarkerClusterGroup>
             </MapContainer>
 
@@ -877,7 +878,7 @@ const MapView = () => {
             )}
 
             <div className="mobile-action-buttons">
-                {activeBattleSiteIds.length > 0 && (
+                {battleUnitsEnabled && activeBattleSiteIds.length > 0 && (
                     <button
                         className="mobile-close-units glass-panel"
                         onClick={() => setActiveBattleSiteIds([])}

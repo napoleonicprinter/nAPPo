@@ -324,31 +324,33 @@ const Header = () => {
                                     </div>
                                 </div>
 
-                                <div className="settings-section" style={{ marginTop: '1.5rem' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                        <h3 style={{ margin: 0 }}>Developer Mode</h3>
-                                        <label className="switch" style={{ width: '40px', height: '20px', position: 'relative', display: 'inline-block' }}>
-                                            <input
-                                                type="checkbox"
-                                                checked={developerMode}
-                                                onChange={(e) => setDeveloperMode(e.target.checked)}
-                                                style={{ opacity: 0, width: 0, height: 0 }}
-                                            />
-                                            <span style={{
-                                                position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0,
-                                                backgroundColor: developerMode ? 'var(--accent-primary)' : 'var(--bg-acrylic)',
-                                                transition: '.4s', borderRadius: '20px',
-                                                border: '1px solid var(--border-color)'
-                                            }}>
+                                {import.meta.env.DEV && (
+                                    <div className="settings-section" style={{ marginTop: '1.5rem' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                            <h3 style={{ margin: 0 }}>Developer Mode</h3>
+                                            <label className="switch" style={{ width: '40px', height: '20px', position: 'relative', display: 'inline-block' }}>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={developerMode}
+                                                    onChange={(e) => setDeveloperMode(e.target.checked)}
+                                                    style={{ opacity: 0, width: 0, height: 0 }}
+                                                />
                                                 <span style={{
-                                                    position: 'absolute', content: '""', height: '14px', width: '14px', left: developerMode ? '23px' : '3px', bottom: '2px',
-                                                    backgroundColor: developerMode ? '#000' : 'var(--text-secondary)', transition: '.4s', borderRadius: '50%'
-                                                }}></span>
-                                            </span>
-                                        </label>
+                                                    position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0,
+                                                    backgroundColor: developerMode ? 'var(--accent-primary)' : 'var(--bg-acrylic)',
+                                                    transition: '.4s', borderRadius: '20px',
+                                                    border: '1px solid var(--border-color)'
+                                                }}>
+                                                    <span style={{
+                                                        position: 'absolute', content: '""', height: '14px', width: '14px', left: developerMode ? '23px' : '3px', bottom: '2px',
+                                                        backgroundColor: developerMode ? '#000' : 'var(--text-secondary)', transition: '.4s', borderRadius: '50%'
+                                                    }}></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <p style={{ marginTop: '4px', fontSize: '0.8rem', opacity: 0.8 }}>Enable specialized tools for testing and previewing.</p>
                                     </div>
-                                    <p style={{ marginTop: '4px', fontSize: '0.8rem', opacity: 0.8 }}>Enable specialized tools for testing and previewing.</p>
-                                </div>
+                                )}
 
                                 {currentUser && (
                                     <div className="settings-section" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>

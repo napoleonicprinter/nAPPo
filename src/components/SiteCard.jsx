@@ -36,7 +36,8 @@ const renderSignificanceStars = (sig) => {
 const SiteCard = ({ site, onClose, isCompact = false }) => {
     const { 
         toggleVisited, userCoords, geolocationEnabled, setView, 
-        setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData 
+        setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
+        battleUnitsEnabled
     } = useAppContext();
     const [showNavigation, setShowNavigation] = useState(false);
     const [showFullDetails, setShowFullDetails] = useState(false);
@@ -158,7 +159,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        {(() => {
+                        {battleUnitsEnabled && (() => {
                             const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
                             if (sitePhases.length === 0) return null;
 

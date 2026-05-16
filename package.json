@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --port 5174",
     "build": "vite build",
+    "build:standard": "vite build --mode standard",
+    "build:battle": "vite build --mode battle",
     "lint": "eslint .",
     "preview": "vite preview"
   },

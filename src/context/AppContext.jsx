@@ -80,6 +80,7 @@ export const EUROPEAN_CAPITALS = [
 
 export const AppProvider = ({ children }) => {
     const isDevelopment = import.meta.env.DEV;
+    const battleUnitsEnabled = import.meta.env.VITE_ENABLE_BATTLE_UNITS === 'true';
 
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
@@ -117,7 +118,8 @@ export const AppProvider = ({ children }) => {
     const setActiveBattleSiteIds = setActiveBattlePhaseIds; // Temporary alias for compatibility
 
     const toggleBattleUnitsForSite = (phaseId) => {
-        setActiveBattlePhaseIds(prev => 
+        if (!battleUnitsEnabled) return;
+        setActiveBattlePhaseIds(prev =>
             prev.includes(phaseId) 
                 ? prev.filter(id => id !== phaseId) 
                 : [...prev, phaseId]
@@ -131,6 +133,7 @@ export const AppProvider = ({ children }) => {
     });
 
     const [battleUnitsBaseData, setBattleUnitsBaseData] = useState(() => {
+        if (!battleUnitsEnabled) return [];
         if (isDevelopment) return battleUnitsDataFallback;
         const saved = localStorage.getItem('battleUnitsData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : battleUnitsDataFallback;
@@ -149,15 +152,20 @@ export const AppProvider = ({ children }) => {
                 const t = new Date().getTime();
                 const fetchOpts = { cache: 'no-store', pragma: 'no-cache' };
 
-                const fetchRes = await Promise.all([
+                const fetchRequests = [
                     fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/battleUnits.json?t=${t}`, fetchOpts)
-                ]);
+                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts)
+                ];
+
+                if (battleUnitsEnabled) {
+                    fetchRequests.push(fetch(`${GITHUB_RAW_BASE_URL}/battleUnits.json?t=${t}`, fetchOpts));
+                }
+
+                const fetchRes = await Promise.all(fetchRequests);
 
                 const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resBattleUnits] = fetchRes;
 
@@ -191,7 +199,7 @@ export const AppProvider = ({ children }) => {
                     if (!isDevelopment) setMessagesBaseData(data);
                     localStorage.setItem('messagesData', JSON.stringify(data));
                 }
-                if (resBattleUnits && resBattleUnits.ok) {
+                if (battleUnitsEnabled && resBattleUnits && resBattleUnits.ok) {
                     const data = await resBattleUnits.json();
                     if (!isDevelopment) setBattleUnitsBaseData(data);
                     localStorage.setItem('battleUnitsData', JSON.stringify(data));
@@ -209,7 +217,7 @@ export const AppProvider = ({ children }) => {
 
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
-    }, []);
+    }, [battleUnitsEnabled]);
 
     const [view, setView] = useState('map');
     const [mapBounds, setMapBounds] = useState(null);
@@ -556,7 +564,7 @@ export const AppProvider = ({ children }) => {
 
     const requestGeolocation = async () => {
         // Check if a test location is forced via testLocation.json
-        if (typeof testLocation !== 'undefined' && testLocation && testLocation.enabled) {
+        if (isDevelopment && typeof testLocation !== 'undefined' && testLocation && testLocation.enabled) {
             console.log("Forcing test location:", testLocation.name);
             setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
             setGeolocationEnabled(true);
@@ -604,6 +612,10 @@ export const AppProvider = ({ children }) => {
         }
     };
 
+    const disableGeolocation = () => {
+        handleLocationSelect('none');
+    };
+
     const handleLocationSelect = (mode) => {
         if (mode === 'none') {
             setGeolocationEnabled(false);
@@ -630,6 +642,8 @@ export const AppProvider = ({ children }) => {
             siteToOpenPopup, setSiteToOpenPopup,
             toggleVisited,
             geolocationEnabled,
+            requestGeolocation,
+            disableGeolocation,
             userCoords,
             locationMode,
             handleLocationSelect,
@@ -665,7 +679,8 @@ export const AppProvider = ({ children }) => {
             battleUnitsData: battleUnitsBaseData,
             activeBattleSiteIds, 
             toggleBattleUnitsForSite,
-            setActiveBattleSiteIds
+            setActiveBattleSiteIds,
+            battleUnitsEnabled
         }}>
             {children}
         </AppContext.Provider>

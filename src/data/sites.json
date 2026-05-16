@@ -9339,5 +9339,61 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Torre_del_Puerco",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Torre_puerco.webp",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "511",
+    "name": "Apelstein Nr. 30 Langeron -Battle of Schoeneufeld",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "Gen. Count LANGERON 30000M. Erected: 1863 by Dr. Theodor Apel",
+    "latitude": 51.36588,
+    "longitude": 12.422695,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein30.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "512",
+    "name": "Apelstein Nr. 31 Lauriston  - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "Victor Lauriston II and V Corps, 30,000 men. Erected: 1861 by Dr. Theodor Apel",
+    "latitude": 51.304378,
+    "longitude": 12.424422,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein31.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "513",
+    "name": "Apelstein Nr. 32 Barclay de Tolly - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "II. Column General Barclai de Tolly, 50,000 men.. Erected: 1863 by Dr. Theodor Apel",
+    "latitude": 51.292995,
+    "longitude": 12.444328,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein32.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "514",
+    "name": "Monarchenhügel (Monarch's Hill)  - Battle of Leipzig",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "The monument commemorates the Battle of Leipzig , where the three allied monarchs observed the course of the battle from here and learned of Napoleon's retreat.",
+    "latitude": 51.292195,
+    "longitude": 12.444174,
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Monarchenh%C3%BCgel",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Monarchenhugel.webp",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]
