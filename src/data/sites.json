@@ -9525,5 +9525,68 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polotsk_1812_1st.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Polotsk",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "523",
+    "name": "Battlefield of Wolkowisk (Volkovysk)",
+    "category": "Battle site",
+    "significance": "Minor  ",
+    "year": "1812",
+    "date": "1812-11-14",
+    "location": "Volkovysk",
+    "country": "Belarus",
+    "description": "Took place from November 14th to the 16th 1812. Austrian, Saxon and French soldiers under Karl Philipp, Prince of Schwarzenberg defeated the Russian army under Fabian Gottlieb von der Osten-Sacken",
+    "latitude": 53.166,
+    "longitude": 24.469366,
+    "special": "Russian Campaign",
+    "victor": "Austria",
+    "defeated": "Russia",
+    "commanders": [
+      "Osten-Sacken",
+      "Schwarzenberg"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wolkowisk.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wolkowisk",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "524",
+    "name": "History Museum Bagration",
+    "category": "Museum",
+    "significance": "Medium",
+    "location": "Volkovysk",
+    "country": "Belarus",
+    "description": "The History Museum Bagration in Volkovysk has a collection from the 1812 Russian campaign.",
+    "latitude": 53.161573,
+    "longitude": 24.472834,
+    "site_link": "https://volkovysk.museum.by/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museum_Bagration.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "525",
+    "name": "Battlefield of Borizov",
+    "category": "Battle site",
+    "significance": "Minor  ",
+    "year": "1812",
+    "date": "1812-11-21",
+    "location": "Borizov",
+    "country": "Belarus",
+    "description": "Took place on November 21st 1812, between parts of the French army and parts of the Russian armies. The Russian vanguard under Charles de Lambert eliminated the Franco-Polish force under Dombrowsky.",
+    "latitude": 54.221022,
+    "longitude": 28.485670,
+    "special": "Russian Campaign",
+    "victor": "Russia",
+    "defeated": [
+      "Duchy Warsaw",
+      "France"
+    ],
+    "commanders": [
+      "Jan Henryk Dąbrowski",
+      "Charles de Lambert"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borizov.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

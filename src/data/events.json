@@ -2178,5 +2178,23 @@
         "location": "Polotsk",
         "country": "Belarus",
         "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Polotsk"
+    },
+    {
+        "id": "253",
+        "title": "Battle of Wolkowisk",
+        "description": "Took place from November 14th to the 16th 1812. Austrian, Saxon and French soldiers under Karl Philipp, Prince of Schwarzenberg defeated the Russian army under Fabian Gottlieb von der Osten-Sacken",
+        "date": "1812-11-14",
+        "location": "Volkovysk",
+        "country": "Belarus",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wolkowisk"
+    },
+    {
+        "id": "254",
+        "title": "Battle of Borizov",
+        "description": "The Russian vanguard under Charles de Lambert eliminated the Franco-Polish force under Dombrowsky.",
+        "date": "1812-11-14",
+        "location": "Borizov",
+        "country": "Belarus",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov"
     }
 ]
