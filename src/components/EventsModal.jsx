@@ -79,7 +79,7 @@ const EventsModal = ({ onClose }) => {
                                     }}
                                 >
                                     <CalendarDays size={16} />
-                                    <span style={{ whiteSpace: 'nowrap' }} className="hide-on-mobile">Calendar</span>
+                                    <span style={{ whiteSpace: 'nowrap' }} className="hide-on-mobile">Cal</span>
                                 </button>
                             </div>
                         </div>

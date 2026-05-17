@@ -5,11 +5,10 @@ import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, G
 import ShowsCalendarModal from './ShowsCalendarModal';
 import './CalendarView.css';
 
-const SHOW_CATEGORIES = ['All Categories', 'Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
-const SHOW_MONTHS = [
-    'All Months', 'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-];
+const SHOW_CATEGORIES = ['Categories', 'Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
+const SHOW_MONTHS = ['Months', 'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+
 const getEventCategoryColor = (category) => {
     switch (category) {
         case 'Reenactment': return '#f85149';
@@ -23,8 +22,8 @@ const getEventCategoryColor = (category) => {
 
 const CalendarView = ({ onClose }) => {
     const { showsToCome } = useAppContext();
-    const [selectedCategory, setSelectedCategory] = useState('All Categories');
-    const [selectedMonth, setSelectedMonth] = useState('All Months');
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedMonth, setSelectedMonth] = useState('');
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
     const [isMonthDropdownOpen, setIsMonthDropdownOpen] = useState(false);
@@ -44,17 +43,17 @@ const CalendarView = ({ onClose }) => {
 
     const countries = useMemo(() => {
         const uniqueCountries = new Set(showsToCome.map(show => show.country).filter(Boolean));
-        return ['All Countries', ...Array.from(uniqueCountries).sort()];
+        return ['Countries', ...Array.from(uniqueCountries).sort()];
     }, [showsToCome]);
 
-    const [selectedCountry, setSelectedCountry] = useState('All Countries');
+    const [selectedCountry, setSelectedCountry] = useState('');
 
     const filteredShows = useMemo(() => {
         return showsToCome
             .filter(show => {
-                const categoryMatch = selectedCategory === 'All Categories' || show.category === selectedCategory;
-                const monthMatch = selectedMonth === 'All Months' || show.month === selectedMonth;
-                const countryMatch = selectedCountry === 'All Countries' || show.country === selectedCountry;
+                const categoryMatch = selectedCategory === '' || show.category === selectedCategory;
+                const monthMatch = selectedMonth === '' || show.month === selectedMonth;
+                const countryMatch = selectedCountry === '' || show.country === selectedCountry;
 
                 return categoryMatch && monthMatch && countryMatch;
             })
@@ -94,7 +93,8 @@ const CalendarView = ({ onClose }) => {
                             </div>
                             <p>Discover Napoleonic events and reenactments worlwide</p>
                         </div>
-                        <button className="modal-close-btn" onClick={onClose}>
+                        <img src="/assets/images/NT_logo.webp" alt="NT Logo" style={{ height: '32px', marginLeft: 'auto' }} />
+                         <button className="modal-close-btn" onClick={onClose}>
                             <X size={24} />
                         </button>
                     </div>
@@ -111,7 +111,7 @@ const CalendarView = ({ onClose }) => {
                                 }}
                             >
                                 <Tag size={18} className="filter-icon" />
-                                <span className="selected-text">{selectedCategory}</span>
+                                <span className="selected-text">{selectedCategory || 'Categories'}</span>
                                 <ChevronDown size={16} className={`chevron-icon ${isCategoryDropdownOpen ? 'rotated' : ''}`} />
                             </button>
 
@@ -120,14 +120,14 @@ const CalendarView = ({ onClose }) => {
                                     {SHOW_CATEGORIES.map(cat => (
                                         <button
                                             key={cat}
-                                            className={`dropdown-option ${selectedCategory === cat ? 'selected' : ''} ${cat !== 'All Categories' && activeStats.categories[cat] ? 'has-items' : ''}`}
+                                            className={`dropdown-option ${selectedCategory === cat ? 'selected' : ''} ${cat !== 'Categories' && activeStats.categories[cat] ? 'has-items' : ''}`}
                                             onClick={() => {
                                                 setSelectedCategory(cat);
                                                 setIsCategoryDropdownOpen(false);
                                             }}
                                         >
                                             {cat}
-                                            {cat !== 'All Categories' && activeStats.categories[cat] > 0 && (
+                                            {cat !== 'Categories' && activeStats.categories[cat] > 0 && (
                                                 <span className="item-count-indicator">{activeStats.categories[cat]}</span>
                                             )}
                                         </button>
@@ -147,7 +147,7 @@ const CalendarView = ({ onClose }) => {
                                 }}
                             >
                                 <Globe size={18} className="filter-icon" />
-                                <span className="selected-text">{selectedCountry}</span>
+                                <span className="selected-text">{selectedCountry || 'Countries'}</span>
                                 <ChevronDown size={16} className={`chevron-icon ${isCountryDropdownOpen ? 'rotated' : ''}`} />
                             </button>
 
@@ -156,14 +156,14 @@ const CalendarView = ({ onClose }) => {
                                     {countries.map(country => (
                                         <button
                                             key={country}
-                                            className={`dropdown-option ${selectedCountry === country ? 'selected' : ''} ${country !== 'All Countries' && activeStats.countries[country] ? 'has-items' : ''}`}
+                                            className={`dropdown-option ${selectedCountry === country ? 'selected' : ''} ${country !== 'Countries' && activeStats.countries[country] ? 'has-items' : ''}`}
                                             onClick={() => {
                                                 setSelectedCountry(country);
                                                 setIsCountryDropdownOpen(false);
                                             }}
                                         >
                                             {country}
-                                            {country !== 'All Countries' && activeStats.countries[country] > 0 && (
+                                            {country !== 'Countries' && activeStats.countries[country] > 0 && (
                                                 <span className="item-count-indicator">{activeStats.countries[country]}</span>
                                             )}
                                         </button>
@@ -185,7 +185,7 @@ const CalendarView = ({ onClose }) => {
                                     style={{ width: '100%', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
                                 >
                                     <Calendar size={16} className="filter-icon" />
-                                    <span className="selected-text" style={{ fontSize: '0.85rem' }}>{selectedMonth}</span>
+                                    <span className="selected-text" style={{ fontSize: '0.85rem' }}>{selectedMonth || 'Months'}</span>
                                     <ChevronDown size={14} className={`chevron-icon ${isMonthDropdownOpen ? 'rotated' : ''}`} />
                                 </button>
 
@@ -194,13 +194,13 @@ const CalendarView = ({ onClose }) => {
                                         {SHOW_MONTHS.map(month => (
                                             <button
                                                 key={month}
-                                                className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'All Months' && activeStats.months[month] ? 'has-items' : ''}`}
+                                                className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'Months' && activeStats.months[month] ? 'has-items' : ''}`}
                                                 onClick={() => {
                                                     handleMonthChange(month);
                                                 }}
                                             >
                                                 {month}
-                                                {month !== 'All Months' && activeStats.months[month] > 0 && (
+                                                {month !== 'Months' && activeStats.months[month] > 0 && (
                                                     <span className="item-count-indicator">{activeStats.months[month]}</span>
                                                 )}
                                             </button>
@@ -228,7 +228,7 @@ const CalendarView = ({ onClose }) => {
                         {filteredShows.length > 0 ? (
                             filteredShows.map(show => (
                                 <div key={show.id} className="show-card glass-panel">
-                                    <div className="show-content">
+                                    <div className="show-content" style={{ flexDirection: 'row-reverse' }}>
                                         <div className="show-image-container">
                                             <img src={show.image} alt={show.name} className="show-image" />
                                             {show.category && (

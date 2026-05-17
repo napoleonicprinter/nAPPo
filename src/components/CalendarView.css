@@ -350,6 +350,8 @@
     transform: scale(1.05);
 }
 
+.selected-text { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 .calendar-day.selected {
     background: var(--accent-primary) !important;
     color: #000 !important;
@@ -383,11 +385,19 @@
 
 @media (max-width: 768px) {
     .shows-calendar-container {
-        padding: 1rem;
+        padding: 1rem 0.5rem;
+    }
+    .calendar-grid {
+        gap: 2px;
+    }
+    .calendar-weekdays {
+        font-size: 0.65rem;
+        letter-spacing: 0;
     }
     .calendar-day {
         font-size: 0.75rem;
     }
+    .day-number {
+        font-size: 0.95rem;
+    }
 }
-
-
