@@ -2160,5 +2160,23 @@
         "location": "El Bodon, Salamanca",
         "country": "Spain",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_El_Bod%C3%B3n"
+    },
+    {
+        "id": "251",
+        "title": "Battle of Maloyaroslavets",
+        "description": "Russian and French armies were evenly matched in the battle and suffered similar casualties, with a marginal edge going to the Franco-Italian army.",
+        "date": "1812-10-24",
+        "location": "Maloyaroslavets",
+        "country": "Russia",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maloyaroslavets"
+    },
+    {
+        "id": "252",
+        "title": "Fisrt Battle of Polotsk",
+        "description": "Russian troops under the general command of Bennigsen, acting on instructions from Kutuzov and being part of his army, launched a surprise attack and defeated French troops under Murat's command.",
+        "date": "1812-10-18",
+        "location": "Polotsk",
+        "country": "Belarus",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Polotsk"
     }
 ]
