@@ -5,7 +5,7 @@ import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, G
 import ShowsCalendarModal from './ShowsCalendarModal';
 import './CalendarView.css';
 
-const SHOW_CATEGORIES = ['Categories', 'Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
+const SHOW_CATEGORIES = ['Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
 const SHOW_MONTHS = ['Months', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -81,9 +81,9 @@ const CalendarView = ({ onClose }) => {
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                                 <h2>Upcoming Events</h2>
                                 {selectedDate && (
-                                    <span 
-                                        className="badge" 
-                                        style={{ backgroundColor: 'var(--accent-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#000' }} 
+                                    <span
+                                        className="badge"
+                                        style={{ backgroundColor: 'var(--accent-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#000' }}
                                         onClick={() => setSelectedDate(null)}
                                         title="Clear date filter"
                                     >
@@ -93,8 +93,8 @@ const CalendarView = ({ onClose }) => {
                             </div>
                             <p>Discover Napoleonic events and reenactments worlwide</p>
                         </div>
-                        <img src="/assets/images/NT_logo.webp" alt="NT Logo" style={{ height: '32px', marginLeft: 'auto' }} />
-                         <button className="modal-close-btn" onClick={onClose}>
+                        <img src="/assets/NT_logo.png" alt="NT Logo" style={{ height: '32px', marginLeft: 'auto' }} />
+                        <button className="modal-close-btn" onClick={onClose}>
                             <X size={24} />
                         </button>
                     </div>
@@ -117,17 +117,27 @@ const CalendarView = ({ onClose }) => {
 
                             {isCategoryDropdownOpen && (
                                 <div className="dropdown-menu glass-panel animate-fade-in">
+                                    <button
+                                        key="all"
+                                        className={`dropdown-option ${selectedCategory === '' ? 'selected' : ''}`}
+                                        onClick={() => {
+                                            setSelectedCategory('');
+                                            setIsCategoryDropdownOpen(false);
+                                        }}
+                                    >
+                                        Categories
+                                    </button>
                                     {SHOW_CATEGORIES.map(cat => (
                                         <button
                                             key={cat}
-                                            className={`dropdown-option ${selectedCategory === cat ? 'selected' : ''} ${cat !== 'Categories' && activeStats.categories[cat] ? 'has-items' : ''}`}
+                                            className={`dropdown-option ${selectedCategory === cat ? 'selected' : ''} ${activeStats.categories[cat] ? 'has-items' : ''}`}
                                             onClick={() => {
                                                 setSelectedCategory(cat);
                                                 setIsCategoryDropdownOpen(false);
                                             }}
                                         >
                                             {cat}
-                                            {cat !== 'Categories' && activeStats.categories[cat] > 0 && (
+                                            {activeStats.categories[cat] > 0 && (
                                                 <span className="item-count-indicator">{activeStats.categories[cat]}</span>
                                             )}
                                         </button>
@@ -153,17 +163,27 @@ const CalendarView = ({ onClose }) => {
 
                             {isCountryDropdownOpen && (
                                 <div className="dropdown-menu glass-panel animate-fade-in">
+                                    <button
+                                        key="all"
+                                        className={`dropdown-option ${selectedCountry === '' ? 'selected' : ''}`}
+                                        onClick={() => {
+                                            setSelectedCountry('');
+                                            setIsCountryDropdownOpen(false);
+                                        }}
+                                    >
+                                        Countries
+                                    </button>
                                     {countries.map(country => (
                                         <button
                                             key={country}
-                                            className={`dropdown-option ${selectedCountry === country ? 'selected' : ''} ${country !== 'Countries' && activeStats.countries[country] ? 'has-items' : ''}`}
+                                            className={`dropdown-option ${selectedCountry === country ? 'selected' : ''} ${activeStats.countries[country] ? 'has-items' : ''}`}
                                             onClick={() => {
                                                 setSelectedCountry(country);
                                                 setIsCountryDropdownOpen(false);
                                             }}
                                         >
                                             {country}
-                                            {country !== 'Countries' && activeStats.countries[country] > 0 && (
+                                            {activeStats.countries[country] > 0 && (
                                                 <span className="item-count-indicator">{activeStats.countries[country]}</span>
                                             )}
                                         </button>
@@ -209,7 +229,7 @@ const CalendarView = ({ onClose }) => {
                                 )}
                             </div>
 
-                            <button 
+                            <button
                                 className="category-filter-wrapper glass-panel"
                                 onClick={() => setIsShowsCalendarOpen(true)}
                                 style={{ flex: 1, justifyContent: 'center', cursor: 'pointer', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
@@ -232,9 +252,9 @@ const CalendarView = ({ onClose }) => {
                                         <div className="show-image-container">
                                             <img src={show.image} alt={show.name} className="show-image" />
                                             {show.category && (
-                                                <span 
-                                                    className="badge category-badge" 
-                                                    style={{ 
+                                                <span
+                                                    className="badge category-badge"
+                                                    style={{
                                                         backgroundColor: getEventCategoryColor(show.category),
                                                         position: 'absolute',
                                                         bottom: '12px',
@@ -297,11 +317,11 @@ const CalendarView = ({ onClose }) => {
                     </div>
                 </div>
             </div>
-            
+
             {isShowsCalendarOpen && (
-                <ShowsCalendarModal 
-                    showsData={filteredShows} 
-                    onClose={() => setIsShowsCalendarOpen(false)} 
+                <ShowsCalendarModal
+                    showsData={filteredShows}
+                    onClose={() => setIsShowsCalendarOpen(false)}
                     onDayClick={(date) => {
                         setIsShowsCalendarOpen(false);
                         setSelectedDate(date);
