@@ -9588,5 +9588,50 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borizov.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov",
     "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "526",
+    "name": "Battlefield of Swolna",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1812",
+    "date": "1812-08-11",
+    "location": "Svolna",
+    "country": "Belarus",
+    "description": "Took place on August 11th 1812 near the village of Svolna where Oudinot's French ran at the river Svolna into the Russians under d'Auvray.",
+    "latitude": 54.77033,
+    "longitude": 28.086317,
+    "special": "Russian Campaign",
+    "victor": "inconclusive",
+    "commanders": [
+      "Fyodor d'Auvray",
+      "Nicolas Oudinot"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Swolna.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Swolna",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "527",
+    "name": "Battlefield of Mir",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1812",
+    "date": "1812-07-09",
+    "location": "Simakova",
+    "country": "Belarus",
+    "description": "Took place on 9 and 10 July 1812 when three Polish Lancers divisions battled against Russian cavalry, ending in the first major Russian victory in the war.",
+    "latitude": 53.391766,
+    "longitude": 26.495482,
+    "special": "Russian Campaign",
+    "victor": "Russia",
+    "defeated": "Duchy of Warsaw",
+    "commanders": [
+      "Aleksander Rożniecki",
+      "Matvei Platov"
+    ],
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mir.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mir_(1812)",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

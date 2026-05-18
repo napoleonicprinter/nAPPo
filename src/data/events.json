@@ -2196,5 +2196,23 @@
         "location": "Borizov",
         "country": "Belarus",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov"
+    },
+    {
+        "id": "255",
+        "title": "Battle of Swolna",
+        "description": "Oudinot's French ran at the river Svolna into the Russians under d'Auvray.",
+        "date": "1812-08-11",
+        "location": "Svolna",
+        "country": "Belarus",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Swolna"
+    },
+    {
+        "id": "256",
+        "title": "Battle of Mir",
+        "description": "Three Polish Lancers divisions battled against Russian cavalry, ending in the first major Russian victory in the war.",
+        "date": "1812-07-09",
+        "location": "Simakova",
+        "country": "Belarus",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mir_(1812)"
     }
 ]
