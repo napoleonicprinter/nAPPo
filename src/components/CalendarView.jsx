@@ -74,9 +74,7 @@ const CalendarView = ({ onClose }) => {
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ display: isShowsCalendarOpen ? 'none' : 'flex' }}>
                 <div className="calendar-modal-header">
                     <div className="modal-title-row">
-                        <div className="modal-icon-container">
-                            <Calendar size={24} />
-                        </div>
+                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info">
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                                 <h2>Upcoming Events</h2>
@@ -91,9 +89,7 @@ const CalendarView = ({ onClose }) => {
                                     </span>
                                 )}
                             </div>
-                            <p>Discover Napoleonic events and reenactments worlwide</p>
                         </div>
-                        <img src="/assets/NT_logo.png" alt="NT Logo" style={{ height: '32px', marginLeft: 'auto' }} />
                         <button className="modal-close-btn" onClick={onClose}>
                             <X size={24} />
                         </button>
@@ -232,10 +228,11 @@ const CalendarView = ({ onClose }) => {
                             <button
                                 className="category-filter-wrapper glass-panel"
                                 onClick={() => setIsShowsCalendarOpen(true)}
-                                style={{ flex: 1, justifyContent: 'center', cursor: 'pointer', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
+                                style={{ flex: '0 0 auto', justifyContent: 'center', cursor: 'pointer', paddingLeft: '0.8rem', paddingRight: '0.8rem' }}
+                                title="Calendar View"
                             >
-                                <CalendarDays size={16} className="filter-icon" />
-                                <span className="selected-text" style={{ fontSize: '0.85rem' }}>Calendar View</span>
+                                <CalendarDays size={16} className="filter-icon" style={{ margin: 0 }} />
+                                <span className="hide-on-mobile" style={{ fontSize: '0.85rem', marginLeft: '6px' }}>Calendar View</span>
                             </button>
                         </div>
                     </div>
@@ -248,7 +245,7 @@ const CalendarView = ({ onClose }) => {
                         {filteredShows.length > 0 ? (
                             filteredShows.map(show => (
                                 <div key={show.id} className="show-card glass-panel">
-                                    <div className="show-content" style={{ flexDirection: 'row-reverse' }}>
+                                    <div className="show-content">
                                         <div className="show-image-container">
                                             <img src={show.image} alt={show.name} className="show-image" />
                                             {show.category && (

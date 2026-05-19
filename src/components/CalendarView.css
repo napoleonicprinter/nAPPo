@@ -23,6 +23,12 @@
     box-shadow: 0 8px 16px rgba(88, 166, 255, 0.3);
 }
 
+.modal-logo {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+}
+
 .modal-title-info h2 {
     margin: 0;
     font-size: 1.5rem;
@@ -118,6 +124,7 @@
 .show-content {
     display: flex;
     min-height: 220px;
+    flex-direction: row-reverse;
 }
 
 .show-info {
@@ -239,6 +246,10 @@
     .modal-icon-container {
         width: 40px;
         height: 40px;
+    }
+
+    .modal-logo {
+        height: 56px;
     }
 
     .modal-icon-container svg {

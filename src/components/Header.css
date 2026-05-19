@@ -995,3 +995,136 @@
         transform: translateY(0);
     }
 }
+
+/* Smartphone & Tablet Landscape Specifics (Height <= 500px) */
+@media (max-width: 1024px) and (max-height: 500px) {
+    .app-header {
+        display: grid !important;
+        grid-template-columns: auto auto auto auto 1fr auto !important;
+        grid-template-areas: "brand location categories areas . hamburger" !important;
+        grid-template-rows: auto !important;
+        gap: 0.25rem 0.5rem !important;
+        padding: 0.25rem 0.5rem !important;
+        height: 38px !important;
+        align-items: center !important;
+    }
+
+    .header-brand {
+        grid-area: brand !important;
+        height: 32px !important;
+        align-items: center !important;
+        padding-left: 0.25rem !important;
+        gap: 0.4rem !important;
+    }
+
+    .header-logo {
+        height: 28px !important;
+    }
+
+    .sites-count-badge {
+        height: 28px !important;
+        min-width: 45px !important;
+        padding: 2px 4px !important;
+        border-radius: 8px !important;
+    }
+
+    .count-number {
+        font-size: 0.95rem !important;
+    }
+
+    .count-label {
+        font-size: 0.5rem !important;
+        margin-top: 1px !important;
+    }
+
+    .filters-line>.location-toggle-group {
+        grid-area: location !important;
+        margin-left: 0 !important;
+    }
+
+    .category-filters-wrapper {
+        grid-area: categories !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding-left: 0 !important;
+    }
+
+    .desktop-filters>.custom-select-container:first-of-type {
+        grid-area: areas !important;
+        display: block !important;
+        padding-right: 0 !important;
+    }
+
+    .mobile-header-actions {
+        grid-area: hamburger !important;
+        margin-right: 0.25rem !important;
+        gap: 0.25rem !important;
+    }
+
+    .custom-select-trigger,
+    .filter-select,
+    .significance-filter {
+        height: 28px !important;
+        padding: 0 8px !important;
+        font-size: 0.75rem !important;
+        border-radius: 8px !important;
+    }
+
+    .star-button svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .custom-select-container {
+        min-width: 100px !important;
+    }
+
+    .category-filters-wrapper .custom-select-container {
+        min-width: 120px !important;
+    }
+
+    .mobile-header-btn,
+    .mobile-menu-toggle {
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50% !important;
+    }
+
+    .mobile-menu-toggle svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    /* Position Leaflet controls nicely and hide overlay filter clutter if needed */
+    .leaflet-top.leaflet-right {
+        top: 42px !important;
+    }
+
+    .mobile-overlay-filters {
+        top: calc(100% + 4px) !important;
+        margin-top: 0 !important;
+        left: 6px !important;
+        gap: 0.5rem !important;
+    }
+
+    .mobile-tag-filter .custom-select-trigger {
+        height: 28px !important;
+        font-size: 0.7rem !important;
+        padding: 0 6px !important;
+        border-radius: 8px !important;
+    }
+
+    .mobile-arc-filter {
+        height: 28px !important;
+        min-height: 28px !important;
+        max-height: 28px !important;
+        padding: 0 8px !important;
+        border-radius: 8px !important;
+    }
+
+    .mobile-arc-filter svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+}

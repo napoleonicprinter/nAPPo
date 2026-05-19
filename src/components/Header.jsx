@@ -61,6 +61,30 @@ const Header = () => {
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
 
+    const menuRef = useRef(null);
+    const toggleRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                isMenuOpen &&
+                menuRef.current &&
+                !menuRef.current.contains(event.target) &&
+                toggleRef.current &&
+                !toggleRef.current.contains(event.target)
+            ) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
+        };
+    }, [isMenuOpen]);
+
     const { newsData } = useAppContext();
     const recentNewsCount = useMemo(() => {
         if (!newsData) return 0;
@@ -131,6 +155,7 @@ const Header = () => {
                     <Calendar size={20} />
                 </button>
                 <button
+                    ref={toggleRef}
                     className="mobile-menu-toggle glass-panel"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
@@ -224,7 +249,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className={`header-controls ${isMenuOpen ? 'mobile-open' : ''}`}>
+            <div ref={menuRef} className={`header-controls ${isMenuOpen ? 'mobile-open' : ''}`}>
                 <div className="header-actions">
                     {currentUser ? (
                         <div className="user-profile-btn glass-panel" style={{ display: 'flex', alignItems: 'center' }}>
