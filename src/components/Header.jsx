@@ -156,7 +156,7 @@ const Header = () => {
                 </button>
                 <button
                     ref={toggleRef}
-                    className="mobile-menu-toggle glass-panel"
+                    className={`mobile-menu-toggle glass-panel ${isMenuOpen ? 'menu-open' : ''}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

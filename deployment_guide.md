@@ -1,54 +1,62 @@
-# Publishing Your nAPPo Trails Application
+# Guía de Publicación: nAPPo Trails (Versión Web para PC y Tablet)
 
-This guide outlines the steps to deploy your React application built with Vite to a live web server.
+¡Hola! Has elegido el **Método A: Versión Web de Escritorio**. Esta es la opción más flexible, rápida y recomendada para que los usuarios puedan usar ambas versiones (Standard y Batallas) en computadoras (PC) y tablets sin necesidad de instalar una app nativa.
 
-## Step 1: Prepare Your Project
+Hemos configurado y automatizado todo el sistema para que puedas generar y subir ambas versiones de forma extremadamente sencilla.
 
-Before publishing, you need to create a production-ready version of your app. This "build" optimizes your code for performance.
+---
 
-### Running the Build
-In your terminal, run the following command:
+## 🚀 Paso 1: Generar los Archivos de Producción
+
+Hemos creado un script inteligente que compila **ambas versiones** secuencialmente y las coloca en carpetas separadas para que no se sobrescriban.
+
+En tu terminal (dentro de la carpeta del proyecto `d:\nAPPo_trails`), ejecuta:
+
 ```powershell
-npm run build
+npm run build:all
 ```
 
-> [!IMPORTANT]
-> **Windows Security Note**: If you see an error about "Execution Policies", you may need to run this command in your terminal first to allow scripts:
-> `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+### ¿Qué hace este comando?
+1. Limpia cualquier compilación previa de las carpetas de salida.
+2. Compila la **Versión Standard** (desactivando las unidades de batalla) y la guarda en la carpeta `dist-standard/`.
+3. Compila la **Versión de Batallas** (activando las unidades de batalla) y la guarda en la carpeta `dist-battle/`.
 
-This will create a `dist` folder in your project directory. This folder contains all the files (HTML, CSS, JS) that need to be uploaded to a server.
+Al finalizar, verás un mensaje de éxito de color verde indicando que ambas carpetas están listas.
 
 ---
 
-## Step 2: Choose a Hosting Platform
+## 🌐 Paso 2: Publicar en Internet con Netlify (Recomendado y Gratis)
 
-Here are the three easiest ways to host your application for free or at a low cost.
+Netlify es el servicio de hosting más rápido y fácil para publicar tus versiones web. Al tener dos versiones diferentes, lo ideal es crear **dos sitios web independientes** en Netlify.
 
-### Option A: Netlify (Easiest / Recommended)
-Netlify is the simplest way to get your app online.
-1. Create a free account at [Netlify.com](https://www.netlify.com/).
-2. **Drag & Drop**: Simply drag the `dist` folder from your file explorer onto the Netlify "Sites" area.
-3. Your app will be live instantly with a custom URL.
+### Para la Versión Standard:
+1. Inicia sesión o crea una cuenta gratuita en [Netlify.com](https://www.netlify.com/).
+2. Ve a la pestaña **"Sites"** (Sitios).
+3. Desplázate hacia abajo hasta el área que dice **"Drag and drop your site folder here"** (Arrastra y suelta la carpeta de tu sitio aquí).
+4. Arrastra y suelta la carpeta **`dist-standard`** desde tu explorador de archivos de Windows a esa zona.
+5. ¡Listo! En segundos tu versión Standard estará en línea. Netlify te dará un enlace (ej. `nappo-standard.netlify.app`) el cual puedes personalizar.
 
-### Option B: GitHub Pages (Free & Integrated)
-If your code is on GitHub, you can host it directly.
-1. **Modify `vite.config.js`**: Add the `base` property with your repository name:
-   ```javascript
-   export default defineConfig({
-     base: '/your-repo-name/', // Important for GitHub Pages
-     plugins: [react()],
-   })
+### Para la Versión de Batallas:
+1. En tu panel de Netlify, haz clic en **"Add new site"** (Añadir nuevo sitio) > **"Deploy manually"** (Desplegar manualmente).
+2. Arrastra y suelta la carpeta **`dist-battle`**.
+3. ¡Listo! En segundos tu versión de Batallas estará en línea bajo otro enlace (ej. `nappo-battle.netlify.app`).
+
+---
+
+## 📱 ¿Cómo funciona en PC y Tablet?
+
+Al ser una aplicación web moderna y adaptativa:
+* **En PC (Escritorio):** El diseño se adaptará de forma fluida a pantallas anchas, mostrando el panel del mapa, listas y el árbol lateral con total comodidad.
+* **En Tablet:** Se adaptará perfectamente a la pantalla táctil de tu iPad o Tablet Android en orientación horizontal o vertical, ofreciendo una experiencia premium directamente en el navegador (Safari, Chrome, etc.).
+
+---
+
+## 🛠️ Probar localmente antes de subir
+
+Si deseas probar la versión ya compilada localmente en tu PC antes de subirla a Netlify:
+1. Tu servidor de desarrollo en tiempo real sigue corriendo en:
+   **[http://localhost:5174](http://localhost:5174)**
+2. Para probar una versión compilada de producción en tu navegador local, puedes iniciar un servidor de previsualización para la carpeta que desees. Por ejemplo, para previsualizar `dist-standard`:
+   ```powershell
+   npx vite preview --outDir dist-standard
    ```
-2. **Deploy**: You can use the `gh-pages` package or set up a GitHub Action to automate the build and deploy process.
-
-### Option C: Vercel
-Similar to Netlify, Vercel offers seamless integration with Git.
-1. Connect your GitHub/GitLab repository to [Vercel](https://vercel.com/).
-2. Vercel will automatically detect the "Vite" project and run `npm run build` for you every time you push code.
-
----
-
-## Summary of Publishing Flow
-1. **Develop**: Complete your features.
-2. **Build**: Run `npm run build` to get the `dist` folder.
-3. **Deploy**: Upload the `dist` folder content to your host of choice.

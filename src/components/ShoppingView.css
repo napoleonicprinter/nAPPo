@@ -30,6 +30,12 @@
     box-shadow: 0 8px 16px rgba(88, 166, 255, 0.3);
 }
 
+.modal-logo {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+}
+
 .modal-title-info h2 {
     margin: 0;
     font-size: 1.5rem;
@@ -46,6 +52,10 @@
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.shopping-controls .selected-text {
+    max-width: none;
 }
 
 .shopping-controls .custom-dropdown-container {
@@ -256,6 +266,10 @@
 @media (max-width: 768px) {
     .shopping-container {
         padding: 1.5rem;
+    }
+    
+    .modal-logo {
+        height: 56px;
     }
     
 .shopping-content {

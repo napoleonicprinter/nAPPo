@@ -43,11 +43,9 @@ const ShoppingView = ({ onClose }) => {
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
                 <div className="shopping-modal-header">
                     <div className="modal-title-row">
-                        <div className="modal-icon-container">
-                            <ShoppingCart size={24} />
-                        </div>
+                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info">
-                            <h2>nAPPo Trails Marketplace</h2>
+                            <h2>Marketplace</h2>
                             <p>If you want to place an ad here email us to nAPPoTrails@proton.me</p>
                         </div>
                         <button className="modal-close-btn" onClick={onClose}>

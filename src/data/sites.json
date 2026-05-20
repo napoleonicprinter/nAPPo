@@ -22,6 +22,11 @@
       "arc",
       "3"
     ],
+    "victor": "France",
+    "defeated": [
+      "Russia",
+      "Austria"
+    ],
     "commanders": [
       "Napoleon",
       "Alexander I",
@@ -46,11 +51,23 @@
     "more_info_link": "https://www.waterloo1815.be/en/prepare-your-visit-2/",
     "youtube_link": "https://www.youtube.com/watch?v=gjp1ldJeY3E",
     "createDate": "2025-02-15T10:00:00Z",
-    "special": "7",
+    "special": "100 Days",
+    "victor": [
+      "UK",
+      "Prusia",
+      "Brunswick",
+      "Nasseau",
+      "Hannover",
+      "Netherlands"
+    ],
+    "defeated": [
+      "France"
+    ],
     "commanders": [
       "Napoleon",
       "Wellington",
-      "Gebhard von Blücher"
+      "Gebhard von Blücher",
+      "Prince of Orange"
     ]
   },
   {
@@ -66,6 +83,7 @@
     "visited": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Arc_Paris.webp",
     "createDate": "2025-10-10T10:00:00Z",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
     "special": false
   },
   {
@@ -80,7 +98,7 @@
     "latitude": 48.854891,
     "longitude": 2.312491,
     "visited": false,
-    "image": "https://www.franciaturismo.net/es/wp-content/uploads/sites/17/paris-les-invalides-tumba-napoleon.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tomb_Napoleon.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Tombeau_de_Napol%C3%A9on_Ier_aux_Invalides",
     "more_info_link": "https://www.musee-armee.fr/es/home.html",
     "youtube_link": "https://youtu.be/omXjNHHBoJY?si=_sbj8Lsm31x_XtDb",
@@ -93,18 +111,22 @@
     "category": "Battle site",
     "significance": "Major",
     "year": 1800,
+    "date": "1800-06-14",
     "location": "Spinetta Marengo",
     "country": "Italy",
-    "description": "A battle fought between French forces under the First Consul Napoleon Bonaparte and Austrian forces near the city of Alessandria, in Piedmont, Italy.",
+    "description": "Fought on June 14th 1800 between French forces under the First Consul Napoleon Bonaparte and Austrian forces near the city of Alessandria, in Piedmont, Italy.",
     "latitude": 44.896,
     "longitude": 8.666,
     "visited": false,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Relation_de_la_Bataille_de_Marengo.jpg/1280px-Relation_de_la_Bataille_de_Marengo.jpg?_=20160228104246",
+    "wikipedia_link":"https://en.wikipedia.org/wiki/Battle_of_Marengo",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Marengo.webp",
     "special": [
       "arc",
       "2",
       "Marengo Campaign"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commanders": [
       "Napoleon",
       "Michael von Melas"
@@ -115,14 +137,13 @@
     "name": "Château de Fontainebleau",
     "category": "Landmark",
     "significance": "Medium",
-    "year": "",
     "location": "Fontainebleau",
     "country": "France",
     "description": "One of Napoleon's favorite residences, Fontainebleau witnessed his famous farewell to the Old Guard in 1814. Napoleon signed his first abdication here and bid farewell in the Cour des Adieux (Courtyard of Farewells).",
     "latitude": 48.4014,
     "longitude": 2.6994,
     "visited": false,
-    "image": "https://www.napoleon.org/wp-content/thumbnails/uploads/2019/02/david-wilkie-scottish-1785-1841napoleon-and-pope-pius-vii-at-fontainebleau-1836-nat-gal-of-ireland-oil-on-canvas-tt-width-637-height-817-crop-1-bgcolor-ffffff-lazyload-0.png",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fontainbleau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Palace_of_Fontainebleau",
     "more_info_link": "https://www.chateaudefontainebleau.fr/en/",
     "youtube_link": "https://www.youtube.com/watch?v=RalsF7-bWeU",
@@ -144,7 +165,12 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borodino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borodino",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc",
+    "special": [
+      "arc", 
+      "Russian Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Russia",
     "commanders": [
       "Napoleon",
       "Kutuzov"
@@ -163,7 +189,8 @@
     "longitude": 8.738,
     "visited": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Casa_Buonaparte.webp",
-    "special": false
+    "wikipedia_link":"https://en.wikipedia.org/wiki/Maison_Bonaparte",
+    "site_link": "https://musees-nationaux-malmaison.fr/musee-maisonbonaparte/"
   },
   {
     "id": "9",
@@ -225,16 +252,19 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": 1809,
+    "date": "1809-04-19",
     "location": "Raszyn",
     "country": "Poland",
-    "description": "The first Battle of Raszyn was fought on 19 April 1809 between armies of the Austrian Empire under Archduke Ferdinand Karl Joseph of Austria-Este and the Duchy of Warsaw under Józef Antoni Poniatowski, as part of the War of the Fifth Coalition in the Napoleonic Wars. The battle was not decisive, but it did result in the Austrians obtaining their goal by capturing the Polish capital Warsaw.",
+    "description": "The first Battle of Raszyn was fought on April 19th 1809 between armies of the Austrian Empire under Archduke Ferdinand Karl Joseph of Austria-Este and the Duchy of Warsaw under Józef Antoni Poniatowski, as part of the War of the Fifth Coalition in the Napoleonic Wars. The battle was not decisive, but it did result in the Austrians obtaining their goal by capturing the Polish capital Warsaw.",
     "latitude": 52.158889,
     "longitude": 20.926389,
     "visited": false,
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/AGAD_Plan_bitwy_pod_Raszynem.png",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Raszyn_(1809)",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false,
+    "special": "5",
+    "victor": "Poland",
+    "defeated": "Austria",
     "commanders": [
       "Józef Antoni Poniatowski",
       "Archduke Ferdinand Karl Joseph"
@@ -292,8 +322,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/La_batalla_de_Somosierra%2C_por_January_Suchodolski.jpg/1280px-La_batalla_de_Somosierra%2C_por_January_Suchodolski.jpg",
     "site_link": "https://cyfrowe.mnw.art.pl/en/home",
     "more_info_link": "https://cyfrowe.mnw.art.pl/en/catalog/446701",
-    "createDate": "2025-02-26T10:00:00Z",
-    "special": "arc"
+    "createDate": "2025-02-26T10:00:00Z"
   },
   {
     "id": "16",
@@ -1858,13 +1887,14 @@
   },
   {
     "id": "102",
-    "name": "Batalla de Somosierra",
+    "name": "Battlefied of Somosierra",
     "category": "Battle site",
     "significance": "Minor",
     "year": "1808",
+    "date": "1808-11-30",
     "location": "Somosierra, Madrid",
     "country": "Spain",
-    "description": "Derrota española frente a tropas imperiales en el norte.",
+    "description": "Took place on November 30th 1808, when a combined Franco-Napoleonic Spanish-Polish force under the direct command of Napoleon I forced a passage through a Spanish division stationed at the Sierra de Guadarrama, which shielded Madrid from direct French attack.",
     "latitude": 41.0833,
     "longitude": -3.75,
     "visited": false,
@@ -1873,8 +1903,17 @@
     "youtube_link": "https://youtu.be/FvyubyEzq-w?si=sYa3Ba7slK2jQAfo",
     "more_info_link": "https://www.batalladetrafalgar.com/2009/05/el-fuerte-frances-de-somosierra.html",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "victor": "France",
+    "defeated": "Spain",
+    "special": [
+      "arc",
+      "Guerra de Independencia",
+      "Peninsular War"
+    ],
+    "commanders": [
+      "Napoleon",
+      "Benito de San Juan"
+    ]
   },
   {
     "id": "103",
@@ -4400,7 +4439,7 @@
     "id": "240",
     "name": "Monument to Friedrich Hensel",
     "category": "Monument",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "location": "Malborghetto Val Canale",
     "country": "Italy",
     "description": "The monument was erected in memory of Friedrich Hensel, who was killed in the Battle of Malborghetto.",
@@ -5582,7 +5621,7 @@
     "id": "303",
     "name": "Mikulov Castle",
     "category": "Landmark",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "location": "Mikulov",
     "country": "Czech Republic",
     "description": "Napoleon stopped for a short visit in the local Chateau on December 12th, 1805 on his way from Brno to Vienna (a salon on the first floor of the Chateau is to commemorate the event).",
@@ -7044,7 +7083,7 @@
     "id": "372",
     "name": "Hesse Haus",
     "category": "Landmark",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "location": "Ottweiler",
     "country": "Germany",
     "description": "House were it is said Genaral von Blücher stayed for on January 10th 1814.",
@@ -7058,7 +7097,7 @@
     "id": "373",
     "name": "Ottweiler old castle square",
     "category": "Landmark",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "location": "Ottweiler",
     "country": "Germany",
     "description": "Place where the scene portrayed by Christian Sell for his 'Prince Blücher's address to the population, January 1814' in a series of historical postcards for the District Veterans' Association (Bezirkskriegerverband) in the early 20th century.",
@@ -8299,7 +8338,7 @@
     "category": "Battle site",
     "year": "1796",
     "date": "1796-05-30",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "location": "Valeggio sul Mincio",
     "country": "Italy",
     "description": "On May 30th 1796, a French army led by General Napoleon Bonaparte forced a crossing of the Mincio River in the face of opposition from an Austrian army commanded by Feldzeugmeister Johann Peter Beaulieu.",
@@ -8325,7 +8364,7 @@
     "id": "444",
     "name": "Palazzo Guarienti",
     "category": "Landmark",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "year": "1796",
     "location": "Valeggio sul Mincio",
     "country": "Italy",
@@ -9330,7 +9369,7 @@
     "id": "510",
     "name": "Torre del Puerco",
     "category": "Landmark",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "location": "Chiclana de la Frontera",
     "country": "Spain",
     "description": "Constructed in the XVI century to defend the Spanish coasts from the pirates, it was the testimonial of the Battle of Chiclana between the Anglo-Spanish and French troops and is in the background of the painting by the artist Louis-François Lejeune: Battle of Chiclana.",
@@ -9506,7 +9545,7 @@
     "id": "522",
     "name": "Battlefield First battle of Polotsk",
     "category": "Battle site",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "year": "1812",
     "date": "1812-10-18",
     "location": "Polotsk",
@@ -9530,7 +9569,7 @@
     "id": "523",
     "name": "Battlefield of Wolkowisk (Volkovysk)",
     "category": "Battle site",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "year": "1812",
     "date": "1812-11-14",
     "location": "Volkovysk",
@@ -9567,7 +9606,7 @@
     "id": "525",
     "name": "Battlefield of Borizov",
     "category": "Battle site",
-    "significance": "Minor  ",
+    "significance": "Minor",
     "year": "1812",
     "date": "1812-11-21",
     "location": "Borizov",

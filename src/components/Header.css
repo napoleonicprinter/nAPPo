@@ -639,6 +639,11 @@
         padding: 0;
     }
 
+    .mobile-menu-toggle.menu-open {
+        color: var(--accent-danger) !important;
+        border-color: rgba(248, 81, 73, 0.4) !important;
+    }
+
     .desktop-only {
         display: none !important;
     }
