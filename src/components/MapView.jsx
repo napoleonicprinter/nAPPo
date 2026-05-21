@@ -163,7 +163,7 @@ const LocationMarker = () => {
 // Helper component to center map manually on user location via control button
 // Dynamic clustering radius was removed because it forces MarkerClusterGroup to remount
 // on every zoom, which breaks popup animations and zoomToShowLayer.
-// A fixed maxClusterRadius of 45 provides the requested high sensitivity.
+// A fixed maxClusterRadius of 25 keeps nearby sites apart for more zoom levels.
 
 // Helper component to track map bounds
 const BoundsTracker = () => {
@@ -662,7 +662,7 @@ const MapView = () => {
                     ref={setClusterInstance}
 
                     chunkedLoading
-                    maxClusterRadius={45}
+                    maxClusterRadius={25}
                 >
                     {useMemo(() => sites.map(site => {
                         const iconKey = `${site.category}-${site.significance}-${site.visited}-${theme}`;

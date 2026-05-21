@@ -271,9 +271,9 @@ button {
 }
 
 .modal-close-btn {
-  background: rgba(255, 255, 255, 0.1);
+  background: #000;
   border: none;
-  color: var(--text-primary);
+  color: #fff;
   width: 38px;
   height: 38px;
   border-radius: 50%;
