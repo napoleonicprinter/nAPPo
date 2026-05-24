@@ -6,6 +6,7 @@ import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
 import battleUnitsDataFallback from '../data/battleUnits.json';
+import dealsDataFallback from '../data/deals.json';
 import { Geolocation } from '@capacitor/geolocation';
 import testLocation from '../data/testLocation.json';
 
@@ -139,6 +140,26 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : battleUnitsDataFallback;
     });
 
+    const [dealsBaseData, setDealsBaseData] = useState(() => {
+        if (isDevelopment) return dealsDataFallback;
+        const saved = localStorage.getItem('dealsData');
+        return (saved && saved !== "undefined") ? JSON.parse(saved) : dealsDataFallback;
+    });
+
+    const activeDeals = useMemo(() => {
+        if (!dealsBaseData) return [];
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        return dealsBaseData
+            .filter(deal => {
+                const start = new Date(deal.startDate + 'T00:00:00');
+                const end = new Date(deal.endDate + 'T23:59:59');
+                return today >= start && today <= end;
+            })
+            .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+    }, [dealsBaseData]);
+
     const [syncStatus, setSyncStatus] = useState('idle');
     const [lastSyncTime, setLastSyncTime] = useState(() => {
         return localStorage.getItem('lastSyncTime') || null;
@@ -158,7 +179,8 @@ export const AppProvider = ({ children }) => {
                     fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts)
+                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts),
+                    fetch(`${GITHUB_RAW_BASE_URL}/deals.json?t=${t}`, fetchOpts)
                 ];
 
                 if (battleUnitsEnabled) {
@@ -167,7 +189,7 @@ export const AppProvider = ({ children }) => {
 
                 const fetchRes = await Promise.all(fetchRequests);
 
-                const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resBattleUnits] = fetchRes;
+                const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resDeals, resBattleUnits] = fetchRes;
 
                 if (resSites.ok) {
                     const data = await resSites.json();
@@ -198,6 +220,11 @@ export const AppProvider = ({ children }) => {
                     const data = await resMessages.json();
                     if (!isDevelopment) setMessagesBaseData(data);
                     localStorage.setItem('messagesData', JSON.stringify(data));
+                }
+                if (resDeals && resDeals.ok) {
+                    const data = await resDeals.json();
+                    if (!isDevelopment) setDealsBaseData(data);
+                    localStorage.setItem('dealsData', JSON.stringify(data));
                 }
                 if (battleUnitsEnabled && resBattleUnits && resBattleUnits.ok) {
                     const data = await resBattleUnits.json();
@@ -260,6 +287,11 @@ export const AppProvider = ({ children }) => {
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
         return saved ? parseInt(saved, 10) : 30;
+    });
+
+    const [clusterRadius, setClusterRadius] = useState(() => {
+        const saved = localStorage.getItem('clusterRadius');
+        return saved ? parseInt(saved, 10) : 25;
     });
 
     const derivedSites = useMemo(() => {
@@ -503,6 +535,10 @@ export const AppProvider = ({ children }) => {
     }, [newSitesDays]);
 
     useEffect(() => {
+        localStorage.setItem('clusterRadius', (clusterRadius || 25).toString());
+    }, [clusterRadius]);
+
+    useEffect(() => {
         localStorage.setItem('showOnlyNew', showOnlyNew.toString());
     }, [showOnlyNew]);
 
@@ -664,6 +700,7 @@ export const AppProvider = ({ children }) => {
             currentUser,
             login, signup, logout, deleteCurrentUser,
             newSitesDays, setNewSitesDays,
+            clusterRadius, setClusterRadius,
             showOnlyNew, setShowOnlyNew,
             developerMode, setDeveloperMode,
             mapStyle, setMapStyle,
@@ -677,7 +714,8 @@ export const AppProvider = ({ children }) => {
             newsData: newsBaseData,
             messagesData: messagesBaseData,
             battleUnitsData: battleUnitsBaseData,
-            activeBattleSiteIds, 
+            activeDeals,
+            activeBattleSiteIds,
             toggleBattleUnitsForSite,
             setActiveBattleSiteIds,
             battleUnitsEnabled

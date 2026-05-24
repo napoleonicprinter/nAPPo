@@ -2214,5 +2214,40 @@
         "location": "Simakova",
         "country": "Belarus",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mir_(1812)"
+    },
+    {
+        "id": "257",
+        "title": "Napoleon enters in Milan",
+        "description": "French troops led by Napoleon enter Milan in triumph during the Second Italian Campaign.",
+        "date": "1800-06-02",
+        "location": "Milan",
+        "country": "Italy"
+    },
+    {
+        "id": "258",
+        "title": "Truce of Pläswitz",
+        "description": "The Truce or Armistice of Pläswitz was a nine-week armistice during the Napoleonic Wars, agreed between Napoleon I of France and the Allies.",
+        "date": "1813-06-04",
+        "location": "Pielaszkowice",
+        "country": "Poland",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Truce_of_Pl%C3%A4switz"
+    },
+    {
+        "id": "259",
+        "title": "First battle of El Bruc",
+        "description": "French detachment of 3,800 soldiers under General of Brigade François Xavier de Schwarz was defeated by a force of 1,600 Spanish regulars and militia under Joan Sala i Ferrer and Antoni Franch i Estalella.",
+        "date": "1808-06-04",
+        "location": "El Bruc, Catalonia",
+        "country": "Spain",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battles_of_El_Bruch"
+    },
+    {
+        "id": "260",
+        "title": "Second Battle of Dego",
+        "description": "On June 14th 1808 a French detachment led by General of Division Joseph Chabran, succeeded only in putting to the torch several buildings in El Bruc after having been defeated and repelled by the Spanish forces led by Joan Baget.",
+        "date": "1808-06-04",
+        "location": "El Bruc, Catalonia",
+        "country": "Spain",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battles_of_El_Bruch"
     }
 ]

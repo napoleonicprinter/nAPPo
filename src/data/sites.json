@@ -1776,20 +1776,28 @@
   },
   {
     "id": "92",
-    "name": "Acción de El Bruc",
+    "name": "Battlefield of El Bruc",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1808",
+    "date": "1808-06-06",
     "location": "El Bruc, Barcelona",
     "country": "Spain",
-    "description": "Milicias catalanas derrotaron a una columna francesa en acción guerrillera.",
+    "description": "The two battles of the Bruch (Spanish: Batallas del Bruch; Catalan: Batalles del Bruc) were engagements fought successively, at El Bruc, near Barcelona, Catalonia, on 6 and 14 June 1808.",
     "latitude": 41.5917,
     "longitude": 1.7806,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/First_battle_of_El_Bruch_%28Jos%C3%A9_Coromina_Faralt%29.png/960px-First_battle_of_El_Bruch_%28Jos%C3%A9_Coromina_Faralt%29.png",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bruc.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bruc",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Guerra de la Independencia",
+    "victor": "Spain",
+    "defeated": "France",
+    "commanders": [
+      " Antoni Franch i Estalella",
+      "Joan Baiget",
+      "François de Schwarz",
+      "Joseph Chabran"
+    ]
   },
   {
     "id": "93",
@@ -1895,16 +1903,22 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1808",
+    "date": "1808-07-19",
     "location": "Bailén, Jaén",
     "country": "Spain",
-    "description": "Primera gran derrota napoleónica en campo abierto.",
+    "description": "The first open-field defeat of a Napoleonic army,[6] the battle's heaviest fighting took place from july 16th to 19th, 1808, when a Spanish army under General Francisco Castaños defeated a French force under General Pierre Dupont de l'Étang.",
     "latitude": 38.0956,
     "longitude": -3.779,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Batalla_de_Bailen.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bailen.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Bail%C3%A9n",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Guerra de la Independencia",
+    "victor": "Spain",
+    "defeated": "France",
+    "commanders": [
+      "Francisco Castaños",
+      "Pierre Dupont de l'Étang"
+    ]
   },
   {
     "id": "100",
@@ -9774,5 +9788,19 @@
       "Nicolas Soult",
       "Nicolas Mahy"
     ]
+  },
+  {
+    "id": "546",
+    "name": "Pałac von Buddenbrock Pielaszkowice (ruins)",
+    "category": "Landmark",
+    "significance": "Minor",
+    "year": "1813",
+    "location": "Pielaszkowice",
+    "country": "Poland",
+    "description": "At this place Napoleon signed the Tripartite Armistice on June 4, 1813.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lugo.webp",
+    "more_info_link":"https://www.labiryntarium.pl/index.php/7gmin/186-pielaszkowice.html",
+    "latitude": 51.047138,
+    "longitude": 16.514895
   }
 ]

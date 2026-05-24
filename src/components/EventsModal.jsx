@@ -43,7 +43,7 @@ const EventsModal = ({ onClose }) => {
             const yearB = parseInt(b.date.split('-')[0], 10) || 0;
             return yearA - yearB;
         });
-    }, []);
+    }, [eventsData]);
 
     const todayString = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
@@ -52,10 +52,8 @@ const EventsModal = ({ onClose }) => {
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
                 <div className="calendar-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
-                    <div className="modal-title-row" style={{ gap: '8px' }}>
-                        <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
-                            <CalendarIcon size={24} />
-                        </div>
+                    <div className="modal-title-row" style={{ gap: '12px' }}>
+                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info" style={{ display: 'flex', flexDirection: 'column', minWidth: '0' }}>
                             <h2 style={{ whiteSpace: 'nowrap', letterSpacing: '-0.5px' }}>Today in History</h2>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '2px' }}>

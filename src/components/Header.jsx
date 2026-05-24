@@ -41,6 +41,7 @@ const Header = () => {
         locationMode, handleLocationSelect,
         currentUser, logout, deleteCurrentUser,
         newSitesDays, setNewSitesDays,
+        clusterRadius, setClusterRadius,
         showOnlyNew, setShowOnlyNew,
         developerMode, setDeveloperMode,
         filterSearch, setFilterSearch,
@@ -346,6 +347,39 @@ const Header = () => {
                                                 textAlign: 'center'
                                             }}
                                         />
+                                    </div>
+                                </div>
+
+                                <div className="settings-section" style={{ marginTop: '1.5rem' }}>
+                                    <h3 style={{ marginBottom: '8px' }}>Map Clustering</h3>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'space-between' }}>
+                                        <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.9, lineHeight: '1.3', maxWidth: '75%' }}>
+                                            Adjust the sensitivity for markers clustering:
+                                        </p>
+                                        <select
+                                            className="glass-panel settings-input"
+                                            value={clusterRadius}
+                                            onChange={(e) => setClusterRadius(Number(e.target.value))}
+                                            style={{
+                                                width: '65px',
+                                                padding: '6px',
+                                                borderRadius: '4px',
+                                                border: '1px solid var(--border-color)',
+                                                color: 'var(--text-primary)',
+                                                background: 'rgba(255,255,255,0.05)',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            {[5, 10, 15, 20, 25, 30, 35].map(radius => (
+                                                <option
+                                                    key={radius}
+                                                    value={radius}
+                                                    style={{ fontWeight: radius === 25 ? 'bold' : 'normal', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)' }}
+                                                >
+                                                    {radius}
+                                                </option>
+                                            ))}
+                                        </select>
                                     </div>
                                 </div>
 

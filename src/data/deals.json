@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Spring Campaign Sale",
+    "description": "Get 20% off on all Napoleonic miniatures during our Spring Campaign Sale!",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/public/assets/images/Shop/minis.webp",
+    "link": "https://example.com/sale",
+    "startDate": "2024-03-01",
+    "endDate": "2026-12-31"
+  },
+  {
+    "id": 2,
+    "title": "Exclusive Book Release Deal",
+    "description": "Pre-order the new biography of Marshal Ney and get a signed bookmark.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/public/assets/images/Shop/book.webp",
+    "link": "https://example.com/book",
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31"
+  }
+]

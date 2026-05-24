@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { Navigation, Star, Swords } from 'lucide-react';
+import { Navigation, Star } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { useAppContext } from '../context/AppContext';
 import SiteCard from './SiteCard';
 import BattleUnitsLayer from './BattleUnitsLayer';
+import DealsView from './DealsView';
 import L from 'leaflet';
 
 // Fix leaflet default icon issue
@@ -159,11 +160,6 @@ const LocationMarker = () => {
         </Marker>
     );
 };
-
-// Helper component to center map manually on user location via control button
-// Dynamic clustering radius was removed because it forces MarkerClusterGroup to remount
-// on every zoom, which breaks popup animations and zoomToShowLayer.
-// A fixed maxClusterRadius of 25 keeps nearby sites apart for more zoom levels.
 
 // Helper component to track map bounds
 const BoundsTracker = () => {
@@ -332,6 +328,88 @@ const MapStyleControl = () => {
             setMapStyle(layer.next);
         };
     }, [mapStyle, setMapStyle]);
+
+    return null;
+};
+
+// ─── Deals Control ───────────────────────────────────────────────────────────
+const DealsControl = ({ onOpen }) => {
+    const { activeDeals } = useAppContext();
+    const map = useMap();
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        if (!map || !activeDeals || activeDeals.length === 0) {
+            if (containerRef.current) {
+                L.DomUtil.remove(containerRef.current);
+                containerRef.current = null;
+            }
+            return;
+        }
+
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        container.style.cssText = [
+            'background-color: #ffd700',
+            'width: 34px',
+            'height: 34px',
+            'cursor: pointer',
+            'display: flex',
+            'align-items: center',
+            'justify-content: center',
+            'color: #000',
+            'transition: background-color 0.2s',
+            'user-select: none',
+            'box-shadow: 0 0 10px rgba(255, 215, 0, 0.5)',
+            'border: 2px solid #000'
+        ].join(';');
+
+        container.title = 'Exclusive Deals & Offers';
+
+        // Classic Open Pirate Chest SVG
+        container.innerHTML = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 26px; height: 26px;">
+            <!-- Gold Inside Glow -->
+            <path d="M22 55 L50 45 L78 55 L50 65 Z" fill="#ffd700" opacity="0.8"/>
+
+            <!-- Box Body (Isometric) -->
+            <path d="M20 55 L20 85 L50 96 L80 85 L80 55 L50 66 Z" fill="none" stroke="black" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M50 96 V66" fill="none" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+
+            <!-- Open Arched Lid (Tilted Back) -->
+            <!-- Back arch -->
+            <path d="M20 55 C 20 15, 80 15, 80 55" fill="none" stroke="black" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
+            <!-- Front opening arch and sides -->
+            <path d="M20 55 L42 25 C 45 5, 75 5, 80 55" fill="none" stroke="black" stroke-width="6" stroke-linejoin="round"/>
+
+            <!-- Reinforcements / Straps -->
+            <path d="M35 58 V88 M65 58 V88" stroke="black" stroke-width="4" opacity="0.7"/>
+            <path d="M42 25 L45 5 M70 25 L75 5" stroke="black" stroke-width="3" opacity="0.5"/>
+
+            <!-- Front Lock -->
+            <rect x="44" y="62" width="12" height="10" fill="black" rx="1"/>
+        </svg>`;
+
+        containerRef.current = container;
+
+        container.onmouseover = () => { container.style.backgroundColor = '#ffc800'; };
+        container.onmouseout = () => { container.style.backgroundColor = '#ffd700'; };
+
+        container.onclick = function (e) {
+            L.DomEvent.stopPropagation(e);
+            e.preventDefault();
+            onOpen();
+        };
+
+        const control = L.control({ position: 'topright' });
+        control.onAdd = () => container;
+        control.addTo(map);
+
+        return () => {
+            if (control && control._map) {
+                control.remove();
+            }
+            containerRef.current = null;
+        };
+    }, [map, activeDeals, onOpen]);
 
     return null;
 };
@@ -606,9 +684,11 @@ const MapView = () => {
         selectedSite, setSelectedSite,
         siteToOpenPopup, setSiteToOpenPopup,
         activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
-        battleUnitsEnabled, setActiveBattleSiteIds
+        battleUnitsEnabled, setActiveBattleSiteIds,
+        clusterRadius
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
+    const [showDeals, setShowDeals] = useState(false);
     const iconsCache = useRef({});
     const markerRefs = useRef(new Map());
     const [clusterInstance, setClusterInstance] = useState(null);
@@ -653,6 +733,7 @@ const MapView = () => {
                 <SearchControl />
                 <ZoomControl position="topright" />
                 <MapStyleControl />
+                <DealsControl onOpen={() => setShowDeals(true)} />
                 <CenterControl />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
@@ -660,9 +741,9 @@ const MapView = () => {
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}
-
+                    key={`cluster-${clusterRadius}`}
                     chunkedLoading
-                    maxClusterRadius={25}
+                    maxClusterRadius={clusterRadius}
                 >
                     {useMemo(() => sites.map(site => {
                         const iconKey = `${site.category}-${site.significance}-${site.visited}-${theme}`;
@@ -876,6 +957,8 @@ const MapView = () => {
                     </div>
                 </div>
             )}
+
+            {showDeals && <DealsView onClose={() => setShowDeals(false)} />}
 
             <div className="mobile-action-buttons">
                 {battleUnitsEnabled && activeBattleSiteIds.length > 0 && (
