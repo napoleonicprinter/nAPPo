@@ -34,7 +34,7 @@ const renderSignificanceStars = (sig) => {
 };
 
 const SiteCard = ({ site, onClose, isCompact = false }) => {
-    const { 
+    const {
         toggleVisited, userCoords, geolocationEnabled, setView, 
         setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
         battleUnitsEnabled
@@ -136,7 +136,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                 )}
                 {/* Category Badge - bottom-right corner */}
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
-                    <span className="badge category-badge" style={{ 
+                    <span className="badge category-badge" style={{
                         backgroundColor: getCategoryColor(site.category),
                         boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
                         textShadow: '0 1px 2px rgba(0,0,0,0.3)'
@@ -170,7 +170,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                                     {sitePhases.map((phase, index) => {
                                         const pId = phase.id || phase.siteId;
                                         const isActive = activeBattleSiteIds.includes(pId);
-                                        
+
                                         const isFullWidth = isOdd && index === 0;
                                         const width = isFullWidth ? '100%' : 'calc(50% - 2px)';
 
