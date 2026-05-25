@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Navigation, Star } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import './MobileMapControlsDrawer.css';
 import { useAppContext } from '../context/AppContext';
 import SiteCard from './SiteCard';
 import BattleUnitsLayer from './BattleUnitsLayer';
@@ -300,7 +302,7 @@ const MapStyleControl = () => {
             'transition: background-color 0.2s',
             'user-select: none',
         ].join(';');
-        
+
         containerRef.current = container;
 
         container.onmouseover = () => { container.style.backgroundColor = '#f4f4f4'; };
@@ -310,8 +312,8 @@ const MapStyleControl = () => {
         control.onAdd = () => container;
         control.addTo(map);
 
-        return () => { 
-            control.remove(); 
+        return () => {
+            control.remove();
             containerRef.current = null;
         };
     }, [map]);
@@ -365,28 +367,8 @@ const DealsControl = ({ onOpen }) => {
 
         container.title = 'Exclusive Deals & Offers';
 
-        // Classic Open Pirate Chest SVG
-        container.innerHTML = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 26px; height: 26px;">
-            <!-- Gold Inside Glow -->
-            <path d="M22 55 L50 45 L78 55 L50 65 Z" fill="#ffd700" opacity="0.8"/>
-
-            <!-- Box Body (Isometric) -->
-            <path d="M20 55 L20 85 L50 96 L80 85 L80 55 L50 66 Z" fill="none" stroke="black" stroke-width="6" stroke-linejoin="round"/>
-            <path d="M50 96 V66" fill="none" stroke="black" stroke-width="5" stroke-linejoin="round"/>
-
-            <!-- Open Arched Lid (Tilted Back) -->
-            <!-- Back arch -->
-            <path d="M20 55 C 20 15, 80 15, 80 55" fill="none" stroke="black" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
-            <!-- Front opening arch and sides -->
-            <path d="M20 55 L42 25 C 45 5, 75 5, 80 55" fill="none" stroke="black" stroke-width="6" stroke-linejoin="round"/>
-
-            <!-- Reinforcements / Straps -->
-            <path d="M35 58 V88 M65 58 V88" stroke="black" stroke-width="4" opacity="0.7"/>
-            <path d="M42 25 L45 5 M70 25 L75 5" stroke="black" stroke-width="3" opacity="0.5"/>
-
-            <!-- Front Lock -->
-            <rect x="44" y="62" width="12" height="10" fill="black" rx="1"/>
-        </svg>`;
+        // Use public/assets/Chest.png image for the deals button
+        container.innerHTML = `<img src="/assets/Chest.png" alt="Deals" style="width: 34px; height: 34px; object-fit: contain;" />`;
 
         containerRef.current = container;
 
@@ -460,7 +442,7 @@ const CenterControl = () => {
 
     useEffect(() => {
         if (!containerRef.current || !userCoords) return;
-        
+
         containerRef.current.onclick = function (e) {
             L.DomEvent.stopPropagation(e);
             e.preventDefault();
@@ -499,9 +481,9 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
 
     useEffect(() => {
         if (!siteToOpenPopup) return;
-        
+
         console.log(`PopupOpener: Request to open site ${siteToOpenPopup.id}. ClusterInstance ready: ${!!clusterInstance}`);
-        
+
         if (!clusterInstance) return;
 
         let isCancelled = false;
@@ -531,11 +513,11 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
             try {
                 if (typeof clusterGroup.zoomToShowLayer === 'function') {
                     console.log(`PopupOpener: Calling zoomToShowLayer for site ${siteToOpenPopup.id}`);
-                    
+
                     // Temporarily block unspiderfy to survive the auto-pan 'moveend' event
                     const origUnspiderfy = clusterGroup._unspiderfy;
                     let blockUnspiderfy = true;
-                    clusterGroup._unspiderfy = function() {
+                    clusterGroup._unspiderfy = function () {
                         if (blockUnspiderfy) return;
                         return origUnspiderfy.apply(this, arguments);
                     };
@@ -548,13 +530,13 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                         }
 
                         console.log(`PopupOpener: zoomToShowLayer callback for site ${siteToOpenPopup.id}`);
-                        
+
                         const visibleParent = clusterGroup.getVisibleParent(marker);
                         if (visibleParent && visibleParent.spiderfy) {
                             console.log("PopupOpener: Forcing spiderfy on parent");
                             visibleParent.spiderfy();
                         }
-                        
+
                         activeTimeout = setTimeout(() => {
                             if (!isCancelled) {
                                 console.log(`PopupOpener: Opening popup for site ${siteToOpenPopup.id}`);
@@ -654,7 +636,7 @@ const BattleUnitsToggle = ({ active, onToggle }) => {
         container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${active ? '#fff' : '#333'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>`;
 
         container.onmouseover = () => { if (!active) container.style.backgroundColor = '#f4f4f4'; };
-        container.onmouseout  = () => { if (!active) container.style.backgroundColor = 'white'; };
+        container.onmouseout = () => { if (!active) container.style.backgroundColor = 'white'; };
         container.onclick = (e) => { L.DomEvent.stopPropagation(e); e.preventDefault(); onToggle(); };
 
         L.DomEvent.disableClickPropagation(container);
@@ -668,8 +650,200 @@ const BattleUnitsToggle = ({ active, onToggle }) => {
 };
 
 
+// ─── Mobile Map Controls Drawer ──────────────────────────────────────────────
+const MobileMapControlsDrawer = ({ onOpenDeals }) => {
+    const map = useMap();
+    const {
+        mapStyle,
+        setMapStyle,
+        filterSearch,
+        setFilterSearch,
+        userCoords,
+        activeDeals
+    } = useAppContext();
 
+    const [isOpen, setIsOpen] = useState(false);
 
+    return (
+        <>
+            {/* Floating Menu Action Button (FAB) */}
+            <button
+                className="mobile-controls-fab"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setIsOpen(true);
+                }}
+                title="Map Controls"
+                style={{ display: isOpen ? 'none' : 'flex' }}
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            </button>
+
+            {/* Portal the drawer backdrop and slide-out container to document.body to avoid Leaflet event hijacking */}
+            {typeof document !== 'undefined' && createPortal(
+                <>
+                    {/* Dimmed Backdrop */}
+                    <div
+                        className={`mobile-drawer-backdrop ${isOpen ? 'open' : ''}`}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsOpen(false);
+                        }}
+                    />
+
+                    {/* Slide-out Drawer */}
+                    <div
+                        className={`mobile-controls-drawer ${isOpen ? 'open' : ''}`}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="mobile-drawer-header">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                                Map Controls
+                            </h3>
+                            <button 
+                                className="mobile-drawer-close" 
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+
+                        <div className="mobile-drawer-content">
+                            {/* Search Section */}
+                            <div className="mobile-drawer-section">
+                                <span className="mobile-drawer-section-title">Search Sites</span>
+                                <div className="mobile-search-wrapper">
+                                    <input
+                                        type="text"
+                                        className="mobile-search-input"
+                                        placeholder="Search sites..."
+                                        value={filterSearch || ''}
+                                        onChange={(e) => setFilterSearch(e.target.value)}
+                                    />
+                                    {filterSearch ? (
+                                        <button
+                                            className="mobile-search-clear"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setFilterSearch('');
+                                            }}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                        </button>
+                                    ) : (
+                                        <span className="mobile-search-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Zoom Section */}
+                            <div className="mobile-drawer-section">
+                                <span className="mobile-drawer-section-title">Zoom Map</span>
+                                <div className="mobile-zoom-container">
+                                    <button
+                                        className="mobile-action-btn"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            map.zoomIn();
+                                        }}
+                                        title="Zoom In"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                                        Zoom In
+                                    </button>
+                                    <button
+                                        className="mobile-action-btn"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            map.zoomOut();
+                                        }}
+                                        title="Zoom Out"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                                        Zoom Out
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Map Style Section */}
+                            <div className="mobile-drawer-section">
+                                <span className="mobile-drawer-section-title">Map Style</span>
+                                <div className="mobile-style-grid">
+                                    {Object.entries(TILE_LAYERS).map(([key, layer]) => (
+                                        <button
+                                            key={key}
+                                            className={`mobile-style-btn ${mapStyle === key ? 'active' : ''}`}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setMapStyle(key);
+                                            }}
+                                        >
+                                            <span className="mobile-style-icon">{layer.icon}</span>
+                                            <span>{layer.label}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Deals Section */}
+                            {activeDeals && activeDeals.length > 0 && (
+                                <div className="mobile-drawer-section">
+                                    <span className="mobile-drawer-section-title">Special Offers</span>
+                                    <div
+                                        className="mobile-deals-banner"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setIsOpen(false);
+                                            onOpenDeals();
+                                        }}
+                                    >
+                                        <div className="mobile-deals-left">
+                                            <img
+                                                src="/assets/Chest.png"
+                                                alt="Chest"
+                                                style={{ width: '28px', height: '28px', objectFit: 'contain' }}
+                                            />
+                                            <div>
+                                                <div className="mobile-deals-title">Exclusive Deals</div>
+                                                <div className="mobile-deals-sub">{activeDeals.length} offers active</div>
+                                            </div>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Center Location Section */}
+                            {userCoords && (
+                                <div className="mobile-drawer-section">
+                                    <span className="mobile-drawer-section-title">My Location</span>
+                                    <button
+                                        className="mobile-action-btn"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            map.flyTo([userCoords.lat, userCoords.lon], 12);
+                                            setIsOpen(false);
+                                        }}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><circle cx="12" cy="12" r="7"></circle></svg>
+                                        Center Map
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </>,
+                document.body
+            )}
+        </>
+    );
+};
 
 
 const MapView = () => {
@@ -735,6 +909,7 @@ const MapView = () => {
                 <MapStyleControl />
                 <DealsControl onOpen={() => setShowDeals(true)} />
                 <CenterControl />
+                <MobileMapControlsDrawer onOpenDeals={() => setShowDeals(true)} />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
                 {battleUnitsEnabled && <BattleUnitsLayer />}
@@ -768,9 +943,9 @@ const MapView = () => {
                             >
 
 
-                                <Popup 
+                                <Popup
                                     autoPan={false}
-                                    autoPanPadding={[50, 50]} 
+                                    autoPanPadding={[50, 50]}
                                     autoPanOptions={{ duration: 0.5, easeLinearity: 0.25 }}
                                 >
                                     <div style={{ padding: '0px', minWidth: '200px', maxWidth: '240px' }}>
@@ -845,7 +1020,7 @@ const MapView = () => {
                                             <span>{site.category}{site.year && String(site.year).trim() !== '' ? ` \u2022 ${site.year}` : ''}</span>
                                             {renderSignificanceStars(site.significance)}
                                         </div>
-                                        
+
                                         {battleUnitsEnabled && (() => {
                                             const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
                                             if (sitePhases.length === 0) return null;
@@ -853,16 +1028,16 @@ const MapView = () => {
                                             const isOdd = sitePhases.length % 2 !== 0;
 
                                             return (
-                                                <div style={{ 
-                                                    marginBottom: '10px', 
-                                                    display: 'flex', 
-                                                    flexWrap: 'wrap', 
-                                                    gap: '6px' 
+                                                <div style={{
+                                                    marginBottom: '10px',
+                                                    display: 'flex',
+                                                    flexWrap: 'wrap',
+                                                    gap: '6px'
                                                 }}>
                                                     {sitePhases.map((phase, index) => {
                                                         const pId = phase.id || phase.siteId;
                                                         const isActive = activeBattleSiteIds.includes(pId);
-                                                        
+
                                                         // Odd total -> first is full width, others half. 
                                                         // Even total -> all half.
                                                         const isFullWidth = isOdd && index === 0;
