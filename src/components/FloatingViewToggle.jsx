@@ -4,17 +4,26 @@ import { useAppContext } from '../context/AppContext';
 import './FloatingViewToggle.css';
 
 const FloatingViewToggle = ({ className = '' }) => {
-    const { view, setView } = useAppContext();
+    const { view, setView, innerView, setInnerView } = useAppContext();
 
-    // Only show for map and card (list) views
-    if (view !== 'map' && view !== 'card') return null;
+    // Show for map, card, and preview views
+    if (view !== 'map' && view !== 'card' && view !== 'preview') return null;
 
-    const isMap = view === 'map';
+    const currentView = view === 'preview' ? innerView : view;
+    const isMap = currentView === 'map';
+
+    const handleToggle = () => {
+        if (view === 'preview') {
+            setInnerView(isMap ? 'card' : 'map');
+        } else {
+            setView(isMap ? 'card' : 'map');
+        }
+    };
 
     return (
         <button
             className={`view-toggle-tag glass-panel ${className}`}
-            onClick={() => setView(isMap ? 'card' : 'map')}
+            onClick={handleToggle}
             title={isMap ? 'Switch to List View' : 'Switch to Map View'}
         >
             {isMap ? <List size={20} /> : <Map size={20} />}

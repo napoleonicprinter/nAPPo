@@ -271,38 +271,43 @@ button {
 }
 
 .modal-close-btn {
-  background: #000;
-  border: none;
-  color: #fff;
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
+  color: var(--text-primary);
+  transition: all 0.2s;
   flex-shrink: 0;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 50;
+  border: none;
 }
 
-/* Add protective padding to modal headers so title won't collide with absolute close button */
+/* Let modal title row handle the layout with space-between */
 .modal-title-row {
-  padding-right: 48px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+/* Ensure title info fills space so button stays on the right */
+.modal-title-info {
+  flex: 1;
 }
 
 .modal-close-btn:hover {
   background: var(--accent-danger);
   color: white;
-  transform: rotate(90deg);
 }
 
 /* Custom Dropdowns (Glassmorphic) */
 .filter-select {
-  height: 48px;
+  height: 40px;
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -356,7 +361,9 @@ button {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  width: 100%;
+  /* Allow menu to expand to fit content */
+  width: auto;
+  min-width: max-content; /* ensure enough width for long category names */
   z-index: 100;
   padding: 0.5rem;
   display: flex;
@@ -379,6 +386,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  white-space: nowrap; /* keep category text on one line */
 }
 
 .dropdown-option:hover {
@@ -403,22 +411,40 @@ button {
   font-size: 0.7rem;
   min-width: 18px;
   text-align: center;
+  margin-left: 8px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .view-modal-overlay {
     padding: 0;
+    align-items: flex-start;
+    padding-top: env(safe-area-inset-top, 0);
+    padding-bottom: env(safe-area-inset-bottom, 0);
   }
 
   .view-modal-content {
     height: 100%;
-    max-height: 100vh;
+    max-height: 100dvh;
     border-radius: 0;
   }
 
   .hide-on-mobile {
     display: none !important;
   }
+}
+
+/* DevicePreviewer Emulator Support */
+.device-mobile .view-modal-overlay {
+  padding: 0;
+  align-items: flex-start;
+  padding-top: 45px; /* Clear the emulator notch */
+  padding-bottom: 25px; /* Clear the home indicator */
+}
+
+.device-mobile .view-modal-content {
+  height: 100%;
+  max-height: 100%;
+  border-radius: 0;
 }
 
 /* --- Global Clear Filters / Close Units Adjustments --- */
@@ -503,9 +529,52 @@ button {
   }
 }
 
+/* Force show mobile action buttons in emulator regardless of browser width */
+.device-mobile .mobile-action-buttons,
+.device-tablet .mobile-action-buttons {
+  display: flex !important;
+}
+
 @media (max-width: 1024px) {
   .desktop-clear-filters,
   .desktop-close-units {
     display: none !important;
   }
+
+  .leaflet-control-zoom {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 80px !important;
+    right: 16px !important;
+    left: auto !important;
+  }
+
+  .leaflet-control-center {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 160px !important;
+    right: 16px !important;
+    left: auto !important;
+    z-index: 1000;
+  }
+}
+
+/* Force mobile/tablet zoom position in emulator */
+.device-mobile .leaflet-control-zoom,
+.device-tablet .leaflet-control-zoom {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 80px !important;
+  right: 16px !important;
+  left: auto !important;
+}
+
+.device-mobile .leaflet-control-center,
+.device-tablet .leaflet-control-center {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 160px !important;
+  right: 16px !important;
+  left: auto !important;
+  z-index: 1000;
 }

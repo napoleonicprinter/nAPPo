@@ -19,61 +19,141 @@ const FiltersModal = ({ onClose }) => {
         allSites,
         filterCoalition, setFilterCoalition,
         filterCampaign, setFilterCampaign,
-        filterSearch
+        filterSearch, setFilterSearch,
+        countryCounts, coalitionCounts, visitedCounts
     } = useAppContext();
+    const { getPortalContainer } = useAppContext();
 
     // Derive unique categories and significances from allSites
     const categories = Array.from(new Set(allSites.map(s => s.category)));
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
     const countries = Array.from(new Set(allSites.map(s => s.country))).filter(Boolean).sort();
 
+    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all';
+
+    const clearModalFilters = () => {
+        setFilterSearch('');
+        setFilterCountry('all');
+        setFilterCoalition('all');
+        setFilterCampaign('all');
+        setFilterVisited('all');
+    };
+
     return createPortal(
-        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
-            <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '450px' }}>
+        <>
+            <div className="settings-drawer-backdrop open" onClick={onClose} />
+            <div className="settings-drawer open" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
-                <div className="shopping-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
-                    <div className="modal-title-row">
-
-
-                        <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
-                            <Filter size={24} />
-                        </div>
-                        <div className="modal-title-info">
-                            <h2>Refine Map & List</h2>
-                            <p>Customize your exploration filters.</p>
-                        </div>
-                        <button className="modal-close-btn" onClick={onClose}>
-                            <X size={24} />
-                        </button>
-                    </div>
+                <div className="settings-drawer-header">
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, fontSize: '1.2rem', fontWeight: 700 }}>
+                        <Filter size={20} />
+                        Filters
+                    </h3>
+                    <button className="settings-drawer-close" onClick={onClose}>
+                        <X size={20} />
+                    </button>
                 </div>
 
                 {/* Content */}
-                <div className="calendar-modal-body" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div className="settings-drawer-content" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    {/* Search Section */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                            Visit Status
-                        </label>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Search Sites</h3>
+                        <div className="mobile-search-wrapper" style={{ position: 'relative' }}>
+                            <input
+                                type="text"
+                                className="mobile-search-input"
+                                placeholder="Search sites..."
+                                value={filterSearch || ''}
+                                onChange={(e) => setFilterSearch(e.target.value)}
+                                style={{
+                                    width: '100%',
+                                    padding: '10px 36px 10px 16px',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--border-color)',
+                                    background: 'var(--bg-color)',
+                                    color: 'var(--text-primary)',
+                                    fontSize: '1rem',
+                                    outline: 'none'
+                                }}
+                            />
+                            {filterSearch ? (
+                                <button
+                                    className="mobile-search-clear"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setFilterSearch('');
+                                    }}
+                                    style={{
+                                        position: 'absolute',
+                                        right: '10px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        background: 'none',
+                                        border: 'none',
+                                        color: 'var(--text-secondary)',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        padding: '4px'
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
+                            ) : (
+                                <span className="mobile-search-icon" style={{
+                                    position: 'absolute',
+                                    right: '10px',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    color: 'var(--text-secondary)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    pointerEvents: 'none'
+                                }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                </span>
+                            )}
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
                         <CustomSimpleSelect
                             options={[
-                                { value: 'all', label: 'All Status' },
-                                { value: 'visited', label: 'Visited' },
-                                { value: 'unvisited', label: 'Not Visited' }
-                            ]}
-                            value={filterVisited}
-                            onChange={setFilterVisited}
-                            title="Filter by Visit Status"
+                                { value: 'all', label: 'All' },
+                                { value: '1', label: `1st Coalition` },
+                                { value: '2', label: `2nd Coalition` },
+                                { value: '3', label: `3rd Coalition` },
+                                { value: '4', label: `4th Coalition` },
+                                { value: '5', label: `5th Coalition` },
+                                { value: '6', label: `6th Coalition` },
+                                { value: '7', label: `100 Days` }
+                            ]
+                                .filter(opt => opt.value === 'all' || (coalitionCounts?.[opt.value] || 0) > 0)
+                                .map(opt => opt.value === 'all' ? opt : { ...opt, label: `${opt.label} (${coalitionCounts[opt.value]})` })}
+                            value={String(filterCoalition)}
+                            onChange={setFilterCoalition}
+                            title="Filter by Napoleonic Coalition"
+                            placeholder="Select Coalition..."
                         />
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                            Country
-                        </label>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
+                        <CampaignFilter />
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
                         <CustomSimpleSelect
                             options={[
-                                { value: 'all', label: 'All Countries' },
-                                ...countries.map(c => ({ value: c, label: c }))
+                                { value: 'all', label: 'All' },
+                                ...countries
+                                    .filter(c => (countryCounts?.[c] || 0) > 0)
+                                    .map(c => ({ value: c, label: `${c} (${countryCounts[c]})` }))
                             ]}
                             value={filterCountry}
                             onChange={setFilterCountry}
@@ -83,68 +163,31 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                            Coalition
-                        </label>
-                        <CustomSimpleSelect
-                            options={[
-                                { value: 'all', label: 'All Coalitions' },
-                                { value: '1', label: '1st Coalition' },
-                                { value: '2', label: '2nd Coalition' },
-                                { value: '3', label: '3rd Coalition' },
-                                { value: '4', label: '4th Coalition' },
-                                { value: '5', label: '5th Coalition' },
-                                { value: '6', label: '6th Coalition' },
-                                { value: '7', label: '100 Days' }
-                            ]}
-                            value={String(filterCoalition)}
-                            onChange={setFilterCoalition}
-                            title="Filter by Napoleonic Coalition"
-                            placeholder="Select Coalition..."
-                        />
-                    </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                            Campaign
-                        </label>
-                        <CampaignFilter />
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
+                        <CustomSimpleSelect
+                            options={[
+                                { value: 'all', label: 'All Status' },
+                                { value: 'visited', label: `Visited` },
+                                { value: 'unvisited', label: `Not Visited` }
+                            ]
+                                .filter(opt => opt.value === 'all' || (visitedCounts?.[opt.value] || 0) > 0)
+                                .map(opt => opt.value === 'all' ? opt : { ...opt, label: `${opt.label} (${visitedCounts[opt.value]})` })}
+                            value={filterVisited}
+                            onChange={setFilterVisited}
+                            title="Filter by Visit Status"
+                        />
                     </div>
 
                     <div style={{
                         display: 'flex',
                         gap: '12px',
-                        marginTop: '1.5rem',
-                        width: '100%'
+                        marginTop: 'auto',
+                        paddingTop: '1.5rem'
                     }}>
                         <button
-                            className="btn-primary"
-                            onClick={onClose}
-                            style={{
-                                flex: 1,
-                                padding: '14px',
-                                borderRadius: '12px',
-                                fontWeight: 'bold',
-                                fontSize: '1rem',
-                                background: 'var(--accent-primary)',
-                                color: '#000',
-                                border: 'none',
-                                cursor: 'pointer',
-                                transition: 'transform 0.2s, background 0.2s',
-                                boxShadow: '0 4px 12px rgba(88, 166, 255, 0.2)',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}
-                            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        >
-                            Apply Filters
-                        </button>
-
-                        <button
-                            onClick={clearAllFilters}
+                            onClick={clearModalFilters}
                             style={{
                                 flex: 1,
                                 padding: '14px',
@@ -159,12 +202,12 @@ const FiltersModal = ({ onClose }) => {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                opacity: isFiltered ? 1 : 0.4,
+                                opacity: isModalFiltered ? 1 : 0.4,
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px'
                             }}
                             onMouseOver={(e) => {
-                                if (isFiltered) {
+                                if (isModalFiltered) {
                                     e.currentTarget.style.background = 'rgba(248, 81, 73, 0.2)';
                                     e.currentTarget.style.transform = 'scale(1.02)';
                                 }
@@ -175,13 +218,13 @@ const FiltersModal = ({ onClose }) => {
                             }}
                         >
                             <X size={18} style={{ marginRight: '6px' }} />
-                            Clear All
+                            Reset All
                         </button>
                     </div>
                 </div>
             </div>
-        </div>,
-        document.body
+        </>,
+        getPortalContainer()
     );
 };
 

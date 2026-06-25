@@ -2,24 +2,43 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+
     position: sticky;
     top: 0;
     z-index: 5000;
+    /* Ensure header fits within viewport */
+    width: 100%;
+    max-width: 100vw;
+    overflow: visible; /* allow dropdowns to escape header bounds */
+    flex-wrap: wrap;
+    box-sizing: border-box;
     /* Stays above Leaflet controls and cluster layers */
 }
+
+
+
+
+
 
 .header-brand {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
 }
+
 
 .header-logo {
     height: 64px;
     width: auto;
     object-fit: contain;
     display: block;
+}
+
+@media (max-width: 600px) {
+    .header-logo {
+        height: 40px; /* reduce logo size on small screens */
+    }
 }
 
 .sites-count-badge {
@@ -34,6 +53,20 @@
     min-width: 80px;
     height: 64px;
     /* Matches logo height */
+}
+
+@media (max-width: 600px) {
+    .sites-count-badge {
+        min-width: 60px;
+        height: 48px;
+        padding: 4px 8px;
+    }
+    .count-number {
+        font-size: 1.4rem;
+    }
+    .count-label {
+        font-size: 0.6rem;
+    }
 }
 
 .count-number {
@@ -63,7 +96,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
 }
+
 
 .filters-line {
     display: flex;
@@ -85,6 +121,14 @@
     transition: all var(--transition-fast);
 }
 
+@media (max-width: 1024px) {
+    .filter-select {
+        min-width: 0;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+}
+
 .filter-select:hover,
 .filter-select:focus {
     border-color: var(--accent-primary);
@@ -103,6 +147,12 @@
     min-width: 180px;
 }
 
+@media (max-width: 1024px) {
+    .custom-select-container {
+        min-width: 100px;
+    }
+}
+
 .custom-select-trigger {
     display: flex;
     align-items: center;
@@ -110,11 +160,21 @@
     width: 100%;
 }
 
+@media (max-width: 600px) {
+    .custom-select-trigger {
+        padding: 0 8px;
+        font-size: 0.75rem;
+    }
+}
+
 .custom-select-value {
     display: flex;
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
 }
 
 .category-dot {
@@ -129,18 +189,17 @@
     position: absolute;
     top: calc(100% + 5px);
     left: 0;
-    width: 100%;
+    min-width: 220px;
+    width: max-content;
     max-height: 350px;
     display: flex;
     flex-direction: column;
     z-index: 6001;
     /* Extremely high to guarantee foreground over all map layers */
     padding: 0;
-    background: var(--bg-acrylic);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: var(--bg-color);
+    border: 1px solid var(--accent-primary);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(88, 166, 255, 0.2);
     border-radius: var(--border-radius-sm);
     overflow: hidden;
     /* Prevent menu overflow, scrolling handled by list */
@@ -217,6 +276,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .custom-select-option:hover {
@@ -224,7 +284,8 @@
 }
 
 .custom-select-option.selected {
-    background: rgba(88, 166, 255, 0.15);
+    background: var(--accent-primary);
+    color: #000;
 }
 
 .category-count-badge {
@@ -374,13 +435,14 @@
 }
 
 .arc-filter-btn {
-    padding: 8px 8px;
-    /* Narrow padding as requested */
+    height: 40px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
     cursor: pointer;
+    border-radius: 12px;
     transition: all 0.2s;
 }
 
@@ -388,14 +450,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     flex-shrink: 0;
     padding: 0;
+    border-radius: 12px;
     color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.2s;
+}
+
+.desktop-clear-filters {
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
 }
 
 .settings-btn:hover,
@@ -408,23 +485,100 @@
     box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
 }
 
-.settings-dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
+/* Settings Slide-out Drawer */
+.settings-drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
     right: 0;
-    width: 280px;
-    padding: 1.25rem;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.settings-drawer-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.settings-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    max-width: 50%;
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--border-color);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 10002;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    z-index: 6005;
-    /* Consistent with other dropdowns */
-    background: var(--bg-color);
-    /* Fully opaque */
-    border: 1px solid var(--accent-primary);
-    /* Themed border to make it pop */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(88, 166, 255, 0.2);
-    border-radius: var(--border-radius-sm);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1025px) {
+    .settings-drawer {
+        width: 20vw;
+        max-width: 300px;
+    }
+}
+
+.settings-drawer.open {
+    transform: translateX(0);
+}
+
+.settings-drawer-header {
+    padding: 48px 1rem 1.25rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.settings-drawer-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.settings-drawer-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.settings-drawer-close:hover {
+    background: var(--accent-danger);
+    color: white;
+}
+
+.settings-drawer-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 /* Ensure the wrapper doesn't collapse */
@@ -453,6 +607,14 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .header-actions {
+        gap: 0.5rem;
+    }
 }
 
 .mobile-only-label {
@@ -487,14 +649,41 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .mobile-header-actions {
     display: none;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 .mobile-header-btn {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--bg-acrylic);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 50%;
+    transition: all var(--transition-normal);
+    padding: 0;
+}
+
+@media (max-width: 1024px) {
+    .mobile-header-actions {
+        display: flex !important;
+        gap: 0.3rem;
+    }
+    .mobile-header-btn {
+        display: flex !important;
+        width: 28px;
+        height: 28px;
+    }
 }
 
 .category-filters-wrapper {
@@ -515,7 +704,7 @@
     height: 40px;
     /* Slightly taller for more presence */
     padding: 0 16px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     /* Balanced bold */
     border-radius: 12px;
@@ -564,24 +753,38 @@
     }
 }
 
+/* Robust dark yellow hover effects for all tags in the slide menu */
+.mobile-overlay-filters .mobile-tag-filter:hover .custom-select-trigger,
+.mobile-overlay-filters .mobile-tag-filter:hover .mobile-icon-btn,
+.mobile-overlay-filters .mobile-tag-filter:hover .custom-select-value,
+.mobile-overlay-filters .mobile-tag-filter:hover span,
+.mobile-overlay-filters .mobile-tag-filter:hover svg {
+    color: #cc9900 !important;
+    stroke: #cc9900 !important;
+}
+
+.mobile-overlay-filters .mobile-tag-filter:hover .star-icon {
+    fill: #cc9900 !important;
+}
+
 /* Tablet & Mobile Breakpoints */
 @media (max-width: 1024px) {
     .app-header {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        grid-template-areas:
-            "brand location hamburger"
-            "categories categories areas";
-        gap: 0.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
         padding: 0.75rem 0;
         /* Full width content alignment */
     }
 
     .filters-group,
-    .filters-line,
     .desktop-filters,
     .custom-desktop-layout {
         display: contents !important;
+    }
+
+    .filters-line {
+        display: none !important;
     }
 
     .header-brand {
@@ -648,6 +851,10 @@
         display: none !important;
     }
 
+    .hide-in-mobile-tablet {
+        display: none !important;
+    }
+
     .header-controls {
         display: none;
         /* Hidden by default when navigation is collapsed */
@@ -684,20 +891,71 @@
         display: flex;
         position: absolute;
         top: 100%;
-        margin-top: 10px;
-        left: 10px;
+        margin-top: 2px;
+        left: 0;
+        width: 100%;
+        padding: 8px 10px 16px 10px;
+        box-sizing: border-box;
         z-index: 5005;
         /* Just above the app-header base layer */
-        gap: 3.5rem;
-        /* Significantly increased gap to prevent overlap between Year and Commander tags */
-        pointer-events: none;
-        /* Allow clicks through the container set */
+        gap: 0.5rem;
+        /* Smaller gap for horizontal scrolling */
+        pointer-events: auto;
+        /* Capture touches to scroll */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        align-items: center;
+    }
+    
+    .mobile-overlay-filters::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
     }
 
     .mobile-tag-filter {
-        pointer-events: auto;
-        /* Re-enable for the actual tags */
-        max-width: 130px;
+        flex-shrink: 0;
+        max-width: fit-content;
+    }
+
+    .mobile-icon-btn {
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 12px;
+        background: var(--bg-acrylic);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--accent-primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        color: var(--text-primary);
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+
+    .mobile-icon-btn.active {
+        background: var(--accent-primary);
+        color: #000;
+    }
+
+
+
+    .mobile-icon-btn .news-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--accent-danger);
+        color: #fff;
+        border-radius: 50%;
+        font-size: 0.65rem;
+        padding: 1px 5px;
+        font-weight: bold;
+        line-height: 1;
     }
 
     /* Fix the Year tag width on mobile to ensure all text is visible and doesn't change on rotation */
@@ -824,10 +1082,14 @@
         padding: 0.5rem 0;
         /* Full width on smartphone */
         gap: 0.4rem;
-        grid-template-columns: auto 1fr auto;
         /* Prevent columns from pushing width */
         max-width: 100vw;
         /* Prevent overflow without clipping dropdowns */
+    }
+
+    .header-brand {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .header-logo {
@@ -889,10 +1151,14 @@
         min-width: 100px !important;
     }
 
-    .custom-select-trigger {
+    .mobile-tag-filter .custom-select-trigger,
+    .mobile-icon-btn,
+    .mobile-arc-filter {
         height: 32px !important;
+        min-height: 32px !important;
+        max-height: 32px !important;
         padding: 0 6px !important;
-        font-size: 0.75rem;
+        font-size: 0.8rem !important;
     }
 
     .significance-filter {
@@ -917,7 +1183,7 @@
     }
 
     .mobile-tag-filter {
-        max-width: 150px;
+        max-width: fit-content;
     }
 
     /* Arc filter stays at desktop size on mobile */
@@ -1004,10 +1270,8 @@
 /* Smartphone & Tablet Landscape Specifics (Height <= 500px) */
 @media (max-width: 1024px) and (max-height: 500px) {
     .app-header {
-        display: grid !important;
-        grid-template-columns: auto auto auto auto 1fr auto !important;
-        grid-template-areas: "brand location categories areas . hamburger" !important;
-        grid-template-rows: auto !important;
+        display: flex !important;
+        flex-direction: row !important;
         gap: 0.25rem 0.5rem !important;
         padding: 0.25rem 0.5rem !important;
         height: 38px !important;
@@ -1015,11 +1279,12 @@
     }
 
     .header-brand {
-        grid-area: brand !important;
         height: 32px !important;
         align-items: center !important;
         padding-left: 0.25rem !important;
         gap: 0.4rem !important;
+        width: auto !important;
+        justify-content: flex-start !important;
     }
 
     .header-logo {
@@ -1113,7 +1378,8 @@
         gap: 0.5rem !important;
     }
 
-    .mobile-tag-filter .custom-select-trigger {
+    .mobile-tag-filter .custom-select-trigger,
+    .mobile-icon-btn {
         height: 28px !important;
         font-size: 0.7rem !important;
         padding: 0 6px !important;

@@ -21,7 +21,7 @@ const getEventCategoryColor = (category) => {
 };
 
 const CalendarView = ({ onClose }) => {
-    const { showsToCome } = useAppContext();
+    const { showsToCome, getPortalContainer } = useAppContext();
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedMonth, setSelectedMonth] = useState('');
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
@@ -43,7 +43,7 @@ const CalendarView = ({ onClose }) => {
 
     const countries = useMemo(() => {
         const uniqueCountries = new Set(showsToCome.map(show => show.country).filter(Boolean));
-        return ['Countries', ...Array.from(uniqueCountries).sort()];
+        return ['Country', ...Array.from(uniqueCountries).sort()];
     }, [showsToCome]);
 
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -71,6 +71,60 @@ const CalendarView = ({ onClose }) => {
 
     return createPortal(
         <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
+            <style>{`
+                    @media (max-width: 768px) {
+                        .shows-mobile-fix-content {
+                            flex-direction: column !important;
+                            height: auto !important;
+                            min-height: 0 !important;
+                        }
+                        .shows-mobile-fix-image {
+                            width: 100% !important;
+                            height: 180px !important;
+                            flex: 0 0 auto !important;
+                        }
+                        .shows-mobile-fix-info {
+                            display: flex !important;
+                            flex: 1 1 auto !important;
+                            padding: 1.2rem !important;
+                            height: auto !important;
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                        }
+                    }
+                    /* DevicePreviewer Emulator Support */
+                    .device-mobile .shows-mobile-fix-content {
+                        flex-direction: column !important;
+                        height: auto !important;
+                        min-height: 0 !important;
+                    }
+                    .device-mobile .shows-mobile-fix-image {
+                        width: 100% !important;
+                        height: 180px !important;
+                        flex: 0 0 auto !important;
+                    }
+                    .device-mobile .shows-mobile-fix-info {
+                        display: flex !important;
+                        flex: 1 1 auto !important;
+                        padding: 1.2rem !important;
+                        height: auto !important;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                    }
+                    .device-mobile .calendar-controls {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                    .device-mobile .category-filter-wrapper {
+                        padding: 0.8rem !important;
+                        justify-content: center !important;
+                    }
+                    .device-mobile .selected-text {
+                        color: var(--text-primary) !important;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                        display: block !important;
+                    }
+                `}</style>
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ display: isShowsCalendarOpen ? 'none' : 'flex' }}>
                 <div className="calendar-modal-header">
                     <div className="modal-title-row">
@@ -107,7 +161,7 @@ const CalendarView = ({ onClose }) => {
                                 }}
                             >
                                 <Tag size={18} className="filter-icon" />
-                                <span className="selected-text">{selectedCategory || 'Categories'}</span>
+                                <span className="selected-text">{selectedCategory || 'Category'}</span>
                                 <ChevronDown size={16} className={`chevron-icon ${isCategoryDropdownOpen ? 'rotated' : ''}`} />
                             </button>
 
@@ -121,9 +175,9 @@ const CalendarView = ({ onClose }) => {
                                             setIsCategoryDropdownOpen(false);
                                         }}
                                     >
-                                        Categories
+                                        Category
                                     </button>
-                                    {SHOW_CATEGORIES.map(cat => (
+                                    {SHOW_CATEGORIES.filter(cat => activeStats.categories[cat] > 0).map(cat => (
                                         <button
                                             key={cat}
                                             className={`dropdown-option ${selectedCategory === cat ? 'selected' : ''} ${activeStats.categories[cat] ? 'has-items' : ''}`}
@@ -133,9 +187,7 @@ const CalendarView = ({ onClose }) => {
                                             }}
                                         >
                                             {cat}
-                                            {activeStats.categories[cat] > 0 && (
-                                                <span className="item-count-indicator">{activeStats.categories[cat]}</span>
-                                            )}
+                                            <span className="item-count-indicator">{activeStats.categories[cat]}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -153,7 +205,7 @@ const CalendarView = ({ onClose }) => {
                                 }}
                             >
                                 <Globe size={18} className="filter-icon" />
-                                <span className="selected-text">{selectedCountry || 'Countries'}</span>
+                                <span className="selected-text">{selectedCountry || 'Country'}</span>
                                 <ChevronDown size={16} className={`chevron-icon ${isCountryDropdownOpen ? 'rotated' : ''}`} />
                             </button>
 
@@ -167,7 +219,7 @@ const CalendarView = ({ onClose }) => {
                                             setIsCountryDropdownOpen(false);
                                         }}
                                     >
-                                        Countries
+                                        Country
                                     </button>
                                     {countries.map(country => (
                                         <button
@@ -188,51 +240,51 @@ const CalendarView = ({ onClose }) => {
                             )}
                         </div>
 
-                        {/* Month Dropdown & Calendar View */}
-                        <div style={{ display: 'flex', gap: '0.8rem', flex: 1, minWidth: '260px' }}>
-                            <div className="custom-dropdown-container" style={{ flex: 1 }}>
-                                <button
-                                    className="category-filter-wrapper glass-panel dropdown-trigger"
-                                    onClick={() => {
-                                        setIsMonthDropdownOpen(!isMonthDropdownOpen);
-                                        setIsCategoryDropdownOpen(false);
-                                        setIsCountryDropdownOpen(false);
-                                    }}
-                                    style={{ width: '100%', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
-                                >
-                                    <Calendar size={16} className="filter-icon" />
-                                    <span className="selected-text" style={{ fontSize: '0.85rem' }}>{selectedMonth || 'Months'}</span>
-                                    <ChevronDown size={14} className={`chevron-icon ${isMonthDropdownOpen ? 'rotated' : ''}`} />
-                                </button>
+                        {/* Month Dropdown */}
+                        <div className="custom-dropdown-container">
+                            <button
+                                className="category-filter-wrapper glass-panel dropdown-trigger"
+                                onClick={() => {
+                                    setIsMonthDropdownOpen(!isMonthDropdownOpen);
+                                    setIsCategoryDropdownOpen(false);
+                                    setIsCountryDropdownOpen(false);
+                                }}
+                            >
+                                <Calendar size={16} className="filter-icon" />
+                                <span className="selected-text" style={{ fontSize: '0.85rem' }}>{selectedMonth || 'Months'}</span>
+                                <ChevronDown size={14} className={`chevron-icon ${isMonthDropdownOpen ? 'rotated' : ''}`} />
+                            </button>
 
-                                {isMonthDropdownOpen && (
-                                    <div className="dropdown-menu glass-panel animate-fade-in">
-                                        {SHOW_MONTHS.map(month => (
-                                            <button
-                                                key={month}
-                                                className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'Months' && activeStats.months[month] ? 'has-items' : ''}`}
-                                                onClick={() => {
-                                                    handleMonthChange(month);
-                                                }}
-                                            >
-                                                {month}
-                                                {month !== 'Months' && activeStats.months[month] > 0 && (
-                                                    <span className="item-count-indicator">{activeStats.months[month]}</span>
-                                                )}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
+                            {isMonthDropdownOpen && (
+                                <div className="dropdown-menu glass-panel animate-fade-in">
+                                    {SHOW_MONTHS.map(month => (
+                                        <button
+                                            key={month}
+                                            className={`dropdown-option ${selectedMonth === month ? 'selected' : ''} ${month !== 'Months' && activeStats.months[month] ? 'has-items' : ''}`}
+                                            onClick={() => {
+                                                handleMonthChange(month);
+                                            }}
+                                        >
+                                            {month}
+                                            {month !== 'Months' && activeStats.months[month] > 0 && (
+                                                <span className="item-count-indicator">{activeStats.months[month]}</span>
+                                            )}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
 
+                        {/* Calendar View Button */}
+                        <div className="custom-dropdown-container">
                             <button
                                 className="category-filter-wrapper glass-panel"
                                 onClick={() => setIsShowsCalendarOpen(true)}
-                                style={{ flex: '0 0 auto', justifyContent: 'center', cursor: 'pointer', paddingLeft: '0.8rem', paddingRight: '0.8rem' }}
+                                style={{ justifyContent: 'center', cursor: 'pointer' }}
                                 title="Calendar View"
                             >
                                 <CalendarDays size={16} className="filter-icon" style={{ margin: 0 }} />
-                                <span className="hide-on-mobile" style={{ fontSize: '0.85rem', marginLeft: '6px' }}>Calendar View</span>
+                                <span className="hide-on-mobile selected-text" style={{ fontSize: '0.85rem', marginLeft: '6px' }}>Calendar View</span>
                             </button>
                         </div>
                     </div>
@@ -245,8 +297,8 @@ const CalendarView = ({ onClose }) => {
                         {filteredShows.length > 0 ? (
                             filteredShows.map(show => (
                                 <div key={show.id} className="show-card glass-panel">
-                                    <div className="show-content">
-                                        <div className="show-image-container">
+                                    <div className="show-content shows-mobile-fix-content">
+                                        <div className="show-image-container shows-mobile-fix-image">
                                             <img src={show.image} alt={show.name} className="show-image" />
                                             {show.category && (
                                                 <span
@@ -265,7 +317,7 @@ const CalendarView = ({ onClose }) => {
                                                 </span>
                                             )}
                                         </div>
-                                        <div className="show-info">
+                                        <div className="show-info shows-mobile-fix-info">
                                             <div className="show-header-row">
                                                 <h2 className="show-title">{show.name}</h2>
                                             </div>
@@ -326,7 +378,7 @@ const CalendarView = ({ onClose }) => {
                 />
             )}
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

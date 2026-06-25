@@ -15,7 +15,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-)
+);
+// Set device mode attribute on body for responsive handling
+if (import.meta.env && import.meta.env.MODE) {
+  document.body.setAttribute('data-device-mode', import.meta.env.MODE);
+}
 
 // Solo registramos el Service Worker si NO es una plataforma nativa (para evitar conflictos de caché en Android)
 if ('serviceWorker' in navigator && import.meta.env.PROD && !Capacitor.isNativePlatform()) {

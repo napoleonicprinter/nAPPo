@@ -5,7 +5,7 @@ import { X, Lock, User, Mail } from 'lucide-react';
 import './CardView.css';
 
 const AuthModal = ({ onClose }) => {
-    const { login, signup } = useAppContext();
+    const { login, signup, getPortalContainer } = useAppContext();
     const [isLogin, setIsLogin] = useState(true);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -132,9 +132,29 @@ const AuthModal = ({ onClose }) => {
                         {isLogin ? 'Sign Up' : 'Sign In'}
                     </button>
                 </div>
+
+                <div style={{
+                    marginTop: '1.25rem',
+                    padding: '12px 14px',
+                    borderRadius: '8px',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    textAlign: 'left'
+                }}>
+                    <p style={{
+                        margin: 0,
+                        fontSize: '0.75rem',
+                        lineHeight: '1.5',
+                        color: 'var(--text-secondary)',
+                        opacity: 0.8
+                    }}>
+                        <Lock size={12} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '5px', opacity: 0.6 }} />
+                        <strong>Your privacy matters.</strong> No personal data or email is requested. Sign in is only used to keep a record of your visited sites, and this information is stored locally on your device. We do not have access to it. Keep your username and password in a safe place you can remember as no recovery is possible.
+                    </p>
+                </div>
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

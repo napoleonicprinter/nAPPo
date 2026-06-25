@@ -6,10 +6,11 @@ import { Navigation, Star } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
-import './MobileMapControlsDrawer.css';
 import { useAppContext } from '../context/AppContext';
+import { CATEGORY_ORDER } from '../constants/categoryOrder';
 import SiteCard from './SiteCard';
 import BattleUnitsLayer from './BattleUnitsLayer';
+import MapOverlaysLayer from './MapOverlaysLayer';
 import DealsView from './DealsView';
 import L from 'leaflet';
 
@@ -63,18 +64,7 @@ const getCategoryColor = (category) => {
     }
 };
 
-const CATEGORY_ORDER = [
-    'Battle site',
-    'Battle landmark',
-    'Naval battle',
-    'Museum',
-    'Monument',
-    'Building',
-    'Artwork',
-    'Event site',
-    'Landmark',
-    'Store'
-];
+
 
 // Get size based on significance
 const getSignificanceSize = (sig) => {
@@ -139,19 +129,26 @@ const renderSignificanceStars = (sig) => {
 const LocationMarker = () => {
     const { userCoords } = useAppContext();
     const map = useMap();
+    
+    const isValidCoords = userCoords && !isNaN(Number(userCoords.lat)) && !isNaN(Number(userCoords.lon));
 
     useEffect(() => {
-        if (userCoords) {
-            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), {
-                duration: 1.5,
-                easeLinearity: 0.25
-            });
+        if (isValidCoords) {
+            try {
+                const currentZoom = map.getZoom() || 12;
+                map.flyTo([Number(userCoords.lat), Number(userCoords.lon)], currentZoom, {
+                    duration: 1.5,
+                    easeLinearity: 0.25
+                });
+            } catch (e) {
+                console.warn("flyTo failed:", e);
+            }
         }
-    }, [userCoords, map]);
+    }, [userCoords, map, isValidCoords]);
 
-    return userCoords === null ? null : (
+    return !isValidCoords ? null : (
         <Marker
-            position={[userCoords.lat, userCoords.lon]}
+            position={[Number(userCoords.lat), Number(userCoords.lon)]}
             icon={new L.Icon({
                 iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
                 iconSize: [25, 41],
@@ -190,14 +187,34 @@ const SearchControl = () => {
     const map = useMap();
     const filterSearchRef = useRef(filterSearch);
 
+    // Fix for Leaflet tile loading under CSS transform: scale()
+    useEffect(() => {
+        if (!map) return;
+        map.getSize = function () {
+            if (!this._size || this._sizeChanged) {
+                this._size = new L.Point(
+                    this._container.clientWidth,
+                    this._container.clientHeight
+                );
+                this._sizeChanged = false;
+            }
+            return this._size.clone();
+        };
+        map.invalidateSize();
+    }, [map]);
+
     useEffect(() => {
         filterSearchRef.current = filterSearch;
+        const input = document.getElementById('map-search-input');
+        if (input && input.value !== (filterSearch || '')) {
+            input.value = filterSearch || '';
+        }
     }, [filterSearch]);
 
     useEffect(() => {
         if (!map) return;
 
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom desktop-only');
         container.style.backgroundColor = 'white';
         container.style.display = 'flex';
         container.style.alignItems = 'center';
@@ -288,7 +305,7 @@ const MapStyleControl = () => {
     useEffect(() => {
         if (!map) return;
 
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom desktop-only');
         container.style.cssText = [
             'background-color: white',
             'width: 34px',
@@ -404,7 +421,7 @@ const CenterControl = () => {
     useEffect(() => {
         if (!map || !userCoords) return;
 
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom leaflet-control-center');
         container.style.backgroundColor = 'white';
         container.style.width = '34px';
         container.style.height = '34px';
@@ -442,11 +459,17 @@ const CenterControl = () => {
 
     useEffect(() => {
         if (!containerRef.current || !userCoords) return;
+        const isValidCoords = userCoords && !isNaN(Number(userCoords.lat)) && !isNaN(Number(userCoords.lon));
+        if (!isValidCoords) return;
 
         containerRef.current.onclick = function (e) {
             L.DomEvent.stopPropagation(e);
             e.preventDefault();
-            map.flyTo([userCoords.lat, userCoords.lon], 12);
+            try {
+                map.flyTo([Number(userCoords.lat), Number(userCoords.lon)], map.getZoom());
+            } catch (err) {
+                console.warn("Center map failed:", err);
+            }
         };
     }, [map, userCoords]);
 
@@ -650,202 +673,6 @@ const BattleUnitsToggle = ({ active, onToggle }) => {
 };
 
 
-// ─── Mobile Map Controls Drawer ──────────────────────────────────────────────
-const MobileMapControlsDrawer = ({ onOpenDeals }) => {
-    const map = useMap();
-    const {
-        mapStyle,
-        setMapStyle,
-        filterSearch,
-        setFilterSearch,
-        userCoords,
-        activeDeals
-    } = useAppContext();
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-        <>
-            {/* Floating Menu Action Button (FAB) */}
-            <button
-                className="mobile-controls-fab"
-                onClick={(e) => {
-                    e.stopPropagation();
-                    setIsOpen(true);
-                }}
-                title="Map Controls"
-                style={{ display: isOpen ? 'none' : 'flex' }}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-            </button>
-
-            {/* Portal the drawer backdrop and slide-out container to document.body to avoid Leaflet event hijacking */}
-            {typeof document !== 'undefined' && createPortal(
-                <>
-                    {/* Dimmed Backdrop */}
-                    <div
-                        className={`mobile-drawer-backdrop ${isOpen ? 'open' : ''}`}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setIsOpen(false);
-                        }}
-                    />
-
-                    {/* Slide-out Drawer */}
-                    <div
-                        className={`mobile-controls-drawer ${isOpen ? 'open' : ''}`}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="mobile-drawer-header">
-                            <h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-                                Map Controls
-                            </h3>
-                            <button 
-                                className="mobile-drawer-close" 
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setIsOpen(false);
-                                }}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                            </button>
-                        </div>
-
-                        <div className="mobile-drawer-content">
-                            {/* Search Section */}
-                            <div className="mobile-drawer-section">
-                                <span className="mobile-drawer-section-title">Search Sites</span>
-                                <div className="mobile-search-wrapper">
-                                    <input
-                                        type="text"
-                                        className="mobile-search-input"
-                                        placeholder="Search sites..."
-                                        value={filterSearch || ''}
-                                        onChange={(e) => setFilterSearch(e.target.value)}
-                                    />
-                                    {filterSearch ? (
-                                        <button
-                                            className="mobile-search-clear"
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setFilterSearch('');
-                                            }}
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                                        </button>
-                                    ) : (
-                                        <span className="mobile-search-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Zoom Section */}
-                            <div className="mobile-drawer-section">
-                                <span className="mobile-drawer-section-title">Zoom Map</span>
-                                <div className="mobile-zoom-container">
-                                    <button
-                                        className="mobile-action-btn"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            map.zoomIn();
-                                        }}
-                                        title="Zoom In"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                                        Zoom In
-                                    </button>
-                                    <button
-                                        className="mobile-action-btn"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            map.zoomOut();
-                                        }}
-                                        title="Zoom Out"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                                        Zoom Out
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Map Style Section */}
-                            <div className="mobile-drawer-section">
-                                <span className="mobile-drawer-section-title">Map Style</span>
-                                <div className="mobile-style-grid">
-                                    {Object.entries(TILE_LAYERS).map(([key, layer]) => (
-                                        <button
-                                            key={key}
-                                            className={`mobile-style-btn ${mapStyle === key ? 'active' : ''}`}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setMapStyle(key);
-                                            }}
-                                        >
-                                            <span className="mobile-style-icon">{layer.icon}</span>
-                                            <span>{layer.label}</span>
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Deals Section */}
-                            {activeDeals && activeDeals.length > 0 && (
-                                <div className="mobile-drawer-section">
-                                    <span className="mobile-drawer-section-title">Special Offers</span>
-                                    <div
-                                        className="mobile-deals-banner"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            setIsOpen(false);
-                                            onOpenDeals();
-                                        }}
-                                    >
-                                        <div className="mobile-deals-left">
-                                            <img
-                                                src="/assets/Chest.png"
-                                                alt="Chest"
-                                                style={{ width: '28px', height: '28px', objectFit: 'contain' }}
-                                            />
-                                            <div>
-                                                <div className="mobile-deals-title">Exclusive Deals</div>
-                                                <div className="mobile-deals-sub">{activeDeals.length} offers active</div>
-                                            </div>
-                                        </div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Center Location Section */}
-                            {userCoords && (
-                                <div className="mobile-drawer-section">
-                                    <span className="mobile-drawer-section-title">My Location</span>
-                                    <button
-                                        className="mobile-action-btn"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            map.flyTo([userCoords.lat, userCoords.lon], 12);
-                                            setIsOpen(false);
-                                        }}
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><circle cx="12" cy="12" r="7"></circle></svg>
-                                        Center Map
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </>,
-                document.body
-            )}
-        </>
-    );
-};
-
-
 const MapView = () => {
     const {
         sites, allSites, toggleVisited, userCoords,
@@ -890,9 +717,10 @@ const MapView = () => {
 
 
             <MapContainer
+
                 center={defaultCenter}
                 zoom={5}
-                style={{ height: '100%', width: '100%' }}
+                style={{ height: '100%', width: '100%', minHeight: '100vh' }}
                 zoomControl={false}
             >
                 <RemoveDefaultZoom />
@@ -909,10 +737,10 @@ const MapView = () => {
                 <MapStyleControl />
                 <DealsControl onOpen={() => setShowDeals(true)} />
                 <CenterControl />
-                <MobileMapControlsDrawer onOpenDeals={() => setShowDeals(true)} />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
                 {battleUnitsEnabled && <BattleUnitsLayer />}
+                <MapOverlaysLayer />
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}

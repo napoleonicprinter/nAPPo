@@ -5,7 +5,7 @@ import { ShoppingCart, ExternalLink, Info, Tag, Package, DollarSign, X, ChevronD
 import './ShoppingView.css';
 
 const ShoppingView = ({ onClose }) => {
-    const { shoppingItems } = useAppContext();
+    const { shoppingItems, getPortalContainer } = useAppContext();
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [copiedId, setCopiedId] = useState(null);
@@ -161,7 +161,7 @@ const ShoppingView = ({ onClose }) => {
                 </div>
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

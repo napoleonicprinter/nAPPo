@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
 const CampaignFilter = ({ className, style }) => {
-    const { allSites, filterCampaign, setFilterCampaign } = useAppContext();
+    const { allSites, filterCampaign, setFilterCampaign, campaignCounts } = useAppContext();
 
     const campaigns = useMemo(() => {
         return Array.from(new Set(
@@ -25,8 +25,13 @@ const CampaignFilter = ({ className, style }) => {
         <div className={`campaign-filter ${className ?? ''}`} style={{ ...style }}>
             <CustomSimpleSelect
                 options={[
-                    { value: 'all', label: 'All Campaigns' },
-                    ...campaigns.map(c => ({ value: c, label: c }))
+                    { value: 'all', label: 'All' },
+                    ...campaigns
+                        .filter(c => (campaignCounts?.[c] || 0) > 0)
+                        .map(c => {
+                            const count = campaignCounts?.[c] || 0;
+                            return { value: c, label: `${c} (${count})` };
+                        })
                 ]}
                 value={filterCampaign}
                 onChange={setFilterCampaign}

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { MapContainer, TileLayer, Marker, Polyline, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { X, Navigation } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 
 // Reusing same icon setup for standard markers just in case
 delete L.Icon.Default.prototype._getIconUrl;
@@ -42,6 +43,7 @@ const MapFitter = ({ userCoords, site }) => {
 };
 
 const NavigationModal = ({ userCoords, site, onClose }) => {
+    const { getPortalContainer } = useAppContext();
     if (!userCoords || !site) return null;
 
     const linePositions = [
@@ -131,7 +133,7 @@ const NavigationModal = ({ userCoords, site, onClose }) => {
                 </div>
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

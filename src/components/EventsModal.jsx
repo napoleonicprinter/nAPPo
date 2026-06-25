@@ -8,7 +8,7 @@ import './AnnouncementModal.css';
 import './CardView.css';
 
 const EventsModal = ({ onClose }) => {
-    const { eventsData, messagesData } = useAppContext();
+    const { eventsData, messagesData, getPortalContainer } = useAppContext();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [showAnnouncement, setShowAnnouncement] = useState(null);
 
@@ -168,7 +168,7 @@ const EventsModal = ({ onClose }) => {
                 />
             )}
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

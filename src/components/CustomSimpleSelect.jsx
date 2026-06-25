@@ -1,5 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ChevronDown, Search, X } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 
 /**
  * A custom dropdown that matches the style of CustomCategorySelect.
@@ -14,12 +16,19 @@ import { ChevronDown, Search, X } from 'lucide-react';
 const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false, persistentValues = ['all'] }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const [menuStyle, setMenuStyle] = useState({});
+    const triggerRef = useRef(null);
     const dropdownRef = useRef(null);
+    const menuRef = useRef(null);
     const searchInputRef = useRef(null);
+    const { getPortalContainer } = useAppContext();
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (
+                dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+                menuRef.current && !menuRef.current.contains(event.target)
+            ) {
                 setIsOpen(false);
             }
         };
@@ -35,6 +44,54 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
             setSearchQuery('');
         }
     }, [isOpen, searchable]);
+
+    useEffect(() => {
+        if (isOpen && triggerRef.current) {
+            const updatePosition = () => {
+                if (!triggerRef.current) return;
+                const rect = triggerRef.current.getBoundingClientRect();
+                const container = getPortalContainer();
+                const containerRect = container.getBoundingClientRect();
+                
+                const scale = rect.width / triggerRef.current.offsetWidth || 1;
+                
+                const isCloseToRightEdge = rect.left + 200 > containerRect.right;
+                
+                const style = {
+                    position: 'absolute',
+                    top: (rect.bottom - containerRect.top) / scale + 5,
+                    minWidth: triggerRef.current.offsetWidth,
+                    zIndex: 10005
+                };
+                
+                if (isCloseToRightEdge) {
+                    style.right = (containerRect.right - rect.right) / scale;
+                    style.left = 'auto';
+                } else {
+                    style.left = (rect.left - containerRect.left) / scale;
+                    style.right = 'auto';
+                }
+                
+                setMenuStyle(style);
+            };
+            
+            updatePosition();
+            window.addEventListener('resize', updatePosition);
+            
+            // Re-calculate on scroll of the horizontal container
+            const scrollContainer = triggerRef.current.closest('.mobile-overlay-filters');
+            if (scrollContainer) {
+                scrollContainer.addEventListener('scroll', updatePosition);
+            }
+
+            return () => {
+                window.removeEventListener('resize', updatePosition);
+                if (scrollContainer) {
+                    scrollContainer.removeEventListener('scroll', updatePosition);
+                }
+            };
+        }
+    }, [isOpen, getPortalContainer]);
 
     const selected = options.find(o => o.value === value);
     const label = selected ? selected.label : placeholder;
@@ -55,6 +112,7 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
     return (
         <div className="custom-select-container" ref={dropdownRef} title={title}>
             <button
+                ref={triggerRef}
                 className={`custom-select-trigger filter-select glass-panel ${isOpen ? 'open' : ''}`}
                 onClick={() => !disabled && setIsOpen(!isOpen)}
                 type="button"
@@ -70,8 +128,12 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
                 <ChevronDown size={14} style={{ marginLeft: 'auto', flexShrink: 0, opacity: 0.6, transition: 'transform 0.2s', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
             </button>
 
-            {isOpen && (
-                <div className="custom-select-menu animate-fade-in">
+            {isOpen && createPortal(
+                <div 
+                    ref={menuRef}
+                    className="custom-select-menu animate-fade-in" 
+                    style={menuStyle}
+                >
                     {searchable && (
                         <div className="select-search-wrapper">
                             <Search size={14} className="select-search-icon" />
@@ -113,7 +175,8 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
                             <div className="no-options-found">No results found</div>
                         )}
                     </div>
-                </div>
+                </div>,
+                getPortalContainer()
             )}
         </div>
     );

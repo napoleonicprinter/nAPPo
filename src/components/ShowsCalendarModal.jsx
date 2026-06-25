@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, Calendar as CalendarIcon } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -97,7 +97,7 @@ const ShowsCalendarModal = ({ onClose, showsData, onDayClick }) => {
         <div 
             className="view-modal-content glass-panel animate-fade-in" 
             onClick={(e) => e.stopPropagation()}
-            style={{ maxWidth: '800px' }}
+            style={{ maxWidth: '800px', display: 'flex', flexDirection: 'column' }}
         >
             <div className="calendar-modal-header">
                 <button className="modal-close-btn" onClick={onClose} title="Close" style={{ position: 'absolute', right: '1.5rem', top: '1.5rem' }}>

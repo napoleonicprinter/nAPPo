@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext';
 import './CalendarView.css';
 
 const NewsModal = ({ onClose }) => {
-    const { newsData } = useAppContext();
+    const { newsData, getPortalContainer } = useAppContext();
 
     const sortedNews = useMemo(() => {
         return (newsData || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -85,7 +85,7 @@ const NewsModal = ({ onClose }) => {
                 </div>
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

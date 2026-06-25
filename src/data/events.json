@@ -2099,15 +2099,6 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lyng%C3%B8r"
     },
     {
-        "id": "244",
-        "title": "Battle of Nargö",
-        "description": "The battle between the Russian cutter Opyt and the British frigate HMS Salsette took place near the northern coast of Estonia by the island of Naissaar (Nargö) in the Baltic Sea, and ended in a British victory.",
-        "date": "1808-07-11",
-        "location": "off Naissaar",
-        "country": "Baltic Sea",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Narg%C3%B6"
-    },
-    {
         "id": "245",
         "title": "Battle of Blaauwberg",
         "description": "Also known as the Battle of Cape Town, it was a successful British amphibious operation during the War of the Third Coalition which lasted from 8–18 January 1806 and resulted in the capture of the Dutch Cape Colony.",
@@ -2249,5 +2240,111 @@
         "location": "El Bruc, Catalonia",
         "country": "Spain",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battles_of_El_Bruch"
+    },
+    {
+        "id": "261",
+        "title": "Sir Thomas Picton birth",
+        "description": "He was born in Haverfordwest, Pembrokeshire on (probably) August 24th 1758 and was the seventh of twelve children of Thomas Picton",
+        "date": "1758-07-24",
+        "location": "Haverfordwest, Pembrokeshire",
+        "country": "Wales",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Thomas_Picton"
+    },
+    {
+        "id": "262",
+        "title": "Marshall Blücher birth",
+        "description": "He was born in Rostock, Prussia on December 16th 1742, son of a retired army captain.",
+        "date": "1742-12-16",
+        "location": "Rostock, Prussia",
+        "country": "Germany",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Gebhard_Leberecht_von_Bl%C3%BCcher"
+    },
+    {
+        "id": "263",
+        "title": " 'El Empecinado'birth",
+        "description": "Born on September 2nd 1775 in Castrillo de Duero, Valladolid, he became a notorious guerilla leader and a hero of the Spanish War of Independence.",
+        "date": "1775-09-02",
+        "location": "Castrillo de Duero, Valladolid",
+        "country": "Spain",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Juan_Mart%C3%ADn_D%C3%ADez"
+    },
+    {
+        "id": "264",
+        "title": "Battle of Nargö",
+        "description": "The battle between the Russian cutter Opyt and the British frigate HMS Salsette took place near the northern coast of Estonia by the island of Naissaar (Nargö) in the Baltic Sea, and ended in a British victory.",
+        "date": "1808-07-11",
+        "location": "off Naissaar",
+        "country": "Baltic Sea",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Narg%C3%B6"
+    },
+    {
+        "id": "265",
+        "title": "Marshall Masséna birth",
+        "description": "André Masséna was born on May 6th 1758 in Nice, France.",
+        "date": "1758-05-06",
+        "location": "Nice",
+        "country": "France",
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Andr%C3%A9_Mass%C3%A9na"
+    },
+    {
+        "id": "266",
+        "title": "Karl Philipp, Prince of Schwarzenberg birth",
+        "description": "Karl Philipp, Prince of Schwarzenberg was born on April 15th 1771 in Vienna, Austria. Some sources give the date of his birth as April 18th or 19th 1771.",
+        "date": "1771-04-15",
+        "location": "Vienna",
+        "country": "Austria",
+        "more_info_link": "https://www.napoleon-empire.org/en/personalities/schwarzenberg.php"
+    },
+    {
+        "id": "267",
+        "title": "Battle of Prezlau",
+        "description": "The Battle of Prenzlau or Capitulation of Prenzlau on 28 October 1806 two divisions of French cavalry and some infantry led by Marshal Joachim Murat intercepted a retreating Prussian corps led by Frederick Louis, Prince of Hohenlohe-Ingelfingen.",
+        "date": "1806-10-28",
+        "location": "Prenzlau",
+        "country": "Poland",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Prenzlau"
+    },
+    {
+        "id": "268",
+        "title": "Siege of Breslau",
+        "description": "The siege of Breslau took place from December 7, 1806, until January 9, 1807, when the city capitulated to the French army.",
+        "date": "1806-12-07",
+        "location": "Breslau",
+        "country": "Poland",
+        "wikipedia_link": "https://www.napoleon-series.org/military-info/battles/1807/PolishCampaign/Eylau/eylau/c_eylaueng102.html"
+    },
+    {
+        "id": "269",
+        "title": "Mikhail Kutuzov birth",
+        "description": "Mikhail Kutuzov was born on September 16th, although 1745 is often cited, newly identified documents dated it to 1747. It is traditionally believed that he was born in St. Petersburg, although this was not confirmed when checking the city's parish records for 1745-1748. The place of birth is also called various settlements of the Pskov province (modern Pskov region).",
+        "date": "1745-09-16",
+        "location": "St. Petersburg",
+        "country": "Russia",
+        "more_info_link": "https://www.prlib.ru/en/history/619543"
+    },
+    {
+        "id": "270",
+        "title": "Battle on Os'ma river",
+        "description": "The battle took place on the Os'ma river, near the village of Semlevo, on August 27th 1812 when Murat's cavalry attacked the Russian rearguard. The Russians were able to hold off the French and prevent them from cutting off the retreating Russian army.",
+        "date": "1812-08-27",
+        "location": "Semlevo",
+        "country": "Russia"
+    },
+    {
+        "id": "271",
+        "title": "Battle of Molevo Boloto (Inkovo)",
+        "description": "The battle took place on 8 August 1812, between the Cossack corps of General Platov and the 2nd Light Cavalry Division of General Sebastiani and ended as a minor Russian victory.",
+        "date": "1812-08-12",
+        "location": "Rudnya",
+        "country": "Russia"
+    },
+    {
+        "id": "272",
+        "title": "Pyotr Bagration birth",
+        "description": "Pyotr Bagration was born on July 10th 1765 in Kizlyar, Dagestan, where his father served as a military officer.",
+        "date": "1765-07-10",
+        "location": "Kizlyar",
+        "country": "Russia",
+        "more_info_link": "https://en.wikipedia.org/wiki/Pyotr_Bagration"
     }
-]
+    ]

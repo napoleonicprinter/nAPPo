@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ExternalLink, Mail, Copy, Check, Megaphone } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 import './AnnouncementModal.css';
 
 const AnnouncementModal = ({ message, onClose }) => {
+    const { getPortalContainer } = useAppContext();
     const [copied, setCopied] = useState(false);
 
     if (!message) return null;
@@ -85,7 +87,7 @@ const AnnouncementModal = ({ message, onClose }) => {
                 </div>
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

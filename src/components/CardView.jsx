@@ -22,7 +22,7 @@ const getCategoryColor = (category) => {
 };
 
 const CardView = () => {
-    const { sites, userCoords, geolocationEnabled, mapBounds } = useAppContext();
+    const { sites, userCoords, geolocationEnabled, mapBounds, isFiltered, clearAllFilters } = useAppContext();
 
     // Sort sites primarily by bounds (if in map view bounds, rank higher), then distance if geolocation is enabled
     const sortedSites = React.useMemo(() => {
@@ -65,11 +65,25 @@ const CardView = () => {
     }, [sites, userCoords, geolocationEnabled, mapBounds]);
 
     return (
-        <div className="card-view-container animate-fade-in">
-            <div className="cards-grid">
-                {sortedSites.map(site => (
-                    <SiteCard key={site.id} site={site} isCompact={true} />
-                ))}
+        <div className="card-view-wrapper animate-fade-in" style={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
+            <div className="card-view-container">
+                <div className="cards-grid">
+                    {sortedSites.map(site => (
+                        <SiteCard key={site.id} site={site} isCompact={true} />
+                    ))}
+                </div>
+            </div>
+
+            <div className="mobile-action-buttons">
+                {isFiltered && (
+                    <button
+                        className="mobile-clear-filters glass-panel"
+                        onClick={clearAllFilters}
+                        title="Clear All Filters"
+                    >
+                        Clear Filters
+                    </button>
+                )}
             </div>
         </div>
     );

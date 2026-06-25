@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import MapView from './MapView';
+import CardView from './CardView';
+import Header from './Header';
 import { Monitor, Tablet, Smartphone, RotateCw, ZoomIn, X, ExternalLink, ShieldCheck } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import './DevicePreviewer.css';
 
 const DevicePreviewer = () => {
-    const { setView } = useAppContext();
-    const [deviceType, setDeviceType] = useState('desktop');
+    const { setView, previewDevice, setPreviewDevice, portalContainerRef, innerView } = useAppContext();
+    const deviceType = previewDevice;
     const [isLandscape, setIsLandscape] = useState(false);
     const [scale, setScale] = useState(0.8);
-    const [iframeUrl, setIframeUrl] = useState('/');
+    const screenRef = useRef(null);
+
+    // Point the global portal container at this device screen
+    useEffect(() => {
+        if (screenRef.current) {
+            portalContainerRef.current = screenRef.current;
+        }
+        return () => { portalContainerRef.current = null; };
+    }, [portalContainerRef]);
 
     const handleExit = () => {
         setView('map');
@@ -22,7 +33,7 @@ const DevicePreviewer = () => {
 
     // Auto-adjust scale based on device selection
     useEffect(() => {
-        if (deviceType === 'phone') setScale(0.85);
+        if (deviceType === 'mobile') setScale(0.85);
         else if (deviceType === 'tablet') setScale(0.55);
         else setScale(1);
         setIsLandscape(false);
@@ -38,48 +49,32 @@ const DevicePreviewer = () => {
         <div className="device-previewer-overlay animate-fade-in">
             <div className="previewer-grid-overlay"></div>
             
-            <header className="previewer-header">
-                <div className="previewer-logo">
-                    <div className="previewer-logo-icon">
-                        <ShieldCheck size={20} />
-                    </div>
-                    <span>nAPPo Dev Preview</span>
-                </div>
+            
+  {/* Unified header for all device types */}
+  <header className="previewer-header">
+    <div className="previewer-logo">
+      <div className="previewer-logo-icon" style={deviceType !== 'desktop' ? {background: 'var(--accent-primary)'} : {}}>
+        {deviceType === 'desktop' ? <ShieldCheck size={20} /> : deviceType === 'mobile' ? <Smartphone size={20} /> : <Tablet size={20} />}
+      </div>
+      <span>
+        {deviceType === 'desktop' ? 'nAPPo Dev Preview' : deviceType === 'mobile' ? 'Mobile Preview' : 'Tablet Preview'}
+      </span>
+    </div>
+    <div className="device-selectors">
+      <button className={`selector-btn ${deviceType === 'desktop' ? 'active' : ''}`} onClick={() => setPreviewDevice('desktop')}>PC</button>
+      <button className={`selector-btn ${deviceType === 'mobile' ? 'active' : ''}`} onClick={() => setPreviewDevice('mobile')}>Mobile</button>
+      <button className={`selector-btn ${deviceType === 'tablet' ? 'active' : ''}`} onClick={() => setPreviewDevice('tablet')}>Tablet</button>
+    </div>
+    <div className="previewer-actions">
+      <button className="exit-btn" onClick={handleExit}>
+        <X size={16} />
+        <span>
+          {deviceType === 'desktop' ? 'Exit Developer Mode' : `Close ${deviceType === 'mobile' ? 'Mobile' : 'Tablet'} Preview`}
+        </span>
+      </button>
+    </div>
+  </header>
 
-                <div className="device-selectors">
-                    <button 
-                        className={`selector-btn ${deviceType === 'phone' ? 'active' : ''}`}
-                        onClick={() => setDeviceType('phone')}
-                    >
-                        <Smartphone size={16} />
-                        <span>Mobile</span>
-                    </button>
-                    <button 
-                        className={`selector-btn ${deviceType === 'tablet' ? 'active' : ''}`}
-                        onClick={() => setDeviceType('tablet')}
-                    >
-                        <Tablet size={16} />
-                        <span>Tablet</span>
-                    </button>
-                    <button 
-                        className={`selector-btn ${deviceType === 'desktop' ? 'active' : ''}`}
-                        onClick={() => setDeviceType('desktop')}
-                    >
-                        <Monitor size={16} />
-                        <span>Desktop</span>
-                    </button>
-                </div>
-
-                <div className="previewer-actions">
-                    <button 
-                        className="exit-btn"
-                        onClick={handleExit}
-                    >
-                        <X size={16} />
-                        <span>Exit Developer Mode</span>
-                    </button>
-                </div>
-            </header>
 
             <main className="preview-stage">
                 <div 
@@ -87,12 +82,12 @@ const DevicePreviewer = () => {
                     style={{ transform: deviceType !== 'desktop' ? `scale(${scale})` : 'none', transformOrigin: 'center center' }}
                 >
                     <div className={getFrameClass()}>
-                        {deviceType === 'phone' && <div className="phone-notch"></div>}
-                        <iframe 
-                            src={iframeUrl} 
-                            className="preview-content"
-                            title="Application Preview"
-                        ></iframe>
+                        {deviceType === 'mobile' && <div className="phone-notch"></div>}
+                        <div className="device-screen" ref={screenRef}>
+                            <Header />
+                            {innerView === 'map' ? <MapView /> : <CardView />}
+                        </div>
+                        {deviceType === 'mobile' && <div className="phone-home-indicator"></div>}
                     </div>
                 </div>
             </main>

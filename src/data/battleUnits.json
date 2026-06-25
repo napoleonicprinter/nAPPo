@@ -1178,5 +1178,37 @@
         "angleDeg": 35
       }
     ]
+  },
+  {
+    "id": "Champaubert",
+    "siteId": "43",
+    "battleName": "Battle of Champaubert",
+    "phase": "10:00 a.m.",
+    "battleCenter": {
+      "lat": 48.877584,
+      "lng": 3.773368
+    },
+    "units": [
+      {
+        "id": "Champaubert Lagrange Div",
+        "side": "french",
+        "category": "artillery",
+        "phases": "champaubert-10:00",
+        "lat": 48.867076,
+        "lng": 3.768413,
+        "widthM": 150,
+        "heightM": 400,
+        "angleDeg": 30
+      },
+      {
+        "id": "Champaubert Lagrange Div-label",
+        "label": "Lagrange Div.",
+        "labelCategory": "Division",
+        "side": "french",
+        "lat": 48.867076,
+        "lng": 3.768413,
+        "angleDeg": 30
+      }
+      ]
   }
 ]

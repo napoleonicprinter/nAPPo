@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -13,6 +14,7 @@ const YEARS = ['All years', ...Array.from({length: 1815 - 1793 + 1}, (_, i) => 1
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const HistoryCalendarModal = ({ onClose, eventsData }) => {
+    const { getPortalContainer } = useAppContext();
     const [month, setMonth] = useState(new Date().getMonth());
     const [selectedYear, setSelectedYear] = useState('All years');
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
@@ -128,7 +130,8 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
             >
                 <div className="calendar-modal-header">
                     {/* Year dropdown row — centered */}
-                    <div className="history-year-row">
+                    <div className="history-year-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                        <div style={{ width: '32px' }}></div> {/* Spacer to balance the close button */}
                         <div className="custom-dropdown-container history-year-dropdown">
                             <button
                                 className="category-filter-wrapper glass-panel dropdown-trigger"
@@ -156,11 +159,10 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                                 </div>
                             )}
                         </div>
+                        <button className="modal-close-btn" onClick={onClose} title="Close">
+                            <X size={24} />
+                        </button>
                     </div>
-
-                    <button className="modal-close-btn" onClick={onClose} title="Close">
-                        <X size={24} />
-                    </button>
 
                     {/* Month navigation row */}
                     <div className="calendar-header-bottom">
@@ -230,7 +232,7 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                 )}
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

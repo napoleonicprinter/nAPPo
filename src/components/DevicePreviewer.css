@@ -25,8 +25,11 @@
 }
 
 .previewer-header {
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
     height: 64px;
     background: rgba(22, 27, 34, 0.8);
     backdrop-filter: blur(12px);
@@ -107,6 +110,9 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .exit-btn:hover {
@@ -121,82 +127,134 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
-    padding: 40px;
+    padding: 80px 40px 40px;
     perspective: 2000px;
+    height: calc(100vh - 64px);
 }
 
-.device-frame {
-    position: relative;
-    background: #111;
-    border-radius: 36px;
-    padding: 12px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.device-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-/* Phone */
-.device-phone {
+/* ===== Common Device Frame ===== */
+.device-frame {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    box-sizing: border-box;
+}
+
+/* ===== Desktop ===== */
+.device-frame.device-desktop {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+/* ===== Mobile (iPhone-like) ===== */
+.device-frame.device-mobile {
     width: 375px;
     height: 812px;
     border-radius: 50px;
+    border: 6px solid #1a1a1a;
+    box-shadow:
+        0 0 0 2px #333,
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 4px rgba(255, 255, 255, 0.05);
 }
 
-.device-phone.landscape {
+.device-frame.device-mobile.landscape {
     width: 812px;
     height: 375px;
 }
 
+/* Phone notch */
 .phone-notch {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
-    height: 30px;
-    background: #111;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    z-index: 10;
+    width: 160px;
+    height: 32px;
+    background: #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 20;
 }
 
-/* Tablet */
-.device-tablet {
+.phone-notch::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 6px;
+    background: #222;
+    border-radius: 3px;
+}
+
+/* Home indicator bar */
+.phone-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    z-index: 20;
+}
+
+/* ===== Tablet (iPad-like) ===== */
+.device-frame.device-tablet {
     width: 768px;
     height: 1024px;
-    border-radius: 24px;
+    border-radius: 28px;
+    border: 6px solid #1a1a1a;
+    box-shadow:
+        0 0 0 2px #333,
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 4px rgba(255, 255, 255, 0.05);
 }
 
-.device-tablet.landscape {
+.device-frame.device-tablet.landscape {
     width: 1024px;
     height: 768px;
 }
 
-/* Desktop */
-.device-desktop {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    padding: 0;
-    box-shadow: none;
-}
-
-.preview-content {
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
+/* ===== Inner content wrapper ===== */
+.device-screen {
+    position: absolute;
+    inset: 0;
     overflow: hidden;
-    background: #000;
-    border: none;
+    border-radius: inherit;
+    /* This transform creates a new containing block for position:fixed children,
+       so drawers, backdrops, and headers render inside the device frame */
+    transform: translateZ(0);
 }
 
+/* Narrow mobile controls drawer for PC mode */
+.mobile-controls-drawer {
+    width: 20vw;
+    max-width: 300px;
+}
+
+/* ===== Bottom Controls Bar ===== */
 .preview-controls {
     position: fixed;
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 90vw;
     background: rgba(22, 27, 34, 0.8);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(240, 246, 252, 0.1);
@@ -235,6 +293,7 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .control-icon-btn:hover {
@@ -252,4 +311,46 @@
     font-weight: 500;
     color: var(--text-primary);
     min-width: 40px;
+}
+
+/* Force mobile overlay filters to show in device previewer when simulating mobile devices since media queries don't trigger properly */
+.device-mobile .mobile-overlay-filters, .device-tablet .mobile-overlay-filters {
+    display: flex !important;
+    position: absolute !important;
+    top: 100% !important;
+    margin-top: 2px !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 8px 10px 16px 10px !important;
+    box-sizing: border-box !important;
+    z-index: 5005 !important;
+    gap: 0.5rem !important;
+    pointer-events: auto !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    align-items: center !important;
+}
+
+.device-mobile .mobile-overlay-filters::-webkit-scrollbar, .device-tablet .mobile-overlay-filters::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Force hide desktop elements in device previewer when simulating mobile/tablet */
+.device-mobile .desktop-only,
+.device-tablet .desktop-only,
+.device-mobile .hide-in-mobile-tablet,
+.device-tablet .hide-in-mobile-tablet,
+.device-mobile .filters-line,
+.device-tablet .filters-line {
+    display: none !important;
+}
+
+/* Force mobile width for drawers in emulator to override desktop media queries */
+.device-mobile .settings-drawer,
+.device-tablet .settings-drawer,
+.device-mobile .mobile-controls-drawer,
+.device-tablet .mobile-controls-drawer {
+    width: 50% !important;
+    max-width: 50% !important;
 }

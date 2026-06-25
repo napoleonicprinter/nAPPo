@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import sitesData from '../data/sites.json';
 import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
@@ -19,12 +19,18 @@ export const useAppContext = () => useContext(AppContext);
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
+    const l1 = Number(lat1);
+    const ln1 = Number(lon1);
+    const l2 = Number(lat2);
+    const ln2 = Number(lon2);
+    if (isNaN(l1) || isNaN(ln1) || isNaN(l2) || isNaN(ln2)) return undefined;
+
     const R = 6371; // Radius of the earth in km
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const dLat = (l2 - l1) * Math.PI / 180;
+    const dLon = (ln2 - ln1) * Math.PI / 180;
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.cos(l1 * Math.PI / 180) * Math.cos(l2 * Math.PI / 180) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const d = R * c; // Distance in km
@@ -83,6 +89,30 @@ export const AppProvider = ({ children }) => {
     const isDevelopment = import.meta.env.DEV;
     const battleUnitsEnabled = import.meta.env.VITE_ENABLE_BATTLE_UNITS === 'true';
 
+    // 1. Initial State for Developer Mode toggles
+    const [developerMode, setDeveloperMode] = useState(() => {
+        const saved = localStorage.getItem('developerMode');
+        return saved === 'true';
+    });
+
+    const [previewDevice, setPreviewDevice] = useState('desktop');
+
+    // Portal container ref — when inside DevicePreviewer, portals render into device-screen
+    const portalContainerRef = useRef(null);
+    const getPortalContainer = useCallback(() => portalContainerRef.current || document.body, []);
+
+    // 2. Updated Effect: This applies the classes to the body so your CSS 
+    // can react to 'mobile', 'tablet', or 'pc'/'desktop' selections.
+    useEffect(() => {
+        // Clear existing emulation classes
+        document.body.classList.remove('pc', 'tablet', 'mobile', 'desktop');
+        
+        // Add the selected device class
+        if (previewDevice) {
+            document.body.classList.add(previewDevice);
+        }
+    }, [previewDevice]);
+
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
         if (isDevelopment) return sitesData;
@@ -115,8 +145,8 @@ export const AppProvider = ({ children }) => {
     });
 
     const [activeBattlePhaseIds, setActiveBattlePhaseIds] = useState([]);
-    const activeBattleSiteIds = activeBattlePhaseIds; // Temporary alias for compatibility
-    const setActiveBattleSiteIds = setActiveBattlePhaseIds; // Temporary alias for compatibility
+    const activeBattleSiteIds = activeBattlePhaseIds;
+    const setActiveBattleSiteIds = setActiveBattlePhaseIds;
 
     const toggleBattleUnitsForSite = (phaseId) => {
         if (!battleUnitsEnabled) return;
@@ -124,6 +154,16 @@ export const AppProvider = ({ children }) => {
             prev.includes(phaseId) 
                 ? prev.filter(id => id !== phaseId) 
                 : [...prev, phaseId]
+        );
+    };
+
+    const [activeMapOverlays, setActiveMapOverlays] = useState([]);
+
+    const toggleMapOverlay = (mapId) => {
+        setActiveMapOverlays(prev =>
+            prev.includes(mapId)
+                ? prev.filter(id => id !== mapId)
+                : [...prev, mapId]
         );
     };
 
@@ -188,7 +228,6 @@ export const AppProvider = ({ children }) => {
                 }
 
                 const fetchRes = await Promise.all(fetchRequests);
-
                 const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resDeals, resBattleUnits] = fetchRes;
 
                 if (resSites.ok) {
@@ -247,6 +286,7 @@ export const AppProvider = ({ children }) => {
     }, [battleUnitsEnabled]);
 
     const [view, setView] = useState('map');
+    const [innerView, setInnerView] = useState('map');
     const [mapBounds, setMapBounds] = useState(null);
     const [selectedSite, setSelectedSite] = useState(null);
     const [siteToOpenPopup, setSiteToOpenPopup] = useState(null);
@@ -323,11 +363,6 @@ export const AppProvider = ({ children }) => {
         return saved === 'true';
     });
 
-    const [developerMode, setDeveloperMode] = useState(() => {
-        const saved = localStorage.getItem('developerMode');
-        return saved === 'true';
-    });
-
     const [mapStyle, setMapStyle] = useState(() => {
         const saved = localStorage.getItem('mapStyle');
         if (saved) return saved;
@@ -373,10 +408,7 @@ export const AppProvider = ({ children }) => {
             }
             return true;
         });
-    }, [
-        derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, 
-        filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius
-    ]);
+    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius]);
 
     const passYear = (site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
@@ -389,7 +421,6 @@ export const AppProvider = ({ children }) => {
 
     const passCat = (site) => {
         if (filterCategory.length === 0) return true;
-
         const hasTodaysBattle = filterCategory.includes("Today's Battle");
         const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
         
@@ -401,85 +432,121 @@ export const AppProvider = ({ children }) => {
                 if (parts.length >= 3) {
                     const month = parseInt(parts[1], 10);
                     const day = parseInt(parts[2], 10);
-                    if (month === today.getMonth() + 1 && day === today.getDate()) {
-                        matchesToday = true;
-                    }
+                    if (month === today.getMonth() + 1 && day === today.getDate()) matchesToday = true;
                 }
             }
         }
-        
-        if (otherCategories.length > 0 && otherCategories.includes(site.category)) {
-            return true;
-        }
-        
-        if (hasTodaysBattle && matchesToday) {
-            return true;
-        }
-        
+        if (otherCategories.length > 0 && otherCategories.includes(site.category)) return true;
+        if (hasTodaysBattle && matchesToday) return true;
         return false;
     };
 
-    const availableYears = Array.from(
-        new Set(
-            sitesFilteredBase
-                .filter(site => passCmd(site) && passCat(site))
-                .map(s => s.year ? String(s.year).trim() : '')
-                .filter(y => y !== '')
-        )
-    ).sort();
+    const passesAllFiltersExcept = (site, excludeFacet) => {
+        if (showOnlyNew && !site.isNew) return false;
+        if (filterSignificance && site.significance !== filterSignificance) return false;
+        if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
+        if (showArcOnly && !site.special.includes('arc')) return false;
+        if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
+            if (site.distance > parseInt(filterRadius, 10)) return false;
+        }
 
-    const availableCommanders = Array.from(
-        new Set(
-            sitesFilteredBase
-                .filter(site => passYear(site) && passCat(site))
-                .flatMap(s => s.commanders || [])
-        )
-    ).sort();
+        if (excludeFacet !== 'visited') {
+            if (filterVisited === 'visited' && !site.visited) return false;
+            if (filterVisited === 'unvisited' && site.visited) return false;
+        }
+        if (excludeFacet !== 'country') {
+            if (filterCountry !== 'all' && site.country !== filterCountry) return false;
+        }
+        if (excludeFacet !== 'coalition') {
+            if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
+        }
+        if (excludeFacet !== 'campaign') {
+            if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
+        }
+        if (excludeFacet !== 'category' && !passCat(site)) return false;
+        if (excludeFacet !== 'year' && !passYear(site)) return false;
+        if (excludeFacet !== 'commander' && !passCmd(site)) return false;
 
-    const sitesForCategoryCounts = useMemo(() => {
-        return sitesFilteredBase.filter(site => passYear(site) && passCmd(site));
-    }, [sitesFilteredBase, passYear, passCmd]);
+        return true;
+    };
+    const availableYears = Array.from(new Set(sitesFilteredBase.filter(site => passCmd(site) && passCat(site)).map(s => s.year ? String(s.year).trim() : '').filter(y => y !== ''))).sort();
+    const availableCommanders = Array.from(new Set(sitesFilteredBase.filter(site => passYear(site) && passCat(site)).flatMap(s => s.commanders || []))).sort();
+    const sitesForCategoryCounts = useMemo(() => sitesFilteredBase.filter(site => passYear(site) && passCmd(site)), [sitesFilteredBase, passYear, passCmd]);
 
     const categoryCounts = useMemo(() => {
         const counts = sitesForCategoryCounts.reduce((acc, site) => {
             acc[site.category] = (acc[site.category] || 0) + 1;
             return acc;
         }, {});
-        
         const today = new Date();
         const currentMonth = today.getMonth() + 1;
         const currentDay = today.getDate();
-        
         counts["Today's Battle"] = sitesForCategoryCounts.filter(site => {
             if ((site.category === 'Battle site' || site.category === 'Naval battle') && site.date) {
                 const parts = site.date.split('-');
-                if (parts.length >= 3) {
-                    return parseInt(parts[1], 10) === currentMonth && parseInt(parts[2], 10) === currentDay;
-                }
+                if (parts.length >= 3) return parseInt(parts[1], 10) === currentMonth && parseInt(parts[2], 10) === currentDay;
             }
             return false;
         }).length;
-
         return counts;
     }, [sitesForCategoryCounts]);
 
-    const filteredSites = useMemo(() => {
-        return sitesForCategoryCounts.filter(site => passCat(site));
-    }, [sitesForCategoryCounts, passCat]);
+    const countryCounts = useMemo(() => {
+        const counts = {};
+        derivedSites.forEach(site => {
+            if (passesAllFiltersExcept(site, 'country') && site.country) {
+                counts[site.country] = (counts[site.country] || 0) + 1;
+            }
+        });
+        return counts;
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
 
-    const isFiltered =
-        filterCategory.length > 0 ||
-        filterSignificance !== '' ||
-        filterVisited !== 'all' ||
-        filterRadius !== 'all' ||
-        filterSearch !== '' ||
-        filterYear !== 'all' ||
-        filterCommander !== 'all' ||
-        filterCountry !== 'all' ||
-        filterCoalition !== 'all' ||
-        filterCampaign !== 'all' ||
-        showArcOnly ||
-        showOnlyNew;
+    const campaignCounts = useMemo(() => {
+        const counts = {};
+        derivedSites.forEach(site => {
+            if (passesAllFiltersExcept(site, 'campaign')) {
+                site.special.forEach(sp => {
+                    if (!sp || sp === 'arc' || sp === 'false' || sp === false) return;
+                    const num = parseInt(sp, 10);
+                    if (!isNaN(num) && num >= 1 && num <= 7) return;
+                    if (typeof sp === 'string') counts[sp] = (counts[sp] || 0) + 1;
+                });
+            }
+        });
+        return counts;
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander]);
+
+    const coalitionCounts = useMemo(() => {
+        const counts = {};
+        derivedSites.forEach(site => {
+            if (passesAllFiltersExcept(site, 'coalition')) {
+                site.special.forEach(sp => {
+                    const num = parseInt(sp, 10);
+                    if (!isNaN(num) && num >= 1 && num <= 7) {
+                        counts[sp] = (counts[sp] || 0) + 1;
+                    }
+                });
+            }
+        });
+        return counts;
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander]);
+
+    const visitedCounts = useMemo(() => {
+        const counts = { visited: 0, unvisited: 0 };
+        derivedSites.forEach(site => {
+            if (passesAllFiltersExcept(site, 'visited')) {
+                if (site.visited) counts.visited++;
+                else counts.unvisited++;
+            }
+        });
+        return counts;
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
+
+
+
+    const filteredSites = useMemo(() => sitesForCategoryCounts.filter(site => passCat(site)), [sitesForCategoryCounts, passCat]);
+
+    const isFiltered = filterCategory.length > 0 || filterSignificance !== '' || filterVisited !== 'all' || filterRadius !== 'all' || filterSearch !== '' || filterYear !== 'all' || filterCommander !== 'all' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || showArcOnly || showOnlyNew;
 
     const clearAllFilters = () => {
         setFilterCategory([]);
@@ -496,7 +563,6 @@ export const AppProvider = ({ children }) => {
         setShowOnlyNew(false);
     };
 
-
     useEffect(() => {
         const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
         const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
@@ -504,51 +570,28 @@ export const AppProvider = ({ children }) => {
             setFilterCommander('all');
             setFilterYear('all');
         }
-
         const isBattleSiteAlone = filterCategory.length === 1 && filterCategory[0] === 'Battle site';
-        if (!isBattleSiteAlone) {
-            setShowArcOnly(false);
-        }
+        if (!isBattleSiteAlone) setShowArcOnly(false);
     }, [filterCategory]);
 
     useEffect(() => {
-        if (currentUser) {
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
-        } else {
+        if (currentUser) localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        else {
             localStorage.removeItem('currentUser');
             setVisitedSites([]);
         }
     }, [currentUser]);
 
     useEffect(() => {
-        if (currentUser) {
-            localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(visitedSites));
-        }
+        if (currentUser) localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(visitedSites));
     }, [visitedSites, currentUser]);
 
-    useEffect(() => {
-        localStorage.setItem('appUsers', JSON.stringify(users));
-    }, [users]);
-
-    useEffect(() => {
-        localStorage.setItem('newSitesDays', (newSitesDays || 30).toString());
-    }, [newSitesDays]);
-
-    useEffect(() => {
-        localStorage.setItem('clusterRadius', (clusterRadius || 25).toString());
-    }, [clusterRadius]);
-
-    useEffect(() => {
-        localStorage.setItem('showOnlyNew', showOnlyNew.toString());
-    }, [showOnlyNew]);
-
-    useEffect(() => {
-        localStorage.setItem('developerMode', developerMode.toString());
-    }, [developerMode]);
-
-    useEffect(() => {
-        localStorage.setItem('mapStyle', mapStyle);
-    }, [mapStyle]);
+    useEffect(() => { localStorage.setItem('appUsers', JSON.stringify(users)); }, [users]);
+    useEffect(() => { localStorage.setItem('newSitesDays', (newSitesDays || 30).toString()); }, [newSitesDays]);
+    useEffect(() => { localStorage.setItem('clusterRadius', (clusterRadius || 25).toString()); }, [clusterRadius]);
+    useEffect(() => { localStorage.setItem('showOnlyNew', showOnlyNew.toString()); }, [showOnlyNew]);
+    useEffect(() => { localStorage.setItem('developerMode', developerMode.toString()); }, [developerMode]);
+    useEffect(() => { localStorage.setItem('mapStyle', mapStyle); }, [mapStyle]);
 
     useEffect(() => {
         localStorage.setItem('appTheme', theme);
@@ -560,14 +603,7 @@ export const AppProvider = ({ children }) => {
             alert("Please log in to mark sites as visited.");
             return;
         }
-        setVisitedSites(prev => {
-            const isVisited = prev.includes(id);
-            if (isVisited) {
-                return prev.filter(siteId => siteId !== id);
-            } else {
-                return [...prev, id];
-            }
-        });
+        setVisitedSites(prev => prev.includes(id) ? prev.filter(siteId => siteId !== id) : [...prev, id]);
     };
 
     const login = (username, password) => {
@@ -586,9 +622,7 @@ export const AppProvider = ({ children }) => {
         return true;
     };
 
-    const logout = () => {
-        setCurrentUser(null);
-    };
+    const logout = () => setCurrentUser(null);
 
     const deleteCurrentUser = () => {
         if (!currentUser) return;
@@ -599,58 +633,37 @@ export const AppProvider = ({ children }) => {
     };
 
     const requestGeolocation = async () => {
-        // Check if a test location is forced via testLocation.json
         if (isDevelopment && typeof testLocation !== 'undefined' && testLocation && testLocation.enabled) {
-            console.log("Forcing test location:", testLocation.name);
             setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
             setGeolocationEnabled(true);
             setLocationMode('geo');
             return;
         }
-
         try {
-            // First check/request permissions via Capacitor for mobile compatibility
             const permissions = await Geolocation.checkPermissions();
-            if (permissions.location !== 'granted') {
-                await Geolocation.requestPermissions();
-            }
-
-            const position = await Geolocation.getCurrentPosition({
-                enableHighAccuracy: true,
-                timeout: 10000,
-                maximumAge: 60000
-            });
-
+            if (permissions.location !== 'granted') await Geolocation.requestPermissions();
+            const position = await Geolocation.getCurrentPosition({ enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
             setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
             setGeolocationEnabled(true);
             setLocationMode('geo');
         } catch (error) {
-            console.warn("Capacitor Geolocation failed, trying navigator.geolocation", error);
-
-            // Fallback to browser geolocation
             if (!navigator.geolocation) {
                 alert("Geolocation is not supported by your device/browser");
                 return;
             }
-
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
                     setGeolocationEnabled(true);
                     setLocationMode('geo');
                 },
-                (err) => {
-                    console.error("All location methods failed:", err);
-                    alert("Failed to get location. Please ensure location services are enabled.");
-                },
+                (err) => alert("Failed to get location. Please ensure location services are enabled."),
                 { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
             );
         }
     };
 
-    const disableGeolocation = () => {
-        handleLocationSelect('none');
-    };
+    const disableGeolocation = () => handleLocationSelect('none');
 
     const handleLocationSelect = (mode) => {
         if (mode === 'none') {
@@ -673,7 +686,7 @@ export const AppProvider = ({ children }) => {
         <AppContext.Provider value={{
             sites: filteredSites,
             allSites: derivedSites,
-            view, setView,
+            view, setView, innerView, setInnerView,
             selectedSite, setSelectedSite,
             siteToOpenPopup, setSiteToOpenPopup,
             toggleVisited,
@@ -703,9 +716,15 @@ export const AppProvider = ({ children }) => {
             clusterRadius, setClusterRadius,
             showOnlyNew, setShowOnlyNew,
             developerMode, setDeveloperMode,
+            previewDevice, setPreviewDevice,
+            portalContainerRef, getPortalContainer,
             mapStyle, setMapStyle,
             theme, toggleTheme,
             categoryCounts,
+            countryCounts,
+            campaignCounts,
+            coalitionCounts,
+            visitedCounts,
             syncStatus, lastSyncTime,
             mapBounds, setMapBounds,
             showsToCome: showsBaseData,
@@ -718,7 +737,9 @@ export const AppProvider = ({ children }) => {
             activeBattleSiteIds,
             toggleBattleUnitsForSite,
             setActiveBattleSiteIds,
-            battleUnitsEnabled
+            battleUnitsEnabled,
+            activeMapOverlays,
+            toggleMapOverlay
         }}>
             {children}
         </AppContext.Provider>

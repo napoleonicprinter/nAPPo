@@ -1,9 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ChevronDown } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 
 const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {} }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [menuStyle, setMenuStyle] = useState({});
+    const triggerRef = useRef(null);
     const dropdownRef = useRef(null);
+    const menuRef = useRef(null);
+    const { getPortalContainer } = useAppContext();
 
     // Map categories to dynamic colors (same as MapView)
     const getCategoryColor = (category) => {
@@ -27,13 +33,63 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (
+                dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+                menuRef.current && !menuRef.current.contains(event.target)
+            ) {
                 setIsOpen(false);
             }
         };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
+
+    useEffect(() => {
+        if (isOpen && triggerRef.current) {
+            const updatePosition = () => {
+                if (!triggerRef.current) return;
+                const rect = triggerRef.current.getBoundingClientRect();
+                const container = getPortalContainer();
+                const containerRect = container.getBoundingClientRect();
+                
+                const scale = rect.width / triggerRef.current.offsetWidth || 1;
+                
+                const isCloseToRightEdge = rect.left + 200 > containerRect.right;
+                
+                const style = {
+                    position: 'absolute',
+                    top: (rect.bottom - containerRect.top) / scale + 5,
+                    minWidth: triggerRef.current.offsetWidth,
+                    zIndex: 10005
+                };
+                
+                if (isCloseToRightEdge) {
+                    style.right = (containerRect.right - rect.right) / scale;
+                    style.left = 'auto';
+                } else {
+                    style.left = (rect.left - containerRect.left) / scale;
+                    style.right = 'auto';
+                }
+                
+                setMenuStyle(style);
+            };
+            
+            updatePosition();
+            window.addEventListener('resize', updatePosition);
+            
+            const scrollContainer = triggerRef.current.closest('.mobile-overlay-filters');
+            if (scrollContainer) {
+                scrollContainer.addEventListener('scroll', updatePosition);
+            }
+
+            return () => {
+                window.removeEventListener('resize', updatePosition);
+                if (scrollContainer) {
+                    scrollContainer.removeEventListener('scroll', updatePosition);
+                }
+            };
+        }
+    }, [isOpen, getPortalContainer]);
 
     const handleSelect = (category) => {
         if (category === '') {
@@ -54,6 +110,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
     return (
         <div className="custom-select-container" ref={dropdownRef}>
             <button
+                ref={triggerRef}
                 className={`custom-select-trigger filter-select glass-panel ${isOpen ? 'open' : ''}`}
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -80,8 +137,12 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                 <ChevronDown size={14} style={{ marginLeft: 'auto', flexShrink: 0, opacity: 0.6, transition: 'transform 0.2s', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
             </button>
 
-            {isOpen && (
-                <div className="custom-select-menu animate-fade-in">
+            {isOpen && createPortal(
+                <div 
+                    ref={menuRef}
+                    className="custom-select-menu animate-fade-in"
+                    style={menuStyle}
+                >
                     <button
                         className={`custom-select-option ${(!value || value.length === 0) ? 'selected' : ''}`}
                         onClick={() => handleSelect('')}
@@ -93,7 +154,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                             [{Object.entries(categoryCounts).filter(([k]) => k !== "Today's Battle").reduce((a, [_, b]) => a + b, 0)}]
                         </span>
                     </button>
-                    {categories.map(cat => (
+                    {categories.filter(cat => (categoryCounts[cat] || 0) > 0).map(cat => (
                         <button
                             key={cat}
                             className={`custom-select-option ${(value && value.includes(cat)) ? 'selected' : ''}`}
@@ -110,7 +171,8 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                             </span>
                         </button>
                     ))}
-                </div>
+                </div>,
+                getPortalContainer()
             )}
         </div>
     );

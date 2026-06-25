@@ -6,7 +6,7 @@ import { ExternalLink, Info, Tag, X } from 'lucide-react';
 import './ShoppingView.css';
 
 const DealsView = ({ onClose }) => {
-    const { activeDeals } = useAppContext();
+    const { activeDeals, getPortalContainer } = useAppContext();
     const { t } = useTranslation();
 
     const sortedDeals = useMemo(() => {
@@ -35,13 +35,13 @@ const DealsView = ({ onClose }) => {
             >
                 {/* Header */}
                 <div className="shopping-modal-header" style={{ padding: '1.2rem 1.5rem', flexShrink: 0, background: 'rgba(255, 255, 255, 0.03)' }}>
-                    <div className="modal-title-row" style={{ marginBottom: 0, gap: '12px', paddingRight: '40px' }}>
+                    <div className="modal-title-row" style={{ marginBottom: 0, gap: '12px' }}>
                         <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" style={{ height: '42px', width: 'auto' }} />
                         <div className="modal-title-info" style={{ maxWidth: '280px' }}>
                             <h2 style={{ fontSize: '1.15rem', lineHeight: 1.1 }}>{t('ui.deals_title', 'Exclusive Deals')}</h2>
                             <p style={{ fontSize: '0.8rem', opacity: 0.7, marginTop: '2px' }}>{t('ui.deals_subtitle', 'Special offers for the community.')}</p>
                         </div>
-                        <button className="modal-close-btn" onClick={onClose} style={{ top: '12px', right: '12px', width: '32px', height: '32px' }}>
+                        <button className="modal-close-btn" onClick={onClose}>
                             <X size={18} />
                         </button>
                     </div>
@@ -136,7 +136,7 @@ const DealsView = ({ onClose }) => {
                 </div>
             </div>
         </div>,
-        document.body
+        getPortalContainer()
     );
 };
 

@@ -125,6 +125,14 @@
     "commanders": [
       "Napoleon",
       "Michael von Melas"
+    ],
+    "maps": [
+      {
+        "id": "marengo-map1",
+        "name": "Map Phase 1",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/AGAD_Plan_bitwy_pod_Raszynem.png",
+        "bounds": [[44.86, 8.63], [44.91, 8.69]]
+      }
     ]
   },
   {
@@ -172,9 +180,9 @@
   },
   {
     "id": "8",
-    "name": "Casa Buonaparte",
+    "name": "Casa Buonaparte - Napoleon's Birthplace",
     "category": "Museum",
-    "significance": "Minor",
+    "significance": "Major",
     "year": 1769,
     "location": "Ajaccio, Corsica",
     "country": "France",
@@ -463,7 +471,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Alcolea_map_1808.png/500px-Alcolea_map_1808.png",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alcolea_Bridge",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
@@ -482,7 +490,7 @@
     "description": "A hero of the War of Independence (Peninsula War), he settled at this site after retiring from the Army in 1845.",
     "latitude": 41.699579,
     "longitude": -6.34659,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Placa_dedicada_en_Alca%C3%B1ices_%28Zamora%29_a_Pablo_Mu%C3%B1oz_de_la_Morena%2C_en_la_casa_donde_muri%C3%B3.jpg/1920px-Placa_dedicada_en_Alca%C3%B1ices_%28Zamora%29_a_Pablo_Mu%C3%B1oz_de_la_Morena%2C_en_la_casa_donde_muri%C3%B3.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Munoz.webp",
     "more_info_link": "https://historia-hispanica.rah.es/biografias/52642-pablo-munoz-de-la-morena-y-martinez-zarco",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false
@@ -654,7 +662,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fuensanta.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_la_Fuensanta",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
@@ -677,7 +685,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Orgaz.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_Orgaz",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
     "commanders": "Marcelino Villa"
@@ -697,7 +705,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alcaniz.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alca%C3%B1iz",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
     "commanders": [
@@ -754,7 +762,7 @@
     "more_info_link": "https://arrecaballo.es/guerras-napoleonicas/guerra-de-la-independencia-1809/batalla-de-alba-de-tormes-28-de-noviembre-de-1809/",
     "createDate": "2025-02-26T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "arc"
     ],
     "victor": "France",
@@ -826,7 +834,7 @@
     "createDate": "2025-02-26T10:00:00Z",
     "special": [
       "Peninsular War",
-      "Guerra de la Independencia"
+      "Guerra de Independencia"
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
@@ -867,7 +875,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Astorga_1.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Astorga",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
@@ -939,7 +947,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Ordal",
     "createDate": "2025-02-26T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "France",
@@ -1030,7 +1038,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Usagre",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-portuguese",
@@ -1072,7 +1080,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bidasoa",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-portuguese",
@@ -1114,7 +1122,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Puente_de_Triana",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-portuguese",
@@ -1155,7 +1163,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cabezon.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Cabez%C3%B3n",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
@@ -1352,7 +1360,7 @@
     "more_info_link": "https://www.batalladetrafalgar.com/2022/11/la-sorpresa-de-arroyomolinos-de.html",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-portuguese",
@@ -1591,7 +1599,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tarragona.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_Tarragona_(1811)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
@@ -1633,7 +1641,7 @@
     "more_info_link": "https://www.wikiloc.com/hiking-trails/parque-de-la-batalla-chiclana-de-la-frontera-cadiz-163462771",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-spanish",
@@ -1660,7 +1668,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Asedio_de_Ciudad_Rodrigo_(1812)",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-portuguese",
@@ -1686,7 +1694,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Asedio_de_Badajoz_(1812)",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-portuguese",
@@ -1712,7 +1720,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vitoria",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-spanish",
@@ -1740,7 +1748,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/San_Marcial.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_San_Marcial",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
     "commanders": [
@@ -1764,7 +1772,7 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Toulouse_(1814)",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
-      "Guerra de la Independencia",
+      "Guerra de Independencia",
       "Peninsular War"
     ],
     "victor": "Anglo-luso-spanish",
@@ -1789,7 +1797,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bruc.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_del_Bruc",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
     "commanders": [
@@ -1818,24 +1826,21 @@
   },
   {
     "id": "94",
-    "name": "Casa Natal de Juan Martín Díez, el “Empecinado”",
+    "name": "Birthplace of 'El Empecinado'",
     "category": "Landmark",
     "significance": "Medium",
-    "year": "",
     "location": "Castrillo de Duero, Valladolid",
     "country": "Spain",
-    "description": "Nacido el 2 de septiembre de 1775, en la localidad vitícola de Castrillo de Duero, e hijo de labrador.",
-    "latitude": 41.57489,
-    "longitude": -4.013,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Casa_empecinado.JPG/1280px-Casa_empecinado.JPG",
+    "description": "The house where he was born, September 2nd 1775, and spent his childhood is preserved in the town. Two commemorative plaques (placed in 1908 and 2008) recall his figure as a hero of the Spanish War of Independence.",
+    "latitude": 41.5749,
+    "longitude": -4.013095,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Empecinado_birth.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Juan_Mart%C3%ADn_D%C3%ADez",
-    "more_info_link": "https://vallisoletvm.blogspot.com/2018/03/el-empecinado-en-valladolid.html",
-    "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "createDate": "2025-02-26T10:00:00Z"
   },
   {
     "id": "95",
-    "name": "Casa Natal de Francisco Espoz y Mina",
+    "name": "Birthplace of Francisco Espoz y Mina",
     "category": "Landmark",
     "significance": "Medium",
     "year": "",
@@ -1851,14 +1856,14 @@
   },
   {
     "id": "96",
-    "name": "",
+    "name": "Meeting at “Spálený mlýn",
     "category": "Landmark",
     "significance": "Major",
     "year": "",
     "location": "Jáňův Dvůr",
     "country": "Czech Republic",
     "description": "At this site Napoleon and Francis I gathered to discuss the terms of the armistice on the rainy day of December 4th, 1805",
-    "latitude": 40.824064,
+    "latitude": 49.024064,
     "longitude": 16.96264,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Januv_Dvur.webp",
     "more_info_link": "https://www.morava-napoleonska.cz/en/localities/setkani-u-spaleneho-mlyna/",
@@ -1912,7 +1917,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bailen.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Bail%C3%A9n",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
     "commanders": [
@@ -1926,16 +1931,26 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1808",
+    "date": "1808-11-10",
     "location": "Espinosa de los Monteros, Burgos",
     "country": "Spain",
-    "description": "Derrota española frente a tropas imperiales en el norte.",
+    "description": "Took place on November 10th & 11th 1808 in the Cantabrian Mountains. It resulted in a French victory under Marshal Victor against Lieutenant General Joaquín Blake's Army of Galicia.",
     "latitude": 43.0778,
     "longitude": -3.5531,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Espinosa.webp",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Espinosa_de_los_Monteros",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Espinosa_de_los_Monteros",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
+    "victor": "France",
+    "defeated": "Spain",
+    "commanders": [
+      "Claude Victor",
+      "Joaquín Blake",
+      " Pedro Caro, Marquis of la Romana"
+    ]
   },
   {
     "id": "101",
@@ -1943,16 +1958,25 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1808",
+    "date": "1808-11-23",
     "location": "Tudela, Navarra",
     "country": "Spain",
-    "description": "Derrota española frente a tropas imperiales en el norte.",
+    "description": "November 23rd 1808 saw an Imperial French army led by Marshal Jean Lannes attack a Spanish army under General Castaños. The battle resulted in the complete victory of the Imperial forces.",
     "latitude": 41.9428,
     "longitude": -1.6072,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Campo_batalla224.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Tudela",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tudela.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tudela",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
+    "victor": "France",
+    "defeated": "Spain",
+    "commanders": [
+      "Jean Lannes",
+      "Castaños"
+    ]
   },
   {
     "id": "102",
@@ -1989,16 +2013,23 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1808",
+    "date": "1808-06-15",
     "location": "Zaragoza, Aragón",
     "country": "Spain",
-    "description": "Asedio francés rechazado por la resistencia local.",
+    "description": "It lasted from June 15th to August 14th 1808, when a French army under General Lefebvre-Desnouettes besieged the city of Zaragoza, defended by a Spanish force under General José de Palafox. The siege ended with the withdrawal of the French forces after suffering heavy casualties.",
     "latitude": 41.6488,
     "longitude": -0.8891,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Zaragoza_-_Primer_Sitio.jpg/1280px-Zaragoza_-_Primer_Sitio.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zaragoza_1.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Zaragoza",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Guerra de Independencia",
+    "victor": "Spain",
+    "defeated": "France",
+    "commanders": [
+      "Charles Lefebvre-Desnouettes",
+      "José de Palafox",
+      "Jean-Antoine Verdier"
+    ]
   },
   {
     "id": "104",
@@ -2006,16 +2037,28 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1809",
+    "date": "1809-12-20",
     "location": "Zaragoza, Aragón",
     "country": "Spain",
-    "description": "Segundo asedio francés a Zaragoza, que cayó tras una heroica resistencia.",
+    "description": "This second siege began on December 19th 1808 and lasted until February 20th 1809, when a French army under Marshal Jean Lannes besieged the city of Zaragoza, defended by a Spanish force under General José de Palafox. The siege ended with the capture of the city by the French forces after suffering heavy casualties on both sides.",
     "latitude": 41.6578,
     "longitude": -0.8891,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Zaragoza_-_Segundo_Sitio.jpg/1280px-Zaragoza_-_Segundo_Sitio.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Zaragoza",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zaragoza_2.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Zaragoza_(1809)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
+    "victor": "France",
+    "defeated": "Spain",
+    "commanders": [
+      "Jean Lannes",
+      "Jeannot de Moncey",
+      "Louis-Gabriel Suchet",
+      "Édouard Mortier",
+      "José de Palafox"
+    ]
   },
   {
     "id": "105",
@@ -2023,19 +2066,21 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1809",
+    "date": "1809-03-28",
     "location": "Medellín, Badajoz",
     "country": "Spain",
-    "description": "Victoria francesa en Extremadura.",
+    "description": "fought on March 28th 1809 and resulted in a victory of the French under Marshal Victor against the Spanish under General Don Gregorio Garcia de la Cuesta.",
     "latitude": 38.9667,
     "longitude": -5.923,
-    "image": "https://www.ign.es/web/BibliotecaIGN/Miniatura/t0026350.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Medell%C3%ADn_(1809)",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Medellin.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Medell%C3%ADn",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
       "arc",
-      "Peninsular War",
       "Guerra de Independencia"
     ],
+    "victor": "France",
+    "defeated": "Spain",
     "commanders": [
       "Gregorio García de la Cuesta",
       "Claude Perrin Victor"
@@ -2050,16 +2095,18 @@
     "date": "1809-07-27",
     "location": "Talavera de la Reina, Toledo",
     "country": "Spain",
-    "description": "Victoria táctica aliada bajo el mando de Wellington.",
+    "description": "A British army under Sir Arthur Wellesley combined with a Spanish army under General Gregorio García de la Cuesta defeated the French forces under Joseph Bonaparte in a two day battle, July 27th - July 28th, 1809.",
     "latitude": 39.9636,
     "longitude": -4.83,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Batalla_de_Talavera%2C_1809.jpg/1280px-Batalla_de_Talavera%2C_1809.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Talavera",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Talavera",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
       "Peninsular War",
       "Guerra de Independencia"
     ],
+    "victor": "Anglo-luso-spanish",
+    "defeated": "France",
     "commanders": [
       "Arthur Wellesley",
       "Gregorio García de la Cuesta",
@@ -2074,16 +2121,25 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1809",
+    "date": "1809-08-11",
     "location": "Almonacid de la Sierra, Zaragoza",
     "country": "Spain",
-    "description": "Derrota española ante fuerzas francesas.",
+    "description": "Fought on August 11th 1809 between Sébastiani's IV Corps and the Spanish Army of La Mancha under General Venegas. After the decisive charges of Polish uhlans, the battle resulted in a French victory.",
     "latitude": 39.75,
     "longitude": -3.8667,
-    "image": "https://www.ign.es/web/BibliotecaIGN/Miniatura/t0035375.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Almonacid",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Almonacid.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Almonacid",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
+    "victor": "France",
+    "defeated": "Spain",
+    "commanders": [
+      "Horace Sebastiani",
+      "Francisco Javier Venegas"
+    ]
   },
   {
     "id": "108",
@@ -2091,16 +2147,25 @@
     "category": "Battle site",
     "significance": "Medium",
     "year": "1809",
+    "date": "1809-11-19",
     "location": "Ocaña, Toledo",
     "country": "Spain",
-    "description": "Gran derrota española que permitió ocupar Andalucía.",
+    "description": "Fought on November 19th 1809 between French forces under Marshal Jean-de-Dieu Soult against the Spanish army under General Juan Carlos Aréizaga, which suffered its greatest single defeat.",
     "latitude": 39.96,
     "longitude": -3.5,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg/1280px-Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Almonacid",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ocana.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Oca%C3%B1a",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Jean-de-Dieu Soult",
+      "Juan Carlos Aréizaga"
+    ],
+    "victor": "France",
+    "defeated": "Spain"
   },
   {
     "id": "109",
@@ -2108,16 +2173,26 @@
     "category": "Battle site",
     "significance": "Medium",
     "year": "1808",
+    "date": "1808-07-14",
     "location": "Medina de Rioseco, Valladolid",
     "country": "Spain",
-    "description": "El 14 de julio de 1808 se enfrentaron el Ejército español de los generales García de la Cuesta y Joaquín Blake frente al mariscal Jean-Baptiste Bessières",
+    "description": "On July 14th 1808, the Spanish Army of Generals García de la Cuesta and Joaquín Blake clashed with Marshal Jean-Baptiste Bessières.",
     "latitude": 41.8994,
     "longitude": -4.9936,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Medina.webp",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Medina_de_Rioseco",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Medina_de_Rioseco",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Gregorio García de la Cuesta",
+      "Joaquín Blake",
+      "Jean-Baptiste Bessières"
+    ],
+    "victor": "France",
+    "defeated": "Spain"
   },
   {
     "id": "110",
@@ -2125,15 +2200,18 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1814",
+    "date": "1814-02-21",
     "location": "Laredo, Cantabria",
     "country": "Spain",
-    "description": "Fue una rápida operación, lograda en apenas dos días debido a la baja moral de los defensores italianos, aliados de Francia.",
+    "description": "It was a swift operation carried out on February 21, 1814, achieved in just two days due to the low morale of the Italian defenders, allies of France.",
     "latitude": 43.4189,
     "longitude": -3.4144,
-    "image": "https://voluntariosdeleon.com/wp-content/uploads/2023/08/Bicentenario-toma-rastrillar-de-Laredo-2014-1-1-scaled.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Laredo.webp",
     "more_info_link": "https://voluntariosdeleon.com/toma-del-fuerte-del-rastrillar-de-laredo-21-de-febrero-de-1814/",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": "Guerra de Independencia",
+    "defeated": "France",
+    "victor": "Spain",
     "commanders": []
   },
   {
@@ -2142,21 +2220,24 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1809",
+    "date": "1809-01-02",
     "location": "Turienzo de los Caballeros, León",
     "country": "Spain",
-    "description": "El 2 de enero de 1809, la retaguardia de las tropas españolas fue alcanzada por la poderosa caballería francesa del general Franceschi.",
+    "description": "On January 2nd 1809, the rearguard of the Spanish troops was overtaken by the powerful French cavalry of General Franceschi.",
     "latitude": 42.45,
     "longitude": -6.2657,
-    "image": "https://voluntariosdeleon.com/wp-content/uploads/2023/08/placa.jpg",
-    "more_info_link": "https://voluntariosdeleon.com/combate-de-turienzo-de-los-caballeros-2-de-enero-de-1809/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Turienzo.webp",
+    "more_info_link": "https://voluntariosdeleon.com/aniversario-de-la-accion-de-turienzo-de-los-caballeros/",
     "youtube_link": "https://youtu.be/a8Gpx0TfXi8?si=xO8gLeCk1zTkGDdc",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Guerra de Independencia",
+    "defeated": "Spain",
+    "victor": "France",
+    "commanders": "General Franceschi"
   },
   {
     "id": "112",
-    "name": "Capitan General García de la Cuesta - Pueblo Natal",
+    "name": "Capitan General García de la Cuesta - Birthplace",
     "category": "Landmark",
     "significance": "Minor",
     "year": "",
@@ -2172,7 +2253,7 @@
   },
   {
     "id": "113",
-    "name": "General Castaños - Lugar de nacimiento",
+    "name": "General Castaños - Birthplace",
     "category": "Landmark",
     "significance": "Medium",
     "year": "",
@@ -2237,16 +2318,22 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1811",
+    "date": "1811-05-03",
     "location": "Fuentes de Oñoro, Salamanca",
     "country": "Spain",
-    "description": "Entre el 3 y el 5 de mayo de 1811 se enfrentó el ejército Británico-Portugués con el ejército francés para disminuir la presión del sitio de la ciudad de Almeida.",
+    "description": "Between May 3rd and May 5th 1811, the British-Portuguese army clashed with the French army to relieve the pressure of the siege of the city of Almeida.",
     "latitude": 40.571142,
     "longitude": -6.808742,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Fuentes_de_O%C3%B1oro_-_mapa_2.jpg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Fuentes_de_O%C3%B1oro",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Onoro.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Peninsular War",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "commanders": [
+      "Arthur Wellesley",
+      "André Masséna"
+    ]
   },
   {
     "id": "118",
@@ -2280,14 +2367,19 @@
     "date": "1808-08-21",
     "location": "Vimeiro",
     "country": "Portugal",
-    "description": "On 21 August 1808, the British under General Arthur Wellesley (who later became the Duke of Wellington) defeated the French under Major-General Jean-Andoche Junot near the village of Vimeiro.",
+    "description": "On August 21st 1808, the British under General Arthur Wellesley (who later became the Duke of Wellington) defeated the French under Major-General Jean-Andoche Junot near the village of Vimeiro.",
     "latitude": 39.172723,
     "longitude": -9.315129,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Battle_of_Vimieiro.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_map.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": []
+    "commanders": [
+      "Arthur Wellesley",
+      "Jean-Andoche Junot"
+    ],
+    "victor": "Anglo Portuguese",
+    "defeated": "France"
   },
   {
     "id": "120",
@@ -2314,31 +2406,42 @@
     "date": "1809-05-12",
     "location": "Oporto",
     "country": "Portugal",
-    "description": "El 12 de maig de 1809 va ser una contesa que va acabar amb la victòria per a l'exèrcit anglo-portuguès comandat per Sir Arthur Wellesley sobre l'exèrcit francès del mariscal Jean de Dieu Soult.",
+    "description": "On 12 May 1809 there was a battle that ended in victory for the Anglo-Portuguese army commanded by Sir Arthur Wellesley over the French army of Marshal Jean de Dieu Soult.",
     "latitude": 41.149852,
     "longitude": -8.574079,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Oporto.webp",
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Segona_Batalla_de_Porto",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Peninsular War",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "commanders": [
+      "Arthur Wellesley",
+      "Jean de Dieu Soult"
+    ]
   },
   {
     "id": "122",
-    "name": "Batalla de García Hernández",
+    "name": "Battlefield of García Hernández",
     "category": "Battle site",
-    "significance": "Medium",
+    "significance": "Minor",
     "year": "1812",
+    "date": "1812-07-23",
     "location": "García Hernández, Salamanca",
     "country": "Spain",
-    "description": "Fue una acción militar librada el 23 de julio de 1812 entre la caballería ligera del ejército británico y la caballería francesa.",
+    "description": "Fought on July 23rd 1812  two cavalry brigades of the British Army's King's German Legion (KGL) under Major-General Eberhardt Otto George von Bock defeated 4,000 French troops led by General Maximilien Sébastien Foy.",
     "latitude": 40.861288,
     "longitude": -5.407574,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Garcia_Hernandez.svg",
-    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Garc%C3%ADa_Hern%C3%A1ndez",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Garcia_Hernandez.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Garc%C3%ADa_Hern%C3%A1ndez",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Peninsular War",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "commanders": [
+      "Eberhardt von Bock",
+      "Maximilien Sébastien Foy"
+    ]
   },
   {
     "id": "123",
@@ -2441,6 +2544,7 @@
     "category": "Battle site",
     "significance": "Medium",
     "year": "1813",
+    "date": "1813-08-23",
     "location": "Großbeeren, Brandenburg",
     "country": "Germany",
     "description": "Occurred on August 23rd 1813 in neighboring Blankenfelde and Sputendorf [de] between the Prussian III Corps under Friedrich von Bülow and the Franco-Saxon VII Corps under Jean Reynier.",
@@ -2449,7 +2553,12 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Grobbeeren.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gro%C3%9Fbeeren",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "victor": "Prussia",
+    "defeated": "France",
+    "special": [
+      "6",
+      "German campaign"
+    ],
     "commanders": [
       "Friedrich von Bülow",
       "Jean Reynier",
@@ -2510,15 +2619,22 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1812",
+    "date": "1812-08-11",
     "location": "Majadahonda, Madrid",
     "country": "Spain",
     "description": "The confrontation took place on August 11, 1812, where Napoleonic troops led by General Anne-François-Charles Trelliard defeated Anglo-Portuguese forces led by George Bock and Benjamin d’Urban.",
     "latitude": 40.485203,
     "longitude": -3.876085,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Bataille_de_Majadahonda_Deuxi%C3%A8me_phase.svg/960px-Bataille_de_Majadahonda_Deuxi%C3%A8me_phase.svg.png",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Majadahonda.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Majadahonda",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": "Peninsular War",
+    "commanders": [
+      "Anne-François-Charles Trelliard",
+      "George Bock",
+      "Benjamin d'Urban"
+    ],
+    "victor": "inconclusive"
   },
   {
     "id": "134",
@@ -2693,7 +2809,9 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gospic.webp",
     "link": "https://www.historyofwar.org/articles/combat_gospic.html",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": "5",
+    "victor": "France",
+    "defeated": "Austria",
     "commanders": [
       "Auguste Marmont",
       "Matthias Freiherr Rebrovic von Razboj"
@@ -2787,20 +2905,29 @@
   },
   {
     "id": "150",
-    "name": "Battle of Wagram",
+    "name": "Battlefield of Wagram",
     "category": "Battle site",
     "significance": "Major",
     "year": "1809",
+    "date": "1809-07-05",
     "location": "Deutsch-Wagram",
     "country": "Austria",
-    "description": "The Battle of Wagram was a major engagement of the Napoleonic Wars, fought on July 5–6, 1809, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen.",
+    "description": "The Battle of Wagram was a major engagement of the Napoleonic Wars, fought on July 5th and 6th 1809, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen.",
     "latitude": 48.29155,
     "longitude": 16.606982,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wagram.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wagram",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "5"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Napoleon",
+      "Archduke Charles"
+    ]
   },
   {
     "id": "151",
@@ -2858,17 +2985,23 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1812",
+    "date": "1812-06-15",
     "location": "Astorga,León",
     "country": "Spain",
-    "description": "El segundo sitio se produjo entre el 15 de junio y el 19 de agosto de 1812 y tuvo como resultado la recuperación de la ciudad por parte española.",
+    "description": "The second siege took place between June 15 and August 19, 1812, and resulted in the Spanish recapture of the city.",
     "latitude": 42.457649,
     "longitude": -6.055556,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Astorga_2.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Trafalgar_Square",
-    "youtube_link": "https://www.youtube.com/watch?v=laI-LocEGvM",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Astorga_(1812)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "Guerra de Independencia",
+    "defeated": "France",
+    "victor": "Spain",
+    "commanders": [
+      "Maximilien Foy",
+      "José María Santocildes",
+      "Francisco Castaños"
+    ]
   },
   {
     "id": "155",
@@ -2876,6 +3009,7 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1813",
+    "date": "1813-10-16",
     "location": "Leipzig, Saxony",
     "country": "Germany",
     "description": "Known as the Battle of the Nations, was the largest battle in the Napoleonic Wars. Napoleon's defeat by a coalition of Austrian, Prussian, Russian, and Swedish forces led to his first exile.",
@@ -2885,8 +3019,23 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Leipzig",
     "youtube_link": "https://youtu.be/8oh3lUYxKqI?si=d1F3OuEdAFZfz3qx",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": [
+      "6",
+      "German campaign"
+    ],
+    "victor": "Coalition",
+    "defeated": "France",
+    "commanders": [
+      "Karl von Schwarzenberg",
+      "Gebhard Leberecht von Blücher",
+      "Francis I of Austria",
+      "Alexander I of Russia",
+      "Jean-Baptiste Bernadotte",
+      "Napoleon",
+      "Prince Józef Poniatowski",
+      "Joachim Murat",
+      "Frederick William III"
+    ]
   },
   {
     "id": "156",
@@ -2908,23 +3057,30 @@
   },
   {
     "id": "157",
-    "name": "Battle of Mehrnbach",
+    "name": "Battlefield of Mehrnbach",
     "category": "Battle site",
     "significance": "Minor",
     "year": "1805",
+    "date": "1805-10-30",
     "location": "Mehrnbach",
     "country": "Austria",
     "description": "Took place on October 30th 1805, shortly after the surrender of the Austrian troops in Ulm, from where the road to Vienna lay open to the Grande Armée.",
     "latitude": 48.21,
     "longitude": 13.436,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Austerlitz_campaign_-_Pursuit_to_Vienna%2C_26_October-15_November_1805.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mehrnbach.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mehrnbach",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      " Pyotr Bagration",
+      "Marc Antoine de Beaumont"
+    ]
   },
   {
     "id": "158",
-    "name": "Battle of Wischau",
+    "name": "Battlefield of Wischau",
     "category": "Battle site",
     "significance": "Minor",
     "year": "1805",
@@ -2936,7 +3092,9 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_campaign.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wischau",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
+    "special": "3",
+    "victor": "Russia",
+    "defeated": "France",
     "commanders": [
       "Prince Pyotr Bagration",
       "Antoine Charles Louis de Lasalle",
@@ -2969,7 +3127,7 @@
     "country": "Italy",
     "description": "Napoleon's primary residence during his first exile on the island of Elba (1814-1815). From here, he governed the island and planned his dramatic return to France. The villa overlooks the harbor of Portoferraio.",
     "latitude": 42.8142,
-    "longitude": 10.3275,
+    "longitude": 10.33275,
     "image": "https://www.virtualelba.it/wp-content/uploads/2021/10/elba-napoleone-villa-mulini-2.jpg",
     "more_info_link": "https://cultura.gov.it/luogo/museo-nazionale-delle-residenze-napoleoniche-palazzina-dei-mulini",
     "youtube_link": "https://youtu.be/HxTAuW8hVdc?si=4oXwBV7IZCQb1ScT",
@@ -2982,6 +3140,7 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1815",
+    "date": "1815-06-16",
     "location": "Quatre Bras, Genappe",
     "country": "Belgium",
     "description": "Fought on 16 June 1815, as a preliminary engagement to the decisive Battle of Waterloo that occurred two days later.",
@@ -2990,8 +3149,14 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Quatre_Bras.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Quatre_Bras",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "100 Days",
+    "victor": "inconclusive",
+    "commanders": [
+      "William of Orange",
+      "Duke of Wellington",
+      "Marshal Michel Ney",
+      "Jérôme Bonaparte"
+    ]
   },
   {
     "id": "162",
@@ -3060,17 +3225,27 @@
     "category": "Battle site",
     "significance": "Major",
     "year": "1809",
+    "date": "1809-01-16",
     "location": "A Coruña, Galicia",
     "country": "Spain",
     "description": "The Battle of Corunna (or A Coruña, La Corunna, La Coruña or La Corogne), in Spain known as Battle of Elviña, took place on 16 January 1809, when a French corps under Marshal of the Empire Jean de Dieu Soult attacked a British army under Lieutenant-General Sir John Moore. The battle took place during the Peninsular War, which was part of the wider Napoleonic Wars.",
     "latitude": 43.3605,
     "longitude": -8.4035,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Batalla_de_Elvi%C3%B1a_%28Battle_of_Corunna%29_-_16-01-1809_-_mapa_%28map%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Corunna.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Corunna",
     "youtube_link": "https://youtu.be/xcYKSAEwD5c?si=P_hKeuHC-dRGuZTw",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "victor": "France",
+    "defeated": "Britain",
+    "commanders": [
+      "Jean de Dieu Soult",
+      "Sir John Moore"
+    ]
   },
   {
     "id": "167",
@@ -3121,21 +3296,31 @@
   },
   {
     "id": "170",
-    "name": "Battle of Pyramids of Giza",
+    "name": "Battlefield of Pyramids of Giza",
     "category": "Battle site",
     "significance": "Major",
     "year": "1798",
+    "date": "1798-07-21",
     "location": "Giza, Egypt",
     "country": "Egypt",
     "description": "The Battle of the Pyramids on July 21, 1798 was a decisive French victory during Napoleon's Egyptian campaign. Napoleon famously addressed his troops: 'Soldiers, from the height of these pyramids, forty centuries look down upon you.'",
     "latitude": 29.9792346,
     "longitude": 31.1342021,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Louis-Fran%C3%A7ois_Baron_Lejeune_001.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Giza.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Pyramids",
     "youtube_link": "https://youtu.be/RlrfzH3NKCE?si=MAvBOYVAelUvQTPX",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "Egyptian Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Mamluks",
+    "commanders": [
+      "Napoleon",
+      "Murad Bey",
+      "Ibrahim Bey"
+    ]
   },
   {
     "id": "171",
@@ -3258,6 +3443,7 @@
     "category": "Battle site",
     "significance": "Major",
     "year": 1806,
+    "date": "1806-10-14",
     "location": "Jena",
     "country": "Germany",
     "description": "On October 14, 1806, Napoleon crushed the Prussian army at the Battle of Jena-Auerstedt. This decisive victory led to the French occupation of most of Prussia and cemented Napoleon's control over Central Europe.",
@@ -3267,8 +3453,16 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jena%E2%80%93Auerstedt",
     "youtube_link": "https://www.youtube.com/watch?v=bhtO3Ha0ToQ",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "4"
+    ],
+    "defeated": "Prussia",
+    "victor": "France",
+    "commanders": [
+      "Napoleon",
+      "Prince of Hohenlohe"
+    ]
   },
   {
     "id": "179",
@@ -3320,21 +3514,33 @@
   },
   {
     "id": "182",
-    "name": "Battle of Arcis-sur-Aube",
+    "name": "Battlefield of Arcis-sur-Aube",
     "category": "Battle site",
     "significance": "Minor",
     "year": "1814",
+    "date": "1814-03-20",
     "location": "Arcis-sur-Aube,",
     "country": "France",
     "description": "The Battle of Arcis-sur-Aube (20-21 March 1814) saw an Imperial French army under Napoleon face a much larger Allied army led by Karl Philipp, Prince of Schwarzenberg during the War of the Sixth Coalition.",
     "latitude": 48.533333,
     "longitude": 4.166667,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Beauc%C3%A9_1_%282%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Arcis.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcis-sur-Aube",
     "youtube_link": "https://www.youtube.com/watch?v=PzbPnnaLwkU&pp=ygUYQmF0dGxlIG9mIEFyY2lzLXN1ci1BdWJl",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": [
+      "6",
+      "Campaign of France"
+    ],
+    "victor": "Coalition",
+    "defeated": "France",
+    "commanders": [
+      "Napoleon",
+      "Alexander I",
+      "Karl von Schwarzenberg",
+      "Karl Philipp von Wrede",
+      "Crown Prince William"
+    ]
   },
   {
     "id": "183",
@@ -3367,15 +3573,26 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bautzen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bautzen_(1813)",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "6",
+      "German campaign"
+    ],
+    "victor": "France",
+    "defeated": "Coalition",
+    "commanders": [
+      "Napoleon",
+      "Alexander I",
+      "Gebhard Leberecht von Blücher"
+    ]
   },
   {
     "id": "185",
-    "name": "Battle of Auerstaedt",
+    "name": "Battlefield of Auerstaedt",
     "category": "Battle site",
     "significance": "Major",
     "year": "1806",
+    "date": "1806-10-14",
     "location": "Hassenhausen,",
     "country": "Germany",
     "description": "This battle pitted the first Prussian army under King Frederick William III of Prussia against part of the French army led by Louis Nicolas Davout on October 14, 1806, parallel to the Battle of Jena, which was fought on the same date.",
@@ -3384,13 +3601,21 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Auerstsedt.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_d%27Auerstaedt",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "4",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commanders": [
+      "Louis Nicolas Davout",
+      "Charles William Ferdinand"
+    ]
   },
   {
     "id": "186",
-    "name": "Battle of Friedland",
-    "special": "arc",
+    "name": "Battlefield of Friedland",
+    "special": [
+      "arc",
+      "4"
+    ],
     "category": "Battle site",
     "significance": "Major",
     "year": "1807",
@@ -3414,10 +3639,15 @@
   {
     "id": "187",
     "name": "Battle of Ulm",
-    "special": "arc",
+    "special": [
+      "arc",
+      "3",
+      "Ulm Campaign"
+    ],
     "category": "Battle site",
     "significance": "Major",
     "year": "1805",
+    "date": "1805-10-16",
     "location": "Ulm,",
     "country": "Germany",
     "description": "The Battle of Ulm was a major engagement of the Napoleonic Wars, fought on October 16–19, 1805, between the French army under Napoleon Bonaparte and the Austrian army under Archduke Charles Louis, Duke of Teschen.",
@@ -3427,7 +3657,12 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ulm.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ulm",
     "createDate": "2025-03-15T10:00:00Z",
-    "commanders": []
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Napoleon",
+      "Karl Mack von Leiberich"
+    ]
   },
   {
     "id": "188",
@@ -3448,10 +3683,14 @@
   {
     "id": "189",
     "name": "Battlefield of Eylau",
-    "special": "arc",
+    "special": [
+      "arc",
+      "4"
+    ],
     "category": "Battle site",
     "significance": "Major",
     "year": "1807",
+    "date": "1807-02-07",
     "location": "Bagrationovsk",
     "country": "Russia",
     "description": "The Battle of Eylau (also known as the Battle of Preussisch-Eylau) was a bloody and strategically inconclusive battle on 7 and 8 February [O.S. 26 and 27 Jan.] 1807 between Napoleon's Grande Armée and the Imperial Russian Army under the command of General Levin August von Bennigsen",
@@ -3461,31 +3700,46 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Eylau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eylau",
     "createDate": "2025-03-15T10:00:00Z",
-    "commanders": []
+    "commanders": [
+      "Levin August von Bennigsen",
+      "Napoleon",
+      "Anton Wilhelm von L'Estocq"
+    ],
+    "victor": "Inconclusive"
   },
   {
     "id": "190",
-    "name": "Battle of Ligny",
+    "name": "Battlefield of Ligny",
     "category": "Battle site",
     "significance": "Major",
     "year": "1815",
-    "location": "Ligny,Sombreffe",
+    "date": "1815-06-16",
+    "location": "Ligny, Sombreffe",
     "country": "Belgium",
-    "description": "Fought on 16 June 1815French troops of the Armée du Nord under the command of Napoleon I defeated part of a Prussian army under Field Marshal Blücher.",
+    "description": "Fought on 16 June 1815, French troops of the Armée du Nord under the command of Napoleon I defeated part of a Prussian army under Field Marshal Blücher.",
     "latitude": 50.5158,
     "longitude": 4.571401,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ligny.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ligny",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "100 Days"
+    ],
+    "commanders": [
+      "Gebhard von Blücher",
+      "Napoleon"
+    ],
+    "defeated": "Prussia",
+    "victor": "France"
   },
   {
     "id": "191",
-    "name": "Battle of Pultusk",
+    "name": "Battlefield of Pultusk",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1806",
+    "date": "1806-12-26",
     "location": "Pultusk",
     "country": "Poland",
     "description": "Took place on December 26th 1806 Despite their strong numerical superiority and artillery, the Russians under the lead of General of Cavalry Levin von Benningsen underwent heavy French attacks by Marshal Jean Lannes.",
@@ -3494,15 +3748,24 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pultusk.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Pu%C5%82tusk_(1806)",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "4"
+    ],
+    "commanders": [
+      "Jean Lannes",
+      "Levin von Benningsen"
+    ],
+    "victor": "France",
+    "defeated": "Russia"
   },
   {
     "id": "192",
-    "name": "Battle of Golymin",
+    "name": "Battlefield of Golymin",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1806",
+    "date": "1806-12-26",
     "location": "Golymin",
     "country": "Poland",
     "description": "Fought on the same day as Pultusk, December 26th, this was another intense winter engagement between French and Russian forces in Poland.",
@@ -3511,15 +3774,23 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Golymin.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Golymin",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "4",
+    "commanders": [
+      "Dmitry Golitsyn",
+      "Joachim Murat",
+      "Pierre Augereau",
+      "Louis-Nicolas Davout"
+    ],
+    "victor": "France",
+    "defeated": "Russia"
   },
   {
     "id": "193",
-    "name": "Battle of Heilsberg",
+    "name": "Battlefield of Heilsberg",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1807",
+    "date": "1807-06-10",
     "location": "Lidzbark Warmiński",
     "country": "Poland",
     "description": "Took place on 10 June 1807. Napoleon confronted Russian general Bennigsen and his army. The battle was a bloody engagement that lasted for several hours, with heavy casualties on both sides.",
@@ -3528,8 +3799,16 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Heilsberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Heilsberg",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "4"
+    ],
+    "commanders": [
+      "Leonty Bennigsen",
+      "Napoleon"
+    ],
+    "victor": "France",
+    "defeated": "Russia"
   },
   {
     "id": "194",
@@ -3537,6 +3816,7 @@
     "category": "Battle site",
     "significance": "Medium",
     "year": "1807",
+    "date": "1807-03-19",
     "location": "Gdańsk",
     "country": "Poland",
     "description": "The Siege of Danzig (now Gdańsk, Poland)by French forces under Marshal Lefebvre, acting as the corps commander of the Grande Armée, during the War of the Fourth Coalition.",
@@ -3545,15 +3825,26 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Danzig.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Danzig_(1807)",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "4"
+    ],
+    "commanders": [
+      "François Joseph Lefebvre",
+      "Friedrich von Kalckreuth",
+      "Jan Henryk Dąbrowski",
+      "Nikolay Kamensky"
+    ],
+    "victor": "France",
+    "defeated": "Russia"
   },
   {
     "id": "195",
-    "name": "Battle of Ostrolenka",
+    "name": "Battlefield of Ostrolenka",
     "category": "Battle site",
     "significance": "Minor",
     "year": "1807",
+    "date": "1807-02-16",
     "location": "Ostroleka",
     "country": "Poland",
     "description": "Fought on 16 February 1807 between a French force under General of Division Anne Jean Marie René Savary and a Russian force under Lieutenant General Ivan Essen.",
@@ -3562,15 +3853,24 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ostrolenka.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ostro%C5%82%C4%99ka_(1807)",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "4"
+    ],
+    "defeated": "Russia",
+    "victor": "France",
+    "commanders": [
+      "Anne Jean Marie René Savary",
+      "Ivan Essen"
+    ]
   },
   {
     "id": "196",
-    "name": "Battle of Znaim",
+    "name": "Battlefield of Znaim",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1809",
+    "date": "1809-07-12",
     "location": "Znojmo",
     "country": "Czech Republic",
     "description": "Following defeat at the Battle of Wagram, Archduke Charles retreated north into Bohemia hoping to regroup his battered forces. The French army had also suffered in the battle and did not give immediate pursuit. But two days after the battle, Napoleon ordered his troops north intending to defeat the Austrians once and for all. ",
@@ -3579,8 +3879,13 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Znaim.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Znaim",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "5",
+    "victor": "inconclusive",
+    "commanders": [
+      "Napoleon",
+      "Archduke Charles",
+      "Auguste de Marmont"
+    ]
   },
   {
     "id": "197",
@@ -3588,6 +3893,7 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1809",
+    "date": "1809-07-30",
     "location": "Walcheren",
     "country": "Netherlands",
     "description": "It was an unsuccessful British expedition to the Kingdom of Holland in 1809 intended to open another front in the Austrian Empire's struggle with France during the War of the Fifth Coalition.",
@@ -3596,8 +3902,16 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Walcheren.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "5",
+    "commanders": [
+      "Jean-Baptiste Bernadotte",
+      "Jean-Baptiste Bessières",
+      "Jean-Baptiste Dumonceau",
+      "Lord Chatham",
+      "Sir Richard Strachan"
+    ],
+    "defeated": "Britain",
+    "victor": "France"
   },
   {
     "id": "198",
@@ -3605,6 +3919,7 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1809",
+    "date": "1809-08-15",
     "location": "Flushing",
     "country": "Netherlands",
     "description": "The British had captured Flushing on the day of his arrival to the war zone after a ferocious bombardment, and the surrounding towns on August 15th.",
@@ -3613,8 +3928,9 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Flushing.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "4",
+    "victor": "Britain",
+    "defeated": "France"
   },
   {
     "id": "199",
@@ -3622,24 +3938,35 @@
     "category": "Battle site",
     "significance": "Medium",
     "year": 1796,
+    "date": "1796-11-15",
     "location": "Arcole",
     "country": "Italy",
-    "description": "The Battle of Arcole or Battle of Arcola (15–17 November 1796) was fought between French and Austrian forces 25 kilometres (16 mi) southeast of Verona during the War of the First Coalition, a part of the French Revolutionary Wars.",
+    "description": "The Battle of Arcole or Battle of Arcola (15-17 November 1796) was fought between French and Austrian forces 25 kilometres (16 mi) southeast of Verona during the War of the First Coalition, a part of the French Revolutionary Wars.",
     "latitude": 45.357222,
     "longitude": 11.2775,
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/La_Bataille_du_Pont_d%27Arcole.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcole",
     "youtube_link": "https://youtu.be/ER2b8YEDnqU?si=_Hq8KkOJydUessgd",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "1",
+      "Italian campaign"
+    ],
+    "commanders": [
+      "József Alvinczi",
+      "Napoleon"
+    ],
+    "defeated": "Austria",
+    "victor": "France"
   },
   {
     "id": "200",
-    "name": "Battle of Ebelsberg",
+    "name": "Battlefield of Ebelsberg",
     "category": "Battle site",
     "significance": "Minor",
     "year": 1809,
+    "date": "1809-05-03",
     "location": "Ebelsberg",
     "country": "Austria",
     "description": "A bloody French assault to take a key bridge over the Traun River, clearing the way to Vienna.",
@@ -3648,8 +3975,16 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ebelsberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": "arc",
-    "commanders": []
+    "special": [
+      "arc",
+      "5"
+    ],
+    "commanders": [
+      "Johann von Hiller",
+      "Andre Masséna"
+    ],
+    "defeated": "Austria",
+    "victor": "France"
   },
   {
     "id": "201",
@@ -3673,6 +4008,7 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1810",
+    "date": "1810-07-24",
     "location": "Côa River",
     "country": "Portugal",
     "description": "Took place on 24 July 1810, on the banks of the Côa River, in the borderlands between Portugal and Spain. It was fought between a French division under Marshal Auguste de Marmont and a British division under General Robert Craufurd.",
@@ -3681,17 +4017,19 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Coa_map.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false,
+    "special": "Peninsular War",
     "commanders": [
       "Michel Ney",
       "Robert Craufurd",
       "Louis H. Loison"
-    ]
+    ],
+    "defeated": "Britain",
+    "victor": "France"
   },
   {
     "id": "203",
     "name": "Bridge over the Côa River",
-    "category": "Landmark",
+    "category": "Battle landmark",
     "significance": "Minor",
     "year": "1810",
     "location": "Côa River",
@@ -3701,13 +4039,7 @@
     "longitude": -6.919,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Coa.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a",
-    "createDate": "2025-03-21T10:00:00Z",
-    "special": false,
-    "commanders": [
-      "Michel Ney",
-      "Robert Craufurd",
-      "Louis H. Loison"
-    ]
+    "createDate": "2025-03-21T10:00:00Z"
   },
   {
     "id": "204",
@@ -3747,6 +4079,7 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1807",
+    "date": "1807-08-29",
     "location": "Køge",
     "country": "Denmark",
     "description": "Fought on 29 August 1807 between British troops besieging Copenhagen and Danish militia raised on Sjælland",
@@ -3755,11 +4088,13 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Kaart_over_Slaget_ved_Kj%C3%B6ge%2C_den_29de_August_1807.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B8ge",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false,
+    "special": "Gunboat War",
     "commanders": [
       "Joachim Castenschiold",
       "Wellington"
-    ]
+    ],
+    "defeated": "Denmark",
+    "victor": "Britain"
   },
   {
     "id": "207",
@@ -3767,6 +4102,7 @@
     "category": "Battle site",
     "significance": "Minor",
     "year": "1807",
+    "date": "1807-08-31",
     "location": "Copenhagen",
     "country": "Denmark",
     "description": "Fought on August 31st 1807 between British troops and Danish volunteers",
@@ -3775,17 +4111,20 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Classens_Have_Livjaegerudfald_31aug1807.JPG",
     "wikipedia_link": "https://www.classens-have.dk/",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false,
+    "special": "Gunboat War",
     "commanders": [
       "Steen Andersen Bille"
-    ]
+    ],
+    "defeated": "Denmark",
+    "victor": "Britain"
   },
   {
     "id": "208",
-    "name": "Battle of Guttstadt-Deppen",
+    "name": "Battlefield 1st Action of Guttstadt-Deppen",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1807",
+    "date": "1807-08-24",
     "location": "Dobre Miasto, Warmian-Masurian Voivodeship",
     "country": "Poland",
     "description": "A violent engagement in the Polish/Prussian region during the prelude to the final campaign of the Fourth Coalition.",
@@ -3794,8 +4133,16 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Guttstadt-Deppen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Guttstadt-Deppen",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false,
-    "commanders": []
+    "special": "4",
+    "commanders": [
+      "Levin Bennigsen",
+      "Levin Bennigsen",
+      "Michel Ney",
+      "Nicolas Soult",
+      "Jean-Baptiste Bernadotte",
+      "Claude-Victor Perrin"
+    ],
+    "victor": "inconclusive"
   },
   {
     "id": "209",
@@ -4280,7 +4627,7 @@
     "year": "1809",
     "location": "Radzymin",
     "country": "Poland",
-    "description": "Took place on 25 April 1809, during the brief Polish–Austrian War. The battle occurred at Radzymin, some 20 kilometres (12 mi) north-east of Warsaw.",
+    "description": "Took place on 25 April 1809, during the brief Polish - Austrian War. The battle occurred at Radzymin, some 20 kilometres (12 mi) north-east of Warsaw.",
     "latitude": 52.393,
     "longitude": 21.157,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Radzymin.webp",
@@ -5494,7 +5841,7 @@
     "significance": "Major",
     "location": "Aboukir Bay",
     "country": "Egypt",
-    "description": "Also known as the Battle of Aboukir Bay, was fought between the Royal Navy and the French Navy at Aboukir Bay in Egypt between August 1st and 3rd 1798. It was the climax of the Mediterranean campaign of 1798.",
+    "description": "Also known as the Battle of Aboukir Bay, was fought between the Royal Navy and the French Navy at Aboukir Bay in Egypt between August 1st and 3rd 1798. It was the climax of the Meiterranean 1798 of 1798.",
     "latitude": 31.352209,
     "longitude": 30.203293,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Les_Sables.webp",
@@ -6511,7 +6858,7 @@
     "date": "1813-12-09",
     "victor": "Peninsular War Allies",
     "defeated": "France",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bayona.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nive.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nive",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
@@ -7638,7 +7985,7 @@
     "significance": "Major",
     "location": "La Valetta",
     "country": "Malta",
-    "description": "The French First Republic led by Napoleon Bonaparte successfully invaded the islands of Malta and Gozo, then ruled by the Knights Hospitaller, in June 10th 1798 as part of the Mediterranean campaign of the French Revolutionary Wars.",
+    "description": "The French First Republic led by Napoleon Bonaparte successfully invaded the islands of Malta and Gozo, then ruled by the Knights Hospitaller, in June 10th 1798 as part of the Meiterranean 1798 of the French Revolutionary Wars.",
     "latitude": 35.899177,
     "longitude": 14.513611,
     "date": "1798-06-10",
@@ -7647,9 +7994,9 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Malta.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/French_invasion_of_Malta",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "Mediterranean campaign of 1798",
+    "special": "Meiterranean 1798 of 1798",
     "commanders": [
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Louis Desaix",
       "Claude-Henri Belgrand de Vaubois",
       "Louis Baraguey d'Hilliers",
@@ -7941,7 +8288,7 @@
   },
   {
     "id": "426",
-    "name": "Wellington's horse grave site",
+    "name": "Copenhagen (Wellington's horse) grave site",
     "description": "Copenhagen died on 12 February 1836 at Stratfield Saye, Duke of Wellington property at Hampshire in England, at the age of 28 years, and is burried under a large Turkey Oak tree.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Copenhagen_(horse)",
     "category": "Landmark",
@@ -8124,7 +8471,7 @@
     "victor": "France",
     "defeated": "Austria",
     "commanders": [
-      "Napoleon Bonaparte",
+      "Napoleon",
       "Karl Sebottendorf"
     ],
     "special": [
@@ -9781,7 +10128,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lugo.webp",
     "latitude": 43.0071,
     "longitude": -7.556399,
-    "special": "Guerra de la Independencia",
+    "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
@@ -9799,8 +10146,296 @@
     "country": "Poland",
     "description": "At this place Napoleon signed the Tripartite Armistice on June 4, 1813.",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lugo.webp",
-    "more_info_link":"https://www.labiryntarium.pl/index.php/7gmin/186-pielaszkowice.html",
+    "more_info_link": "https://www.labiryntarium.pl/index.php/7gmin/186-pielaszkowice.html",
     "latitude": 51.047138,
     "longitude": 16.514895
+  },
+  {
+    "id": "547",
+    "name": "Napolen's HQ at Marengo",
+    "category": "Battle landmark",
+    "significance": "Major",
+    "year": "1800",
+    "location": "Torre Garofoli, Alessandria",
+    "country": "Italy",
+    "description": "Napoleon's headquarter was located at this farmhouse during the battle of Marengo.",
+    "latitude": 44.892791,
+    "longitude": 8.802717,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Torre_Garofoli.webp",
+    "createDate": "2025-02-26T10:00:00Z",
+    "special": [
+      "Italian Campaign",
+      "2"
+    ]
+  },
+  {
+    "id": "548",
+    "name": "Birthplace of Lieutenant General Thomas Picton",
+    "category": "Landmark",
+    "significance": "Major",
+    "location": "Haverfordwest, Pembrokeshire",
+    "country": "Wales",
+    "description": "For many years, the exterior was marked by a blue commemorative plaque. However, the building owner had the plaque removed to safeguard the property due to modern controversies surrounding Picton's legacy. The plaque is now preserved at the Haverfordwest Town Museum.",
+    "latitude": 51.7988,
+    "longitude": -4.971333,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Picton_birth.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Thomas_Picton",
+    "createDate": "2025-02-26T10:00:00Z"
+  },
+  {
+    "id": "549",
+    "name": "Birthplace of Marshall Blücher",
+    "category": "Landmark",
+    "significance": "Major",
+    "location": "Rostock",
+    "country": "Germany",
+    "description": "The original birthplace house of Prussian Field Marshal Gebhard Leberecht von Blücher in Rostock no longer exists, as it was completely destroyed by British bombing raids during World War II.",
+    "latitude": 54.086513,
+    "longitude": 12.137383,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_birth.webp",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Gebhard_Leberecht_von_Bl%C3%BCcher",
+    "createDate": "2025-02-26T10:00:00Z"
+  },
+  {
+    "id": "550",
+    "name": "André Massena - Birthplace",
+    "category": "Landmark",
+    "significance": "Major",
+    "year": 1758,
+    "location": "Nice",
+    "country": "France",
+    "description": "He was born on May 6th 1758 at his in his father's house and wine shop in 'La Bourgade', which was the first important extramural neighborhood of Nice on the right bank of the Paillon River. Tradition locates the house at 1 Place Masséna, but the exact location is uncertain.",
+    "latitude": 43.6973,
+    "longitude": 7.269570,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massena_birth.webp"
+  },
+  {
+    "id": "551",
+    "name": "Karl Philipp, Prince of Schwarzenberg - Birthplace",
+    "category": "Landmark",
+    "significance": "Major",
+    "year": 1771,
+    "location": "Vienna",
+    "country": "Austria",
+    "description": "He was born on April 15th 1771 (some sources say on the 18th or even 19th) in vienna into a prestigious family of the Austrian high aristocracy. The exact location of his birthplace is unknown, but it is believed to be in the vicinity of the Schwarzenberg Palace in Vienna.",
+    "latitude": 48.196950,
+    "longitude": 16.376988,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Karl_Philipp_birth.webp"
+  },
+  {
+    "id": "552",
+    "name": "Siege of Breslau",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1806",
+    "date": "1806-12-17",
+    "location": "Wroclaw",
+    "country": "Poland",
+    "description": "The army corps of prince Jerome-Napoleon bisiege the city from December 7, 1806, until January 9, 1807. The city was defended by the Prussian general Nicolas Mahy, who had only 6,000",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Breslau.webp",
+    "more_info_link": "https://www.napoleon-series.org/military-info/battles/1807/PolishCampaign/Eylau/eylau/c_eylaueng102.html",
+    "latitude": 51.109250,
+    "longitude": 17.038591,
+    "special": [
+      "4",
+      "arc"
+    ],
+    "victor": "France",
+    "defeated": "Prussia",
+    "commanders": [
+      "Jérôme Bonaparte",
+      "Nicolas Mahy"
+    ]
+  },
+  {
+    "id": "553",
+    "name": "Battlefield of Prenzlau",
+    "category": "Battle site",
+    "significance": "Medium",
+    "year": "1806",
+    "date": "1806-10-28",
+    "location": "Prenzlau",
+    "country": "Germany",
+    "description": "The Battle of Prenzlau or Capitulation of Prenzlau on 28 October 1806 two divisions of French cavalry and some infantry led by Marshal Joachim Murat intercepted a retreating Prussian corps led by Frederick Louis, Prince of Hohenlohe-Ingelfingen.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Prenzlau.webp",
+    "more_info_link": "https://en.wikipedia.org/wiki/Battle_of_Prenzlau",
+    "latitude": 53.316794,
+    "longitude": 13.8624,
+    "special": [
+      "4",
+      "arc"
+    ],
+    "victor": "France",
+    "defeated": "Prussia",
+    "commanders": [
+      "Joachim Murat",
+      "Prince Hohenlohe"
+    ]
+  },
+  {
+    "id": "554",
+    "name": "Apelstein Nr. 46 Blücher - Battle of Möckern",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig ",
+    "country": "Germany",
+    "description": "General V. Blücher Silesian Army 60.000 men. Erected: 1938 by the Apel Foundation.",
+    "latitude": 51.392118,
+    "longitude": 12.341213,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein46.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "555",
+    "name": "Apelstein Nr. 47 Weißenwolff - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "Lieutenant Field Marshal Count Weißenwolf, Austrian Grenadier Division, 5320 men. Erected: Until 1976, in a courtyard in the excavated Auenhain area.",
+    "latitude": 51.262977,
+    "longitude": 12.425519,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein47.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "556",
+    "name": "Apelstein Nr. 48 Reynier | Zeschau - Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "General Reymer VII Corps General von Zeschau Saxon Division 3500 men Last position. Erected: 1994 by Zinnfigurenfreunde Leipzig e.V.",
+    "latitude": 51.346222,
+    "longitude": 12.438233,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein48.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "557",
+    "name": "Apelstein Nr. 49 Reynier | Zeschau - Battle of Wachau",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "IV. Cavalry Corps Kellermann 3000 horsemen. Erected: after 1864.",
+    "latitude": 51.276839,
+    "longitude": 12.398424,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein49.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "558",
+    "name": "Apelstein Nr. 50 Volny | Kaunitz - Battle of Markkleeberg",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "Kaunitz Infantry Regiment No. 20, 500 men. Erected: 2000 by the Historical Gatehouse Association of Markkleeberg.",
+    "latitude": 51.2776,
+    "longitude": 12.389692,
+    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apelstein50.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "559",
+    "name": "Markkleeberg Castle",
+    "category": "Museum",
+    "significance": "Medium",
+    "location": "Markkleeberg",
+    "country": "Germany",
+    "description": "The museum at the gatehouse on the history of the castle complex exhibits rural life and customs along with the Battle of Leipzig collection. The highlight of the presentation on the Battle of Leipzig is a 20 m² diorama depicting the Battle of Wachau on October 16, 1813.",
+    "latitude": 51.27792,
+    "longitude": 12.389081,
+    "site_link": "https://www.markkleeberg.de/freizeit-und-tourismus/sehenswertes/museen-und-ausstellungen/schloss-markkleeberg-mit-historischem-torhaus",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Markkleeberg_Castle.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "560",
+    "name": "Muzeum Wojska Polskiego",
+    "category": "Museum",
+    "significance": "Minor",
+    "location": "Warsaw",
+    "country": "Poland",
+    "description": "Among a large collection of Polish military history, the museum also has a section dedicated to the Napoleonic era, showcasing artifacts, uniforms, and weapons from the time of the Duchy of Warsaw and the Polish Legions.",
+    "latitude": 52.263949,
+    "longitude": 21,
+    "site_link": "https://muzeumwp.pl/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polish_Museum.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "561",
+    "name": "Mikhail Kutuzov house",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Saint Petersburg",
+    "country": "Russia",
+    "description": "Kutuzov lived here with his family from 1798-1812. It was also from here, surrounded by large crowds, that he set off for his successful campaign against Napoleon.",
+    "latitude": 59.948322,
+    "longitude": 30.3393,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kutuzov_house.webp",
+    "createDate": "2025-03-15T10:00:00Z"
+  },
+  {
+    "id": "562",
+    "name": "Battlefield on the Os'ma river",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1812",
+    "date": "1812-08-27",
+    "location": "near Semlevo",
+    "country": "Russia",
+    "description": "The battle took place on the Os'ma river, near the village of Semlevo, on August 27th 1812 when Murat's cavalry attacked the Russian rearguard. The Russians were able to hold off the French and prevent them from cutting off the retreating Russian army.",
+    "latitude": 55.0420,
+    "longitude": 33.907811,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Osma_river.webp",
+    "createDate": "2025-03-15T10:00:00Z",
+    "special": "Russian Campaign",
+    "victor": "inconclusive",
+    "commanders": "Joachim Murat"
+  },
+  {
+    "id": "563",
+    "name": "Battlefield of Molevo Boloto (Inkovo)",
+    "category": "Battle site",
+    "significance": "Minor",
+    "year": "1812",
+    "date": "1812-08-12",
+    "location": " near Rudnya",
+    "country": "Russia",
+    "description": "The battle took place on 8 August 1812, between the Cossack corps of General Platov and the 2nd Light Cavalry Division of General Sebastiani and ended as a minor Russian victory.",
+    "latitude": 54.971667,
+    "longitude": 31.368333,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Inkovo.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Inkovo",
+    "createDate": "2025-03-15T10:00:00Z",
+    "special": "Russian Campaign",
+    "victor": "Russia",
+    "defeated": "France",
+    "commanders": [
+      "Matvei Platov",
+      "Horace Sebastiani"
+    ]
+  },
+  {
+    "id": "564",
+    "name": "Pyotr Bagration Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Kizlyar, Daguestán",
+    "country": "Russia",
+    "description": "Bagration was born on July 10th 1765. The original birth house of General Pyotr Bagration in Kizlyar, Dagestan no longer exists, as the 18th-century structures of the old Kizlyar fortress and its surrounding garrison settlements were destroyed over time",
+    "latitude": 43.852425,
+    "longitude": 46.719319,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kizlyar.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Pyotr_Bagration",
+    "createDate": "2025-03-15T10:00:00Z"
   }
 ]

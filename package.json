@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 5174",
+    "dev:pc": "vite --port 5174 --mode pc",
+    "dev:tablet": "vite --port 5177 --mode tablet",
+    "dev:mobile": "vite --port 5178 --mode mobile",
     "build": "vite build",
     "build:standard": "vite build --mode standard",
     "build:battle": "vite build --mode battle",
