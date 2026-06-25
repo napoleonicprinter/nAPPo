@@ -491,7 +491,7 @@ const CenterOnSelectedSite = () => {
     const map = useMap();
     useEffect(() => {
         if (selectedSite && map) {
-            map.flyTo([selectedSite.latitude, selectedSite.longitude], 12, { duration: 1 });
+            map.flyTo([selectedSite.latitude, selectedSite.longitude], map.getZoom(), { duration: 1 });
         }
     }, [selectedSite, map]);
     return null;
