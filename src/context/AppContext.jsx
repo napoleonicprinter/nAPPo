@@ -5,7 +5,6 @@ import shoppingData from '../data/shopping.json';
 import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
-import battleUnitsDataFallback from '../data/battleUnits.json';
 import dealsDataFallback from '../data/deals.json';
 import { Geolocation } from '@capacitor/geolocation';
 import testLocation from '../data/testLocation.json';
@@ -87,7 +86,6 @@ export const EUROPEAN_CAPITALS = [
 
 export const AppProvider = ({ children }) => {
     const isDevelopment = import.meta.env.DEV;
-    const battleUnitsEnabled = import.meta.env.VITE_ENABLE_BATTLE_UNITS === 'true';
 
     // 1. Initial State for Developer Mode toggles
     const [developerMode, setDeveloperMode] = useState(() => {
@@ -144,19 +142,6 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
     });
 
-    const [activeBattlePhaseIds, setActiveBattlePhaseIds] = useState([]);
-    const activeBattleSiteIds = activeBattlePhaseIds;
-    const setActiveBattleSiteIds = setActiveBattlePhaseIds;
-
-    const toggleBattleUnitsForSite = (phaseId) => {
-        if (!battleUnitsEnabled) return;
-        setActiveBattlePhaseIds(prev =>
-            prev.includes(phaseId) 
-                ? prev.filter(id => id !== phaseId) 
-                : [...prev, phaseId]
-        );
-    };
-
     const [activeMapOverlays, setActiveMapOverlays] = useState([]);
 
     const toggleMapOverlay = (mapId) => {
@@ -171,13 +156,6 @@ export const AppProvider = ({ children }) => {
         if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
         return (saved && saved !== "undefined") ? JSON.parse(saved) : messagesDataFallback;
-    });
-
-    const [battleUnitsBaseData, setBattleUnitsBaseData] = useState(() => {
-        if (!battleUnitsEnabled) return [];
-        if (isDevelopment) return battleUnitsDataFallback;
-        const saved = localStorage.getItem('battleUnitsData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : battleUnitsDataFallback;
     });
 
     const [dealsBaseData, setDealsBaseData] = useState(() => {
@@ -223,12 +201,8 @@ export const AppProvider = ({ children }) => {
                     fetch(`${GITHUB_RAW_BASE_URL}/deals.json?t=${t}`, fetchOpts)
                 ];
 
-                if (battleUnitsEnabled) {
-                    fetchRequests.push(fetch(`${GITHUB_RAW_BASE_URL}/battleUnits.json?t=${t}`, fetchOpts));
-                }
-
                 const fetchRes = await Promise.all(fetchRequests);
-                const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resDeals, resBattleUnits] = fetchRes;
+                const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resDeals] = fetchRes;
 
                 if (resSites.ok) {
                     const data = await resSites.json();
@@ -265,11 +239,6 @@ export const AppProvider = ({ children }) => {
                     if (!isDevelopment) setDealsBaseData(data);
                     localStorage.setItem('dealsData', JSON.stringify(data));
                 }
-                if (battleUnitsEnabled && resBattleUnits && resBattleUnits.ok) {
-                    const data = await resBattleUnits.json();
-                    if (!isDevelopment) setBattleUnitsBaseData(data);
-                    localStorage.setItem('battleUnitsData', JSON.stringify(data));
-                }
 
                 const now = new Date().toLocaleString();
                 setLastSyncTime(now);
@@ -283,7 +252,7 @@ export const AppProvider = ({ children }) => {
 
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
-    }, [battleUnitsEnabled]);
+    }, []);
 
     const [view, setView] = useState('map');
     const [innerView, setInnerView] = useState('map');
@@ -732,12 +701,7 @@ export const AppProvider = ({ children }) => {
             eventsData: eventsBaseData,
             newsData: newsBaseData,
             messagesData: messagesBaseData,
-            battleUnitsData: battleUnitsBaseData,
             activeDeals,
-            activeBattleSiteIds,
-            toggleBattleUnitsForSite,
-            setActiveBattleSiteIds,
-            battleUnitsEnabled,
             activeMapOverlays,
             toggleMapOverlay
         }}>

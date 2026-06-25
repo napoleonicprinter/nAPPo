@@ -40,7 +40,6 @@ const Header = () => {
         mapStyle, setMapStyle,
         categoryCounts,
         isFiltered, clearAllFilters,
-        activeBattleSiteIds, setActiveBattleSiteIds,
         // Emulation states from Context
         previewDevice, setPreviewDevice,
         getPortalContainer

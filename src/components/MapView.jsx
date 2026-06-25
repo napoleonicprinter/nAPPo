@@ -9,7 +9,6 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { useAppContext } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
 import SiteCard from './SiteCard';
-import BattleUnitsLayer from './BattleUnitsLayer';
 import MapOverlaysLayer from './MapOverlaysLayer';
 import DealsView from './DealsView';
 import L from 'leaflet';
@@ -639,40 +638,6 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
     return null;
 };
 
-// ─── Battle Units Toggle Control ──────────────────────────────────────────────
-const BattleUnitsToggle = ({ active, onToggle }) => {
-    const map = useMap();
-
-    useEffect(() => {
-        if (!map) return;
-
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
-        container.title = active ? 'Hide battle formations' : 'Show battle formations';
-        container.style.cssText = [
-            `background-color: ${active ? '#1565c0' : 'white'}`,
-            'width: 34px', 'height: 34px', 'cursor: pointer',
-            'display: flex', 'align-items: center', 'justify-content: center',
-            'font-size: 15px', 'line-height: 1', 'transition: background-color 0.2s',
-            'user-select: none',
-        ].join(';');
-        // Crossed swords SVG icon
-        container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${active ? '#fff' : '#333'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>`;
-
-        container.onmouseover = () => { if (!active) container.style.backgroundColor = '#f4f4f4'; };
-        container.onmouseout = () => { if (!active) container.style.backgroundColor = 'white'; };
-        container.onclick = (e) => { L.DomEvent.stopPropagation(e); e.preventDefault(); onToggle(); };
-
-        L.DomEvent.disableClickPropagation(container);
-        const control = L.control({ position: 'topright' });
-        control.onAdd = () => container;
-        control.addTo(map);
-        return () => { control.remove(); };
-    }, [map, active, onToggle]);
-
-    return null;
-};
-
-
 const MapView = () => {
     const {
         sites, allSites, toggleVisited, userCoords,
@@ -684,8 +649,6 @@ const MapView = () => {
         locationMode, handleLocationSelect,
         selectedSite, setSelectedSite,
         siteToOpenPopup, setSiteToOpenPopup,
-        activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
-        battleUnitsEnabled, setActiveBattleSiteIds,
         clusterRadius, activeMapOverlays, toggleMapOverlay
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
@@ -739,7 +702,6 @@ const MapView = () => {
                 <CenterControl />
                 <BoundsTracker />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
-                {battleUnitsEnabled && <BattleUnitsLayer />}
                 <MapOverlaysLayer />
 
                 <MarkerClusterGroup
@@ -849,56 +811,7 @@ const MapView = () => {
                                             {renderSignificanceStars(site.significance)}
                                         </div>
 
-                                        {battleUnitsEnabled && (() => {
-                                            const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
-                                            if (sitePhases.length === 0) return null;
 
-                                            const isOdd = sitePhases.length % 2 !== 0;
-
-                                            return (
-                                                <div style={{
-                                                    marginBottom: '10px',
-                                                    display: 'flex',
-                                                    flexWrap: 'wrap',
-                                                    gap: '6px'
-                                                }}>
-                                                    {sitePhases.map((phase, index) => {
-                                                        const pId = phase.id || phase.siteId;
-                                                        const isActive = activeBattleSiteIds.includes(pId);
-
-                                                        // Odd total -> first is full width, others half. 
-                                                        // Even total -> all half.
-                                                        const isFullWidth = isOdd && index === 0;
-                                                        const width = isFullWidth ? '100%' : 'calc(50% - 3px)';
-
-                                                        return (
-                                                            <button
-                                                                key={pId}
-                                                                onClick={() => toggleBattleUnitsForSite(pId)}
-                                                                style={{
-                                                                    width: width,
-                                                                    padding: '8px 4px',
-                                                                    background: isActive ? 'rgba(248, 81, 73, 0.15)' : 'transparent',
-                                                                    color: isActive ? 'var(--accent-danger)' : 'var(--text-primary)',
-                                                                    border: `1px solid ${isActive ? 'var(--accent-danger)' : 'var(--border-color)'}`,
-                                                                    borderRadius: '4px',
-                                                                    cursor: 'pointer',
-                                                                    fontWeight: 'bold',
-                                                                    fontSize: '0.75rem',
-                                                                    display: 'flex',
-                                                                    alignItems: 'center',
-                                                                    justifyContent: 'center',
-                                                                    textAlign: 'center'
-                                                                }}
-                                                            >
-                                                                {isActive ? `Hide ${phase.phase || ''}` : `Show ${phase.phase || ''}`}
-                                                            </button>
-                                                        );
-                                                    })}
-                                                </div>
-                                            );
-                                        })()}
-                                        
                                         {site.maps && site.maps.length > 0 && (
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
                                                 {site.maps.map((map, index) => {
@@ -971,7 +884,7 @@ const MapView = () => {
                                 </Popup>
                             </Marker>
                         );
-                    }), [sites, theme, userCoords, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData, battleUnitsEnabled])}
+                    }), [sites, theme, userCoords])}
                 </MarkerClusterGroup>
             </MapContainer>
 
@@ -999,16 +912,6 @@ const MapView = () => {
             {showDeals && <DealsView onClose={() => setShowDeals(false)} />}
 
             <div className="mobile-action-buttons">
-                {battleUnitsEnabled && activeBattleSiteIds.length > 0 && (
-                    <button
-                        className="mobile-close-units glass-panel"
-                        onClick={() => setActiveBattleSiteIds([])}
-                        title="Close all battle units"
-                    >
-                        Close Units
-                    </button>
-                )}
-
                 {isFiltered && (
                     <button
                         className="mobile-clear-filters glass-panel"

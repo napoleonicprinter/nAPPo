@@ -36,16 +36,14 @@ const renderSignificanceStars = (sig) => {
 const SiteCard = ({ site, onClose, isCompact = false }) => {
     const {
         toggleVisited, userCoords, geolocationEnabled, setView, 
-        setSiteToOpenPopup, theme, activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
-        battleUnitsEnabled, getPortalContainer, activeMapOverlays, toggleMapOverlay
+        setSiteToOpenPopup, theme, getPortalContainer, activeMapOverlays, toggleMapOverlay
     } = useAppContext();
     const [showNavigation, setShowNavigation] = useState(false);
     const [showFullDetails, setShowFullDetails] = useState(false);
 
     if (!site) return null;
 
-    const hasBattleUnits = battleUnitsData.some(b => b.siteId === site.id);
-    const isBattleUnitsActive = activeBattleSiteIds.includes(site.id);
+    if (!site) return null;
 
     return (
         <div className={`site-card glass-panel ${site.visited ? 'visited' : ''}`} style={{ position: 'relative', width: '100%', maxWidth: '350px', margin: '0 auto', maxHeight: '90vh', overflowY: 'auto' }}>
@@ -159,51 +157,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        {battleUnitsEnabled && (() => {
-                            const sitePhases = battleUnitsData.filter(b => b.siteId === site.id);
-                            if (sitePhases.length === 0) return null;
 
-                            const isOdd = sitePhases.length % 2 !== 0;
-
-                            return (
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', justifyContent: 'flex-end', width: '100%' }}>
-                                    {sitePhases.map((phase, index) => {
-                                        const pId = phase.id || phase.siteId;
-                                        const isActive = activeBattleSiteIds.includes(pId);
-
-                                        const isFullWidth = isOdd && index === 0;
-                                        const width = isFullWidth ? '100%' : 'calc(50% - 2px)';
-
-                                        return (
-                                            <button
-                                                key={pId}
-                                                onClick={() => toggleBattleUnitsForSite(pId)}
-                                                className={`btn-formations ${isActive ? 'active' : ''}`}
-                                                title={isActive ? `Hide ${phase.phase || 'Formations'}` : `Show ${phase.phase || 'Formations'}`}
-                                                style={{
-                                                    width: width,
-                                                    background: isActive ? 'rgba(248, 81, 73, 0.15)' : 'transparent',
-                                                    border: `1px solid ${isActive ? 'var(--accent-danger)' : 'var(--border-color)'}`,
-                                                    color: isActive ? 'var(--accent-danger)' : 'var(--text-secondary)',
-                                                    borderRadius: '4px',
-                                                    padding: '4px 2px',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    cursor: 'pointer',
-                                                    fontSize: '0.7rem',
-                                                    fontWeight: 'bold',
-                                                    transition: 'all 0.2s',
-                                                    textAlign: 'center'
-                                                }}
-                                            >
-                                                {isActive ? `Hide ${phase.phase || ''}` : `Show ${phase.phase || ''}`}
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            );
-                        })()}
 
                         {isCompact && (
                             <>
