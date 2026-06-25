@@ -204,38 +204,7 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                                 </div>
                             );
                         })()}
-                        {site.maps && site.maps.length > 0 && (
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', justifyContent: 'flex-end', width: '100%', marginTop: '4px' }}>
-                                {site.maps.map((map) => {
-                                    const isActive = activeMapOverlays.includes(map.id);
-                                    return (
-                                        <button
-                                            key={map.id}
-                                            onClick={() => toggleMapOverlay(map.id)}
-                                            className={`btn-formations ${isActive ? 'active' : ''}`}
-                                            title={isActive ? `Hide ${map.name}` : `Show ${map.name}`}
-                                            style={{
-                                                background: isActive ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
-                                                border: `1px solid ${isActive ? '#38bdf8' : 'var(--border-color)'}`,
-                                                color: isActive ? '#38bdf8' : 'var(--text-secondary)',
-                                                borderRadius: '4px',
-                                                padding: '4px 6px',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                cursor: 'pointer',
-                                                fontSize: '0.7rem',
-                                                fontWeight: 'bold',
-                                                transition: 'all 0.2s',
-                                                textAlign: 'center'
-                                            }}
-                                        >
-                                            {isActive ? `Hide ${map.name}` : `Show ${map.name}`}
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        )}
+
                         {isCompact && (
                             <>
                                 <button

@@ -2122,6 +2122,23 @@
       "Claude-Victor Perrin",
       "Joseph Bonaparte",
       "Jean-Baptiste Jourdan"
+    ],
+    "maps": [
+      {
+        "id": "talavera-phase1",
+        "name": "Phase 1: July 27th",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Talavera_A.png",
+        "bounds": [
+          [
+            39.9277,
+            -4.943934
+          ],
+          [
+            40.0354,
+            -4.715287
+          ]
+        ]
+      }
     ]
   },
   {
@@ -10158,5 +10175,18 @@
     "more_info_link": "https://www.labiryntarium.pl/index.php/7gmin/186-pielaszkowice.html",
     "latitude": 51.047138,
     "longitude": 16.514895
+  },
+  {
+    "id": "547",
+    "name": "Battle of Talavera - Wellington Command Post",
+    "category": "Battle landmark",
+    "significance": "Medium",
+    "year": "1809",
+    "location": "Talavera de la Reina, Toledo",
+    "country": "Spain",
+    "description": "Arthur Wellesley's Command Post on July 27th, 1809 during the Battle of Talavera.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera_BR_Command_post.webp",
+    "latitude": 39.99118,
+    "longitude": -4.847146
   }
 ]

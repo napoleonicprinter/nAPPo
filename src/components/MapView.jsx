@@ -686,7 +686,7 @@ const MapView = () => {
         siteToOpenPopup, setSiteToOpenPopup,
         activeBattleSiteIds, toggleBattleUnitsForSite, battleUnitsData,
         battleUnitsEnabled, setActiveBattleSiteIds,
-        clusterRadius
+        clusterRadius, activeMapOverlays, toggleMapOverlay
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
     const [showDeals, setShowDeals] = useState(false);
@@ -898,6 +898,41 @@ const MapView = () => {
                                                 </div>
                                             );
                                         })()}
+                                        
+                                        {site.maps && site.maps.length > 0 && (
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
+                                                {site.maps.map((map, index) => {
+                                                    const isActive = activeMapOverlays.includes(map.id);
+                                                    const isOdd = site.maps.length % 2 !== 0;
+                                                    const isFullWidth = isOdd && index === 0;
+                                                    const width = isFullWidth ? '100%' : 'calc(50% - 3px)';
+
+                                                    return (
+                                                        <button
+                                                            key={map.id}
+                                                            onClick={() => toggleMapOverlay(map.id)}
+                                                            style={{
+                                                                width: width,
+                                                                padding: '8px 4px',
+                                                                background: isActive ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
+                                                                border: `1px solid ${isActive ? '#38bdf8' : 'var(--border-color)'}`,
+                                                                color: isActive ? '#38bdf8' : 'var(--text-primary)',
+                                                                borderRadius: '4px',
+                                                                cursor: 'pointer',
+                                                                fontWeight: 'bold',
+                                                                fontSize: '0.75rem',
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'center',
+                                                                textAlign: 'center'
+                                                            }}
+                                                        >
+                                                            {isActive ? `Hide ${map.name}` : `Show ${map.name}`}
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
                                         <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
                                             <button
                                                 onClick={() => toggleVisited(site.id)}
