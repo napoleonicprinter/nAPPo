@@ -582,3 +582,12 @@ button {
   left: auto !important;
   z-index: 1000;
 }
+
+/* Render overlays crisply when zoomed in */
+.crisp-overlay {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
