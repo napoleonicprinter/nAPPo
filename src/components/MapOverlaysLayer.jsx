@@ -6,6 +6,7 @@ const MapOverlaysLayer = () => {
     const { activeMapOverlays, allSites } = useAppContext();
 
     const overlaysToRender = useMemo(() => {
+        if (import.meta.env.VITE_ENABLE_BATTLE_MAPS !== 'true') return [];
         if (!activeMapOverlays || activeMapOverlays.length === 0) return [];
         
         const overlays = [];

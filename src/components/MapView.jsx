@@ -812,7 +812,7 @@ const MapView = () => {
                                         </div>
 
 
-                                        {site.maps && site.maps.length > 0 && (
+                                        {import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true' && site.maps && site.maps.length > 0 && (
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
                                                 {site.maps.map((map, index) => {
                                                     const isActive = activeMapOverlays.includes(map.id);
