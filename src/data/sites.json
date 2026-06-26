@@ -2107,7 +2107,7 @@
     "description": "A British army under Sir Arthur Wellesley combined with a Spanish army under General Gregorio García de la Cuesta defeated the French forces under Joseph Bonaparte in a two day battle, July 27th - 28th, 1809.",
     "latitude": 39.979,
     "longitude": -4.8266,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera_1.svg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Talavera",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
@@ -2127,7 +2127,7 @@
       {
         "id": "talavera-phase1",
         "name": "Phase 1: July 27th",
-        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Talavera_A.webp",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Talavera_1.svg",
         "bounds": [
           [
             39.9277,
