@@ -181,24 +181,24 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 160px;
-    height: 32px;
+    width: 60px;
+    height: 24px;
     background: #000;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     z-index: 20;
 }
 
 .phone-notch::before {
     content: '';
     position: absolute;
-    top: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 6px;
+    width: 24px;
+    height: 4px;
     background: #222;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 /* Home indicator bar */

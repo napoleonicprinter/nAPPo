@@ -447,6 +447,10 @@ button {
   border-radius: 0;
 }
 
+.device-mobile .app-header {
+  padding-top: 24px; /* Push header down to avoid overlapping the notch */
+}
+
 /* --- Global Clear Filters / Close Units Adjustments --- */
 .desktop-clear-filters,
 .desktop-close-units {

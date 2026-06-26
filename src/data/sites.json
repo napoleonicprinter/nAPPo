@@ -2105,8 +2105,8 @@
     "location": "Talavera de la Reina, Toledo",
     "country": "Spain",
     "description": "A British army under Sir Arthur Wellesley combined with a Spanish army under General Gregorio García de la Cuesta defeated the French forces under Joseph Bonaparte in a two day battle, July 27th - July 28th, 1809.",
-    "latitude": 39.9636,
-    "longitude": -4.83,
+    "latitude": 39.979,
+    "longitude": -4.8266,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Talavera",
     "createDate": "2025-03-15T10:00:00Z",
@@ -10184,9 +10184,23 @@
     "year": "1809",
     "location": "Talavera de la Reina, Toledo",
     "country": "Spain",
-    "description": "Arthur Wellesley's Command Post on July 27th, 1809 during the Battle of Talavera.",
+    "description": "Arthur Wellesley's Command Post at 'Cerro Medellín' during the Battle of Talavera.",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera_BR_Command_post.webp",
     "latitude": 39.99118,
     "longitude": -4.847146
+  },
+  {
+    "id": "548",
+    "name": "Battle of Talavera - Monument",
+    "category": "Monument",
+    "significance": "Major",
+    "year": "1809",
+    "location": "Talavera de la Reina, Toledo",
+    "country": "Spain",
+    "description": "Located south of Cerro de Medellín, one of the key locations of the battle. Its height is 27 meters and it was built between 1989 and 1990 and inaugurated on October 2, 1990.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Talavera_monumento.webp",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Monumento_a_la_Batalla_de_Talavera",
+    "latitude": 39.985358,
+    "longitude": -4.8475
   }
 ]
