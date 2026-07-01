@@ -354,3 +354,25 @@
     width: 50% !important;
     max-width: 50% !important;
 }
+
+/* Force mobile/tablet Header scaling (+40%) in emulator */
+.device-mobile .header-logo { height: 89px !important; }
+.device-mobile .sites-count-badge { height: 89px !important; min-width: 112px !important; padding: 10px 18px !important; }
+.device-mobile .count-number { font-size: 2.5rem !important; }
+.device-mobile .count-label { font-size: 1.05rem !important; }
+.device-mobile .mobile-header-btn, .device-mobile .mobile-menu-toggle { width: 52px !important; height: 52px !important; display: flex !important; }
+.device-mobile .mobile-header-actions { gap: 0.6rem !important; display: flex !important; }
+
+.device-tablet .header-logo { height: 89px !important; }
+.device-tablet .sites-count-badge { height: 89px !important; min-width: 112px !important; padding: 10px 18px !important; }
+.device-tablet .count-number { font-size: 2.5rem !important; }
+.device-tablet .count-label { font-size: 1.05rem !important; }
+.device-tablet .mobile-header-btn, .device-tablet .mobile-menu-toggle { width: 52px !important; height: 52px !important; display: flex !important; }
+.device-tablet .mobile-header-actions { gap: 0.6rem !important; display: flex !important; }
+
+.device-mobile .header-brand, .device-tablet .header-brand { 
+    width: 100% !important; 
+    justify-content: space-between !important; 
+    padding-right: 0.75rem !important; 
+    box-sizing: border-box !important; 
+}

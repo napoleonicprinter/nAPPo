@@ -13,7 +13,7 @@ import { useAppContext } from '../context/AppContext';
  *   disabled?: boolean
  *   title?: string
  */
-const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false, persistentValues = ['all'] }) => {
+const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false, persistentValues = ['all'], menuClassName = '' }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [menuStyle, setMenuStyle] = useState({});
@@ -131,7 +131,7 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
             {isOpen && createPortal(
                 <div 
                     ref={menuRef}
-                    className="custom-select-menu animate-fade-in" 
+                    className={`custom-select-menu animate-fade-in ${menuClassName}`} 
                     style={menuStyle}
                 >
                     {searchable && (
@@ -168,7 +168,12 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
                                 {opt.color && (
                                     <span className="category-dot" style={{ backgroundColor: opt.color }} />
                                 )}
-                                {opt.label}
+                                <span style={{ flex: 1 }}>{opt.label}</span>
+                                {opt.count !== undefined && (
+                                    <span className="category-count-badge">
+                                        [{opt.count}]
+                                    </span>
+                                )}
                             </button>
                         ))}
                         {searchable && filteredOptions.length === 0 && (

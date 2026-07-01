@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
 const YearFilter = ({ compact, style, className }) => {
-    const { filterYear, setFilterYear, availableYears, filterCategory } = useAppContext();
+    const { filterYear, setFilterYear, availableYears, filterCategory, allSites } = useAppContext();
 
     const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
     const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
@@ -12,9 +12,19 @@ const YearFilter = ({ compact, style, className }) => {
         return null;
     }
 
+    const yearCounts = React.useMemo(() => {
+        const counts = {};
+        allSites.forEach(site => {
+            if (site.year) {
+                counts[site.year] = (counts[site.year] || 0) + 1;
+            }
+        });
+        return counts;
+    }, [allSites]);
+
     const options = [
         { value: 'all', label: 'All Years' },
-        ...availableYears.map(y => ({ value: y, label: y }))
+        ...availableYears.map(y => ({ value: y, label: y, count: yearCounts[y] || 0 }))
     ];
 
     return (

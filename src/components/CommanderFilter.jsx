@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
 const CommanderFilter = ({ compact, style, className }) => {
-    const { filterCommander, setFilterCommander, availableCommanders, filterCategory } = useAppContext();
+    const { filterCommander, setFilterCommander, availableCommanders, filterCategory, allSites } = useAppContext();
 
     const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
     const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
@@ -14,9 +14,21 @@ const CommanderFilter = ({ compact, style, className }) => {
         return null;
     }
 
+    const commanderCounts = React.useMemo(() => {
+        const counts = {};
+        allSites.forEach(site => {
+            if (site.commanders && Array.isArray(site.commanders)) {
+                site.commanders.forEach(c => {
+                    counts[c] = (counts[c] || 0) + 1;
+                });
+            }
+        });
+        return counts;
+    }, [allSites]);
+
     const options = [
         { value: 'all', label: 'All Commanders' },
-        ...availableCommanders.map(c => ({ value: c, label: c }))
+        ...availableCommanders.map(c => ({ value: c, label: c, count: commanderCounts[c] || 0 }))
     ];
 
     return (

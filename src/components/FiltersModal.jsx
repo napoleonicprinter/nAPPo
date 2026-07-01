@@ -20,6 +20,8 @@ const FiltersModal = ({ onClose }) => {
         filterCoalition, setFilterCoalition,
         filterCampaign, setFilterCampaign,
         filterSearch, setFilterSearch,
+        showOnlyNew, setShowOnlyNew,
+        newSitesDays, setNewSitesDays,
         countryCounts, coalitionCounts, visitedCounts
     } = useAppContext();
     const { getPortalContainer } = useAppContext();
@@ -29,7 +31,7 @@ const FiltersModal = ({ onClose }) => {
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
     const countries = Array.from(new Set(allSites.map(s => s.country))).filter(Boolean).sort();
 
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all';
+    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew;
 
     const clearModalFilters = () => {
         setFilterSearch('');
@@ -37,6 +39,7 @@ const FiltersModal = ({ onClose }) => {
         setFilterCoalition('all');
         setFilterCampaign('all');
         setFilterVisited('all');
+        setShowOnlyNew(false);
     };
 
     return createPortal(
@@ -177,6 +180,41 @@ const FiltersModal = ({ onClose }) => {
                             value={filterVisited}
                             onChange={setFilterVisited}
                             title="Filter by Visit Status"
+                        />
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>New Sites</h3>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
+                            <input
+                                type="checkbox"
+                                checked={showOnlyNew}
+                                onChange={(e) => {
+                                    setShowOnlyNew(e.target.checked);
+                                    localStorage.setItem('showOnlyNew', e.target.checked);
+                                }}
+                                style={{ transform: 'scale(1.2)' }}
+                            />
+                            <span style={{ fontSize: '1rem', color: 'var(--text-primary)' }}>Only new sites</span>
+                        </label>
+                        
+                        <CustomSimpleSelect
+                            options={[
+                                { value: '1', label: 'Last 1 day' },
+                                { value: '7', label: 'Last 7 days' },
+                                { value: '15', label: 'Last 15 days' },
+                                { value: '30', label: 'Last 30 days' },
+                                { value: '60', label: 'Last 60 days' },
+                                { value: '90', label: 'Last 90 days' }
+                            ]}
+                            value={String(newSitesDays)}
+                            onChange={(val) => {
+                                const days = parseInt(val, 10);
+                                setNewSitesDays(days);
+                                localStorage.setItem('newSitesDays', days);
+                            }}
+                            title="Filter by number of days"
+                            disabled={!showOnlyNew}
                         />
                     </div>
 

@@ -7,7 +7,6 @@ import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
 import dealsDataFallback from '../data/deals.json';
 import { Geolocation } from '@capacitor/geolocation';
-import testLocation from '../data/testLocation.json';
 
 // Constants for remote data
 const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
@@ -295,7 +294,7 @@ export const AppProvider = ({ children }) => {
 
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
-        return saved ? parseInt(saved, 10) : 30;
+        return saved ? parseInt(saved, 10) : 7;
     });
 
     const [clusterRadius, setClusterRadius] = useState(() => {
@@ -602,11 +601,19 @@ export const AppProvider = ({ children }) => {
     };
 
     const requestGeolocation = async () => {
-        if (isDevelopment && typeof testLocation !== 'undefined' && testLocation && testLocation.enabled) {
-            setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
-            setGeolocationEnabled(true);
-            setLocationMode('geo');
-            return;
+        if (isDevelopment) {
+            try {
+                const testLocationModule = await import('../data/testLocation.json');
+                const testLocation = testLocationModule.default;
+                if (testLocation && testLocation.enabled) {
+                    setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
+                    setGeolocationEnabled(true);
+                    setLocationMode('geo');
+                    return;
+                }
+            } catch (err) {
+                console.log("No testLocation.json found or invalid");
+            }
         }
         try {
             const permissions = await Geolocation.checkPermissions();

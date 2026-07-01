@@ -3,7 +3,7 @@ import { Map, List } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import './FloatingViewToggle.css';
 
-const FloatingViewToggle = ({ className = '' }) => {
+const FloatingViewToggle = ({ className = '', iconSize = 20 }) => {
     const { view, setView, innerView, setInnerView } = useAppContext();
 
     // Show for map, card, and preview views
@@ -26,7 +26,7 @@ const FloatingViewToggle = ({ className = '' }) => {
             onClick={handleToggle}
             title={isMap ? 'Switch to List View' : 'Switch to Map View'}
         >
-            {isMap ? <List size={20} /> : <Map size={20} />}
+            {isMap ? <List size={iconSize} /> : <Map size={iconSize} />}
         </button>
     );
 };

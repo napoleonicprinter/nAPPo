@@ -148,6 +148,7 @@ const LocationMarker = () => {
     return !isValidCoords ? null : (
         <Marker
             position={[Number(userCoords.lat), Number(userCoords.lon)]}
+            zIndexOffset={1000}
             icon={new L.Icon({
                 iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
                 iconSize: [25, 41],

@@ -40,6 +40,7 @@ const Header = () => {
         mapStyle, setMapStyle,
         categoryCounts,
         isFiltered, clearAllFilters,
+        filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited,
         // Emulation states from Context
         previewDevice, setPreviewDevice,
         getPortalContainer
@@ -55,6 +56,8 @@ const Header = () => {
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
+
+    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all';
 
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
@@ -128,18 +131,18 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* Mobile Header Actions */}
+                {/* Mobile Header Actions (Same row as logo & counter) */}
                 <div className="mobile-header-actions hide-on-desktop">
                     <button className="mobile-header-btn glass-panel" onClick={() => setShowEvents(true)} title="Today in History">
-                        <Calendar size={20} />
+                        <Calendar size={26} />
                     </button>
-                    <FloatingViewToggle className="mobile-header-btn" />
+                    <FloatingViewToggle className="mobile-header-btn" iconSize={26} />
                     <button
                         ref={toggleRef}
                         className={`mobile-menu-toggle glass-panel ${showSettings ? 'menu-open' : ''}`}
                         onClick={() => setShowSettings(!showSettings)}
                     >
-                        {showSettings ? <X size={20} /> : <Settings size={20} />}
+                        {showSettings ? <X size={28} /> : <Settings size={28} />}
                     </button>
                 </div>
             </div>
@@ -154,6 +157,7 @@ const Header = () => {
                             value={locationMode}
                             onChange={handleLocationSelect}
                             searchable={true}
+                            menuClassName="location-dropdown-menu"
                         />
                     </div>
                     <div className="desktop-filters custom-desktop-layout">
@@ -187,7 +191,7 @@ const Header = () => {
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear</button>}
                         
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                            <button className={`custom-select-trigger filter-select glass-panel ${showFilters ? 'active' : ''}`} onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>
+                            <button className={`custom-select-trigger filter-select glass-panel ${showFilters ? 'active' : ''} ${isModalFiltered ? 'filters-active-red' : ''}`} onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>
                                 <div className="custom-select-value" style={{ gap: '4px' }}>
                                     <Filter size={16} />
                                     <span>Filters</span>
@@ -230,6 +234,7 @@ const Header = () => {
                             value={locationMode}
                             onChange={handleLocationSelect}
                             searchable={true}
+                            menuClassName="location-dropdown-menu"
                         />
                     </div>
                     {locationMode !== 'none' && (
@@ -260,7 +265,7 @@ const Header = () => {
 
                     <div className="mobile-tag-filter">
                         <div className="custom-select-container">
-                            <button className={`custom-select-trigger mobile-icon-btn glass-panel ${showFilters ? 'active' : ''}`} onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center' }}>
+                            <button className={`custom-select-trigger mobile-icon-btn glass-panel ${showFilters ? 'active' : ''} ${isModalFiltered ? 'filters-active-red' : ''}`} onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center' }}>
                                 <div className="custom-select-value" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <Filter size={16} />
                                     <span>Filters</span>
@@ -307,12 +312,11 @@ const Header = () => {
             </div>
 
             {/* Settings Dropdown */}
-            <div ref={menuRef} className={`header-controls ${showSettings ? 'mobile-open' : ''}`}>
+            <div ref={menuRef} className={`header-controls desktop-only hide-in-mobile-tablet ${showSettings ? 'mobile-open' : ''}`}>
                 <div className="header-actions">
-                    <button className="mobile-header-btn glass-panel" onClick={() => setShowEvents(true)}><Calendar size={20} /></button>
-                    <FloatingViewToggle className="mobile-header-btn" />
+                    <button className="desktop-header-btn glass-panel" onClick={() => setShowEvents(true)}><Calendar size={20} /></button>
+                    <FloatingViewToggle className="desktop-header-btn" />
                     <button
-                        ref={toggleRef}
                         className={`desktop-header-btn glass-panel ${showSettings ? 'menu-open' : ''}`}
                         onClick={() => setShowSettings(!showSettings)}
                     >
@@ -347,8 +351,8 @@ const Header = () => {
                                     </button>
                                 </div>
 
-                                <div className="settings-drawer-content">
-                                    <div className="settings-section" style={{ marginBottom: '1.5rem' }}>
+                                <div className="settings-drawer-content" style={{ paddingBottom: '2rem' }}>
+                                    <div className="settings-section" style={{ marginBottom: '0.8rem' }}>
                                         {currentUser ? (
                                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)' }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -374,7 +378,7 @@ const Header = () => {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="settings-section" style={{ marginBottom: '1.5rem' }}>
+                                    <div className="settings-section" style={{ marginBottom: '0.8rem' }}>
                                         <h3 style={{ marginBottom: '10px' }}>Support us</h3>
                                         <a
                                             href="https://www.patreon.com/c/nAPPoTrails"
@@ -398,7 +402,7 @@ const Header = () => {
                                         </button>
                                     </div>
 
-                                    <div className="settings-section" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
+                                    <div className="settings-section" style={{ marginTop: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
                                         <h3 style={{ marginBottom: '10px' }}>Map Style</h3>
                                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
                                             {[
@@ -432,7 +436,7 @@ const Header = () => {
                                         </div>
                                     </div>
 
-                                    <div className="settings-section" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
+                                    <div className="settings-section" style={{ marginTop: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
                                         <h3 style={{ marginBottom: '8px' }}>Map Clustering</h3>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'space-between' }}>
                                             <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.9, lineHeight: '1.3', maxWidth: '75%' }}>

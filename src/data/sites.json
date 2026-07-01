@@ -10202,5 +10202,32 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Monumento_a_la_Batalla_de_Talavera",
     "latitude": 39.985358,
     "longitude": -4.8475
+  },
+  {
+    "id": "549",
+    "name": "Equestrian statue of Napoleon",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Rouen, Normandy",
+    "country": "France",
+    "description": "The equestrian statue depicts Napoleon on horseback and was erected in 1865. It was sculpted in bronze by Gabriel-Vital Dubray.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Rouen_Nap_statue.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Equestrian_statue_of_Napoleon",
+    "latitude": 47.443444,
+    "longitude": 1.098926
+  },
+  {
+    "id": "550",
+    "name": "Joseph Bonaparte's house 1815-1816",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Philadelphia",
+    "country": "United States",
+    "description": "Joseph Bonaparte, king of Naples & Spain lived here, settled here after Napoloen's fall in 1815 and before returning to Europe in 1816.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jose_USA.webp",
+    "wikipedia_link": "https://www.hmdb.org/m.asp?m=146574",
+    "latitude": 39.946367,
+    "longitude": -75.156315,
+    "createDate": "2026-07-01"
   }
 ]

@@ -17,9 +17,7 @@ const NewsModal = ({ onClose }) => {
                 {/* Header */}
                 <div className="shopping-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
                     <div className="modal-title-row">
-                        <div className="modal-icon-container" style={{ background: 'var(--accent-primary)', color: '#000' }}>
-                            <Newspaper size={24} />
-                        </div>
+                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info">
                             <h2>Latest nAPPo Trails News</h2>
                             <p>Discover latest nAPPO Trails updates</p>
