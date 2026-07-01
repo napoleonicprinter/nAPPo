@@ -2130,12 +2130,12 @@
         "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Talavera_1.svg",
         "bounds": [
           [
-            39.959506,
-            -4.859858
+            39.958506,
+            -4.863158
           ],
           [
-            40.003897,
-            -4.757903
+            40.002897,
+            -4.761203
           ]
         ]
       }
@@ -3660,7 +3660,24 @@
       "Napoleon"
     ],
     "victor": "France",
-    "defeated": "Russia"
+    "defeated": "Russia",
+    "maps": [
+      {
+        "id": "firedland-phase1",
+        "name": "Phase 1: June 14 17:00",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Friedland_1.svg",
+        "bounds": [
+          [
+            54.419783,
+            20.923258
+          ],
+          [
+            54.478625,
+            21.055663
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "187",
