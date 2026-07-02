@@ -146,8 +146,8 @@ export const AppProvider = ({ children }) => {
     const toggleMapOverlay = (mapId) => {
         setActiveMapOverlays(prev =>
             prev.includes(mapId)
-                ? prev.filter(id => id !== mapId)
-                : [...prev, mapId]
+                ? []
+                : [mapId]
         );
     };
 
