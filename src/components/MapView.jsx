@@ -743,6 +743,9 @@ const MapView = () => {
                                         {site.image && (
                                             <div style={{ position: 'relative', width: '100%', height: '120px', marginBottom: '10px', borderRadius: '4px', overflow: 'hidden' }}>
                                                 <img src={site.image} alt={site.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                {site.isNew && (
+                                                    <div className="new-site-badge">NEW</div>
+                                                )}
                                                 {site.distance !== undefined && (
                                                     <div style={{
                                                         position: 'absolute',

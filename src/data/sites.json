@@ -3668,6 +3668,36 @@
         "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Friedland_1.svg",
         "bounds": [
           [
+            54.415783,
+            20.923258
+          ],
+          [
+            54.478625,
+            21.055663
+          ]
+        ]
+      },
+      {
+        "id": "firedland-phase2",
+        "name": "Phase 2: June 14 18:00",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Friedland_1.svg",
+        "bounds": [
+          [
+            54.419783,
+            20.923258
+          ],
+          [
+            54.478625,
+            21.055663
+          ]
+        ]
+      },
+      {
+        "id": "firedland-phase3",
+        "name": "Phase 3: June 14 19:00",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Friedland_1.svg",
+        "bounds": [
+          [
             54.419783,
             20.923258
           ],

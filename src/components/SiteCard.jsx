@@ -65,8 +65,18 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                     <div className="new-site-badge">NEW</div>
                 )}
 
-                {/* Mark as Visited — top-left corner */}
-                <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 10 }}>
+                {/* Bottom-left corner elements (Mark as Visited, Distance, Navigation) */}
+                <div style={{
+                    position: 'absolute',
+                    bottom: '10px',
+                    left: '10px',
+                    zIndex: 15,
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    gap: '8px',
+                    maxWidth: 'calc(100% - 100px)' // Leave room for category badge on right
+                }}>
                     <button
                         className={`btn-visited ${site.visited ? 'active' : ''}`}
                         onClick={() => toggleVisited(site.id)}
@@ -74,64 +84,56 @@ const SiteCard = ({ site, onClose, isCompact = false }) => {
                         <CheckCircle size={18} />
                         {site.visited ? 'Visited' : 'Mark as Visited'}
                     </button>
+
+                    {site.distance !== undefined && (
+                        <>
+                            <div style={{
+                                padding: '6px 10px',
+                                background: 'rgba(0, 0, 0, 0.65)',
+                                backdropFilter: 'blur(4px)',
+                                borderRadius: '6px',
+                                color: '#ffffff',
+                                fontSize: '0.85rem',
+                                fontWeight: '600',
+                                border: '1px solid rgba(255, 255, 255, 0.15)',
+                                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+                                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)'
+                            }}>
+                                <strong>{site.distance} km</strong> away
+                            </div>
+
+                            {geolocationEnabled && userCoords && (
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        e.preventDefault();
+                                        const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                        window.open(url, '_blank', 'noopener,noreferrer,width=1000,height=800,left=100,top=100');
+                                    }}
+                                    title="Navigate to site via Google Maps"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        background: 'var(--accent-primary)',
+                                        color: '#000',
+                                        border: 'none',
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '50%',
+                                        cursor: 'pointer',
+                                        boxShadow: '0 4px 6px rgba(0,0,0,0.4)',
+                                        transition: 'transform 0.2s',
+                                    }}
+                                    onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                                    onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                                >
+                                    <Navigation size={16} />
+                                </button>
+                            )}
+                        </>
+                    )}
                 </div>
-
-                {site.distance !== undefined && (
-                    <div style={{
-                        position: 'absolute',
-                        bottom: '10px',
-                        left: '10px',
-                        zIndex: 15,
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px'
-                    }}>
-                        <div style={{
-                            padding: '6px 10px',
-                            background: 'rgba(0, 0, 0, 0.65)',
-                            backdropFilter: 'blur(4px)',
-                            borderRadius: '6px',
-                            color: '#ffffff',
-                            fontSize: '0.85rem',
-                            fontWeight: '600',
-                            border: '1px solid rgba(255, 255, 255, 0.15)',
-                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
-                            textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)'
-                        }}>
-                            <strong>{site.distance} km</strong> away
-                        </div>
-
-                        {geolocationEnabled && userCoords && (
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    e.preventDefault();
-                                    const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
-                                    window.open(url, '_blank', 'noopener,noreferrer,width=1000,height=800,left=100,top=100');
-                                }}
-                                title="Navigate to site via Google Maps"
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    background: 'var(--accent-primary)',
-                                    color: '#000',
-                                    border: 'none',
-                                    width: '32px',
-                                    height: '32px',
-                                    borderRadius: '50%',
-                                    cursor: 'pointer',
-                                    boxShadow: '0 4px 6px rgba(0,0,0,0.4)',
-                                    transition: 'transform 0.2s',
-                                }}
-                                onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
-                                onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                            >
-                                <Navigation size={16} />
-                            </button>
-                        )}
-                    </div>
-                )}
                 {/* Category Badge - bottom-right corner */}
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
                     <span className="badge category-badge" style={{
