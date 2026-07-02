@@ -43,7 +43,8 @@ const Header = () => {
         filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited,
         // Emulation states from Context
         previewDevice, setPreviewDevice,
-        getPortalContainer
+        getPortalContainer,
+        activeMapOverlays, clearMapOverlays
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
@@ -189,6 +190,7 @@ const Header = () => {
                         <CommanderFilter className="desktop-commander-filter" />
                         <ArcFilter className="desktop-arc-filter" />
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear</button>}
+                        {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
                         
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                             <button className={`custom-select-trigger filter-select glass-panel ${showFilters ? 'active' : ''} ${isModalFiltered ? 'filters-active-red' : ''}`} onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>

@@ -33,6 +33,7 @@ const MapOverlaysLayer = () => {
                     opacity={map.opacity !== undefined ? map.opacity : 1.0}
                     interactive={false} // Prevent intercepting clicks
                     className="crisp-overlay"
+                    pane="tooltipPane"
                 />
             ))}
         </>

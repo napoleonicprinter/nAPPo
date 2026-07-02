@@ -650,7 +650,7 @@ const MapView = () => {
         locationMode, handleLocationSelect,
         selectedSite, setSelectedSite,
         siteToOpenPopup, setSiteToOpenPopup,
-        clusterRadius, activeMapOverlays, toggleMapOverlay
+        clusterRadius, activeMapOverlays, toggleMapOverlay, clearMapOverlays
     } = useAppContext();
     const [navigatingSite, setNavigatingSite] = useState(null);
     const [showDeals, setShowDeals] = useState(false);
@@ -923,6 +923,15 @@ const MapView = () => {
                         title="Clear All Filters"
                     >
                         Clear Filters
+                    </button>
+                )}
+                {activeMapOverlays && activeMapOverlays.length > 0 && (
+                    <button
+                        className="mobile-clear-filters glass-panel"
+                        onClick={clearMapOverlays}
+                        title="Clear Maps"
+                    >
+                        Clear Maps
                     </button>
                 )}
             </div>

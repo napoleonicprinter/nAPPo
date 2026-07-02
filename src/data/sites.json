@@ -2953,6 +2953,23 @@
     "commanders": [
       "Napoleon",
       "Archduke Charles"
+    ],
+    "maps": [
+      {
+        "id": "wagram-phase1",
+        "name": "Phase 1: July 5",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Wagram_1.svg",
+        "bounds": [
+          [
+            48.102114,
+            16.212730
+          ],
+          [
+            48.483974,
+            16.965294
+          ]
+        ]
+      }
     ]
   },
   {
@@ -3650,7 +3667,7 @@
     "country": "Russia",
     "description": "Fought on June 14, 1807, between the French army under Napoleon Bonaparte and the Russian army under General Levin August von Bennigsen.",
     "latitude": 54.445995,
-    "longitude": 20.976,
+    "longitude": 20.986,
     "tier": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Friedland.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Friedland",
@@ -3669,36 +3686,6 @@
         "bounds": [
           [
             54.414383,
-            20.923258
-          ],
-          [
-            54.478625,
-            21.055663
-          ]
-        ]
-      },
-      {
-        "id": "firedland-phase2",
-        "name": "Phase 2: June 14 18:00",
-        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Friedland_1.svg",
-        "bounds": [
-          [
-            54.419783,
-            20.923258
-          ],
-          [
-            54.478625,
-            21.055663
-          ]
-        ]
-      },
-      {
-        "id": "firedland-phase3",
-        "name": "Phase 3: June 14 19:00",
-        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Friedland_1.svg",
-        "bounds": [
-          [
-            54.419783,
             20.923258
           ],
           [

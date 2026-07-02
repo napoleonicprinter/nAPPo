@@ -151,6 +151,8 @@ export const AppProvider = ({ children }) => {
         );
     };
 
+    const clearMapOverlays = () => setActiveMapOverlays([]);
+
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
@@ -710,7 +712,8 @@ export const AppProvider = ({ children }) => {
             messagesData: messagesBaseData,
             activeDeals,
             activeMapOverlays,
-            toggleMapOverlay
+            toggleMapOverlay,
+            clearMapOverlays
         }}>
             {children}
         </AppContext.Provider>
