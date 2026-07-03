@@ -36,7 +36,7 @@ const DealsView = ({ onClose }) => {
                 {/* Header */}
                 <div className="shopping-modal-header" style={{ padding: '1.2rem 1.5rem', flexShrink: 0, background: 'rgba(255, 255, 255, 0.03)' }}>
                     <div className="modal-title-row" style={{ marginBottom: 0, gap: '12px' }}>
-                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" style={{ height: '42px', width: 'auto' }} />
+                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info" style={{ maxWidth: '280px' }}>
                             <h2 style={{ fontSize: '1.15rem', lineHeight: 1.1 }}>{t('ui.deals_title', 'Exclusive Deals')}</h2>
                             <p style={{ fontSize: '0.8rem', opacity: 0.7, marginTop: '2px' }}>{t('ui.deals_subtitle', 'Special offers for the community.')}</p>

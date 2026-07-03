@@ -19,8 +19,8 @@ const NewsModal = ({ onClose }) => {
                     <div className="modal-title-row">
                         <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info">
-                            <h2>Latest nAPPo Trails News</h2>
-                            <p>Discover latest nAPPO Trails updates</p>
+                            <h2>nAPPo Trails News</h2>
+                            <p>Latest updates</p>
                         </div>
                         <button className="modal-close-btn" onClick={onClose}>
                             <X size={24} />
