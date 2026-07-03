@@ -181,6 +181,39 @@ const BoundsTracker = () => {
     return null;
 };
 
+// Helper component to fit map to filtered sites
+const FitFilteredSites = () => {
+    const { sites, isFiltered } = useAppContext();
+    const map = useMap();
+    const prevSiteIds = useRef(null);
+
+    useEffect(() => {
+        const currentSiteIds = sites.map(s => s.id).sort().join(',');
+        
+        // Don't run on initial mount
+        if (prevSiteIds.current === null) {
+            prevSiteIds.current = currentSiteIds;
+            return;
+        }
+
+        if (currentSiteIds !== prevSiteIds.current) {
+            prevSiteIds.current = currentSiteIds;
+            
+            if (isFiltered && sites.length > 0) {
+                const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
+                if (bounds.isValid()) {
+                    map.flyToBounds(bounds, { padding: [50, 50], maxZoom: 12, duration: 1.0 });
+                }
+            } else if (!isFiltered) {
+                // When filters are cleared, center map approximately to Europe
+                map.flyTo([49.0, 10.0], 5, { duration: 1.0 });
+            }
+        }
+    }, [sites, isFiltered, map]);
+
+    return null;
+};
+
 // Helper component to provide a search input directly from the map
 const SearchControl = () => {
     const { filterSearch, setFilterSearch } = useAppContext();
@@ -702,6 +735,7 @@ const MapView = () => {
                 <DealsControl onOpen={() => setShowDeals(true)} />
                 <CenterControl />
                 <BoundsTracker />
+                <FitFilteredSites />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
                 <MapOverlaysLayer />
 
