@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppContext } from '../context/AppContext';
 
 const ArcFilter = ({ className, style }) => {
-    const { filterCategory, showArcOnly, setShowArcOnly } = useAppContext();
+    const { filterCategory, showArcOnly, setShowArcOnly, theme } = useAppContext();
 
     const allowedCategories = ['Battle site', 'Battle landmark'];
     const isBattleOnly = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
@@ -22,7 +22,7 @@ const ArcFilter = ({ className, style }) => {
                 style={{
                     height: '1.4em',
                     width: 'auto',
-                    filter: showArcOnly ? 'brightness(0) invert(1)' : 'none',
+                    filter: (showArcOnly || theme === 'dark') ? 'brightness(0) invert(1)' : 'none',
                     transition: 'all 0.2s'
                 }}
             />
