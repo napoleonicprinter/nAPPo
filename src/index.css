@@ -46,6 +46,10 @@
   --shadow-glow: 0 0 15px rgba(9, 105, 218, 0.1);
 }
 
+body:not(.light-mode) .arc-icon-invert {
+  filter: brightness(0) invert(1) !important;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

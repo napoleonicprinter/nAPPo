@@ -840,7 +840,7 @@ const MapView = () => {
                                         )}
                                         <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                             {site.special?.includes('arc') && (
-                                                <img src="/assets/Arc.png" alt="Listed at the Arch de Triomphe - Paris" title="Listed at the Arch de Triomphe - Paris" style={{ height: '1.2em', width: 'auto', filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none', transition: 'all 0.2s' }} />
+                                                <img src="/assets/Arc.png" alt="Listed at the Arch de Triomphe - Paris" className="arc-icon-invert" title="Listed at the Arch de Triomphe - Paris" style={{ height: '1.2em', width: 'auto', transition: 'all 0.2s' }} />
                                             )}
                                             {site.name}
                                         </h3>

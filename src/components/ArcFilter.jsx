@@ -19,10 +19,10 @@ const ArcFilter = ({ className, style }) => {
             <img
                 src="/assets/Arc.png"
                 alt="Arc Filter"
+                className="arc-icon-invert"
                 style={{
                     height: '1.4em',
                     width: 'auto',
-                    filter: (showArcOnly || theme === 'dark') ? 'brightness(0) invert(1)' : 'none',
                     transition: 'all 0.2s'
                 }}
             />
