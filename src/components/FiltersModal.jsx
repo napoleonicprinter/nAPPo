@@ -123,6 +123,28 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
+                        <CustomSimpleSelect
+                            options={[
+                                { value: 'all', label: 'All' },
+                                ...countries
+                                    .filter(c => (countryCounts?.[c] || 0) > 0)
+                                    .map(c => ({ value: c, label: `${c} (${countryCounts[c]})` }))
+                            ]}
+                            value={filterCountry}
+                            onChange={setFilterCountry}
+                            searchable={true}
+                            title="Filter by Country"
+                            placeholder="Select Country..."
+                        />
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
+                        <CampaignFilter />
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
                         <CustomSimpleSelect
                             options={[
@@ -141,28 +163,6 @@ const FiltersModal = ({ onClose }) => {
                             onChange={setFilterCoalition}
                             title="Filter by Napoleonic Coalition"
                             placeholder="Select Coalition..."
-                        />
-                    </div>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
-                        <CampaignFilter />
-                    </div>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
-                        <CustomSimpleSelect
-                            options={[
-                                { value: 'all', label: 'All' },
-                                ...countries
-                                    .filter(c => (countryCounts?.[c] || 0) > 0)
-                                    .map(c => ({ value: c, label: `${c} (${countryCounts[c]})` }))
-                            ]}
-                            value={filterCountry}
-                            onChange={setFilterCountry}
-                            searchable={true}
-                            title="Filter by Country"
-                            placeholder="Select Country..."
                         />
                     </div>
 
