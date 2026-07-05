@@ -12,6 +12,7 @@
     "build:standard": "vite build --mode standard",
     "build:battle": "vite build --mode battle",
     "build:all": "node scripts/build-all.js",
+    "sync:android": "node scripts/sync-flavors.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

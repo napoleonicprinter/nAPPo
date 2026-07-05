@@ -284,6 +284,7 @@ export const AppProvider = ({ children }) => {
     const [filterCoalition, setFilterCoalition] = useState('all');
     const [filterCampaign, setFilterCampaign] = useState('all');
     const [showArcOnly, setShowArcOnly] = useState(false);
+    const [filterWithMaps, setFilterWithMaps] = useState(false);
 
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
@@ -372,13 +373,14 @@ export const AppProvider = ({ children }) => {
             if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
             if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
             if (showArcOnly && !site.special.includes('arc')) return false;
+            if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
 
             if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
                 if (site.distance > parseInt(filterRadius, 10)) return false;
             }
             return true;
         });
-    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius]);
+    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius, filterWithMaps]);
 
     const passYear = (site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
@@ -416,6 +418,7 @@ export const AppProvider = ({ children }) => {
         if (filterSignificance && site.significance !== filterSignificance) return false;
         if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
         if (showArcOnly && !site.special.includes('arc')) return false;
+        if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
         if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
         }
@@ -469,7 +472,7 @@ export const AppProvider = ({ children }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
 
     const campaignCounts = useMemo(() => {
         const counts = {};
@@ -484,7 +487,7 @@ export const AppProvider = ({ children }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander]);
 
     const coalitionCounts = useMemo(() => {
         const counts = {};
@@ -499,7 +502,7 @@ export const AppProvider = ({ children }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander]);
 
     const visitedCounts = useMemo(() => {
         const counts = { visited: 0, unvisited: 0 };
@@ -510,13 +513,13 @@ export const AppProvider = ({ children }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
 
 
 
     const filteredSites = useMemo(() => sitesForCategoryCounts.filter(site => passCat(site)), [sitesForCategoryCounts, passCat]);
 
-    const isFiltered = filterCategory.length > 0 || filterSignificance !== '' || filterVisited !== 'all' || filterRadius !== 'all' || filterSearch !== '' || filterYear !== 'all' || filterCommander !== 'all' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || showArcOnly || showOnlyNew;
+    const isFiltered = filterCategory.length > 0 || filterSignificance !== '' || filterVisited !== 'all' || filterRadius !== 'all' || filterSearch !== '' || filterYear !== 'all' || filterCommander !== 'all' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || showArcOnly || showOnlyNew || filterWithMaps;
 
     const clearAllFilters = () => {
         setFilterCategory([]);
@@ -531,6 +534,7 @@ export const AppProvider = ({ children }) => {
         setFilterCampaign('all');
         setShowArcOnly(false);
         setShowOnlyNew(false);
+        setFilterWithMaps(false);
     };
 
     useEffect(() => {
@@ -687,6 +691,7 @@ export const AppProvider = ({ children }) => {
             filterYear, setFilterYear, availableYears,
             filterCommander, setFilterCommander, availableCommanders,
             showArcOnly, setShowArcOnly,
+            filterWithMaps, setFilterWithMaps,
             visitedSites,
             currentUser,
             login, signup, logout, deleteCurrentUser,

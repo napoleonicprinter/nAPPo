@@ -1,0 +1,21 @@
+{
+  "short_name": "nAPPo Trails",
+  "name": "Napoleonic Trails",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64 192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#c9a227",
+  "background_color": "#ffffff"
+}

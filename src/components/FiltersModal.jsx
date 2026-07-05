@@ -29,7 +29,8 @@ const FiltersModal = ({ onClose }) => {
         filterSearch, setFilterSearch,
         showOnlyNew, setShowOnlyNew,
         newSitesDays, setNewSitesDays,
-        countryCounts, coalitionCounts, visitedCounts
+        countryCounts, coalitionCounts, visitedCounts,
+        filterWithMaps, setFilterWithMaps
     } = useAppContext();
     const { getPortalContainer } = useAppContext();
 
@@ -38,7 +39,7 @@ const FiltersModal = ({ onClose }) => {
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
     const countries = Array.from(new Set(allSites.map(s => s.country))).filter(Boolean).sort();
 
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew;
+    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 
     const clearModalFilters = () => {
         setFilterSearch('');
@@ -173,6 +174,21 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
+
+                    {import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true' && (
+                        <div className="filter-group">
+                            <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
+                                <input
+                                    type="checkbox"
+                                    checked={filterWithMaps}
+                                    onChange={(e) => setFilterWithMaps(e.target.checked)}
+                                    style={{ transform: 'scale(1.2)' }}
+                                />
+                                <span style={{ fontSize: '1rem', color: 'var(--text-primary)' }}>Only sites with battle maps</span>
+                            </label>
+                        </div>
+                    )}
 
                     <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
