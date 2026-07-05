@@ -1,6 +1,25 @@
-import React, { useMemo } from 'react';
-import { ImageOverlay } from 'react-leaflet';
+import React, { useMemo, useEffect, useRef } from 'react';
+import { ImageOverlay, useMap } from 'react-leaflet';
 import { useAppContext } from '../context/AppContext';
+
+const OverlayFitter = ({ overlays }) => {
+    const map = useMap();
+    const lastZoomedId = useRef(null);
+    
+    useEffect(() => {
+        if (overlays.length > 0) {
+            const activeOverlay = overlays[0];
+            if (activeOverlay.bounds && lastZoomedId.current !== activeOverlay.id) {
+                lastZoomedId.current = activeOverlay.id;
+                map.flyToBounds(activeOverlay.bounds, { padding: [10, 10], duration: 1.5 });
+            }
+        } else {
+            lastZoomedId.current = null;
+        }
+    }, [overlays, map]);
+
+    return null;
+};
 
 const MapOverlaysLayer = () => {
     const { activeMapOverlays, allSites } = useAppContext();
@@ -25,6 +44,7 @@ const MapOverlaysLayer = () => {
 
     return (
         <>
+            <OverlayFitter overlays={overlaysToRender} />
             {overlaysToRender.map(map => (
                 <ImageOverlay
                     key={map.id}
