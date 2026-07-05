@@ -65,9 +65,9 @@ const FiltersModal = ({ onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div className="settings-drawer-content" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div className="settings-drawer-content">
                     {/* Search Section */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Search Sites</h3>
                         <div className="mobile-search-wrapper" style={{ position: 'relative' }}>
                             <input
@@ -129,7 +129,7 @@ const FiltersModal = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
                         <CustomSimpleSelect
                             options={[
@@ -146,12 +146,12 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
                         <CampaignFilter />
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
                         <CustomSimpleSelect
                             options={[
@@ -174,7 +174,7 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
                         <CustomSimpleSelect
                             options={[
@@ -190,7 +190,7 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="filter-group">
                         <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>New Sites</h3>
                         <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
                             <input
@@ -225,12 +225,7 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-                    <div style={{
-                        display: 'flex',
-                        gap: '12px',
-                        marginTop: 'auto',
-                        paddingTop: '1.5rem'
-                    }}>
+                    <div className="reset-button-wrapper">
                         <button
                             onClick={clearModalFilters}
                             style={{

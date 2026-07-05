@@ -606,10 +606,38 @@
 .settings-drawer-content {
     flex: 1;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reset-button-wrapper {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .settings-drawer-content {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+    
+    .filter-group {
+        gap: 4px;
+    }
+
+    .reset-button-wrapper {
+        padding-top: 0.75rem;
+    }
 }
 
 /* Ensure the wrapper doesn't collapse */
