@@ -3,12 +3,22 @@ apply plugin: 'com.android.application'
 android {
     namespace = "com.nappo.trails.app"
     compileSdk = rootProject.ext.compileSdkVersion
+
+    signingConfigs {
+        release {
+            storeFile file("${System.getProperty('user.home')}/keystores/nappo-release-key.jks")
+            storePassword 'n4PP0&tRaiL5$$'
+            keyAlias 'SubidaPlay'
+            keyPassword 'n4PP0&tRaiL5$$'
+        }
+    }
+
     defaultConfig {
         applicationId "com.nappo.trails.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.3"
+        versionCode 5
+        versionName "1.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -23,15 +33,18 @@ android {
             dimension "version"
             applicationIdSuffix ".free"
             resValue "string", "app_name", "nAPPo Trails Free"
+            resValue "bool", "has_battle_maps", "false"
         }
         paid {
             dimension "version"
             resValue "string", "app_name", "nAPPo Trails"
+            resValue "bool", "has_battle_maps", "true"
         }
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Filter, Navigation } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
@@ -7,6 +7,13 @@ import CustomSimpleSelect from './CustomSimpleSelect';
 import CampaignFilter from './CampaignFilter';
 
 const FiltersModal = ({ onClose }) => {
+    useEffect(() => {
+        document.body.classList.add('modal-open');
+        return () => {
+            document.body.classList.remove('modal-open');
+        };
+    }, []);
+
     const {
         geolocationEnabled, requestGeolocation, disableGeolocation,
         filterCategory, setFilterCategory,
