@@ -66,6 +66,23 @@
       "Wellington",
       "Gebhard von Blücher",
       "Prince of Orange"
+    ],
+    "maps": [
+      {
+        "id": "waterloo-phase1",
+        "name": "Phase 1: 11:00",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Waterloo_1.svg",
+        "bounds": [
+          [
+            50.655778,
+            4.371249
+          ],
+          [
+            50.689162,
+            4.448830
+          ]
+        ]
+      }
     ]
   },
   {
@@ -10278,8 +10295,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jose_USA.webp",
     "wikipedia_link": "https://www.hmdb.org/m.asp?m=146574",
     "latitude": 39.946367,
-    "longitude": -75.156315,
-    "createDate": "2026-07-01"
+    "longitude": -75.156315
   },
   {
     "id": "551",
