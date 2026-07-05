@@ -10280,5 +10280,19 @@
     "latitude": 39.946367,
     "longitude": -75.156315,
     "createDate": "2026-07-01"
+  },
+  {
+    "id": "551",
+    "name": "Marengo Museum",
+    "category": "Museum",
+    "significance": "Major",
+    "location": "Spinetta Marengo",
+    "country": "Italy",
+    "description": "The Museum intends to tell the story of the Italian campaign of 1800 and the Battle of Marengo by analyzing its causes, developments, and consequences.",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Marengo_museum.webp",
+    "site_link": "http://www.marengomuseum.it/",
+    "latitude": 44.895000,
+    "longitude": 8.669946,
+    "createDate": "2026-07-01"
   }
 ]
