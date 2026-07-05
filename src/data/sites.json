@@ -74,12 +74,12 @@
         "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Waterloo_1.svg",
         "bounds": [
           [
-            50.655778,
-            4.371249
+            50.65535,
+            4.3676
           ],
           [
             50.689162,
-            4.448830
+            4.449
           ]
         ]
       }
