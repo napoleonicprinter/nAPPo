@@ -3216,6 +3216,23 @@
       "Duke of Wellington",
       "Marshal Michel Ney",
       "Jérôme Bonaparte"
+    ],
+    "maps": [
+      {
+        "id": "quatre-phase1",
+        "name": "battle map",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Quatre_1.svg",
+        "bounds": [
+          [
+            50.548356,
+            4.427843
+          ],
+          [
+            50.575812,
+            4.496932
+          ]
+        ]
+      }
     ]
   },
   {
