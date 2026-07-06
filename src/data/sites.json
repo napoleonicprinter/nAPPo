@@ -669,7 +669,7 @@
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
-      "Marshall Victor",
+      "Marshal Victor",
       "Francisco Xavier Venegas"
     ]
   },
@@ -1679,7 +1679,7 @@
     "victor": "Anglo-luso-spanish",
     "defeated": "France",
     "commanders": [
-      "Marshall Victor",
+      "Marshal Victor",
       "Sir Thomas Graham",
       "General Manuel Lapeña"
     ]
@@ -4295,7 +4295,7 @@
   },
   {
     "id": "211",
-    "name": "Marshall Davout's Birthplace",
+    "name": "Marshal Davout's Birthplace",
     "category": "Landmark",
     "significance": "Major",
     "year": "",
@@ -4445,7 +4445,7 @@
     "year": "1805",
     "location": "Guntzburg",
     "country": "Germany",
-    "description": "On October 9th 1805,Marshall Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Ha  bsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
+    "description": "On October 9th 1805,Marshal Ney ordered a French division to seize a crossing over the Danube River at Günzburg in the face of a Ha  bsburg Austrian army led by Feldmarschall-Leutnant Karl Mack von Lieberich.",
     "latitude": 48.45,
     "longitude": 10.3,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gunzburg.webp",
@@ -9118,7 +9118,7 @@
   {
     "id": "462",
     "name": "Marshal Bernadotte's Birthplace",
-    "category": "Landmark",
+    "category": "Museum",
     "significance": "Medium",
     "year": "1763",
     "location": "Pau",
@@ -9161,7 +9161,7 @@
   },
   {
     "id": "465",
-    "name": "Marshall Kellerman Statue",
+    "name": "Marshal Kellerman Statue",
     "category": "Monument",
     "significance": "Medium",
     "location": "Place Broglie, Strasbourg",
@@ -9174,7 +9174,7 @@
   },
   {
     "id": "466",
-    "name": "Marshall Kellerman Tomb",
+    "name": "Marshal Kellerman Tomb",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Cimetière du Père-Lachaise, Paris",
@@ -9918,7 +9918,7 @@
     "significance": "Medium",
     "location": "Avignon",
     "country": "France",
-    "description": "Place where Marshall Brune was killed in August 1815, victim of a popular uprising in Avignon, as he was returning to France to serve the Emperor in the Hundred Days campaign.",
+    "description": "Place where Marshal Brune was killed in August 1815, victim of a popular uprising in Avignon, as he was returning to France to serve the Emperor in the Hundred Days campaign.",
     "latitude": 43.95011,
     "longitude": 4.80279,
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Guillaume_Brune",
@@ -10477,7 +10477,7 @@
   },
   {
     "id": "552",
-    "name": "Birthplace of Marshall Jourdan",
+    "name": "Birthplace of Marshal Jourdan",
     "category": "Museum",
     "significance": "Medium",
     "location": "Limoges",
@@ -10490,7 +10490,7 @@
   },
   {
     "id": "553",
-    "name": "Birthplace of Marshall Victor",
+    "name": "Birthplace of Marshal Victor",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Lamarche",
@@ -10502,7 +10502,7 @@
   },
   {
     "id": "554",
-    "name": "Birthplace of Marshall Saint-Cyr",
+    "name": "Birthplace of Marshal Saint-Cyr",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Toul",
@@ -10514,7 +10514,7 @@
   },
   {
     "id": "555",
-    "name": "Birthplace of Marshall Oudinot",
+    "name": "Birthplace of Marshal Oudinot",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Bar-le-Duc",
@@ -10539,7 +10539,7 @@
   },
   {
     "id": "557",
-    "name": "Marshall Oudinot Statue",
+    "name": "Marshal Oudinot Statue",
     "category": "Monument",
     "significance": "Medium",
     "location": "Bar-le-Duc",
@@ -10551,7 +10551,7 @@
   },
   {
     "id": "558",
-    "name": "Marshall Massena family house",
+    "name": "Marshal Massena family house",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Levens",
@@ -10563,7 +10563,7 @@
   },
   {
     "id": "559",
-    "name": "Marshall Masséna Statue",
+    "name": "Marshal Masséna Statue",
     "category": "Monument",
     "significance": "Medium",
     "location": "Nice",
@@ -10575,7 +10575,7 @@
   },
   {
     "id": "560",
-    "name": "Marshall Masséna Birthplace",
+    "name": "Marshal Masséna Birthplace",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Nice",
@@ -10587,7 +10587,7 @@
   },
   {
     "id": "561",
-    "name": "Marshall Soult Birthplace",
+    "name": "Marshal Soult Birthplace",
     "category": "Landmark",
     "significance": "Medium",
     "location": "Saint-Amans-Soult",
@@ -10596,5 +10596,17 @@
     "latitude": 43.476417,
     "longitude": 2.489830,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Soult_birth.webp"
+  },
+  {
+    "id": "562",
+    "name": "Marshal Bessières Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Prayssac",
+    "country": "France",
+    "description": "The original stone house where Bessières was born on August 6th 1768 to a local surgeon was demolished to make way for a local school facility, known historically as the Collège d'Istrie (named after his title, the Duc d'Istrie).",
+    "latitude": 44.5059,
+    "longitude": 1.188345,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bessieres_birth.webp"
   }
 ]
