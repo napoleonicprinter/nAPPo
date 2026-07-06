@@ -10584,5 +10584,17 @@
     "latitude": 43.697618,
     "longitude": 7.269950,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massena_birth.webp"
+  },
+  {
+    "id": "561",
+    "name": "Marshall Soult Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Saint-Amans-Soult",
+    "country": "France",
+    "description": "Jean de Dieu Soult was born in this house on March 29th 1769 in Saint-Amans-la-Bastide (today Saint-Amans-Soult). Today it is an appartment building.",
+    "latitude": 43.476417,
+    "longitude": 2.489830,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Soult_birth.webp"
   }
 ]
