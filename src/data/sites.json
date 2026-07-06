@@ -1211,7 +1211,10 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/SitiodeCadiz.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_C%C3%A1diz",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
     "commanders": [
       "Jean de Dieu Soult",
       "Victor"
@@ -1647,7 +1650,10 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Battle_of_Albuera_%281811%29_map.jpg/1280px-Battle_of_Albuera_%281811%29_map.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_La_Albuera",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
     "commanders": []
   },
   {
@@ -1847,7 +1853,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/6-de-junio-1808.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Resistencia_de_Valdepe%C3%B1as",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false,
+    "special": "Guerra de Independencia",
     "commanders": []
   },
   {
@@ -4062,7 +4068,7 @@
     "special": [
       "arc",
       "1",
-      "Italian campaign"
+      "Italian Campaign"
     ],
     "commanders": [
       "József Alvinczi",
@@ -4319,7 +4325,7 @@
       "Peter Wittgenstein"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": "Russian Campaign"
   },
   {
     "id": "213",
@@ -4339,7 +4345,7 @@
     ],
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blanc-Nez_and_Gris-Nez",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": "3"
   },
   {
     "id": "214",
@@ -4356,7 +4362,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Taking_of_the_rock_Le_Diamant%2C_near_Martinique%2C_2_June_1805_%28by_Auguste_Etienne_Fran%C3%A7ois_Mayer%29.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Diamond_Rock",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": "Caribbean Campaign"
   },
   {
     "id": "215",
@@ -4377,7 +4383,10 @@
       "Pierre-Charles Villeneuve",
       "Federico Gravina"
     ],
-    "special": false
+    "special": [
+      "3",
+      "Trafalgar Campaign"
+    ]
   },
   {
     "id": "216",
@@ -4398,7 +4407,10 @@
       "Nicolas Soult",
       "Kienmayer"
     ],
-    "special": false
+    "special": [
+      "3",
+      "Ulm Campaign"
+    ]
   },
   {
     "id": "217",
@@ -4419,7 +4431,11 @@
       "Jean Lannes",
       "Franz von Auffenberg"
     ],
-    "special": "arc"
+    "special": [
+      "3",
+      "arc",
+      "Ulm Campaign"
+    ]
   },
   {
     "id": "218",
@@ -4440,7 +4456,11 @@
       "Michel Ney",
       "Karl Mack von Lieberich"
     ],
-    "special": "arc"
+    "special": [
+      "3",
+      "arc",
+      "Ulm Campaign"
+    ]
   },
   {
     "id": "219",
@@ -4459,6 +4479,10 @@
     "commanders": [
       "Pierre Dupont",
       "Karl Mack von Lieberich"
+    ],
+    "special": [
+      "3",
+      "Ulm Campaign"
     ]
   },
   {
@@ -4478,6 +4502,10 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Karl Spangen"
+    ],
+    "special": [
+      "3",
+      "Ulm Campaign"
     ]
   },
   {
@@ -4494,10 +4522,14 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Elchingen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Elchingen",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
     "commanders": [
       "Michel Ney",
       "Johann Sigismund Riesch"
+    ],
+    "special": [
+      "3",
+      "arc",
+      "Ulm Campaign"
     ]
   },
   {
@@ -4517,7 +4549,8 @@
     "commanders": [
       "André Masséna",
       "Archduke Charles"
-    ]
+    ],
+    "special": "3"
   },
   {
     "id": "223",
@@ -4552,6 +4585,10 @@
     "commanders": [
       "André Masséna",
       "Archduke Charles"
+    ],
+    "special": [
+      "1",
+      "Italian Campaign"
     ]
   },
   {
@@ -4568,7 +4605,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/AMH-8054-KB_Map_of_Surinam.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Surinam_(1804)",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": false
+    "special": "Caribbean Campaign"
   },
   {
     "id": "226",
@@ -4589,7 +4626,10 @@
       "Nikolay Raevsky"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "Russian Campaign",
+      "arc"
+    ]
   },
   {
     "id": "227",
@@ -4609,6 +4649,7 @@
       "Peter Wittgenstein",
       "Yakov Kulnev"
     ],
+    "special": "Russian Campaign",
     "createDate": "2025-03-22T10:00:00Z"
   },
   {
@@ -4629,7 +4670,10 @@
       "Mustafa Pasha"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "Egyptian Campaign",
+      "arc"
+    ]
   },
   {
     "id": "229",
@@ -4649,7 +4693,10 @@
       "Archduke Charles"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "5",
+      "arc"
+    ]
   },
   {
     "id": "230",
@@ -4669,7 +4716,10 @@
       "Archduke Charles"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "5",
+      "arc"
+    ]
   },
   {
     "id": "231",
@@ -4689,7 +4739,10 @@
       "Johann von Hiller"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "5",
+      "arc"
+    ]
   },
   {
     "id": "232",
@@ -4709,7 +4762,10 @@
       "Archduke Charles"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "5",
+      "arc"
+    ]
   },
   {
     "id": "233",
@@ -4728,7 +4784,8 @@
       "Jean Bessières",
       "Johann von Hiller"
     ],
-    "createDate": "2025-03-22T10:00:00Z"
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "5"
   },
   {
     "id": "234",
@@ -4747,7 +4804,11 @@
       "Józef Poniatowski",
       "Johann Friedrich von Mohr"
     ],
-    "createDate": "2025-03-22T10:00:00Z"
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": [
+      "5",
+      "Austro-Polish War"
+    ]
   },
   {
     "id": "235",
@@ -4768,7 +4829,10 @@
       "Archduke John"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc"
+    "special": [
+      "4",
+      "arc"
+    ]
   },
   {
     "id": "236",
@@ -4788,7 +4852,8 @@
       "François Joseph Lefebvre",
       "Johann Gabriel Chasteler de Courcelles"
     ],
-    "createDate": "2025-03-22T10:00:00Z"
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "5"
   },
   {
     "id": "237",
@@ -4823,7 +4888,8 @@
     "commanders": [
       "Eugène de Beauharnais",
       "Albert Gyulai"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "239",
@@ -4901,7 +4967,8 @@
       "Johann Kollowrat",
       "Jean Bernadotte",
       "Dominique Vandamme"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "244",
@@ -4936,7 +5003,8 @@
     "commanders": [
       "Paul Grenier",
       "Franz Jellacic"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "246",
@@ -5001,7 +5069,10 @@
       "Auguste Marmont",
       "Jean Broussier"
     ],
-    "special": "arc"
+    "special": [
+      "arc",
+      "5"
+    ]
   },
   {
     "id": "249",
@@ -5035,7 +5106,8 @@
     "commanders": [
       "Johann von Klenau",
       "Claude Legrand"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "251",
@@ -5113,7 +5185,8 @@
       "Jean-Andoche Junot",
       "Jérôme Bonaparte",
       "Johann von Thielmann"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "256",
@@ -5146,7 +5219,8 @@
     "commanders": [
       "Johann von Klenau",
       "André Masséna"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "258",
@@ -5165,6 +5239,10 @@
     "commanders": [
       "Peter Wittgenstein",
       "Eugène de Beauharnais"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5184,6 +5262,10 @@
     "commanders": [
       "Peter Wittgenstein",
       "Eugène de Beauharnais"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5203,6 +5285,10 @@
     "commanders": [
       "Friedrich Wilhelm von Bülow",
       "Nicolas Oudinot"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5226,7 +5312,11 @@
       "Alexande I",
       "Gebhard von Blücher"
     ],
-    "special": "arc"
+    "special": [
+      "6",
+      "German Campaign",
+      "arc"
+    ]
   },
   {
     "id": "262",
@@ -5246,7 +5336,11 @@
       "Napoleon",
       "Karl Philipp von Wrede"
     ],
-    "special": "arc"
+    "special": [
+      "6",
+      "German Campaign",
+      "arc"
+    ]
   },
   {
     "id": "263",
@@ -5266,6 +5360,10 @@
     "commanders": [
       "Gebhard von Blücher",
       "Nicolas Joseph Maison"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5329,6 +5427,10 @@
       "Jacques MacDonald",
       "Jacques Lauriston",
       "François Bastien Sébastiani"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5349,7 +5451,10 @@
       "Napoleon",
       "Karl von Schwarzenberg"
     ],
-    "special": "arc"
+    "special": [
+      "6",
+      "German Campaign"
+    ]
   },
   {
     "id": "269",
@@ -5370,6 +5475,10 @@
       "Jean-Baptiste Girard",
       "Alexander Chernyshyov",
       "Karl Friedrich von Hirschfeld"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5406,6 +5515,10 @@
       "Mikhail Barclay de Tolly",
       "Hieronymus von Colloredo-Mansfeld",
       "Friedrich von Kleist"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5455,6 +5568,10 @@
       "Charles John of Sweden",
       "Friedrich Wilhelm von Bülow",
       "Bogislav von Tauentzien"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5475,6 +5592,10 @@
       "Gebhard von Blücher",
       "Ludwig von Yorck",
       "Henri Gatien Bertrand"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -5504,7 +5625,8 @@
     "longitude": 12.598,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sacile.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sacile",
-    "createDate": "2025-03-22T10:00:00Z"
+    "createDate": "2025-03-22T10:00:00Z",
+    "special": "5"
   },
   {
     "id": "278",
@@ -5996,6 +6118,10 @@
       "Gebhard von Blücher",
       "Zakhar Olsufiev",
       "Fabian Osten-Sacken"
+    ],
+    "special": [
+      "6",
+      "Campaign of France"
     ]
   },
   {
@@ -6044,7 +6170,11 @@
       "Napoleon",
       "Dagobert-Sigismond von Wurmser"
     ],
-    "special": "arc"
+    "special": [
+      "1",
+      "arc",
+      "Italian Campaign"
+    ]
   },
   {
     "id": "308",
@@ -6080,7 +6210,8 @@
       "Bogislav Friedrich Emanuel von Tauentzien",
       "Leopold Wilhelm von Dobschütz",
       "Friedrich Wilhelm Bülow von Dennewitz"
-    ]
+    ],
+    "special": "6"
   },
   {
     "id": "310",
@@ -6100,7 +6231,8 @@
     "commanders": [
       "Nicolas Oudinot",
       "Friedrich Wilhelm Bülow von Dennewitz"
-    ]
+    ],
+    "special": "6"
   },
   {
     "id": "311",
@@ -6116,7 +6248,10 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mondovi.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mondov%C3%AC",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
+    "special": [
+      "arc",
+      "1"
+    ],
     "commanders": [
       "Napoleon",
       "Kingdom of Sardinia Michelangelo Colli-Marchi"
@@ -6136,7 +6271,10 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dego.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Dego",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
+    "special": [
+      "arc",
+      "1"
+    ],
     "commanders": [
       "Napoleon",
       "Eugène Argenteau"
@@ -6156,7 +6294,10 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Halle_1806.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "arc",
+    "special": [
+      "arc",
+      "4"
+    ],
     "commanders": [
       "Jean-Baptiste Bernadotte",
       "Eugene Frederick Henry, Duke of Württemberg"
@@ -6180,6 +6321,10 @@
     "commanders": [
       "Donatien de Rochambeau",
       "Friedrich Wilhelm v. Bülow"
+    ],
+    "special": [
+      "6",
+      "German Campaign"
     ]
   },
   {
@@ -6216,7 +6361,8 @@
       "Dominique Vandamme",
       "Friedrich Wilhelm v. Bülow",
       "Johann Adolf von Thielmann"
-    ]
+    ],
+    "special": "Waterloo Campaign"
   },
   {
     "id": "317",
@@ -6290,7 +6436,8 @@
     "commanders": [
       "William Ponsonby",
       "Lord Somerset"
-    ]
+    ],
+    "special": "Waterloo Campaign"
   },
   {
     "id": "322",
@@ -6306,9 +6453,8 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Genappe2.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Genappe",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Marshal Lobau"
-    ]
+    "commanders": "Marshal Lobau",
+    "special": "Waterloo Campaign"
   },
   {
     "id": "323",
@@ -6324,9 +6470,8 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Namur.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Namur",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Colonel Zastrow"
-    ]
+    "commanders": "Colonel Zastrow",
+    "special": "Waterloo Campaign"
   },
   {
     "id": "324",
@@ -6346,7 +6491,8 @@
       "Henri-Pierre Delaage",
       "Auguste de La Rochejaquelein",
       "Simon Canuel"
-    ]
+    ],
+    "special": "War in the Vendée"
   },
   {
     "id": "325",
@@ -6366,7 +6512,8 @@
       "Henri-Pierre Delaage",
       "Auguste de La Rochejaquelein",
       "Simon Canuel"
-    ]
+    ],
+    "special": "100 Days"
   },
   {
     "id": "326",
@@ -8586,9 +8733,9 @@
       "Karl Sebottendorf"
     ],
     "special": [
-      "1",
-      "Italian campaign",
-      "arc"
+      "arc",
+      "Italian Campaign",
+      "1"
     ]
   },
   {
@@ -10327,5 +10474,54 @@
     "latitude": 44.895000,
     "longitude": 8.669946,
     "createDate": "2026-07-01"
+  },
+  {
+    "id": "552",
+    "name": "Birthplace of Marshall Jourdan",
+    "category": "Museum",
+    "significance": "Medium",
+    "location": "Limoges",
+    "country": "France",
+    "description": "The house where he was born, April 29th 1762, and spent his childhood is preserved in the town.",
+    "latitude": 45.829771,
+    "longitude": 1.268482,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jourdan_Birthplace.webp",
+    "site_link": "https://www.annuaire-tourisme-france.fr/tourisme-activite/3437/maison-natale-du-marechal-jourdan"
+  },
+  {
+    "id": "553",
+    "name": "Birthplace of Marshall Victor",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Lamarche",
+    "country": "France",
+    "description": "Claude Victor Perrin was born at this house on December 7th 1764 in Lamarche. The street got the name in his honour, Duc de Bellune.",
+    "latitude": 48.069616,
+    "longitude": 5.780157,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Victor_Birthplace.webp"
+  },
+  {
+    "id": "554",
+    "name": "Birthplace of Marshall Saint-Cyr",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Toul",
+    "country": "France",
+    "description": "Historical records note that he was born in a house on Rue de l’Ingressin, near a small stream of the same name. His father was a butcher. Old maps show the Rue de l'Ingressin adjacent to Rue de la Boucherie.",
+    "latitude": 48.677844,
+    "longitude": 5.889728,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cyr_Birthplace.webp"
+  },
+  {
+    "id": "555",
+    "name": "Birthplace of Marshall Oudinot",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Bar-le-Duc",
+    "country": "France",
+    "description": "Nicolas Charles Oudinot was born in this house on April 25th 1767, Rue de la Couronne, at the intersection with Rue Saint-Antoine, in the lower town (Ville Basse) of Bar-le-Duc.",
+    "latitude": 48.771594,
+    "longitude": 5.159549,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Oudinot_Birthplace.webp"
   }
 ]

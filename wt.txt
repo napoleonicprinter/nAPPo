@@ -1,0 +1,1002 @@
+Cet article présente la liste des noms des 158 '''batailles gravées sur l'[[arc de triomphe de l'Étoile]]''' à [[Paris]], qui ont été menées par la [[Première République (France)|Première République]] et le [[Premier Empire]]<ref>[https://web.archive.org/web/20050306125604/http://www.parisrama.com/thematiques/thematique_arcdetriomphe.htm Noms des grandes batailles de la République et de l'Empire sur l'Arc de Triomphe].</ref> entre 1792 et 1815 :
+
+* Sur les faces intérieures des grandes [[Arcade (architecture)|arcades]] sont gravés les noms de 96 batailles (24 sur chacun des quatre piliers).
+* Sur les faces intérieures des petites arcades sont gravés les noms de 32 batailles (8 sur chacun des quatre piliers). Elles sont regroupées en deux paires de quatre noms, réparties sur deux colonnes de part et d'autre des tableaux des personnalités.
+* Sur les boucliers de l'[[Attique (architecture)|attique]] sont regroupés les noms des 30 plus grandes batailles (11 sur chacun des deux grands côtés et 4 sur chacun des deux petits).
+
+Par ailleurs, certaines de ces batailles ont été représentées en [[bas-relief]] sur les faces intérieures et extérieures du monument :
+
+* Sur les faces intérieures des petites arcades, quatre bas-reliefs indiquent les noms de 16 batailles (6 sur le bas-relief du pilier nord, 4 sur les bas-reliefs des piliers est et sud, 2 sur le bas-relief du pilier ouest).
+* Sur les quatre faces extérieures, cinq batailles sont représentées en bas-relief (2 face à l'[[avenue de la Grande-Armée]], 1 face à chacune des autres avenues).
+
+Voir aussi la liste des [[noms gravés sur l'arc de triomphe de l'Étoile]].
+
+<gallery class="center" widths="160px" heights="160px">
+Fichier:Arc Triomphe Paris 5.jpg|<div style="text-align:center;">'''[[#Grandes arcades|Grandes arcades]]''' <br> 96 batailles.</div>
+Fichier:Inscriptions on the Arc de Triomphe de l'Étoile (30275860126).jpg|<div style="text-align:center;">'''[[#Petites arcades|Petites arcades]]''' <br> 32 batailles.</div>
+Fichier:Noms bataille Arc Triomphe Paris 3.jpg|<div style="text-align:center;">'''[[#Boucliers de l'attique|Boucliers de l'attique]]''' <br> 30 batailles.</div>
+Fichier:Arc de Triomphe mg 6881.jpg|<div style="text-align:center;">'''[[#Bas-reliefs|Bas-reliefs]]''' <br> 16 batailles.</div>
+</gallery>
+
+== Grandes arcades ==
+
+<gallery class="center">
+Fichier:Arc de Triomphe mg 6837.jpg|<div style="text-align:center;">Pilier nord : Siège de {{Nobr|Lille -}} Bataille de Höchstädt.</div>
+Fichier:Inscriptions Arc Triomphe Paris 3.jpg|<div style="text-align:center;">Pilier est : Bataille de {{Nobr|Wertingen -}} Bataille de Bautzen.</div>
+Fichier:Arc de Triomphe 2014-1.JPG|<div style="text-align:center;">Pilier sud : Bataille de {{Nobr|Loano -}} Siège de Gaète.</div>
+Fichier:Paris Arc de Triomphe battles 01a.jpg|<div style="text-align:center;">Pilier ouest : Combat de {{Nobr|Bastan -}} Siège de Valence.</div>
+</gallery>
+
+
+[[Fichier:Batailles gravées sous grandes arcades.jpg|vignette|centré|upright=2|Liste des batailles gravées sous les grandes [[Arcade (architecture)|arcades]] du monument (24 sur chacun des quatre piliers).]]
+
+
+<div style="font-size: 100%; text-align:center">'''Les noms des 96 batailles inscrites sur {{Nobr|les faces}} intérieures {{Nobr|des grandes arcades}}'''</div>
+
+<div class="thumb" style="table-layout:fixed; margin:5px 0px 5px 0px; clear:both; width:100%;">
+<div class="overflowbugx" style="table-layout:fixed; overflow:auto;">
+{|align="center" border="0" cellspacing="0" cellpadding="2" style="border:1px solid #AAAAAA; border-collapse:collapse; font-size: 70%; text-align:center" width="100%"
+|-----
+!style="width: 6%;" |
+!style="width: 19%;" | {{Nobr|Pilier nord}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier est}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier sud}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier ouest}}
+!style="width: 6%;" |
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|
+|[[Siège de Lille (1792)|LILLE]]
+|
+|[[Bataille de Wertingen|WERTINGEN]]
+|
+|[[Bataille de Loano|LOANO]]
+|
+|[[Combat dans la vallée de Bastan|LE BASTAN]]
+|
+|----
+|
+|[[Bataille de Hondschoote|HONDSCHOOTTE]]
+|
+|[[Combat de Günzburg|GUNTZBOURG]]
+|
+|[[Bataille de Millesimo|MILLESIMO]]
+|
+|[[Bataille du Boulou (1794)|LE BOULOU]]
+|
+|----
+|
+|[[Bataille de Wattignies|WATTIGNIES]]
+|
+|[[Bataille d'Elchingen|ELCHINGEN]]
+|
+|[[Bataille de Dego (1796)|DEGO]]
+|
+|[[Bataille de Burgos (1808)|BURGOS]]
+|
+|----
+|
+|[[Bataille d'Arlon (1793)|ARLON]]
+|
+|[[Bataille de Dürenstein|DIERNSTEIN]]
+|
+|[[Bataille de Mondovi|MONDOVI]]
+|
+|[[Bataille d'Espinosa|ESPINOSA]]
+|
+|----
+|
+|[[Bataille de Courtrai (1792)|COURTRAI]]
+|
+|[[Bataille d'Hollabrunn (1805)|HOLLABRUNN]]
+|
+|[[Combat de Rovereto|ROVEREDO]]
+|
+|[[Bataille de Tudela|TUDELA]]
+|
+|----
+|
+|[[Bataille de Tourcoing|TOURCOING]]
+|
+|[[Bataille de Saalfeld|SAALFELD]]
+|
+|[[Bataille de Bassano|BASSANO]]
+|
+|[[Bataille d'Uclès (1809)|UCLEZ]]
+|
+|----
+|
+|[[Bataille de Wissembourg (octobre 1793)|WEISSEMBOURG]]
+|
+|[[Combat de Halle|HALLE]]
+|
+|[[Bataille de Saint-Georges|S{{Exp|T}} GEORGES]]
+|
+|[[Bataille de La Corogne|LA COROGNE]]
+|
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|
+|[[Siège de Maastricht (1794)|MAESTRICHT]]
+|
+|[[Combat de Prentzlow|PRENTZLOW]]
+|
+|[[Siège de Mantoue (1796-1797)|MANTOUE]]
+|
+|[[Siège de Saragosse (1809)|SARAGOSSE]]
+|
+|----
+|
+|[[Bataille d'Aldenhoven (1794)|ALDENHOVEN]]
+|
+|[[Bataille de Lübeck|LUBECK]]
+|
+|[[Bataille de Valvasone|TAGLIAMENTO]]
+|
+|[[Bataille de Valls|VALLS]]
+|
+|----
+|
+|[[Siège de Landau (1793)|LANDAU]]
+|
+|[[Bataille de Pultusk (1806)|PULTUSK]]
+|
+|[[Bataille de Sédiman|SEDIMAN]]
+|
+|[[Bataille de Medellín|MEDELLIN]]
+|
+|----
+|
+|[[Bataille de Neuwied|NEUWIED]]
+|
+|[[Bataille d'Eylau|EYLAU]]
+|
+|[[Bataille du Mont-Thabor|{{Nobr|MONT THABOR}}]]
+|
+|[[Bataille de Maria-Belchite|{{Nobr|MARIA-BELCHITE}}]]
+|
+|----
+|
+|[[Bataille de Rastadt|RASTADT]]
+|
+|[[Bataille d'Ostrolenka (1807)|OSTROLENKA]]
+|
+|[[Bataille de Chebreisse|CHEBREISSE]]
+|
+|[[Bataille d'Almonacid|ALMONACID]]
+|
+|----
+|
+|{{Lien|langue=en|trad=Battle of Ettlingen|fr=Bataille d'Ettlingen|texte=ETLINGEN}}
+|
+|[[Siège de Dantzig (1807)|DANTZIG]]
+|
+|[[Bataille de Bassignana (1799)|BASSIGNANO]]
+|
+|[[Bataille d'Ocaña|OCANA]]
+|
+|----
+|
+|[[Bataille de Neresheim|NERESHEIM]]
+|
+|[[Bataille d'Heilsberg|HEILSBERG]]
+|
+|[[Bataille de Marengo|{{Nobr|SAN GIULIANO}}]]
+|
+|[[Bataille d'Alba de Tormes (1809)|{{Nobr|ALBA DE TORMÈS}}]]
+|
+|----
+|
+|[[Combat de Bamberg|BAMBERG]]
+|
+|[[Bataille de Landshut (1809)|LANDSHUT]]
+|
+|[[Deuxième bataille de Zurich|DIETIKON]]
+|
+|[[Bataille de Vich|VIQUE]]
+|
+|----
+|
+|[[Combat d'Amberg|AMBERG]]
+|
+|[[Bataille d'Eckmühl|ECKMULH]]
+|
+|[[Bataille de Mutta Thal|{{Nobr|MUTTA THAL}}]]
+|
+|[[Prise de Lérida|LERIDA]]
+|
+|----
+|
+|[[Combat de Friedberg|FRIEDBERG]]
+|
+|[[Bataille de Ratisbonne|RATISBONNE]]
+|
+|[[Siège de Gênes (1800)|GENES]]
+|
+|[[Siège de Ciudad Rodrigo (1810)|{{Nobr|CIUDAD-RODRIGO}}]]
+|
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|
+|[[Bataille de Biberach (1796)|BIBERACH]]
+|
+|[[Bataille de Raab|RAAB]]
+|
+|[[Campagne du Var|LE VAR]]
+|
+|[[Siège d'Almeida (1810)|ALMEIDA]]
+|
+|----
+|
+|[[Bataille d'Altenkirchen|ALTENKIRCHEN]]
+|
+|[[Bataille de Moguilev|MOHILEW]]
+|
+|[[Bataille de Montebello (1800)|MONTEBELLO]]
+|
+|[[Siège de Tortose (1810-1811)|TORTOSE]]
+|
+|----
+|
+|[[Bataille de Schliengen|SCHLIENGEN]]
+|
+|[[Bataille de Smolensk (1812)|SMOLENSKO]]
+|
+|[[Bataille de Pozzolo (1800)|LE MINCIO]]
+|
+|[[Bataille de Gebora|GEBORA]]
+|
+|----
+|
+|[[Siège de Kehl (1796-1797)|KEHL]]
+|
+|[[Bataille de Valoutina Gora|VALONTINA]]
+|
+|[[Bataille de Caldiero (1805)|CALDIERO]]
+|
+|[[Premier siège de Badajoz (1811)|BADAJOZ]]
+|
+|----
+|
+|[[Bataille d'Engen|ENGEN]]
+|
+|[[Première bataille de Polotsk|POLOTZK]]
+|
+|[[Bataille du Panaro|{{Nobr|CASTEL FRANCO}}]]
+|
+|[[Siège de Tarragone (1811)|TARRAGONE]]
+|
+|----
+|
+|[[Bataille de Moesskirch|MOESKIRCH]]
+|
+|[[Bataille de Krasnoï|KRASNOÉ]]
+|
+|[[Siège de Raguse (1806)|RAGUSE]]
+|
+|[[Bataille de Sagonte|SAGONTE]]
+|
+|----
+|
+|[[Bataille de Höchstädt (1800)|HOCHSTETT]]
+|
+|[[Bataille de Bautzen (1813)|WURSCHEN]]
+|
+|[[Siège de Gaète (1806)|GAETE]]
+|
+|[[Siège de Valence (1811-1812)|VALENCE]]
+|
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|}</div></div>
+
+== Petites arcades ==
+
+<gallery class="center">
+Fichier:Ternes, 75017 Paris, France - panoramio.jpg|<div style="text-align:center;">Pilier nord : Bataille de {{Nobr|Diersheim -}} Défense de Berg-op-Zoom.</div>
+Fichier:Arc de Triomphe 2014-8.JPG|<div style="text-align:center;">Pilier est : Siège de {{Nobr|Jaffa -}} Bataille de Champaubert.</div>
+Fichier:Arc de Triomphe 2014-3.JPG|<div style="text-align:center;">Pilier sud : Bataille de {{Nobr|Vérone -}} Siège de Mequinenza.</div>
+Fichier:Jean-Antoine Marbot Arc de Triomphe.png|<div style="text-align:center;">Pilier ouest : Siège de {{Nobr|Roses -}} Bataille de Fuentes de Oñoro.</div>
+</gallery>
+
+
+[[Fichier:Grand Port-Arc de Triomphe mg 6825.jpg|vignette|centré|upright=2|Les batailles de Diersheim, de Düsseldorf, du Grand Port et de Maloïaroslavets gravées sous l'une des petites [[Arcade (architecture)|arcades]] du monument (face intérieure du pilier nord, colonne gauche).]]
+
+
+<div style="font-size: 100%; text-align:center">'''Les noms des 32 batailles inscrites sur {{Nobr|les faces}} intérieures {{Nobr|des petites arcades}}'''</div>
+
+<div class="thumb" style="table-layout:fixed; margin:5px 0px 5px 0px; clear:both; width:100%;">
+<div class="overflowbugx" style="table-layout:fixed; overflow:auto;">
+{|align="center" border="0" cellspacing="0" cellpadding="2" style="border:1px solid #AAAAAA; border-collapse:collapse; font-size: 70%; text-align:center" width="100%"
+|-----
+!style="width: 6%;" |
+!style="width: 19%;" | {{Nobr|Pilier nord}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier est}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier sud}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier ouest}}
+!style="width: 6%;" |
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|
+|{{Nobr|{{Smallm|Colonne gauche}}}}
+|
+|{{Nobr|{{Smallm|Colonne gauche}}}}
+|
+|{{Nobr|{{Smallm|Colonne gauche}}}}
+|
+|{{Nobr|{{Smallm|Colonne gauche}}}}
+|
+|----
+|
+|[[Bataille de Diersheim|DIERSHEIM]]
+|
+|[[Siège de Jaffa|JAFFA]]
+|
+|[[Bataille de Vérone (1799)|ADIGE]]
+|
+|[[Siège de Roses (1808)|ROSES]]
+|
+|----
+|
+|[[Prise de Düsseldorf|DUSSELDORF]]
+|
+|[[Bataille de Peschiera|PESCHIERA]]
+|
+|[[Bataille de la Sierra Negra|{{Nobr|MONTAGNE NOIRE}}]]
+|
+|[[Siège d'Astorga|ASTORGA]]
+|
+|----
+|
+|[[Bataille de Grand Port|{{Nobr|GRAND PORT}}]]
+|
+|[[Révolte du Caire|CAIRE]]
+|
+|[[Bataille de Pozzolo (1800)|POZZOLO]]
+|
+|[[Siège de Gérone (1809)|GIRONE]]
+|
+|----
+|
+|[[Bataille de Maloïaroslavets|M.JAROSLAWIETZ]]
+|
+|[[Prise de Capri|CAPRÉE]]
+|
+|[[Bataille du Piave (1809)|LA PIAVE]]
+|
+|[[Siège d'Olivença|OLIVENZA]]
+|
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|
+|{{Nobr|{{Smallm|Colonne droite}}}}
+|
+|{{Nobr|{{Smallm|Colonne droite}}}}
+|
+|{{Nobr|{{Smallm|Colonne droite}}}}
+|
+|{{Nobr|{{Smallm|Colonne droite}}}}
+|----
+|
+|{{Lien|langue=en|trad=Siege of Ypres (1794)|fr=Siège d'Ypres (1794)|texte=YPRES}}
+|
+|[[Combat de Gratz|GRATZ]]
+|
+|[[Armée de Naples|NAPLES]]
+|
+|[[Bataille de Toulouse (1814)|TOULOUSE]]
+|
+|----
+|
+|[[Siège de Luxembourg (1794-1795)|LUXEMBOURG]]
+|
+|[[bataille de Sprimont|{{Nobr|C. {{Smallm|DE}} SPRIMONT}}]]
+|
+|[[Pont de Plaisance|PLAISANCE]]
+|
+|[[Bataille de Medina de Rioseco|{{Nobr|M. {{Smallm|DEL}} RIOSECO}}]]
+|
+|----
+|
+|[[Prise de Breslau|BRESLAW]]
+|
+|[[Bataille de Wissembourg (décembre 1793)|GEISBERG]]
+|
+|[[Campagne de Napoléon Ier en Espagne#Marche sur Madrid|MADRID]]
+|
+|[[Première bataille de Porto|OPORTO]]
+|
+|----
+|
+|[[Défense de Berg-op-Zoom (1814)|{{Nobr|BERG-OP-ZOOM}}]]
+|
+|[[Bataille de Champaubert|CHAMPAUBERT]]
+|
+|[[Siège de Mequinenza|MEQUINENZA]]
+|
+|[[Bataille de Fuentes de Oñoro|{{Nobr|FUENTE {{Smallm|D'}}OŨORO}}]]
+|
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|}</div></div>
+
+== Boucliers de l'attique ==
+
+<gallery class="center">
+Fichier:Attic of the Arc de Triomphe – Southern façade.png|<div style="text-align:center;">Avenue des Champs-Élysées : Bataille de {{Nobr|Valmy -}} Bataille d'Alkmaer.</div>
+Fichier:Attic of the Arc de Triomphe – Western façade.png|<div style="text-align:center;">Avenue de Wagram : Bataille de {{Nobr|Zurich -}} Bataille de Hohenlinden.</div>
+Fichier:Attic of the Arc de Triomphe – Northern façade.png|<div style="text-align:center;">Avenue de la Grande-Armée : Bataille {{Nobr|d'Ulm -}} Bataille de Dresde.</div>
+Fichier:Attic of the Arc de Triomphe – Eastern façade.png|<div style="text-align:center;">Avenue Kléber : Bataille de {{Nobr|Hanau -}} Bataille de Ligny.</div>
+</gallery>
+
+
+[[Fichier:Batailles gravées sur atique ADT.jpg|vignette|centré|upright=2|Liste des batailles gravées par ordre chronologique sur les boucliers de l'[[attique (architecture)|attique]] du monument (11 sur chacun des deux grands côtés et 4 sur chacun des deux petits).]]
+
+
+<div style="font-size: 100%; text-align:center">'''Les noms des 30 batailles inscrites sur {{Nobr|les boucliers}} {{Nobr|de l'attique}}'''</div>
+
+<div class="thumb" style="table-layout:fixed; margin:5px 0px 5px 0px; clear:both; width:100%;">
+<div class="overflowbugx" style="table-layout:fixed; overflow:auto;">
+{|align="center" border="0" cellspacing="0" cellpadding="2" style="border:1px solid #AAAAAA; border-collapse:collapse; font-size: 70%; text-align:center" width="100%"
+|-----
+!style="width: 8%;" |
+!style="width: 84%;" | {{Nobr|Avenue des Champs-Élysées}}
+!style="width: 8%;" |
+|----
+|
+|[[Bataille de Valmy|VALMY]]&nbsp;・ [[Bataille de Jemappes|JEMMAPES]]&nbsp;・ [[Bataille de Fleurus (1794)|FLEURUS]]&nbsp;・ [[Bataille de Montenotte|MONTENOTTE]]&nbsp;・ [[Bataille du pont de Lodi|LODI]]&nbsp;・ [[Bataille de Castiglione (1706)|CASTIGLIONE]]&nbsp;・ [[Bataille du pont d'Arcole|ARCOLE]]&nbsp;・ [[Bataille de Rivoli (1797)|RIVOLI]]&nbsp;・ [[Bataille des Pyramides|{{Nobr|{{Smallm|LES}} PYRAMIDES}}]]&nbsp;・ [[Bataille d'Aboukir (1799)|ABOUKIR]]&nbsp;・ [[Bataille d'Alkmaar|ALKMAER]]
+|
+|----
+|
+|•
+|
+|----
+|
+!{{Nobr|Avenue de Wagram}}
+|
+|----
+|
+|[[Deuxième bataille de Zurich|ZURICH]]&nbsp;・ [[Bataille d'Héliopolis (1800)|HELIOPOLIS]]&nbsp;・ [[Bataille de Marengo|MARENGO]]&nbsp;・ [[Bataille de Hohenlinden|HOHENLINDEN]]
+|
+|----
+|
+|•
+|
+|----
+|
+!{{Nobr|Avenue de la Grande-Armée}}
+|
+|----
+|
+|[[Bataille d'Ulm|ULM]]&nbsp;・ [[Bataille d'Austerlitz|AUSTERLITZ]]&nbsp;・ [[Bataille d'Iéna|IENA]]&nbsp;・ [[Bataille de Friedland|FRIEDLAND]]&nbsp;・ [[Bataille de Somosierra (1808)|{{Nobr|{{Smallm|SOMO}} SIERRA}}]]&nbsp;・ [[Bataille d'Essling|ESLING]]&nbsp;・ [[Bataille de Wagram|WAGRAM]]&nbsp;・ [[Bataille de la Moskova|MOSKOWA]]&nbsp;・ [[Bataille de Lützen (1813)|LUTZEN]]&nbsp;・ [[Bataille de Bautzen (1813)|BAUTZEN]]&nbsp;・ [[Bataille de Dresde|DRESDE]]
+|
+|----
+|
+|•
+|
+|----
+|
+!{{Nobr|Avenue Kléber}}
+|
+|----
+|
+|[[Bataille de Hanau|HANAU]]&nbsp;・ [[Bataille de Montmirail|MONTMIRAIL]]&nbsp;・ [[Bataille de Montereau|MONTEREAU]]&nbsp;・ [[Bataille de Ligny|LIGNY]]
+|
+|----
+|
+|•
+|
+|----
+|}</div></div>
+
+== Bas-reliefs ==
+
+=== Bas-reliefs intérieurs ===
+
+<gallery class="center">
+Fichier:Attributs des victoires du Nord.png|<div style="text-align:center;">Pilier nord : Bataille {{Nobr|d'Austerlitz -}} Bataille d'Eylau.</div>
+Fichier:Attributs des victoires de l'Est.png|<div style="text-align:center;">Pilier est : Prise {{Nobr|d'Alexandrie -}} Bataille d'Héliopolis.</div>
+Fichier:Attributs des victoires du Sud.png|<div style="text-align:center;">Pilier sud : Bataille de {{Nobr|Marengo -}} Bataille du pont de Lodi.</div>
+Fichier:Attributs des victoires de l'Ouest.png|<div style="text-align:center;">Pilier ouest : Bataille de {{Nobr|Jemappes -}} Bataille de Fleurus.</div>
+</gallery>
+
+
+[[Fichier:Arc de Triomphe mg 6881.jpg|vignette|centré|upright=2|[[Tablette à écrire|Tablette]] indiquant les noms des batailles d'Alexandrie, des Pyramides, d'Aboukir et d'Héliopolis, sculptée dans le [[bas-relief]] représentant les Attributs des victoires de l'Est (face intérieure du pilier est).]]
+
+
+<div style="font-size: 100%; text-align:center">'''Les noms des 16 batailles inscrites sur {{Nobr|les tablettes}} des {{Nobr|bas-reliefs intérieurs}}'''</div>
+
+<div class="thumb" style="table-layout:fixed; margin:5px 0px 5px 0px; clear:both; width:100%;">
+<div class="overflowbugx" style="table-layout:fixed; overflow:auto;">
+{|align="center" border="0" cellspacing="0" cellpadding="2" style="border:1px solid #AAAAAA; border-collapse:collapse; font-size: 70%; text-align:center" width="100%"
+|-----
+!style="width: 6%;" |
+!style="width: 19%;" | {{Nobr|Pilier nord}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier est}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier sud}}
+!style="width: 4%;" |
+!style="width: 19%;" | {{Nobr|Pilier ouest}}
+!style="width: 6%;" |
+|----
+|
+|•
+|
+|•
+|
+|•
+|
+|•
+|
+|----
+|
+|[[Bataille d'Austerlitz|AUSTERLITZ]]
+|
+|[[Prise d'Alexandrie|ALEXANDRIE]]
+|
+|[[Bataille de Marengo|MARENGO]]
+|
+|[[Bataille de Jemappes|JEMMAPES]]
+|
+|----
+|
+|[[Bataille d'Iéna|IENA]]
+|
+|[[Bataille des Pyramides|PYRAMIDES]]
+|
+|[[Bataille de Rivoli (1797)|RIVOLI]]
+|
+|[[Bataille de Fleurus (1794)|FLEURUS]]
+|
+|----
+|
+|[[Bataille de Friedland|FRIEDLAND]]
+|
+|[[Bataille d'Aboukir (1799)|ABOUKIR]]
+|
+|[[Bataille du pont d'Arcole|ARCOLE]]
+|
+|•
+|
+|----
+|
+|[[Bataille d'Ulm|ULM]]
+|
+|[[Bataille d'Héliopolis (1800)|HELIOPOLIS]]
+|
+|[[Bataille du pont de Lodi|LODI]]
+|
+|
+|
+|----
+|
+|[[Bataille de Wagram|WAGRAM]]
+|
+|•
+|
+|•
+|
+|
+|
+|----
+|
+|[[Bataille d'Eylau|EYLAU]]
+|
+|
+|
+|
+|
+|
+|
+|----
+|
+|•
+|
+|
+|
+|
+|
+|
+|
+|----
+|}</div></div>
+
+=== Bas-reliefs extérieurs ===
+
+<gallery class="center">
+Fichier:Paris Arc de Triomphe Bataille d'Aboukir.jpg|<div style="text-align:center;">Avenue des Champs-Élysées (gauche) : Bataille d'Aboukir.</div>
+Fichier:Paris Arc de Triomphe Mort de Marceau 2.jpg|<div style="text-align:center;">Avenue des Champs-Élysées (droite) : Funérailles du général Marceau.</div>
+Fichier:Paris Arc de Triomphe prise d'Alexandrie.jpg|<div style="text-align:center;">Avenue de la Grande-Armée (gauche) : Prise d'Alexandrie.</div>
+Fichier:Paris Arc de Triomphe passage du pont d'Arcole.jpg|<div style="text-align:center;">Avenue de la Grande-Armée (droite) : Bataille du pont d’Arcole.</div>
+</gallery>
+
+<gallery class="center">
+Fichier:Paris Arc de Triomphe Bataille d'Austerlitz.jpg|<div style="text-align:center;">Avenue de Wagram : Bataille d'Austerlitz.</div>
+Fichier:Paris Arc de Triomphe Bataille de Jemmappes.jpg|<div style="text-align:center;">Avenue Kléber : Bataille de Jemappes.</div>
+</gallery>
+
+
+[[Fichier:Outer Low Reliefs of the Arc de Triomphe – Southern façade.png|vignette|centré|upright=2|[[Bas-relief]]s extérieurs, représentant la bataille d'Aboukir (à gauche) et les funérailles du général Marceau (à droite), sur la face sud du monument (avenue des Champs-Élysées).]]
+
+
+<div style="font-size: 100%; text-align:center">'''Les noms des 5 batailles représentées en {{Nobr|bas-relief}} sur {{Nobr|les faces extérieures}}'''</div>
+
+<div class="thumb" style="table-layout:fixed; margin:5px 0px 5px 0px; clear:both; width:100%;">
+<div class="overflowbugx" style="table-layout:fixed; overflow:auto;">
+{|align="center" border="0" cellspacing="0" cellpadding="2" style="border:1px solid #AAAAAA; border-collapse:collapse; font-size: 70%; text-align:center" width="100%"
+|-----
+!style="width: 8%;" |
+|style="width: 33%;" | {{Nobr|{{Smallm|Bas-relief gauche}}}}
+!style="width: 18%;" | {{Nobr|Avenue des Champs-Élysées}}
+|style="width: 33%;" | {{Nobr|{{Smallm|Bas-relief droit}}}}
+!style="width: 8%;" |
+|----
+|
+|[[Bataille d'Aboukir (1799)|ABOUKIR]]
+|
+|[[François Séverin Marceau|MARCEAU]]{{Note|groupe=alpha|Le bas-relief droit (face à l'avenue des Champs-Élysées) ne représente pas une bataille, mais les funérailles du général [[François Séverin Marceau]] à Altenkirchen, le {{Date-|21 septembre 1796}}.}}
+|
+|----
+|
+|
+|•
+|
+|
+|----
+|
+|
+!{{Nobr|Avenue de Wagram}}
+!
+!
+|----
+|
+|
+|[[Bataille d'Austerlitz|AUSTERLITZ]]
+|
+|
+|----
+|
+|
+|•
+|
+|
+|----
+!
+|{{Nobr|{{Smallm|Bas-relief gauche}}}}
+!{{Nobr|Avenue de la Grande-Armée}}
+|{{Nobr|{{Smallm|Bas-relief droit}}}}
+!
+|----
+|
+|[[Prise d'Alexandrie|ALEXANDRIE]]
+|
+|[[Bataille du pont d'Arcole|ARCOLE]]
+|
+|----
+|
+|
+|•
+|
+|
+|----
+!
+!
+!{{Nobr|Avenue Kléber}}
+!
+!
+|----
+|
+|
+|[[Bataille de Jemappes|JEMMAPES]]
+|
+|
+|----
+|
+|
+|•
+|
+|
+|----
+|}</div></div>
+
+== Liste alphabétique ==
+{{Sommaire alphabétique}}
+
+=== A ===
+* [[Bataille d'Aboukir (1799)|{{Smaller|ABOUKIR}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier est), Bas-relief (avenue des Champs-Élysées).
+* [[Bataille de Vérone (1799)|{{Smaller|ADIGE}}]] : Petites arcades (pilier sud).
+* [[Bataille d'Alba de Tormes (1809)|{{Smaller|ALBA DE TORMÈS}}]] : Grandes arcades (pilier ouest).
+* [[Bataille d'Aldenhoven (1794)|{{Smaller|ALDENHOVEN}}]] : Grandes arcades (pilier nord).
+* [[Prise d'Alexandrie|{{Smaller|ALEXANDRIE}}]] : Bas-relief (pilier est), Bas-relief (avenue de la Grande-Armée).
+* [[Bataille d'Alkmaar|{{Smaller|ALKMAER}}]] : Attique (avenue des Champs-Élysées).
+* [[Siège d'Almeida (1810)|{{Smaller|ALMEIDA}}]] : Grandes arcades (pilier ouest).
+* [[Bataille d'Almonacid|{{Smaller|ALMONACID}}]] : Grandes arcades (pilier ouest).
+* [[Bataille d'Altenkirchen|{{Smaller|ALTENKIRCHEN}}]] : Grandes arcades (pilier nord).
+* [[Combat d'Amberg|{{Smaller|AMBERG}}]] : Grandes arcades (pilier nord).
+* [[Bataille du pont d'Arcole|{{Smaller|ARCOLE}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier sud), Bas-relief (avenue de la Grande-Armée).
+* [[Bataille d'Arlon (1793)|{{Smaller|ARLON}}]] : Grandes arcades (pilier nord).
+* [[Siège d'Astorga|{{Smaller|ASTORGA}}]] : Petites arcades (pilier ouest).
+* [[Bataille d'Austerlitz|{{Smaller|AUSTERLITZ}}]] : Attique (avenue de la Grande-Armée), Bas-relief (pilier nord), Bas-relief (avenue de Wagram).
+
+=== B ===
+* [[Premier siège de Badajoz (1811)|{{Smaller|BADAJOZ}}]] : Grandes arcades (pilier ouest).
+* [[Combat de Bamberg|{{Smaller|BAMBERG}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Bassano|{{Smaller|BASSANO}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Bassignana (1799)|{{Smaller|BASSIGNANO}}]] : Grandes arcades (pilier sud).
+* [[Combat dans la vallée de Bastan|{{Smaller|LE BASTAN}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Bautzen (1813)|{{Smaller|BAUTZEN}}]] : Attique (avenue de la Grande-Armée).
+* [[Défense de Berg-op-Zoom (1814)|{{Smaller|BERG-OP-ZOOM}}]] : Petites arcades (pilier nord).
+* [[Bataille de Biberach (1796)|{{Smaller|BIBERACH}}]] : Grandes arcades (pilier nord).
+* [[Bataille du Boulou (1794)|{{Smaller|LE BOULOU}}]] : Grandes arcades (pilier ouest).
+* [[Prise de Breslau|{{Smaller|BRESLAW}}]] : Petites arcades (pilier nord).
+* [[Bataille de Burgos (1808)|{{Smaller|BURGOS}}]] : Grandes arcades (pilier ouest).
+
+=== C ===
+* [[Révolte du Caire|{{Smaller|CAIRE}}]] : Petites arcades (pilier est).
+* [[Bataille de Caldiero (1805)|{{Smaller|CALDIERO}}]] : Grandes arcades (pilier sud).
+* [[Prise de Capri|{{Smaller|CAPRÉE}}]] : Petites arcades (pilier est).
+* [[Bataille du Panaro|{{Smaller|CASTEL FRANCO}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Castiglione (1706)|{{Smaller|CASTIGLIONE}}]] : Attique (avenue des Champs-Élysées).
+* [[Bataille de Champaubert|{{Smaller|CHAMPAUBERT}}]] : Petites arcades (pilier est).
+* [[Bataille de Chebreisse|{{Smaller|CHEBREISSE}}]] : Grandes arcades (pilier sud).
+* [[Siège de Ciudad Rodrigo (1810)|{{Smaller|CIUDAD-RODRIGO}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de La Corogne|{{Smaller|LA COROGNE}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Courtrai (1792)|{{Smaller|COURTRAI}}]] : Grandes arcades (pilier nord).
+
+=== D ===
+* [[Siège de Dantzig (1807)|{{Smaller|DANTZIG}}]] : Grandes arcades (pilier est).
+* [[Bataille de Dego (1796)|{{Smaller|DEGO}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Dürenstein|{{Smaller|DIERNSTEIN}}]] : Grandes arcades (pilier est).
+* [[Bataille de Diersheim|{{Smaller|DIERSHEIM}}]] : Petites arcades (pilier nord).
+* [[Deuxième bataille de Zurich|{{Smaller|DIETIKON}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Dresde|{{Smaller|DRESDE}}]] : Attique (avenue de la Grande-Armée).
+* [[Prise de Düsseldorf|{{Smaller|DUSSELDORF}}]] : Petites arcades (pilier nord).
+
+=== E ===
+* [[Bataille d'Eckmühl|{{Smaller|ECKMULH}}]] : Grandes arcades (pilier est).
+* [[Bataille d'Elchingen|{{Smaller|ELCHINGEN}}]] : Grandes arcades (pilier est).
+* [[Bataille d'Engen|{{Smaller|ENGEN}}]] : Grandes arcades (pilier nord).
+* [[Bataille d'Essling|{{Smaller|ESLING}}]] : Attique (avenue de la Grande-Armée).
+* [[Bataille d'Espinosa|{{Smaller|ESPINOSA}}]] : Grandes arcades (pilier ouest).
+* {{Lien|langue=en|trad=Battle of Ettlingen|fr=Bataille d'Etlingen|texte={{Smaller|ETLINGEN}}}} : Grandes arcades (pilier nord).
+* [[Bataille d'Eylau|{{Smaller|EYLAU}}]] : Grandes arcades (pilier est), Bas-relief (pilier nord).
+
+=== F ===
+* [[Bataille de Fleurus (1794)|{{Smaller|FLEURUS}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier ouest).
+* [[Combat de Friedberg|{{Smaller|FRIEDBERG}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Friedland|{{Smaller|FRIEDLAND}}]] : Attique (avenue de la Grande-Armée), Bas-relief (pilier nord).
+* [[Bataille de Fuentes de Oñoro|{{Smaller|FUENTE D'OŨORO}}]] : Petites arcades (pilier ouest).
+
+=== G ===
+* [[Siège de Gaète (1806)|{{Smaller|GAETE}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Gebora|{{Smaller|GEBORA}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Wissembourg (décembre 1793)|{{Smaller|GEISBERG}}]] : Petites arcades (pilier est).
+* [[Siège de Gênes (1800)|{{Smaller|GENES}}]] : Grandes arcades (pilier sud).
+* [[Siège de Gérone (1809)|{{Smaller|GIRONE}}]] : Petites arcades (pilier ouest).
+* [[Bataille de Grand Port|{{Smaller|GRAND PORT}}]] : Petites arcades (pilier nord).
+* [[Combat de Gratz|{{Smaller|GRATZ}}]] : Petites arcades (pilier est).
+* [[Combat de Günzburg|{{Smaller|GUNTZBOURG}}]] : Grandes arcades (pilier est).
+
+=== H ===
+* [[Combat de Halle|{{Smaller|HALLE}}]] : Grandes arcades (pilier est).
+* [[Bataille de Hanau|{{Smaller|HANAU}}]] : Attique (avenue Kléber).
+* [[Bataille d'Heilsberg|{{Smaller|HEILSBERG}}]] : Grandes arcades (pilier est).
+* [[Bataille d'Héliopolis (1800)|{{Smaller|HELIOPOLIS}}]] : Attique (avenue de Wagram), Bas-relief (pilier est).
+* [[Bataille de Höchstädt (1800)|{{Smaller|HOCHSTETT}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Hohenlinden|{{Smaller|HOHENLINDEN}}]] : Attique (avenue de Wagram).
+* [[Bataille d'Hollabrunn (1805)|{{Smaller|HOLLABRUNN}}]] : Grandes arcades (pilier est).
+* [[Bataille de Hondschoote|{{Smaller|HONDSCHOOTTE}}]] : Grandes arcades (pilier nord).
+
+=== I ===
+* [[Bataille d'Iéna|{{Smaller|IENA}}]] : Attique (avenue de la Grande-Armée), Bas-relief (pilier nord).
+
+=== J ===
+* [[Siège de Jaffa|{{Smaller|JAFFA}}]] : Petites arcades (pilier est).
+* [[Bataille de Jemappes|{{Smaller|JEMMAPES}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier ouest), Bas-relief (avenue Kléber).
+
+=== K ===
+* [[Siège de Kehl (1796-1797)|{{Smaller|KEHL}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Krasnoï|{{Smaller|KRASNOÉ}}]] : Grandes arcades (pilier est).
+
+=== L ===
+* [[Siège de Landau (1793)|{{Smaller|LANDAU}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Landshut (1809)|{{Smaller|LANDSHUT}}]] : Grandes arcades (pilier est).
+* [[Prise de Lérida|{{Smaller|LERIDA}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Ligny|{{Smaller|LIGNY}}]] : Attique (avenue Kléber).
+* [[Siège de Lille (1792)|{{Smaller|LILLE}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Loano|{{Smaller|LOANO}}]] : Grandes arcades (pilier sud).
+* [[Bataille du pont de Lodi|{{Smaller|LODI}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier sud).
+* [[Bataille de Lübeck|{{Smaller|LUBECK}}]] : Grandes arcades (pilier est).
+* [[Bataille de Lützen (1813)|{{Smaller|LUTZEN}}]] : Attique (avenue de la Grande-Armée).
+* [[Siège de Luxembourg (1794-1795)|{{Smaller|LUXEMBOURG}}]] : Petites arcades (pilier nord).
+
+=== M ===
+* [[Campagne de Napoléon Ier en Espagne#Marche sur Madrid|{{Smaller|MADRID}}]] : Petites arcades (pilier sud).
+* [[Siège de Maastricht (1794)|{{Smaller|MAESTRICHT}}]] : Grandes arcades (pilier nord).
+* [[Siège de Mantoue (1796-1797)|{{Smaller|MANTOUE}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Marengo|{{Smaller|MARENGO}}]] : Attique (avenue de Wagram), Bas-relief (pilier sud).
+* [[Bataille de Maria-Belchite|{{Smaller|MARIA-BELCHITE}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Medellín|{{Smaller|MEDELLIN}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Medina de Rioseco|{{Smaller|M. DEL RIOSECO}}]] : Petites arcades (pilier ouest).
+* [[Siège de Mequinenza|{{Smaller|MEQUINENZA}}]] : Petites arcades (pilier sud).
+* [[Bataille de Millesimo|{{Smaller|MILLESIMO}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Pozzolo (1800)|{{Smaller|LE MINCIO}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Maloïaroslavets|{{Smaller|M.JAROSLAWIETZ}}]] : Petites arcades (pilier nord).
+* [[Bataille de Moesskirch|{{Smaller|MOESKIRCH}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Moguilev|{{Smaller|MOHILEW}}]] : Grandes arcades (pilier est).
+* [[Bataille de Mondovi|{{Smaller|MONDOVI}}]] : Grandes arcades (pilier sud).
+* [[Bataille de la Sierra Negra|{{Smaller|MONTAGNE NOIRE}}]] : Petites arcades (pilier sud).
+* [[Bataille de Montebello (1800)|{{Smaller|MONTEBELLO}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Montenotte|{{Smaller|MONTENOTTE}}]] : Attique (avenue des Champs-Élysées).
+* [[Bataille de Montereau|{{Smaller|MONTEREAU}}]] : Attique (avenue Kléber).
+* [[Bataille de Montmirail|{{Smaller|MONTMIRAIL}}]] : Attique (avenue Kléber).
+* [[Bataille du Mont-Thabor|{{Smaller|MONT THABOR}}]] : Grandes arcades (pilier sud).
+* [[Bataille de la Moskova|{{Smaller|MOSKOWA}}]] : Attique (avenue de la Grande-Armée).
+* [[Bataille de Mutta Thal|{{Smaller|MUTTA THAL}}]] : Grandes arcades (pilier sud).
+
+=== N ===
+* [[Armée de Naples|{{Smaller|NAPLES}}]] : Petites arcades (pilier sud).
+* [[Bataille de Neresheim|{{Smaller|NERESHEIM}}]] : Grandes arcades (pilier nord).
+* [[bataille de Neuwied|{{Smaller|NEUWIED}}]] : Grandes arcades (pilier nord).
+
+=== O ===
+* [[Bataille d'Ocaña|{{Smaller|OCANA}}]] : Grandes arcades (pilier ouest).
+* [[Siège d'Olivença|{{Smaller|OLIVENZA}}]] : Petites arcades (pilier ouest).
+* [[Première bataille de Porto|{{Smaller|OPORTO}}]] : Petites arcades (pilier ouest).
+* [[Bataille d'Ostrolenka (1807)|{{Smaller|OSTROLENKA}}]] : Grandes arcades (pilier est).
+
+=== P ===
+* [[Bataille de Peschiera|{{Smaller|PESCHIERA}}]] : Petites arcades (pilier est).
+* [[Bataille du Piave (1809)|{{Smaller|LA PIAVE}}]] : Petites arcades (pilier sud).
+* [[Pont de Plaisance|{{Smaller|PLAISANCE}}]] : Petites arcades (pilier sud).
+* [[Première bataille de Polotsk|{{Smaller|POLOTZK}}]] : Grandes arcades (pilier est).
+* [[Bataille de Pozzolo (1800)|{{Smaller|POZZOLO}}]] : Petites arcades (pilier sud).
+* [[Combat de Prentzlow|{{Smaller|PRENTZLOW}}]] : Grandes arcades (pilier est).
+* [[Bataille de Pultusk (1806)|{{Smaller|PULTUSK}}]] : Grandes arcades (pilier est).
+* [[Bataille des Pyramides|{{Smaller|LES PYRAMIDES}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier est).
+
+=== R ===
+* [[Bataille de Raab|{{Smaller|RAAB}}]] : Grandes arcades (pilier est).
+* [[Siège de Raguse (1806)|{{Smaller|RAGUSE}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Rastadt|{{Smaller|RASTADT}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Ratisbonne|{{Smaller|RATISBONNE}}]] : Grandes arcades (pilier est).
+* [[Bataille de Rivoli (1797)|{{Smaller|RIVOLI}}]] : Attique (avenue des Champs-Élysées), Bas-relief (pilier sud).
+* [[Siège de Roses (1808)|{{Smaller|ROSES}}]] : Petites arcades (pilier ouest).
+* [[Combat de Rovereto|{{Smaller|ROVEREDO}}]] : Grandes arcades (pilier sud).
+
+=== S ===
+* [[Bataille de Saalfeld|{{Smaller|SAALFELD}}]] : Grandes arcades (pilier est).
+* [[Bataille de Sagonte|{{Smaller|SAGONTE}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Marengo|{{Smaller|SAN GIULIANO}}]] : Grandes arcades (pilier sud).
+* [[Siège de Saragosse (1809)|{{Smaller|SARRAGOSSE}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Schliengen|{{Smaller|SCHLIENGEN}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Sédiman|{{Smaller|SEDIMAN}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Smolensk (1812)|{{Smaller|SMOLENSKO}}]] : Grandes arcades (pilier est).
+* [[Bataille de Somosierra (1808)|{{Smaller|SOMO SIERRA}}]] : Attique (avenue de la Grande-Armée).
+* [[bataille de Sprimont|{{Smaller|C. DE SPRIMONT}}]] : Petites arcades (pilier est).
+* [[Bataille de Saint-Georges|{{Smaller|S{{Exp|T}} GEORGES}}]] : Grandes arcades (pilier sud).
+
+=== T ===
+* [[Bataille de Valvasone|{{Smaller|TAGLIAMENTO}}]] : Grandes arcades (pilier sud).
+* [[Siège de Tarragone (1811)|{{Smaller|TARRAGONE}}]] : Grandes arcades (pilier ouest).
+* [[Siège de Tortose (1810-1811)|{{Smaller|TORTOSE}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Toulouse (1814)|{{Smaller|TOULOUSE}}]] : Petites arcades (pilier ouest).
+* [[Bataille de Tourcoing|{{Smaller|TOURCOING}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Tudela|{{Smaller|TUDELA}}]] : Grandes arcades (pilier ouest).
+
+=== U ===
+* [[Bataille d'Uclès (1809)|{{Smaller|UCLEZ}}]] : Grandes arcades (pilier ouest).
+* [[Bataille d'Ulm|{{Smaller|ULM}}]] : Attique (avenue de la Grande-Armée), Bas-relief (pilier nord).
+
+=== V ===
+* [[Siège de Valence (1811-1812)|{{Smaller|VALENCE}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Valls|{{Smaller|VALLS}}]] : Grandes arcades (pilier ouest).
+* [[Bataille de Valmy|{{Smaller|VALMY}}]] : Attique (avenue des Champs-Élysées).
+* [[Bataille de Valoutina Gora|{{Smaller|VALONTINA}}]] : Grandes arcades (pilier est).
+* [[Campagne du Var|{{Smaller|LE VAR}}]] : Grandes arcades (pilier sud).
+* [[Bataille de Vich|{{Smaller|VIQUE}}]] : Grandes arcades (pilier ouest).
+
+=== W ===
+* [[Bataille de Wagram|{{Smaller|WAGRAM}}]] : Attique (avenue de la Grande-Armée), Bas-relief (pilier nord).
+* [[Bataille de Wattignies|{{Smaller|WATTIGNIES}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Wissembourg (décembre 1793)|{{Smaller|WEISSEMBOURG}}]] : Grandes arcades (pilier nord).
+* [[Bataille de Wertingen|{{Smaller|WERTINGEN}}]] : Grandes arcades (pilier est).
+* [[Bataille de Bautzen (1813)|{{Smaller|WURSCHEN}}]] : Grandes arcades (pilier est).
+
+=== Y ===
+* {{Lien|langue=en|trad=Siege of Ypres (1794)|fr=Siège d'Ypres (1794)|texte={{Smaller|YPRES}}}} : Petites arcades (pilier nord).
+
+=== Z ===
+* [[Deuxième bataille de Zurich|{{Smaller|ZURICH}}]] : Attique (avenue de Wagram).
+
+== Articles connexes ==
+* [[Noms gravés sur l'arc de triomphe de l'Étoile]]
+* [[Arc de triomphe de l'Étoile]]
+* [[Guerres de la Révolution française]]
+* [[Guerres napoléoniennes]]
+* [[Liste des batailles des guerres de la Révolution et du Premier Empire]]
+
+== Notes et références ==
+
+=== Notes ===
+<references group="alpha" />
+
+=== Références ===
+{{Références}}
+
+{{Autres projets|commons=Category:Battles inscribed on the Arc de Triomphe de l'Étoile}}
+{{Portail|militaire|architecture|Révolution française|Premier Empire|Paris}}
+
+[[Catégorie:Bataille gravée sur l'arc de triomphe de l'Étoile|*]]
+[[Catégorie:Liste de batailles]]
+[[Catégorie:Liste en rapport avec Paris]]
