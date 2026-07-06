@@ -10523,5 +10523,66 @@
     "latitude": 48.771594,
     "longitude": 5.159549,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Oudinot_Birthplace.webp"
+  },
+  {
+    "id": "556",
+    "name": "Jean d'Heurs Castle - Oudinot Mansion",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Lisle-en-Rigault",
+    "country": "France",
+    "description": "18th century castle, was confiscated during the French Revolution and later became the property of the Oudinot family, whose most famous member was Marshal Nicolas Oudinot, Duke of Reggio.",
+    "latitude": 48.771594,
+    "longitude": 5.159549,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Oudinot_Mansion.webp",
+    "site_link": "https://es.aroundus.com/p/7402585-chateau-de-jean-d-heurs"
+  },
+  {
+    "id": "557",
+    "name": "Marshall Oudinot Statue",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Bar-le-Duc",
+    "country": "France",
+    "description": "Bronze statue sculpted by Jean Debay erected in 1850",
+    "latitude": 48.773031,
+    "longitude": 5.159423,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Oudinot_Statue.webp"
+  },
+  {
+    "id": "558",
+    "name": "Marshall Massena family house",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Levens",
+    "country": "France",
+    "description": "Masséna spent much of his childhood in his family's ancestral village in a house built in 1722. The stone building is preserved and features a large commemorative plaque with his bust and coat of arms on the facade.",
+    "latitude": 43.859325,
+    "longitude": 7.22511,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massena_house.webp"
+  },
+  {
+    "id": "559",
+    "name": "Marshall Masséna Statue",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Nice",
+    "country": "France",
+    "description": "Sculpted by Albert-Ernest Carrier-Belleuse and inaugurated in 1869, the monument depicts the Niçois-born Napoleonic commander during the Battle of Essling",
+    "latitude": 43.697952,
+    "longitude": 7.273620,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massena_Statue.webp"
+  },
+  {
+    "id": "560",
+    "name": "Marshall Masséna Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Nice",
+    "country": "France",
+    "description": "He was born in Nice on May 6th 1758, and baptised in the cathedral Sainte-Réparate two days later. He was to spend his early childhood to the east of Nice, near Trinité, where Jules had a shop in the hamlet called La Bourgade, was born in the capital of the county on 6 May 1758, and baptised in the cathedral Sainte-Réparate two days later. He was to spend his early childhood to the east of Nice, near Trinité, where Jules had a shop in the hamlet called La Bourgade (where Place Masséna now stands), which was to disappear in 1764.",
+    "latitude": 43.697618,
+    "longitude": 7.269950,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massena_birth.webp"
   }
 ]
