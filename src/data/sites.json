@@ -10608,5 +10608,53 @@
     "latitude": 44.5059,
     "longitude": 1.188345,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bessieres_birth.webp"
+  },
+  {
+    "id": "563",
+    "name": "Marshal Suchet Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Lyon",
+    "country": "France",
+    "description": "Historians debate his exact physical birthplace between two specific family properties in Lyon. Some accounts claim he was directly born inside this countryside house, others state it was his family's secondary vacation estate where he spent a significant portion of his childhood.",
+    "latitude": 45.797617,
+    "longitude": 4.826719,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suchet_birth_1.webp"
+  },
+  {
+    "id": "564",
+    "name": "Marshal Suchet official Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Lyon",
+    "country": "France",
+    "description": "The birth certificate states he was born on March 2nd 1770, at his family's urban residence located on Rue Pizay in the center of Lyon. ",
+    "latitude": 45.797617,
+    "longitude": 4.826719,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suchet_birth_2.webp"
+  },
+  {
+    "id": "565",
+    "name": "Château de Saint Joseph - Marshal Suchet Mansion",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Marseille",
+    "country": "France",
+    "description": "On November 16, 1808, Louis-Gabriel Suchet married Honorine Anthoine de Saint-Joseph. The château belonged to her father, Antoine-Ignace Anthoine, a wealthy merchant and the Mayor of Marseille. The property became Suchet's seasonal and eventual retirement residence.",
+    "latitude": 43.345334,
+    "longitude": 5.379938,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suchet_Mansion.webp"
+  },
+  {
+    "id": "566",
+    "name": "Marshal Moncey Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Palise",
+    "country": "France",
+    "description": "Moncey was born on 31 July 1754 in Palise (now part of Moncey), a village in the Franche-Comté region of eastern France.",
+    "latitude": 47.371594,
+    "longitude": 6.091334,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moncey_Birthplace.webp"
   }
 ]
