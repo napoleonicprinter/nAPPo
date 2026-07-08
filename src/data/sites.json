@@ -10656,5 +10656,18 @@
     "latitude": 47.371594,
     "longitude": 6.091334,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moncey_Birthplace.webp"
+  },
+  {
+    "id": "567",
+    "name": "LG William Payne Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Sandy Point Town",
+    "country": "St. Kitts and Nevis",
+    "description": "He was born at the island of St Christopher in 1759, most probably at Little Sir Gillies Plantation, his father's operation center for his sugar plantation business.",
+    "latitude": 17.354751,
+    "longitude": -62.840176,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gen_Payne_birth.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sir_William_Payne-Gallwey,_1st_Baronet"
   }
 ]

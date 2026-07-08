@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.nappo.trails.app"
-    compileSdk = rootProject.ext.compileSdkVersion
+    // El namespace debe coincidir con el ID de Google Play Console
+    namespace "com.nappo.trails.app.free"
+    compileSdk rootProject.ext.compileSdkVersion
 
     signingConfigs {
         release {
@@ -14,15 +15,17 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.nappo.trails.app"
+        // ID exacto de tu aplicación en Google Play
+        applicationId "com.nappo.trails.app.free"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "1.4"
+
+        // Sube a 6 para que Google no rechace por versión repetida
+        versionCode 9
+        versionName "1.8"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
-             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
-             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
@@ -31,14 +34,21 @@ android {
     productFlavors {
         free {
             dimension "version"
-            applicationIdSuffix ".free"
+            // Dejamos el sufijo vacío porque ya pusimos el .free en el ID principal arriba
+            applicationIdSuffix ""
             resValue "string", "app_name", "nAPPo Trails Free"
             resValue "bool", "has_battle_maps", "false"
         }
         paid {
             dimension "version"
+            // Si algún día quieres subir la PRO, esta tendrá .paid
+            applicationIdSuffix ".paid"
             resValue "string", "app_name", "nAPPo Trails"
             resValue "bool", "has_battle_maps", "true"
+
+
+
+
         }
     }
 
@@ -46,6 +56,7 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

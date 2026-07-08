@@ -1,4 +1,4 @@
-package com.nappo.trails;
+package com.nappo.trails.app.free;
 
 import com.getcapacitor.BridgeActivity;
 
