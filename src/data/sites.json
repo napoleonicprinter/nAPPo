@@ -10669,5 +10669,17 @@
     "longitude": -62.840176,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gen_Payne_birth.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sir_William_Payne-Gallwey,_1st_Baronet"
+  },
+  {
+    "id": "568",
+    "name": "LG Rowland Hill Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Prees, Shropshire",
+    "country": "England",
+    "description": "He was born at his family house on August 11th 1772. The house served as a major seat and residence for the Hill family across multiple generations. The main structure seen today was constructed out of red brick circa 1720 on a 17th century timber-framed building.",
+    "latitude": 52.897595,
+    "longitude": -2.661297,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hill_birth.webp"
   }
 ]
