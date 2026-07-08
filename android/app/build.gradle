@@ -21,7 +21,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
 
         // Sube a 6 para que Google no rechace por versión repetida
-        versionCode 9
+        versionCode 10
         versionName "1.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

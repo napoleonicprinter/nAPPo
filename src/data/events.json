@@ -2488,5 +2488,45 @@
         "location": "Paris",
         "country": "France",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Constitution_of_the_Year_III"
+    },
+    {
+        "id": "290",
+        "title": "Marshal Bernadotte Elected Crown Prince of Sweden",
+        "description": "On August 24, 1810, the Swedish parliament (Riksdag) formally elected French Marshal Jean-Baptiste Bernadotte as the new crown prince to the Swedish throne.",
+        "date": "1810-08-24",
+        "location": "Stockholm",
+        "country": "Sweden"
+    },
+    {
+        "id": "291",
+        "title": "Napoleon Changes the Grand Army's Focus to Austria",
+        "description": "On August 9th 1809, Napoleon issued a series of orders that effectively shifted the Grand Army's main operational focus from Spain to Austria, setting the stage for the upcoming War of the Fifth Coalition.",
+        "date": "1809-08-09",
+        "location": "Berlin",
+        "country": "Germany"
+    },
+    {
+        "id": "292",
+        "title": "Siege of Toulon",
+        "description": "An Anglo-Spanish fleet arrived on August 28th 1793 transporting 13,000 British, Spanish, Neapolitan and Sardinian troops. As Toulon was strategically vital, being a major naval port which was then host to a third of the French Navy's ships of the line, the French Republican government quickly moved to recapture the city. Here is where Napoleon's military reputation begun.",
+        "date": "1793-08-28",
+        "location": "Toulon",
+        "country": "France"
+    },
+    {
+        "id": "293",
+        "title": "Second day of the battle of Kulm",
+        "description": "On the second day of the battle of Kulm, the Württembergers and Bavarians launched repeated heavy attacks against the Russian positions on the Nollendorf heights. Despite capturing several trenches, they were ultimately repulsed by the determined Russian defense under General Miloradovich.",
+        "date": "1813-08-30",
+        "location": "Kulm",
+        "country": "Czech Republic"
+    },
+    {
+        "id": "294",
+        "title": "Convention of Cintra",
+        "description": "The Convention of Cintra (or Sintra) was an agreement signed on 30 August 1808, during the Peninsular War. By the agreement, the defeated French were allowed to evacuate their troops from Portugal without further conflict.",
+        "date": "1813-08-30",
+        "location": "Cintra",
+        "country": "Portugal"
     }
 ]

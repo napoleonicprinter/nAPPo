@@ -10681,5 +10681,19 @@
     "latitude": 52.897595,
     "longitude": -2.661297,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hill_birth.webp"
+  },
+  {
+    "id": "569",
+    "name": "Apsley House",
+    "category": "Museum",
+    "significance": "Major",
+    "location": "London",
+    "country": "England",
+    "description": "Among a vast art collection, the military elements exhibited at Apsley House comprehensively document the legendary career of Arthur Wellesley, the 1st Duke of Wellington. The collection spans prominent battlefield weapons, political honors, and rare spoils of the Napoleonic Wars-",
+    "latitude": 51.503473,
+    "longitude": 0.151671,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apsley.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Apsley_House",
+    "site_link": "https://www.wellingtoncollection.co.uk/"
   }
 ]
