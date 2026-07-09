@@ -10708,5 +10708,18 @@
     "longitude": 37.523080,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fili.webp",
     "site_link": "https://1812panorama.ru/visitors/muzey-kutuzovskaya-izba"
+  },
+  {
+    "id": "571",
+    "name": "Battlefield of Castrejón de Trabancos",
+    "category": "Battle site",
+    "significance": "Minor",
+    "location": "Castrejón de Trabancos",
+    "country": "Spain",
+    "description": "On July 18th 1812, the French general Marmont failed to complete the maneuver at Castrejón de Trabancos, where the allied rearguard was located and where, during the battle that took place in this town, Wellington almost fell prisoner, the English Lord managing to withdraw all his troops towards the Guareña.",
+    "latitude": 41.245204,
+    "longitude": -5.18237,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castrejon.webp",
+    "more_info_link": "https://www.batalladetrafalgar.com/2016/07/combate-de-castrejon-de-trabancos-18-de.html"
   }
 ]

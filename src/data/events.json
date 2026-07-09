@@ -2692,9 +2692,97 @@
     {
         "id": "315",
         "title": "Establishment of the Regency Council",
-        "description": " As Napoleon prepared to march the Grande Armée eastward into Germany for the Ulm Campaign, he signed an imperial decree in Paris forming a temporary Regency Council. This administrative body, spearheaded by Cambacérès and Joseph Bonaparte, was tasked with governing domestic French affairs while the Emperor was away on campaign.",
+        "description": "As Napoleon prepared to march the Grande Armée eastward into Germany for the Ulm Campaign, he signed an imperial decree in Paris forming a temporary Regency Council. This administrative body, spearheaded by Cambacérès and Joseph Bonaparte, was tasked with governing domestic French affairs while the Emperor was away on campaign.",
         "date": "1805-09-12",
         "location": "Paris",
         "country": "France"
+    },
+    {
+        "id": "316",
+        "title": "Napoleon Enters Moscow",
+        "description": "Expecting a delegation of city officials offering surrender, Napoleon Bonaparte rode into Moscow only to find it a virtual ghost town. The Russian army and roughly 95% of the civilian population had completely evacuated, leaving behind an empty prize.",
+        "date": "1812-09-14",
+        "location": "Moscow",
+        "country": "Russia"
+    },
+    {
+        "id": "317",
+        "title": "The Advance on Krasnoy",
+        "description": "Following the occupation of Moscow, French vanguard forces under Marshal Joachim Murat pushed outward to locate the retreating Russian army under Mikhail Kutuzov. On this day, initial clashes near the outskirts of Krasnoy signaled that the Russians were repositioning to cut off French supply lines.",
+        "date": "1812-09-17",
+        "location": "Krasnoy",
+        "country": "Russia"
+    },
+    {
+        "id": "318",
+        "title": "British Naval Blockade Expansion",
+        "description": "During the War of the Third Coalition, the British Royal Navy tightened its economic and military stranglehold on French-controlled ports along the English Channel. On this date, the Admiralty issued strict orders to step up the interception of Dutch and French merchant vessels to starve Napoleon of naval supplies.",
+        "date": "1803-09-17",
+        "location": "English Channel",
+        "country": "Great Britain"
+    },
+    {
+        "id": "319",
+        "title": "The Raid on the Elbe",
+        "description": "During the German Campaign, Allied light troops and Cossacks executed a daring raid across the Elbe River. They successfully intercepted a French logistical convoy, destroying military stores and further strangling Napoleon's overextended communication networks leading back to Dresden.",
+        "date": "1813-09-21",
+        "location": "Torgau, Saxony",
+        "country": "Germany"
+    },
+    {
+        "id": "320",
+        "title": "Siege of Burgos Escalates",
+        "description": "In the Peninsular War, Arthur Wellesley (Wellington) intensified his siege of the French-held fortress of Burgos. On this day, Allied troops launched a fierce assault on the outer hornwork of San Miguel, suffering heavy casualties but securing a tactical foothold that escalated the brutal, month-long siege.",
+        "date": "1812-09-21",
+        "location": "Burgos",
+        "country": "Spain"
+    },
+    {
+        "id": "321",
+        "title": "Creation of the Confederation of the Rhine",
+        "description": "In one of Napoleon's most impactful political maneuvers, 16 German states signed the Treaty of the Confederation of the Rhine. This act officially severed their ties with the Holy Roman Empire and placed them under Napoleon's direct protection as a massive military buffer state. It effectively caused the collapse of the thousand-year-old Holy Roman Empire less than a month later.",
+        "date": "1806-07-12",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "322",
+        "title": "Wellington Outmaneuvers Marmont",
+        "description": "Leading up to the famous Battle of Salamanca in the Peninsular War, the Anglo-Portuguese army under Arthur Wellesley (Wellington) engaged in a high-stakes chess match of forced marches along the Guareña River. On this day, Wellington successfully shifted his lines, preventing French Marshal Auguste de Marmont from cutting off his supply routes to Portugal.",
+        "date": "1812-07-12",
+        "location": "Castrillo de Tejeriego",
+        "country": "Spain"
+    },
+    {
+        "id": "323",
+        "title": "Signing of the Concordat of 1801",
+        "description": "In Paris, Napoleon Bonaparte (then First Consul) and representatives of Pope Pius VII signed the Concordat. This historic agreement reconciled the French revolutionary state with the Catholic Church, restoring the Church's civil status while cementing Napoleon's political control over the selection of bishops and church property.",
+        "date": "1801-07-15",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "324",
+        "title": "The Siege of Girona Intensifies",
+        "description": "Following months of blockading the strategic Catalan city during the Peninsular War, French forces under General Laurent de Gouvion Saint-Cyr launched heavy artillery bombardments against the outer mountain forts of Girona. This day marked a brutal escalation in the siege, as Spanish defenders refused early French demands to capitulate.",
+        "date": "1808-06-16",
+        "location": "Girona",
+        "country": "Spain"
+    },
+    {
+        "id": "325",
+        "title": "The Trachenberg Plan Refinements",
+        "description": "During the summer armistice of the German Campaign, Allied sovereigns and military commanders finalized the details of the crucial Trachenberg Plan. This overarching strategy dictated that Coalition armies would systematically avoid direct battle with Napoleon himself, choosing instead to retreat when he advanced and focus entirely on defeating his independent marshals.",
+        "date": "1813-07-17",
+        "location": "Trachenberg, Silesia",
+        "country": "Prussia"
+    },
+    {
+        "id": "326",
+        "title": "Combat of Castrejón",
+        "description": "Continuing their intense maneuvering before the Battle of Salamanca, French Marshal Auguste de Marmont attempted to surprise and cut off Wellington's Fourth and Light Divisions at Castrejón. A desperate rearguard action and a brilliant forced march allowed the Allied troops to escape the trap and reunite with the main army.",
+        "date": "1812-07-18",
+        "location": "Castrejón, Spain",
+        "country": "Spain"
     }
 ]

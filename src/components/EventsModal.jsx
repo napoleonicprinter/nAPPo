@@ -55,7 +55,7 @@ const EventsModal = ({ onClose }) => {
                     <div className="modal-title-row" style={{ gap: '12px' }}>
                         <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info" style={{ display: 'flex', flexDirection: 'column', minWidth: '0' }}>
-                            <h2 style={{ whiteSpace: 'nowrap', letterSpacing: '-0.5px' }}>Today in History</h2>
+                            <h2 style={{ letterSpacing: '-0.5px', lineHeight: '1.2' }}>Today in History</h2>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '2px' }}>
                                 <p style={{ margin: 0, fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: '600', opacity: 1, whiteSpace: 'nowrap' }}>
                                     {todayString}
