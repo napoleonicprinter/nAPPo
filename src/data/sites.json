@@ -10695,5 +10695,18 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Apsley.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Apsley_House",
     "site_link": "https://www.wellingtoncollection.co.uk/"
+  },
+  {
+    "id": "570",
+    "name": "Fili log cabin",
+    "category": "Museum",
+    "significance": "Major",
+    "location": "Moscow",
+    "country": "Russia",
+    "description": "Place in the village of Fili, just outside Moscow, (nowadays Moscow) wher Russian General Mikhail Kutuzov convened a legendary council of war in which was taken the decision to abandon Moscow to the invading French army.",
+    "latitude": 55.739819,
+    "longitude": 37.523080,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fili.webp",
+    "site_link": "https://1812panorama.ru/visitors/muzey-kutuzovskaya-izba"
   }
 ]

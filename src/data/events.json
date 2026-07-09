@@ -2528,5 +2528,173 @@
         "date": "1813-08-30",
         "location": "Cintra",
         "country": "Portugal"
+    },
+    {
+        "id": "295",
+        "title": "The Congress of Vienna Technically Convenes",
+        "description": "The Congress of Vienna of 1814-1815 was a series of international diplomatic meetings to discuss and agree upon a possible new layout of the European political and constitutional order after the downfall of the French Emperor Napoleon Bonaparte.",
+        "date": "1814-09-01",
+        "location": "Vienna",
+        "country": "Austria"
+    },
+    {
+        "id": "296",
+        "title": "The Russian Army Halts at Borodino",
+        "description": " On September 3, 1812, the retreating Russian army halted and began digging into defensive positions near the village of Borodino. Over the next three days, they heavily fortified the landscape with massive earthworks.",
+        "date": "1812-09-03",
+        "location": "Borodino",
+        "country": "Russia"
+    },
+    {
+        "id": "297",
+        "title": "Blücher Advances Across the Quéis River",
+        "description": "On September 3, 1813, Blücher's Army of Silesia successfully forced a crossing of the Quéis River (Queis/Kwisa), driving the French rearguard under Marshal Jacques Macdonald further back toward the Elbe River and steadily tightening the noose around Napoleon's main forces in Saxony.",
+        "date": "1813-09-03",
+        "location": "Bavaria",
+        "country": "Germany"
+    },
+    {
+        "id": "298",
+        "title": "Britain Demands the Surrender of the Danish Fleet (Gunboat War)",
+        "description": "During the War of the Second Coalition, Great Britain grew deeply concerned that Napoleon would seize Denmark's powerful navy to launch an invasion of the British Isles. British forces laid siege to Copenhagen, and on September 4, 1807, following consecutive days of heavy artillery and incendiary bombardment that devastated the city, the Danish government was forced to enter formal surrender negotiations.",
+        "date": "1807-09-04",
+        "location": "Copenhagen",
+        "country": "Denmark"
+    },
+    {
+        "id": "299",
+        "title": "Napoleon Enters Mozhaysk (Invasion of Russia)",
+        "description": "On September 4, 1812, as Napoleon's Grande Armée relentlessly pushed toward Moscow, French vanguard forces entered the town of Mozhaysk, just a few miles west of the village of Borodino. This move triggered intense cavalry skirmishes as the Russian rearguard under General Konovnitsyn fought a desperate delaying action.",
+        "date": "1812-09-04",
+        "location": "Mozhaysk",
+        "country": "Russia"
+    },
+    {
+        "id": "300",
+        "title": "Prussia mobilizes the army",
+        "description": "King Frederick William III of Prussia mobilized roughly 130,000 Prussian and 20,000 Saxon troops. Emboldened by promises of Russian and British support, the Prussian generals planned an aggressive offensive into central Germany.",
+        "date": "1813-09-10",
+        "location": "Berlin",
+        "country": "Germany"
+    },
+    {
+        "id": "301",
+        "title": "Prussia Declared Ready to Attack (War of the Fourth Coalition)",
+        "description": "Frustrated by Napoleon's expanding dominance, the King committed to military action against 'the disturber of the rest of the world'. On 6 September 1806, King Frederick William III of Prussia wrote a letter to Emperor Alexander I of Russia declaring his readiness to attack Napoleon.",
+        "date": "1813-09-06",
+        "location": "Berlin",
+        "country": "Germany"
+    },
+    {
+        "id": "302",
+        "title": "Marshals Davout and Ney receive orders to join their Army Corps.",
+        "description": "On September 19, 1806, Napoleon issued crucial directives for the Grande Armée, formally ordering Marshals Louis-Nicolas Davout and Michel Ney to immediately join their respective army corps as the empire mobilized for war against Prussia.",
+        "date": "1806-09-19",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "303",
+        "title": "Napoleon enters Berlin",
+        "description": "After defeating the Prussians at Jena-Auerstedt, Napoleon entered Berlin, the capital of Prussia, on October 27th 1806. This victory marked the end of the War of the Fourth Coalition and established French dominance over central Europe.",
+        "date": "1806-10-27",
+        "location": "Berlin",
+        "country": "Germany"
+    },
+    {
+        "id": "304",
+        "title": "Napoleon sent a call to his German allies.",
+        "description": "On 20 September 1806, Napoleon I issued a formal call for troops and support from his German allies in the recently established Confederation of the Rhine. This mobilization occurred in preparation for the upcoming War of the Fourth Coalition against Prussia.",
+        "date": "1806-09-20",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "305",
+        "title": "The French Imperial Guard left Paris",
+        "description": "On September 24th 1806, the French Imperial Guard left Paris by order of Napoleon Bonaparte. This move marked the logistical start of the Prussian Campaign (War of the Fourth Coalition).",
+        "date": "1806-09-24",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "306",
+        "title": "Napoleon left Saint-Cloud for the Prussian Campaign",
+        "description": "Alerted by Marshal Berthier about Prussian troop movements near the border, Napoleon immediately left for the front lines. He departed the Castle of Saint-Cloud with Empress Joséphine at 4:30 a.m., traveling east through the day and continuing his journey through the night after dining in Châlons.",
+        "date": "1806-09-25",
+        "location": "Saint-Cloud, Paris",
+        "country": "France"
+    },
+    {
+        "id": "307",
+        "title": "French Senate Conscription Levy",
+        "description": "Anticipating escalating conflicts on multiple fronts, particularly in Spain, the French Senate approved a massive special levy of 160,000 soldiers.",
+        "date": "1808-09-08",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "308",
+        "title": "Russian Retreat from Borodino",
+        "description": "After the bloody Battle of Borodino, Barclay de Tolly, commanding the Russian forces, executed a strategic retreat from the battlefield. This decision allowed the Russians to preserve their army intact, despite the tactical loss of the field itself.",
+        "date": "1812-09-08",
+        "location": "Borodino",
+        "country": "Russia"
+    },
+    {
+        "id": "309",
+        "title": "Final Surrender of San Sebastián",
+        "description": "Following the devastating bombardment of Monte Urgull the previous day, French Governor Louis Emmanuel Rey marched his remaining, battle-worn garrison out of the castle with full military honors.",
+        "date": "1813-09-09",
+        "location": "San Sebastián",
+        "country": "Spain"
+    },
+    {
+        "id": "310",
+        "title": "Restoration of the Gregorian Calendar",
+        "description": "Anticipating the outbreak of major hostilities in the War of the Third Coalition, Napoleon signed a Senatus Consultum officially abolishing the French Republican Calendar. The decree ordered the restoration of the traditional Gregorian calendar to align France with the administrative and logistical structures of continental Europe, taking effect on January 1, 1806.",
+        "date": "1805-09-09",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "311",
+        "title": "The Treaty of Teplitz ",
+        "description": "During the German Campaign, the Sixth Coalition was formally solidified when Russia, Austria, and Prussia signed the Treaty of Töplitz (Teplitz). The signatories committed to placing 150,000 troops each in the field and bound themselves to make no separate peace with Napoleon until the French Empire was pushed back to its pre-war natural borders.",
+        "date": "1813-09-09",
+        "location": "Töplitz",
+        "country": "Czech Republic"
+    },
+    {
+        "id": "312",
+        "title": "Naples Joins the Third Coalition",
+        "description": "In a major diplomatic shift ahead of the Ulm and Austerlitz campaigns, the Kingdom of Naples and Sicily officially joined the Anglo-Austro-Russian Coalition. This move effectively opened up a dangerous southern front against French-aligned Italy, prompting a future decisive response from Napoleon.",
+        "date": "1805-09-11",
+        "location": "Naples",
+        "country": "Italy"
+    },
+    {
+        "id": "313",
+        "title": "Annexation of Piedmont",
+        "description": "During the brief interlude of peace following the Treaty of Amiens, Napoleon consolidated French hegemony over northern Italy. Through a Senatus consultum, France officially annexed the region of Piedmont, dividing it directly into six new French administrative departments.",
+        "date": "1805-09-11",
+        "location": "Piedmont",
+        "country": "Italy"
+    },
+    {
+        "id": "314",
+        "title": "Kutuzov's Council of Fili",
+        "description": " In a modest log cabin in the village of Fili, just outside Moscow, Russian General Mikhail Kutuzov convened a legendary council of war. Despite fierce opposition from several generals, Kutuzov made the agonizing strategic decision to abandon Moscow to Napoleon without a fight, famously declaring that losing Moscow did not mean losing Russia, whereas losing the army would mean losing both.",
+        "date": "1812-09-13",
+        "location": "Moscow",
+        "country": "Russia"
+    },
+    {
+        "id": "315",
+        "title": "Establishment of the Regency Council",
+        "description": " As Napoleon prepared to march the Grande Armée eastward into Germany for the Ulm Campaign, he signed an imperial decree in Paris forming a temporary Regency Council. This administrative body, spearheaded by Cambacérès and Joseph Bonaparte, was tasked with governing domestic French affairs while the Emperor was away on campaign.",
+        "date": "1805-09-12",
+        "location": "Paris",
+        "country": "France"
     }
 ]
