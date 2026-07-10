@@ -22,7 +22,7 @@
     "organizer": "Asociación Histórico Cultural Voluntarios de Madrid",
     "description": "Del 1 al 3 de mayo de 2026",
     "moreInfo": "https://www.verkami.com/projects/40807-recreacion-historica-eventos-del-2-de-mayo-en-madrid",
-    "image": "https://www.madrid.org/fiestasdel2demayo/2024/fotos/fichas/11-recreacion-historica.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/2Mayo.webp",
     "category": "Reenactment"
   },
   {
@@ -35,7 +35,7 @@
     "organizer": "Scharnhorstkomitee Großgörschen e.V.",
     "description": "Vom 1. Mai bis zum 3. Mai",
     "moreInfo": "https://scharnhorstkomitee.de/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scharnhorstfest_Gro%C3%9Fg%C3%B6rschen_2013_by_Stepro_IMG_1688_DxO.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Scharnhorstfest.webp",
     "category": "Reenactment"
   },
   {
@@ -48,7 +48,7 @@
     "organizer": "Recreación Histórica de la batalla de la Albuera",
     "description": "Del 9 al 10 de mayo de 2026",
     "moreInfo": "",
-    "image": "https://turismo.laalbuera.com/wp-content/uploads/2022/07/La-Batalla-14-scaled.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Albuera.webp",
     "category": "Reenactment"
   },
   {
@@ -61,7 +61,7 @@
     "organizer": "Asociación Histórica, Cultural, Deportiva Recreadores de Galicia",
     "description": "Del 15 al 17 de mayo de 2026",
     "moreInfo": "https://www.facebook.com/recregalicia/",
-    "image": "https://img.lavdg.com/sc/goiBpG3jcgRCMlhwGz374RFFNnc=/1280x/2024/05/18/00121716060002001421121/Foto/L_20240518_204710000.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Cruzul.webp",
     "category": "Reenactment"
   },
   {
@@ -74,7 +74,7 @@
     "organizer": "Chiltern Open Air Museum",
     "description": "April 25th and 26th 2026",
     "moreInfo": "https://www.coam.org.uk/living-history-encounters",
-    "image": "https://files.elfsightcdn.com/eafe4a4d-3436-495d-b748-5bdce62d911d/d1a24731-0457-4b7e-9912-6022dbef6ebf/COAM-Napoleonic-Cavalry-800px.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/COAM.webp",
     "category": "Reenactment"
   },
   {
@@ -87,12 +87,12 @@
     "organizer": "Napoleonic Association",
     "description": "May 24th and 25th 2026",
     "moreInfo": "https://www.coam.org.uk/napoleonic",
-    "image": "https://files.elfsightcdn.com/eafe4a4d-3436-495d-b748-5bdce62d911d/b5c2c58e-d408-4f30-9235-ccae9b5b0add/the_napoleonic_association_800px.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/COAM_2.webp",
     "category": "Reenactment"
   },
   {
     "id": 8,
-    "name": "Battle of Waterloo Reenactment",
+    "name": "Battle of Waterloo Reenactment CANCELED",
     "date": "2026-06-27",
     "month": "June",
     "country": "Belgium",
@@ -100,7 +100,7 @@
     "organizer": "Waterloo 2015",
     "description": "27-28 June 2026",
     "moreInfo": "https://visitwallonia.com/en-gb/content/reenactment-battle-june-18-1815-domaine-de-waterloo",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Bataille_Waterloo_1815_reconstitution_2011_cuirassier.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Waterloo.webp",
     "category": "Reenactment"
   },
   {
@@ -113,7 +113,7 @@
     "organizer": "Asociación Histórico Cultural Salamanca 1812",
     "description": "24-26 July 2026",
     "moreInfo": "https://tiradoresdecastilla.wordpress.com/",
-    "image": "https://teodororeding.es/wp-content/uploads/2012/07/infanteria_espanola_batalla_arapiles_salamanca_1812_2012_battle_reenactment_.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Arapiles.webp",
     "category": "Reenactment"
   },
   {
@@ -126,7 +126,7 @@
     "organizer": "Associação Napoleónica Portuguesa",
     "description": "29-30 August 2026",
     "moreInfo": "https://www.facebook.com/ANP.Portugal/about",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/The_gates_of_Almeida_III_%2828021290574%29.jpg/1280px-The_gates_of_Almeida_III_%2828021290574%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Almeida.webp",
     "category": "Reenactment"
   },
   {
@@ -139,12 +139,12 @@
     "organizer": "Ayto. San Fernando y Fundación Legado de las Cortes",
     "description": "23-27 September 2026",
     "moreInfo": "https://fundacionlegadodelascortes.wordpress.com/",
-    "image": "https://fundacionlegadodelascortes.wordpress.com/wp-content/uploads/2024/07/diapositiva1-2.jpg?w=1024",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Cortes.webp",
     "category": "Reenactment"
   },
   {
     "id": 12,
-    "name": "Marching into No Man’s Land 2026 ",
+    "name": "Marching into No Man's Land 2026 ",
     "date": "2026-04-11",
     "month": "April",
     "country": "UK",
@@ -152,7 +152,7 @@
     "organizer": "No Man's Land",
     "description": "11-12 April 2026",
     "moreInfo": "https://bodrhyddan-events.co.uk/tc.../no-mans-land-12-4-26/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Napoleonic_French_soldiers.png",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/NoMansLand.webp",
     "category": "Reenactment"
   },
   {
@@ -165,20 +165,7 @@
     "organizer": "Chappers Photography",
     "description": "19-21 June 2026",
     "moreInfo": "https://www.chappersphotography.co.uk/event-details/the-big-battle-of-abbots-bromley-living-history-festival-2026",
-    "image": "https://static.wixstatic.com/media/926528_7e46bf4bb1764efd88975a899eb32c29~mv2.jpg/v1/fill/w_2337,h_1558,al_c,q_90/926528_7e46bf4bb1764efd88975a899eb32c29~mv2.webp",
-    "category": "Reenactment"
-  },
-  {
-    "id": 14,
-    "name": "Hostalric 1810: campamento de recreación histórica",
-    "date": "2026-09-27",
-    "month": "September",
-    "country": "Spain",
-    "venue": "Hostalric, Girona, Spain",
-    "organizer": "79th Cameron Highlanders - Cataluña",
-    "description": "27-28 September 2026",
-    "moreInfo": "https://www.turismehostalric.cat/es/hostalric-1810-campamento-de-recreacion-historica/",
-    "image": "https://www.turismehostalric.cat/wp-content/uploads/2026/01/campament-1810.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Abbots_Bromley.webp",
     "category": "Reenactment"
   },
   {
@@ -191,7 +178,7 @@
     "organizer": "City of Jena",
     "description": "16-18 October 2026",
     "moreInfo": "https://rathaus.jena.de/en/2026-anniversary-battle-jena-auerstedt",
-    "image": "https://rathaus.jena.de/system/files/styles/content_image_full/private/2025-10/PK%20220%20Jahre%20Schlacht%20Jena%20Auerstedt_%C2%A9Stadt%20Jena.JPG?itok=z5-M_Mwu",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Jena_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -204,7 +191,7 @@
     "organizer": "Team Austerlitz",
     "description": "27-29 November 2026",
     "moreInfo": "https://www.austerlitz.org/en/austerlitz-2026-the-commemorative-event-of-the-221st-anniversary-of-the-battle-of-the-three-emperors-will-take-place-on-27-29-november/",
-    "image": "https://www.austerlitz.org/en/wp-content/uploads/sites/2/a4.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Austerlitz_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -217,7 +204,7 @@
     "organizer": "Ajuntament de Carcaixent",
     "description": "15 November 2026",
     "moreInfo": "https://www.carcaixent.es/es/page/recreacion-historica-batalla-carcaixent",
-    "image": "https://estaticos-cdn.prensaiberica.es/clip/8e844cec-dd34-4a8e-85a1-371d8fe51e78_16-9-aspect-ratio_default_0.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Carcaixent_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -230,7 +217,7 @@
     "organizer": "Asociación Histórico Cultural Voluntarios de Madrid 1808-1814",
     "description": "21-22 November 2026",
     "moreInfo": "https://voluntarios.madrid/",
-    "image": "https://s1.abcstatics.com/abc/www/multimedia/espana/2023/12/03/permuy(11).jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Somosierra_2026.webp",
     "category": "Reenactment"
   },
   {
@@ -243,7 +230,7 @@
     "organizer": "Ferme de Mont-Saint-Jean",
     "description": "18-19 April 2026",
     "moreInfo": "https://www.facebook.com/events/724991463884334/?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22group%22%7D]%7D",
-    "image": "https://www.billetweb.fr/files/event/150/1381710.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/hospital.webp",
     "category": "Reenactment"
   },
   {

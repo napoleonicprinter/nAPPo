@@ -12,8 +12,7 @@ const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const ShowsCalendarModal = ({ onClose, showsData, onDayClick }) => {
     const [month, setMonth] = useState(new Date().getMonth());
-
-    const gridYear = 2026; // Shows are mainly in 2026
+    const [gridYear, setGridYear] = useState(2026); // Shows are mainly in 2026
 
     const currentYearEvents = useMemo(() => {
         // Find all events for the currently viewed month
@@ -39,16 +38,24 @@ const ShowsCalendarModal = ({ onClose, showsData, onDayClick }) => {
         });
 
         return monthEvents;
-    }, [month, showsData]);
+    }, [month, gridYear, showsData]);
 
     const prevMonth = () => {
-        setMonth(prev => (prev === 0 ? 11 : prev - 1));
-        setSelectedDateEvents(null);
+        if (month === 0) {
+            setMonth(11);
+            setGridYear(prev => prev - 1);
+        } else {
+            setMonth(month - 1);
+        }
     };
 
     const nextMonth = () => {
-        setMonth(prev => (prev === 11 ? 0 : prev + 1));
-        setSelectedDateEvents(null);
+        if (month === 11) {
+            setMonth(0);
+            setGridYear(prev => prev + 1);
+        } else {
+            setMonth(month + 1);
+        }
     };
 
     const handleDayClick = (day) => {
@@ -109,7 +116,7 @@ const ShowsCalendarModal = ({ onClose, showsData, onDayClick }) => {
                     <button className="calendar-nav-btn" onClick={prevMonth} title="Previous Month">
                         <ChevronLeft size={22} />
                     </button>
-                    <h2 className="calendar-title">{MONTHS[month]} 2026</h2>
+                    <h2 className="calendar-title">{MONTHS[month]} {gridYear}</h2>
                     <button className="calendar-nav-btn" onClick={nextMonth} title="Next Month">
                         <ChevronRight size={22} />
                     </button>

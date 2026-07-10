@@ -602,3 +602,30 @@ button {
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
+
+/* Optimization for Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .modal-logo {
+    display: none !important;
+  }
+  .calendar-modal-header, .shopping-modal-header {
+    padding: 0.5rem 1rem !important;
+  }
+  .modal-title-row {
+    margin-bottom: 0.5rem !important;
+    gap: 0.5rem !important;
+  }
+  .modal-title-info h2 {
+    font-size: 1.1rem !important;
+  }
+  .modal-title-info p {
+    margin: 0 !important;
+    font-size: 0.8rem !important;
+  }
+  .calendar-modal-body, .shopping-modal-body {
+    padding: 0.5rem 1rem !important;
+  }
+  .calendar-controls {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
