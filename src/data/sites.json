@@ -10721,5 +10721,29 @@
     "longitude": -5.18237,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castrejon.webp",
     "more_info_link": "https://www.batalladetrafalgar.com/2016/07/combate-de-castrejon-de-trabancos-18-de.html"
+  },
+  {
+    "id": "572",
+    "name": "Battlefield of Tamames",
+    "category": "Battle site",
+    "date": "1809-10-18",
+    "significance": "Medium",
+    "location": "Tamames",
+    "country": "Spain",
+    "description": "The Battle of Tamames was lost by part of Marshal Michel Ney's French army under General of Division Jean Marchand in the Peninsular War. The French, advancing out of Salamanca, were met and defeated in battle by a Spanish army on 18 October 1809.",
+    "latitude": 40.645649,
+    "longitude": -6.125636,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tamames.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tamames",
+    "defeated": "France",
+    "victor": "Spain",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Duque del Parque",
+      "Jean Marchand"
+    ]
   }
 ]

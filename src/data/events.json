@@ -2856,5 +2856,149 @@
         "date": "1812-07-25",
         "location": "Senno",
         "country": "Russia"
+    },
+    {
+        "id": "336",
+        "title": "Battle of Tamames",
+        "description": "The Battle of Tamames (October 18, 1809) was a Spanish victory over the French occupation troops near this town in Salamanca province, during the Spanish War of Independence. General Jean Gabriel Marchand, commanding the French IV Corps in Ney's absence, faced the so-called Army of the Left, commanded by the Duke of Parque.",
+        "date": "1809-10-18",
+        "location": "Tamames",
+        "country": "Spain"
+    },
+    {
+        "id": "337",
+        "title": "Napoleon Lands in Egypt",
+        "description": "Initiating his ambitious Mediterranean campaign, Napoleon Bonaparte arrived off the coast of Alexandria with a massive French expeditionary fleet. French troops immediately began landing on the beaches of Marabout under difficult conditions, preparing to capture Alexandria the following day and march into the Egyptian desert.",
+        "date": "1798-07-01",
+        "location": "Alexandria",
+        "country": "Egypt"
+    },
+    {
+        "id": "338",
+        "title": "The Decree of the Kingdom of Holland Annexation",
+        "description": "Frustrated by his brother Louis Bonaparte's refusal to strictly enforce the Continental Blockade against British trade, Napoleon pressured him into abdicating the throne on this day. This political crisis led directly to France officially annexing the Kingdom of Holland into the French Empire just days later.",
+        "date": "1810-07-01",
+        "location": "The Hague",
+        "country": "Holland"
+    },
+    {
+        "id": "339",
+        "title": "Crossing of the Danube / Battle of Wagram Prelude",
+        "description": "Following his costly setback at Aspern-Essling, Napoleon executed a brilliant tactical operation under the cover of a violent thunderstorm. On the night of July 4, French forces successfully crossed the Danube River onto the Marchfeld, bypassing Austrian fortifications and setting the stage for the massive Battle of Wagram the next day.",
+        "date": "1809-07-04",
+        "location": "Lobau Island",
+        "country": "Austria"
+    },
+    {
+        "id": "340",
+        "title": "The Siege of Mantua Inundations",
+        "description": "During his first Italian campaign, Napoleon utilized the local geography to tighten his grip on the Austrian fortress of Mantua. On this date, French engineers opened the local sluice gates, flooding the surrounding plains to completely cut off the city's land communications and isolate the garrison.",
+        "date": "1796-07-04",
+        "location": "Mantua",
+        "country": "Italy"
+    },
+    {
+        "id": "341",
+        "title": "The Battle of Wagram - Second Day",
+        "description": "Following a massive tactical buildup, Napoleon fought the decisive second day of the Battle of Wagram against the Austrian army under Archduke Charles. Involving over 300,000 soldiers, the clash featured a legendary grand artillery battery and a massive infantry assault led by General MacDonald. The French victory broke the Fifth Coalition and forced Austria to sue for peace.",
+        "date": "1809-07-06",
+        "location": "Aspern",
+        "country": "Austria"
+    },
+    {
+        "id": "342",
+        "title": "The Surrender of Alexandria",
+        "description": "Just six days after landing on the Egyptian coast, Napoleon’s vanguard completed its lightning assault on the ancient city of Alexandria. On July 7, after crushing the local garrison, French administrative teams officially secured the port city, establishing it as the primary supply base for the deep march toward Cairo.",
+        "date": "1798-07-07",
+        "location": "Alexandria",
+        "country": "Egypt"
+    },
+    {
+        "id": "343",
+        "title": "The Action at Santo Domingo",
+        "description": "In the Caribbean theater of the Napoleonic Wars, a combined British-Spanish expeditionary force successfully compelled the isolated French garrison at Santo Domingo to surrender. This action effectively wiped out the last remnants of French imperial military presence on the island of Hispaniola.",
+        "date": "1809-07-07",
+        "location": "Santo Domingo",
+        "country": "Dominican Republic"
+    },
+    {
+        "id": "344",
+        "title": "Surrender of the Burgos Hornwork",
+        "description": "During the bloody Siege of Burgos in the Peninsular War, Arthur Wellesley (Wellington) launched a fierce night assault. Allied troops successfully captured the strategic San Miguel hornwork, a vital outer fortification, though they suffered heavy casualties in the process.",
+        "date": "1812-09-22",
+        "location": "Burgos",
+        "country": "Spain"
+    },
+    {
+        "id": "345",
+        "title": "French Consolidation of the Ionian Islands",
+        "description": "Following the enforcement of the Treaties of Tilsit, French imperial troops officially finished occupying the strategic Ionian Islands (including Corfu). This move secured a vital naval stepping stone for Napoleon in the Adriatic Sea, aiming to project power toward the Ottoman Empire.",
+        "date": "1807-09-22",
+        "location": "Corfu",
+        "country": "Greece"
+    },
+    {
+        "id": "346",
+        "title": "Siege of Burgos Mine Explosion",
+        "description": "During the Peninsular War, Arthur Wellesley (Wellington) attempted to breach the formidable walls of the French-held fortress of Burgos. On this day, Allied engineers detonated a massive gunpowder mine beneath the fort's outer defenses; however, the subsequent infantry assault failed to secure a breakthrough due to fierce French resistance.",
+        "date": "1812-10-22",
+        "location": "Burgos",
+        "country": "Spain"
+    },
+    {
+        "id": "347",
+        "title": "Siege of Burgos Escalation",
+        "description": "Frustrated by earlier failed assaults in the Peninsular War, Arthur Wellesley (Wellington) ordered his engineers to dig a second, larger military mine under the formidable walls of the French-held fortress of Burgos. On this day, the frantic digging reached beneath the main French curtain wall, setting the stage for another bloody explosion and assault.",
+        "date": "1812-10-28",
+        "location": "Burgos",
+        "country": "Spain"
+    },
+    {
+        "id": "348",
+        "title": "The Siege of Burgos Assault Preparations",
+        "description": "In the Peninsular War, after completing the placement of their second massive gunpowder mine beneath the fortress walls, Arthur Wellesley's (Wellington) Anglo-Portuguese troops spent this day stockpiling ammunition and organizing storming parties, preparing for a decisive breach of the French defenses scheduled for the next morning.",
+        "date": "1812-10-29",
+        "location": "Burgos",
+        "country": "Spain"
+    },
+    {
+        "id": "349",
+        "title": "The Skirmish at Borna",
+        "description": "During the autumn German Campaign, a massive body of Allied Coalition cavalry—composed of Russian Cossacks and Prussian Hussars—clashed with French rear-guard units near Borna. This sharp encounter was part of the grand Allied encirclement strategy designed to cut off Napoleon's retreat paths toward France before the Battle of Leipzig.",
+        "date": "1813-09-29",
+        "location": "Borna",
+        "country": "Saxony"
+    },
+    {
+        "id": "350",
+        "title": "The Second Mine Explosion at Burgos",
+        "description": "During the brutal Siege of Burgos in the Peninsular War, Arthur Wellesley (Wellington) ordered the detonation of his second massive gunpowder mine beneath the fortress walls. The explosion successfully blew a massive breach in the outer wall, but the subsequent Anglo-Portuguese infantry assault was ultimately repulsed with heavy casualties by a fierce French counterattack.",
+        "date": "1812-09-30",
+        "location": "Burgos",
+        "country": "Spain"
+    },
+    {
+        "id": "351",
+        "title": "The Battle of Jena-Auerstedt",
+        "description": "In one of the most decisive military victories of the Napoleonic era, Napoleon executed a brilliant double-battle maneuver against the Prussian army. By attacking simultaneously at Jena and Auerstedt, French forces shattered the Prussian defenses in a single day, effectively ending Prussian resistance in the War of the Fourth Coalition and opening the path to Berlin.",
+        "date": "1806-10-14",
+        "location": "Jena-Auerstedt",
+        "country": "Prussia"
+    },
+    {
+        "id": "352",
+        "title": "The Treaty of San Ildefonso",
+        "description": "In a secret diplomatic maneuver, France and Spain signed the Third Treaty of San Ildefonso. Spain agreed to return the massive territory of Louisiana in North America to France in exchange for territorial compensations in Tuscany for the Spanish royal family. This event set the stage for Napoleon's eventual sale of the territory to the United States three years later.",
+        "date": "1800-10-01",
+        "location": "San Ildefonso",
+        "country": "Spain"
+    },
+    {
+        "id": "353",
+        "title": "Blücher Crosses the Elbe",
+        "description": "In a daring move during the German Campaign, Prussian General Gebhard Leberecht von Blücher concentrated his forces at Elster and began bridging operations to cross the Elbe River. This aggressive advance directly threatened Napoleon's northern flank, paving the way for the decisive Battle of Wartenburg two days later.",
+        "date": "1813-10-01",
+        "location": "Hamburg",
+        "country": "Prussia"
     }
 ]

@@ -3,23 +3,29 @@
     "id": 1,
     "title": "28MM NAPOLEONIC ITALIAN ARTILLERY STL files",
     "description": "STL files for 28 mm miniatures for italian artillery crew in 1809 uniforms as depicted by drawing at the library of the Museo del Risorgimento at Milano in shako and gaiters.",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shopping/Italian_artillery_28mm.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shop/Italian_artillery_28mm.webp",
     "link": "https://cults3d.com/en/3d-model/game/28mm-napoleonic-italian-artillery-crew-in-shako-gaiters-1809-uniform",
-    "category": "Wargaming"
+    "category": "Wargaming",
+    "startDate": "2026-01-01",
+    "endDate": "2099-12-31"
   },
   {
     "id": 3,
     "title": "France 1813-15 Chasseurs à cheval 6mm to 20mm- STL files.",
     "description": "STL files for 6mm to 20mm miniatures for French Chasseurs à cheval in 1813-15 campaign dress.",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shopping/Chasseurs_a_cheval_1813.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shop/Chasseurs_a_cheval_1813.webp",
     "link": "https://www.wargaming3d.com/product/nap-wars-france-1813-chasseurs-a-cheval-6mm-to-20mm-trooper-charging-campaign-dress",
-    "category": "Wargaming"
+    "category": "Wargaming",
+    "startDate": "2026-01-01",
+    "endDate": "2099-12-31"
   },
   {
     "id": 2,
     "title": "La Expedición Española a Dinamarca 1807-1808- J-M. Bueno",
     "description": "10€ + shipping contact nAPPoTrails@proton.me",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shopping/JMB_Dinamarca.webp",
-    "category": "Book"
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shop/JMB_Dinamarca.webp",
+    "category": "Book",
+    "startDate": "2026-01-01",
+    "endDate": "2099-12-31"
   }
 ]

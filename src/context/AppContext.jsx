@@ -129,6 +129,21 @@ export const AppProvider = ({ children }) => {
         return (saved && saved !== "undefined") ? JSON.parse(saved) : shoppingData;
     });
 
+    const activeShoppingItems = useMemo(() => {
+        if (!shoppingBaseData) return [];
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        return shoppingBaseData
+            .filter(item => {
+                if (!item.startDate || !item.endDate) return true; // Show if dates are missing
+                const start = new Date(item.startDate + 'T00:00:00');
+                const end = new Date(item.endDate + 'T23:59:59');
+                return today >= start && today <= end;
+            })
+            .sort((a, b) => new Date(a.startDate || 0) - new Date(b.startDate || 0));
+    }, [shoppingBaseData]);
+
     const [eventsBaseData, setEventsBaseData] = useState(() => {
         if (isDevelopment) return eventsDataFallback;
         const saved = localStorage.getItem('eventsData');
@@ -711,7 +726,7 @@ export const AppProvider = ({ children }) => {
             syncStatus, lastSyncTime,
             mapBounds, setMapBounds,
             showsToCome: showsBaseData,
-            shoppingItems: shoppingBaseData,
+            shoppingItems: activeShoppingItems,
             eventsData: eventsBaseData,
             newsData: newsBaseData,
             messagesData: messagesBaseData,
