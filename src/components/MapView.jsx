@@ -714,17 +714,20 @@ const MapView = () => {
 
 
             <MapContainer
-
                 center={defaultCenter}
                 zoom={5}
                 style={{ height: '100%', width: '100%', minHeight: '100vh' }}
                 zoomControl={false}
+                maxBounds={[[-90, -180], [90, 180]]}
+                maxBoundsViscosity={1.0}
+                minZoom={2}
             >
                 <RemoveDefaultZoom />
                 <TileLayer
                     key={mapStyle}
                     attribution={TILE_LAYERS[mapStyle].attribution}
                     url={TILE_LAYERS[mapStyle].url}
+                    noWrap={true}
                 />
 
                 <LocationMarker />

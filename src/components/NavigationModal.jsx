@@ -102,10 +102,14 @@ const NavigationModal = ({ userCoords, site, onClose }) => {
                         zoom={13}
                         style={{ height: '100%', width: '100%' }}
                         zoomControl={false}
+                        maxBounds={[[-90, -180], [90, 180]]}
+                        maxBoundsViscosity={1.0}
+                        minZoom={2}
                     >
                         <TileLayer
                             attribution='&copy; CARTO'
                             url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                            noWrap={true}
                         />
 
                         <MapFitter userCoords={userCoords} site={site} />

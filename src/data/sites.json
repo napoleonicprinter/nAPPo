@@ -2606,7 +2606,7 @@
     "defeated": "France",
     "special": [
       "6",
-      "German campaign"
+      "German Campaign"
     ],
     "commanders": [
       "Friedrich von Bülow",
@@ -3087,7 +3087,7 @@
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
       "6",
-      "German campaign"
+      "German Campaign"
     ],
     "victor": "Coalition",
     "defeated": "France",
@@ -3676,7 +3676,7 @@
     "special": [
       "arc",
       "6",
-      "German campaign"
+      "German Campaign"
     ],
     "victor": "France",
     "defeated": "Coalition",
@@ -7036,7 +7036,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arnhem_(1813)",
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
-      "German campaign",
+      "German Campaign",
       "6"
     ],
     "commanders": [
@@ -10703,7 +10703,7 @@
     "significance": "Major",
     "location": "Moscow",
     "country": "Russia",
-    "description": "Place in the village of Fili, just outside Moscow, (nowadays Moscow) wher Russian General Mikhail Kutuzov convened a legendary council of war in which was taken the decision to abandon Moscow to the invading French army.",
+    "description": "Place in the village of Fili, just outside Moscow, (nowadays Moscow) where Russian General Mikhail Kutuzov convened a legendary council of war in which was taken the decision to abandon Moscow to the invading French army.",
     "latitude": 55.739819,
     "longitude": 37.523080,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fili.webp",
