@@ -3000,5 +3000,173 @@
         "date": "1813-10-01",
         "location": "Hamburg",
         "country": "Prussia"
+    },
+    {
+        "id": "354",
+        "title": "The French Senate Breaks with Austria",
+        "description": "During the War of the Third Coalition, Napoleon officially announced a total diplomatic break with Austria before the French Senate. Seeking to bolster his ranks for the upcoming continental campaign, he pulled forward the conscription timeline, calling up 60,000 men from the class of 1806 early. This political escalation cleared the way for Napoleon to take command of the army the next day and order French troops across the Rhine, culminating in the Ulm Campaign.",
+        "date": "1805-09-23",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "355",
+        "title": "The Siege of Saguntum Begins",
+        "description": "French Marshal Louis Gabriel Suchet initiated the Siege of Saguntum on the eastern coast of Spain as part of the Peninsular War. Believing the province of Valencia would fall quickly, Suchet confronted a fiercely resilient Spanish garrison entrenched inside the ancient, rocky hilltop citadel. The castle defenders successfully repelled multiple French infantry assaults. This unexpected resistance dragged out the siege for over a month, significantly slowing down the French offensive in eastern Spain.",
+        "date": "1811-09-23",
+        "location": "Sagunto",
+        "country": "Spain"
+    },
+    {
+        "id": "356",
+        "title": "Napoleon Prepares the Prussian Campaign at Mainz",
+        "description": "early in the morning to establish his operational headquarters. After parting with Empress Joséphine, Napoleon spent the day conducting high-level military interviews, notably with the famous military theorist General Antoine-Henri Jomini. This date marked the final logistical and intellectual orchestration of the Grande Armée right before it marched out to crush the Prussian army at Jena-Auerstedt.",
+        "date": "1806-09-28",
+        "location": "Mainz",
+        "country": "Germany"
+    },
+    {
+        "id": "357",
+        "title": "Strategic Regrouping Before Leipzig",
+        "description": "During the War of the Sixth Coalition, Napoleon recognized the growing threat of Allied armies closing in on his positions in Saxony. On October 2, he ordered Marshal Joachim Murat to Freiberg to take command of a 45,000-man strike force. Murat's explicit mission was to slow down and block the advance of the massive Allied Army of Bohemia under Karl Philipp, Prince of Schwarzenberg, setting the tactical stage for the colossal Battle of Leipzig.",
+        "date": "1813-10-02",
+        "location": "Freiberg",
+        "country": "Saxony"
+    },
+    {
+        "id": "358",
+        "title": "Napoleon Mobilizes the Ulm Campaign at Würzburg",
+        "description": "During the War of the Third Coalition, Napoleon arrived at Würzburg to personally consolidate his forces. This date marked a pivotal logistical transition: Napoleon united his newly christened Grande Armée with German allied troops, including the Bavarian army. From this position, he finalized the brilliant strategic envelopment that would completely trap Austrian General Mack at Ulm just a few weeks later, altering the course of the continental war.",
+        "date": "1805-10-02",
+        "location": "Würzburg, Bavaria",
+        "country": "Germany"
+    },
+    {
+        "id": "359",
+        "title": "Herceg Novi was ceded to France",
+        "description": "On 7 July 1807, Herceg Novi was ceded to Napoleon I Bonaparte's French Empire as per the Treaty of Tilsit. Official French rule over Herceg Novi began on 12 August 1807, when the Russians left the city. The city was part of Dalmatia until 14 October 1809, when it was annexed to the newly created Illyrian Provinces.",
+        "date": "1807-07-07",
+        "location": "Herceg Novi",
+        "country": "Montenegro"
+    },
+    {
+        "id": "360",
+        "title": "Moscow Peace Proposal",
+        "description": "Stranded in a burning Moscow, Napoleon sent General Lauriston to deliver a peace offer to Russian Commander Kutuzov, who intentionally accepted the talks simply to stall for time.",
+        "date": "1812-10-04",
+        "location": "Moscow, ",
+        "country": "Russia"
+    },
+    {
+        "id": "361",
+        "title": "The Crossing of the Danube",
+        "description": "Elements of Napoleon's Grande Armée began crossing the Danube River at Donauwörth, successfully cutting off Austrian General Mack's line of retreat at Ulm.",
+        "date": "1805-10-06",
+        "location": "Donauwörth, Bavaria",
+        "country": "Germany"
+    },
+    {
+        "id": "362",
+        "title": "Proclamation of the Kingdom of Westphalia",
+        "description": "Napoleon officially organized this new German puppet state, placing his youngest brother, Jérôme Bonaparte, on its throne.",
+        "date": "1807-10-06",
+        "location": "Cassel",
+        "country": "Germany"
+    },
+    {
+        "id": "363",
+        "title": "Maneuvers along the Elbe",
+        "description": "Napoleon concentrated his forces around Düben, attempting to maneuver between the Allied armies of Blücher and Bernadotte to strike them individually before they could unite.",
+        "date": "1813-10-03",
+        "location": "Düben",
+        "country": "Saxony"
+    },
+    {
+        "id": "364",
+        "title": "The Lines of Torres Vedras reached",
+        "description": "British General Arthur Wellesley (Wellington) safely withdrew his Anglo-Portuguese army behind massive, secret defensive fortifications, completely halting the French invasion of Portugal.",
+        "date": "1810-10-10",
+        "location": "Lines of Torres Vedras",
+        "country": "Portugal"
+    },
+    {
+        "id": "365",
+        "title": "Capture of Munich",
+        "description": "French Marshal Bernadotte's corps entered and occupied Munich, securing Napoleon's flank and isolating Austrian General Mack at Ulm.",
+        "date": "1805-10-12",
+        "location": "Munich",
+        "country": "Bavaria"
+    },
+    {
+        "id": "366",
+        "title": "Murat's Feint at Landsberg",
+        "description": "Marshal Joachim Murat executed a bold feint toward Landsberg, successfully deceiving the Allied Army of Bohemia into believing Napoleon intended to march south toward the Alps. This maneuver delayed the Allied advance and bought crucial time for Napoleon to consolidate his forces for the decisive Battle of Leipzig.",
+        "date": "1813-10-13",
+        "location": "Landsberg, Bavaria",
+        "country": "Germany"
+    },
+    {
+        "id": "367",
+        "title": "The Battle of Leipzig Ends",
+        "description": "The massive 'Battle of the Nations' concluded as Allied forces stormed Leipzig, forcing a disastrous French retreat over the Elster River after a bridge was prematurely blown up.",
+        "date": "1813-10-19",
+        "location": "Leipzig",
+        "country": "Germany"
+    },
+    {
+        "id": "368",
+        "title": "Wellington Reaches the Duero",
+        "description": "During his tactical retreat following the failed Siege of Burgos, British General Wellington successfully withdrew his Anglo-Portuguese army across the Duero River to escape pursuing French forces.",
+        "date": "1812-10-20",
+        "location": "Duero",
+        "country": "Spain"
+    },
+    {
+        "id": "369",
+        "title": "The Malet Coup Attempt",
+        "description": "While Napoleon was retreating from Moscow, disgruntled French General Claude François de Malet launched a daring but failed coup d'état in Paris by spreading false rumors that the Emperor had died in Russia.",
+        "date": "1812-10-23",
+        "location": "Paris",
+        "country": "France"
+    },
+    {
+        "id": "370",
+        "title": "Coalition Advance on the Rhine",
+        "description": "In the rapid aftermath of the Battle of Leipzig, Allied Coalition forces consolidated their grip on Germany and pushed westward, forcing the remnants of Napoleon's army to retreat toward the French border.",
+        "date": "1813-10-23",
+        "location": "Rhine",
+        "country": "Germany"
+    },
+    {
+        "id": "371",
+        "title": "The Battle of Saguntum",
+        "description": "French Marshal Suchet won a major victory against a Spanish relief army under General Blake, forcing the nearby fortress of Saguntum to surrender days later.",
+        "date": "1813-10-25",
+        "location": "Saguntum",
+        "country": "Spain"
+    },
+    {
+        "id": "372",
+        "title": "Allied Occupation of Hamburg",
+        "description": "In the rapid aftermath of the Battle of Leipzig, Allied Coalition forces consolidated their grip on Germany and pushed westward, forcing the remnants of Napoleon's army to retreat toward the French border.",
+        "date": "1813-11-13",
+        "location": "Hamburg",
+        "country": "Germany"
+    },
+    {
+        "id": "373",
+        "title": "Battle of María",
+        "description": "The Battle of María saw a small Spanish army led by Joaquín Blake y Joyes face an Imperial French corps under Louis Gabriel Suchet.",
+        "date": "1809-06-15",
+        "location": "María de Huerva",
+        "country": "Spain"
+    },
+    {
+        "id": "374",
+        "title": "Battle of Valls",
+        "description": "The Battle of Valls was fought on 25 February 1809, during the Peninsular War, between a French force under Laurent Gouvion Saint-Cyr and a Spanish force under Theodor von Reding.",
+        "date": "1809-02-25",
+        "location": "Valls, Tarragona",
+        "country": "Spain"
     }
 ]

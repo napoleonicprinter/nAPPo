@@ -10745,5 +10745,78 @@
       "Duque del Parque",
       "Jean Marchand"
     ]
+  },
+  {
+    "id": "573",
+    "name": "Battlefield of Sagunto (Sagonte)",
+    "category": "Battle site",
+    "date": "1811-10-25",
+    "significance": "Major",
+    "location": "Sagunto",
+    "country": "Spain",
+    "description": "The Battle of Saguntum (25 October 1811) saw the Imperial French Army of Aragon under Marshal Louis Gabriel Suchet fighting a Spanish army led by Captain General Joaquín Blake. The Spanish attempt to raise the siege of the Sagunto Castle failed when the French, Italians, and Poles drove their troops off the battlefield in rout.",
+    "latitude": 39.618109,
+    "longitude": -0.321015,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sagunto.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saguntum",
+    "defeated": "Spain",
+    "victor": "France",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia",
+      "arc"
+    ],
+    "commanders": [
+      "Joaquín Blake",
+      "Louis Gabriel Suchet"
+    ]
+  },
+  {
+    "id": "574",
+    "name": "Battlefield of María",
+    "category": "Battle site",
+    "date": "1809-06-15",
+    "significance": "Minor",
+    "location": "Cadrete, Zaragoza",
+    "country": "Spain",
+    "description": "The Battle of María saw a small Spanish army led by Joaquín Blake face an Imperial French corps under Louis Gabriel Suchet.",
+    "latitude": 41.573169,
+    "longitude": -1.0039,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maria.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mar%C3%ADa",
+    "defeated": "Spain",
+    "victor": "France",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Joaquín Blake",
+      "Louis Gabriel Suchet"
+    ]
+  },
+  {
+    "id": "575",
+    "name": "Battlefield of Valls",
+    "category": "Battle site",
+    "date": "1809-02-25",
+    "significance": "Minor",
+    "location": "Valls, Tarragona",
+    "country": "Spain",
+    "description": "The Battle of Valls was fought on 25 February 1809, during the Peninsular War, between a French force under Laurent Gouvion Saint-Cyr and a Spanish force under Theodor von Reding. Fought near the town of Valls in Catalonia, Spain, the battle ended in a French victory. General Reding was fatally wounded during a cavalry charge against French cavalry.",
+    "latitude": 41.291471,
+    "longitude": 1.216,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valls.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valls",
+    "defeated": "Spain",
+    "victor": "France",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "commanders": [
+      "Theodor von Reding",
+      "Laurent Gouvion Saint-Cyr"
+    ]
   }
 ]
