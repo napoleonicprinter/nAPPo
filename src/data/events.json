@@ -2784,5 +2784,77 @@
         "date": "1812-07-18",
         "location": "Castrejón, Spain",
         "country": "Spain"
+    },
+    {
+        "id": "327",
+        "title": "Battle of Grand Port Preparations",
+        "description": "In the intense naval war for control of the Indian Ocean, a British squadron arrived off the coast of Isle de France (now Mauritius). The initial coastal skirmishes on this day set the stage for the famous Battle of Grand Port, which would become one of the Royal Navy's most significant tactical naval defeats of the war.",
+        "date": "1810-07-16",
+        "location": "Port Louis, Isle de France",
+        "country": "Mauritius"
+    },
+    {
+        "id": "328",
+        "title": "Battle of Bailén",
+        "description": "The Battle of Bailén was fought during the Spanish War of Independence and marked the first open-field defeat in the history of Napoleon's army. It took place on July 19, 1808, near the town of Bailén in the province of Jaén. It pitted a French army of approximately 22,000 soldiers under General Dupont against a larger Spanish army (around 29,770) commanded by General Teodoro Reding, although the commander-in-chief of the so-called Army of Andalusia was General Castaños.",
+        "date": "1808-07-19",
+        "location": "Bailén, Jaén",
+        "country": "Spain"
+    },
+    {
+        "id": "329",
+        "title": "Surrender at Bailén",
+        "description": "Following the fierce fighting that began the previous day, French General Pierre Dupont de l'Étang realized his imperial division was entirely surrounded and cut off. On July 20, he entered into formal negotiations that led to the complete surrender of over 17,000 French troops to the Spanish forces, a catastrophic blow to French military prestige in Europe.",
+        "date": "1808-07-20",
+        "location": "Bailén, Jaén",
+        "country": "Spain"
+    },
+    {
+        "id": "330",
+        "title": "The Siege of Mantua Escalation",
+        "description": "During his first Italian campaign, Napoleon intensified the siege of the vital Austrian fortress city of Mantua. On this day, French batteries unleashed a massive, coordinated artillery bombardment against the city walls, attempting to force a quick surrender before Austrian relief columns could arrive.",
+        "date": "1796-07-20",
+        "location": "Mantua",
+        "country": "Italy"
+    },
+    {
+        "id": "331",
+        "title": "The Evacuation of Segovia",
+        "description": "Just four days after his brilliant victory at the Battle of Salamanca, Wellington's Allied army forced the French to abandon central Spain. On this day, French troops officially evacuated the historic city of Segovia, retreating toward Madrid and leaving behind vital military stores as French control in the region began to rapidly unravel.",
+        "date": "1812-07-26",
+        "location": "Segovia",
+        "country": "Spain"
+    },
+    {
+        "id": "332",
+        "title": "Battle of Talavera Begins",
+        "description": "In a major engagement of the Peninsular War, a combined Anglo-Spanish army under Wellington and General Gregorio de la Cuesta took up defensive positions at Talavera de la Reina to block a French army led by Marshal Victor and King Joseph Bonaparte. Evening French assaults on July 27 focused on a strategic hill (Medellín), sparking intense night fighting that set the stage for the main battle the following day.",
+        "date": "1812-07-27",
+        "location": "Talavera de la Reina",
+        "country": "Spain"
+    },
+    {
+        "id": "333",
+        "title": "The Russian Retreat to Smolensk",
+        "description": "Following the three-day Battle of Vitebsk, Russian General Michael Andreas Barclay de Tolly successfully slipped away from Napoleon's enveloping maneuvers under the cover of night. By July 27, the Russian First Army was in full, orderly retreat toward Smolensk to unite with Bagration's forces, frustrating Napoleon’s attempts to force a decisive, early engagement.",
+        "date": "1812-07-27",
+        "location": "Smolensk",
+        "country": "Russia"
+    },
+    {
+        "id": "334",
+        "title": "The Battle of Talavera Fallout",
+        "description": "In the immediate aftermath of the bloody battle, Arthur Wellesley (Wellington) received critical intelligence that a massive French army under Marshal Nicolas Soult was rapidly marching south to cut off his line of retreat into Portugal. On July 31, Wellington made the vital decision to abandon his advance on Madrid and begin a swift southwestward march to escape the trap.",
+        "date": "1812-07-31",
+        "location": "Talavera de la Reina",
+        "country": "Spain"
+    },
+    {
+        "id": "335",
+        "title": "Combat of Senno",
+        "description": "During the French invasion of Russia, French forces under Marshal Victor clashed with the Russian rear-guard under General Peter Wittgenstein near Senno. This sharp tactical encounter was part of the heavy fighting along the northern flank as both sides attempted to secure the roads leading toward Vitebsk.",
+        "date": "1812-07-25",
+        "location": "Senno",
+        "country": "Russia"
     }
 ]
