@@ -604,7 +604,7 @@ button {
 }
 
 /* Optimization for Landscape Mobile */
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-width: 950px) and (orientation: landscape), (max-height: 600px) and (orientation: landscape) {
   .modal-logo {
     display: none !important;
   }
@@ -619,13 +619,23 @@ button {
     font-size: 1.1rem !important;
   }
   .modal-title-info p {
-    margin: 0 !important;
-    font-size: 0.8rem !important;
+    display: none !important;
   }
   .calendar-modal-body, .shopping-modal-body {
     padding: 0.5rem 1rem !important;
   }
-  .calendar-controls {
+  .calendar-controls, .device-mobile .calendar-controls {
     grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.4rem !important;
+  }
+  .category-filter-wrapper, .device-mobile .category-filter-wrapper {
+    padding: 0.4rem !important;
+  }
+  .selected-text, .device-mobile .selected-text {
+    font-size: 0.75rem !important;
+  }
+  .filter-icon, .device-mobile .filter-icon {
+    width: 14px !important;
+    height: 14px !important;
   }
 }
