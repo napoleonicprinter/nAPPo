@@ -587,9 +587,13 @@ export const AppProvider = ({ children }) => {
         document.body.className = theme === 'light' ? 'light-mode' : '';
     }, [theme]);
 
+    const [showAuth, setShowAuth] = useState(false);
+    const [authMessage, setAuthMessage] = useState(null);
+
     const toggleVisited = (id) => {
         if (!currentUser) {
-            alert("Please log in to mark sites as visited.");
+            setAuthMessage("Please log in to mark sites as visited.");
+            setShowAuth(true);
             return;
         }
         setVisitedSites(prev => prev.includes(id) ? prev.filter(siteId => siteId !== id) : [...prev, id]);
@@ -687,6 +691,8 @@ export const AppProvider = ({ children }) => {
             selectedSite, setSelectedSite,
             siteToOpenPopup, setSiteToOpenPopup,
             toggleVisited,
+            showAuth, setShowAuth,
+            authMessage, setAuthMessage,
             geolocationEnabled,
             requestGeolocation,
             disableGeolocation,

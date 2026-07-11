@@ -44,12 +44,12 @@ const Header = () => {
         // Emulation states from Context
         previewDevice, setPreviewDevice,
         getPortalContainer,
-        activeMapOverlays, clearMapOverlays
+        activeMapOverlays, clearMapOverlays,
+        showAuth, setShowAuth, setAuthMessage
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
     const [showSettings, setShowSettings] = useState(false);
-    const [showAuth, setShowAuth] = useState(false);
     const [showEvents, setShowEvents] = useState(false);
     const [showNews, setShowNews] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
@@ -508,7 +508,7 @@ const Header = () => {
             </div>
 
 
-            {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+            {showAuth && <AuthModal onClose={() => { setShowAuth(false); setAuthMessage(null); }} />}
             {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
             {showNews && <NewsModal onClose={() => setShowNews(false)} />}
             {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}

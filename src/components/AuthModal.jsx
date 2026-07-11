@@ -5,7 +5,7 @@ import { X, Lock, User, Mail } from 'lucide-react';
 import './CardView.css';
 
 const AuthModal = ({ onClose }) => {
-    const { login, signup, getPortalContainer } = useAppContext();
+    const { login, signup, getPortalContainer, authMessage } = useAppContext();
     const [isLogin, setIsLogin] = useState(true);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -70,8 +70,8 @@ const AuthModal = ({ onClose }) => {
                     <X size={24} />
                 </button>
 
-                <h2 style={{ marginBottom: '1.5rem', color: 'var(--text-primary)' }}>
-                    {isLogin ? 'Welcome Back' : 'Create Account'}
+                <h2 style={{ marginBottom: '1.5rem', color: 'var(--text-primary)', fontSize: authMessage ? '1.2rem' : '1.5rem', lineHeight: '1.4' }}>
+                    {authMessage ? authMessage : (isLogin ? 'Welcome Back' : 'Create Account')}
                 </h2>
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
