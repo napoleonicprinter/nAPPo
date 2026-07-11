@@ -229,3 +229,8 @@
         display: block;
     }
 }
+
+.device-mobile.device-portrait .title-break,
+.device-mobile:not(.device-landscape) .title-break {
+    display: block;
+}

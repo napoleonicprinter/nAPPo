@@ -93,36 +93,38 @@ const CalendarView = ({ onClose }) => {
                         }
                     }
                     /* DevicePreviewer Emulator Support */
-                    .device-mobile .shows-mobile-fix-content {
-                        flex-direction: column !important;
-                        height: auto !important;
-                        min-height: 0 !important;
-                    }
-                    .device-mobile .shows-mobile-fix-image {
-                        width: 100% !important;
-                        height: 180px !important;
-                        flex: 0 0 auto !important;
-                    }
-                    .device-mobile .shows-mobile-fix-info {
-                        display: flex !important;
-                        flex: 1 1 auto !important;
-                        padding: 1.2rem !important;
-                        height: auto !important;
-                        opacity: 1 !important;
-                        visibility: visible !important;
-                    }
-                    .device-mobile .calendar-controls {
-                        grid-template-columns: repeat(2, 1fr) !important;
-                    }
-                    .device-mobile .category-filter-wrapper {
-                        padding: 0.8rem !important;
-                        justify-content: center !important;
-                    }
-                    .device-mobile .selected-text {
-                        color: var(--text-primary) !important;
-                        opacity: 1 !important;
-                        visibility: visible !important;
-                        display: block !important;
+                    @media (orientation: portrait) {
+                        .device-mobile .shows-mobile-fix-content {
+                            flex-direction: column !important;
+                            height: auto !important;
+                            min-height: 0 !important;
+                        }
+                        .device-mobile .shows-mobile-fix-image {
+                            width: 100% !important;
+                            height: 180px !important;
+                            flex: 0 0 auto !important;
+                        }
+                        .device-mobile .shows-mobile-fix-info {
+                            display: flex !important;
+                            flex: 1 1 auto !important;
+                            padding: 1.2rem !important;
+                            height: auto !important;
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                        }
+                        .device-mobile .calendar-controls {
+                            grid-template-columns: repeat(2, 1fr) !important;
+                        }
+                        .device-mobile .category-filter-wrapper {
+                            padding: 0.8rem !important;
+                            justify-content: center !important;
+                        }
+                        .device-mobile .selected-text {
+                            color: var(--text-primary) !important;
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                            display: block !important;
+                        }
                     }
                 `}</style>
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ display: isShowsCalendarOpen ? 'none' : 'flex' }}>

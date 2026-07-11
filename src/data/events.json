@@ -3216,5 +3216,14 @@
         "date": "1814-01-11",
         "location": "Epinal, France",
         "description": "The Crown Prince of Württemberg launched a three-column attack against General Rousseau's French forces, who successfully executed an orderly retreat to Charmes despite suffering heavy losses and 500 prisoners due to delayed Allied flank support from General Platoff."
+    },
+    {
+        "id": "381",
+        "title": "Battle of Sehested",
+        "date": "1813-12-10",
+        "location": "Sehestedt",
+        "country": "Germany",
+        "description": "The Battle of Sehested was fought on 10 December 1813 during the Dano-Swedish War of 1813-1814 between a Danish army under Prince Frederik of Hesse and a Coalition force led by Ludwig von Wallmoden-Gimborn.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sehested"
     }
 ]

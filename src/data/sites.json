@@ -10909,23 +10909,27 @@
   },
   {
     "id": "580",
-    "name": "Battlefield of Bar-sur-Aube",
+    "name": "Battlefield of Sehested",
     "category": "Battle site",
-    "date": "1814-02-27",
-    "significance": "Minor",
-    "location": "Bar-sur-Aube",
-    "country": "France",
-    "description": "The Battle of Bar-sur-Aube took place on 27 February 1814 between the French army commanded by Marshal MacDonald and the Allied army commanded by Marshal Pierre Augereau. This battle ended in a French victory.",
-    "latitude": 48.249281,
-    "longitude": 4.726111,
+    "date": "1813-12-10",
+    "significance": "Medium",
+    "location": "Sehested",
+    "country": "Germany",
+    "description": "The Battle of Sehested was fought on 10 December 1813 during the Dano-Swedish War of 1813-1814 between a Danish army under Prince Frederik of Hesse and a Coalition force led by Ludwig von Wallmoden-Gimborn.",
+    "latitude": 54.371486,
+    "longitude": 9.840,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bar-sur-Aube.webp",
-    "more_info_link": "https://www.napoleon-series.org/military-info/battles/1814/Weil/c_Weil2e.html",
-    "defeated": "Austria",
-    "victor": "France",
-    "special": "6",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sehested",
+    "defeated": "Coalition",
+    "victor": "Denmark-Norway",
+    "special": [
+      "German Campaign",
+      "Dano-Swedish War",
+      "6"
+    ],
     "commanders": [
-      "Friedrich Hohenzollern",
-      "Jean-Baptiste Rousseaus"
+      "Ludwig von Wallmoden-Gimborn",
+      "Prince Frederik of Hesse"
     ]
   }
 ]
