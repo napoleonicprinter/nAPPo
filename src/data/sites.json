@@ -10841,7 +10841,7 @@
     ]
   },
   {
-    "id": "576",
+    "id": "577",
     "name": "Battlefield of Teugen-Hausen (Thann)",
     "category": "Battle site",
     "date": "1809-04-19",
@@ -10862,7 +10862,7 @@
     ]
   },
   {
-    "id": "577",
+    "id": "578",
     "name": "Battlefield of Smoliani (Smolyany)",
     "category": "Battle site",
     "date": "1812-11-13",
@@ -10884,7 +10884,7 @@
     ]
   },
   {
-    "id": "578",
+    "id": "579",
     "name": "Battlefield of Epinal",
     "category": "Battle site",
     "date": "1814-01-11",
@@ -10904,11 +10904,11 @@
     ],
     "commanders": [
       "Friedrich Hohenzollern",
-      "Jean-Baptiste Rousseaus"
+      "Jean-Baptiste Rousseau"
     ]
   },
   {
-    "id": "579",
+    "id": "580",
     "name": "Battlefield of Bar-sur-Aube",
     "category": "Battle site",
     "date": "1814-02-27",
