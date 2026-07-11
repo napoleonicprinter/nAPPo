@@ -4,15 +4,7 @@
         "date": "2026-04-03",
         "title": "New Features Added to nAPPo Trails",
         "description": "We are excited to announce multiple new features including Day/Night modes, dynamic filtering, and more accurate location tracking.",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Napoleon_at_the_Great_St._Bernard_-_Jacques-Louis_David_-_Google_Cultural_Institute.jpg/800px-Napoleon_at_the_Great_St._Bernard_-_Jacques-Louis_David_-_Google_Cultural_Institute.jpg",
-        "link": "https://en.wikipedia.org/wiki/Napoleon"
-    },
-    {
-        "id": "2",
-        "date": "2026-04-08",
-        "title": "Upcoming Waterloo Reenactment",
-        "description": "A major reenactment event for the Battle of Waterloo is scheduled for early June. Preparations are already underway.",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Battle_of_Waterloo_1815.PNG/800px-Battle_of_Waterloo_1815.PNG",
-        "link": "https://en.wikipedia.org/wiki/Battle_of_Waterloo"
+        "image": "",
+        "link":
     }
 ]
