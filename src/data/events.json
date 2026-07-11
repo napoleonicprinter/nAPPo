@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "title": "Battle of Raszyn",
         "date": "1809-04-19",
         "location": "Raszyn, Poland",
@@ -9,7 +9,7 @@
         "more_info_link": ""
     },
     {
-        "id": 2,
+        "id": "2",
         "title": "Napoleon officially marries Marie Louise, Duchess of Parma.",
         "date": "1810-04-01",
         "location": "Paris, France",
@@ -18,7 +18,7 @@
         "more_info_link": ""
     },
     {
-        "id": 3,
+        "id": "3",
         "title": "Napoleon's abdication",
         "date": "1814-04-06",
         "location": "Fontainebleau, France",
@@ -27,7 +27,7 @@
         "more_info_link": ""
     },
     {
-        "id": 4,
+        "id": "4",
         "title": "Joseph Bonaparte becomes King of Naples",
         "date": "1806-04-01",
         "location": "Naples, Italy",
@@ -36,16 +36,15 @@
         "more_info_link": ""
     },
     {
-        "id": 5,
-        "title": "Batalla de Abensberg",
-        "date": "1809-04-20",
-        "location": "Abensberg, Bavaria",
-        "description": "The Battle of Abensberg was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abensberg",
-        "more_info_link": ""
+        "id": "5",
+        "title": "Battle of Smoliani",
+        "date": "1812-11-13",
+        "location": "Smoliani, Belarus",
+        "description": "The Russians under General Peter Wittgenstein engaged the French forces of Marshal Claude Victor and Marshal Nicholas Oudinot.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Smoliani"
     },
     {
-        "id": 6,
+        "id": "6",
         "title": "Battle of Landshut",
         "date": "1809-04-21",
         "location": "Landshut, Bavaria",
@@ -54,7 +53,7 @@
         "more_info_link": ""
     },
     {
-        "id": 7,
+        "id": "7",
         "title": "Battle of Eggmühl",
         "date": "1809-04-22",
         "location": "Eggmühl, Bavaria",
@@ -3168,5 +3167,54 @@
         "date": "1809-02-25",
         "location": "Valls, Tarragona",
         "country": "Spain"
+    },
+    {
+        "id": "375",
+        "title": "Combat of Neresheim",
+        "description": "The Battle of Neresheim took place on 17 October 1805. It ended in a victory for the French army commanded by Marshal Joachim Murat. The opposing force was the Austrian army of General Franz von Werneck. The action resulted in the capture of 1,350 men. Among the prisoners was General Rudolf von Sinzendorf. The French also captured 2 colours.",
+        "date": "1805-10-17",
+        "location": "Neresheim",
+        "country": "Germany",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neresheim_(1805)"
+    },
+    {
+        "id": "376",
+        "title": "Surrender of Saguntum Castle",
+        "description": "Following their defeat at the Battle of Saguntum the previous day, the Spanish garrison formally surrendered the ancient hilltop fortress to French Marshal Suchet.",
+        "date": "1811-10-26",
+        "location": "Saguntum",
+        "country": "Spain"
+    },
+    {
+        "id": "377",
+        "title": "The Skirmish at Medyn",
+        "description": "Russian Cossacks intercepted and defeated a vanguard of French-allied Polish cavalry, forcing Napoleon to quickly reinforce his flank during the retreat from Moscow.",
+        "date": "1812-10-26",
+        "location": "Medyn",
+        "country": "Russia"
+    },
+    {
+        "id": "378",
+        "title": "Battle of Teugen-Hausen",
+        "description": "Also known as battle of Thann. The battle was fought on 19 April 1809 between the French III Corps led by Marshal Louis-Nicolas Davout and the Austrian III Armeekorps commanded by Prince Friedrich Franz Xaver of Hohenzollern-Hechingen. When the Austrians withdrew that evening, the French won a hard-fought victory over their opponents.",
+        "date": "1809-04-19",
+        "location": "Teugen-Hausen",
+        "country": "Germany",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Teugen%E2%80%93Hausen"
+    },
+    {
+        "id": "379",
+        "title": "End of the Battle of Smoliani",
+        "date": "1812-11-14",
+        "location": "Smoliani, Belarus",
+        "description": "On November 14th, the combat intensified as 5,000 of Victor's troops attacked and captured Smoliani. After this, however, the French attacking force suffered a reversal, being repulsed on the Russian right wing and then losing Smoliani to Wittgenstein's counterattack.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Smoliani"
+    },
+    {
+        "id": "380",
+        "title": "Battle of Epinal",
+        "date": "1814-01-11",
+        "location": "Epinal, France",
+        "description": "The Crown Prince of Württemberg launched a three-column attack against General Rousseau's French forces, who successfully executed an orderly retreat to Charmes despite suffering heavy losses and 500 prisoners due to delayed Allied flank support from General Platoff.",
     }
 ]

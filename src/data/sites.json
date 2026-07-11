@@ -4700,13 +4700,13 @@
   },
   {
     "id": "230",
-    "name": "Battlefield of Echmühl",
+    "name": "Battlefield of Echmühl of Eggmühl",
     "category": "Battle site",
     "significance": "Medium",
     "year": "1809",
     "location": "Eckmühl",
     "country": "Germany",
-    "description": "Fought on 21–22 April 1809, was the turning point of the 1809 Campaign.",
+    "description": "Fought on 21-22 April 1809, was the turning point of the 1809 Campaign.",
     "latitude": 48.88,
     "longitude": 12.18,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Echmul.webp",
@@ -10817,6 +10817,115 @@
     "commanders": [
       "Theodor von Reding",
       "Laurent Gouvion Saint-Cyr"
+    ]
+  },
+  {
+    "id": "576",
+    "name": "Battlefield of Neresheim",
+    "category": "Battle site",
+    "date": "1805-10-17",
+    "significance": "Minor",
+    "location": "Neresheim",
+    "country": "Germany",
+    "description": "The action took place on October 17th 1805. It ended in a victory for the French army commanded by Marshal Joachim Murat. The opposing force was the Austrian army of General Franz von Werneck. The action resulted in the capture of 1,350 men. Among the prisoners was General Rudolf von Sinzendorf. The French also captured 2 colours.",
+    "latitude": 48.751452,
+    "longitude": 10.326,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Neresheim.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neresheim_(1805)",
+    "defeated": "Austria",
+    "victor": "France",
+    "special": "3",
+    "commanders": [
+      "Joachim Murat",
+      "Franz von Werneck"
+    ]
+  },
+  {
+    "id": "576",
+    "name": "Battlefield of Teugen-Hausen (Thann)",
+    "category": "Battle site",
+    "date": "1809-04-19",
+    "significance": "Medium",
+    "location": "Thann",
+    "country": "Germany",
+    "description": "The battle was fought on 19 April 1809 between the French III Corps led by Marshal Louis-Nicolas Davout and the Austrian III Armeekorps commanded by Prince Friedrich Franz Xaver of Hohenzollern-Hechingen. When the Austrians withdrew that evening, the French won a hard-fought victory over their opponents.",
+    "latitude": 48.875252,
+    "longitude": 12.0351,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Thann.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Teugen%E2%80%93Hausen",
+    "defeated": "Austria",
+    "victor": "France",
+    "special": "5",
+    "commanders": [
+      "Louis-Nicolas Davout",
+      "Friedrich Hohenzollern"
+    ]
+  },
+  {
+    "id": "577",
+    "name": "Battlefield of Smoliani (Smolyany)",
+    "category": "Battle site",
+    "date": "1812-11-13",
+    "significance": "Medium",
+    "location": "Bol'shiye Smol'yantsy, Vitebsk region",
+    "country": "Belarus",
+    "description": "The Russians under General Peter Wittgenstein defeated the French forces of Marshal Claude Victor and Marshal Nicholas Oudinot. This battle was the last effort of the French to reestablish their northern flank in Russia, known as the 'Dvina Line'.",
+    "latitude": 54.827547,
+    "longitude": 29.192445,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Smoliani.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Smoliani",
+    "defeated": "France",
+    "victor": "Russia",
+    "special": "Russian Campaign",
+    "commanders": [
+      "Peter Wittgenstein",
+      "Claude Victor",
+      "Nicolas Oudinot"
+    ]
+  },
+  {
+    "id": "578",
+    "name": "Battlefield of Epinal",
+    "category": "Battle site",
+    "date": "1814-01-11",
+    "significance": "Minor",
+    "location": "Epinal",
+    "country": "France",
+    "description": "The Crown Prince of Württemberg launched a three-column attack against General Rousseau's French forces, who successfully executed an orderly retreat to Charmes despite suffering heavy losses and 500 prisoners due to delayed Allied flank support from General Platoff.",
+    "latitude": 48.218822,
+    "longitude": 6.437818,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Epinal.webp",
+    "more_info_link": "https://www.napoleon-series.org/military-info/battles/1814/Weil/c_Weil2e.html",
+    "defeated": "Austria",
+    "victor": "France",
+    "special": [
+      "Campaign of France",
+      "6"
+    ],
+    "commanders": [
+      "Friedrich Hohenzollern",
+      "Jean-Baptiste Rousseaus"
+    ]
+  },
+  {
+    "id": "579",
+    "name": "Battlefield of Bar-sur-Aube",
+    "category": "Battle site",
+    "date": "1814-02-27",
+    "significance": "Minor",
+    "location": "Bar-sur-Aube",
+    "country": "France",
+    "description": "The Battle of Bar-sur-Aube took place on 27 February 1814 between the French army commanded by Marshal MacDonald and the Allied army commanded by Marshal Pierre Augereau. This battle ended in a French victory.",
+    "latitude": 48.249281,
+    "longitude": 4.726111,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bar-sur-Aube.webp",
+    "more_info_link": "https://www.napoleon-series.org/military-info/battles/1814/Weil/c_Weil2e.html",
+    "defeated": "Austria",
+    "victor": "France",
+    "special": "6",
+    "commanders": [
+      "Friedrich Hohenzollern",
+      "Jean-Baptiste Rousseaus"
     ]
   }
 ]
