@@ -3225,5 +3225,93 @@
         "country": "Germany",
         "description": "The Battle of Sehested was fought on 10 December 1813 during the Dano-Swedish War of 1813-1814 between a Danish army under Prince Frederik of Hesse and a Coalition force led by Ludwig von Wallmoden-Gimborn.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sehested"
+    },
+    {
+        "id": "382",
+        "title": "Archduke Charles is Born in Florence",
+        "date": "1771-09-05",
+        "location": "Florence",
+        "country": "Italy",
+        "description": "Archduke Charles was born at the Pitti Palace, residence of his father, Leopold, then Grand Duke of Tuscany."
+    },
+    {
+        "id": "383",
+        "title": "Karl Philipp, Prince of Schwarzenberg is Born in Vienna",
+        "date": "1771-04-18",
+        "location": "Vienna",
+        "country": "Austria",
+        "description": "Karl Philipp Schwarzenberg was born on April 15th 1771 at the Palais Schwarzenberg in Vienna, family residence since 1716."
+    },
+    {
+        "id": "384",
+        "title": "Marshal Joseph Radetzky is Born in Třebnice, Sedlčany, Czech Republic",
+        "date": "1766-11-02",
+        "location": "Třebnice, Sedlčany",
+        "country": "Czech Republic",
+        "description": "He was born on November 2nd 1766into a noble Bohemian military family of Czech origin at Chateau Třebnice (Trebnitz) near Sedlčany in Bohemia.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Joseph_Radetzky_von_Radetz"
+    },
+    {
+        "id": "385",
+        "title": "Karl Mack von Leiberich is Born",
+        "date": "1752-08-25",
+        "location": "Nennslingen",
+        "country": "Germany",
+        "description": "He was born on August 25th 1752 in Nennslingen, Principality of Ansbach.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Karl_Mack_von_Leiberich"
+    },
+    {
+        "id": "386",
+        "title": "Michael von Melas is Born",
+        "date": "1729-05-12",
+        "location": "Roadeș",
+        "country": "Romania",
+        "description": "He was born in Radeln, Transylvania, (nowadays Roadeș, part of Bunești commune, Brașov County, Romania) on May 12th 1729 and joined the Austrian Army at age 17.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Michael_von_Melas"
+    },
+    {
+        "id": "387",
+        "title": "Birth of József Alvinczi",
+        "date": "1735-02-01",
+        "location": "Vințu de Jos",
+        "country": "Romania",
+        "description": "He was born on February 1st 1735 in Alvinc, now part of the village of Vințu de Jos, in the Transylvania region of Romania.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/J%C3%B3zsef_Alvinczi"
+    },
+    {
+        "id": "388",
+        "title": "Birth of Johann I Joseph, Prince of Liechtenstein",
+        "date": "1760-06-26",
+        "location": "Vienna",
+        "country": "Austria",
+        "description": "He was born on June 26th 1760 in Vienna, Austria, at the Liechtenstein City Palace.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Johann_I_Joseph,_Prince_of_Liechtenstein"
+    },
+    {
+        "id": "389",
+        "title": "Birth of Frederick William, Duke of Brunswick-Wolfenbüttel",
+        "date": "1771-10-09",
+        "location": "Braunschweig",
+        "country": "Germany",
+        "description": "He was born on October 9th 1771 in Braunschweig, Duchy of Brunswick-Wolfenbüttel, Holy Roman Empire, at the Brunswick Palace.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Frederick_William,_Duke_of_Brunswick-Wolfenb%C3%BCttel"
+    },
+    {
+        "id": "390",
+        "title": "First Battle of Algeciras",
+        "date": "1801-07-06",
+        "location": "Algeciras Bay",
+        "country": "Spain",
+        "description": "The First Battle of Algeciras was fought on 6 July 1801 between a Royal Navy squadron and a smaller French Navy squadron lying at anchor in the Spanish port of Algeciras during the Algeciras campaign of the War of the Second Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Algeciras#Battle"
+    },
+    {
+        "id": "391",
+        "title": "Second Battle of Algeciras",
+        "date": "1801-07-12",
+        "location": "Algeciras Bay",
+        "country": "Spain",
+        "description": "The Second Battle of Algeciras was fought on 12 July 1801 between a Royal Navy squadron and a smaller French Navy squadron lying at anchor in the Spanish port of Algeciras during the Algeciras campaign of the War of the Second Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras"
     }
 ]

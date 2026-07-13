@@ -15,14 +15,14 @@ android {
     }
 
     defaultConfig {
-        // ID exacto de tu aplicación en Google Play
-        applicationId "com.nappo.trails.app.free"
+        // El ID base debe ser el original
+        applicationId "com.nappo.trails.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
         // Sube a 6 para que Google no rechace por versión repetida
-        versionCode 12
-        versionName "1.10"
+        versionCode 14
+        versionName "1.12"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
@@ -34,21 +34,14 @@ android {
     productFlavors {
         free {
             dimension "version"
-            // Dejamos el sufijo vacío porque ya pusimos el .free en el ID principal arriba
-            applicationIdSuffix ""
+            // Aquí es donde añadimos el .free
+            applicationIdSuffix ".free"
             resValue "string", "app_name", "nAPPo Trails Free"
-            resValue "bool", "has_battle_maps", "false"
         }
         paid {
             dimension "version"
-            // Si algún día quieres subir la PRO, esta tendrá .paid
-            applicationIdSuffix ".paid"
+            applicationIdSuffix "" // La versión de pago suele ser la base
             resValue "string", "app_name", "nAPPo Trails"
-            resValue "bool", "has_battle_maps", "true"
-
-
-
-
         }
     }
 

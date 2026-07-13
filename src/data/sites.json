@@ -63,7 +63,7 @@
     ],
     "commanders": [
       "Napoleon",
-      "Wellington",
+      "Arthur Wellesley",
       "Gebhard von Blücher",
       "Prince of Orange"
     ],
@@ -829,7 +829,7 @@
     "defeated": "France",
     "commanders": [
       "Jean de Dieu Soult",
-      "Wellington"
+      "Arthur Wellesley"
     ]
   },
   {
@@ -855,7 +855,7 @@
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
     "commanders": [
-      "Wellington",
+      "Arthur Wellesley",
       "Auguste Marmont"
     ]
   },
@@ -1100,7 +1100,7 @@
     "defeated": "France",
     "commanders": [
       "Jean de Dieu Soult",
-      "Wellington"
+      "Arthur Wellesley"
     ]
   },
   {
@@ -1682,7 +1682,7 @@
     "defeated": "France",
     "commanders": [
       "General Jean Léonard Barrié",
-      "Wellington"
+      "Arthur Wellesley"
     ]
   },
   {
@@ -1733,7 +1733,7 @@
     "victor": "Anglo-luso-spanish",
     "defeated": "France",
     "commanders": [
-      "Wellington",
+      "Arthur Wellesley",
       "Jean-Baptiste Jourdan",
       "Joseph Bonaparte",
       "Francisco de Longa",
@@ -1786,7 +1786,7 @@
     "defeated": "France",
     "commanders": [
       "Jean-de-Dieu Soult",
-      "Wellington"
+      "Arthur Wellesley"
     ]
   },
   {
@@ -4141,7 +4141,7 @@
     "special": "Gunboat War",
     "commanders": [
       "Joachim Castenschiold",
-      "Wellington"
+      "Arthur Wellesley"
     ],
     "defeated": "Denmark",
     "victor": "Britain"
@@ -7295,7 +7295,7 @@
     "special": "Peninsular War",
     "commanders": [
       "Jean de Dieu Soult",
-      "Wellington"
+      "Arthur Wellesley"
     ]
   },
   {
@@ -10871,5 +10871,162 @@
       "Ludwig von Wallmoden-Gimborn",
       "Prince Frederik of Hesse"
     ]
+  },
+  {
+    "id": "581",
+    "name": "Archduke Charles of Austria Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Florence",
+    "country": "Italy",
+    "description": "Archduke Charles was born on September 5th 1771 at the Pitti Palace, residence of his father, Leopold, then Grand Duke of Tuscany.",
+    "latitude": 43.765153,
+    "longitude": 11.25,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Archduke_Charles,_Duke_of_Teschen",
+    "more_info_link": "https://en.wikipedia.org/wiki/Palazzo_Pitti",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pitti.webp"
+  },
+  {
+    "id": "582",
+    "name": "Karl Mack von Leiberich Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Nennslingen",
+    "country": "Germany",
+    "description": "He was born on August 25th 1752 in Nennslingen, Principality of Ansbach.",
+    "latitude": 49.045905,
+    "longitude": 11.129521,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Karl_Mack_von_Leiberich",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nenslingen.webp"
+  },
+  {
+    "id": "583",
+    "name": "Marshal Joseph Radetzky Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Třebnice, Sedlčany",
+    "country": "Czech Republic",
+    "description": "He was born on November 2nd 1766 into a noble Bohemian military family of Czech origin at Chateau Třebnice (Trebnitz) near Sedlčany in Bohemia.",
+    "latitude": 49.650,
+    "longitude": 14.361972,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Joseph_Radetzky_von_Radetz",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Trebnitz.webp"
+  },
+  {
+    "id": "584",
+    "name": "Karl Philipp, Prince of Schwarzenberg Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Vienna",
+    "country": "Austria",
+    "description": "He was born on April 18th 1771 at the Palais Schwarzenberg in Vienna, family residence since 1716. In 1987, a scene for the James Bond film 'The Living Daylights' was filmed at the Palais Schwarzenberg.",
+    "latitude": 48.19695,
+    "longitude": 16.376988,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Karl_Philipp,_Prince_of_Schwarzenberg",
+    "more_info_link": "https://en.wikipedia.org/wiki/Palais_Schwarzenberg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Schwarzenberg.webp"
+  },
+  {
+    "id": "585",
+    "name": "Michael von Melas Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Roadeș",
+    "country": "Romania",
+    "description": "He was born in Radeln, Transylvania, (nowadays Roadeș, part of Bunești commune, Brașov County, Romania) on May 12th 1729 and joined the Austrian Army at age 17.",
+    "latitude": 46.128222,
+    "longitude": 25.10788,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Michael_von_Melas",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Transilvania.webp"
+  },
+  {
+    "id": "586",
+    "name": "József Alvinczi Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Vințu de Jos",
+    "country": "Romania",
+    "description": "He was born on February 1st 1735 in Alvinc, now part of the village of Vințu de Jos, in the Transylvania region of Romania.",
+    "latitude": 45.9970,
+    "longitude": 23.478844,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/J%C3%B3zsef_Alvinczi",
+    "more_info_link": "https://en.wikipedia.org/wiki/Martinuzzi_Castle",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alvinc.webp"
+  },
+  {
+    "id": "587",
+    "name": "Johann I Joseph, Prince of Liechtenstein Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Vienna",
+    "country": "Austria",
+    "description": "He was born on June 26th 1760 in Vienna, Austria, at the Liechtenstein City Palace which was a family state since 1694.",
+    "latitude": 48.20998,
+    "longitude": 16.362627,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Johann_I_Joseph,_Prince_of_Liechtenstein",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/liechtenstein.webp"
+  },
+  {
+    "id": "588",
+    "name": "Frederick William, Duke of Brunswick, Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Braunschweig",
+    "country": "Germany",
+    "description": "He was born on October 9th 1771 in Braunschweig, Duchy of Brunswick-Wolfenbüttel, Holy Roman Empire, at the Brunswick Palace.",
+    "latitude": 52.263407,
+    "longitude": 10.527751,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Frederick_William,_Duke_of_Brunswick-Wolfenb%C3%BCttel",
+    "more_info_link": "https://en.wikipedia.org/wiki/Brunswick_Palace",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Brunswick_Palace.webp"
+  },
+  {
+    "id": "589",
+    "name": "First Battle of Algeciras",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": 1801,
+    "location": "Algeciras Bay",
+    "country": "Mediterranean Sea",
+    "description": "The First Battle of Algeciras was fought on 6 July 1801 between a Royal Navy squadron and a smaller French Navy squadron lying at anchor in the Spanish port of Algeciras during the Algeciras campaign of the War of the Second Coalition.",
+    "latitude": 36.1441,
+    "longitude": -5.422330,
+    "special": [
+      "2",
+      "Algeciras Campaign"
+    ],
+    "commanders": [
+      "Sir James Saumarez",
+      "Charles-Alexandre Léon Durand"
+    ],
+    "victor": "France",
+    "defeated": "Britain",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Algeciras#Battle"
+  },
+  {
+    "id": "589",
+    "name": "Second Battle of Algeciras",
+    "category": "Naval battle",
+    "significance": "Medium",
+    "year": 1801,
+    "location": "Algeciras Bay",
+    "country": "Mediterranean Sea",
+    "description": "The Second Battle of Algeciras (also known as the Battle of the Gut of Gibraltar) was fought on 12 July 1801 between a Royal Navy squadron and a larger Spanish and French squadron in the Gut of Gibraltar during the Algeciras campaign of the war of the Second Coalition.",
+    "latitude": 36,
+    "longitude": -5.5,
+    "special": [
+      "2",
+      "Algeciras Campaign"
+    ],
+    "commanders": [
+      "Juan de Mondragón",
+      "Sir James Saumarez",
+      "Charles-Alexandre Léon Durand"
+    ],
+    "victor": "France",
+    "defeated": "Britain",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras2.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras"
   }
 ]
