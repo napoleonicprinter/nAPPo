@@ -349,5 +349,17 @@
     "moreInfo": "https://www.facebook.com/events/800751159295678?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22group%22%7D]%7D",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Heeswijk_2026.webp",
     "category": "Reenactment"
+  },
+  {
+    "id": 29,
+    "name": "Acción de Utiel 2026",
+    "date": "2026-08-21",
+    "month": "August",
+    "country": "Spain",
+    "organizer": "Ayuntamiento de Utiel",
+    "description": "21-23 August 2026",
+    "moreInfo": "https://www.facebook.com/heroesdeltollo",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Utiel.webp",
+    "category": "Reenactment"
   }
 ]
