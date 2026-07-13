@@ -11028,5 +11028,27 @@
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras2.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras"
+  },
+  {
+    "id": "590",
+    "name": " Battlefield of Tollo",
+    "category": "Battle site",
+    "significance": "Minor",
+    "date": "1812-08-25",
+    "year": 1812,
+    "location": "Utiel, Valencia",
+    "country": "Spain",
+    "description": "The combat of Tollo, also known as the Action of Utiel, took place on August 25, 1812, in Utiel (Valencia). Spanish forces led by General Pedro Villacampa defeated Napoleon's troops under General Maupoint, halting their advance towards Valencia and boosting the morale of the Spanish resistance.",
+    "latitude": 39.56073,
+    "longitude": -1.235954,
+    "special": "Guerra de Independencia",
+    "commanders": [
+      "Pedro Villacampa",
+      "Louis-Joseph Maupoint"
+    ],
+    "victor": "Spain",
+    "defeated": "France",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tollo.webp",
+    "more_info_link": "https://www.guerra-historia-publica.es/recursos/490"
   }
 ]

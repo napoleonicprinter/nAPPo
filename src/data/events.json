@@ -3313,5 +3313,14 @@
         "country": "Spain",
         "description": "The Second Battle of Algeciras was fought on 12 July 1801 between a Royal Navy squadron and a smaller French Navy squadron lying at anchor in the Spanish port of Algeciras during the Algeciras campaign of the War of the Second Coalition.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras"
+    },
+    {
+        "id": "392",
+        "title": "Combat of Tollo",
+        "date": "1812-08-25",
+        "location": "Utiel. Valencia",
+        "country": "Spain",
+        "description": "The combat of Tollo, also known as the Action of Utiel, took place on August 25, 1812, in Utiel (Valencia). Spanish forces led by General Pedro Villacampa defeated Napoleon's troops under General Maupoint, halting their advance towards Valencia and boosting the morale of the Spanish resistance.",
+        "more_info_link": "https://www.guerra-historia-publica.es/recursos/490"
     }
 ]
