@@ -11104,10 +11104,24 @@
     "location": "Haverfordwest, Pembrokeshire",
     "country": "Wales",
     "description": "He was born in Haverfordwest, Pembrokeshire on (probably) 24 August 1758.",
-    "latitude": 55.8572,
-    "longitude": -4.245762,
+    "latitude": 51.798823,
+    "longitude": -4.971331,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Picton_birth.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Thomas_Picton",
+    "createDate": "2026-07-14"
+  },
+  {
+    "id": "596",
+    "name": "Sir Thomas Picton Monument",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Carmarthen",
+    "country": "Wales",
+    "description": "The current limestone monument, which is Grade II listed, was erected in 1847, replacing an earlier structure in the town, designed by John Nash, which was weathering badly.",
+    "latitude": 51.855240,
+    "longitude": -4.320726,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Picton_monument.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Picton_Monument,_Carmarthen",
     "createDate": "2026-07-14"
   }
 ]
