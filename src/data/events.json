@@ -3340,5 +3340,14 @@
         "country": "Scotland",
         "description": "Moore was born on November 13th 1761 in a tenement block called Donald's Land on the north side of the Trongate, east of the Tron Steeple).",
         "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
+    },
+    {
+        "id": "395",
+        "title": "Birth of Sir Thomas Picton",
+        "date": "1758-08-24",
+        "location": "Haverfordwest",
+        "country": "Glasgow",
+        "description": "He was born in Haverfordwest, Pembrokeshire on (probably) 24 August 1758. Other sources sometimes give it as 20 August.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
     }
 ]

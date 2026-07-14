@@ -11095,5 +11095,19 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moore.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)",
     "createDate": "2026-07-14"
+  },
+  {
+    "id": "595",
+    "name": "Sir Thomas Picton Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Haverfordwest, Pembrokeshire",
+    "country": "Wales",
+    "description": "He was born in Haverfordwest, Pembrokeshire on (probably) 24 August 1758.",
+    "latitude": 55.8572,
+    "longitude": -4.245762,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Picton_birth.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Thomas_Picton",
+    "createDate": "2026-07-14"
   }
 ]
