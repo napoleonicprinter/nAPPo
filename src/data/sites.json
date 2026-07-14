@@ -11031,7 +11031,7 @@
   },
   {
     "id": "591",
-    "name": " Battlefield of Tollo",
+    "name": "Battlefield of Tollo",
     "category": "Battle site",
     "significance": "Minor",
     "date": "1812-08-25",
@@ -11050,5 +11050,44 @@
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tollo.webp",
     "more_info_link": "https://www.guerra-historia-publica.es/recursos/490"
+  },
+  {
+    "id": "592",
+    "name": "Statue de Lasalle au château de Lunéville",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": "Lunéville, Lorraine",
+    "country": "France",
+    "description": "Bronze equestrian statue of General Lasalle done by Charles Henri Joseph Cordier erected in 1893.",
+    "latitude": 48.59470,
+    "longitude": 6.490921,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lasalle.webp",
+    "site_link": "https://chateauluneville.meurthe-et-moselle.fr/"
+  },
+  {
+    "id": "593",
+    "name": "Arthur Wellesley, Lord Wellington, Birthplace",
+    "category": "Landmark",
+    "significance": "Major",
+    "location": "Dublin",
+    "country": "Ireland",
+    "description": "Still remains uncertainty about both the birthdate and the birthplace of Arthur Wesley, but historinas support the evidence that his family settled into Mornington House, Dublin, at the time of his birth, May 1st 1769.",
+    "latitude": 53.338302,
+    "longitude": -6.253270,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wellesley_birth.webp",
+    "more_info_link": "https://www.waterlooassociation.org.uk/2019/03/29/the-birth-of-arthur-wesley/"
+  },
+  {
+    "id": "594",
+    "name": "Sir John Moore Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Glasgow",
+    "country": "Scotland",
+    "description": "Moore was born on November 13th 1761 in a tenement block called Donald's Land on the north side of the Trongate, east of the Tron Steeple).",
+    "latitude": 55.8572,
+    "longitude": -4.245762,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moore.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
   }
 ]

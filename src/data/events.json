@@ -3322,5 +3322,23 @@
         "country": "Spain",
         "description": "The combat of Tollo, also known as the Action of Utiel, took place on August 25, 1812, in Utiel (Valencia). Spanish forces led by General Pedro Villacampa defeated Napoleon's troops under General Maupoint, halting their advance towards Valencia and boosting the morale of the Spanish resistance.",
         "more_info_link": "https://www.guerra-historia-publica.es/recursos/490"
+    },
+    {
+        "id": "393",
+        "title": "Birth of Arthur Welesley",
+        "date": "1769-05-01",
+        "location": "Dublin",
+        "country": "Ireland",
+        "description": "There still remains uncertainty about both the birthdate, the documentary sources were not consistent even and during his lifetime. But  May 1st was attested by the Duke's habit in later life of celebrating his birthday then.",
+        "more_info_link": "https://www.waterlooassociation.org.uk/2019/03/29/the-birth-of-arthur-wesley/"
+    },
+    {
+        "id": "394",
+        "title": "Birth of Sir John Moore",
+        "date": "1761-11-13",
+        "location": "Glasgow",
+        "country": "Scotland",
+        "description": "Moore was born on November 13th 1761 in a tenement block called Donald's Land on the north side of the Trongate, east of the Tron Steeple).",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
     }
 ]
