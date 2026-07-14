@@ -11002,7 +11002,8 @@
     "victor": "France",
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Algeciras#Battle"
+    "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Algeciras#Battle",
+    "createDate": "2026-07-14"
   },
   {
     "id": "590",
@@ -11027,7 +11028,8 @@
     "victor": "France",
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras2.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras"
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras",
+    "createDate": "2026-07-14"
   },
   {
     "id": "591",
@@ -11049,7 +11051,8 @@
     "victor": "Spain",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tollo.webp",
-    "more_info_link": "https://www.guerra-historia-publica.es/recursos/490"
+    "more_info_link": "https://www.guerra-historia-publica.es/recursos/490",
+    "createDate": "2026-07-14"
   },
   {
     "id": "592",
@@ -11062,7 +11065,8 @@
     "latitude": 48.59470,
     "longitude": 6.490921,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lasalle.webp",
-    "site_link": "https://chateauluneville.meurthe-et-moselle.fr/"
+    "site_link": "https://chateauluneville.meurthe-et-moselle.fr/",
+    "createDate": "2026-07-14"
   },
   {
     "id": "593",
@@ -11075,7 +11079,8 @@
     "latitude": 53.338302,
     "longitude": -6.253270,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wellesley_birth.webp",
-    "more_info_link": "https://www.waterlooassociation.org.uk/2019/03/29/the-birth-of-arthur-wesley/"
+    "more_info_link": "https://www.waterlooassociation.org.uk/2019/03/29/the-birth-of-arthur-wesley/",
+    "createDate": "2026-07-14"
   },
   {
     "id": "594",
@@ -11088,6 +11093,7 @@
     "latitude": 55.8572,
     "longitude": -4.245762,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moore.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
+    "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)",
+    "createDate": "2026-07-14"
   }
 ]
