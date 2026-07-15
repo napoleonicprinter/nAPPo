@@ -11123,5 +11123,47 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Picton_monument.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Picton_Monument,_Carmarthen",
     "createDate": "2026-07-14"
+  },
+  {
+    "id": "597",
+    "name": "Major-General Robert Craufurd Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Chigwell, Essex",
+    "country": "England",
+    "description": "He was born on May 5th 1764. Some modern biographies suggest he may have been born at Luxborough House in Chigwell, Essex, England. The grand 18th-century estate was demolished around 1800. Today, the site has been completely transformed. The traditional citation is Newark, Ayrshire, Scotland.",
+    "latitude": 51.617074,
+    "longitude": 0.059101,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Luxborough House.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Robert_Craufurd",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "598",
+    "name": "William Carr Beresford Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Waterford",
+    "country": "Ireland",
+    "description": "Born on October 2nd 1768 as the illegitimate son of the 1st Marquess of Waterford, likely at the family seat Curraghmore House. A specific birth house is unrecorded and some suggested it was in Dublin.",
+    "latitude": 52.29025,
+    "longitude": -7.359381,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Beresford_birth.webp",
+    "more_info_link": "https://www.dib.ie/biography/beresford-william-carr-a0606",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "599",
+    "name": "General Miguel de Álava Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Vitoria-Gasteiz, Álava",
+    "country": "Spain",
+    "description": "Born on July 7th 1770 into a noble family of naval tradition, he was the son of Pedro Jacinto de Álava y Navarrete and María Manuela de Esquível y Peralta.",
+    "latitude": 42.8475,
+    "longitude": -2.674164,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palacio_alava.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Miguel_Ricardo_de_%C3%81lava",
+    "createDate": "2026-07-15"
   }
 ]

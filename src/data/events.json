@@ -3349,5 +3349,32 @@
         "country": "Glasgow",
         "description": "He was born in Haverfordwest, Pembrokeshire on (probably) 24 August 1758. Other sources sometimes give it as 20 August.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
+    },
+    {
+        "id": "395",
+        "title": "Birth of Major-General Robert Craufurd",
+        "date": "1764-05-05",
+        "location": "Haverfordwest",
+        "country": "Glasgow",
+        "description": "He was born in Haverfordwest, Pembrokeshire on (probably) 24 August 1758. Other sources sometimes give it as 20 August.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Robert_Craufurd"
+    },
+    {
+        "id": "396",
+        "title": "Birth of William Carr Beresford",
+        "date": "1768-10-02",
+        "location": "Waterford County",
+        "country": "Ireland",
+        "description": "Born on October 2nd 1768 as the illegitimate son of the 1st Marquess of Waterford, likely at the family seat Curraghmore House. A specific birth house is unrecorded and some suggested it was in Dublin.",
+        "more_info_link": "https://www.dib.ie/biography/beresford-william-carr-a0606"
+    },
+    {
+        "id": "397",
+        "title": "Birth of General Miguel de Álava",
+        "date": "1770-07-07",
+        "location": "Vitoria-Gasteiz, Álava",
+        "country": "Spain",
+        "description": "Born on July 7th 1770 into a noble family of naval tradition, he was the son of Pedro Jacinto de Álava y Navarrete and María Manuela de Esquível y Peralta.",
+        "more_info_link": "https://www.dib.ie/biography/beresford-william-carr-a0606"
     }
 ]
