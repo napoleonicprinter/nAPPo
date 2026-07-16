@@ -3385,5 +3385,14 @@
         "country": "Spain",
         "description": "José de Palafox was born in the former palace of his parents (the Marquises of Lazán), located at number 4 Calle de José Palafox, in the Old Town of Zaragoza. At the time of his birth, this street was known as Calle de la Real Aduana (Royal Customs House Street). The building still stands (today it houses the Casa Palacio Palafox Residence) and retains a commemorative plaque on its façade marking the general's birth there on October 28, 1775.",
         "more_info_link": "https://www.elviajedelalibelula.com/single-post/2017/04/15/el-antiguo-palacio-palafox-zaragoza"
+    },
+    {
+        "id": "399",
+        "title": "Battle of Montebello",
+        "date": "1800-06-09",
+        "location": " Montebello della Battaglia, Lombardy",
+        "country": "Italy",
+        "description": "The action occurred in the Marengo campaign during the War of the Second Coalition. During the lead-up to the Battle of Marengo, the vanguard of the French army in Italy engaged and defeated an Austrian force in a 'glorious victory'",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montebello_(1800)"
     }
 ]

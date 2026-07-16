@@ -11179,5 +11179,87 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palafox_birth.webp",
     "more_info_link": "https://www.elviajedelalibelula.com/single-post/2017/04/15/el-antiguo-palacio-palafox-zaragoza",
     "createDate": "2026-07-15"
+  },
+  {
+    "id": "601",
+    "name": "Battlefield of Montebello",
+    "category": "Battle site",
+    "significance": "Medium",
+    "location": " Montebello della Battaglia, Lombardy",
+    "country": "Italy",
+    "date": "1800-06-09",
+    "year": "1800",
+    "description": "The Battle of Montebello (9 June 1800) was fought near Montebello in Lombardy between a French force under General of Division (GD) Jean Lannes and an Austrian force led by Feldmarschall-Leutnant (FML) Peter Karl Ott von Bátorkéz.",
+    "latitude": 45.00756,
+    "longitude": 9.086681,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Montebello.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montebello_(1800)",
+    "commanders": [
+      "Jean Lannes",
+      "Peter Karl Ott"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "special": [
+      "arc",
+      "2",
+      "Marengo campaign"
+    ],
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "602",
+    "name": "Montebello battle memorial",
+    "category": "Monument",
+    "significance": "Medium",
+    "location": " Montebello della Battaglia, Lombardy",
+    "country": "Italy",
+    "description": "Commemorative plaque for the 200th anniversary of the battle placed on the town hall.(image and contribution: D. Timmermans / napoleon-monuments.eu)",
+    "latitude": 45.00,
+    "longitude": 9.103656,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Montebello_200.webp",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "603",
+    "name": "The Emperor's tree - Boulogne Camp",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Buigny-Saint-Maclou",
+    "country": "France",
+    "description": "On 30 Messidor year XII (July 19, 1804), Napoleon had lunch at the innkeeper Détaminier's and stopped near an elm tree.(image and contribution: D. Timmermans / napoleon-monuments.eu)",
+    "latitude": 50.154128,
+    "longitude": 1.818591,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Boulogne_tree.webp",
+    "more_info_link": "https://napoleon-monuments.eu/Napoleon1er/Boulogne.htm",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "604",
+    "name": "Column of the Grande Armée",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Wimille, Pas-de-Calais",
+    "country": "France",
+    "description": "It is a 53 metre high Corinthian order triumphal column (modelled on Trajan's Column and other triumphal columns in Rome). The first stone was put in place by Soult on 18 Brumaire, year 13 (9 October 1804), amidst great festivities and awards of decorations.",
+    "latitude": 50.741234,
+    "longitude": 1.61744,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Boulogne_column.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Column_of_the_Grande_Arm%C3%A9e",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "605",
+    "name": "Légion d'honneur Memorial",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Wimereux,Boulogne-Sur-Mer",
+    "country": "France",
+    "description": "The Legion of Honour memorial, also called the Legion of Honour stele, is a pyramid-shaped monument recalling the exact position of Napoleon I's throne on August 16, 1804, when the emperor first distributed the Legion of Honour crosses to the soldiers of the Grande Armée at the Boulogne camp.",
+    "latitude": 50.742893,
+    "longitude": 1.5992744,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legion_Stele.webp",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/M%C3%A9morial_de_la_L%C3%A9gion_d%27honneur",
+    "createDate": "2026-07-15"
   }
 ]
