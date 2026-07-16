@@ -11316,5 +11316,70 @@
     "longitude": 10.845309,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_stone.webp",
     "createDate": "2026-07-15"
+  },
+  {
+    "id": "610",
+    "name": "Napoleon's Fir",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Wertingen",
+    "country": "Germany",
+    "description": "A historical fir tree planted in 1905 to on a hill overlooking Gottmannshofen to mark the 100th anniversary of the Battle of Wertingen (October 8, 1805)",
+    "latitude": 48.559857,
+    "longitude": 10.7080,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_Tanne.webp",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "611",
+    "name": "Memorial on Napoleon's Heights",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Burghausen",
+    "country": "Germany",
+    "description": "Historical accounts suggest that in April 1809, French Emperor Napoleon Bonaparte observed the construction of the Salzach bridge from the hill above, where he delivered his commands. In total, the Emperor's stay in Burghausen lasted five days.",
+    "latitude": 48.153212,
+    "longitude": 12.817540,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_Heights.webp",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "612",
+    "name": "Taufkirchen Palais",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Burghausen",
+    "country": "Germany",
+    "description": "Rebuilt in the Baroque style by J. Anton Graf von Taufkirchen after a fire in 1742, it served as Napoleon's headquarters in April 1809 for a few days.",
+    "latitude": 48.159680,
+    "longitude": 12.833561,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Taufkirchen.webp",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "613",
+    "name": "Boulogne Left Encamptment",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Boulogne-Sur-Mer",
+    "country": "France",
+    "description": "Center of the French troops left encampment from 1803 to 1805.",
+    "latitude": 50.70596,
+    "longitude": 1.580772,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Boulogne_left.webp",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "614",
+    "name": "Boulogne Right Encamptment",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Boulogne-Sur-Mer",
+    "country": "France",
+    "description": "Center of the French troops right encampment from 1803 to 1805.",
+    "latitude": 50.734970,
+    "longitude": 1.609254,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Boulogne_right.webp",
+    "createDate": "2026-07-15"
   }
 ]
