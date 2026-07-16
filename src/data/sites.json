@@ -11261,5 +11261,60 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legion_Stele.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/M%C3%A9morial_de_la_L%C3%A9gion_d%27honneur",
     "createDate": "2026-07-15"
+  },
+  {
+    "id": "606",
+    "name": "Légion d'honneur Memorial",
+    "category": "Monument",
+    "significance": "Major",
+    "location": "Wimereux, Boulogne-Sur-Mer",
+    "country": "France",
+    "description": "The Legion of Honour memorial, also called the Legion of Honour stele, is a pyramid-shaped monument recalling the exact position of Napoleon I's throne on August 16, 1804, when the emperor first distributed the Legion of Honour crosses to the soldiers of the Grande Armée at the Boulogne camp.",
+    "latitude": 50.742893,
+    "longitude": 1.5992744,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legion_Stele.webp",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/M%C3%A9morial_de_la_L%C3%A9gion_d%27honneur",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "607",
+    "name": "Napoleon's barracks",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Boulogne-Sur-Mer",
+    "country": "France",
+    "description": "During the Boulogne camp, Napoleon's accommodation was located at The Tour d'Ordre (Tower of Order) or Tower of Caligula, a famous ancient Roman lighthouse located in Boulogne-sur-Mer.",
+    "latitude": 50.7317,
+    "longitude": 1.5972,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Camp_Boulogne_nap.webp",
+    "more_info_link": "https://books.openedition.org/septentrion/7587#anchor-toc-1-2",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "608",
+    "name": "Artillery park and Navy gunners' camp.",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Boulogne-Sur-Mer",
+    "country": "France",
+    "description": "Accrodingly to the Map of the Boulogne camp (Boulogne-sur-Mer Municipal Library, No. 36.273.) the artillery magazine and encamptent was located in this area.",
+    "latitude": 50.721395,
+    "longitude": 1.590483,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Camp_Boulogne_art.webp",
+    "more_info_link": "https://books.openedition.org/septentrion/7587#anchor-toc-1-2",
+    "createDate": "2026-07-15"
+  },
+  {
+    "id": "609",
+    "name": "Napoleon's stone",
+    "category": "Landmark",
+    "significance": "Minor",
+    "location": "Donauworth",
+    "country": "Germany",
+    "description": "On October 7th 1805 Napoleon Bonaparte observed his troops crossing the Danube River.",
+    "latitude": 48.720653,
+    "longitude": 10.845309,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_stone.webp",
+    "createDate": "2026-07-15"
   }
 ]

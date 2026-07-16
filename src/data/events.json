@@ -3390,9 +3390,17 @@
         "id": "399",
         "title": "Battle of Montebello",
         "date": "1800-06-09",
-        "location": " Montebello della Battaglia, Lombardy",
+        "location": "Montebello della Battaglia, Lombardy",
         "country": "Italy",
         "description": "The action occurred in the Marengo campaign during the War of the Second Coalition. During the lead-up to the Battle of Marengo, the vanguard of the French army in Italy engaged and defeated an Austrian force in a 'glorious victory'",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montebello_(1800)"
+    },
+    {
+        "id": "400",
+        "title": "Danube river crossing",
+        "date": "1805-10-07",
+        "location": "Donauwörth",
+        "country": "Germany",
+        "description": "Napoleon directed the crossing of the Danube river from Donauwörth, Germany, at the begining of the German Campaign of the Third Coalition. He stayed in this city for two days."
     }
 ]
