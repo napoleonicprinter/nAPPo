@@ -11165,5 +11165,19 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palacio_alava.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Miguel_Ricardo_de_%C3%81lava",
     "createDate": "2026-07-15"
+  },
+  {
+    "id": "600",
+    "name": "General Palafox Birthplace",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Zaragoza, Aragón",
+    "country": "Spain",
+    "description": "José de Palafox was born in the former palace of his parents (the Marquises of Lazán), located at number 4 Calle de José Palafox, in the Old Town of Zaragoza. At the time of his birth, this street was known as Calle de la Real Aduana (Royal Customs House Street). The building still stands (today it houses the Casa Palacio Palafox Residence) and retains a commemorative plaque on its façade marking the general's birth there on October 28, 1775.",
+    "latitude": 41.653994,
+    "longitude": -0.874550,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palafox_birth.webp",
+    "more_info_link": "https://www.elviajedelalibelula.com/single-post/2017/04/15/el-antiguo-palacio-palafox-zaragoza",
+    "createDate": "2026-07-15"
   }
 ]
