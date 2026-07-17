@@ -3402,5 +3402,13 @@
         "location": "Donauwörth",
         "country": "Germany",
         "description": "Napoleon directed the crossing of the Danube river from Donauwörth, Germany, at the begining of the German Campaign of the Third Coalition. He stayed in this city for two days."
+    },
+    {
+        "id": "401",
+        "title": "Marshal Lannes death",
+        "date": "1809-05-31",
+        "location": "Vienna",
+        "country": "Austria",
+        "description": "Marshal Lannes was mortally wounded by an Austrian cannonball on May 22nd 1809, during the Battle of Aspern-Essling. Following an emergency leg amputation by chief surgeon Dominique-Jean Larrey, he was transported across the Danube to a house where he succumbed to gangrene nine days later on May 31st 1809."
     }
 ]

@@ -11457,7 +11457,7 @@
     "description": "On May 3rd 1809, after the battle of Ebelsberg, Napoleon settled at this location.",
     "latitude": 48.2325,
     "longitude": 14.328789,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ebelsberg.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ebelsberg_house.webp",
     "createDate": "2026-07-17"
   },
   {
@@ -11471,6 +11471,19 @@
     "latitude": 48.2140,
     "longitude": 14.479387,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Stadtturm.webp",
+    "createDate": "2026-07-17"
+  },
+  {
+    "id": "622",
+    "name": "Place where Marshal Lannes died",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Vienna",
+    "country": "Austria",
+    "description": "Marshal Lannes was mortally wounded by an Austrian cannonball on May 22nd 1809, during the Battle of Aspern-Essling. Following an emergency leg amputation by chief surgeon Dominique-Jean Larrey, he was transported across the Danube to this site, a brewer's house, where he succumbed to gangrene nine days later on May 31st 1809.",
+    "latitude": 48.158610,
+    "longitude": 16.467166,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lannes_death.webp",
     "createDate": "2026-07-17"
   }
 ]
