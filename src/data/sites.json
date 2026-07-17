@@ -11449,7 +11449,7 @@
   },
   {
     "id": "620",
-    "name": "Napoleon's stop at Ebelsberg",
+    "name": "Napoleon's Quarters at Ebelsberg",
     "category": "Landmark",
     "significance": "Minor",
     "location": "Ebelsberg",
@@ -11484,6 +11484,20 @@
     "latitude": 48.158610,
     "longitude": 16.467166,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lannes_death.webp",
+    "createDate": "2026-07-17"
+  },
+  {
+    "id": "623",
+    "name": "Schloss Ennsegg",
+    "category": "Landmark",
+    "significance": "Medium",
+    "location": "Enns",
+    "country": "Austria",
+    "description": "Upon the conclusion of the Battle of Ebelsberg (May 3, 1809), Napoleon established his residence at Ennsegg Castle. In 1810, the estate hosted Archduchess Maria Luise and her father, Emperor Franz I, during her journey to visit her husband, Napoleon.",
+    "latitude": 48.158610,
+    "longitude": 16.467166,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Schloss Ennsegg.webp",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Schloss_Ennsegg",
     "createDate": "2026-07-17"
   }
 ]
