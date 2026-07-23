@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
+import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
     Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket,
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
-    LogOut, Newspaper, Tablet, Monitor
+    LogOut, Newspaper, Tablet, Monitor, Star
 } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
@@ -22,7 +23,8 @@ import CalendarView from './CalendarView';
 import ShoppingView from './ShoppingView';
 import './Header.css';
 
-
+// Register the custom native plugin we created in MainActivity.java
+const Review = registerPlugin('Review');
 
 const Header = () => {
     const {
@@ -120,6 +122,19 @@ const Header = () => {
         cursor: 'pointer',
         transition: '0.2s'
     });
+
+    const handleRateApp = async () => {
+        if (Capacitor.isNativePlatform()) {
+            try {
+                await Review.requestReview();
+            } catch (error) {
+                console.error('In-App Review failed', error);
+            }
+        } else {
+            // Fallback for web/PWA
+            window.open('https://play.google.com/store/apps/details?id=com.nappo.trails.app', '_blank');
+        }
+    };
 
     return (
         <header className="app-header glass-header">
@@ -382,18 +397,29 @@ const Header = () => {
                                     </div>
                                     <div className="settings-section" style={{ marginBottom: '0.8rem' }}>
                                         <h3 style={{ marginBottom: '10px' }}>Support us</h3>
-                                        <a
-                                            href="https://www.patreon.com/c/nAPPoTrails"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn-outline patreon-btn"
-                                            style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}
-                                        >
-                                            <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                                <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z" />
-                                            </svg>
-                                            Patreon
-                                        </a>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                            <a
+                                                href="https://www.patreon.com/c/nAPPoTrails"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn-outline patreon-btn"
+                                                style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}
+                                            >
+                                                <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                                    <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z" />
+                                                </svg>
+                                                Patreon
+                                            </a>
+
+                                            <button
+                                                onClick={handleRateApp}
+                                                className="btn-outline"
+                                                style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}
+                                            >
+                                                <Star size={16} />
+                                                Rate App
+                                            </button>
+                                        </div>
                                     </div>
 
                                     <div className="settings-section">

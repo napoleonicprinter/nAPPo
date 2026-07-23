@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    // El namespace debe coincidir con el ID de Google Play Console
     namespace "com.nappo.trails.app.free"
     compileSdk rootProject.ext.compileSdkVersion
 
@@ -15,12 +14,10 @@ android {
     }
 
     defaultConfig {
-        // El ID base debe ser el original
         applicationId "com.nappo.trails.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-        // Sube a 6 para que Google no rechace por versión repetida
         versionCode 14
         versionName "1.12"
 
@@ -34,13 +31,12 @@ android {
     productFlavors {
         free {
             dimension "version"
-            // Aquí es donde añadimos el .free
             applicationIdSuffix ".free"
             resValue "string", "app_name", "nAPPo Trails Free"
         }
         paid {
             dimension "version"
-            applicationIdSuffix "" // La versión de pago suele ser la base
+            applicationIdSuffix ""
             resValue "string", "app_name", "nAPPo Trails"
         }
     }
@@ -71,6 +67,10 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+
+    // Google Play In-App Review API
+    implementation 'com.google.android.play:review:2.0.2'
+    implementation 'com.google.android.play:review-ktx:2.0.2'
 }
 
 apply from: 'capacitor.build.gradle'

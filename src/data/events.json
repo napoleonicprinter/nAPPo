@@ -3410,5 +3410,58 @@
         "location": "Vienna",
         "country": "Austria",
         "description": "Marshal Lannes was mortally wounded by an Austrian cannonball on May 22nd 1809, during the Battle of Aspern-Essling. Following an emergency leg amputation by chief surgeon Dominique-Jean Larrey, he was transported across the Danube to a house where he succumbed to gangrene nine days later on May 31st 1809."
+    },
+    {
+        "id": "402",
+        "title": "Death of Marshal Bessieres",
+        "date": "1809-05-31",
+        "location": "Rippach",
+        "country": "Germany",
+        "description": "On May 1st 1813, on the eve of the Battle of Lützen, a cannonball shattered Bessières' hand and pierced his chest, killing him instantly."
+    },
+    {
+        "id": "403",
+        "title": "Battle of Zornoza",
+        "date": "1808-10-31",
+        "location": "Amorebieta",
+        "country": "Spain",
+        "description": "It was one of the opening engagements in Napoleon's invasion of Spain. The battle was intended to encircle and crush the left wing of the Spanish front. The Spanish infantry was swiftly thrown back but escaped in good order.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Zornoza"
+    },
+    {
+        "id": "404",
+        "title": "Battle of Valmaseda",
+        "date": "1808-11-05",
+        "location": "Balmaseda",
+        "country": "Spain",
+        "description": "While retreating from superior French forces in northern Spain, Lieutenant-General Blake's army—now reinforced by veteran infantry from General La Romana's Division of the North—suddenly turned and ambushed Marshal Victor's isolated vanguard, led by General Villatte.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valmaseda"
+    },
+    {
+        "id": "405",
+        "title": "Valmaseda set on fire",
+        "date": "1808-11-08",
+        "location": "Balmaseda",
+        "country": "Spain",
+        "description": "Perhaps humiliated by their recent defeat on November 5th, or seeking to punish the town for its lack of support, or simply because it was left to its fate, General Chassé’s brigade set fire to Balmaseda on November 8th 1808, to serve as a warning to other villages.",
+        "more_info_link": "https://turismo.balmaseda.eus/quema-de-balmaseda/"
+    },
+    {
+        "id": "406",
+        "title": "First Battle of Castalla",
+        "date": "1812-07-21",
+        "location": "Castalla",
+        "country": "Spain",
+        "description": "A small Spanish army commanded by Joseph O'Donnell advanced to attack an Imperial French division under the leadership of Jean Isidore Harispe.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castalla_%281812%29"
+    },
+    {
+        "id": "407",
+        "title": "Second Battle of Castalla",
+        "date": "1813-04-13",
+        "location": "Castalla",
+        "country": "Spain",
+        "description": "An Anglo-Spanish-Sicilian force commanded by Lieutenant General Sir John Murray fought Marshal Louis Gabriel Suchet's French Army of Valencia and Aragon. Murray's troops successfully repelled a series of French attacks on their hilltop position, causing Suchet's III corps to retreat.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castalla"
     }
 ]
