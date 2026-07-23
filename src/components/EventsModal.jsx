@@ -46,9 +46,9 @@ const EventsModal = ({ onClose }) => {
     }, [eventsData]);
 
     const handleOpenOnMap = (siteId) => {
-        const site = allSites.find(s => s.id === siteId || String(s.id) === String(siteId));
+        const site = allSites.find(s => String(s.id) === String(siteId));
         if (site) {
-            setSelectedSite(site);
+            // Only open the small map popup, not the full detail modal
             setSiteToOpenPopup(site);
             setView('map');
             onClose();
@@ -129,6 +129,8 @@ const EventsModal = ({ onClose }) => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             {todaysEvents.map(event => {
                                 const year = parseInt(event.date.split('-')[0], 10);
+                                const targetSiteId = event.siteId || event.siteid;
+
                                 return (
                                     <div key={event.id} style={{
                                         padding: '1rem',
@@ -145,28 +147,8 @@ const EventsModal = ({ onClose }) => {
                                             </h3>
                                         </div>
 
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)', fontSize: '0.85rem' }}>
-                                                <MapPin size={14} /> {event.location}
-                                            </div>
-                                            {event.siteId && (
-                                                <button
-                                                    onClick={() => handleOpenOnMap(event.siteId)}
-                                                    className="glass-panel"
-                                                    style={{
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        gap: '4px',
-                                                        padding: '4px 8px',
-                                                        fontSize: '0.75rem',
-                                                        color: 'var(--accent-primary)',
-                                                        cursor: 'pointer'
-                                                    }}
-                                                    title="View on Map"
-                                                >
-                                                    <Map size={14} /> Map
-                                                </button>
-                                            )}
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)', fontSize: '0.85rem', marginBottom: '12px' }}>
+                                            <MapPin size={14} /> {event.location}
                                         </div>
 
                                         <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-primary)' }}>
@@ -174,6 +156,26 @@ const EventsModal = ({ onClose }) => {
                                         </p>
 
                                         <div style={{ display: 'flex', gap: '12px' }}>
+                                            {targetSiteId && (
+                                                <button
+                                                    onClick={() => handleOpenOnMap(targetSiteId)}
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '4px',
+                                                        fontSize: '0.85rem',
+                                                        color: 'var(--accent-primary)',
+                                                        background: 'none',
+                                                        border: 'none',
+                                                        padding: 0,
+                                                        cursor: 'pointer',
+                                                        fontFamily: 'inherit'
+                                                    }}
+                                                    title="View on Map"
+                                                >
+                                                    <Map size={14} /> Map
+                                                </button>
+                                            )}
                                             {event.wikipedia_link && (
                                                 <a href={event.wikipedia_link} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: 'var(--accent-primary)', textDecoration: 'none' }}>
                                                     <BookOpen size={14} /> Wikipedia
