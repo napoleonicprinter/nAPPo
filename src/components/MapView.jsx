@@ -546,6 +546,9 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
         let activeTimeout;
         const clusterGroup = clusterInstance;
 
+        // Force close any existing popups on the map
+        map.closePopup();
+
         const tryOpenPopup = (attempts = 0) => {
             if (isCancelled) return;
 
@@ -567,6 +570,11 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
             }
 
             try {
+                // Ensure centering even if not in a cluster
+                map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), 16), {
+                    duration: 0.8
+                });
+
                 if (typeof clusterGroup.zoomToShowLayer === 'function') {
                     console.log(`PopupOpener: Calling zoomToShowLayer for site ${siteToOpenPopup.id}`);
 
@@ -599,33 +607,22 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
 
                                 const popup = marker.getPopup();
 
-                                // 1. Patch _adjustPan directly on the popup instance.
-                                //    Leaflet's popup also re-fires _adjustPan from its
-                                //    internal moveend listener (after spiderfy/zoom events),
-                                //    so patching options.autoPan alone is not enough — the
-                                //    option is re-read asynchronously and the pan still fires.
+                                // Suppress adjustPan so our manual flyTo handles the centering
                                 const origAdjustPan = popup && popup._adjustPan;
                                 if (popup && origAdjustPan) {
                                     popup._adjustPan = function () { /* suppressed */ };
                                 }
 
-                                // 2. Block map clicks from closing the popup.
-                                //    On mobile, touch-end events from the list→map navigation
-                                //    reach the Leaflet canvas as synthetic clicks and trigger
-                                //    closePopup() before the user has a chance to read it.
                                 const origCloseOnClick = map.options.closePopupOnClick;
                                 map.options.closePopupOnClick = false;
 
                                 marker.openPopup();
 
-                                // Restore _adjustPan and closePopupOnClick after 2 s —
-                                // well past any ghost-tap window and post-open events.
                                 const restoreTimer = setTimeout(() => {
                                     if (popup && origAdjustPan) popup._adjustPan = origAdjustPan;
                                     map.options.closePopupOnClick = origCloseOnClick;
                                 }, 2000);
 
-                                // Release _unspiderfy block only when THIS marker's popup closes.
                                 const releaseBlock = () => {
                                     blockUnspiderfy = false;
                                     clusterGroup._unspiderfy = origUnspiderfy;
@@ -638,18 +635,13 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                                 const onPopupClose = () => releaseBlock();
                                 const fallbackRelease = setTimeout(releaseBlock, 30000);
                                 marker.on('popupclose', onPopupClose);
-
-                                // We intentionally DO NOT call setSiteToOpenPopup(null) here.
-                                // Resetting AppContext triggers a full re-render of MapView,
-                                // which causes react-leaflet-cluster to lose its spiderfied state.
                             } else {
                                 blockUnspiderfy = false;
                                 clusterGroup._unspiderfy = origUnspiderfy;
                             }
-                        }, 800); // Give enough time for spiderfy animation
+                        }, 800);
                     });
                 } else {
-                    map.flyTo(marker.getLatLng(), 18);
                     activeTimeout = setTimeout(() => {
                         if (!isCancelled) {
                             marker.openPopup();
@@ -893,7 +885,7 @@ const MapView = () => {
                                                 style={{
                                                     flex: 1,
                                                     padding: '8px',
-                                                    background: site.visited ? 'rgba(46, 160, 67, 0.2)' : 'var(--accent-primary)',
+                                                    background: site.visited ? 'rgba(46, 160, 167, 0.2)' : 'var(--accent-primary)',
                                                     color: site.visited ? '#2ea043' : '#000',
                                                     border: site.visited ? '1px solid #2ea043' : 'none',
                                                     borderRadius: '4px',

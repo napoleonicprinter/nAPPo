@@ -48,10 +48,19 @@ const EventsModal = ({ onClose }) => {
     const handleOpenOnMap = (siteId) => {
         const site = allSites.find(s => String(s.id) === String(siteId));
         if (site) {
-            // Only open the small map popup, not the full detail modal
-            setSiteToOpenPopup(site);
-            setView('map');
-            onClose();
+            // 1. Close any existing full-screen detailed card
+            setSelectedSite(null);
+
+            // 2. Reset popup state first to ensure MapView logic re-centers
+            // and re-opens the popup even if clicking the same event again.
+            setSiteToOpenPopup(null);
+
+            // 3. Switch view and open popup with a slight delay for reliability
+            setTimeout(() => {
+                setSiteToOpenPopup(site);
+                setView('map');
+                onClose();
+            }, 100);
         }
     };
 
