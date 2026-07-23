@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight } from 'lucide-react';
+import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight, Map } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import HistoryCalendarModal from './HistoryCalendarModal';
 import AnnouncementModal from './AnnouncementModal';
@@ -8,7 +8,7 @@ import './AnnouncementModal.css';
 import './CardView.css';
 
 const EventsModal = ({ onClose }) => {
-    const { eventsData, messagesData, getPortalContainer } = useAppContext();
+    const { eventsData, messagesData, getPortalContainer, allSites, setView, setSelectedSite, setSiteToOpenPopup } = useAppContext();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [showAnnouncement, setShowAnnouncement] = useState(null);
 
@@ -44,6 +44,16 @@ const EventsModal = ({ onClose }) => {
             return yearA - yearB;
         });
     }, [eventsData]);
+
+    const handleOpenOnMap = (siteId) => {
+        const site = allSites.find(s => s.id === siteId || String(s.id) === String(siteId));
+        if (site) {
+            setSelectedSite(site);
+            setSiteToOpenPopup(site);
+            setView('map');
+            onClose();
+        }
+    };
 
     const todayString = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
@@ -135,8 +145,28 @@ const EventsModal = ({ onClose }) => {
                                             </h3>
                                         </div>
 
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)', fontSize: '0.85rem', marginBottom: '12px' }}>
-                                            <MapPin size={14} /> {event.location}
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)', fontSize: '0.85rem' }}>
+                                                <MapPin size={14} /> {event.location}
+                                            </div>
+                                            {event.siteId && (
+                                                <button
+                                                    onClick={() => handleOpenOnMap(event.siteId)}
+                                                    className="glass-panel"
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '4px',
+                                                        padding: '4px 8px',
+                                                        fontSize: '0.75rem',
+                                                        color: 'var(--accent-primary)',
+                                                        cursor: 'pointer'
+                                                    }}
+                                                    title="View on Map"
+                                                >
+                                                    <Map size={14} /> Map
+                                                </button>
+                                            )}
                                         </div>
 
                                         <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-primary)' }}>
