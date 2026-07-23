@@ -51,11 +51,11 @@ const EventsModal = ({ onClose }) => {
             // 1. Close any existing full-screen detailed card
             setSelectedSite(null);
 
-            // 2. Reset popup state first to ensure MapView logic re-centers
+            // 2. Clear current popup state first to ensure the MapView logic re-centers
             // and re-opens the popup even if clicking the same event again.
             setSiteToOpenPopup(null);
 
-            // 3. Switch view and open popup with a slight delay for reliability
+            // 3. Set the new site and navigate with a slight delay to allow state cleanup
             setTimeout(() => {
                 setSiteToOpenPopup(site);
                 setView('map');
@@ -203,7 +203,13 @@ const EventsModal = ({ onClose }) => {
                     )}
                 </div>
             </div>
-            {isCalendarOpen && <HistoryCalendarModal eventsData={eventsData} onClose={() => setIsCalendarOpen(false)} />}
+            {isCalendarOpen && (
+                <HistoryCalendarModal
+                    eventsData={eventsData}
+                    onClose={() => setIsCalendarOpen(false)}
+                    onCloseParent={onClose}
+                />
+            )}
             {showAnnouncement && (
                 <AnnouncementModal
                     message={showAnnouncement}

@@ -787,7 +787,8 @@
         "date": "1810-07-24",
         "location": "Côa River, Portugal",
         "description": "Took place on 24 July 1810, on the banks of the Côa River, in the borderlands between Portugal and Spain. It was fought between a French division under Marshal Auguste de Marmont and a British division under General Robert Craufurd.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a"
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a",
+        "siteId": 202
     },
     {
         "id": 91,
@@ -2242,6 +2243,7 @@
     },
     {
         "id": "261",
+        "siteId": 595,
         "title": "Sir Thomas Picton birth",
         "description": "He was born in Haverfordwest, Pembrokeshire on (probably) August 24th 1758 and was the seventh of twelve children of Thomas Picton",
         "date": "1758-07-24",

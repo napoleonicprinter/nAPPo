@@ -549,6 +549,9 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
         // Force close any existing popups on the map
         map.closePopup();
 
+        // Fix for centering logic: ensure map knows its current container size
+        map.invalidateSize();
+
         const tryOpenPopup = (attempts = 0) => {
             if (isCancelled) return;
 
@@ -595,6 +598,11 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
 
                         console.log(`PopupOpener: zoomToShowLayer callback for site ${siteToOpenPopup.id}`);
 
+                        // Centering logic refined: Always center the screen on the marker's location once triggered
+                        map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), 16), {
+                            duration: 0.8
+                        });
+
                         const visibleParent = clusterGroup.getVisibleParent(marker);
                         if (visibleParent && visibleParent.spiderfy) {
                             console.log("PopupOpener: Forcing spiderfy on parent");
@@ -623,6 +631,7 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                                     map.options.closePopupOnClick = origCloseOnClick;
                                 }, 2000);
 
+                                // Release _unspiderfy block only when THIS marker's popup closes.
                                 const releaseBlock = () => {
                                     blockUnspiderfy = false;
                                     clusterGroup._unspiderfy = origUnspiderfy;
@@ -642,6 +651,7 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                         }, 800);
                     });
                 } else {
+                    map.flyTo(marker.getLatLng(), 18);
                     activeTimeout = setTimeout(() => {
                         if (!isCancelled) {
                             marker.openPopup();
@@ -885,7 +895,7 @@ const MapView = () => {
                                                 style={{
                                                     flex: 1,
                                                     padding: '8px',
-                                                    background: site.visited ? 'rgba(46, 160, 167, 0.2)' : 'var(--accent-primary)',
+                                                    background: site.visited ? 'rgba(46, 160, 67, 0.2)' : 'var(--accent-primary)',
                                                     color: site.visited ? '#2ea043' : '#000',
                                                     border: site.visited ? '1px solid #2ea043' : 'none',
                                                     borderRadius: '4px',

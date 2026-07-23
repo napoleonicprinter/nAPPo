@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon, Map } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import './HistoryCalendarModal.css';
 
@@ -13,8 +13,8 @@ const YEARS = ['All years', ...Array.from({length: 1815 - 1793 + 1}, (_, i) => 1
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const HistoryCalendarModal = ({ onClose, eventsData }) => {
-    const { getPortalContainer } = useAppContext();
+const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
+    const { getPortalContainer, allSites, setView, setSelectedSite, setSiteToOpenPopup } = useAppContext();
     const [month, setMonth] = useState(new Date().getMonth());
     const [selectedYear, setSelectedYear] = useState('All years');
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
@@ -87,6 +87,26 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                 day,
                 events: currentYearEvents[day]
             });
+        }
+    };
+
+    const handleOpenOnMap = (siteId) => {
+        const site = allSites.find(s => String(s.id) === String(siteId));
+        if (site) {
+            // Close any existing full-screen detailed card
+            setSelectedSite(null);
+
+            // Clear current popup state first to ensure the MapView logic re-centers
+            // and re-opens the popup even if clicking the same event again.
+            setSiteToOpenPopup(null);
+
+            // Set the new site and navigate after a small delay to allow state cleanup
+            setTimeout(() => {
+                setSiteToOpenPopup(site);
+                setView('map');
+                onClose(); // Close the HistoryCalendarModal
+                if (onCloseParent) onCloseParent(); // Close the Today in History modal (EventsModal)
+            }, 100);
         }
     };
 
@@ -198,6 +218,8 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                             <div className="day-popup-events">
                                 {selectedDateEvents.events.map(event => {
                                     const eventYear = parseInt(event.date.split('-')[0], 10);
+                                    const targetSiteId = event.siteId || event.siteid;
+
                                     return (
                                         <div key={event.id} className="history-event-item">
                                             <span className="year">{eventYear}</span>
@@ -212,6 +234,26 @@ const HistoryCalendarModal = ({ onClose, eventsData }) => {
                                             <p>{event.description}</p>
                                             
                                             <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+                                                {targetSiteId && (
+                                                    <button
+                                                        onClick={() => handleOpenOnMap(targetSiteId)}
+                                                        style={{
+                                                            display: 'flex',
+                                                            alignItems: 'center',
+                                                            gap: '4px',
+                                                            fontSize: '0.85rem',
+                                                            color: 'var(--accent-primary)',
+                                                            background: 'none',
+                                                            border: 'none',
+                                                            padding: 0,
+                                                            cursor: 'pointer',
+                                                            fontFamily: 'inherit'
+                                                        }}
+                                                        title="View on Map"
+                                                    >
+                                                        <Map size={14} /> Map
+                                                    </button>
+                                                )}
                                                 {event.wikipedia_link && (
                                                     <a href={event.wikipedia_link} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: 'var(--accent-primary)', textDecoration: 'none' }}>
                                                         <BookOpen size={14} /> Wikipedia
