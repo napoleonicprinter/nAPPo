@@ -707,68 +707,71 @@ const MapView = () => {
     // FIX: Ensure popups are always in the foreground and style the close button
         useEffect(() => {
             const style = document.createElement('style');
-            style.innerHTML = `
-                /* 1. Force the entire Popup Pane to the absolute front */
-                .leaflet-popup-pane {
-                    z-index: 100000 !important;
-                }
+            style.innerHTML =`
+                            /* 1. Force the entire Popup Pane to the absolute front */
+                            .leaflet-popup-pane {
+                                z-index: 100000 !important;
+                            }
 
-                /* 2. Custom Red Close Button Style */
-                .leaflet-popup-close-button {
-                    background-color: #ff4444 !important;
-                    color: white !important;
-                    border-radius: 50% !important;
-                    width: 28px !important;
-                    height: 28px !important;
-                    line-height: 28px !important;
-                    text-align: center !important;
-                    font-size: 20px !important;
-                    font-weight: bold !important;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
-                    border: 2px solid white !important;
+                            /* 2. Custom Red Close Button Style - Fixes the "Not Red" issue */
+                            .leaflet-popup-close-button {
+                                /* Use 'background' shorthand to override Leaflet's 'background: none' */
+                                background: #ff4444 !important;
+                                color: white !important;
+                                border-radius: 50% !important;
+                                width: 32px !important;
+                                height: 32px !important;
 
-                    /* Position it slightly overlapping the top-right corner */
-                    top: 8px !important;
-                    right: 8px !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    transition: transform 0.2s ease;
-                }
+                                /* Centering the "x" */
+                                display: flex !important;
+                                align-items: center !important;
+                                justify-content: center !important;
 
-                .leaflet-popup-close-button:hover {
-                    background-color: #e63939 !important;
-                    transform: scale(1.1);
-                }
+                                /* Resetting Leaflet defaults */
+                                padding: 0 !important;
+                                margin: 0 !important;
+                                border: 2px solid white !important;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
 
-                /* Remove the default 'x' styling to ensure our custom look works */
-                .leaflet-popup-close-button span {
-                    color: white !important;
-                    font-family: Arial, sans-serif !important;
-                }
+                                /* Position: adjust these to move button further from the edge if needed */
+                                top: 10px !important;
+                                right: 10px !important;
 
-                /* 3. Popup Container Styling */
-                .leaflet-popup-content-wrapper {
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-                    border: 1px solid rgba(255,255,255,0.15) !important;
-                    padding: 0 !important;
-                    overflow: hidden !important;
-                    border-radius: 12px !important;
-                }
+                                font-size: 22px !important;
+                                font-weight: bold !important;
+                                text-decoration: none !important;
+                            }
 
-                .leaflet-popup-tip {
-                    background: white !important;
-                }
+                            /* Ensure the "x" character itself is white */
+                            .leaflet-popup-close-button span {
+                                color: white !important;
+                                margin-bottom: 2px; /* Slight adjustment for visual centering */
+                            }
 
-                /* 4. Lower the Z-Index of UI menus to ensure they stay BEHIND the popup */
-                .app-header,
-                .filters-group,
-                .mobile-overlay-filters,
-                .filters-line,
-                .header-controls {
-                    z-index: 1000 !important; /* Standard UI layer */
-                }
-            `;
+                            /* 3. Popup Container Styling */
+                            .leaflet-popup-content-wrapper {
+                                box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+                                border: 1px solid rgba(255,255,255,0.15) !important;
+                                padding: 0 !important;
+                                overflow: hidden !important;
+                                border-radius: 12px !important;
+                            }
+
+                            /* 4. THE FOREGROUND FIX: Lower the Z-Index of the UI elements */
+                            .app-header,
+                            .filters-group,
+                            .mobile-overlay-filters,
+                            .filters-line,
+                            .header-controls {
+                                /* Standard UI menus must be lower than 100000 */
+                                z-index: 1000 !important;
+                            }
+
+                            /* If the menu is a horizontal scroll, target it specifically */
+                            .category-filters-wrapper {
+                                z-index: 1000 !important;
+                            }
+                        `;
             document.head.appendChild(style);
             return () => {
                 if (document.head.contains(style)) {
