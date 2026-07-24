@@ -573,13 +573,18 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
             }
 
             try {
-                // Ensure centering even if not in a cluster
-                map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), 16), {
-                    duration: 0.8
-                });
-
                 if (typeof clusterGroup.zoomToShowLayer === 'function') {
                     console.log(`PopupOpener: Calling zoomToShowLayer for site ${siteToOpenPopup.id}`);
+
+
+                    // FIX: Always center with padding to leave room for the top menus
+                    const targetLatLng = marker.getLatLng();
+                    map.flyTo(targetLatLng, Math.max(map.getZoom(), 16), {
+                        duration: 0.8,
+                        paddingTopLeft: [0, 180] // Increase to 180 to push site card well below the menu
+                    });
+
+                    const visibleParent = clusterGroup.getVisibleParent(marker);
 
                     // Temporarily block unspiderfy to survive the auto-pan 'moveend' event
                     const origUnspiderfy = clusterGroup._unspiderfy;
@@ -651,13 +656,18 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
                         }, 800);
                     });
                 } else {
-                    map.flyTo(marker.getLatLng(), 18);
+                    // Fallback centering for non-clustered markers
+                    map.flyTo(marker.getLatLng(), 16, {
+                        duration: 0.8,
+                        paddingTopLeft: [0, 180] // Pushes the center down 180px
+                    });
+
                     activeTimeout = setTimeout(() => {
                         if (!isCancelled) {
-                            marker.openPopup();
+                           marker.openPopup();
                         }
-                    }, 1000);
-                }
+                                    }, 1000);
+                                }
             } catch (err) {
                 console.error("PopupOpener error:", err);
             }
@@ -687,16 +697,88 @@ const MapView = () => {
         siteToOpenPopup, setSiteToOpenPopup,
         clusterRadius, activeMapOverlays, toggleMapOverlay, clearMapOverlays
     } = useAppContext();
+
     const [navigatingSite, setNavigatingSite] = useState(null);
     const [showDeals, setShowDeals] = useState(false);
     const iconsCache = useRef({});
     const markerRefs = useRef(new Map());
     const [clusterInstance, setClusterInstance] = useState(null);
 
+    // FIX: Ensure popups are always in the foreground and style the close button
+        useEffect(() => {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                /* 1. Force the entire Popup Pane to the absolute front */
+                .leaflet-popup-pane {
+                    z-index: 100000 !important;
+                }
 
+                /* 2. Custom Red Close Button Style */
+                .leaflet-popup-close-button {
+                    background-color: #ff4444 !important;
+                    color: white !important;
+                    border-radius: 50% !important;
+                    width: 28px !important;
+                    height: 28px !important;
+                    line-height: 28px !important;
+                    text-align: center !important;
+                    font-size: 20px !important;
+                    font-weight: bold !important;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+                    border: 2px solid white !important;
 
-    // Derive unique categories from allSites and sort them
-    const categories = [
+                    /* Position it slightly overlapping the top-right corner */
+                    top: 8px !important;
+                    right: 8px !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    transition: transform 0.2s ease;
+                }
+
+                .leaflet-popup-close-button:hover {
+                    background-color: #e63939 !important;
+                    transform: scale(1.1);
+                }
+
+                /* Remove the default 'x' styling to ensure our custom look works */
+                .leaflet-popup-close-button span {
+                    color: white !important;
+                    font-family: Arial, sans-serif !important;
+                }
+
+                /* 3. Popup Container Styling */
+                .leaflet-popup-content-wrapper {
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+                    border: 1px solid rgba(255,255,255,0.15) !important;
+                    padding: 0 !important;
+                    overflow: hidden !important;
+                    border-radius: 12px !important;
+                }
+
+                .leaflet-popup-tip {
+                    background: white !important;
+                }
+
+                /* 4. Lower the Z-Index of UI menus to ensure they stay BEHIND the popup */
+                .app-header,
+                .filters-group,
+                .mobile-overlay-filters,
+                .filters-line,
+                .header-controls {
+                    z-index: 1000 !important; /* Standard UI layer */
+                }
+            `;
+            document.head.appendChild(style);
+            return () => {
+                if (document.head.contains(style)) {
+                    document.head.removeChild(style);
+                }
+            };
+        }, [])
+
+    // Derive and sort categories
+    const categories = useMemo(() => [
         "Today's Battle",
         ...Array.from(new Set(allSites.map(s => s.category))).sort((a, b) => {
             const indexA = CATEGORY_ORDER.indexOf(a);
@@ -706,14 +788,12 @@ const MapView = () => {
             if (indexB === -1) return -1;
             return indexA - indexB;
         })
-    ];
+    ], [allSites]);
 
-    // Default center (Europe)
     const defaultCenter = [48.8566, 2.3522]; // Paris
 
     return (
         <div style={{ height: '100%', width: '100%', position: 'relative' }} className="animate-fade-in">
-
 
             <MapContainer
                 center={defaultCenter}
@@ -774,8 +854,8 @@ const MapView = () => {
 
 
                                 <Popup
-                                    autoPan={false}
-                                    autoPanPadding={[50, 50]}
+                                    autoPan={true}
+                                    autoPanPadding={[20, 160]} // 160px ensures the "X" stays clear of the scroll menu
                                     autoPanOptions={{ duration: 0.5, easeLinearity: 0.25 }}
                                 >
                                     <div style={{ padding: '0px', minWidth: '200px', maxWidth: '240px' }}>
