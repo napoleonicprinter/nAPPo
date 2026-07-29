@@ -1,25 +1,44 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { MapContainer, TileLayer, Popup, Marker, ZoomControl, useMap } from 'react-leaflet';
+import React, { useState, useRef, useEffect } from 'react';import { MapContainer, TileLayer, Popup, Marker, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { useAppContext } from '../context/AppContext';
-import SiteCard from './SiteCard';
-import SiteDetails from './SiteDetails';
+import SiteCard, { getCategoryColor } from './SiteCard';
 import DealsView from './DealsView';
-import {
-    RemoveDefaultZoom,
-    LocationMarker,
-    CenterOnSelectedSite,
-    SearchControl,
-    MapStyleControl,
-    DealsControl,
-    CenterControl,
-    BoundsTracker,
-    FitFilteredSites,
-    MapOverlaysLayer,
-    getSiteIcon,
-    TILE_LAYERS,
-    CATEGORY_ORDER
-} from './MapHelpers'; // Ensure these are imported from your helpers file
+import L from 'leaflet';
+import { LocateFixed } from 'lucide-react';
+
+import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
+// --- CONSTANTS ---
+const TILE_LAYERS = {
+    light: {
+        url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+    },
+    dark: {
+        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+    },
+    satellite: {
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        attribution: 'Tiles &copy; Esri'
+    }
+};
+
+const getSiteIcon = (site) => {
+    const color = getCategoryColor(site.category);
+    const rate = Number(site.significance) || 1;
+    const size = rate >= 3 ? 30 : rate === 2 ? 25 : 20;
+
+    return L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: ${color} !important; width: ${size}px !important; height: ${size}px !important; border-radius: 50% 50% 50% 0 !important; transform: rotate(-45deg) !important; border: 2px solid white !important; box-shadow: 0 2px 6px rgba(0,0,0,0.4) !important;"></div>`,
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size],
+        popupAnchor: [0, -size - 5]
+    });
+};
 
 const PopupOpener = ({ markerRefs, clusterInstance }) => {
     const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
@@ -27,182 +46,287 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
 
     useEffect(() => {
         if (!siteToOpenPopup || !clusterInstance) return;
-
         let isCancelled = false;
         let activeTimeout;
-        const clusterGroup = clusterInstance;
+        const marker = markerRefs.current.get(siteToOpenPopup.id);
 
-        const tryOpenPopup = (attempts = 0) => {
-            if (isCancelled) return;
+        if (marker) {
+            const latlng = marker.getLatLng();
+            const zoom = 16;
+            const targetPoint = map.project(latlng, zoom);
+            targetPoint.y -= 150;
+            const targetLatLng = map.unproject(targetPoint, zoom);
 
-            const marker = markerRefs.current.get(siteToOpenPopup.id);
-            const isReady = marker && clusterGroup && clusterGroup._map;
-
-            if (!isReady) {
-                if (attempts < 150) {
-                    activeTimeout = setTimeout(() => tryOpenPopup(attempts + 1), 100);
-                } else {
-                    setSiteToOpenPopup(null);
-                }
-                return;
-            }
-
-            try {
-                if (typeof clusterGroup.zoomToShowLayer === 'function') {
-                    // FIX: Push site card well below the menu when flying to it
-                    map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), 16), {
-                        duration: 0.8,
-                        paddingTopLeft: [0, 180]
-                    });
-
-                    clusterGroup.zoomToShowLayer(marker, () => {
-                        if (isCancelled) return;
-
-                        activeTimeout = setTimeout(() => {
-                            if (!isCancelled) marker.openPopup();
-                        }, 500);
-                    });
-                } else {
-                    map.flyTo(marker.getLatLng(), 16, {
-                        duration: 0.8,
-                        paddingTopLeft: [0, 180]
-                    });
-                    activeTimeout = setTimeout(() => {
-                        if (!isCancelled) marker.openPopup();
-                    }, 500);
-                }
-            } catch (err) {
-                console.error("PopupOpener error:", err);
-            }
-        };
-
-        tryOpenPopup();
-        return () => {
-            isCancelled = true;
-            if (activeTimeout) clearTimeout(activeTimeout);
-        };
-    }, [siteToOpenPopup, setSiteToOpenPopup, map, clusterInstance, markerRefs]);
-
+            map.flyTo(targetLatLng, zoom, { duration: 0.8 });
+            activeTimeout = setTimeout(() => {
+                if (!isCancelled) marker.openPopup();
+            }, 800);
+        }
+        return () => { isCancelled = true; if (activeTimeout) clearTimeout(activeTimeout); };
+    }, [siteToOpenPopup, map, clusterInstance, markerRefs]);
     return null;
 };
 
+// --- MAIN COMPONENT ---
 const MapView = () => {
     const {
-        sites, allSites, theme, isFiltered, clearAllFilters,
-        mapStyle, clusterRadius, activeMapOverlays, clearMapOverlays,
-        selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup
+        sites, theme, mapStyle, clusterRadius,
+        selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
+        userCoords, isFiltered, previewDevice, clearAllFilters
     } = useAppContext();
 
     const [showDeals, setShowDeals] = useState(false);
     const markerRefs = useRef(new Map());
     const [clusterInstance, setClusterInstance] = useState(null);
+    const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
-    // FIX: Style Red Button and Foreground Priority
+    // --- INTERNAL HELPERS ---
+
+    const MapEventsHandler = () => {
+        useMapEvents({
+            click: () => setSelectedSite(null),
+        });
+        return null;
+    };
+
+    const CenterControl = () => {
+        const map = useMap();
+        if (!userCoords) return null;
+        return (
+            <div
+                className={isMobileLike ? "leaflet-bottom leaflet-right" : "leaflet-top leaflet-right"}
+                style={{
+                    marginTop: isMobileLike ? '0' : '74px',
+                    marginBottom: isMobileLike ? '82px' : '0',
+                    marginRight: '10px',
+                    pointerEvents: 'auto',
+                    zIndex: 5000
+                }}
+            >
+                <div className="leaflet-control leaflet-bar" style={{ border: 'none', boxShadow: 'none', margin: 0 }}>
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
+                        }}
+                        style={{ backgroundColor: 'white', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', border: '2px solid rgba(0,0,0,0.2)', borderRadius: '4px', boxShadow: '0 1px 5px rgba(0,0,0,0.3)' }}
+                    >
+                        <LocateFixed size={18} strokeWidth={2.5} color="#444" />
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
+    const FitFilteredSites = () => {
+        const map = useMap();
+        useEffect(() => {
+            if (isFiltered && sites.length > 0) {
+                const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
+                map.fitBounds(bounds, { padding: [70, 70], maxZoom: 12, duration: 1.5 });
+            }
+        }, [sites, isFiltered, map]);
+        return null;
+    };
+
+    const LocationMarker = () => {
+        if (!userCoords) return null;
+        const blueIcon = L.icon({
+            iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+            shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+        });
+        return <Marker position={[userCoords.lat, userCoords.lon]} icon={blueIcon} zIndexOffset={1000} />;
+    };
+
     useEffect(() => {
         const style = document.createElement('style');
         style.innerHTML = `
-            /* 1. Force Popups above menus */
-            .leaflet-popup-pane { z-index: 100000 !important; }
+            /* 1. Eliminar marco y bordes de la burbuja Leaflet */
+            .leaflet-popup-content-wrapper {
+                background: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                border: none !important; /* Elimina la línea gris */
+            }
 
-            /* 2. Global Red Close Button Style (Applies to both Map and App Modals) */
-            a.leaflet-popup-close-button,
-            .close-details-btn,
-            .site-card-close {
-                background: #ff4444 !important;
-                color: white !important;
-                border-radius: 50% !important;
-                width: 32px !important;
-                height: 32px !important;
+            .leaflet-popup-content {
+                margin: 0 !important;
+                width: auto !important;
+                overflow: visible !important;
+                border: none !important;
+            }
+
+            /* 2. Estilo de las Tarjetas con Sombra Proyectada (Shade) */
+            .site-card {
+                box-shadow:
+                    0 30px 60px -12px rgba(0, 0, 0, 0.45),
+                    0 18px 36px -18px rgba(0, 0, 0, 0.5) !important;
+                border: none !important;
+                border-radius: 12px !important;
+                background: var(--bg-color, white) !important;
+                transform: none !important;
+                transition: none !important;
+            }
+
+            /* 3. Puntero (tip) blanco sin bordes ni sombras que parezcan líneas */
+            .leaflet-popup-tip-container {
+                margin-top: -1px; /* Pegar a la tarjeta */
+            }
+            .leaflet-popup-tip {
+                background: white !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+
+            /* Ocultar botones cuando el detalle está activo */
+            .detail-view-active .leaflet-control-container {
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
+
+            /* Estilo del botón flotante */
+            .clear-filters-floating {
                 display: flex !important;
+                position: fixed !important;
+                bottom: 25px !important;
+                left: 20px !important;
+                z-index: 9999 !important;
+                background: rgba(255, 255, 255, 0.8) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                color: #ff4444 !important;
+                border: 1.5px solid #ff4444 !important;
+                padding: 8px 16px !important;
+                border-radius: 20px !important;
+                font-weight: 700 !important;
+                font-size: 12px !important;
                 align-items: center !important;
                 justify-content: center !important;
-                border: 2px solid white !important;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.5) !important;
-                top: 10px !important;
-                right: 10px !important;
-                z-index: 100001 !important;
-                text-decoration: none !important;
+                gap: 6px !important;
+                cursor: pointer !important;
+                pointer-events: auto !important;
+                text-transform: uppercase !important;
             }
+           `;
 
-            a.leaflet-popup-close-button span {
-                color: white !important;
-                font-size: 22px !important;
-                font-weight: bold !important;
-            }
-
-            /* 3. Push UI Menus behind popups */
-            .app-header, .filters-group, .mobile-overlay-filters, .category-filters-wrapper {
-                z-index: 1000 !important;
-            }
-
-            .leaflet-popup-content-wrapper {
-                border-radius: 12px !important;
-                overflow: hidden !important;
-                padding: 0 !important;
-            }
-        `;
         document.head.appendChild(style);
         return () => { if (document.head.contains(style)) document.head.removeChild(style); };
     }, []);
 
-    const defaultCenter = [48.8566, 2.3522]; // Paris
+    const defaultCenter = [48.8566, 2.3522];
 
     return (
-        <div style={{ height: '100%', width: '100%', position: 'relative' }} className="animate-fade-in">
+        <div style={{ height: '100%', width: '100%', position: 'relative' }} className={`animate-fade-in ${selectedSite ? 'detail-view-active' : ''}`}>
             <MapContainer
                 center={defaultCenter}
                 zoom={5}
                 style={{ height: '100%', width: '100%', minHeight: '100vh' }}
                 zoomControl={false}
-                maxBounds={[[-90, -180], [90, 180]]}
-                maxBoundsViscosity={1.0}
-                minZoom={2}
             >
-                <TileLayer key={mapStyle} url={TILE_LAYERS[mapStyle].url} attribution={TILE_LAYERS[mapStyle].attribution} />
+                <TileLayer key={mapStyle} url={TILE_LAYERS[mapStyle]?.url} attribution={TILE_LAYERS[mapStyle]?.attribution} />
                 <ZoomControl position="topright" />
+                <LocationMarker />
+                <CenterControl />
+                <FitFilteredSites />
+                <MapEventsHandler />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
 
-                <MarkerClusterGroup
-                    ref={setClusterInstance}
-                    key={`cluster-${clusterRadius}`}
-                    maxClusterRadius={clusterRadius}
-                >
-                    {sites.map(site => {
-                        const icon = getSiteIcon(site, theme);
-                        return (
-                            <Marker
-                                key={site.id}
-                                position={[site.latitude, site.longitude]}
-                                icon={icon}
-                                ref={(r) => r ? markerRefs.current.set(site.id, r) : markerRefs.current.delete(site.id)}
-                            >
-                                <Popup
-                                    autoPan={true}
-                                    autoPanPadding={[20, 160]}
-                                    autoPanOptions={{ duration: 0.5 }}
-                                >
-                                    <div className="popup-container">
-                                        <SiteCard site={site} />
-                                    </div>
-                                </Popup>
-                            </Marker>
-                        );
-                    })}
+                <MarkerClusterGroup ref={setClusterInstance} key={`cluster-${clusterRadius}`} maxClusterRadius={clusterRadius}>
+                    {sites.map(site => (
+                        <Marker
+                            key={site.id}
+                            position={[site.latitude, site.longitude]}
+                            icon={getSiteIcon(site)}
+                            eventHandlers={{
+                                click: (e) => {
+                                    if (e.originalEvent) e.originalEvent.stopPropagation();
+
+                                    // --- FIX: CLOSE DETAIL CARD ON PIN CLICK ---
+                                    if (selectedSite) {
+                                        setSelectedSite(null);
+                                    }
+                                    // --------------------------------------------
+                                    const map = e.target._map;
+                                    const latlng = e.target.getLatLng();
+                                    const targetPoint = map.project(latlng, map.getZoom());
+
+                                    // Centering logic for the small bubble
+                                    targetPoint.y -= 150;
+                                    const targetLatLng = map.unproject(targetPoint, map.getZoom());
+                                    map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+
+                                    e.target.openPopup();
+                                }
+                            }}
+                            ref={(r) => {
+                                if (r) markerRefs.current.set(site.id, r);
+                                else markerRefs.current.delete(site.id);
+                            }}
+                        >
+                            <Popup autoPan={false} autoPanPadding={[50, 50]}>
+                                <div style={{ width: '300px', position: 'relative' }}>
+                                    <SiteCard
+                                        site={site}
+                                        isCompact={true}
+                                        hideMapLink={true}
+                                        onClose={() => {
+                                            const marker = markerRefs.current.get(site.id);
+                                            if (marker) marker.closePopup();
+                                        }}
+                                    />
+                                </div>
+                            </Popup>
+                        </Marker>
+                    ))}
                 </MarkerClusterGroup>
             </MapContainer>
 
-            {/* FULL DETAILS VIEW (The App Modal) */}
+
+            {/* MODAL DE DETALLE - Sombra proyectada sobre el mapa y leaflet */}
             {selectedSite && (
-                <div style={{
-                    position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(4px)',
-                    zIndex: 100005, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'
-                }} onClick={() => setSelectedSite(null)}>
-                    <div onClick={(e) => e.stopPropagation()} style={{ width: '100%', maxWidth: '400px', position: 'relative' }}>
-                        {/* SiteDetails component will now inherit the red button style via CSS */}
-                        <SiteDetails site={selectedSite} onClose={() => setSelectedSite(null)} />
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: isMobileLike ? '165px' : '135px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '92%',
+                        maxWidth: '440px',
+                        zIndex: 2147483647,
+                        pointerEvents: 'none',
+                    }}
+                >
+                    <div
+                        className="animate-fade-in"
+                        style={{
+                            pointerEvents: 'auto',
+                            /* Este padding es vital para que la sombra borrosa sea visible sobre el mapa */
+                            padding: '10px 20px 60px 20px',
+                            maxHeight: isMobileLike ? 'calc(100dvh - 160px)' : '80vh',
+                            overflowY: 'auto',
+                            scrollbarWidth: 'none',
+                            msOverflowStyle: 'none'
+                        }}
+                    >
+                        <SiteCard
+                            site={selectedSite}
+                            onClose={() => setSelectedSite(null)}
+                            isCompact={false}
+                        />
                     </div>
                 </div>
+            )}
+            )}
+
+            {/* BOTÓN FLOTANTE CLEAR ALL */}
+            {isMobileLike && isFiltered && (
+                <button className="clear-filters-floating animate-fade-in" onClick={() => clearAllFilters()}>
+                    <span>✕</span> CLEAR ALL
+                </button>
             )}
 
             {showDeals && <DealsView onClose={() => setShowDeals(false)} />}

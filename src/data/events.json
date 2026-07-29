@@ -3467,5 +3467,100 @@
         "country": "Spain",
         "description": "An Anglo-Spanish-Sicilian force commanded by Lieutenant General Sir John Murray fought Marshal Louis Gabriel Suchet's French Army of Valencia and Aragon. Murray's troops successfully repelled a series of French attacks on their hilltop position, causing Suchet's III corps to retreat.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castalla"
+    },
+    {
+        "id": "408",
+        "title": "Battle of Roncesvalles",
+        "siteId": 648,
+        "date": "1813-07-25",
+        "location": "Roncesvalles Pass, Navarra",
+        "country": "Spain",
+        "description": "It took place at the high Roncevaux Pass between French and Anglo-Portuguese forces on July 25th 1813. The French emerged victorious by assaulting this mountain pass.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Roncesvalles_(1813)"
+    },
+    {
+        "id": "409",
+        "title": "Battle of La Suffel or Strasburg",
+        "siteId": 649,
+        "date": "1815-06-28",
+        "location": "Souffelweyersheim",
+        "country": "France",
+        "description": "It was fought on June 28th 1815 and was a French victory over Austrian forces and the last French pitched battle victory in the Napoleonic Wars.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Suffel"
+    },
+    {
+        "id": "410",
+        "title": "Combat of Loriol",
+        "siteId": 650,
+        "date": "1815-04-02",
+        "location": "Loriol",
+        "country": "France",
+        "description": "Royalist troops commanded by the Duke of Angoulêmeth defeated a small Bonapartist force defending Valence, two days after the Battle of Montélimar.",
+        "wikipedia_link": "https://fr.wikipedia.org/wiki/Combat_de_Loriol"
+    },
+    {
+        "id": "411",
+        "title": "Battle of Kalisz",
+        "siteId": 651,
+        "date": "1813-02-13",
+        "location": "Kalisz",
+        "country": "Poland",
+        "description": "On February 13th 1813 Russian forces under General Ferdinand von Wintzingerode caught and defeated General Jean Reynier's retreating Franco-Saxon VII Corps. The victory forced Reynier to withdraw into Saxony and separated a Saxon brigade that joined Prince Poniatowski's Polish Army.",
+        "more_info_link": "https://weltseele.miraheze.org/wiki/Battle_of_Kalisz_(1813)"
+    },
+    {
+        "id": "412",
+        "title": "Battle of Altenzaun",
+        "siteId": 655,
+        "date": "1806-10-26",
+        "location": "Altenzaun",
+        "country": "Germany",
+        "description": "Retreating from Jena, Ludwig von Yorck's rearguard established a strong defensive line along the Elbe River,near Altenzaun, to protect the crossing. French infantry tried to outflank them but he was able to stop them allowing the remaining Prussian troops to cross the Elbe safely.",
+        "more_info_link": "https://warfare.ueuo.com/19C/NapoleonicSkirmishingInPracticeByPeterHofschroer.htm"
+    },
+    {
+        "id": "413",
+        "title": "Battle of Zehdenick",
+        "siteId": 656,
+        "date": "1806-10-26",
+        "location": "Zehdenick",
+        "country": "Germany",
+        "description": "The Prussian light cavalry, commanded by Generalmajor Schimmelpfennig, charged home against Lasalle's hussars and were holding their own until Grouchy's dragoons arrived."
+    },
+    {
+        "id": "414",
+        "title": "Battle of Amstetten",
+        "siteId": 657,
+        "date": "1805-11-05",
+        "location": "Amstetten",
+        "country": "Austria",
+        "description": "It was a minor engagement occurred on November 5th 1805, when the retreating Russo-Austrian troops, led by Mikhail Kutuzov, were intercepted by Marshal Joachim Murat's cavalry and a portion of Marshal Jean Lannes' corps."
+    },
+    {
+        "id": "415",
+        "title": "Battle of Wrzawy",
+        "siteId": 659,
+        "date": "1809-06-12",
+        "location": "Wrzawy",
+        "country": "Poland",
+        "description": "On June 12th 1809 the forces of the Duchy of Warsaw, led by Prince Józef Antoni Poniatowski, clashed against the Austrian Imperial army under the command of Archduke Ferdinand Karl Joseph of Austria."
+    },
+    {
+        "id": "416",
+        "title": "Battle of Hof",
+        "siteId": 660,
+        "date": "1807-02-06",
+        "location": "Dwórzno",
+        "country": "Poland",
+        "description": "On February 6th 1807, a military rearguard action between Napoleon Bonaparte's French Grand Army and the Imperial Russian Army took place just one day before the bloody and inconclusive Battle of Eylau."
+    },
+    {
+        "id": "417",
+        "title": "Battle of Rovereto",
+        "siteId": 662,
+        "date": "1796-09-04",
+        "location": "Rovereto",
+        "country": "Italy",
+        "description": "On September 4th 1796 a French army commanded by Napoleon Bonaparte defeated an Austrian corps led by Paul Davidovich. The battle was fought near the town of Rovereto, in the upper Adige River valley in northern Italy."
     }
 ]

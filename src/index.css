@@ -549,8 +549,29 @@ button {
 .device-tablet .mobile-action-buttons {
   display: flex !important;
 }
+/* D:/nAPPo_trails/src/index.css  cambio de Android console*/
 
 @media (max-width: 1024px) {
+  /* Aligns Zoom Buttons at the bottom right corner */
+  .leaflet-bottom.leaflet-right .leaflet-control-zoom {
+    margin-bottom: 20px !important;
+    margin-right: 10px !important;
+  }
+
+  /* Aligns Center Button directly above the Zoom buttons */
+  .leaflet-control-center {
+    margin-bottom: 5px !important; /* Tight vertical gap */
+    margin-right: 10px !important;
+  }
+}
+
+/* Force show mobile action buttons in emulator */
+.device-mobile .mobile-action-buttons,
+.device-tablet .mobile-action-buttons {
+  display: flex !important;
+}
+/* codigo viejo de Antigravity
+  @media (max-width: 1024px) {
   .desktop-clear-filters,
   .desktop-close-units {
     display: none !important;
@@ -572,7 +593,7 @@ button {
     left: auto !important;
     z-index: 1000;
   }
-}
+} */
 
 /* Force mobile/tablet zoom position in emulator */
 .device-mobile .leaflet-control-zoom,

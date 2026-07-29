@@ -8,13 +8,13 @@ const SignificanceFilter = ({ compact = false, className = '' }) => {
 
     const handleStarClick = (rank) => {
         const significanceMap = {
-            1: 'Minor',
-            2: 'Medium',
-            3: 'Major'
+            1: 1,
+            2: 2,
+            3: 3
         };
-        
+
         const selectedSignificance = significanceMap[rank];
-        
+
         if (filterSignificance === selectedSignificance) {
             setFilterSignificance(''); // Deselect if clicking the same rank
         } else {
@@ -23,9 +23,9 @@ const SignificanceFilter = ({ compact = false, className = '' }) => {
     };
 
     const getRank = (sig) => {
-        if (sig === 'Minor') return 1;
-        if (sig === 'Medium') return 2;
-        if (sig === 'Major') return 3;
+        if (sig === 1) return 1;
+        if (sig === 2) return 2;
+        if (sig === 3) return 3;
         return 0;
     };
 
@@ -40,8 +40,8 @@ const SignificanceFilter = ({ compact = false, className = '' }) => {
                     onClick={() => handleStarClick(star)}
                     title={`Filter by ${star === 1 ? 'Minor' : star === 2 ? 'Medium' : 'Major'} Significance`}
                 >
-                    <Star 
-                        size={18} 
+                    <Star
+                        size={18}
                         fill={star <= currentRank ? 'var(--accent-warning)' : 'rgba(0, 0, 0, 0.5)'}
                         stroke={star <= currentRank ? 'var(--accent-warning)' : 'white'}
                         strokeWidth={star <= currentRank ? 2 : 1.5}
