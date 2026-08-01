@@ -727,7 +727,7 @@
     "defeated": "France",
     "commanders": [
       "Joaquín Blake",
-      "Louis-Gabriel Suchet"
+      "Louis Gabriel Suchet"
     ]
   },
   {
@@ -955,7 +955,7 @@
     "date": "1813-09-12",
     "location": "Ordal, Barcelona",
     "country": "Spain",
-    "description": "Librada entre los días 12 y 13 de septiembre de 1813 entre las fuerzas francesas del mariscal Louis Suchet y las anglo-españolas mandadas por William Bentinck. Fue la última victoria del ejército francés en la península ibérica.",
+    "description": "Librada entre los días 12 y 13 de septiembre de 1813 entre las fuerzas francesas del mariscal Louis Gabriel Suchet y las anglo-españolas mandadas por William Bentinck. Fue la última victoria del ejército francés en la península ibérica.",
     "latitude": 41.398165,
     "longitude": 1.855631,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ordal.webp",
@@ -969,7 +969,7 @@
     "defeated": "Anglo-luso-portuguese",
     "commanders": [
       "William Bentinck",
-      "Louis Suchet"
+      "Louis Gabriel Suchet"
     ]
   },
   {
@@ -1608,7 +1608,7 @@
     "defeated": "Spain",
     "commanders": [
       "Juan Contreras",
-      "Louis Suchet"
+      "Louis Gabriel Suchet"
     ]
   },
   {
@@ -2059,7 +2059,7 @@
     "commanders": [
       "Jean Lannes",
       "Jeannot de Moncey",
-      "Louis-Gabriel Suchet",
+      "Louis Gabriel Suchet",
       "Édouard Mortier",
       "José de Palafox"
     ]
@@ -4032,7 +4032,7 @@
     ],
     "commanders": [
       "Johann von Hiller",
-      "Andre Masséna"
+      "André Masséna"
     ],
     "defeated": "Austria",
     "victor": "France"
@@ -6192,6 +6192,7 @@
     "name": "Battlefield of Dego",
     "category": "Battle site",
     "year": 1796,
+    "date": "1796-04-14",
     "significance": 1,
     "location": "Dego",
     "country": "Italy",
@@ -6463,6 +6464,8 @@
     "id": "327",
     "name": "Battlefield of Ölper",
     "category": "Battle site",
+    "year": "1809",
+    "date": "1809-08-01",
     "significance": 1,
     "location": "Braunschweig",
     "country": "Germany",
@@ -10570,7 +10573,7 @@
     "significance": 2,
     "location": "Marseille",
     "country": "France",
-    "description": "On November 16, 1808, Louis-Gabriel Suchet married Honorine Anthoine de Saint-Joseph. The château belonged to her father, Antoine-Ignace Anthoine, a wealthy merchant and the Mayor of Marseille. The property became Suchet's seasonal and eventual retirement residence.",
+    "description": "On November 16, 1808, Louis Gabriel Suchet married Honorine Anthoine de Saint-Joseph. The château belonged to her father, Antoine-Ignace Anthoine, a wealthy merchant and the Mayor of Marseille. The property became Suchet's seasonal and eventual retirement residence.",
     "latitude": 43.345334,
     "longitude": 5.379938,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suchet_Mansion.webp"
@@ -12168,11 +12171,258 @@
     "commanders": [
       "Paul Davidovich",
       "Napoleon",
-      "Andre Masséna",
+      "André Masséna",
       "Claude-Victor Perrin"
     ],
     "victor": "France",
     "defeated": "Austria",
     "createDate": "2026-07-29"
+  },
+  {
+    "id": "663",
+    "name": "Battlefield of Peschiera",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Peschiera del Garda",
+    "country": "Italy",
+    "year": "1796",
+    "date": "1796-08-06",
+    "description": "The Battle of Peschiera was a minor clash that occurred on August 6th 1796 between the Austrian troops of General Anton Lipthay and the French division of General André Masséna.",
+    "latitude": 45.42768,
+    "longitude": 10.682452,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Peschiera.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Peschiera",
+    "special": [
+      "1",
+      "Italian Campaign"
+    ],
+    "commanders": [
+      "Anton Lipthay",
+      "André Masséna"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "createDate": "2026-07-29"
+  },
+  {
+    "id": "664",
+    "name": "Szydłowiec Castle",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Szydłowiec",
+    "country": "Poland",
+    "description": "On July 6th 1809, on their way from Warsaw to Krakow, the Duchy of Warsaw army corps under the command of Generals Jan Henryk Dąbrowski, Józef Zajączek, Aleksander Rożniecki, and Michał Sokolnicki converged on Szydłowiec. Prince Józef was quartered and spent the night in Szydłowiec Castle.",
+    "latitude": 51.2265,
+    "longitude": 20.853110,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Szydłowiec.webp",
+    "more_info_link": "https://naszszydlowiec.pl/ksiaze-jozef-poniatowski-w-szydlowcu-mowi-o-tym-raport-do-napoleona/",
+    "createDate": "2026-07-30"
+  },
+  {
+    "id": "665",
+    "name": "Monument to the Drum of Arcole",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Cadenet",
+    "country": "France",
+    "description": "Sculpted by Jean Barnabé Amy it was erected in 1894 in honor of André Estienne, a drummer in the Army of Italy commanded by General Bonaparte, who was born in this town in 1777.",
+    "latitude": 43.734706,
+    "longitude": 5.3736,
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Monument_au_Tambour_d%27Arcole",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tambor_arcola.webp",
+    "createDate": "2026-07-30"
+  },
+  {
+    "id": "666",
+    "name": "Combat of Pfaffenhoffen",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Pfaffenhofen an der Ilm",
+    "country": "Germany",
+    "year": "1809",
+    "date": "1809-04-19",
+    "description": "On April 19th 1809, the advanced troops of Marshal Oudinet reached Pfaffenhoffen where they clashed with a small detachment of Hiller's Austrian VI Corps under Major Karl von Scheibler.",
+    "latitude": 48.529,
+    "longitude": 11.497747,
+    "more_info_link": "https://www.historyofwar.org/articles/combat_pfaffenhoffen.html",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pfaffenhoffen.webp",
+    "special": "5",
+    "commanders": [
+      "Karl von Scheibler",
+      "Louis Jacques Coëhorn"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "createDate": "2026-07-31"
+  },
+  {
+    "id": "667",
+    "name": "Siege of Almeida (1810)",
+    "category": "Battle site",
+    "significance": 2,
+    "year": 1810,
+    "date": "1810-07-24",
+    "location": "Almeida",
+    "country": "Portugal",
+    "description": "In the siege of Almeida, Portugal, the French corps of Marshal Michel Ney captured the border fortress from Brigadier General William Cox's Portuguese garrison.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Almeida_(1810)",
+    "latitude": 40.72565,
+    "longitude": -6.90732,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Almeida_1810.webp",
+    "createDate": "2026-07-31",
+    "special": "Peninsular War",
+    "victor": "France",
+    "defeated": "Portugal",
+    "commanders": [
+      "William Cox",
+      "Michel Ney",
+      "André Masséna"
+    ]
+  },
+  {
+    "id": "668",
+    "name": "Blockade of Almeida (1811)",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1811,
+    "date": "1811-04-14",
+    "location": "Almeida",
+    "country": "Portugal",
+    "description": "In the Blockade of Almeida (14 April – 10 May 1811) the French garrison under Antoine François Brenier de Montmorand was surrounded by approximately 13,000 Anglo-Allied soldiers led by Generals Sir Alexander Campbell, 1st Baronet and Sir William Erskine, 2nd Baronet.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Blockade_of_Almeida",
+    "latitude": 40.72398,
+    "longitude": -6.906429,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Almeida_1811.webp",
+    "createDate": "2026-07-31",
+    "special": "Peninsular War",
+    "victor": "Anglo Portuguese",
+    "defeated": "France",
+    "commanders": [
+      "Antoine Brenier",
+      "William Erskine",
+      "Napoleon",
+      "André Masséna"
+    ]
+  },
+  {
+    "id": "669",
+    "name": "Battlefield of Montenotte",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1976,
+    "date": "1976-04-11",
+    "location": "Near Cairo Montenotte",
+    "country": "Italy",
+    "description": "Fought on April 12th 1796 between the French army under General Napoleon Bonaparte and an Austrian corps under Count Eugène-Guillaume Argenteau.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montenotte",
+    "latitude": 44.4049,
+    "longitude": 8.278766,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Montenotte.webp",
+    "createDate": "2026-07-31",
+    "special": [
+      "1",
+      "Italian Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Eugène Argenteau",
+      "Mathias Rukavina",
+      "Napoleon",
+      "André Masséna"
+    ]
+  },
+  {
+    "id": "670",
+    "name": "Battlefield of Panaro",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1815,
+    "date": "1815-04-03",
+    "location": "Panaro",
+    "country": "Italy",
+    "description": "On April 3dr 1815 King Joachim Murat's Neapolitan forces defeated a smaller Austrian force under Frederick Bianchi early in the Neapolitan War. This defeat on the banks on the Panaro River, just south of Modena forced the Austrians to retreat behind the Po River.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Panaro",
+    "latitude": 44.617016,
+    "longitude": 11.009111,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Panaro.webp",
+    "createDate": "2026-08-01",
+    "special": "Neapolitan War",
+    "victor": "Naples",
+    "defeated": "Austria",
+    "commanders": [
+      "Frederick Bianchi",
+      "Joachim Murat"
+    ]
+  },
+  {
+    "id": "671",
+    "name": "Battlefield of Millesimo",
+    "category": "Battle site",
+    "significance": 2,
+    "year": 1796,
+    "date": "1796-04-13",
+    "location": "Millesimo",
+    "country": "Italy",
+    "description": "The Battle of Millesimo, fought on 13 and 14 April 1796, was the name that Napoleon Bonaparte gave in his correspondence to one of a series of small battles that were fought in Liguria, Northern Italy.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Millesimo",
+    "latitude": 44.36726,
+    "longitude": 8.208327,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Millesimo.webp",
+    "createDate": "2026-08-01",
+    "special": [
+      "2",
+      "Italian Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Giovanni di Provera",
+      "Napoleon",
+      "Auguste Marmont",
+      "Louis Gabriel Suchet",
+      "Pierre Augereau"
+    ]
+  },
+  {
+    "id": "672",
+    "name": "Château de Marracq ruins",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Bayonne",
+    "country": "France",
+    "description": "In 1808, the abdication of the Bourbons of Spain in favour of Neopleon I was signed in the Castle of Marracq. Then Napoleon installed his brother Joseph Bonaparte on the throne of Spain.",
+    "latitude": 43.4798,
+    "longitude": -1.48361,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Castle_of_Marracq",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Marracq.webp",
+    "createDate": "2026-08-01"
+  },
+  {
+    "id": "673",
+    "name": "Château de Joux",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "La Cluse-et-Mijoux",
+    "country": "France",
+    "description": "Ordered by Napoloen, the leader of the Haitian Revolution, Toussaint Louverture, was imprissoned here where he died on April 7th 1803.",
+    "latitude": 46.8728,
+    "longitude": 6.374239,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Fort_de_Joux",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Joux.webp",
+    "createDate": "2026-08-01"
+  },
+  {
+    "id": "674",
+    "name": "Napoleon crossing the Alps",
+    "category": "Monument",
+    "significance": 1,
+    "location": "St. Bernard Pass, Aosta Valley",
+    "country": "Italy",
+    "description": "It depicts Napoleon realistically—wearing a simple greatcoat and riding a mule—honoring the genuine grit, logistical feat, and local mountain expertise required to move 40,000 troops through the unnavigable pass.",
+    "latitude": 45.868876,
+    "longitude": 7.16524,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/San_bernardo.webp",
+    "createDate": "2026-08-01"
   }
 ]

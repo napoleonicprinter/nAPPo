@@ -1,6 +1,7 @@
 [
     {
         "id": "1",
+        "siteId": 12,
         "title": "Battle of Raszyn",
         "date": "1809-04-19",
         "location": "Raszyn, Poland",
@@ -37,6 +38,7 @@
     },
     {
         "id": "5",
+        "siteId": 578,
         "title": "Battle of Smoliani",
         "date": "1812-11-13",
         "location": "Smoliani, Belarus",
@@ -45,6 +47,7 @@
     },
     {
         "id": "6",
+        "siteId": 231,
         "title": "Battle of Landshut",
         "date": "1809-04-21",
         "location": "Landshut, Bavaria",
@@ -54,6 +57,7 @@
     },
     {
         "id": "7",
+        "siteId": 230,
         "title": "Battle of Eggmühl",
         "date": "1809-04-22",
         "location": "Eggmühl, Bavaria",
@@ -63,7 +67,8 @@
     },
     {
         "id": 8,
-        "title": "Battle of Teugn-Hausen",
+        "siteId": 577,
+        "title": "Battle of Teugen-Hausen",
         "date": "1809-04-19",
         "location": "Teugn-Hausen, Bavaria",
         "description": "The Battle of Teugn-Hausen was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
@@ -72,24 +77,26 @@
     },
     {
         "id": 9,
-        "title": "Battle of Thann",
-        "date": "1809-04-23",
-        "location": "Thann, Bavaria",
-        "description": "The Battle of Thann was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Thann",
-        "more_info_link": ""
+        "siteId": 327,
+        "title": "Battle of Ölper",
+        "date": "1809-08-01",
+        "location": "Braunschweig",
+        "description": "Took place on August 1st 1809 in Ölper (currently a district of the town of Brunswick). It pitched troops of the Kingdom of Westphalia against the Black Brunswickers under Frederick William, Duke of Brunswick-Wolfenbüttel.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%96lper_(1809)"
     },
     {
         "id": 10,
-        "title": "Battle of Pfaffenhausen",
-        "date": "1809-04-23",
+        "siteId": 666,
+        "title": "Combat of Pfaffenhausen",
+        "date": "1809-04-19",
         "location": "Pfaffenhausen, Bavaria",
-        "description": "The Battle of Pfaffenhausen was a battle of the War of the Fifth Coalition in which the French army under Napoleon Bonaparte defeated the Austrian army under Archduke Charles Louis, Duke of Teschen.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Pfaffenhausen",
+        "description": "The combat of Pfaffenhoffen on April 19th 1809 was a minor clash between the left wing of the Austrian army invading Bavaria at the start of the Franco-Austrian War of 1809 and elements of Marshal Oudinet's corps, advancing east on the right wing of the French army.",
+        "wikipedia_link": "https://www.historyofwar.org/articles/combat_pfaffenhoffen.html",
         "more_info_link": ""
     },
     {
         "id": 11,
+        "siteId": 218,
         "title": "Battle of Günzburg",
         "date": "1809-04-23",
         "location": "Günzburg, Bavaria",
@@ -99,6 +106,7 @@
     },
     {
         "id": 12,
+        "siteId": 341,
         "title": "Battle of La Rothière",
         "date": "1814-02-01",
         "location": "La Rothière, France",
@@ -108,6 +116,7 @@
     },
     {
         "id": 13,
+        "siteId": 166,
         "title": "Battle of Corunna",
         "date": "1809-01-16",
         "location": "A Coruña, Spain",
@@ -117,6 +126,7 @@
     },
     {
         "id": 14,
+        "siteId": 291,
         "title": "Battle of Copenhagen",
         "date": "1801-04-02",
         "location": "Port of Copenhagen, Denmark",
@@ -126,6 +136,7 @@
     },
     {
         "id": 15,
+        "siteId": 396,
         "title": "Battle of Sabugal",
         "date": "1811-04-03",
         "location": "Sabugal, Portugal",
@@ -135,6 +146,7 @@
     },
     {
         "id": 16,
+        "siteId": 117,
         "title": "Battle of Fuentes de Oñoro",
         "date": "1811-05-03",
         "location": "Fuentes de Oñoro, Spain",
@@ -144,21 +156,21 @@
     },
     {
         "id": 17,
-        "title": "Siege of Almeida",
-        "date": "1811-04-03",
+        "siteId": 667,
+        "title": "Siege of Almeida (1810)",
+        "date": "1810-07-24",
         "location": "Almeida, Portugal",
-        "description": "The Siege of Almeida was a siege of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Almeida",
-        "more_info_link": ""
+        "description": "In the siege of Almeida, Portugal, the French corps of Marshal Michel Ney captured the border fortress from Brigadier General William Cox's Portuguese garrison.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Almeida_(1810)"
     },
     {
         "id": 18,
-        "title": "Battle of Almeida",
-        "date": "1811-05-03",
-        "location": "Fuentes de Oñoro, Spain",
-        "description": "The Battle of Fuentes de Oñoro was a battle of the Peninsular War in which the British army under Arthur Wellesley defeated the French army under Marshal Masséna.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro",
-        "more_info_link": ""
+        "siteId": 668,
+        "title": "Blockade of Almeida (1811)",
+        "date": "1811-04-14",
+        "location": "Almeida, Portugal",
+        "description": "In the Blockade of Almeida (14 April – 10 May 1811) the French garrison under Antoine François Brenier de Montmorand was surrounded by approximately 13,000 Anglo-Allied soldiers led by Generals Sir Alexander Campbell, 1st Baronet and Sir William Erskine, 2nd Baronet.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Blockade_of_Almeida"
     },
     {
         "id": 19,
@@ -166,11 +178,11 @@
         "date": "1815-04-03",
         "location": "Ferrara, Italy",
         "description": "The Siege of Ferrara was part of the Neapolitan War in which the Austrian army under the command of Lieutenant Field Marshal Friedrich Bianchi defeated the Neapolitan army under the command of Joachim Murat.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Neapolitan_War",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Neapolitan_War"
     },
     {
         "id": 20,
+        "siteId": 363,
         "title": "Battle of Tolentino",
         "date": "1815-05-03",
         "location": "Tolentino, Italy",
@@ -198,6 +210,7 @@
     },
     {
         "id": 22,
+        "siteId": 88,
         "title": "Storming of Badajoz",
         "date": "1812-04-06",
         "location": "Badajoz, Spain",
@@ -207,6 +220,7 @@
     },
     {
         "id": 23,
+        "siteId": 87,
         "title": "Siege of Ciudad Rodrigo",
         "date": "1812-01-07",
         "location": "Ciudad Rodrigo, Spain",
@@ -225,6 +239,7 @@
     },
     {
         "id": 25,
+        "siteId": 5,
         "title": "Battle of Marengo",
         "date": "1800-06-14",
         "location": "Spinetta Marengo,Italy",
@@ -234,6 +249,7 @@
     },
     {
         "id": 26,
+        "siteId": 669,
         "title": "Battle of Montenotte",
         "date": "1796-04-12",
         "location": "near Cairo Montenotte,Italy",
@@ -243,6 +259,7 @@
     },
     {
         "id": 27,
+        "siteId": 91,
         "title": "Battle of Toulouse",
         "date": "1814-04-10",
         "location": "Toulouse, France",
@@ -252,15 +269,16 @@
     },
     {
         "id": 28,
+        "siteId": 671,
         "title": "Battle of Millesimo",
         "date": "1796-04-13",
         "location": "Millesimo, Italy",
         "description": "The Battle of Millesimo, fought on 13 and 14 April 1796, was the name that Napoleon Bonaparte gave in his correspondence to one of a series of small battles that were fought in Liguria, Northern Italy.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Millesimo",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Millesimo"
     },
     {
         "id": 29,
+        "siteId": 312,
         "title": "Second Battle of Dego",
         "date": "1796-04-14",
         "location": "Dego, modern-day Italy",
@@ -270,12 +288,12 @@
     },
     {
         "id": 30,
+        "siteId": 16,
         "title": "Battle of Mount Tabor",
         "date": "1799-04-16",
         "location": "Mount Tabor, modern-day Israel",
         "description": "Battle between French forces commanded by Napoleon Bonaparte and General Jean-Baptiste Kléber, against an Ottoman Army under Abdullah Pasha al-Azm, ruler of Damascus.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mount_Tabor_(1799)",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mount_Tabor_(1799)"
     },
     {
         "id": 31,
@@ -283,26 +301,25 @@
         "date": "1800-04-16",
         "location": "Genoa, Italy",
         "description": "The siege of Genoa saw an Austrian army led by Michael von Melas besiege the port of Genoa, which was occupied by a French garrison under the command of André Massena.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Genoa_(1800)",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Genoa_(1800)"
     },
     {
         "id": 32,
+        "siteId": 232,
         "title": "Storming of Ratisbon",
         "date": "1809-04-23",
         "location": "Regensburg, modern-day Germany",
         "description": "Also called the Battle of Regensburg, was fought between the army of the French Empire, led by Napoleon I, and that of the Austrian Empire, led by Archduke Charles.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ratisbon",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ratisbon"
     },
     {
         "id": 33,
+        "siteId": 344,
         "title": "Battle of Vauchamps",
         "date": "1814-02-14",
         "location": "Vauchamps, modern-day France",
         "description": "Napoleon's last major victory of the campaign.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vauchamps",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vauchamps"
     },
     {
         "id": 34,
@@ -310,8 +327,7 @@
         "date": "1796-04-26",
         "location": "Cherasco, Piedmont, modern-day Italy",
         "description": "Signed between Victor Amadeus III of Sardinia and Napoleon Bonaparte. It withdrew Sardinia from the War of the First Coalition",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Armistice_of_Cherasco",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Armistice_of_Cherasco"
     },
     {
         "id": 35,
@@ -328,20 +344,20 @@
         "date": "1799-04-27",
         "location": "Cassano d'Adda, Italy",
         "description": "The clash is part of the battle of the Adda River or the so-called forcing of the Adda, which on the first day resulted in a minor victory for the Russians under the Count Suvorov over Barthélemy Schérer's French forces at Lecco.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Peninsular_War",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Peninsular_War"
     },
     {
         "id": 37,
+        "siteId": 231,
         "title": "Battle of Landshut",
         "date": "1799-04-27",
         "location": "Landshut, Bavaria",
         "description": "Napoleon's capture of a major Austrian supply center.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)"
     },
     {
         "id": 38,
+        "siteId": 24,
         "title": "Battle of Alcolea",
         "date": "1808-06-07",
         "location": "Alcolea, Córdoba, Spain",
@@ -351,6 +367,7 @@
     },
     {
         "id": 39,
+        "siteId": 35,
         "title": "Acción de la Fuensanta",
         "date": "1810-11-12",
         "location": "Villel,Teruel, Spain",
@@ -360,6 +377,7 @@
     },
     {
         "id": 40,
+        "siteId": 36,
         "title": "Acción de Orgaz",
         "date": "1813-03-26",
         "location": "Orgaz,Toledo, Spain",
@@ -592,6 +610,7 @@
     {
         "id": 65,
         "title": "Battle of Jena",
+        "siteId": 178,
         "date": "1806-10-14",
         "location": "Jena, Germany",
         "description": "Napoleon crushed the Prussian army at the Battle of Jena-Auerstedt. This decisive victory led to the French occupation of most of Prussia and cemented Napoleon's control over Central Europe.",
@@ -1328,6 +1347,7 @@
     },
     {
         "id": 158,
+        "siteId": 290,
         "title": "Battle of Copenhagen",
         "date": "1807-08-16",
         "location": "Copenhagen, Denmark",
@@ -2982,7 +3002,8 @@
     },
     {
         "id": "351",
-        "title": "The Battle of Jena-Auerstedt",
+        "title": "The Battle of Auerstedt",
+        "siteId": 185,
         "description": "In one of the most decisive military victories of the Napoleonic era, Napoleon executed a brilliant double-battle maneuver against the Prussian army. By attacking simultaneously at Jena and Auerstedt, French forces shattered the Prussian defenses in a single day, effectively ending Prussian resistance in the War of the Fourth Coalition and opening the path to Berlin.",
         "date": "1806-10-14",
         "location": "Jena-Auerstedt",
@@ -3541,8 +3562,7 @@
         "title": "Battle of Wrzawy",
         "siteId": 659,
         "date": "1809-06-12",
-        "location": "Wrzawy",
-        "country": "Poland",
+        "location": "Wrzawy, Poland",
         "description": "On June 12th 1809 the forces of the Duchy of Warsaw, led by Prince Józef Antoni Poniatowski, clashed against the Austrian Imperial army under the command of Archduke Ferdinand Karl Joseph of Austria."
     },
     {
@@ -3550,8 +3570,7 @@
         "title": "Battle of Hof",
         "siteId": 660,
         "date": "1807-02-06",
-        "location": "Dwórzno",
-        "country": "Poland",
+        "location": "Dwórzno, Poland",
         "description": "On February 6th 1807, a military rearguard action between Napoleon Bonaparte's French Grand Army and the Imperial Russian Army took place just one day before the bloody and inconclusive Battle of Eylau."
     },
     {
@@ -3559,8 +3578,58 @@
         "title": "Battle of Rovereto",
         "siteId": 662,
         "date": "1796-09-04",
-        "location": "Rovereto",
-        "country": "Italy",
+        "location": "Rovereto, Italy",
         "description": "On September 4th 1796 a French army commanded by Napoleon Bonaparte defeated an Austrian corps led by Paul Davidovich. The battle was fought near the town of Rovereto, in the upper Adige River valley in northern Italy."
+    },
+    {
+        "id": "418",
+        "title": "Battle of Peschiera",
+        "siteId": 663,
+        "date": "1796-08-06",
+        "location": "Peschiera del Garda, Italy",
+        "description": "The Battle of Peschiera was a minor clash that occurred on August 6th 1796 between the Austrian troops of General Anton Lipthay and the French division of General André Masséna."
+    },
+    {
+        "id": "419",
+        "title": "Battle of Schleiz",
+        "siteId": 67,
+        "date": "1806-10-09",
+        "location": "Schleiz, Germany",
+        "description": "French victory.The Battle of Schleiz took place on 9 October 1806 in Schleiz, Germany between a Prussian-Saxon division under Bogislav Friedrich Emanuel von Tauentzien and a part of Jean-Baptiste Bernadotte's I Corps under the command of Jean-Baptiste Drouet, Comte d'Erlon"
+    },
+    {
+        "id": "420",
+        "title": "Battle of Saalfeld",
+        "siteId": 68,
+        "date": "1806-10-10",
+        "location": "Saalfeld, Germany",
+        "description": "French victory. The Battle of Saalfeld took place on 10 October 1806, at which a French force of 12,800 men commanded by Marshal Jean Lannes defeated a Prussian-Saxon force of 8,300 men under Prince Louis Ferdinand."
+    },
+    {
+        "id": "421",
+        "title": "Battle of Panaro",
+        "siteId": 670,
+        "date": "1815-04-03",
+        "location": "Panaro, Italy",
+        "description": "On April 3dr 1815 King Joachim Murat's Neapolitan forces defeated a smaller Austrian force under Frederick Bianchi early in the Neapolitan War. This defeat on the banks on the Panaro River, just south of Modena forced the Austrians to retreat behind the Po River.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Panaro"
+    },
+    {
+        "id": "422",
+        "title": "King Charles IV of Spain abdication",
+        "siteId": 672,
+        "date": "1808-05-05",
+        "location": "Bayonne, France",
+        "description": "From May 5th to the 7th 1808, Charles IV, King of Spain, surrended all rights to Napoleon I at the Abdications of Bayonne.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Abdications_of_Bayonne"
+    },
+    {
+        "id": "423",
+        "title": "Toussaint Louverture death",
+        "siteId": 673,
+        "date": "1803-04-07",
+        "location": "Château de Joux, France",
+        "description": "In 1802 the leader of the Haitian Revolution, Toussaint Louverture, was arrested, deported to France and jailed at the Fort de Joux. He died in prison on April 7th 1803.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Abdications_of_Bayonne"
     }
 ]

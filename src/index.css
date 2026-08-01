@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
+/* --- Smoother Zoom Transitions --- */
 
+/* Ensures map tiles don't flicker during fractional zooms (0.5 steps) */
+.leaflet-tile-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Smoother animation timing for the zoom jump */
+.leaflet-zoom-animated {
+  transition-duration: 0.5s !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Smoother map background color transition */
+.leaflet-container {
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
+}
 :root {
   /* Default Dark Mode Inspired (Night Vision) */
   --bg-color: #0d1117;
@@ -622,6 +640,37 @@ button {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
+}
+/* --- Smother Zoom Animation --- */
+/* Target the layer that handles the zoom scaling animation */
+.leaflet-zoom-animated {
+  transition-duration: 0.6s !important; /* Default is usually 0.25s */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Optional: Smoother panning when the map centers on a site */
+.leaflet-proxy {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+/* --- Smoother Zoom Transitions --- */
+
+/* 1. Ensure tiles don't look blurry when zooming in 0.5 steps */
+.leaflet-tile-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* 2. Your existing smoothness logic with a slight tweak */
+.leaflet-zoom-animated {
+  /* This timing works best with smaller zoomDelta values (0.5) */
+  transition-duration: 0.5s !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 3. Smooth the "grey background" flash during transitions */
+.leaflet-container {
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
 }
 
 /* Optimization for Landscape Mobile */
