@@ -5,35 +5,41 @@ import {
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
-// D:/nAPPo_trails/src/components/SiteCard.jsx
-
 export const getCategoryColor = (category) => {
     const colors = {
-        "Today's Battle": '#ff4500',   // Orange-Red
-        'Battle site': '#ef5350',      // Red
-        'Battle landmark': '#ff5e7e',  // Pink (Updated to match image)
-        'Naval battle': '#26c6da',     // Cyan/Light Blue
-        'Museum': '#9575cd',           // Purple
-        'Artwork': '#ce93d8',          // Lavender/Light Purple
-        'Monument': '#26a69a',         // Emerald/Teal
-        'Landmark': '#ccff00',         // Lime Green (Updated to match image)
-        'Building': '#795548',         // Brown
-        'Movie tip': '#ffeb3b',        // Yellow
-        'Store': '#9e9e9e'             // Grey
+        "Today's Battle": '#ff4500',
+        'Battle site': '#ef5350',
+        'Battle landmark': '#ff5e7e',
+        'Naval battle': '#26c6da',
+        'Museum': '#9575cd',
+        'Artwork': '#ce93d8',
+        'Monument': '#26a69a',
+        'Landmark': '#ccff00',
+        'Building': '#795548',
+        'Movie tip': '#ffeb3b',
+        'Store': '#9e9e9e'
     };
-    return colors[category] || '#58a6ff'; // Default to Blue
+    return colors[category] || '#58a6ff';
 };
 
 const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => {
-    const { toggleVisited, userCoords, geolocationEnabled, setView, setSiteToOpenPopup, setSelectedSite } = useAppContext();
+    const {
+        toggleVisited,
+        userCoords,
+        geolocationEnabled,
+        setView,
+        setSiteToOpenPopup,
+        setSelectedSite
+    } = useAppContext();
 
     if (!site) return null;
 
+    // Helper to render stars based on significance data
     const renderSignificanceStars = (sig) => {
         const numStars = Number(sig) === 3 ? 3 : Number(sig) === 2 ? 2 : Number(sig) === 1 ? 1 : 0;
         if (numStars === 0) return null;
         return (
-            <div style={{ display: 'flex', gap: '2px', alignItems: 'center' }}>
+            <div className="significance-stars" style={{ display: 'flex', gap: '2px', alignItems: 'center' }}>
                 {[...Array(numStars)].map((_, i) => (
                     <Star key={i} size={14} fill="#ffc107" stroke="#ffc107" strokeWidth={1.5} />
                 ))}
@@ -42,15 +48,22 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
     };
 
     return (
-        <div className={`site-card ${site.visited ? 'visited' : ''}`}>
+        <div className={`site-card ${site.visited ? 'visited' : ''}`} style={{ position: 'relative' }}>
+
+            {/* --- RED CLOSE BUTTON --- */}
             {onClose && (
-                <button onClick={(e) => { e.stopPropagation(); onClose(); }} className="close-details-btn">
+                <button
+                    onClick={(e) => { e.stopPropagation(); onClose(); }}
+                    className="close-details-btn"
+                >
                     <span>×</span>
                 </button>
             )}
 
-            <div className="card-image-wrapper" style={{ position: 'relative' }}>
+            <div className="card-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
                 <img src={site.image} alt={site.name} className="card-image" style={{ width: '100%', height: 'auto', display: 'block' }} />
+
+                {/* NEW TAG (Upper Left) */}
                 {site.isNew && (
                     <img
                         src="/assets/new-tag.png"
@@ -60,15 +73,49 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                             position: 'absolute',
                             top: '5px',
                             left: '5px',
-                            width: '40px', // Adjust size as needed
+                            width: '70px',
                             height: 'auto',
                             zIndex: 20,
-                            backgroundColor: 'transparent',
-                            boxShadow: 'none',
                             pointerEvents: 'none'
                         }}
                     />
                 )}
+
+                {/* --- MARK AS VISITED (Lower Left of Image) --- */}
+                <div style={{
+                    position: 'absolute',
+                    bottom: '10px',
+                    left: '10px',
+                    zIndex: 25
+                }}>
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggleVisited(site.id);
+                        }}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            padding: '6px 10px',
+                            borderRadius: '6px',
+                            fontSize: '11px',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            border: '1px solid rgba(255,255,255,0.4)',
+                            color: 'white',
+                            backgroundColor: site.visited ? '#4caf50' : 'rgba(0,0,0,0.6)',
+                            backdropFilter: 'blur(4px)',
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        <CheckCircle size={14} />
+                        {site.visited ? 'Visited' : 'Mark as Visited'}
+                    </button>
+                </div>
+
+                {/* CATEGORY BADGE (Lower Right) */}
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
                     <span className="badge" style={{ backgroundColor: getCategoryColor(site.category), color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>
                         {site.category}
@@ -77,8 +124,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
             </div>
 
             <div className="card-content" style={{ padding: '12px' }}>
-                <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0', paddingRight: '30px' }}>{site.name}</h2>
+                <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0', paddingRight: '35px' }}>{site.name}</h2>
 
+                {/* --- STARS / DATE / DETAILS ROW --- */}
                 <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                         {renderSignificanceStars(site.significance)}
@@ -91,11 +139,21 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     </div>
 
                     {isCompact && (
-                        <div style={{ display: 'flex', gap: '10px' }}>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                             {!hideMapLink && (
-                                <button onClick={(e) => { e.stopPropagation(); setSiteToOpenPopup(site); setView('map'); }} style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'gray', fontSize: '0.8rem', fontWeight: 'bold' }}>Map</button>
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); setSiteToOpenPopup(site); setView('map'); }}
+                                    style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'gray', fontSize: '0.85rem', fontWeight: 'bold' }}
+                                >
+                                    Map
+                                </button>
                             )}
-                            <button onClick={(e) => { e.stopPropagation(); setSelectedSite(site); }} style={{ border: 'none', background: 'none', color: 'var(--accent-primary)', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.8rem' }}>Details →</button>
+                            <button
+                                onClick={(e) => { e.stopPropagation(); setSelectedSite(site); }}
+                                style={{ border: 'none', background: 'none', color: 'var(--accent-primary)', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.85rem' }}
+                            >
+                                Details &rarr;
+                            </button>
                         </div>
                     )}
                 </div>

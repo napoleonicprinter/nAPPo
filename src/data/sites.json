@@ -1410,7 +1410,7 @@
     "description": "Las ruinas escondidas que dejó la explosión de un polvorín provisional en 1812 en Salamanca.",
     "latitude": 40.965,
     "longitude": -5.66819,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Fachada_del_Convento_de_los_Capuchinos_de_Salamanca.jpg/960px-Fachada_del_Convento_de_los_Capuchinos_de_Salamanca.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Convento_Salamanca.webp",
     "more_info_link": "https://www.salamanca24horas.com/local/san-francisco-real-ruinas-escondidas_1_2563925.html",
     "createDate": "2026-03-15T10:00:00Z",
     "special": false
@@ -1425,7 +1425,7 @@
     "description": "",
     "latitude": 40.89298,
     "longitude": -5.64372,
-    "image": "https://www.turismocastillayleon.com/es/patrimonio-cultura/aula-interpretacion-batalla-arapiles.ficheros/196133-Aula%20de%20Interpretaci%C3%B3n%20Batalla%20de%20Arapiles%20%285%29.jpg/196133-Aula%20de%20Interpretaci%C3%B3n%20Batalla%20de%20Arapiles%20%285%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Arapiles_aula.webp",
     "more_info_link": "https://www.turismocastillayleon.com/es/patrimonio-cultura/aula-interpretacion-batalla-arapiles",
     "createDate": "2026-03-15T10:00:00Z",
     "special": false
@@ -1440,7 +1440,7 @@
     "description": "",
     "latitude": 40.7266,
     "longitude": -6.90404,
-    "image": "https://center-portugal.transforms.svdcdn.com/production/images/museu-militar-almeida-1.jpg?w=1024&h=1535&auto=compress%2Cformat&fit=crop&dm=1709119172&s=6bea9e6281b745c247034942dc4e9fb1",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Almeida_museo.webp",
     "more_info_link": "https://www.centerofportugal.com/es/entity/museo-historico-militar-de-almeida",
     "createDate": "2026-03-15T10:00:00Z",
     "special": false
@@ -4102,7 +4102,7 @@
     "description": "In September 1807, the cathedral was destroyed during the bombardment of Copenhagen by a British Royal Navy fleet under Admiral James Gambier",
     "latitude": 55.6794,
     "longitude": 12.5723,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Copenhagen_on_fire_1807_by_CW_Eckersberg.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Copenhagen_on_fire.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Church_of_Our_Lady,_Copenhagen",
     "createDate": "2025-03-21T10:00:00Z",
     "special": false
@@ -4118,7 +4118,7 @@
     "description": "British troops landed at Vedbæk on August 16th 1807 and began besieging Copenhage.",
     "latitude": 55.859883,
     "longitude": 12.56,
-    "image": "https://en.wikipedia.org/wiki/1807_in_Denmark#/media/File:De_Engelskes_Landgang_i_Vedb%C3%A6k_1807.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vedaek.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/1807_in_Denmark",
     "createDate": "2025-03-21T10:00:00Z",
     "special": false
@@ -12424,5 +12424,19 @@
     "longitude": 7.16524,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/San_bernardo.webp",
     "createDate": "2026-08-01"
+  },
+  {
+    "id": "675",
+    "name": "Primacial Palace",
+    "category": "Landmark",
+    "significance": 3,
+    "location": "Bratislava",
+    "country": "Slovakia",
+    "description": "The palace and its most famous chamber, the Hall of Mirrors, were the location of the signing of the fourth Peace of Pressburg by Johann I Josef, Prince of Liechtenstein, Ignácz Gyulay and Charles Maurice de Talleyrand in 1805 after the Battle of Austerlitz, which effectively ended the War of the Third Coalition.",
+    "latitude": 48.143924,
+    "longitude": 17.1097,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Primacial.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Primate%27s_Palace,_Bratislava",
+    "createDate": "2026-05-01"
   }
 ]

@@ -3631,5 +3631,14 @@
         "location": "Château de Joux, France",
         "description": "In 1802 the leader of the Haitian Revolution, Toussaint Louverture, was arrested, deported to France and jailed at the Fort de Joux. He died in prison on April 7th 1803.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Abdications_of_Bayonne"
+    },
+    {
+        "id": "424",
+        "title": "Peace of Pressburg",
+        "siteId": 675,
+        "date": "1805-12-26",
+        "location": "Primacial Palace, Bratislava, Slovkia",
+        "description": "The Peace of Pressburg was signed in Pressburg (today Bratislava) on December 26th 1805 between French Emperor Napoleon Bonaparte and Holy Roman Emperor Francis II, as a consequence of the French victory over the Russians and Austrians at the Battle of Austerlitz, ending the War of the Third Coalition.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Peace_of_Pressburg_(1805)"
     }
 ]
