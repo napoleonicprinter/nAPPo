@@ -81,14 +81,18 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     />
                 )}
 
-                {/* --- MARK AS VISITED (Lower Left of Image) --- */}
+                {/* --- MARK AS VISITED & NAVIGATION (Lower Left of Image) --- */}
                 <div style={{
                     position: 'absolute',
                     bottom: '10px',
                     left: '10px',
-                    zIndex: 25
+                    zIndex: 25,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
                 }}>
                     <button
+                        className={`btn-visited ${site.visited ? 'active' : ''}`}
                         onClick={(e) => {
                             e.stopPropagation();
                             toggleVisited(site.id);
@@ -105,16 +109,42 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                             border: '1px solid rgba(255,255,255,0.4)',
                             color: 'white',
                             backgroundColor: site.visited ? '#4caf50' : 'rgba(0,0,0,0.6)',
-                            backdropFilter: 'blur(4px)',
-                            boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                            transition: 'all 0.2s ease'
+                            backdropFilter: 'blur(4px)'
                         }}
                     >
                         <CheckCircle size={14} />
                         {site.visited ? 'Visited' : 'Mark as Visited'}
                     </button>
-                </div>
 
+                    {/* FIX: Removed geolocationEnabled check. Button shows if userCoords exists */}
+                    {userCoords && (
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                window.open(url, '_blank');
+                            }}
+                            title="Navigate with Google Maps"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                background: 'var(--accent-primary, #58a6ff)',
+                                color: '#000',
+                                border: 'none',
+                                width: '28px',
+                                height: '28px',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                                padding: 0
+                            }}
+                        >
+                            <Navigation size={14} />
+                        </button>
+                    )}
+                </div>
                 {/* CATEGORY BADGE (Lower Right) */}
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
                     <span className="badge" style={{ backgroundColor: getCategoryColor(site.category), color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>
@@ -157,6 +187,8 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         </div>
                     )}
                 </div>
+
+
 
                 <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
                     <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}

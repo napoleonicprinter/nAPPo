@@ -208,7 +208,10 @@ const Header = () => {
                         {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
                         
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                            <button className={`custom-select-trigger filter-select glass-panel ${showFilters ? 'active' : ''} ${isModalFiltered ? 'filters-active-red' : ''}`} onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>
+                            <button className={`custom-select-trigger filter-select glass-panel
+                                ${showFilters ? 'active' : ''}
+                                ${isModalFiltered ? 'filters-active-red' : ''}`}
+                                onClick={() => { setShowFilters(!showFilters); setIsMenuOpen(false); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>
                                 <div className="custom-select-value" style={{ gap: '4px' }}>
                                     <Filter size={16} />
                                     <span>Filters</span>

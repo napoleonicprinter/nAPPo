@@ -344,7 +344,7 @@
         "date": "1799-04-27",
         "location": "Cassano d'Adda, Italy",
         "description": "The clash is part of the battle of the Adda River or the so-called forcing of the Adda, which on the first day resulted in a minor victory for the Russians under the Count Suvorov over Barthélemy Schérer's French forces at Lecco.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Peninsular_War"
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cassano_(1799)"
     },
     {
         "id": 37,
@@ -387,6 +387,7 @@
     },
     {
         "id": 41,
+        "siteId": 37,
         "title": "Batalla de Alcañiz",
         "date": "1809-05-23",
         "location": "Alcañiz,Teruel, Spain",
@@ -396,6 +397,7 @@
     },
     {
         "id": 42,
+        "siteId": 54,
         "title": "Batalla de Usagre",
         "date": "1811-05-25",
         "location": "Usagre,Badajoz, Spain",
@@ -405,6 +407,7 @@
     },
     {
         "id": 43,
+        "siteId": 56,
         "title": "Batalla del Bidasoa",
         "date": "1813-10-07",
         "location": "Urrugne, Francia",
@@ -414,6 +417,7 @@
     },
     {
         "id": 44,
+        "siteId": 58,
         "title": "Batalla del Puente de Triana",
         "date": "1812-08-27",
         "location": "Sevilla, Andalucía, España",
@@ -423,6 +427,7 @@
     },
     {
         "id": 45,
+        "siteId": 60,
         "title": "Batalla de Cabezón",
         "date": "1808-06-12",
         "location": "Cabezón de Pisuerga, Valladolid, España",
@@ -432,6 +437,7 @@
     },
     {
         "id": 46,
+        "siteId": 61,
         "title": "Sitio de Cádiz",
         "date": "1810-02-05",
         "location": "Cádiz, Andalucía, España",
@@ -441,6 +447,7 @@
     },
     {
         "id": 47,
+        "siteId": 70,
         "title": "Batalla de Arroyomolinos",
         "date": "1811-10-28",
         "location": "Arroyomolinos, Cáceres, España",
@@ -450,6 +457,7 @@
     },
     {
         "id": 48,
+        "siteId": 109,
         "title": "Batalla de Medina de Rioseco",
         "date": "1808-07-14",
         "location": "Medina de Rioseco, Valladolid, España",
@@ -458,6 +466,7 @@
     },
     {
         "id": 49,
+        "siteId": 110,
         "title": "Toma del Fuerte del Rastrillar de Laredo",
         "date": "1814-02-21",
         "location": "Laredo, Cantabria, España",
@@ -466,6 +475,7 @@
     },
     {
         "id": 50,
+        "siteId": 117,
         "title": "Batalla de Fuentes de Oñoro",
         "date": "1811-05-03",
         "location": "Fuentes de Oñoro, Salamanca, España",
@@ -475,6 +485,7 @@
     },
     {
         "id": 51,
+        "siteId": 118,
         "title": "Batalla de Roliça",
         "date": "1808-08-17",
         "location": "Columbeira, Portugal",
@@ -484,7 +495,8 @@
     },
     {
         "id": 52,
-        "title": "Batalla de Vimieiro",
+        "siteId": 119,
+        "title": "Batalla de Vimeiro",
         "date": "1808-08-21",
         "location": "Vimeiro, Portugal",
         "description": "On 21 August 1808, the British under General Arthur Wellesley (who later became the Duke of Wellington) defeated the French under Major-General Jean-Andoche Junot near the village of Vimeiro.",
@@ -493,6 +505,7 @@
     },
     {
         "id": 53,
+        "siteId": 121,
         "title": "Segona Batalla de Porto",
         "date": "1809-05-12",
         "location": "Oporto, Portugal",
@@ -502,6 +515,7 @@
     },
     {
         "id": 54,
+        "siteId": 122,
         "title": "Batalla de García Hernández",
         "date": "1812-07-23",
         "location": "García Hernández, Salamanca, España",
@@ -511,6 +525,7 @@
     },
     {
         "id": 55,
+        "siteId": 133,
         "title": "Batalla de Majadahonda",
         "date": "1812-08-11",
         "location": "Majadahonda, Madrid, España",
@@ -520,6 +535,7 @@
     },
     {
         "id": 56,
+        "siteId": 224,
         "title": "Batalla de Caldiero",
         "date": "1796-11-12",
         "location": "Caldiero, Verona",
@@ -540,6 +556,7 @@
     },
     {
         "id": 58,
+        "siteId": 149,
         "title": "Battle of Aspern-Essling",
         "date": "1809-05-21",
         "location": "Aspern-Essling",
@@ -550,6 +567,7 @@
     },
     {
         "id": 59,
+        "siteId": 150,
         "title": "Battle of Wagram",
         "date": "1809-07-05",
         "location": "Deutsch-Wagram",
@@ -560,6 +578,7 @@
     },
     {
         "id": 60,
+        "siteId": 155,
         "title": "Battle of Leipzig",
         "date": "1813-10-16",
         "location": "Leipzig, Saxony",
@@ -570,35 +589,36 @@
     },
     {
         "id": 61,
+        "siteId": 7,
         "title": "Battle of Borodino",
         "date": "1812-09-07",
         "location": "Borodino, Russia",
         "description": "It was the bloodiest single-day battle in the Napoleonic Wars. Though technically a French victory, the massive losses weakened Napoleon's Grande Armée and foreshadowed the disastrous retreat from Moscow.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borodino",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borodino"
     },
     {
         "id": 62,
+        "siteId": 166,
         "title": "Battle of Corunna / Elviña",
         "date": "1809-01-16",
         "location": "A Coruña, Galicia",
         "country": "Spain",
         "description": "The Battle of Corunna (or A Coruña, La Corunna, La Coruña or La Corogne), in Spain known as Battle of Elviña, took place on 16 January 1809, when a French corps under Marshal of the Empire Jean de Dieu Soult attacked a British army under Lieutenant-General Sir John Moore. The battle took place during the Peninsular War, which was part of the wider Napoleonic Wars.",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Corunna",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Corunna"
     },
     {
         "id": 63,
+        "Site": 170,
         "title": "Battle of the Pyramids",
         "date": "1798-07-21",
         "location": "Giza, Egypt",
         "country": "Egypt",
         "description": "It was a decisive French victory during Napoleon's Egyptian campaign. Napoleon famously addressed his troops: 'Soldiers, from the height of these pyramids, forty centuries look down upon you.'",
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Pyramids",
-        "more_info_link": ""
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Pyramids"
     },
     {
         "id": 64,
+        "siteId": 2,
         "title": "Battle of Waterloo",
         "date": "1815-06-18",
         "location": "Waterloo,",
@@ -3640,5 +3660,23 @@
         "location": "Primacial Palace, Bratislava, Slovkia",
         "description": "The Peace of Pressburg was signed in Pressburg (today Bratislava) on December 26th 1805 between French Emperor Napoleon Bonaparte and Holy Roman Emperor Francis II, as a consequence of the French victory over the Russians and Austrians at the Battle of Austerlitz, ending the War of the Third Coalition.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Peace_of_Pressburg_(1805)"
+    },
+    {
+        "id": "425",
+        "title": "Leiden gunpowder disaster",
+        "siteId": 684,
+        "date": "1807-01-12",
+        "location": "Leiden, Netherlands",
+        "description": "Occurred on January 12th 1807 when a ship carrying hundreds of barrels of black powder exploded in the Dutch town of Leiden. This catastrophic event resulted in 151 fatalities and the destruction of over 200 buildings.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Leiden_gunpowder_disaster"
+    },
+    {
+        "id": "426",
+        "title": "Treaty of Poznań",
+        "siteId": 685,
+        "date": "1806-12-11",
+        "location": "Poznań, Poland",
+        "description": "Signed on December 11th 1806 in Poznań ended the war between the French Empire and the Electorate of Saxony which was an ally of Prussia as a member of the Fourth Coalition against France.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Treaty_of_Pozna%C5%84"
     }
 ]

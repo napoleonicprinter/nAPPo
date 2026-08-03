@@ -41,31 +41,88 @@ const getSiteIcon = (site) => {
     });
 };
 
+// --- STABILIZED INTERNAL COMPONENTS ---
+
 const PopupOpener = ({ markerRefs, clusterInstance }) => {
-    const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
+    const { siteToOpenPopup } = useAppContext();
     const map = useMap();
+    const lastOpenedId = useRef(null);
 
     useEffect(() => {
-        if (!siteToOpenPopup || !clusterInstance) return;
-        let isCancelled = false;
-        let activeTimeout;
+        if (!siteToOpenPopup || !clusterInstance || lastOpenedId.current === siteToOpenPopup.id) return;
+
         const marker = markerRefs.current.get(siteToOpenPopup.id);
-
         if (marker) {
+            lastOpenedId.current = siteToOpenPopup.id;
             const latlng = marker.getLatLng();
-            const zoom = 16;
-            const targetPoint = map.project(latlng, zoom);
-            targetPoint.y -= 150;
-            const targetLatLng = map.unproject(targetPoint, zoom);
+            const currentZoom = map.getZoom();
 
-            map.flyTo(targetLatLng, zoom, { duration: 0.8 });
-            activeTimeout = setTimeout(() => {
-                if (!isCancelled) marker.openPopup();
+            const targetPoint = map.project(latlng, currentZoom);
+            targetPoint.y -= 150;
+            const targetLatLng = map.unproject(targetPoint, currentZoom);
+
+            // Flicker prevention: Only fly if we aren't already essentially there
+            if (map.getCenter().distanceTo(targetLatLng) > 5) {
+                map.stop();
+                map.flyTo(targetLatLng, currentZoom, {
+                    duration: 0.8,
+                    easeLinearity: 0.25,
+                    noMoveStart: true
+                });
+            }
+
+            const activeTimeout = setTimeout(() => {
+                if (markerRefs.current.get(siteToOpenPopup.id)) {
+                    marker.openPopup();
+                }
             }, 800);
+
+            return () => clearTimeout(activeTimeout);
         }
-        return () => { isCancelled = true; if (activeTimeout) clearTimeout(activeTimeout); };
-    }, [siteToOpenPopup, map, clusterInstance, markerRefs]);
+    }, [siteToOpenPopup?.id, map, clusterInstance, markerRefs]);
     return null;
+};
+
+const LocationMarker = ({ isFiltered }) => {
+    const { userCoords } = useAppContext();
+    const map = useMap();
+    const lastAnimatedCoords = useRef({ lat: null, lon: null });
+
+    useEffect(() => {
+        if (userCoords?.lat && userCoords?.lon && !isFiltered) {
+            const target = L.latLng(userCoords.lat, userCoords.lon);
+            const currentCenter = map.getCenter();
+
+            // CHECK 1: Is this a different coordinate than our last animation request?
+            const isNewCoord = lastAnimatedCoords.current.lat !== userCoords.lat ||
+                               lastAnimatedCoords.current.lon !== userCoords.lon;
+
+            // CHECK 2: Is the map center actually far enough to justify a move?
+            // (Prevents jitter from GPS noise)
+            if (isNewCoord && currentCenter.distanceTo(target) > 5) {
+                lastAnimatedCoords.current = { lat: userCoords.lat, lon: userCoords.lon };
+
+                map.stop();
+                map.flyTo(target, map.getZoom(), {
+                    duration: 1.2,
+                    easeLinearity: 0.25,
+                    animate: true,
+                    noMoveStart: true // Prevents Leaflet from firing extra move events during start
+                });
+            }
+        }
+    }, [userCoords?.lat, userCoords?.lon, isFiltered, map]);
+
+    if (!userCoords) return null;
+
+    const blueIcon = L.icon({
+        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+    });
+
+    return <Marker position={[userCoords.lat, userCoords.lon]} icon={blueIcon} zIndexOffset={1000} />;
 };
 
 const MapView = () => {
@@ -80,10 +137,66 @@ const MapView = () => {
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
+    useEffect(() => {
+        const styleId = 'map-view-custom-styles';
+        let style = document.getElementById(styleId);
+        if (!style) {
+            style = document.createElement('style');
+            style.id = styleId;
+            document.head.appendChild(style);
+        }
+
+        const shadowColor = theme === 'dark' ? 'rgba(200, 200, 200, 0.4)' : 'rgba(0, 0, 0, 0.45)';
+        const shadowDeep = theme === 'dark' ? 'rgba(180, 180, 180, 0.2)' : 'rgba(0, 0, 0, 0.3)';
+
+        style.innerHTML = `
+            .detail-view-active .leaflet-popup-pane { display: none !important; }
+            .leaflet-popup-content-wrapper { background: transparent !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; border: none !important; }
+            .leaflet-popup-content { margin: 0 !important; width: auto !important; overflow: visible !important; border: none !important; }
+            .site-card {
+                box-shadow: 0 30px 60px -12px ${shadowColor}, 0 18px 36px -18px ${shadowDeep} !important;
+                border: none !important; border-radius: 12px !important; background: var(--bg-color, white) !important;
+                transform: none !important; transition: none !important;
+                position: relative !important;
+            }
+            .close-details-btn {
+                background: #ff4444 !important; color: white !important; border-radius: 50% !important;
+                width: 32px !important; height: 32px !important; display: flex !important;
+                align-items: center !important; justify-content: center !important;
+                border: 2px solid white !important; box-shadow: 0 2px 8px rgba(0,0,0,0.5) !important;
+                position: absolute !important; top: 10px !important; right: 10px !important;
+                z-index: 100001 !important; cursor: pointer !important; padding: 0 !important;
+            }
+            .close-details-btn span { color: white !important; font-size: 24px !important; font-weight: bold !important; line-height: 1 !important; margin-top: -2px !important; }
+            .leaflet-popup-tip-container { margin-top: -1px; }
+            .leaflet-popup-tip { background: white !important; box-shadow: none !important; border: none !important; }
+            .detail-view-active .leaflet-control-container { visibility: hidden !important; opacity: 0 !important; }
+            .custom-div-icon { background: none !important; border: none !important; }
+            .new-site-badge {
+                position: absolute !important; top: 5px !important; left: 5px !important;
+                width: 70px !important; height: auto !important; z-index: 20 !important;
+                background-color: transparent !important; border: none !important;
+                box-shadow: none !important; pointer-events: none !important;
+            }
+
+            ${theme === 'dark' ? `
+                [class*="count"], [class*="item"] span:last-child, .filter-count {
+                    color: white !important; opacity: 1 !important; -webkit-text-fill-color: white !important;
+                }
+            ` : ''}
+
+            .clear-filters-floating {
+                display: flex !important; position: fixed !important; bottom: 25px !important; left: 20px !important; z-index: 9999 !important;
+                background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important;
+                color: #ff4444 !important; border: 1.5px solid #ff4444 !important; padding: 8px 16px !important; border-radius: 20px !important;
+                font-weight: 700 !important; font-size: 12px !important; align-items: center !important; justify-content: center !important;
+                gap: 6px !important; cursor: pointer !important; pointer-events: auto !important; text-transform: uppercase !important;
+            }
+        `;
+    }, [theme]);
+
     const MapEventsHandler = () => {
-        useMapEvents({
-            click: () => setSelectedSite(null),
-        });
+        useMapEvents({ click: () => setSelectedSite(null) });
         return null;
     };
 
@@ -92,7 +205,7 @@ const MapView = () => {
         if (!userCoords) return null;
         return (
             <div
-                className={`leaflet-control-center ${isMobileLike ? "leaflet-bottom leaflet-right" : "leaflet-top leaflet-right"}`}
+                className={isMobileLike ? "leaflet-bottom leaflet-right" : "leaflet-top leaflet-right"}
                 style={{
                     marginTop: isMobileLike ? '0' : '74px',
                     marginBottom: isMobileLike ? '82px' : '0',
@@ -128,97 +241,6 @@ const MapView = () => {
         return null;
     };
 
-    const LocationMarker = () => {
-        if (!userCoords) return null;
-        const blueIcon = L.icon({
-            iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-            shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-        });
-        return <Marker position={[userCoords.lat, userCoords.lon]} icon={blueIcon} zIndexOffset={1000} />;
-    };
-
-    useEffect(() => {
-        const style = document.createElement('style');
-        const shadowColor = theme === 'dark' ? 'rgba(200, 200, 200, 0.4)' : 'rgba(0, 0, 0, 0.45)';
-        const shadowDeep = theme === 'dark' ? 'rgba(180, 180, 180, 0.2)' : 'rgba(0, 0, 0, 0.3)';
-
-        style.innerHTML = `
-            .leaflet-popup-content-wrapper { background: transparent !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; border: none !important; }
-            .leaflet-popup-content { margin: 0 !important; width: auto !important; overflow: visible !important; border: none !important; }
-
-            .new-site-badge {
-                position: absolute !important;
-                top: 5px !important;
-                left: 5px !important;
-                width: 70px !important; /* Fixed typo from 170px to 70px */
-                height: auto !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                padding: 0 !important;
-                z-index: 20 !important;
-                pointer-events: none !important;
-            }
-            .site-card {
-                box-shadow: 0 30px 60px -12px ${shadowColor}, 0 18px 36px -18px ${shadowDeep} !important;
-                border: none !important; border-radius: 12px !important; background: var(--bg-color, white) !important;
-                transform: none !important; transition: none !important;
-                position: relative !important;
-            }
-
-            /* --- RESTORED RED CLOSE BUTTON --- */
-            .close-details-btn {
-                background: #ff4444 !important;
-                color: white !important;
-                border-radius: 50% !important;
-                width: 32px !important;
-                height: 32px !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                border: 2px solid white !important;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.5) !important;
-                position: absolute !important;
-                top: 10px !important;
-                right: 10px !important;
-                z-index: 100001 !important;
-                cursor: pointer !important;
-                padding: 0 !important;
-            }
-            .close-details-btn span {
-                color: white !important;
-                font-size: 24px !important;
-                font-weight: bold !important;
-                line-height: 1 !important;
-                margin-top: -2px !important;
-            }
-
-            .leaflet-popup-tip-container { margin-top: -1px; }
-            .leaflet-popup-tip { background: white !important; box-shadow: none !important; border: none !important; }
-            .detail-view-active .leaflet-control-container { visibility: hidden !important; opacity: 0 !important; }
-            .custom-div-icon { background: none !important; border: none !important; }
-
-            ${theme === 'dark' ? `
-                .category-filter-item span, .year-filter-item span, .commander-filter-item span, .filter-item span, .filter-count, .count-badge, [class*="count"], [class*="item"] span:last-child {
-                    color: white !important; opacity: 1 !important; -webkit-text-fill-color: white !important;
-                }
-            ` : ''}
-
-            .clear-filters-floating {
-                display: flex !important; position: fixed !important; bottom: 25px !important; left: 20px !important; z-index: 9999 !important;
-                background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important;
-                color: #ff4444 !important; border: 1.5px solid #ff4444 !important; padding: 8px 16px !important; border-radius: 20px !important;
-                font-weight: 700 !important; font-size: 12px !important; align-items: center !important; justify-content: center !important;
-                gap: 6px !important; cursor: pointer !important; pointer-events: auto !important; text-transform: uppercase !important;
-            }
-        `;
-        document.head.appendChild(style);
-        return () => { if (document.head.contains(style)) document.head.removeChild(style); };
-    }, [theme]);
-
     const defaultCenter = [48.8566, 2.3522];
 
     return (
@@ -235,7 +257,7 @@ const MapView = () => {
             >
                 <TileLayer key={mapStyle} url={TILE_LAYERS[mapStyle]?.url} attribution={TILE_LAYERS[mapStyle]?.attribution} noWrap={true} />
                 <ZoomControl position="topright" />
-                <LocationMarker />
+                <LocationMarker isFiltered={isFiltered} />
                 <CenterControl />
                 <FitFilteredSites />
                 <MapEventsHandler />
@@ -246,9 +268,7 @@ const MapView = () => {
                     key={`cluster-${clusterRadius}`}
                     maxClusterRadius={clusterRadius}
                     eventHandlers={{
-                        clusterclick: () => {
-                            if (selectedSite) setSelectedSite(null);
-                        }
+                        clusterclick: () => { if (selectedSite) setSelectedSite(null); }
                     }}
                 >
                     {sites.map(site => (
@@ -259,24 +279,40 @@ const MapView = () => {
                             eventHandlers={{
                                 click: (e) => {
                                     if (e.originalEvent) e.originalEvent.stopPropagation();
+
+                                    // Close any open Detail Card when clicking a new pin
                                     if (selectedSite) setSelectedSite(null);
+
                                     const map = e.target._map;
                                     const latlng = e.target.getLatLng();
-                                    const targetPoint = map.project(latlng, map.getZoom());
-                                    targetPoint.y -= 150;
-                                    const targetLatLng = map.unproject(targetPoint, map.getZoom());
-                                    map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                                    const currentZoom = map.getZoom();
+
+                                    // Center only for strictly mobile devices
+                                    if (previewDevice === 'mobile') {
+                                        const targetPoint = map.project(latlng, currentZoom);
+                                        targetPoint.y -= 150;
+                                        const targetLatLng = map.unproject(targetPoint, currentZoom);
+                                        map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                                    }
                                     e.target.openPopup();
                                 }
                             }}
-                            ref={(r) => { if (r) markerRefs.current.set(site.id, r); else markerRefs.current.delete(site.id); }}
+                            ref={(r) => {
+                                if (r) markerRefs.current.set(site.id, r);
+                                else markerRefs.current.delete(site.id);
+                            }}
                         >
                             <Popup autoPan={false} autoPanPadding={[50, 50]} closeButton={false} onClose={() => setSelectedSite(null)}>
                                 <div style={{ width: '300px', position: 'relative' }}>
-                                    <SiteCard site={site} isCompact={true} hideMapLink={true} onClose={() => {
-                                        const marker = markerRefs.current.get(site.id);
-                                        if (marker) marker.closePopup();
-                                    }} />
+                                    <SiteCard
+                                        site={site}
+                                        isCompact={true}
+                                        hideMapLink={true}
+                                        onClose={() => {
+                                            const marker = markerRefs.current.get(site.id);
+                                            if (marker) marker.closePopup();
+                                        }}
+                                    />
                                 </div>
                             </Popup>
                         </Marker>
@@ -284,61 +320,32 @@ const MapView = () => {
                 </MarkerClusterGroup>
             </MapContainer>
 
-            {/* MODAL DE DETALLE - Improved Pointer Events to allow clicking pins around it */}
-            {selectedSite && (
-                <div style={{
-                    position: 'fixed',
-                    top: isMobileLike ? '145px' : '135px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '92%',
-                    maxWidth: '400px', // Matches card exactly to reduce click blockage
-                    zIndex: 2147483647,
-                    pointerEvents: 'none' // Passes all clicks to map by default
-                }}>
-                    <div
-                        className="animate-fade-in"
-                        style={{
-                            pointerEvents: 'auto', // Re-enables clicks ONLY for the card
-                            maxHeight: isMobileLike ? 'calc(100dvh - 180px)' : '75vh',
-                            overflowY: 'auto',
-                            borderRadius: '12px',
-                            scrollbarWidth: 'none'
-                        }}
-                    >
-                        <SiteCard
-                            site={selectedSite}
-                            onClose={() => setSelectedSite(null)}
-                            isCompact={false}
-                        />
-                    </div>
-                </div>
+            {/* MODAL DE DETALLE - Live update and Leaflet Hiding logic */}
+            {selectedSite && (() => {
                 const liveSite = sites.find(s => s.id === selectedSite.id) || selectedSite;
+                const isStrictMobile = previewDevice === 'mobile';
 
                 return (
                     <div style={{
                         position: 'fixed',
-                        top: isMobileLike ? '145px' : '135px',
+                        // Mobile: below menu | PC/Tablet: screen center
+                        top: isStrictMobile ? '145px' : '50%',
                         left: '50%',
-                        transform: 'translateX(-50%)',
+                        transform: isStrictMobile ? 'translateX(-50%)' : 'translate(-50%, -50%)',
                         width: '92%',
                         maxWidth: '400px',
                         zIndex: 2147483647,
                         pointerEvents: 'none'
                     }}>
-                        <div
-                            className="animate-fade-in"
-                            style={{
-                                pointerEvents: 'auto',
-                                padding: '10px 20px 80px 20px',
-                                maxHeight: isMobileLike ? 'calc(100dvh - 160px)' : '80vh',
-                                overflowY: 'auto',
-                                scrollbarWidth: 'none',
-                                msOverflowStyle: 'none'
-                            }}
-                        >
+                        <div className="animate-fade-in" style={{
+                            pointerEvents: 'auto',
+                            padding: '10px 20px 80px 20px',
+                            maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
+                            overflowY: 'auto',
+                            scrollbarWidth: 'none',
+                            msOverflowStyle: 'none'
+                        }}>
                             <SiteCard
-                                // FIX: Pass the liveSite instead of the stale selectedSite
                                 site={liveSite}
                                 onClose={() => setSelectedSite(null)}
                                 isCompact={false}
@@ -346,7 +353,7 @@ const MapView = () => {
                         </div>
                     </div>
                 );
-            )}
+            })()}
 
             {isMobileLike && isFiltered && (
                 <button className="clear-filters-floating animate-fade-in" onClick={() => clearAllFilters()}>

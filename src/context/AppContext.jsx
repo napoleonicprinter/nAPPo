@@ -40,7 +40,7 @@ export const EUROPEAN_CAPITALS = [
     { name: "Andorra Vella", lat: 42.5063, lon: 1.5218 },
     { name: "Athens", lat: 37.9838, lon: 23.7275 },
     { name: "Belgrade", lat: 44.7866, lon: 20.4489 },
-    { name: "Berlin", lat: 52.5200, lon: 13.4050 },
+    { name: "Berlin", lat: 52.522514, lon: 13.412396 },
     { name: "Bern", lat: 46.9480, lon: 7.4474 },
     { name: "Bratislava", lat: 48.1486, lon: 17.1077 },
     { name: "Brussels", lat: 50.8503, lon: 4.3517 },
@@ -103,7 +103,7 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         // Clear existing emulation classes
         document.body.classList.remove('pc', 'tablet', 'mobile', 'desktop');
-        
+
         // Add the selected device class
         if (previewDevice) {
             document.body.classList.add(previewDevice);
@@ -401,7 +401,7 @@ export const AppProvider = ({ children }) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
         return filterYear === 'all' || siteYearStr === filterYear;
     };
-    
+
     const passCmd = (site) => {
         return filterCommander === 'all' || (site.commanders && site.commanders.includes(filterCommander));
     };
@@ -410,7 +410,7 @@ export const AppProvider = ({ children }) => {
         if (filterCategory.length === 0) return true;
         const hasTodaysBattle = filterCategory.includes("Today's Battle");
         const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
-        
+
         let matchesToday = false;
         if (hasTodaysBattle) {
             if ((site.category === 'Battle site' || site.category === 'Naval battle') && site.date) {
@@ -534,7 +534,31 @@ export const AppProvider = ({ children }) => {
 
     const filteredSites = useMemo(() => sitesForCategoryCounts.filter(site => passCat(site)), [sitesForCategoryCounts, passCat]);
 
-    const isFiltered = filterCategory.length > 0 || filterSignificance !== '' || filterVisited !== 'all' || filterRadius !== 'all' || filterSearch !== '' || filterYear !== 'all' || filterCommander !== 'all' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || showArcOnly || showOnlyNew || filterWithMaps;
+    // 1. Master Filter: Controls if the "Clear" button appears
+    const isFiltered =
+        locationMode !== 'none' ||
+        filterCategory.length > 0 ||
+        filterSignificance !== '' ||
+        filterSearch !== '' ||
+        filterCountry !== 'all' ||
+        filterCoalition !== 'all' ||
+        filterCampaign !== 'all' ||
+        filterVisited !== 'all' ||
+        showOnlyNew ||   // <--- Checkbox 2
+        filterWithMaps;  // <--- Checkbox 3
+
+
+    // 2. Modal Filter: Specifically turns the "Filters" button RED
+    const isModalFiltered =
+        filterSearch !== '' ||
+        filterCountry !== 'all' ||
+        filterCoalition !== 'all' ||
+        filterCampaign !== 'all' ||
+        filterVisited !== 'all' ||
+        showOnlyNew ||
+        filterWithMaps;
+
+    // 3. Clear Function: Ensure it resets the boxes to false
 
     const clearAllFilters = () => {
         setFilterCategory([]);
