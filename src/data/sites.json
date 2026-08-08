@@ -12896,6 +12896,7 @@
     "id": "703",
     "name": "Scharnitz clash site (ruins)",
     "category": "Battle site",
+    "artwork_ids": 705,
     "significance": 1,
     "year": 1805,
     "location": "Scharnitz",
@@ -12943,6 +12944,42 @@
     "longitude": 13.396356,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scharnitz_canvas.webp",
     "more_info_link": "https://uniformenportal.de/index.php?/category/75",
+    "createDate": "2026-08-08"
+  },
+  {
+    "id": "706",
+    "name": "San Pietro in Gu action",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "location": "San Pietro in Gu, Padua",
+    "country": "Italy",
+    "description": "Archduke Charles retreated from the battlefield of Caldiero when the French forces commanded by General Molitor raached his rearguard commanded by General Frimont at San Pietro in Gu on November 4th. One battalion of the Kreutzer Grenz Infantry Regiment Nr. 5 was destroyed.",
+    "latitude": 45.61552,
+    "longitude": 11.669208,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Steyer.webp",
+    "createDate": "2026-08-08",
+    "special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Gabriel Jean Joseph Molitor",
+      "Johann Maria Philipp Frimont "
+    ]
+  },
+  {
+    "id": "707",
+    "name": "Burning of English Merchandise",
+    "category": "Artwork",
+    "significance": 1,
+    "location": "Frankfurt",
+    "country": "Germany",
+    "description": "Painted in 1810 by Johann Carl Wilck, 'Burning of English Merchandise on the Fischerfeld near Frankfurt am Main' is on display at the Historical Museum of Frankfurt. The artwork depicts the public burning of smuggled goods, which served as a dramatic demonstration to enforce compliance with Napoleon's Continental Blockade and the Berlin Decree.",
+    "latitude": 50.109484,
+    "longitude": 8.682335,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Burning_English.webp",
+    "site_link": "https://historisches-museum-frankfurt.de/en/about-us",
+    "more_info_link": "https://uniformenportal.de/index.php?/category/157",
     "createDate": "2026-08-08"
   }
 ]

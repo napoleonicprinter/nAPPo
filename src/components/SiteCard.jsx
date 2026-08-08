@@ -1,7 +1,9 @@
 import React from 'react';
+
 import {
     MapPin, Calendar, Navigation, CheckCircle,
-    BookOpen, Globe, Youtube, ExternalLink, Star
+    BookOpen, Globe, Youtube, ExternalLink, Star,
+    Palette // Add this icon
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
@@ -29,6 +31,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         geolocationEnabled,
         setView,
         setSiteToOpenPopup,
+        allSites,
         setSelectedSite
     } = useAppContext();
 
@@ -188,8 +191,6 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     )}
                 </div>
 
-
-
                 <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
                     <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}
                 </div>
@@ -203,30 +204,84 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         {/* --- EXTERNAL LINKS BLOCK --- */}
                         <div className="card-external-links" style={{
                             display: 'flex',
-                            gap: '20px',
+                            flexDirection: 'column',
+                            gap: '10px',
                             marginTop: '15px',
                             paddingTop: '10px',
                             borderTop: '1px solid rgba(0,0,0,0.1)'
                         }}>
-                            {site.wikipedia_link && (
-                                <a href={site.wikipedia_link} target="_blank" rel="noreferrer" title="Wikipedia" style={{ color: '#666' }}>
-                                    <BookOpen size={22} />
-                                </a>
-                            )}
-                            {site.site_link && (
-                                <a href={site.site_link} target="_blank" rel="noreferrer" title="Official Site" style={{ color: '#666' }}>
-                                    <Globe size={22} />
-                                </a>
-                            )}
-                            {site.youtube_link && (
-                                <a href={site.youtube_link} target="_blank" rel="noreferrer" title="YouTube Video" style={{ color: '#ff0000' }}>
-                                    <Youtube size={22} />
-                                </a>
-                            )}
-                            {site.more_info_link && (
-                                <a href={site.more_info_link} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
-                                    <ExternalLink size={22} />
-                                </a>
+                            {/* Standard Icons Row */}
+                            <div style={{ display: 'flex', gap: '20px' }}>
+                                {site.wikipedia_link && (
+                                    <a href={site.wikipedia_link} target="_blank" rel="noreferrer" title="Wikipedia" style={{ color: '#666' }}>
+                                        <BookOpen size={22} />
+                                    </a>
+                                )}
+                                {site.site_link && (
+                                    <a href={site.site_link} target="_blank" rel="noreferrer" title="Official Site" style={{ color: '#666' }}>
+                                        <Globe size={22} />
+                                    </a>
+                                )}
+                                {site.youtube_link && (
+                                    <a href={site.youtube_link} target="_blank" rel="noreferrer" title="YouTube Video" style={{ color: '#ff0000' }}>
+                                        <Youtube size={22} />
+                                    </a>
+                                )}
+                            </div>
+
+                            {/* --- ARTWORK LINKS SECTION --- */}
+                            {site.artwork_ids && site.artwork_ids.length > 0 && (
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    fontSize: '0.85rem',
+                                    color: 'var(--text-primary)',
+                                    marginTop: '5px'
+                                }}>
+                                    <Palette size={20} style={{ color: '#666' }} />
+
+                                    {site.artwork_ids.length === 1 ? (
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                const artSite = allSites.find(s => s.id === site.artwork_ids[0]);
+                                                if (artSite) setSelectedSite(artSite);
+                                            }}
+                                            style={{ border: 'none', background: 'none', padding: 0, color: 'var(--accent-primary)', cursor: 'pointer', fontWeight: 'bold', textDecoration: 'underline' }}
+                                        >
+                                            Artwork
+                                        </button>
+                                    ) : (
+                                        <>
+                                            <span style={{ fontWeight: '600' }}>Artwork:</span>
+                                            <div style={{ display: 'flex', gap: '6px' }}>
+                                                {site.artwork_ids.map((id, index) => (
+                                                    <button
+                                                        key={id}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            const artSite = allSites.find(s => s.id === id);
+                                                            if (artSite) setSelectedSite(artSite);
+                                                        }}
+                                                        style={{
+                                                            border: '1px solid var(--accent-primary)',
+                                                            background: 'rgba(88, 166, 255, 0.1)',
+                                                            color: 'var(--accent-primary)',
+                                                            padding: '2px 8px',
+                                                            borderRadius: '4px',
+                                                            cursor: 'pointer',
+                                                            fontWeight: 'bold',
+                                                            fontSize: '0.8rem'
+                                                        }}
+                                                    >
+                                                        {index + 1}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
                             )}
                         </div>
                     </>

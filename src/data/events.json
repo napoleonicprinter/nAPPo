@@ -3794,5 +3794,13 @@
         "date": "1805-11-07",
         "location": "Innsbruck, Austria",
         "description": "On November 7th 1805, as a result of a rapid mountain campaign consisting of smaller skirmishes and strategic maneuvering, Ney was able to capture teh city of Innsbruck. This helped secure the Alpine flank, preventing Austrian forces from assisting at the decisive Battle of Austerlitz."
+    },
+    {
+        "id": "429",
+        "title": "Rear guard action at San Pietro in Gu ",
+        "date": "1805-11-04",
+        "location": "San Pietro in Gu, Padua, Italy",
+        "description": "Archduke Charles retreated from the battlefield of Caldiero when the French forces commanded by General Molitor raached his rearguard commanded by General Frimont at San Pietro in Gu on November 4th. One battalion of the Kreutzer Grenz Infantry Regiment Nr. 5 was destroyed."
     }
+
 ]

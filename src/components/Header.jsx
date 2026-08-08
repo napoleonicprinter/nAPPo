@@ -61,7 +61,7 @@ const Header = () => {
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
 
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || filterWithMaps;
+    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
