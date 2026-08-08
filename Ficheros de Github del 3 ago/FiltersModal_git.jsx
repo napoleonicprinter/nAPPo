@@ -48,7 +48,6 @@ const FiltersModal = ({ onClose }) => {
         setFilterCampaign('all');
         setFilterVisited('all');
         setShowOnlyNew(false);
-        setFilterWithMaps(false);
     };
 
     return createPortal(

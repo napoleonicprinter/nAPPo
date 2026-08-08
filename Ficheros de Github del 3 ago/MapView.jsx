@@ -95,7 +95,7 @@ const LocationMarker = ({ isFiltered }) => {
 
             // CHECK 1: Is this a different coordinate than our last animation request?
             const isNewCoord = lastAnimatedCoords.current.lat !== userCoords.lat ||
-                lastAnimatedCoords.current.lon !== userCoords.lon;
+                               lastAnimatedCoords.current.lon !== userCoords.lon;
 
             // CHECK 2: Is the map center actually far enough to justify a move?
             // (Prevents jitter from GPS noise)
@@ -150,17 +150,6 @@ const MapView = () => {
         const shadowDeep = theme === 'dark' ? 'rgba(180, 180, 180, 0.2)' : 'rgba(0, 0, 0, 0.3)';
 
         style.innerHTML = `
-            .filters-active-red {
-                background: rgba(255, 68, 68, 0.1) !important;
-                color: #ff4444 !important;
-                border: 1.5px solid #ff4444 !important;
-                font-weight: bold !important;
-            }
-            /* Ensures the icon inside the tag also turns red */
-            .filters-active-red svg,
-            .filters-active-red span {
-                color: #ff4444 !important;
-            }
             .detail-view-active .leaflet-popup-pane { display: none !important; }
             .leaflet-popup-content-wrapper { background: transparent !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; border: none !important; }
             .leaflet-popup-content { margin: 0 !important; width: auto !important; overflow: visible !important; border: none !important; }

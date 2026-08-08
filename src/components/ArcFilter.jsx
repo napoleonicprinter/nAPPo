@@ -6,24 +6,27 @@ const ArcFilter = ({ className, style }) => {
 
     const allowedCategories = ['Battle site', 'Battle landmark'];
     const isBattleOnly = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
+
     if (!isBattleOnly) return null;
 
     return (
         <button
-            className={`arc-filter-btn glass-panel ${showArcOnly ? 'active' : ''} ${className ?? ''}`}
+            // Applies 'filters-active-red' for the red border/background when active
+            className={`arc-filter-btn glass-panel ${showArcOnly ? 'filters-active-red' : ''} ${className || ''}`}
             onClick={() => setShowArcOnly(!showArcOnly)}
             title="Show only sites listed at the Arch de Triomphe - Paris"
             style={style}
         >
-
             <img
-                src="/assets/Arc.png"
+                // Swapping files based on state
+                src={showArcOnly ? "/assets/Arc_red.png" : "/assets/Arc.png"}
                 alt="Arc Filter"
-                className="arc-icon-invert"
                 style={{
                     height: '1.4em',
                     width: 'auto',
-                    transition: 'all 0.2s'
+                    transition: 'all 0.2s',
+                    // Only invert the original icon if it's inactive AND in dark mode
+                    filter: (!showArcOnly && theme === 'dark') ? 'invert(1)' : 'none'
                 }}
             />
         </button>
@@ -31,4 +34,3 @@ const ArcFilter = ({ className, style }) => {
 };
 
 export default ArcFilter;
-

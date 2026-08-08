@@ -536,8 +536,6 @@ export const AppProvider = ({ children }) => {
 
     // 1. Master Filter: Controls if the "Clear" button appears
     const isFiltered =
-        // locationMode !== 'none' ||
-        filterRadius !== 'all' ||
         filterCategory.length > 0 ||
         filterSignificance !== '' ||
         filterSearch !== '' ||
@@ -545,23 +543,19 @@ export const AppProvider = ({ children }) => {
         filterCoalition !== 'all' ||
         filterCampaign !== 'all' ||
         filterVisited !== 'all' ||
-        showOnlyNew || // <--- Checkbox 2
+        showOnlyNew ||   // <--- Checkbox 2
         filterWithMaps;  // <--- Checkbox 3
 
 
     // 2. Modal Filter: Specifically turns the "Filters" button RED
-
-    const isModalFiltered = useMemo(() => {
-        return filterSearch !== '' ||
-            filterCountry !== 'all' ||
-            filterCoalition !== 'all' ||
-            filterCampaign !== 'all' ||
-            filterVisited !== 'all' ||
-            filterYear !== 'all' ||
-            filterCommander !== 'all' ||
-            showOnlyNew ||      // <-- Add this
-            filterWithMaps;     // <-- Add this
-    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, filterYear, filterCommander, showOnlyNew, filterWithMaps]);
+    const isModalFiltered =
+        filterSearch !== '' ||
+        filterCountry !== 'all' ||
+        filterCoalition !== 'all' ||
+        filterCampaign !== 'all' ||
+        filterVisited !== 'all' ||
+        showOnlyNew ||
+        filterWithMaps;
 
     // 3. Clear Function: Ensure it resets the boxes to false
 
@@ -715,16 +709,16 @@ export const AppProvider = ({ children }) => {
     return (
         <AppContext.Provider value={{
             sites: filteredSites,
+            isFiltered,
+            isModalFiltered,
+            clearAllFilters,
             allSites: derivedSites,
-            view, setView, innerView, setInnerView,
+            view, setView,
             selectedSite, setSelectedSite,
             siteToOpenPopup, setSiteToOpenPopup,
             toggleVisited,
             showAuth, setShowAuth,
             authMessage, setAuthMessage,
-            geolocationEnabled,
-            requestGeolocation,
-            disableGeolocation,
             userCoords,
             locationMode,
             handleLocationSelect,
@@ -733,13 +727,11 @@ export const AppProvider = ({ children }) => {
             filterCountry, setFilterCountry,
             filterCoalition, setFilterCoalition,
             filterCampaign, setFilterCampaign,
-            isFiltered,
-            clearAllFilters,
             filterSignificance, setFilterSignificance,
             filterVisited, setFilterVisited,
             filterRadius, setFilterRadius,
-            filterYear, setFilterYear, availableYears,
-            filterCommander, setFilterCommander, availableCommanders,
+            filterYear, setFilterYear,
+            filterCommander, setFilterCommander,
             showArcOnly, setShowArcOnly,
             filterWithMaps, setFilterWithMaps,
             visitedSites,
@@ -750,27 +742,13 @@ export const AppProvider = ({ children }) => {
             showOnlyNew, setShowOnlyNew,
             developerMode, setDeveloperMode,
             previewDevice, setPreviewDevice,
-            portalContainerRef, getPortalContainer,
             mapStyle, setMapStyle,
             theme, toggleTheme,
-            categoryCounts,
-            countryCounts,
-            campaignCounts,
-            coalitionCounts,
-            visitedCounts,
-            syncStatus, lastSyncTime,
-            mapBounds, setMapBounds,
-            showsToCome: showsBaseData,
-            shoppingItems: activeShoppingItems,
-            eventsData: eventsBaseData,
-            newsData: newsBaseData,
-            messagesData: messagesBaseData,
-            activeDeals,
-            activeMapOverlays,
-            toggleMapOverlay,
-            clearMapOverlays,
+            categoryCounts, countryCounts, campaignCounts, coalitionCounts, visitedCounts
         }}>
             {children}
         </AppContext.Provider>
     );
 };
+
+export default AppContext;

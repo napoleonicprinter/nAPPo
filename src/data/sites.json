@@ -3087,7 +3087,7 @@
     "victor": "France",
     "defeated": "Austria",
     "commanders": [
-      " Pyotr Bagration",
+      "Pyotr Bagration",
       "Marc Antoine de Beaumont"
     ]
   },
@@ -3830,7 +3830,7 @@
       "Dmitry Golitsyn",
       "Joachim Murat",
       "Pierre Augereau",
-      "Louis-Nicolas Davout"
+      "Louis Nicolas Davout"
     ],
     "victor": "France",
     "defeated": "Russia"
@@ -4403,7 +4403,7 @@
     "description": "Also known as the Battle of Albeck, fought on October 11th 1805 at Ulm-Jungingen north of Ulm at the Danube between French and Austrian forces, was part of the Ulm campaign.",
     "latitude": 48.425,
     "longitude": 9.98,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ulm_campaign_-_French_strategic_envelopment%2C_26_September-9_October_1805.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Haslach.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haslach-Jungingen",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
@@ -4473,7 +4473,7 @@
     "description": "Fought on October 18th 1805 between the French Army of Italy under the command of André Masséna and an Austrian army led by Archduke Charles. (image:Djmaschek)",
     "latitude": 45.46,
     "longitude": 10.99,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Verona_Battle_Map_1805.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Verona.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Verona_(1805)",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
@@ -4550,7 +4550,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mohilew.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saltanovka",
     "commanders": [
-      "Louis-Nicolas Davout",
+      "Louis Nicolas Davout",
       "Pyotr Bagration",
       "Nikolay Raevsky"
     ],
@@ -6622,7 +6622,7 @@
       "Matvei Platov",
       "Ivan Paskevich",
       "Mikhail Miloradovich",
-      "Louis-Nicolas Davout",
+      "Louis Nicolas Davout",
       "Eugéne de Beauharnais",
       "Michel Ney",
       "Józef Antoni Poniatowski",
@@ -6646,7 +6646,7 @@
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
       "Alexander Tormasov",
-      "Prince of Schwarzenberg",
+      "Karl von Schwarzenberg",
       "Jean Reynier"
     ]
   },
@@ -6923,7 +6923,7 @@
       "6"
     ],
     "commanders": [
-      "Prince of Schwarzenberg",
+      "Karl von Schwarzenberg",
       "Napoleon",
       "Prince of Württemberg"
     ]
@@ -9977,7 +9977,7 @@
     "defeated": "Russia",
     "commanders": [
       "Osten-Sacken",
-      "Schwarzenberg"
+      "Karl von Schwarzenberg"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wolkowisk.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wolkowisk",
@@ -10798,7 +10798,7 @@
     "victor": "France",
     "special": "5",
     "commanders": [
-      "Louis-Nicolas Davout",
+      "Louis Nicolas Davout",
       "Friedrich Hohenzollern"
     ]
   },
@@ -12590,5 +12590,359 @@
     "longitude": 11.081535,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kranichborn.webp",
     "createDate": "2026-08-03"
+  },
+  {
+    "id": "687",
+    "name": "Jean-Andoche Junot Birthplace",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Bussy-le-Grand",
+    "country": "France",
+    "description": "He was born into a bourgeois family in Bussy-le-Grand, Burgundy, on September 25th 1771.",
+    "latitude": 45.5745,
+    "longitude": 4.519579,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Jean-Andoche_Junot",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Junot_birth.webp",
+    "createDate": "2026-08-04"
+  },
+  {
+    "id": "688",
+    "name": "Napoleon's house in Nice",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Nice",
+    "country": "France",
+    "description": "A 24-year-old Napoleon, newly promoted to Brigadier General and Commander of the Artillery for the Army of Italy, live in this house while inspecting coastal defenses from Marseille to Menton and plan an invasion strategy.",
+    "latitude": 43.7006,
+    "longitude": 7.282064,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nice_Napoleon.webp",
+    "createDate": "2026-08-04"
+  },
+  {
+    "id": "689",
+    "name": "Battlefield of Langenau",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "date": "1805-10-16",
+    "location": "Langenau",
+    "country": "Germany",
+    "description": "On October 16, 1805, French 1st Hussars under Jacques Tilly halted a bogged-down Austrian advance led by Prince Friedrich von Hohenzollern at Langenau.",
+    "latitude": 48.5014,
+    "longitude": 10.122899,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Langenau.webp",
+    "createDate": "2026-08-05",
+    "special": [
+      "3",
+      "Ulm Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Jaques Tilly",
+      "Friedrich von Hohenzollern"
+    ]
+  },
+  {
+    "id": "690",
+    "name": "General Henryk Dąbrowski's Birthplace",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Pierzchów",
+    "country": "Poland",
+    "description": "The mound is placed where once stood the house were General Jan Henryk Dąbrowski was born on August 2nd 1755. It was built by soldiers of the Polish army using soil brought from various historical battlefields and places where the general resided.",
+    "latitude": 49.933695,
+    "longitude": 20.2944,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dabrowski_birth.webp",
+    "wikipedia_link": "https://pl.wikipedia.org/wiki/Kopiec_gen._Jana_Henryka_D%C4%85browskiego",
+    "createDate": "2026-08-05"
+  },
+  {
+    "id": "691",
+    "name": "General Henryk Dąbrowski Monument",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Pierzchów",
+    "country": "Poland",
+    "description": "The sandstone monument was placed in the village in 1872. It was created by Kraków stonemason Edward Stehlik and was erected as part of the celebrations of the 75th anniversary of the founding of the Polish Legions.",
+    "latitude": 49.933691,
+    "longitude": 20.293683,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dabrowski_monument.webp",
+    "more_info_link": "https://www.miejscapamiecinarodowej.pl/index.php/wojewodztwo-podkarpackie/519-przemysl-tablica-upamietniajaca-polakow-wypedzonych-z-ziem-wschodnich-ii-rp",
+    "createDate": "2026-08-05"
+  },
+  {
+    "id": "692",
+    "name": "Battle of Leipzig commemorating plaque",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Gorzeszów",
+    "country": "Poland",
+    "description": "The plaque was installed in 1913 to mark the 100th anniversary of the Battle of Leipzig (1813). At the time, the village of Gorzeszów was named Görtelsdorf and belonged to the Kingdom of Prussia within the German Empire.",
+    "latitude": 50.708898,
+    "longitude": 16.106236,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gorzeszów_1813.webp",
+    "createDate": "2026-08-05"
+  },
+  {
+    "id": "693",
+    "name": "Vistula Legion plaque",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Legnica",
+    "country": "Poland",
+    "description": "The plaque in Legnica was placed to commemorate a historical military stopover made by Polish Uhlans (lancers) on May 14th 1807, on their way 'from Italian land to Poland'",
+    "latitude": 51.207427,
+    "longitude": 16.16011,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legnica_ulhans.webp",
+    "createDate": "2026-08-06"
+  },
+  {
+    "id": "694",
+    "name": "Battlefield of Herbrechtingen",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "date": "1805-10-17",
+    "location": "Herbrechtingen",
+    "country": "Germany",
+    "description": "This clash on October 15th 1805, was a sharp cavalry action where Marshal Joachim Murat's French cavalry pursued some of the retreating Austrian corps under General Major Zinzendorf command.",
+    "latitude": 48.622885,
+    "longitude": 10.1702,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Herbrechtingen.webp",
+    "createDate": "2026-08-06",
+    "special": [
+      "3",
+      "Ulm Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Joachim Murat",
+      "Graf Zinzebdorf"
+    ]
+  },
+  {
+    "id": "695",
+    "name": "Norman Cross Prison",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Peterborough",
+    "country": "England",
+    "description": "Norman Cross Prison was established in 1797 as the world's first purpose-built prisoner-of-war camp, housing up to 10,000 mostly French inmates during the Napoleonic Wars.",
+    "latitude": 52.5061,
+    "longitude": -0.289159,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Norman_cross.webp",
+    "more_info_link": "https://peterborougharchaeology.org/norman-cross-prison/",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Norman_Cross_Prison",
+    "createDate": "2026-08-06"
+  },
+  {
+    "id": "696",
+    "name": "Norman Cross Prison Memorial",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Peterborough",
+    "country": "England",
+    "description": "The memorial to the 1,770 prisoners who died at Norman Cross was erected in 1914 by the Entente Cordiale Society beside the Great North Road.",
+    "latitude": 52.5038,
+    "longitude": -0.290764,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Norman_cross_memorial.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Norman_Cross_Prison",
+    "createDate": "2026-08-06"
+  },
+  {
+    "id": "697",
+    "name": "Battlefield of Nordlingen",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "date": "1805-10-17",
+    "location": "Nördlingen",
+    "country": "Germany",
+    "description": "On October 17th 1805 Murat commanding the Reserve cavalry pursued twelve retreating Austrian corps cavalry squadrons commanded by Karl Philipp, Prince of Schwarzenberg.",
+    "latitude": 48.8455,
+    "longitude": 10.475700,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nordlingen.webp",
+    "createDate": "2026-08-06",
+    "special": [
+      "3",
+      "Ulm Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Joachim Murat",
+      "Karl von Schwarzenberg"
+    ]
+  },
+  {
+    "id": "698",
+    "name": "Capitulation at Trochtelfingen",
+    "category": "Landmark",
+    "significance": 2,
+    "year": 1805,
+    "date": "1805-10-18",
+    "location": "Trochtelfingen",
+    "country": "Germany",
+    "description": "On October 18th 1805 French forces under Marshal Joachim Murat forced retreating Austrian troops under General Franz von Werneck to surrender roughly 8,000 to 15,000 men.",
+    "latitude": 48.843354,
+    "longitude": 10.396721,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Trochtelfingen.webp",
+    "createDate": "2026-08-06"
+  },
+  {
+    "id": "699",
+    "name": "Veste Oberhaus",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Passau",
+    "country": "Germany",
+    "description": "During his campaign against Austria, Napoleon used the fortress as a border outpost under the control of his Bavarian allies, though it ultimately surrendered to the Austrian army on October 25th 1805.",
+    "latitude": 48.5777,
+    "longitude": 13.471110,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Veste_Oberhaus.webp",
+    "site_link": "https://www.oberhausmuseum.passau.de/veste/",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Veste_Oberhaus",
+    "createDate": "2026-08-06"
+  },
+  {
+    "id": "700",
+    "name": "Battlefield of Lambach (Ulm Campaign)",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "date": "1805-10-31",
+    "location": "Lambach",
+    "country": "Austria",
+    "description": "On October 31st 1805, the French vanguard of Marshal Davout's III Corps achieved a minor victory by defeating a retreating Austro-Russian rearguard under Prince Bagration and General Schustekh during a series of sharp actions at Haag and Lambach.",
+    "latitude": 48.09,
+    "longitude": 13.866774,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lambach.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lambach",
+    "createDate": "2026-08-06",
+    "special": [
+      "3",
+      "Ulm Campaign"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Louis Nicolas Davout",
+      "Marc Antoine de Beaumont",
+      "Emanuel Schustekh",
+      "Pyotr Bagration"
+    ]
+  },
+  {
+    "id": "701",
+    "name": "Strub Pass clash",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "location": "Lofer",
+    "country": "Austria",
+    "description": "On November 2nd & 3rd 1805, Austrian forces and Tyrolean militia successfully defended key passes to protect withdrawing troops from a Bavarian advance.",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Festung_Pass_Strub",
+    "latitude": 48.09,
+    "longitude": 13.866774,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Strub_pass.webp",
+    "createDate": "2026-08-08",
+    "special": "3",
+    "victor": "Austria",
+    "defeated": "Bavaria",
+    "commanders": [
+      "Bernhard Erasmus von Deroy",
+      "Franz Xaver Saint-Julien"
+    ]
+  },
+  {
+    "id": "702",
+    "name": "Veste Oberhaus",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Strub, Waidring",
+    "country": "Austria",
+    "description": "The monument honors the Tyrolean and local defenders (Landesverteidiger) who fought bravely in the battles fought at this strategic pass during the Napoleonic Wars in 1800, 1805, and 1809.",
+    "latitude": 47.579477,
+    "longitude": 12.66256,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Strub_pass_monument.webp",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Pass_Strub",
+    "createDate": "2026-08-06"
+  },
+  {
+    "id": "702",
+    "name": "Steyer clash",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "location": "Steyr",
+    "country": "Austria",
+    "description": "Maximilian, Count of Merveldt was retreating his six battalion Reserve Corp through the mountains when on November 4th he was chased and defeated by Caffarelli's division at Steyer. This was the end of Merveldt's forces as a fighting division.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Steyr",
+    "latitude": 48.0502,
+    "longitude": 14.413971,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Steyer.webp",
+    "createDate": "2026-08-08",
+    "special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": [
+      "Marie-François Caffarelli",
+      "Maximilian Graf von Merveldt"
+    ]
+  },
+  {
+    "id": "703",
+    "name": "Scharnitz clash site (ruins)",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "location": "Scharnitz",
+    "country": "Austria",
+    "description": "It took place on November 4 and 9, 1805, when Franco-Bavarian forces attacked and were repulsed at the strategic Porta Claudia mountain fortification guarding the Scharnitz Pass on the border of Bavaria and Tyrol.(Image source: Frieda Bauer: Military History Series Issue 60).",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Porta_Claudia",
+    "more_info_link": "https://fortifica.hypotheses.org/818",
+    "latitude": 47.396101,
+    "longitude": 11.265,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scharnitz.webp",
+    "createDate": "2026-08-08",
+    "special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": "Michel Ney"
+  },
+  {
+    "id": "704",
+    "name": "Leutasch clash site (ruins)",
+    "category": "Battle site",
+    "significance": 1,
+    "year": 1805,
+    "location": "Leutasch",
+    "country": "Austria",
+    "description": "On November 4 1805, Ney was able to overrun the fortified pass of Leutasch opening the road to Innsbruck. (Image source: Frieda Bauer: Military History Series Issue 60).",
+    "more_info_link": "https://www.gamssteig.de/lexikon/franzosensteig#a4",
+    "latitude": 47.425157,
+    "longitude": 11.230903,
+    "image": "https://raw.githubusercontent.com/napolenicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Leutasch_Fortress.webp",
+    "createDate": "2026-08-08",
+    "special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "commanders": "Michel Ney"
+  },
+  {
+    "id": "705",
+    "name": "The Battle of Scharnitz for the Porta Claudia Fortress",
+    "category": "Artwork",
+    "significance": 1,
+    "location": "Berlin",
+    "country": "Germany",
+    "description": "The painting by Mathias Noder depicts the French forces under Marshal Michel Ney, guided by Bavarian allies, bypassed the strategically fortified mountain pass of Porta Claudia to ambush the Austrian garrison on November 4th 1805.",
+    "latitude": 52.5186,
+    "longitude": 13.396356,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scharnitz_canvas.webp",
+    "more_info_link": "https://uniformenportal.de/index.php?/category/75",
+    "createDate": "2026-08-08"
   }
 ]

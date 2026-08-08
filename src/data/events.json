@@ -520,8 +520,7 @@
         "date": "1812-07-23",
         "location": "García Hernández, Salamanca, España",
         "description": "Fue una acción militar librada el 23 de julio de 1812 entre la caballería ligera del ejército británico y la caballería francesa.",
-        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Garc%C3%ADa_Hern%C3%A1ndez",
-        "siteId": 122
+        "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Garc%C3%ADa_Hern%C3%A1ndez"
     },
     {
         "id": 55,
@@ -678,6 +677,7 @@
     },
     {
         "id": 72,
+        "siteId": 187,
         "title": "Battle of Ulm",
         "date": "1805-10-16",
         "location": "Ulm, Germany",
@@ -943,6 +943,7 @@
     },
     {
         "id": 105,
+        "siteId": 217,
         "title": "Battle of Wertingen",
         "date": "1805-10-08",
         "location": "Wertingen, Germany",
@@ -951,6 +952,7 @@
     },
     {
         "id": 106,
+        "siteId": 218,
         "title": "Battle of Günzburg",
         "date": "1805-10-09",
         "location": "Günzburg, Germany",
@@ -959,6 +961,7 @@
     },
     {
         "id": 107,
+        "siteId": 219,
         "title": "Battle of Haslach-Jungingen",
         "date": "1805-10-11",
         "location": "Ulm-Jungingen, Germany",
@@ -967,6 +970,7 @@
     },
     {
         "id": 108,
+        "siteId": 220,
         "title": "Battle of Memmingen",
         "date": "1805-10-14",
         "location": "Memmingen, Germany",
@@ -975,6 +979,7 @@
     },
     {
         "id": 109,
+        "siteId": 221,
         "title": "Battle of Elchingen",
         "date": "1805-10-14",
         "location": "Elchingen, Germany",
@@ -983,6 +988,7 @@
     },
     {
         "id": 110,
+        "siteId": 222,
         "title": "Battle of Verona",
         "date": "1805-10-18",
         "location": "Verona, Italy",
@@ -991,6 +997,7 @@
     },
     {
         "id": 111,
+        "siteId": 224,
         "title": "Battle of Caldiero",
         "date": "1805-10-30",
         "location": "Caldiero, Italy",
@@ -3215,6 +3222,7 @@
     },
     {
         "id": "375",
+        "siteId": 576,
         "title": "Combat of Neresheim",
         "description": "The Battle of Neresheim took place on 17 October 1805. It ended in a victory for the French army commanded by Marshal Joachim Murat. The opposing force was the Austrian army of General Franz von Werneck. The action resulted in the capture of 1,350 men. Among the prisoners was General Rudolf von Sinzendorf. The French also captured 2 colours.",
         "date": "1805-10-17",
@@ -3678,5 +3686,113 @@
         "location": "Poznań, Poland",
         "description": "Signed on December 11th 1806 in Poznań ended the war between the French Empire and the Electorate of Saxony which was an ally of Prussia as a member of the Fourth Coalition against France.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Treaty_of_Pozna%C5%84"
+    },
+    {
+        "id": "427",
+        "title": "Jean-Andoche Junot Birth",
+        "siteId": 687,
+        "date": "1771-09-25",
+        "location": "Bussy-le-Grand, France",
+        "description": "He was born into a bourgeois family in Bussy-le-Grand, Burgundy, on September 25th 1771.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Jean-Andoche_Junot"
+    },
+    {
+        "id": "428",
+        "title": "Clash at Langenau (Ulm campaign)",
+        "siteId": 689,
+        "date": "1805-10-16",
+        "location": "Langenau, Germany",
+        "description": "French 1st Hussars under Jacques Tilly halted a bogged-down Austrian advance led by Prince Friedrich von Hohenzollern at Langenau."
+    },
+    {
+        "id": "428",
+        "title": "General Jan Henryk Dąbrowski birth",
+        "siteId": 690,
+        "date": "1755-08-02",
+        "location": "Pierzchów, Poland",
+        "description": "He was born on August 2nd 1755 in Pierzchów. A prominent Polish military commander and national hero best known for organizing the Polish Legions in Italy during the Napoleonic Wars. His legacy is permanently immortalized in 'Mazurek Dąbrowskiego', the patriotic anthem he inspired that later became Poland's official national anthem."
+    },
+    {
+        "id": "429",
+        "title": "Clash at Herbrechtingen (Ulm campaign)",
+        "siteId": 694,
+        "date": "1805-10-17",
+        "location": "Herbrechtingen, Germany",
+        "description": "This clash on October 15th 1805, was a sharp cavalry action where Marshal Joachim Murat's French cavalry pursued some of the retreating Austrian corps under General Major Zinzendorf command."
+    },
+    {
+        "id": "430",
+        "title": "Clash at Nordlingen (Ulm campaign)",
+        "siteId": 697,
+        "date": "1805-10-17",
+        "location": "Nördlingen, Germany",
+        "description": "On October 17th 1805 Murat commanding the Reserve cavalry pursued twelve retreating Austrian corps cavalry squadrons commanded by Karl Philipp, Prince of Schwarzenberg."
+    },
+    {
+        "id": "431",
+        "title": "Capitulation at Trochtelfingen (Ulm campaign)",
+        "siteId": 698,
+        "date": "1805-10-18",
+        "location": "Trochtelfingen, Germany",
+        "description": "On October 17th 1805 Murat commanding the Reserve cavalry pursued twelve retreating Austrian corps cavalry squadrons commanded by Karl Philipp, Prince of Schwarzenberg."
+    },
+    {
+        "id": "422",
+        "title": "Capture of Veste Oberhaus",
+        "siteId": 699,
+        "date": "1805-10-25",
+        "location": "Passau, Germany",
+        "description": "On October 25th 1805 Austrian forces under Count Nostitz reduced the Bavarian garrison and captured the fortress."
+    },
+    {
+        "id": "423",
+        "title": "Battle of Lambach",
+        "siteId": 700,
+        "date": "1805-10-31",
+        "location": "Lambach, Austria",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lambach",
+        "description": "A series of sharp rearguard actions took place at Haag and Lambach on October 31, 1805, as the French III Corps under Marshal Davout clashed with the retreating Austro-Russian rearguard commanded by Prince Bagration and General Schustekh."
+    },
+    {
+        "id": "424",
+        "title": "Strub Pass clash",
+        "siteId": 701,
+        "date": "1805-11-02",
+        "location": "Lambach, Austria",
+        "description": "On November 2nd & 3rd 1805, Austrian forces and Tyrolean militia successfully defended key passes to protect withdrawing troops from a Bavarian advance.",
+        "wikipedia_link": "https://de.wikipedia.org/wiki/Festung_Pass_Strub"
+    },
+    {
+        "id": "425",
+        "title": "Steyer clash",
+        "siteId": 702,
+        "date": "1805-11-04",
+        "location": "Styer, Austria",
+        "description": "Maximilian, Count of Merveldt was retreating his six battalion Reserve Corp through the mountains when on November 4th he was chased and defeated by Caffarelli's division at Steyer. This was the end of Merveldt's forces as a fighting division.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Steyr"
+    },
+    {
+        "id": "426",
+        "title": "Scharnitz clash",
+        "siteId": 703,
+        "date": "1805-11-04",
+        "location": "Scharnitz, Austria",
+        "description": "It took place on November 4 1805, when Franco-Bavarian forces attacked and were repulsed at the strategic Porta Claudia mountain fortification guarding the Scharnitz Pass on the border of Bavaria and Tyrol.",
+        "wikipedia_link": "https://de.wikipedia.org/wiki/Porta_Claudia"
+    },
+    {
+        "id": "427",
+        "title": "Leutasch clash",
+        "siteId": 704,
+        "date": "1805-11-04",
+        "location": "Leutasch, Austria",
+        "description": "On November 4 1805, Ney was able to overrun the fortified pass of Leutasch opening the road to Innsbruck."
+    },
+    {
+        "id": "428",
+        "title": "Marshall Ney enters Innsbruck",
+        "date": "1805-11-07",
+        "location": "Innsbruck, Austria",
+        "description": "On November 7th 1805, as a result of a rapid mountain campaign consisting of smaller skirmishes and strategic maneuvering, Ney was able to capture teh city of Innsbruck. This helped secure the Alpine flank, preventing Austrian forces from assisting at the decisive Battle of Austerlitz."
     }
 ]

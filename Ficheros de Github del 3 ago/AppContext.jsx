@@ -536,8 +536,7 @@ export const AppProvider = ({ children }) => {
 
     // 1. Master Filter: Controls if the "Clear" button appears
     const isFiltered =
-        // locationMode !== 'none' ||
-        filterRadius !== 'all' ||
+        locationMode !== 'none' ||
         filterCategory.length > 0 ||
         filterSignificance !== '' ||
         filterSearch !== '' ||
@@ -545,23 +544,19 @@ export const AppProvider = ({ children }) => {
         filterCoalition !== 'all' ||
         filterCampaign !== 'all' ||
         filterVisited !== 'all' ||
-        showOnlyNew || // <--- Checkbox 2
+        showOnlyNew ||   // <--- Checkbox 2
         filterWithMaps;  // <--- Checkbox 3
 
 
     // 2. Modal Filter: Specifically turns the "Filters" button RED
-
-    const isModalFiltered = useMemo(() => {
-        return filterSearch !== '' ||
-            filterCountry !== 'all' ||
-            filterCoalition !== 'all' ||
-            filterCampaign !== 'all' ||
-            filterVisited !== 'all' ||
-            filterYear !== 'all' ||
-            filterCommander !== 'all' ||
-            showOnlyNew ||      // <-- Add this
-            filterWithMaps;     // <-- Add this
-    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, filterYear, filterCommander, showOnlyNew, filterWithMaps]);
+    const isModalFiltered =
+        filterSearch !== '' ||
+        filterCountry !== 'all' ||
+        filterCoalition !== 'all' ||
+        filterCampaign !== 'all' ||
+        filterVisited !== 'all' ||
+        showOnlyNew ||
+        filterWithMaps;
 
     // 3. Clear Function: Ensure it resets the boxes to false
 
@@ -768,7 +763,7 @@ export const AppProvider = ({ children }) => {
             activeDeals,
             activeMapOverlays,
             toggleMapOverlay,
-            clearMapOverlays,
+            clearMapOverlays
         }}>
             {children}
         </AppContext.Provider>

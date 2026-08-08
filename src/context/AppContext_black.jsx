@@ -98,7 +98,7 @@ export const AppProvider = ({ children }) => {
     const portalContainerRef = useRef(null);
     const getPortalContainer = useCallback(() => portalContainerRef.current || document.body, []);
 
-    // 2. Updated Effect: This applies the classes to the body so your CSS 
+    // 2. Updated Effect: This applies the classes to the body so your CSS
     // can react to 'mobile', 'tablet', or 'pc'/'desktop' selections.
     useEffect(() => {
         // Clear existing emulation classes
@@ -251,6 +251,7 @@ export const AppProvider = ({ children }) => {
                     localStorage.setItem('messagesData', JSON.stringify(data));
                 }
                 if (resDeals && resDeals.ok) {
+// D:/nAPPo_trails/src/context/AppContext.jsx                if (resDeals && resDeals.ok) {
                     const data = await resDeals.json();
                     if (!isDevelopment) setDealsBaseData(data);
                     localStorage.setItem('dealsData', JSON.stringify(data));
@@ -266,15 +267,18 @@ export const AppProvider = ({ children }) => {
             }
         };
 
+        syncData();
         const timer = setTimeout(syncData, 2000);
         return () => clearTimeout(timer);
     }, []);
 
+    // --- STATE DECLARATIONS ---
     const [view, setView] = useState('map');
     const [innerView, setInnerView] = useState('map');
     const [mapBounds, setMapBounds] = useState(null);
     const [selectedSite, setSelectedSite] = useState(null);
     const [siteToOpenPopup, setSiteToOpenPopup] = useState(null);
+
     const [users, setUsers] = useState(() => {
         const saved = localStorage.getItem('appUsers');
         return saved ? JSON.parse(saved) : [];
@@ -287,6 +291,8 @@ export const AppProvider = ({ children }) => {
         }
         return null;
     });
+
+    // ... (rest of your state declarations like filterCategory, etc.)
 
     const [filterCategory, setFilterCategory] = useState([]);
     const [filterSignificance, setFilterSignificance] = useState('');
@@ -369,6 +375,8 @@ export const AppProvider = ({ children }) => {
         }
     };
 
+    // --- DERIVED DATA & FILTERING LOGIC ---
+
     const sitesFilteredBase = useMemo(() => {
         return derivedSites.map(site => {
             if (userCoords) {
@@ -379,34 +387,39 @@ export const AppProvider = ({ children }) => {
             }
             return site;
         }).filter(site => {
-            if (showOnlyNew && !site.isNew) return false;
-            if (filterSignificance && site.significance !== filterSignificance) return false;
-            if (filterVisited === 'visited' && !site.visited) return false;
-            if (filterVisited === 'unvisited' && site.visited) return false;
-            if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
-            if (filterCountry !== 'all' && site.country !== filterCountry) return false;
-            if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
-            if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
-            if (showArcOnly && !site.special.includes('arc')) return false;
-            if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
+                if (showOnlyNew && !site.isNew) return false;
+                if (filterSignificance && site.significance !== filterSignificance) return false;
+                if (filterVisited === 'visited' && !site.visited) return false;
+                if (filterVisited === 'unvisited' && site.visited) return false;
+                if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
 
-            if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
-                if (site.distance > parseInt(filterRadius, 10)) return false;
-            }
-            return true;
-        });
-    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius, filterWithMaps]);
+                // Checkbox filters
+                if (showArcOnly && !site.special.includes('arc')) return false;
+                if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
 
-    const passYear = (site) => {
+                if (filterCountry !== 'all' && site.country !== filterCountry) return false;
+                if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
+                if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
+
+                if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
+                    if (site.distance > parseInt(filterRadius, 10)) return false;
+                }
+                return true;
+            });
+        }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius, filterWithMaps]);
+
+    // --- HELPER FILTER FUNCTIONS (useCallback prevents infinite re-renders) ---
+
+    const passYear = useCallback((site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
         return filterYear === 'all' || siteYearStr === filterYear;
-    };
+    }, [filterYear]);
 
-    const passCmd = (site) => {
+    const passCmd = useCallback((site) => {
         return filterCommander === 'all' || (site.commanders && site.commanders.includes(filterCommander));
-    };
+    }, [filterCommander]);
 
-    const passCat = (site) => {
+    const passCat = useCallback((site) => {
         if (filterCategory.length === 0) return true;
         const hasTodaysBattle = filterCategory.includes("Today's Battle");
         const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
@@ -419,138 +432,38 @@ export const AppProvider = ({ children }) => {
                 if (parts.length >= 3) {
                     const month = parseInt(parts[1], 10);
                     const day = parseInt(parts[2], 10);
-                    if (month === today.getMonth() + 1 && day === today.getDate()) matchesToday = true;
+                    if (month === (today.getMonth() + 1) && day === today.getDate()) matchesToday = true;
                 }
             }
         }
         if (otherCategories.length > 0 && otherCategories.includes(site.category)) return true;
         if (hasTodaysBattle && matchesToday) return true;
         return false;
-    };
+    }, [filterCategory]);
 
-    const passesAllFiltersExcept = (site, excludeFacet) => {
-        if (showOnlyNew && !site.isNew) return false;
-        if (filterSignificance && site.significance !== filterSignificance) return false;
-        if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
-        if (showArcOnly && !site.special.includes('arc')) return false;
-        if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
-        if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
-            if (site.distance > parseInt(filterRadius, 10)) return false;
-        }
+    // --- FINAL FILTERED LISTS ---
 
-        if (excludeFacet !== 'visited') {
-            if (filterVisited === 'visited' && !site.visited) return false;
-            if (filterVisited === 'unvisited' && site.visited) return false;
-        }
-        if (excludeFacet !== 'country') {
-            if (filterCountry !== 'all' && site.country !== filterCountry) return false;
-        }
-        if (excludeFacet !== 'coalition') {
-            if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
-        }
-        if (excludeFacet !== 'campaign') {
-            if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
-        }
-        if (excludeFacet !== 'category' && !passCat(site)) return false;
-        if (excludeFacet !== 'year' && !passYear(site)) return false;
-        if (excludeFacet !== 'commander' && !passCmd(site)) return false;
+    const sitesForCategoryCounts = useMemo(() =>
+        sitesFilteredBase.filter(site => passYear(site) && passCmd(site)),
+    [sitesFilteredBase, passYear, passCmd]);
 
-        return true;
-    };
-    const availableYears = Array.from(new Set(sitesFilteredBase.filter(site => passCmd(site) && passCat(site)).map(s => s.year ? String(s.year).trim() : '').filter(y => y !== ''))).sort();
-    const availableCommanders = Array.from(new Set(sitesFilteredBase.filter(site => passYear(site) && passCat(site)).flatMap(s => s.commanders || []))).sort();
-    const sitesForCategoryCounts = useMemo(() => sitesFilteredBase.filter(site => passYear(site) && passCmd(site)), [sitesFilteredBase, passYear, passCmd]);
-
-    const categoryCounts = useMemo(() => {
-        const counts = sitesForCategoryCounts.reduce((acc, site) => {
-            acc[site.category] = (acc[site.category] || 0) + 1;
-            return acc;
-        }, {});
-        const today = new Date();
-        const currentMonth = today.getMonth() + 1;
-        const currentDay = today.getDate();
-        counts["Today's Battle"] = sitesForCategoryCounts.filter(site => {
-            if ((site.category === 'Battle site' || site.category === 'Naval battle') && site.date) {
-                const parts = site.date.split('-');
-                if (parts.length >= 3) return parseInt(parts[1], 10) === currentMonth && parseInt(parts[2], 10) === currentDay;
-            }
-            return false;
-        }).length;
-        return counts;
-    }, [sitesForCategoryCounts]);
-
-    const countryCounts = useMemo(() => {
-        const counts = {};
-        derivedSites.forEach(site => {
-            if (passesAllFiltersExcept(site, 'country') && site.country) {
-                counts[site.country] = (counts[site.country] || 0) + 1;
-            }
-        });
-        return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
-
-    const campaignCounts = useMemo(() => {
-        const counts = {};
-        derivedSites.forEach(site => {
-            if (passesAllFiltersExcept(site, 'campaign')) {
-                site.special.forEach(sp => {
-                    if (!sp || sp === 'arc' || sp === 'false' || sp === false) return;
-                    const num = parseInt(sp, 10);
-                    if (!isNaN(num) && num >= 1 && num <= 7) return;
-                    if (typeof sp === 'string') counts[sp] = (counts[sp] || 0) + 1;
-                });
-            }
-        });
-        return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander]);
-
-    const coalitionCounts = useMemo(() => {
-        const counts = {};
-        derivedSites.forEach(site => {
-            if (passesAllFiltersExcept(site, 'coalition')) {
-                site.special.forEach(sp => {
-                    const num = parseInt(sp, 10);
-                    if (!isNaN(num) && num >= 1 && num <= 7) {
-                        counts[sp] = (counts[sp] || 0) + 1;
-                    }
-                });
-            }
-        });
-        return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander]);
-
-    const visitedCounts = useMemo(() => {
-        const counts = { visited: 0, unvisited: 0 };
-        derivedSites.forEach(site => {
-            if (passesAllFiltersExcept(site, 'visited')) {
-                if (site.visited) counts.visited++;
-                else counts.unvisited++;
-            }
-        });
-        return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
-
-
-
-    const filteredSites = useMemo(() => sitesForCategoryCounts.filter(site => passCat(site)), [sitesForCategoryCounts, passCat]);
+    const filteredSites = useMemo(() =>
+        sitesForCategoryCounts.filter(site => passCat(site)),
+    [sitesForCategoryCounts, passCat]);
 
     // 1. Master Filter: Controls if the "Clear" button appears
-    const isFiltered =
-        // locationMode !== 'none' ||
-        filterRadius !== 'all' ||
-        filterCategory.length > 0 ||
-        filterSignificance !== '' ||
-        filterSearch !== '' ||
-        filterCountry !== 'all' ||
-        filterCoalition !== 'all' ||
-        filterCampaign !== 'all' ||
-        filterVisited !== 'all' ||
-        showOnlyNew || // <--- Checkbox 2
-        filterWithMaps;  // <--- Checkbox 3
+    const isFiltered = useMemo(() => {
+        return locationMode !== 'none' ||
+            filterCategory.length > 0 ||
+            filterSignificance !== '' ||
+            filterSearch !== '' ||
+            filterCountry !== 'all' ||
+            showArcOnly ||
+            showOnlyNew ||
+            filterWithMaps;
+    }, [locationMode, filterCategory, filterSignificance, filterSearch, filterCountry, showArcOnly, showOnlyNew, filterWithMaps]);
 
-
-    // 2. Modal Filter: Specifically turns the "Filters" button RED
-
+    // 2. Modal Filter: Turns the "Filters" button RED in Header
     const isModalFiltered = useMemo(() => {
         return filterSearch !== '' ||
             filterCountry !== 'all' ||
@@ -559,13 +472,12 @@ export const AppProvider = ({ children }) => {
             filterVisited !== 'all' ||
             filterYear !== 'all' ||
             filterCommander !== 'all' ||
-            showOnlyNew ||      // <-- Add this
-            filterWithMaps;     // <-- Add this
-    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, filterYear, filterCommander, showOnlyNew, filterWithMaps]);
+            showArcOnly === true ||
+            showOnlyNew === true ||
+            filterWithMaps === true;
+    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, filterYear, filterCommander, showArcOnly, showOnlyNew, filterWithMaps]);
 
-    // 3. Clear Function: Ensure it resets the boxes to false
-
-    const clearAllFilters = () => {
+    const clearAllFilters = useCallback(() => {
         setFilterCategory([]);
         setFilterSignificance('');
         setFilterVisited('all');
@@ -579,121 +491,9 @@ export const AppProvider = ({ children }) => {
         setShowArcOnly(false);
         setShowOnlyNew(false);
         setFilterWithMaps(false);
-    };
+    }, []);
 
-    useEffect(() => {
-        const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
-        const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
-        if (!showFilter) {
-            setFilterCommander('all');
-            setFilterYear('all');
-        }
-        const isBattleSiteAlone = filterCategory.length === 1 && filterCategory[0] === 'Battle site';
-        if (!isBattleSiteAlone) setShowArcOnly(false);
-    }, [filterCategory]);
-
-    useEffect(() => {
-        if (currentUser) localStorage.setItem('currentUser', JSON.stringify(currentUser));
-        else {
-            localStorage.removeItem('currentUser');
-            setVisitedSites([]);
-        }
-    }, [currentUser]);
-
-    useEffect(() => {
-        if (currentUser) localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(visitedSites));
-    }, [visitedSites, currentUser]);
-
-    useEffect(() => { localStorage.setItem('appUsers', JSON.stringify(users)); }, [users]);
-    useEffect(() => { localStorage.setItem('newSitesDays', (newSitesDays || 30).toString()); }, [newSitesDays]);
-    useEffect(() => { localStorage.setItem('clusterRadius', (clusterRadius || 25).toString()); }, [clusterRadius]);
-    useEffect(() => { localStorage.setItem('showOnlyNew', showOnlyNew.toString()); }, [showOnlyNew]);
-    useEffect(() => { localStorage.setItem('developerMode', developerMode.toString()); }, [developerMode]);
-    useEffect(() => { localStorage.setItem('mapStyle', mapStyle); }, [mapStyle]);
-
-    useEffect(() => {
-        localStorage.setItem('appTheme', theme);
-        document.body.className = theme === 'light' ? 'light-mode' : '';
-    }, [theme]);
-
-    const [showAuth, setShowAuth] = useState(false);
-    const [authMessage, setAuthMessage] = useState(null);
-
-    const toggleVisited = (id) => {
-        if (!currentUser) {
-            setAuthMessage("Please log in to mark sites as visited.");
-            setShowAuth(true);
-            return;
-        }
-        setVisitedSites(prev => prev.includes(id) ? prev.filter(siteId => siteId !== id) : [...prev, id]);
-    };
-
-    const login = (username, password) => {
-        const user = users.find(u => u.username === username && u.password === password);
-        if (user) {
-            setCurrentUser({ username: user.username });
-            return true;
-        }
-        return false;
-    };
-
-    const signup = (username, password) => {
-        if (users.find(u => u.username === username)) return false;
-        setUsers([...users, { username, password }]);
-        setCurrentUser({ username });
-        return true;
-    };
-
-    const logout = () => setCurrentUser(null);
-
-    const deleteCurrentUser = () => {
-        if (!currentUser) return;
-        const usernameToDelete = currentUser.username;
-        setUsers(prev => prev.filter(u => u.username !== usernameToDelete));
-        localStorage.removeItem(`visitedSites_${usernameToDelete}`);
-        setCurrentUser(null);
-    };
-
-    const requestGeolocation = async () => {
-        if (isDevelopment) {
-            try {
-                const testLocationModule = await import('../data/testLocation.json');
-                const testLocation = testLocationModule.default;
-                if (testLocation && testLocation.enabled) {
-                    setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
-                    setGeolocationEnabled(true);
-                    setLocationMode('geo');
-                    return;
-                }
-            } catch (err) {
-                console.log("No testLocation.json found or invalid");
-            }
-        }
-        try {
-            const permissions = await Geolocation.checkPermissions();
-            if (permissions.location !== 'granted') await Geolocation.requestPermissions();
-            const position = await Geolocation.getCurrentPosition({ enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
-            setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
-            setGeolocationEnabled(true);
-            setLocationMode('geo');
-        } catch (error) {
-            if (!navigator.geolocation) {
-                alert("Geolocation is not supported by your device/browser");
-                return;
-            }
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
-                    setGeolocationEnabled(true);
-                    setLocationMode('geo');
-                },
-                (err) => alert("Failed to get location. Please ensure location services are enabled."),
-                { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-            );
-        }
-    };
-
-    const disableGeolocation = () => handleLocationSelect('none');
+    // ... (Your existing useEffects for localStorage and Auth) ...
 
     const handleLocationSelect = (mode) => {
         if (mode === 'none') {
@@ -715,6 +515,9 @@ export const AppProvider = ({ children }) => {
     return (
         <AppContext.Provider value={{
             sites: filteredSites,
+            isFiltered,
+            isModalFiltered,
+            clearAllFilters,
             allSites: derivedSites,
             view, setView, innerView, setInnerView,
             selectedSite, setSelectedSite,
@@ -733,13 +536,11 @@ export const AppProvider = ({ children }) => {
             filterCountry, setFilterCountry,
             filterCoalition, setFilterCoalition,
             filterCampaign, setFilterCampaign,
-            isFiltered,
-            clearAllFilters,
             filterSignificance, setFilterSignificance,
             filterVisited, setFilterVisited,
             filterRadius, setFilterRadius,
-            filterYear, setFilterYear, availableYears,
-            filterCommander, setFilterCommander, availableCommanders,
+            filterYear, setFilterYear,
+            filterCommander, setFilterCommander,
             showArcOnly, setShowArcOnly,
             filterWithMaps, setFilterWithMaps,
             visitedSites,
@@ -750,27 +551,17 @@ export const AppProvider = ({ children }) => {
             showOnlyNew, setShowOnlyNew,
             developerMode, setDeveloperMode,
             previewDevice, setPreviewDevice,
-            portalContainerRef, getPortalContainer,
             mapStyle, setMapStyle,
             theme, toggleTheme,
-            categoryCounts,
             countryCounts,
-            campaignCounts,
-            coalitionCounts,
             visitedCounts,
             syncStatus, lastSyncTime,
-            mapBounds, setMapBounds,
-            showsToCome: showsBaseData,
-            shoppingItems: activeShoppingItems,
-            eventsData: eventsBaseData,
-            newsData: newsBaseData,
-            messagesData: messagesBaseData,
-            activeDeals,
-            activeMapOverlays,
-            toggleMapOverlay,
-            clearMapOverlays,
+            mapBounds, setMapBounds
+            // Add any other values you export here...
         }}>
             {children}
         </AppContext.Provider>
     );
 };
+
+export default AppContext;

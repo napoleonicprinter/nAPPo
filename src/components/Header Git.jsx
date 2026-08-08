@@ -36,7 +36,6 @@ const Header = () => {
         newSitesDays, setNewSitesDays,
         clusterRadius, setClusterRadius,
         showOnlyNew, setShowOnlyNew,
-        filterWithMaps,
         developerMode, setDeveloperMode,
         allSites, sites,
         theme, toggleTheme,
@@ -61,7 +60,7 @@ const Header = () => {
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
 
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || filterWithMaps;
+    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all';
 
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
@@ -207,7 +206,7 @@ const Header = () => {
                         <ArcFilter className="desktop-arc-filter" />
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear</button>}
                         {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
-
+                        
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                             <button className={`custom-select-trigger filter-select glass-panel
                                 ${showFilters ? 'active' : ''}

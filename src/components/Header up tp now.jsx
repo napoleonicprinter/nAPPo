@@ -36,7 +36,6 @@ const Header = () => {
         newSitesDays, setNewSitesDays,
         clusterRadius, setClusterRadius,
         showOnlyNew, setShowOnlyNew,
-        filterWithMaps,
         developerMode, setDeveloperMode,
         allSites, sites,
         theme, toggleTheme,
@@ -61,7 +60,17 @@ const Header = () => {
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
 
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || filterWithMaps;
+    // 1. Extrae la variable ya calculada del contexto global
+    const { isModalFiltered } = useAppContext();
+
+    // 2. Úsala en el botón (tu CSS de new5.js se encargará del resto)
+    <button
+        className={`custom-select-trigger ${showFilters ? 'active' : ''} ${isModalFiltered ? 'filters-active-red' : ''}`}
+        onClick={() => setShowFilters(!showFilters)}
+    >
+        <span>Filters</span>
+    </button>
+
 
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
