@@ -12871,7 +12871,7 @@
     "createDate": "2026-08-06"
   },
   {
-    "id": "702",
+    "id": "703",
     "name": "Steyer clash",
     "category": "Battle site",
     "significance": 1,
@@ -12893,7 +12893,7 @@
     ]
   },
   {
-    "id": "703",
+    "id": "704",
     "name": "Scharnitz clash site (ruins)",
     "category": "Battle site",
     "artwork_ids": 705,
@@ -12914,7 +12914,7 @@
     "commanders": "Michel Ney"
   },
   {
-    "id": "704",
+    "id": "705",
     "name": "Leutasch clash site (ruins)",
     "category": "Battle site",
     "significance": 1,
@@ -12933,7 +12933,7 @@
     "commanders": "Michel Ney"
   },
   {
-    "id": "705",
+    "id": "706",
     "name": "The Battle of Scharnitz for the Porta Claudia Fortress",
     "category": "Artwork",
     "significance": 1,
@@ -12947,7 +12947,7 @@
     "createDate": "2026-08-08"
   },
   {
-    "id": "706",
+    "id": "707",
     "name": "San Pietro in Gu action",
     "category": "Battle site",
     "significance": 1,
@@ -12968,7 +12968,7 @@
     ]
   },
   {
-    "id": "707",
+    "id": "708",
     "name": "Burning of English Merchandise",
     "category": "Artwork",
     "significance": 1,
