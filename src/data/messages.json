@@ -1,13 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Welcome to nAPPo Trails!",
-    "description": "Explore over 340 Napoleonic sites across Europe. Plan your visits, track your progress, and discover the history behind each battlefield, monument, and museum.",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa.webp",
-    "link": "https://github.com/napoleonicprinter/nAPPo",
-    "email": "napoleonicprinter@gmail.com",
-    "from": "2026-04-20",
-    "until": "2026-05-30",
-    "maxShows": 3
+    "title": "A huge thank you to our tester community! ",
+    "description": "We truly appreciate your commitment to helping us with this project. Your testing sessions are incredibly valuable to us, and they play a massive role in making this app better every day.We want to hear all about your experience! We welcome any comments, suggestions, doubts, concerns, or bugs you might have encountered while using the app.📩 How to reach us:Please send us an email at nAPPoTrails@proton.me and our team will review it right away.Thank you for being such an essential part of this journey!",
+    "email": "nAPPoTrails@proton.me",
+    "from": "2026-08-11",
+    "until": "2026-08-15",
+    "maxShows": 2
   }
 ]
