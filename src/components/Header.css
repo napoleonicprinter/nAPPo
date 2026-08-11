@@ -1474,4 +1474,65 @@
         width: 14px !important;
         height: 14px !important;
     }
+    /* --- Final Header Layout Fixes --- */
+
+    /* Ensures Logo/Counter are left and Actions are right */
+    .header-brand {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100%;
+    }
+
+    /* The Vertical Site Counter (Matches your image) */
+    .sites-count-badge {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 2px 12px !important;
+        background: var(--bg-panel);
+        border-radius: 10px !important;
+        line-height: 1.1 !important;
+    }
+
+    /* The Icon Buttons (History, List, Settings) */
+    .header-top-actions,
+    .mobile-header-actions {
+        display: flex !important;
+        gap: 10px !important;
+        align-items: center !important;
+    }
+
+    .header-icon-btn {
+        width: 42px !important;
+        height: 42px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 12px !important;
+        cursor: pointer;
+        background: var(--bg-acrylic);
+        border: 1px solid var(--border-color);
+        transition: all 0.2s ease;
+    }
+
+    .header-icon-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--accent-primary);
+    }
+
+    /* Horizontal Scroll Menu for Filters */
+    .mobile-filters-scroll {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px 12px;
+        gap: 10px;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-filters-scroll::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
 }

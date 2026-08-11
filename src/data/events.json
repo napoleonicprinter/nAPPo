@@ -1956,6 +1956,7 @@
     },
     {
         "id": 223,
+        "siteId": 394,
         "title": "Battle of Dürenstein",
         "date": "1805-11-11",
         "location": "Dürenstein",
@@ -3797,10 +3798,40 @@
     },
     {
         "id": "429",
-        "title": "Rear guard action at San Pietro in Gu ",
+        "title": "Rear guard action at San Pietro in Gu",
         "date": "1805-11-04",
         "location": "San Pietro in Gu, Padua, Italy",
         "description": "Archduke Charles retreated from the battlefield of Caldiero when the French forces commanded by General Molitor raached his rearguard commanded by General Frimont at San Pietro in Gu on November 4th. One battalion of the Kreutzer Grenz Infantry Regiment Nr. 5 was destroyed."
+    },
+    {
+        "id": "430",
+        "title": "Clash at Weyer",
+        "date": "1805-11-07",
+        "location": "Weyer, Austria",
+        "description": "On November 7th 1805, was a small but successful military action where Marshal Auguste Marmont's French II Corps captured two battalions of Austrian troops under Count Maximilian von Merveldt which will not be fighting at Austerlitz."
+    },
+    {
+        "id": "431",
+        "title": "Kufstein fortress capitulation",
+        "date": "1805-11-08",
+        "location": "Kufstein, Austria",
+        "description": "The Kufstein Fortress capitulated without a fight on November 8th 1805,allowing Franco-Bavarian forces to occupy the strategic stronghold. This surrender led to Tyrol being formally ceded to the Kingdom of Bavaria under the Peace of Pressburg."
+    },
+    {
+        "id": "432",
+        "siteId": 713,
+        "title": "Combat at Mariazell",
+        "date": "1805-11-08",
+        "location": "Mariazell, Austria",
+        "description": "This action on November 8th 1805, resulted in a decisive French victory when Marshal Davout's vanguard intercepted and destroyed an Austrian corps retreating through the mountains of Styria. This clash cleared a direct path for Napoleon to capture Vienna.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mariazell"
+    },
+    {
+        "id": "433",
+        "siteId": 714,
+        "title": "Combat of Valvasone",
+        "date": "1805-11-08",
+        "location": "Valvasone, Italy",
+        "description": "A minor rearguard action was fought at Valvasone, near the Tagliamento River, on November 11th 1805, where Austrian forces under Archduke Charles successfully fended off pursuing French cavalry during their retreat."
     }
-
 ]

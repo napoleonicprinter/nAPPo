@@ -711,8 +711,6 @@ export const AppProvider = ({ children }) => {
             }
         }
     };
-    // Dentro de AppContext.jsx
-    const [callerSite, setCallerSite] = useState(null);
 
     return (
         <AppContext.Provider value={{
@@ -771,8 +769,6 @@ export const AppProvider = ({ children }) => {
             activeMapOverlays,
             toggleMapOverlay,
             clearMapOverlays,
-            callerSite,
-            setCallerSite,
         }}>
             {children}
         </AppContext.Provider>
