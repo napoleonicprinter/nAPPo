@@ -3,7 +3,7 @@ import React from 'react';
 import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
-    Palette // Add this icon
+    Palette, Swords // Add this icon
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
@@ -32,7 +32,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         setView,
         setSiteToOpenPopup,
         allSites,
-        setSelectedSite
+        setSelectedSite,
+        callerSite,
+        setCallerSite
     } = useAppContext();
 
     if (!site) return null;
@@ -228,6 +230,45 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     </a>
                                 )}
                             </div>
+
+                            {/* --- BATTLE SITE LINK (Crossed Sabres) --- */}
+                            {site.battle_id && (
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    fontSize: '0.85rem',
+                                    marginTop: '5px'
+                                }}>
+                                    <Swords size={20} color="#666" />
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            // We convert both to String and trim to prevent "Editor ID" vs "Record ID" mismatches
+                                            const targetId = String(site.battle_id).trim();
+                                            const battleSite = (allSites || []).find(s => String(s.id).trim() === targetId);
+
+                                            if (battleSite) {
+                                                setCallerSite(site);      // Save the current card in memory
+                                                setSelectedSite(battleSite); // Switch to the Battle Site record
+                                            } else {
+                                                console.warn("Battle site record not found for ID:", targetId);
+                                            }
+                                        }}
+                                        style={{
+                                            border: 'none',
+                                            background: 'none',
+                                            padding: 0,
+                                            color: '#58a6ff',
+                                            cursor: 'pointer',
+                                            fontWeight: 'bold',
+                                            textDecoration: 'underline'
+                                        }}
+                                    >
+                                        Go to Battle Site
+                                    </button>
+                                </div>
+                            )}
 
                             {/* --- ARTWORK LINKS SECTION --- */}
                             {site.artwork_ids && site.artwork_ids.length > 0 && (

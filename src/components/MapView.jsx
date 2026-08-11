@@ -248,32 +248,24 @@ const MapView = () => {
     };
 
     const FitFilteredSites = () => {
-        const map = useMap();
-        const lastSitesRef = useRef("");
+        const map = useMap();        const lastSitesRef = useRef("");
 
         useEffect(() => {
-            // BLOQUEO CRÍTICO: Si el usuario está viendo el detalle de un sitio,
-            // no permitimos que el mapa se auto-ajuste a los bordes del filtro.
             if (selectedSite) return;
 
-            // Creamos una huella digital de los sitios actuales
             const currentSitesKey = sites.map(s => s.id).join(',');
 
-            // Solo ejecutamos el ajuste si los filtros están activos
-            // Y si la lista de sitios ha cambiado realmente (comparando con la huella)
             if (isFiltered && sites.length > 0 && lastSitesRef.current !== currentSitesKey) {
                 lastSitesRef.current = currentSitesKey;
-
                 const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
 
-                // Ajustamos el mapa a los resultados del filtro
                 map.fitBounds(bounds, {
                     padding: [70, 70],
                     maxZoom: 12,
                     duration: 1.5
                 });
             }
-        }, [sites, isFiltered, map, selectedSite]); // Añadido selectedSite como dependencia
+        }, [sites, isFiltered, map, selectedSite]);
 
         return null;
     };
@@ -300,13 +292,12 @@ const MapView = () => {
                 <MapEventsHandler />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
 
-                    <MarkerClusterGroup
-                        ref={setClusterInstance}    key={`cluster-${clusterRadius}`}
-                        maxClusterRadius={clusterRadius}
-                        zoomToBoundsOnClick={true} // Esto hace el zoom automático correcto
-                        // Eliminamos el click de aquí porque causaba el conflicto
-                    >
-
+                <MarkerClusterGroup
+                    ref={setClusterInstance}
+                    key={`cluster-${clusterRadius}`}
+                    maxClusterRadius={clusterRadius}
+                    zoomToBoundsOnClick={true}
+                >
                     {sites.map(site => (
                         <Marker
                             key={site.id}
@@ -315,25 +306,14 @@ const MapView = () => {
                             eventHandlers={{
                                 click: (e) => {
                                     if (e.originalEvent) e.originalEvent.stopPropagation();
-
-                                    // 1. Cerramos la ficha anterior si existe
                                     if (selectedSite) setSelectedSite(null);
-
                                     const map = e.target._map;
                                     const latlng = e.target.getLatLng();
-
-                                    // 2. CAPTURAR EL ZOOM ACTUAL
-                                    // (El que acaba de poner el cluster tras expandirse)
                                     const currentZoom = map.getZoom();
-
-                                    // 3. CALCULAR POSICIÓN CON OFFSET
                                     const targetPoint = map.project(latlng, currentZoom);
                                     targetPoint.y -= 150;
                                     const targetLatLng = map.unproject(targetPoint, currentZoom);
-
-                                    // 4. panTo: Mueve el mapa manteniendo el zoom actual
                                     map.panTo(targetLatLng, { animate: true, duration: 0.5 });
-
                                     e.target.openPopup();
                                 }
                             }}
@@ -360,82 +340,43 @@ const MapView = () => {
                 </MarkerClusterGroup>
             </MapContainer>
 
-            {/* MODAL DE DETALLE - Live update and Leaflet Hiding logic */}
+            {/* MODAL DE DETALLE */}
             {selectedSite && (() => {
                 const liveSite = sites.find(s => s.id === selectedSite.id) || selectedSite;
                 const isStrictMobile = previewDevice === 'mobile';
-                    return (
-                        <div style={{
-                            position: 'fixed',
-                            top: isStrictMobile ? '145px' : '50%',
-                            left: '50%',
-                            transform: isStrictMobile ? 'translateX(-50%)' : 'translate(-50%, -50%)',
-                            width: '92%',
-                            maxWidth: '400px',
-                            zIndex: 2147483640,
-                            pointerEvents: 'none'
+                return (
+                    <div style={{
+                        position: 'fixed',
+                        top: isStrictMobile ? '145px' : '50%',
+                        left: '50%',
+                        transform: isStrictMobile ? 'translateX(-50%)' : 'translate(-50%, -50%)',
+                        width: '92%',
+                        maxWidth: '400px',
+                        zIndex: 2147483640,
+                        pointerEvents: 'none'
+                    }}>
+                        <div className="animate-fade-in" style={{
+                            pointerEvents: 'auto',
+                            padding: '10px 40px 80px 40px',
+                            maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
+                            overflowY: 'auto',
+                            scrollbarWidth: 'none'
                         }}>
-                            <div
-                                className="animate-fade-in" // Your selection area
-                                style={{
-                                    pointerEvents: 'auto',
-                                    padding: '10px 40px 80px 40px',
-                                    maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
-                                    overflowY: 'auto',
-                                    scrollbarWidth: 'none'
-                                }}
-                            >
-                                <SiteCard
-                                    site={liveSite}
-                                    onClose={() => { setSelectedSite(null); setCallerSite(null); }}
-                                    isCompact={false}
-                                />
-                            </div>
+                            <SiteCard
+                                site={liveSite}
+                                onClose={() => { setSelectedSite(null); if(setCallerSite) setCallerSite(null); }}
+                                isCompact={false}
+                            />
                         </div>
-                    );
-                })()}
-            {/* borrar si funciona
-            {selectedSite && (() => {
-                const liveSite = sites.find(s => s.id === selectedSite.id) || selectedSite;
-                const isStrictMobile = previewDevice === 'mobile';
-                    return (
-                        <div style={{
-                            position: 'fixed',
-                            top: isStrictMobile ? '145px' : '50%',
-                            left: '50%',
-                            transform: isStrictMobile ? 'translateX(-50%)' : 'translate(-50%, -50%)',
-                            width: '92%',
-                            maxWidth: '400px',
-                            zIndex: 2147483640,
-                            // --- FIX 1: PASS CLICKS TO MAP ---
-                            pointerEvents: 'none'
-                        }}>
-                            <div className="animate-fade-in" style={{
-                                // --- FIX 2: RESTORE CLICKS TO CARD ---
-                                pointerEvents: 'auto',
-                                // --- FIX 3: PREVENT SHARP SHADOWS ---
-                                padding: '10px 40px 80px 40px', // Added horizontal padding (25px)
-                                maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
-                                overflowY: 'auto',
-                                scrollbarWidth: 'none'
-                            }}>
-                                <SiteCard
-                                    site={selectedSite}
-                                    onClose={() => { setSelectedSite(null); setCallerSite(null); }}
-                                    isCompact={false}
-                                />
-                            </div>
-                        </div>
-                    );
-                })()} */}
+                    </div>
+                );
+            })()}
 
             {isMobileLike && isFiltered && (
                 <button className="clear-filters-floating animate-fade-in" onClick={() => clearAllFilters()}>
                     <span>✕</span> CLEAR ALL
                 </button>
             )}
-
-            {showDeals && <DealsView onClose={() => setShowDeals(false)} />}
         </div>
     );
 };

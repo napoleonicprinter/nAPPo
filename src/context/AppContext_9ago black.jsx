@@ -42,8 +42,8 @@ export const AppProvider = ({ children }) => {
     // --- 5. FILTER LOGIC ---
     const isModalFiltered = useMemo(() => {
         return filterSearch !== '' || filterCountry !== 'all' ||
-               filterYear !== 'all' || filterCommander !== 'all' ||
-               showOnlyNew === true || filterWithMaps === true;
+            filterYear !== 'all' || filterCommander !== 'all' ||
+            showOnlyNew === true || filterWithMaps === true;
     }, [filterSearch, filterCountry, filterYear, filterCommander, showOnlyNew, filterWithMaps]);
 
     const isFiltered = useMemo(() => {

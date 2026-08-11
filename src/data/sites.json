@@ -3109,7 +3109,7 @@
     "victor": "Russia",
     "defeated": "France",
     "commanders": [
-      "Prince Pyotr Bagration",
+      "Pyotr Bagration",
       "Antoine Charles Louis de Lasalle",
       "Frédéric Henri Walther"
     ]
@@ -5135,7 +5135,7 @@
     "id": "257",
     "name": "Battlefield of Hollabrunn",
     "category": "Battle site",
-    "significance": 1,
+    "significance": 2,
     "year": 1809,
     "location": "Hollabrunn",
     "country": "Austria",
@@ -13090,5 +13090,45 @@
       "Jean Louis Espagne"
     ],
     "createDate": "2026-08-09"
+  },
+  {
+    "id": "715",
+    "name": "Capitulation of Dornbirn",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Dornbirn",
+    "country": "Austria",
+    "year": "1805",
+    "description": "The Austrain forces commanded by Feldmarschall-Leutnant Franz Jellacic were isolated near Lake Constance  by superior numbers of French troops under Marshal Pierre Augereau. On November 13th 1805 Jellacic surrendered the infantry and artillery under his command. However, his cavalry managed to escape to Bohemia.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Dornbirn#",
+    "latitude": 47.409209,
+    "longitude": 9.74418,
+    "image": "/assets/images/Sites/Dornbirn.webp",
+    "createDate": "2026-08-10"
+  },
+  {
+    "id": "716",
+    "name": "Battlefield of Schöngrabern",
+    "category": "Battle site",
+    "significance": 2,
+    "location": "Schöngrabern",
+    "country": "Austria",
+    "year": "1805",
+    "description": "It was a critical rearguard action fought on November 16th 1805. The battle resulted in a tactical French victory but a strategic success for the Russian Empire, as a vastly outnumbered Russian rearguard successfully delayed Napoleon's forces. This delay provided enough time for the main Allied armies to safely unite before the decisive Battle of Austerlitz.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sch%C3%B6ngrabern",
+    "latitude": 48.605238,
+    "longitude": 16.063477,
+    "image": "/assets/images/Sites/Schongrabern.webp",
+    "special": "3",
+    "victor": "France",
+    "defeated": "France",
+    "commanders": [
+      "Pyotr Bagration",
+      "Joachim Murat",
+      "Jean Lannes",
+      "Louis Gabriel Suchet",
+      "Nicolas Oudinot"
+    ],
+    "createDate": "2026-08-10"
   }
 ]

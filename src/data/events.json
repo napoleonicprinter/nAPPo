@@ -3833,5 +3833,22 @@
         "date": "1805-11-08",
         "location": "Valvasone, Italy",
         "description": "A minor rearguard action was fought at Valvasone, near the Tagliamento River, on November 11th 1805, where Austrian forces under Archduke Charles successfully fended off pursuing French cavalry during their retreat."
+    },
+    {
+        "id": "434",
+        "siteId": 715,
+        "title": "Capitulation of Dornbirn",
+        "date": "1805-11-13",
+        "location": "Dornbirn, Austria",
+        "description": "The Austrain forces commanded by Feldmarschall-Leutnant Franz Jellacic were isolated near Lake Constance  by superior numbers of French troops under Marshal Pierre Augereau. On November 13th 1805 (some authors state it was on the 15th) Jellacic surrendered the infantry and artillery under his command. However, his cavalry managed to escape to Bohemia."
+    },
+    {
+        "id": "435",
+        "siteId": 716,
+        "title": "Battlefield of Schöngrabern",
+        "date": "1805-11-16",
+        "location": "Schöngrabern, Austria",
+        "description": "It was a critical rearguard action fought on November 16th 1805. The battle resulted in a tactical French victory but a strategic success for the Russian Empire, as a vastly outnumbered Russian rearguard successfully delayed Napoleon's forces. This delay provided enough time for the main Allied armies to safely unite before the decisive Battle of Austerlitz.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sch%C3%B6ngrabern"
     }
 ]
