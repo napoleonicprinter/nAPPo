@@ -2,7 +2,7 @@ export const HELP_ITEMS = [
     { id: 'location',
         title: 'Location',
         image: '/assets/images/Help_Location.webp',
-        content: 'Use the location menu to center the map on major capitals or use your GPS...' },
+        content: 'Use the location menu to center the map on European capitals. A blue pointer will appear on the selected location.' },
     { id: 'categories',
         title: 'Categories',
         image: '/assets/help/categories.webp',

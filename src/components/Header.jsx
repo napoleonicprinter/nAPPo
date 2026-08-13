@@ -173,15 +173,21 @@ const Header = () => {
             <div className="filters-group">
                 <div className="filters-line desktop-only hide-in-mobile-tablet">
                     <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', position: 'relative' }}>
-                        {/* PC HELP BUTTON */}
-                        <button className="custom-select-trigger filter-select glass-panel"
-                                onClick={() => setShowHelpDropdown(!showHelpDropdown)}
-                                style={{ justifyContent: 'center', height: '40px', padding: '0 12px', minWidth: 'auto' }}>
-                            <div className="custom-select-value" style={{ gap: '6px' }}>
-                                <span style={{ fontWeight: 'bold', color: 'var(--accent-primary)', fontSize: '1.1rem' }}>?</span>
-                                <span>Help</span>
-                            </div>
-                        </button>
+                        {/* PC HELP TAG - Added here */}
+                        <div className="desktop-only" style={{ display: 'flex', alignItems: 'center' }}>
+                            <CustomSimpleSelect
+                                options={[
+                                    ...HELP_ITEMS.map(item => ({ value: item.id, label: item.title }))
+                                ]}
+                                value="none"
+                                onChange={(val) => {
+                                    const item = HELP_ITEMS.find(i => i.id === val);
+                                    if (item) setSelectedHelpItem(item);
+                                }}
+                                placeholder="Help (?)"
+                                menuClassName="custom-select-menu"
+                            />
+                        </div>
 
                         {/* PC DROPDOWN LIST */}
                         {showHelpDropdown && (
@@ -210,6 +216,7 @@ const Header = () => {
                         />
                     </div>
                     <div className="desktop-filters custom-desktop-layout">
+
                         {locationMode !== 'none' && (
                             <div className="desktop-only">
                                 <CustomSimpleSelect
@@ -285,17 +292,15 @@ const Header = () => {
                     <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
                         <CustomSimpleSelect
                             options={[
-                                { value: 'none', label: 'Help (?)' },
                                 ...HELP_ITEMS.map(item => ({ value: item.id, label: item.title }))
                             ]}
-                            value="none" // Always shows 'Help (?)' as the trigger
+                            value="none"
                             onChange={(val) => {
-                                if (val !== 'none') {
-                                    const item = HELP_ITEMS.find(i => i.id === val);
-                                    setSelectedHelpItem(item); // Opens the Help Card
-                                }
+                                const item = HELP_ITEMS.find(i => i.id === val);
+                                if (item) setSelectedHelpItem(item);
                             }}
                             placeholder="Help (?)"
+                            menuClassName="custom-select-menu"
                         />
                     </div>
                     <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
