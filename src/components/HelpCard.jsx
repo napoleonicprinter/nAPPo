@@ -61,7 +61,7 @@ const HelpCard = () => {
                 </button>
 
                 {selectedHelpItem.image && (
-                    <div style={{ width: '100%', height: '200px' }}>
+                    <div style={{ width: '100%', height: '300px' }}>
                         <img
                             src={selectedHelpItem.image}
                             alt=""
