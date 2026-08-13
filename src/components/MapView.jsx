@@ -6,10 +6,10 @@ import SiteCard, { getCategoryColor } from './SiteCard';
 import DealsView from './DealsView';
 import L from 'leaflet';
 import { LocateFixed } from 'lucide-react';
-
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import HelpCard from './HelpCard';
 
 // --- CONSTANTS ---
 const TILE_LAYERS = {
@@ -341,6 +341,7 @@ const MapView = () => {
             </MapContainer>
 
             {/* MODAL DE DETALLE */}
+            {showDeals && <DealsView onClose={() => setShowDeals(false)} />}
             {selectedSite && (() => {
                 const liveSite = sites.find(s => s.id === selectedSite.id) || selectedSite;
                 const isStrictMobile = previewDevice === 'mobile';
@@ -366,7 +367,7 @@ const MapView = () => {
                                 site={liveSite}
                                 onClose={() => { setSelectedSite(null); if(setCallerSite) setCallerSite(null); }}
                                 isCompact={false}
-                            />
+                                />
                         </div>
                     </div>
                 );
@@ -377,6 +378,7 @@ const MapView = () => {
                     <span>✕</span> CLEAR ALL
                 </button>
             )}
+            <HelpCard />
         </div>
     );
 };

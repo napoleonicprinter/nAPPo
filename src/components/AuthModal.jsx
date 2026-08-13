@@ -46,7 +46,7 @@ const AuthModal = ({ onClose }) => {
             bottom: 0,
             backgroundColor: 'rgba(0, 0, 0, 0.75)',
             backdropFilter: 'blur(5px)',
-            zIndex: 10001,
+            zIndex: 99999999,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

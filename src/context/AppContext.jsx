@@ -300,7 +300,7 @@ export const AppProvider = ({ children }) => {
     const [filterCampaign, setFilterCampaign] = useState('all');
     const [showArcOnly, setShowArcOnly] = useState(false);
     const [filterWithMaps, setFilterWithMaps] = useState(false);
-
+    const [selectedHelpItem, setSelectedHelpItem] = useState(null);
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
         const saved = localStorage.getItem(`visitedSites_${currentUser.username}`);
@@ -773,6 +773,8 @@ export const AppProvider = ({ children }) => {
             clearMapOverlays,
             callerSite,
             setCallerSite,
+            selectedHelpItem,
+            setSelectedHelpItem,
         }}>
             {children}
         </AppContext.Provider>

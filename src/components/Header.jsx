@@ -22,6 +22,8 @@ import FloatingViewToggle from './FloatingViewToggle';
 import CalendarView from './CalendarView';
 import ShoppingView from './ShoppingView';
 import './Header.css';
+import { HELP_ITEMS } from '../data/helpData';
+import HelpCard from './HelpCard';
 
 // Register the custom native plugin we created in MainActivity.java
 const Review = registerPlugin('Review');
@@ -50,6 +52,7 @@ const Header = () => {
         activeMapOverlays, clearMapOverlays,
         showAuth, setShowAuth, setAuthMessage
     } = useAppContext();
+    const { setSelectedHelpItem } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
     const [showSettings, setShowSettings] = useState(false);
@@ -60,6 +63,7 @@ const Header = () => {
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
+    const [showHelpDropdown, setShowHelpDropdown] = useState(false); // Toggle for dropdown
 
     const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 
@@ -168,9 +172,37 @@ const Header = () => {
 
             <div className="filters-group">
                 <div className="filters-line desktop-only hide-in-mobile-tablet">
+                    <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', position: 'relative' }}>
+                        {/* PC HELP BUTTON */}
+                        <button className="custom-select-trigger filter-select glass-panel"
+                                onClick={() => setShowHelpDropdown(!showHelpDropdown)}
+                                style={{ justifyContent: 'center', height: '40px', padding: '0 12px', minWidth: 'auto' }}>
+                            <div className="custom-select-value" style={{ gap: '6px' }}>
+                                <span style={{ fontWeight: 'bold', color: 'var(--accent-primary)', fontSize: '1.1rem' }}>?</span>
+                                <span>Help</span>
+                            </div>
+                        </button>
+
+                        {/* PC DROPDOWN LIST */}
+                        {showHelpDropdown && (
+                            <div className="custom-select-dropdown glass-panel animate-fade-in"
+                                 style={{ position: 'absolute', top: '45px', left: 0, zIndex: 1000, minWidth: '180px' }}>
+                                {HELP_ITEMS.map((item) => (
+                                    <div key={item.id} className="custom-select-option"
+                                         onClick={() => {
+                                             console.log("Selected Item:", item); // Add this to debug
+                                             setSelectedHelpItem(item); // Opens the help card
+                                             setShowHelpDropdown(false); // Closes this list
+                                         }}>
+                                        {item.title}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                     <div className="location-toggle-group">
                         <CustomSimpleSelect
-                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My Location' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
+                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My GPS Location' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
                             value={locationMode}
                             onChange={handleLocationSelect}
                             searchable={true}
@@ -249,9 +281,26 @@ const Header = () => {
                 </div>
 
                 <div className="mobile-overlay-filters">
+                    {/* HELP TAG - Using the same logic as Location/Category to fix spacing and layering */}
                     <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
                         <CustomSimpleSelect
-                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My Location' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
+                            options={[
+                                { value: 'none', label: 'Help (?)' },
+                                ...HELP_ITEMS.map(item => ({ value: item.id, label: item.title }))
+                            ]}
+                            value="none" // Always shows 'Help (?)' as the trigger
+                            onChange={(val) => {
+                                if (val !== 'none') {
+                                    const item = HELP_ITEMS.find(i => i.id === val);
+                                    setSelectedHelpItem(item); // Opens the Help Card
+                                }
+                            }}
+                            placeholder="Help (?)"
+                        />
+                    </div>
+                    <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
+                        <CustomSimpleSelect
+                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My GPS Location' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
                             value={locationMode}
                             onChange={handleLocationSelect}
                             searchable={true}

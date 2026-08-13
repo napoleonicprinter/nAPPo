@@ -3850,5 +3850,22 @@
         "location": "Schöngrabern, Austria",
         "description": "It was a critical rearguard action fought on November 16th 1805. The battle resulted in a tactical French victory but a strategic success for the Russian Empire, as a vastly outnumbered Russian rearguard successfully delayed Napoleon's forces. This delay provided enough time for the main Allied armies to safely unite before the decisive Battle of Austerlitz.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sch%C3%B6ngrabern"
+    },
+    {
+        "id": "436",
+        "siteId": 717,
+        "title": "Birth of General Rowland Hill",
+        "date": "1772-11-08",
+        "location": "Prees, Shropshire, England",
+        "description": "Hill was born on 11 August 1772 in Prees, Shropshire. He was the second son and fourth child of Sir John Hill. He served under Sir John Moore and under Wellington during the Peninsular War.",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Rowland_Hill,_1st_Viscount_Hill"
+    },
+    {
+        "id": "437",
+        "siteId": 719,
+        "title": "Combat of Gradisca",
+        "date": "1805-11-16",
+        "location": "Gradisca, Gorizia, Italy",
+        "description": "On November 16th 1805, Austrian forces under Karl von Vincent successfully held off an attempt by French general Claude-Prieur Molitor's forces to cross the Isonzo River at Gradisca d'Isonzo, as Archduke Charles's Austrian army retreated eastward."
     }
 ]

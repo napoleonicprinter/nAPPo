@@ -13130,5 +13130,81 @@
       "Nicolas Oudinot"
     ],
     "createDate": "2026-08-10"
+  },
+  {
+    "id": "717",
+    "name": "General Rowland Hill Birthplace",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Prees, Shropshire",
+    "country": "England",
+    "description": "Hill was born on 11 August 1772 in Prees, Shropshire. He was the second son and fourth child of Sir John Hill. He served under Sir John Moore and under Wellington during the Peninsular War.",
+    "latitude": 52.8974,
+    "longitude": -2.661092,
+    "image": "/assets/images/Sites/Prees_hall.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Rowland_Hill,_1st_Viscount_Hill",
+    "createDate": "2026-08-10"
+  },
+  {
+    "id": "718",
+    "name": "Napoleon House - Louisiana",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "New Orleans, Louisiana",
+    "country": "United States",
+    "description": "Located in the heart of the French Quarter, the historic Napoleon House dates back to 1794. It got its name from a fascinating local legend: the home was supposedly prepared as a safe haven for Napoleon Bonaparte after his exile but his death in 1821 put an end to the plan.",
+    "latitude": 29.95588,
+    "longitude": -90.065129,
+    "image": "/assets/images/Sites/Napoleon_house.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon_House",
+    "createDate": "2026-08-10"
+  },
+  {
+    "id": "719",
+    "name": "Combat of Gradisca",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Gradisca",
+    "country": "Italy",
+    "year": "1805",
+    "description": "On November 16th 1805, Austrian forces under Karl von Vincent successfully held off an attempt by French general Claude-Prieur Molitor's forces to cross the Isonzo River at Gradisca d'Isonzo, as Archduke Charles's Austrian army retreated eastward.",
+    "latitude": 45.889820,
+    "longitude": 13.500314,
+    "image": "/assets/images/Sites/Gradisca.webp",
+    "victor": "Austria",
+    "defeated": "France",
+    "special": "3",
+    "commanders": [
+      "Karl von Vincent",
+      "Gabriel Jean Joseph Molitor"
+    ],
+    "createDate": "2026-08-10"
+  },
+  {
+    "id": "720",
+    "name": "Museum of Military History of Artillery",
+    "category": "Landmark",
+    "significance": 3,
+    "location": "Saint Petersburg",
+    "country": "Russia",
+    "description": "The Museum houses an important section dedicated to the Patriotic War of 1812 and the Napoleonic Wars, highlighting war trophies, the emperor's personal weapons and French artillery pieces from that era.",
+    "latitude": 59.954076,
+    "longitude": 30.313768,
+    "image": "/assets/images/Sites/Museum_artillery_StP.webp",
+    "site_link": "https://museum-artillery.ru/en/",
+    "createDate": "2026-08-10"
+  },
+  {
+    "id": "721",
+    "name": "Battle for Moscow 7 September 1812",
+    "category": "Artwork",
+    "significance": 1,
+    "location": "Saint Petersburg",
+    "country": "Russia",
+    "description": "Painted by German military artist Albrecht Adam in 1825, 'Battle for Moscow 7 September 1812' is a Romantic-era historical artwork that captures the harsh realities of the Battle of Borodino. Now preserved in the State Hermitage Museum, this oil and gouache work on paper offers a rare, first-hand account of Napoleon's invasion of Russia.",
+    "latitude": 59.939832,
+    "longitude": 30.314560,
+    "image": "/assets/images/Sites/Borodino_Adam.webp",
+    "createDate": "2026-08-12"
   }
 ]
