@@ -1,7 +1,7 @@
 export const HELP_ITEMS = [
     { id: 'location',
         title: 'Location',
-        image: '/assets/help/location.webp',
+        image: '/assets/location.webp',
         content: 'Use the location menu to center the map on major capitals or use your GPS...' },
     { id: 'categories',
         title: 'Categories',
