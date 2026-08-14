@@ -17,11 +17,11 @@ export const getCategoryColor = (category) => {
         'Artwork': '#ce93d8',
         'Monument': '#26a69a',
         'Landmark': '#ccff00',
-        'Building': '#795548',
-        'Movie tip': '#ffeb3b',
-        'Store': '#9e9e9e'
+        'Restaurant': '#795548',
+        'Store': '#ffffff',
+        'Movie tip': '#2c0d55ff',
     };
-    return colors[category] || '#58a6ff';
+    return colors[category] || '#8b949e';
 };
 
 const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => {
@@ -158,7 +158,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 </div>
             </div>
 
-            <div className="card-content" style={{ padding: '12px' }}>
+            <div className="card-content"
+                style={{ padding: '12px',
+                maxHeight: '300px',
+                overflowY: 'auto',
+                overflowX: 'hidden'
+                }}>
                 <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0', paddingRight: '35px' }}>{site.name}</h2>
 
                 {/* --- STARS / DATE / DETAILS ROW --- */}

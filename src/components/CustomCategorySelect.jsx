@@ -15,15 +15,14 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
     const getCategoryColor = (category) => {
         switch (category) {
             case "Today's Battle": return '#ff4500'; // Distinctive orange/red
-            case 'Battle site': return '#f85149';
-            case 'Naval battle': return '#38bdf8';
-            case 'Battle landmark': return '#ff6092';
-            case 'Museum': return '#a371f7';
-            case 'Monument': return '#10b981';
-            case 'Building': return '#ff7b72';
-            case 'Artwork': return '#d2a8ff';
-            case 'Event site': return '#fde047';
-            case 'Landmark': return '#99f000';
+            case 'Battle site': return '#ef5350';
+            case 'Battle landmark': return '#ff5e7e';
+            case 'Naval battle': return '#26c6da';
+            case 'Museum': return '#9575cd';
+            case 'Artwork': return '#ce93d8';
+            case 'Monument': return '#26a69a';
+            case 'Landmark': return '#ccff00';
+            case 'Restaurant': return '#795548';
             case 'Store': return '#ffffff';
             case 'Movie tip': return '#2c0d55ff';
             default: return '#8b949e';
