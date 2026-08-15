@@ -106,14 +106,7 @@ const LocationMarker = ({ isFiltered }) => {
                     animate: true,
                     duration: 1.2
                 });
-            /* borrar si funciona
-                map.stop();
-                map.flyTo(target, map.getZoom(), {
-                    duration: 1.2,
-                    easeLinearity: 0.25,
-                    animate: true,
-                    noMoveStart: true // Prevents Leaflet from firing extra move events during start
-                }); */
+
             }
         }
     }, [userCoords?.lat, userCoords?.lon, isFiltered, map]);
@@ -214,6 +207,21 @@ const MapView = () => {
         `;
     }, [theme]);
 
+    // Inside the MapView component
+    useEffect(() => {
+        const handleBackButton = (event) => {
+            // If there is a selected site, close it and prevent browser navigation
+            if (selectedSite) {
+                setSelectedSite(null);
+                // We stay on the page because we handle the 'back' logic manually
+            }
+        };
+        window.addEventListener('popstate', handleBackButton);
+        return () => {
+            window.removeEventListener('popstate', handleBackButton);
+        };
+    }, [selectedSite, setSelectedSite]);
+
     const MapEventsHandler = () => {
         useMapEvents({ click: () => setSelectedSite(null) });
         return null;
@@ -308,6 +316,7 @@ const MapView = () => {
                             eventHandlers={{
                                 click: (e) => {
                                     if (e.originalEvent) e.originalEvent.stopPropagation();
+                                    window.history.pushState({ siteId: site.id }, "");
                                     if (selectedSite) setSelectedSite(null);
                                     const map = e.target._map;
                                     const latlng = e.target.getLatLng();

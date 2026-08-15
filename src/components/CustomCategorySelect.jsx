@@ -23,7 +23,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             case 'Monument': return '#26a69a';
             case 'Landmark': return '#ccff00';
             case 'Restaurant': return '#795548';
-            case 'Store': return '#ffffff';
+            case 'Store': return '#001ECC';
             case 'Movie tip': return '#2c0d55ff';
             default: return '#8b949e';
         }

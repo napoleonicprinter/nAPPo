@@ -18,7 +18,7 @@ export const getCategoryColor = (category) => {
         'Monument': '#26a69a',
         'Landmark': '#ccff00',
         'Restaurant': '#795548',
-        'Store': '#ffffff',
+        'Store': '#001ECC',
         'Movie tip': '#2c0d55ff',
     };
     return colors[category] || '#8b949e';

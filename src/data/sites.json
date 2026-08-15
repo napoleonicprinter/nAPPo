@@ -208,7 +208,6 @@
     "name": "Casa Buonaparte - Napoleon's Birthplace",
     "category": "Museum",
     "significance": 3,
-    "year": 1769,
     "location": "Ajaccio, Corsica",
     "country": "France",
     "description": "The ancestral home of the Bonaparte family and the birthplace of Napoleon Bonaparte.",
@@ -223,7 +222,6 @@
     "name": "Estampe Combat de Saint Vicente",
     "category": "Artwork",
     "significance": 1,
-    "year": 1808,
     "location": "Paris",
     "country": "France",
     "description": "Musée Carnavalet, Paris. Gravure anonyme.",
@@ -4426,7 +4424,6 @@
     "description": "It occurred on 14 October that year and culminated in the surrender of Karl Spangen to Jean de Dieu Soult's 4th Army Corps.",
     "latitude": 47.98,
     "longitude": 10.18,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Schlacht_von_Elchingen.JPG",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Memmingen",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
@@ -4480,7 +4477,10 @@
       "André Masséna",
       "Archduke Charles"
     ],
-    "special": "3"
+    "special": [
+      "3",
+      "arc"
+    ]
   },
   {
     "id": "223",
@@ -4512,8 +4512,8 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Caldiero_(1805)",
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
-      "1",
-      "Italian Campaign"
+      "3",
+      "arc"
     ],
     "commanders": [
       "André Masséna",
@@ -5238,7 +5238,7 @@
     "commanders": [
       "Napoleon",
       "Peter Wittgenstein",
-      "Alexande I",
+      "Alexander I",
       "Gebhard von Blücher"
     ],
     "special": [
@@ -7959,7 +7959,10 @@
     "image": "/assets/images/Sites/Durenstein.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_D%C3%BCrenstein",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "3",
+    "special": [
+      "3",
+      "arc"
+    ],
     "commanders": [
       "Édouard Mortier",
       "Théodore Gazan",
@@ -13119,7 +13122,10 @@
     "latitude": 48.605238,
     "longitude": 16.063477,
     "image": "/assets/images/Sites/Schongrabern.webp",
-    "special": "3",
+    "special": [
+      "3",
+      "arc"
+    ],
     "victor": "France",
     "defeated": "Austria",
     "commanders": [

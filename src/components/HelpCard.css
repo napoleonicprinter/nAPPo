@@ -1,0 +1,47 @@
+/* SHARED CLOSE BUTTON (Red Circle) */
+.help-close-red {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #ff4444;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* MOBILE STYLE (News-style Popup) */
+.mobile-help-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 99999; padding: 20px;
+}
+.help-card-mobile {
+    width: 100%; max-width: 380px;
+    background: white; border-radius: 20px; overflow: hidden;
+    position: relative;
+}
+.help-img-mobile { width: 100%; height: 250px; object-fit: cover; }
+.help-content-mobile { padding: 20px; color: #333; }
+
+/* PC STYLE (Larger Dialog) */
+.pc-help-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 99999;
+}
+.help-card-pc {
+    width: 800px; /* Wider for PC */
+    background: white; border-radius: 12px;
+    position: relative; padding: 30px;
+}
+.help-pc-layout { display: flex; gap: 30px; }
+.help-img-pc { width: 350px; height: 400px; object-fit: cover; border-radius: 8px; }
+.help-text-pc { flex: 1; text-align: left; color: #222; }

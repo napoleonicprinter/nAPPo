@@ -45,6 +45,7 @@ export const EUROPEAN_CAPITALS = [
     { name: "Brussels", lat: 50.8503, lon: 4.3517 },
     { name: "Bucharest", lat: 44.4268, lon: 26.1025 },
     { name: "Budapest", lat: 47.4979, lon: 19.0402 },
+    { name: "Cairo", lat: 30.0444, lon: 31.2357 },
     { name: "Copenhagen", lat: 55.6761, lon: 12.5683 },
     { name: "Dublin", lat: 53.3498, lon: -6.2603 },
     { name: "Helsinki", lat: 60.1695, lon: 24.9354 },

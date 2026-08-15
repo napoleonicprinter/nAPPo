@@ -3,34 +3,27 @@ import { useAppContext } from '../context/AppContext';
 import { X } from 'lucide-react';
 
 const HelpCard = () => {
-    // Get state and device mode from context
-    const { selectedHelpItem, setSelectedHelpItem, isMobileLike } = useAppContext();
+    const { selectedHelpItem, setSelectedHelpItem } = useAppContext();
 
-    // If nothing is selected, show nothing
     if (!selectedHelpItem) return null;
 
-    // Determine which image to show based on the device mode
-    const displayImage = isMobileLike
-        ? (selectedHelpItem.imageMobile || selectedHelpItem.image)
-        : (selectedHelpItem.imagePc || selectedHelpItem.image);
-
     return (
-        /* The Overlay: Covers the whole screen and centers the card */
+        /* The Overlay: Covers the whole screen */
         <div style={{
             position: 'fixed',
             top: 0,
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dims the background
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            zIndex: 999999,
+            zIndex: 999999, // Stays above the map and header
             padding: '20px'
         }} onClick={() => setSelectedHelpItem(null)}>
 
-            {/* The Card: Same format for PC and Mobile */}
+            {/* The Card: Centered */}
             <div
                 className="glass-panel animate-pop-in"
                 style={{
@@ -67,11 +60,10 @@ const HelpCard = () => {
                     <X size={18} strokeWidth={3} />
                 </button>
 
-                {/* Taller Image Area (Fixed 300px height as requested) */}
-                {displayImage && (
-                    <div style={{ width: '100%', height: '300px', backgroundColor: '#f0f0f0' }}>
+                {selectedHelpItem.image && (
+                    <div style={{ width: '100%', height: '300px' }}>
                         <img
-                            src={displayImage}
+                            src={selectedHelpItem.image}
                             alt=""
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
@@ -79,10 +71,10 @@ const HelpCard = () => {
                 )}
 
                 <div style={{ padding: '24px' }}>
-                    <h2 style={{ margin: '0 0 10px 0', color: 'var(--accent-primary)', fontSize: '1.4rem' }}>
+                    <h2 style={{ margin: '0 0 10px 0', color: 'var(--accent-primary)' }}>
                         {selectedHelpItem.title}
                     </h2>
-                    <p style={{ lineHeight: '1.6', color: '#444', margin: 0, fontSize: '1.05rem' }}>
+                    <p style={{ lineHeight: '1.6', color: '#444', margin: 0 }}>
                         {selectedHelpItem.content}
                     </p>
                 </div>
