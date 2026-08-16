@@ -1,4 +1,19 @@
+import React from 'react';
+
 export const HELP_ITEMS = [
+    {
+        id: 'basic',
+        title: 'Basic',
+        imagePc: '/assets/images/Help_Basic.webp',
+        imageMobile: '/assets/images/Help_Basic_M.webp',
+        content: (
+            <>
+                Sites counter in <span style={{ color: 'var(--accent-primary)', fontWeight: 'bold' }}>BLUE</span> indicates no filter applied.
+                When any filter is applied the sites counter turns <span style={{ color: '#ff4444', fontWeight: 'bold' }}>RED </span>
+                 and a "Clear Filters" option will appear.
+            </>
+        )
+    },
     { id: 'location',
         title: 'Location',
         imagePc: '/assets/images/Help_Location.webp',// Large horizontal image

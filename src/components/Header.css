@@ -590,16 +590,16 @@
 }
 
 .settings-drawer-header {
-    padding: 48px 1rem 1.25rem 1rem;
+    /* Reduced from 48px to 1.25rem to match the bottom padding */
+    padding: 1.25rem 1rem;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.02);
 }
-
 .settings-drawer-header h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
     display: flex;

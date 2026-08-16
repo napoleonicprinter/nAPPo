@@ -1,47 +1,26 @@
 import React from 'react';
-// Filter for commanders specifically at battle sites
 import { useAppContext } from '../context/AppContext';
 import CustomSimpleSelect from './CustomSimpleSelect';
 
-const CommanderFilter = ({ compact, style, className }) => {
-    const { filterCommander, setFilterCommander, availableCommanders, filterCategory, allSites } = useAppContext();
+const CommanderFilter = ({ className }) => {
+    // 1. Grab the dynamic list from Context
+    const { availableCommanders, filterCommander, setFilterCommander } = useAppContext();
 
-    const allowedCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
-    const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
-
-    // Only show if selected categories consist ONLY of the allowed battle types
-    if (!showFilter) {
-        return null;
-    }
-
-    const commanderCounts = React.useMemo(() => {
-        const counts = {};
-        allSites.forEach(site => {
-            if (site.commanders && Array.isArray(site.commanders)) {
-                site.commanders.forEach(c => {
-                    counts[c] = (counts[c] || 0) + 1;
-                });
-            }
-        });
-        return counts;
-    }, [allSites]);
-
+    // 2. Format the options
     const options = [
         { value: 'all', label: 'All Commanders' },
-        ...availableCommanders.map(c => ({ value: c, label: c, count: commanderCounts[c] || 0 }))
+        ...availableCommanders // No need to .map here, it's already formatted!
     ];
 
     return (
-        <div style={style} className={className}>
-            <CustomSimpleSelect
-                options={options}
-                value={filterCommander || 'all'}
-                onChange={(val) => setFilterCommander(val)}
-                placeholder="All Commanders"
-                title="Filter by Commander"
-                searchable={true}
-            />
-        </div>
+        <CustomSimpleSelect
+            className={className}
+            options={options}
+            value={filterCommander}
+            onChange={setFilterCommander}
+            placeholder="Commander"
+            menuClassName="custom-select-menu"
+        />
     );
 };
 

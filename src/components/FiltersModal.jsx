@@ -56,7 +56,33 @@ const FiltersModal = ({ onClose }) => {
             <div className="settings-drawer-backdrop open" onClick={onClose} />
             <div className="settings-drawer open" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
-                <div className="settings-drawer-header">
+                <div className="settings-drawer-header" style={{
+                    padding: '15px 20px',    /* Reduced top/bottom padding from default (usually 20px) to 10px */
+                    minHeight: 'auto',       /* Overrides any fixed height from CSS */
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                }}>
+                    <h3 style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        margin: 0,
+                        fontSize: '1.5rem',  /* Slightly smaller font to match shorter height */
+                        fontWeight: 700
+                    }}>
+                        <Filter size={18} /> {/* Slightly smaller icon */}
+                        Filters
+                    </h3>
+                    <button
+                        className="settings-drawer-close"
+                        onClick={onClose}
+                        style={{ padding: '4px' }} /* Tighter button padding */
+                    >
+                        <X size={18} />
+                    </button>
+                </div>
+                {/*<div className="settings-drawer-header">
                     <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, fontSize: '1.2rem', fontWeight: 700 }}>
                         <Filter size={20} />
                         Filters
@@ -64,13 +90,55 @@ const FiltersModal = ({ onClose }) => {
                     <button className="settings-drawer-close" onClick={onClose}>
                         <X size={20} />
                     </button>
-                </div>
+                </div>*/}
 
                 {/* Content */}
-                <div className="settings-drawer-content">
+                {/* Content <div className="settings-drawer-content"> */}
+                <div className="settings-drawer-content" style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start', /* Force content to the top */
+                    gap: '20px',
+                    padding: '20px 20px 20px 20px' /* Reduced top padding from 20 to 10 */
+                }}>
+
+
+                    <div className="filter-group">
+                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>New Sites</h3>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '2px 0' }}>
+                            <input
+                                type="checkbox"
+                                checked={showOnlyNew}
+                                onChange={(e) => {
+                                    setShowOnlyNew(e.target.checked);
+                                    localStorage.setItem('showOnlyNew', e.target.checked);
+                                }}
+                                style={{ transform: 'scale(1.2)' }}
+                            />
+                            <span style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1rem', color: 'var(--text-primary)' }}>Only new sites</span>
+                        </label>
+
+                        <CustomSimpleSelect
+                            options={[
+                                { value: '1', label: 'Last 1 day' },
+                                { value: '7', label: 'Last 7 days' },
+                                { value: '15', label: 'Last 15 days' },
+                                { value: '30', label: 'Last 30 days' },
+                                { value: '60', label: 'Last 60 days' },
+                            ]}
+                            value={String(newSitesDays)}
+                            onChange={(val) => {
+                                const days = parseInt(val, 10);
+                                setNewSitesDays(days);
+                                localStorage.setItem('newSitesDays', days);
+                            }}
+                            title="Filter by number of days"
+                            disabled={!showOnlyNew}
+                        />
+                    </div>
                     {/* Search Section */}
                     <div className="filter-group">
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Search Sites</h3>
+                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Search Sites</h3>
                         <div className="mobile-search-wrapper" style={{ position: 'relative' }}>
                             <input
                                 type="text"
@@ -132,7 +200,7 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
+                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
                         <CustomSimpleSelect
                             options={[
                                 { value: 'all', label: 'All' },
@@ -149,12 +217,12 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
+                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
                         <CampaignFilter />
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
+                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
                         <CustomSimpleSelect
                             options={[
                                 { value: 'all', label: 'All' },
@@ -175,24 +243,8 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-
-                    {import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true' && (
-                        <div className="filter-group">
-                            <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
-                            <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
-                                <input
-                                    type="checkbox"
-                                    checked={filterWithMaps}
-                                    onChange={(e) => setFilterWithMaps(e.target.checked)}
-                                    style={{ transform: 'scale(1.2)' }}
-                                />
-                                <span style={{ fontSize: '1rem', color: 'var(--text-primary)' }}>Only sites with battle maps</span>
-                            </label>
-                        </div>
-                    )}
-
                     <div className="filter-group">
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
+                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
                         <CustomSimpleSelect
                             options={[
                                 { value: 'all', label: 'All Status' },
@@ -207,77 +259,60 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-                    <div className="filter-group">
-                        <h3 style={{ marginBottom: '0', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>New Sites</h3>
-                        <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
-                            <input
-                                type="checkbox"
-                                checked={showOnlyNew}
-                                onChange={(e) => {
-                                    setShowOnlyNew(e.target.checked);
-                                    localStorage.setItem('showOnlyNew', e.target.checked);
-                                }}
-                                style={{ transform: 'scale(1.2)' }}
-                            />
-                            <span style={{ fontSize: '1rem', color: 'var(--text-primary)' }}>Only new sites</span>
-                        </label>
-                        
-                        <CustomSimpleSelect
-                            options={[
-                                { value: '1', label: 'Last 1 day' },
-                                { value: '7', label: 'Last 7 days' },
-                                { value: '15', label: 'Last 15 days' },
-                                { value: '30', label: 'Last 30 days' },
-                                { value: '60', label: 'Last 60 days' },
-                                { value: '90', label: 'Last 90 days' }
-                            ]}
-                            value={String(newSitesDays)}
-                            onChange={(val) => {
-                                const days = parseInt(val, 10);
-                                setNewSitesDays(days);
-                                localStorage.setItem('newSitesDays', days);
-                            }}
-                            title="Filter by number of days"
-                            disabled={!showOnlyNew}
-                        />
+                    {import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true' && (
+                        <div className="filter-group">
+                            <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
+                                <input
+                                    type="checkbox"
+                                    checked={filterWithMaps}
+                                    onChange={(e) => setFilterWithMaps(e.target.checked)}
+                                    style={{ transform: 'scale(1.2)' }}
+                                />
+                                <span style={{ fontSize: '1rem', color: 'var(--text-primary)' }}>Only sites with battle maps</span>
+                            </label>
+                        </div>
+                    )}
+
+
+                    <div className="reset-button-wrapper" style={{ marginTop: '-15px', marginBottom: '0px' }}>
+                         <button
+                             onClick={clearModalFilters}
+                             style={{
+                                 flex: 1,
+                                 padding: '14px',
+                                 borderRadius: '12px',
+                                 fontWeight: 'bold',
+                                 fontSize: '1rem',
+                                 border: '1px solid var(--accent-danger)',
+                                 background: 'rgba(248, 81, 73, 0.1)',
+                                 color: 'var(--accent-danger)',
+                                 cursor: 'pointer',
+                                 transition: 'all 0.3s ease',
+                                 display: 'flex',
+                                 justifyContent: 'center',
+                                 alignItems: 'center',
+                                 opacity: isModalFiltered ? 1 : 0.4,
+                                 textTransform: 'uppercase',
+                                 letterSpacing: '0.5px'
+                             }}
+                             onMouseOver={(e) => {
+                                 if (isModalFiltered) {
+                                     e.currentTarget.style.background = 'rgba(248, 81, 73, 0.2)';
+                                     e.currentTarget.style.transform = 'scale(1.02)';
+                                 }
+                             }}
+                             onMouseOut={(e) => {
+                                 e.currentTarget.style.background = 'rgba(248, 81, 73, 0.1)';
+                                 e.currentTarget.style.transform = 'scale(1)';
+                             }}
+                         >
+                             <X size={18} style={{ marginRight: '6px' }} />
+                             Reset All
+                         </button>
                     </div>
 
-                    <div className="reset-button-wrapper">
-                        <button
-                            onClick={clearModalFilters}
-                            style={{
-                                flex: 1,
-                                padding: '14px',
-                                borderRadius: '12px',
-                                fontWeight: 'bold',
-                                fontSize: '1rem',
-                                border: '1px solid var(--accent-danger)',
-                                background: 'rgba(248, 81, 73, 0.1)',
-                                color: 'var(--accent-danger)',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                opacity: isModalFiltered ? 1 : 0.4,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.5px'
-                            }}
-                            onMouseOver={(e) => {
-                                if (isModalFiltered) {
-                                    e.currentTarget.style.background = 'rgba(248, 81, 73, 0.2)';
-                                    e.currentTarget.style.transform = 'scale(1.02)';
-                                }
-                            }}
-                            onMouseOut={(e) => {
-                                e.currentTarget.style.background = 'rgba(248, 81, 73, 0.1)';
-                                e.currentTarget.style.transform = 'scale(1)';
-                            }}
-                        >
-                            <X size={18} style={{ marginRight: '6px' }} />
-                            Reset All
-                        </button>
-                    </div>
+
                 </div>
             </div>
         </>,

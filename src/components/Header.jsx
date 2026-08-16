@@ -30,6 +30,7 @@ const Review = registerPlugin('Review');
 
 const Header = () => {
     const {
+        availableYears, setFilterYear,
         view, setView,
         filterCategory, setFilterCategory,
         locationMode, handleLocationSelect,
@@ -50,9 +51,10 @@ const Header = () => {
         previewDevice, setPreviewDevice,
         getPortalContainer,
         activeMapOverlays, clearMapOverlays,
-        showAuth, setShowAuth, setAuthMessage
+        showAuth, setShowAuth, setAuthMessage,
+        setSelectedHelpItem,
+        filterYear, filterCommander
     } = useAppContext();
-    const { setSelectedHelpItem } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
     const [showSettings, setShowSettings] = useState(false);
@@ -241,9 +243,18 @@ const Header = () => {
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center' }}>
                             <SignificanceFilter />
                         </div>
-                        <YearFilter className="desktop-year-filter" />
-                        <CommanderFilter className="desktop-commander-filter" />
+
+                        {/* Logic: Only show if one of these three categories is selected */}
+                        {(filterCategory.includes('Battle site') ||
+                          filterCategory.includes('Naval battle') ||
+                          filterCategory.includes('Battle landmark')) && (
+                            <>
+                                <YearFilter className={`desktop-year-filter ${filterYear !== 'all' ? 'filters-active-red' : ''}`}/>
+                                <CommanderFilter className={`desktop-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}/>
+                            </>
+                        )}
                         <ArcFilter className="desktop-arc-filter" />
+
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear</button>}
                         {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
 
@@ -334,9 +345,26 @@ const Header = () => {
                         <CustomCategorySelect categories={categories} value={filterCategory} onChange={setFilterCategory} categoryCounts={categoryCounts} />
                     </div>
                     <SignificanceFilter className="mobile-tag-filter" />
-                    <YearFilter className="mobile-tag-filter year-filter-mobile" />
-                    <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
-                    <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
+
+                    {/* Logic: Only show if one of these three categories is selected */}
+                    {(filterCategory.includes('Battle site') ||
+                      filterCategory.includes('Naval battle') ||
+                      filterCategory.includes('Battle landmark')) && (
+                        <>
+                            <YearFilter
+                            className={`mobile-tag-filter year-filter-mobile ${filterYear !== 'all' ? 'filters-active-red' : ''}`}
+                            />
+                            <CommanderFilter
+                                /* Fixed typo: changed 'year-filter-mobile' to 'mobile-commander-filter' */
+                                className={`mobile-tag-filter mobile-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}
+                            />
+                        </>
+                    )}
+
+                    <ArcFilter
+                        /* Fixed: changed 'desktop-arc-filter' to 'mobile-tag-filter mobile-arc-filter' */
+                        className="mobile-tag-filter mobile-arc-filter"
+                    />
 
                     <div className="mobile-tag-filter">
                         <div className="custom-select-container">

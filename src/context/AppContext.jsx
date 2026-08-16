@@ -448,8 +448,48 @@ export const AppProvider = ({ children }) => {
 
         return true;
     };
-    const availableYears = Array.from(new Set(sitesFilteredBase.filter(site => passCmd(site) && passCat(site)).map(s => s.year ? String(s.year).trim() : '').filter(y => y !== ''))).sort();
-    const availableCommanders = Array.from(new Set(sitesFilteredBase.filter(site => passYear(site) && passCat(site)).flatMap(s => s.commanders || []))).sort();
+
+    // --- DYNAMIC FILTER OPTIONS ---
+
+    // --- DYNAMIC YEARS WITH COUNTS ---
+    const availableYears = useMemo(() => {
+        const relevantSites = sitesFilteredBase.filter(site => passCmd(site) && passCat(site));
+        const counts = {};
+        relevantSites.forEach(s => {
+            const y = s.year ? String(s.year).trim() : '';
+            if (y) counts[y] = (counts[y] || 0) + 1;
+        });
+
+        return Object.entries(counts)
+            .map(([year, count]) => ({
+                    value: year,
+                    // We pass the raw name and the count separately in the label
+                    name: year,
+                    count: count,
+                    label: year // Fallback
+            }))
+            .sort((a, b) => a.value - b.value);
+    }, [sitesFilteredBase, filterCommander, filterCategory, showArcOnly]);
+
+    const availableCommanders = useMemo(() => {
+        const relevantSites = sitesFilteredBase.filter(site => passYear(site) && passCat(site));
+        const counts = {};
+        relevantSites.forEach(s => {
+            const cmds = Array.isArray(s.commanders) ? s.commanders : [s.commander].filter(Boolean);
+            cmds.forEach(c => {
+                counts[c] = (counts[c] || 0) + 1;
+            });
+        });
+
+        return Object.entries(counts)
+            .map(([name, count]) => ({
+                    value: name,
+                    name: name,
+                    count: count,
+                    label: name // Fallback
+            }))
+            .sort((a, b) => a.value.localeCompare(b.value));
+    }, [sitesFilteredBase, filterYear, filterCategory, showArcOnly]);
     const sitesForCategoryCounts = useMemo(() => sitesFilteredBase.filter(site => passYear(site) && passCmd(site)), [sitesFilteredBase, passYear, passCmd]);
 
     const categoryCounts = useMemo(() => {
@@ -683,6 +723,16 @@ export const AppProvider = ({ children }) => {
             );
         }
     };
+    // Add these near your other useState calls in AppContext.jsx
+
+    const [isMobileLike, setIsMobileLike] = useState(window.innerWidth <= 1024);
+
+    // Add this useEffect to update isMobileLike on resize
+    useEffect(() => {
+        const handleResize = () => setIsMobileLike(window.innerWidth <= 1024);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const disableGeolocation = () => handleLocationSelect('none');
 
@@ -734,6 +784,7 @@ export const AppProvider = ({ children }) => {
             filterYear, setFilterYear, availableYears,
             filterCommander, setFilterCommander, availableCommanders,
             showArcOnly, setShowArcOnly,
+            isMobileLike,// <--- Add this
             filterWithMaps, setFilterWithMaps,
             visitedSites,
             currentUser,
