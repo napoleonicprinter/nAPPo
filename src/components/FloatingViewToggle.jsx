@@ -32,7 +32,7 @@ const FloatingViewToggle = ({ className = '', iconSize = 20 }) => {
     return (
         <>
             {/* 2. ADD THE CLEAR ALL BUTTON HERE */}
-            {isMobileLike && isFiltered && (
+            {/*{isMobileLike && isFiltered && (
                 <button
                     className="clear-filters-floating animate-fade-in"
                     onClick={(e) => {
@@ -42,7 +42,7 @@ const FloatingViewToggle = ({ className = '', iconSize = 20 }) => {
                 >
                     <X size={14} strokeWidth={3} /> CLEAR ALL
                 </button>
-            )}
+            )}*/}
 
             {/* The existing View Toggle Button */}
             <button

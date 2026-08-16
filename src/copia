@@ -1,0 +1,114 @@
+jsx
+// D:/nAPPo_trails/src/App.jsx
+import { useAppContext } from './context/AppContext';
+import FloatingViewToggle from './components/FloatingViewToggle';
+import HelpCard from './components/HelpCard';
+import { X } from 'lucide-react';
+
+function App() {
+    const { isMobileLike, isFiltered, clearAllFilters } = useAppContext();
+
+    return (
+        <div className="app-container">
+            <Header />
+
+            {/* ... your View Logic (Map/List) ... */}
+
+            {/* --- PLACE THE BUTTON HERE (Root Level) --- */}
+            {isMobileLike && isFiltered && (
+                <button
+                    className="clear-filters-floating animate-fade-in"
+                    onClick={clearAllFilters}
+                    style={{
+                        position: 'fixed',
+                        zIndex: 9999999, // Absolute highest
+                        pointerEvents: 'auto'
+                    }}
+                >
+                    <X size={14} strokeWidth={3} /> CLEAR ALL
+                </button>
+            )}
+
+            <FloatingViewToggle />
+            <HelpCard />
+        </div>
+    );
+}
+
+
+/* D:/nAPPo_trails/src/components/FloatingViewToggle.css */
+
+.clear-filters-floating {
+    position: fixed;
+    bottom: 100px; /* High enough to clear browser bars */
+    left: 20px;
+    z-index: 9999999;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: white;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+
+    /* CRITICAL FOR MOBILE MAPS: Force it to the top layer */
+    -webkit-transform: translateZ(9999px);
+    transform: translateZ(9999px);
+
+    margin-bottom: env(safe-area-inset-bottom);
+    pointer-events: auto !important;
+}
+
+jsx
+const MainApp = () => {
+  const {
+    view,
+    messagesData,
+    isMobileLike,
+    isFiltered,
+    clearAllFilters
+  } = useAppContext(); // Removed the duplicate <caret> text
+
+  // ... rest of your useEffect logic ...
+
+  return (
+    <div className="app-container">
+      <Header />
+      <main className="main-content">
+        {view === 'map' ? <MapView /> :
+         view === 'calendar' ? <CalendarView /> :
+         view === 'shopping' ? <ShoppingView /> :
+         view === 'preview' ? <DevicePreviewer /> :
+         <CardView />}
+      </main>
+
+      {/* This button is now at the root level, so it will always show above the map */}
+      {isMobileLike && isFiltered && (
+          <button
+              className="clear-filters-floating animate-fade-in"
+              onClick={clearAllFilters}
+              style={{
+                  position: 'fixed',
+                  bottom: '100px', // Lifted higher to clear mobile browser bars
+                  left: '20px',
+                  zIndex: 9999999,
+                  pointerEvents: 'auto'
+              }}
+          >
+              <X size={14} strokeWidth={3} /> CLEAR ALL
+          </button>
+      )}
+
+      <FloatingViewToggle />
+      <HelpCard />
+    </div>
+  );
+};

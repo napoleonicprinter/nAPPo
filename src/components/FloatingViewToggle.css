@@ -27,14 +27,13 @@
         border-radius: 50%;
     }
 }
+/* D:/nAPPo_trails/src/components/FloatingViewToggle.css */
+
 .clear-filters-floating {
     position: fixed;
-    /* This position is bottom-left, opposite to the toggle */
-    bottom: 100px;
+    bottom: 100px; /* High enough to clear browser bars */
     left: 20px;
-
-    /* High z-index to stay above the MapContainer */
-    z-index: 999999;
+    z-index: 9999999;
 
     display: flex;
     align-items: center;
@@ -51,10 +50,13 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     cursor: pointer;
 
-    /* Handles modern phone safe areas (home bar) */
-    margin-bottom: env(safe-area-inset-bottom);
-}
+    /* CRITICAL FOR MOBILE MAPS: Force it to the top layer */
+    -webkit-transform: translateZ(9999px);
+    transform: translateZ(9999px);
 
+    margin-bottom: env(safe-area-inset-bottom);
+    pointer-events: auto !important;
+}
 .clear-filters-floating:active {
     transform: scale(0.95);
     background: #fffafa;
