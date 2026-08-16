@@ -13205,12 +13205,25 @@
     "name": "Battle for Moscow 7 September 1812",
     "category": "Artwork",
     "significance": 1,
-    "location": "Saint Petersburg",
+    "location": "Hermitage Museum, Saint Petersburg",
     "country": "Russia",
     "description": "Painted by German military artist Albrecht Adam in 1825, 'Battle for Moscow 7 September 1812' is a Romantic-era historical artwork that captures the harsh realities of the Battle of Borodino. Now preserved in the State Hermitage Museum, this oil and gouache work on paper offers a rare, first-hand account of Napoleon's invasion of Russia.",
     "latitude": 59.939832,
     "longitude": 30.314560,
     "image": "/assets/images/Sites/Borodino_Adam.webp",
     "createDate": "2026-08-12"
+  },
+  {
+    "id": "722",
+    "name": "Battle of Kliastitsy",
+    "category": "Artwork",
+    "significance": 3,
+    "location": "Hermitage Museum, Saint Petersburg",
+    "country": "Russia",
+    "description": "Battle of Kliastitsy, oil on canvas done in 1856 by Peter von Hess, depicts the fierce between Russian troops and the French. The painting captures the intensity of the battle.",
+    "latitude": 59.939832,
+    "longitude": 30.314560,
+    "image": "/assets/images/Sites/Klyastitsy_canvas.webp",
+    "createDate": "2026-08-16"
   }
 ]
