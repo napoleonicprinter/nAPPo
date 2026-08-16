@@ -112,7 +112,7 @@ export const HELP_ITEMS = [
         content: 'Click this tag and you will find events and battles that happened on the current date during the Napoleonic Wars. Swithc to "calendar" to view all events in any date. The small number next to the tag indicates the count of events for that date.' },
     { id: 'listmode', 
         title: 'List Mode', 
-        image: '/assets/images/Help_List.webp', 
-        content: 'Switch to a text-based searchable list of all sites or for the ones you filtered. To go back to "map mode", press the "Map" tag wich replaced the "list mode" tag.' },
+        imagePc: '/assets/images/Help_List.webp', 
+        content: 'Switch to a card-based searchable list of all sites or for the ones you filtered. To go back to "map mode", press the "Map" tag wich replaced the "list mode" tag.' },
     
 ]
