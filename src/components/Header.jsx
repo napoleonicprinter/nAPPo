@@ -93,7 +93,7 @@ const Header = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isMenuOpen]);
 
-    const { newsData } = useAppContext();
+    const { newsData, storeUrl } = useAppContext();
     const recentNewsCount = useMemo(() => {
         if (!newsData) return 0;
         const now = new Date();
@@ -497,14 +497,24 @@ const Header = () => {
                                                 Patreon
                                             </a>
 
-                                            <button
-                                                onClick={handleRateApp}
+                                            <a
+                                                href={storeUrl}
+                                                target="_blank"rel="noopener noreferrer"
                                                 className="btn-outline"
-                                                style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}
+                                                style={{
+                                                    width: '100%',
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    gap: '8px',
+                                                    alignItems: 'center',
+                                                    textDecoration: 'none',
+                                                    color: 'inherit',
+                                                    marginTop: '4px' // Consistent spacing
+                                                }}
                                             >
-                                                <Star size={16} />
-                                                Rate App
-                                            </button>
+                                                <Star size={18} />
+                                                <span>Rate App</span>
+                                            </a>
                                         </div>
                                     </div>
 

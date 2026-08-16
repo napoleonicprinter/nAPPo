@@ -92,11 +92,15 @@ const MainApp = () => {
 };
 
 function App() {
+  // Define your Google Play Store URL here
+  const GOOGLE_PLAY_URL = "https://play.google.com/store/search?q=nAPPo+Trails&c=apps";
+
   return (
-    <AppProvider>
+    <AppProvider storeUrl={GOOGLE_PLAY_URL}>
       <MainApp />
     </AppProvider>
   );
 }
 
 export default App;
+

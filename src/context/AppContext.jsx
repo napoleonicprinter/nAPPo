@@ -73,8 +73,7 @@ export const EUROPEAN_CAPITALS = [
     { name: "Warsaw", lat: 52.2297, lon: 21.0122 },
     { name: "Zagreb", lat: 45.8150, lon: 15.9819 }
 ];
-
-export const AppProvider = ({ children }) => {
+export const AppProvider = ({ children, storeUrl }) => {
     const isDevelopment = import.meta.env.DEV;
 
     // 1. Initial State for Developer Mode toggles
@@ -757,6 +756,7 @@ export const AppProvider = ({ children }) => {
 
     return (
         <AppContext.Provider value={{
+            storeUrl,
             sites: filteredSites,
             allSites: derivedSites,
             view, setView, innerView, setInnerView,
