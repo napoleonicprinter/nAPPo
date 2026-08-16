@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map, List, X } from 'lucide-react'; // Added X icon
 import { useAppContext } from '../context/AppContext';
-import './FloatingViewToggle.css';
+
 
 const FloatingViewToggle = ({ className = '', iconSize = 20 }) => {
     // 1. Add isMobileLike, isFiltered, and clearAllFilters to the destructuring

@@ -1,3 +1,7 @@
+/* Ensure the first line looks like this: */
+:root {
+  --some-variable: rgba(139, 148, 158, 0.6);
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
 /* --- Smoother Zoom Transitions --- */
 
@@ -514,58 +518,40 @@ button {
   color: white !important;
 }
 
-.mobile-action-buttons {
-  position: absolute;
-  bottom: 24px;
-  left: 16px;
-  right: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 6000;
-  pointer-events: none;
-}
+/* Final Glassy Clear All Button - Combined Style */
+.clear-filters-floating {
+  position: fixed;
+  bottom: 40px; /* Sits at the bottom above system bars */
+  left: 20px;
+  z-index: 10000; /* High z-index to stay above everything */
 
-.mobile-clear-filters,
-.mobile-close-units {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 18px; /* increased by 15% */
+
+  /* The style you liked from the List View tag */
+  padding: 12px 18px;
   background: var(--bg-acrylic);
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.98rem; /* increased by 15% from 0.85rem */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1.5px solid var(--accent-danger);
+  color: var(--accent-danger);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+
   cursor: pointer;
   pointer-events: auto;
-  width: fit-content;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-bottom: env(safe-area-inset-bottom);
 }
 
-.mobile-clear-filters {
-  border: 1px solid var(--accent-danger);
-  color: var(--accent-danger);
-}
-
-.mobile-close-units {
-  background: rgba(248, 81, 73, 0.15);
-  border: 1px solid var(--accent-danger);
-  color: var(--accent-danger);
-}
-
-@media (min-width: 1025px) {
-  .mobile-action-buttons {
-    display: none !important;
-  }
-}
-
-/* Force show mobile action buttons in emulator regardless of browser width */
-.device-mobile .mobile-action-buttons,
-.device-tablet .mobile-action-buttons {
-  display: flex !important;
+.clear-filters-floating:active {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 /* D:/nAPPo_trails/src/index.css  cambio de Android console*/
 

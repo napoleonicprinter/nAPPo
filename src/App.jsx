@@ -8,7 +8,7 @@ import ShoppingView from './components/ShoppingView';
 import DevicePreviewer from './components/DevicePreviewer';
 import AnnouncementModal from './components/AnnouncementModal';
 //import { useAppContext } from './context/AppContext';
-import FloatingViewToggle from './components/FloatingViewToggle';
+//import FloatingViewToggle from './components/FloatingViewToggle';
 import HelpCard from './components/HelpCard';
 import { X } from 'lucide-react';
 
@@ -69,23 +69,15 @@ const MainApp = () => {
           onClose={handleCloseAnnouncement}
         />
       )}
-      {isMobileLike && isFiltered && (
-          <button
+
+      {isMobileLike && isFiltered && (    <button
               className="clear-filters-floating animate-fade-in"
               onClick={clearAllFilters}
-              style={{
-                  position: 'fixed',
-                  bottom: '100px', // Lifted higher to clear mobile browser bars
-                  left: '20px',
-                  zIndex: 9999999, // Absolute highest
-                  pointerEvents: 'auto'
-              }}
           >
-              <X size={14} strokeWidth={3} /> CLEAR ALL
+              <X size={18} strokeWidth={3} /> CLEAR ALL
           </button>
       )}
 
-      <FloatingViewToggle />
       <HelpCard />
     </div>
   );

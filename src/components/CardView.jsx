@@ -75,17 +75,6 @@ const CardView = () => {
                 </div>
             </div>
 
-            <div className="mobile-action-buttons">
-                {isFiltered && (
-                    <button
-                        className="mobile-clear-filters glass-panel"
-                        onClick={clearAllFilters}
-                        title="Clear All Filters"
-                    >
-                        Clear Filters
-                    </button>
-                )}
-            </div>
         </div>
     );
 };
