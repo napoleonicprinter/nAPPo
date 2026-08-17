@@ -6,7 +6,7 @@ import {
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
     LogOut, Newspaper, Tablet, Monitor, Star
 } from 'lucide-react';
-import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
+import { useAppContext, useBackHandler, EUROPEAN_CAPITALS } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
 import CustomCategorySelect from './CustomCategorySelect';
 import CustomSimpleSelect from './CustomSimpleSelect';
@@ -66,6 +66,17 @@ const Header = () => {
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
     const [showHelpDropdown, setShowHelpDropdown] = useState(false); // Toggle for dropdown
+
+    // Mobile back/undo button handlers
+    useBackHandler('headerSettings', showSettings, () => setShowSettings(false), 30);
+    useBackHandler('headerEvents', showEvents, () => setShowEvents(false), 30);
+    useBackHandler('headerNews', showNews, () => setShowNews(false), 30);
+    useBackHandler('headerFilters', showFilters, () => setShowFilters(false), 30);
+    useBackHandler('headerShopping', showShoppingView, () => setShowShoppingView(false), 30);
+    useBackHandler('headerCalendar', showCalendarView, () => setShowCalendarView(false), 30);
+    useBackHandler('headerMenu', isMenuOpen, () => setIsMenuOpen(false), 25);
+    useBackHandler('headerDeleteConfirm', showDeleteConfirm, () => setShowDeleteConfirm(false), 35);
+    useBackHandler('headerHelpDropdown', showHelpDropdown, () => setShowHelpDropdown(false), 25);
 
     const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 

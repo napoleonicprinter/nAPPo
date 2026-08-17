@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, Calendar as CalendarIcon } from 'lucide-react';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, useBackHandler } from '../context/AppContext';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -13,6 +13,8 @@ const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const ShowsCalendarModal = ({ onClose, showsData, onDayClick }) => {
     const [month, setMonth] = useState(new Date().getMonth());
     const [gridYear, setGridYear] = useState(2026); // Shows are mainly in 2026
+
+    useBackHandler('showsCalendarModalSelf', !!onClose, () => onClose && onClose(), 38);
 
     const currentYearEvents = useMemo(() => {
         // Find all events for the currently viewed month

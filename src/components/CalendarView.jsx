@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, useBackHandler } from '../context/AppContext';
 import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X, CalendarDays } from 'lucide-react';
 import ShowsCalendarModal from './ShowsCalendarModal';
 import './CalendarView.css';
@@ -29,6 +29,8 @@ const CalendarView = ({ onClose }) => {
     const [isMonthDropdownOpen, setIsMonthDropdownOpen] = useState(false);
     const [selectedDate, setSelectedDate] = useState(null);
     const [isShowsCalendarOpen, setIsShowsCalendarOpen] = useState(false);
+
+    useBackHandler('showsCalendarModal', isShowsCalendarOpen, () => setIsShowsCalendarOpen(false), 35);
 
     // Identify months/categories/countries that have at least one show
     const activeStats = useMemo(() => {

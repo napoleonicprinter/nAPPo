@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, useBackHandler } from '../context/AppContext';
 import { ShoppingCart, ExternalLink, Info, Tag, Package, DollarSign, X, ChevronDown, Mail, Copy, Check } from 'lucide-react';
 import './ShoppingView.css';
 
@@ -9,6 +9,9 @@ const ShoppingView = ({ onClose }) => {
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [copiedId, setCopiedId] = useState(null);
+
+    useBackHandler('shoppingCategoryDropdown', isCategoryDropdownOpen, () => setIsCategoryDropdownOpen(false), 35);
+    useBackHandler('shoppingModalSelf', !isCategoryDropdownOpen && !!onClose, () => onClose && onClose(), 30);
 
     const handleCopyEmail = (email, id) => {
         navigator.clipboard.writeText(email);

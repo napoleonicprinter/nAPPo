@@ -13225,5 +13225,32 @@
     "longitude": 30.314560,
     "image": "/assets/images/Sites/Klyastitsy_canvas.webp",
     "createDate": "2026-08-16"
+  },
+  {
+    "id": "723",
+    "name": "Jacinto Ruiz Statue",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Plaza del Rey, Madrid",
+    "country": "Spain",
+    "description": "It is the work of the sculptor Mariano Benlliure and was inaugurated in 1891 in homage to Lieutenant Jacinto Ruiz y Mendoza, one of the leaders of the resistance of the Monteleón Artillery Park during the uprising of May 2, 1808 in Madrid.",
+    "latitude": 40.420367,
+    "longitude": -3.695836,
+    "image": "/assets/images/Sites/JacintoRuiz.webp",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Estatua_de_Jacinto_Ruiz",
+    "createDate": "2026-08-16"
+  },
+  {
+    "id": "724",
+    "name": "Maison Giubega",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Calvi, Corsica",
+    "country": "France",
+    "description": "This 15th-century palace served as the Calvi residence for the Bishops of Sagone and later belonged to Laurent Giubega, the godfather of Napoleon Bonaparte. Napoleon famously took refuge here in 1793 when his family fled Ajaccio.",
+    "latitude": 42.568524,
+    "longitude": 8.761244,
+    "image": "/assets/images/Sites/Maison_Giubega.webp",
+    "createDate": "2026-08-16"
   }
 ]

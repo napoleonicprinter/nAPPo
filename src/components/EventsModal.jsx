@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight, Map } from 'lucide-react';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, useBackHandler } from '../context/AppContext';
 import HistoryCalendarModal from './HistoryCalendarModal';
 import AnnouncementModal from './AnnouncementModal';
 import './AnnouncementModal.css';
@@ -11,6 +11,9 @@ const EventsModal = ({ onClose }) => {
     const { eventsData, messagesData, getPortalContainer, allSites, setView, setSelectedSite, setSiteToOpenPopup } = useAppContext();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [showAnnouncement, setShowAnnouncement] = useState(null);
+
+    useBackHandler('eventsHistoryCalendar', isCalendarOpen, () => setIsCalendarOpen(false), 35);
+    useBackHandler('eventsAnnouncement', !!showAnnouncement, () => setShowAnnouncement(null), 35);
 
     // Find active announcements within date range
     const activeMessages = useMemo(() => {

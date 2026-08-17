@@ -7,6 +7,9 @@ import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
 import dealsDataFallback from '../data/deals.json';
 import { Geolocation } from '@capacitor/geolocation';
+import { App } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
+import { HELP_ITEMS } from '../data/helpData';
 
 // Constants for remote data
 const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
@@ -14,6 +17,21 @@ const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter
 const AppContext = createContext();
 
 export const useAppContext = () => useContext(AppContext);
+
+export const useBackHandler = (id, isActive, handler, priority = 10) => {
+    const { registerBackHandler, unregisterBackHandler } = useAppContext();
+
+    useEffect(() => {
+        if (isActive && handler) {
+            registerBackHandler(id, handler, priority);
+            return () => {
+                unregisterBackHandler(id);
+            };
+        } else {
+            unregisterBackHandler(id);
+        }
+    }, [id, isActive, handler, priority, registerBackHandler, unregisterBackHandler]);
+};
 
 // Haversine formula to calculate distance between two coordinates
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -104,19 +122,43 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [sitesBaseData, setSitesBaseData] = useState(() => {
         if (isDevelopment) return sitesData;
         const saved = localStorage.getItem('sitesData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : sitesData;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= sitesData.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return sitesData;
     });
 
     const [showsBaseData, setShowsBaseData] = useState(() => {
         if (isDevelopment) return showsData;
         const saved = localStorage.getItem('showsData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : showsData;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= showsData.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return showsData;
     });
 
     const [shoppingBaseData, setShoppingBaseData] = useState(() => {
         if (isDevelopment) return shoppingData;
         const saved = localStorage.getItem('shoppingData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : shoppingData;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= shoppingData.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return shoppingData;
     });
 
     const activeShoppingItems = useMemo(() => {
@@ -137,13 +179,29 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [eventsBaseData, setEventsBaseData] = useState(() => {
         if (isDevelopment) return eventsDataFallback;
         const saved = localStorage.getItem('eventsData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : eventsDataFallback;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= eventsDataFallback.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return eventsDataFallback;
     });
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
         if (isDevelopment) return newsDataFallback;
         const saved = localStorage.getItem('newsData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : newsDataFallback;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= newsDataFallback.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return newsDataFallback;
     });
 
     const [activeMapOverlays, setActiveMapOverlays] = useState([]);
@@ -161,13 +219,29 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : messagesDataFallback;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= messagesDataFallback.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return messagesDataFallback;
     });
 
     const [dealsBaseData, setDealsBaseData] = useState(() => {
         if (isDevelopment) return dealsDataFallback;
         const saved = localStorage.getItem('dealsData');
-        return (saved && saved !== "undefined") ? JSON.parse(saved) : dealsDataFallback;
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length >= dealsDataFallback.length) {
+                    return parsed;
+                }
+            } catch (e) {}
+        }
+        return dealsDataFallback;
     });
 
     const activeDeals = useMemo(() => {
@@ -195,8 +269,14 @@ export const AppProvider = ({ children, storeUrl }) => {
             setSyncStatus('syncing');
             try {
                 const t = new Date().getTime();
-                const fetchOpts = { cache: 'no-store', pragma: 'no-cache' };
-
+                //const fetchOpts = { cache: 'no-store', pragma: 'no-cache' };
+                const fetchOpts = {
+                    cache: 'no-store',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                };
                 const fetchRequests = [
                     fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`, fetchOpts),
                     fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
@@ -754,9 +834,257 @@ export const AppProvider = ({ children, storeUrl }) => {
     // Dentro de AppContext.jsx
     const [callerSite, setCallerSite] = useState(null);
 
+    // Global back-handlers registry
+    const backHandlersRef = useRef([]);
+
+    const registerBackHandler = useCallback((id, handler, priority = 10) => {
+        backHandlersRef.current = [
+            ...backHandlersRef.current.filter(h => h.id !== id),
+            { id, handler, priority, timestamp: Date.now() }
+        ];
+    }, []);
+
+    const unregisterBackHandler = useCallback((id) => {
+        backHandlersRef.current = backHandlersRef.current.filter(h => h.id !== id);
+    }, []);
+
+    // Selection & Navigation History Stack for Step-by-Step Undo
+    const historyStackRef = useRef([]);
+    const isUndoingRef = useRef(false);
+    const lastExitPressRef = useRef(0);
+
+    const restoreSnapshot = useCallback((target) => {
+        if (!target) return;
+        isUndoingRef.current = true;
+
+        if (target.selectedSiteId) {
+            const site = (sitesBaseData || []).find(s => s.id === target.selectedSiteId);
+            setSelectedSite(site || null);
+        } else {
+            setSelectedSite(null);
+            if (setCallerSite) setCallerSite(null);
+        }
+
+        if (target.selectedHelpItemId) {
+            const item = HELP_ITEMS.find(i => i.id === target.selectedHelpItemId);
+            setSelectedHelpItem(item || null);
+        } else {
+            setSelectedHelpItem(null);
+        }
+
+        setFilterCategory(target.filterCategory || []);
+        setFilterSignificance(target.filterSignificance || '');
+        setFilterVisited(target.filterVisited || 'all');
+        setFilterRadius(target.filterRadius || 'all');
+        setFilterSearch(target.filterSearch || '');
+        setFilterYear(target.filterYear || 'all');
+        setFilterCommander(target.filterCommander || 'all');
+        setFilterCountry(target.filterCountry || 'all');
+        setFilterCoalition(target.filterCoalition || 'all');
+        setFilterCampaign(target.filterCampaign || 'all');
+        setShowArcOnly(target.showArcOnly || false);
+        setFilterWithMaps(target.filterWithMaps || false);
+        setShowOnlyNew(target.showOnlyNew || false);
+        setLocationMode(target.locationMode || 'none');
+        setUserCoords(target.userCoords || null);
+        setActiveMapOverlays(target.activeMapOverlays || []);
+        setView(target.view || 'map');
+        setPreviewDevice(target.previewDevice || 'desktop');
+    }, [sitesBaseData, setCallerSite]);
+
+    // Record user selections into history stack
+    useEffect(() => {
+        if (isUndoingRef.current) {
+            isUndoingRef.current = false;
+            return;
+        }
+
+        const snapshot = {
+            selectedSiteId: selectedSite?.id || null,
+            selectedHelpItemId: selectedHelpItem?.id || null,
+            filterCategory: Array.isArray(filterCategory) ? [...filterCategory] : [],
+            filterSignificance: filterSignificance || '',
+            filterVisited: filterVisited || 'all',
+            filterRadius: filterRadius || 'all',
+            filterSearch: filterSearch || '',
+            filterYear: filterYear || 'all',
+            filterCommander: filterCommander || 'all',
+            filterCountry: filterCountry || 'all',
+            filterCoalition: filterCoalition || 'all',
+            filterCampaign: filterCampaign || 'all',
+            showArcOnly: !!showArcOnly,
+            filterWithMaps: !!filterWithMaps,
+            showOnlyNew: !!showOnlyNew,
+            locationMode: locationMode || 'none',
+            userCoords: userCoords ? { lat: userCoords.lat, lon: userCoords.lon } : null,
+            activeMapOverlays: Array.isArray(activeMapOverlays) ? [...activeMapOverlays] : [],
+            view: view || 'map',
+            previewDevice: previewDevice || 'desktop'
+        };
+
+        const stack = historyStackRef.current;
+        if (stack.length === 0) {
+            historyStackRef.current = [snapshot];
+            return;
+        }
+
+        const last = stack[stack.length - 1];
+        const isSame = (
+            last.selectedSiteId === snapshot.selectedSiteId &&
+            last.selectedHelpItemId === snapshot.selectedHelpItemId &&
+            JSON.stringify(last.filterCategory) === JSON.stringify(snapshot.filterCategory) &&
+            last.filterSignificance === snapshot.filterSignificance &&
+            last.filterVisited === snapshot.filterVisited &&
+            last.filterRadius === snapshot.filterRadius &&
+            last.filterSearch === snapshot.filterSearch &&
+            last.filterYear === snapshot.filterYear &&
+            last.filterCommander === snapshot.filterCommander &&
+            last.filterCountry === snapshot.filterCountry &&
+            last.filterCoalition === snapshot.filterCoalition &&
+            last.filterCampaign === snapshot.filterCampaign &&
+            last.showArcOnly === snapshot.showArcOnly &&
+            last.filterWithMaps === snapshot.filterWithMaps &&
+            last.showOnlyNew === snapshot.showOnlyNew &&
+            last.locationMode === snapshot.locationMode &&
+            JSON.stringify(last.userCoords) === JSON.stringify(snapshot.userCoords) &&
+            JSON.stringify(last.activeMapOverlays) === JSON.stringify(snapshot.activeMapOverlays) &&
+            last.view === snapshot.view &&
+            last.previewDevice === snapshot.previewDevice
+        );
+
+        if (!isSame) {
+            historyStackRef.current = [...stack.slice(-49), snapshot];
+        }
+    }, [
+        selectedSite, selectedHelpItem, filterCategory, filterSignificance,
+        filterVisited, filterRadius, filterSearch, filterYear, filterCommander,
+        filterCountry, filterCoalition, filterCampaign, showArcOnly, filterWithMaps,
+        showOnlyNew, locationMode, userCoords, activeMapOverlays, view, previewDevice
+    ]);
+
+    // Global Back Action Executor (Undo Last Selection / Close Modal)
+    const handleBackAction = useCallback(() => {
+        // 1. Run top-priority active registered modal/drawer handler (e.g. Settings, Filters, Menus)
+        if (backHandlersRef.current.length > 0) {
+            const sorted = [...backHandlersRef.current].sort((a, b) => {
+                if (b.priority !== a.priority) return b.priority - a.priority;
+                return b.timestamp - a.timestamp;
+            });
+
+            for (const item of sorted) {
+                try {
+                    const result = item.handler();
+                    if (result !== false) {
+                        return true;
+                    }
+                } catch (err) {
+                    console.error(`[BackHandler] Error executing handler for ${item.id}:`, err);
+                }
+            }
+        }
+
+        // 2. Undo last selection from selection history stack
+        const stack = historyStackRef.current;
+        if (stack.length > 1) {
+            stack.pop(); // Pop current state
+            const prevSnapshot = stack[stack.length - 1];
+            if (prevSnapshot) {
+                restoreSnapshot(prevSnapshot);
+                return true;
+            }
+        }
+
+        // 3. Fallback: If anything is still selected or filtered, reset it
+        if (selectedSite) {
+            setSelectedSite(null);
+            if (setCallerSite) setCallerSite(null);
+            return true;
+        }
+        if (selectedHelpItem) {
+            setSelectedHelpItem(null);
+            return true;
+        }
+        if (activeMapOverlays && activeMapOverlays.length > 0) {
+            clearMapOverlays();
+            return true;
+        }
+        if (view !== 'map') {
+            setView('map');
+            return true;
+        }
+        if (previewDevice && previewDevice !== 'desktop') {
+            setPreviewDevice('desktop');
+            return true;
+        }
+        if (isFiltered) {
+            clearAllFilters();
+            return true;
+        }
+
+        // 4. If user is at pristine baseline with nothing left to undo:
+        // Require double-press within 2s to exit app on Android
+        const now = Date.now();
+        if (lastExitPressRef.current && (now - lastExitPressRef.current) < 2000) {
+            if (Capacitor.isNativePlatform()) {
+                App.exitApp();
+                return true;
+            }
+        } else {
+            lastExitPressRef.current = now;
+            return true; // Consume the first back press at root so it doesn't abruptly quit!
+        }
+
+        return false;
+    }, [restoreSnapshot, selectedSite, selectedHelpItem, activeMapOverlays, clearMapOverlays, view, setView, previewDevice, setPreviewDevice, isFiltered, clearAllFilters, setCallerSite]);
+
+    // Native Capacitor Back Button & Web Popstate listener
+    useEffect(() => {
+        let backListenerHandle = null;
+
+        if (Capacitor.isNativePlatform()) {
+            App.addListener('backButton', () => {
+                handleBackAction();
+            }).then(handle => {
+                backListenerHandle = handle;
+            });
+        }
+
+        const handlePopState = () => {
+            const handled = handleBackAction();
+            if (handled) {
+                try {
+                    window.history.pushState({ nappoApp: true }, '');
+                } catch (e) {}
+            }
+        };
+
+        window.addEventListener('popstate', handlePopState);
+
+        return () => {
+            if (backListenerHandle) {
+                backListenerHandle.remove();
+            }
+            window.removeEventListener('popstate', handlePopState);
+        };
+    }, [handleBackAction]);
+
+    // Context-level back handlers
+    useEffect(() => {
+        if (showAuth) {
+            registerBackHandler('showAuth', () => {
+                setShowAuth(false);
+                setAuthMessage(null);
+            }, 30);
+            return () => unregisterBackHandler('showAuth');
+        }
+    }, [showAuth, registerBackHandler, unregisterBackHandler, setAuthMessage]);
+
     return (
         <AppContext.Provider value={{
             storeUrl,
+            registerBackHandler,
+            unregisterBackHandler,
+            handleBackAction,
             sites: filteredSites,
             allSites: derivedSites,
             view, setView, innerView, setInnerView,

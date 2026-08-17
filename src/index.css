@@ -518,40 +518,61 @@ button {
   color: white !important;
 }
 
-/* Final Glassy Clear All Button - Combined Style */
+/* Floating Clear All Button - compact matching horizontal scroll menu tag style */
 .clear-filters-floating {
   position: fixed;
-  bottom: 40px; /* Sits at the bottom above system bars */
-  left: 20px;
-  z-index: 10000; /* High z-index to stay above everything */
+  bottom: 25px; /* Sits at the bottom above system bars */
+  left: 14px;
+  z-index: 10000; /* High z-index to stay above map controls */
 
-  display: flex;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
+  width: auto !important;
+  max-width: fit-content !important;
+  min-width: auto !important;
+  white-space: nowrap;
 
-  /* The style you liked from the List View tag */
-  padding: 12px 18px;
+  /* Tag style from horizontal scroll menu */
+  height: 34px;
+  min-height: 34px;
+  padding: 0 12px !important;
   background: var(--bg-acrylic);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1.5px solid var(--accent-danger);
-  color: var(--accent-danger);
-  font-weight: 700;
-  font-size: 0.95rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1.5px solid var(--accent-danger, #ff4444);
+  color: var(--accent-danger, #ff4444);
+  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 
   cursor: pointer;
   pointer-events: auto;
-  text-transform: uppercase;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  text-transform: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
   margin-bottom: env(safe-area-inset-bottom);
+}
+
+.clear-filters-floating:hover {
+  background: rgba(255, 68, 68, 0.15) !important;
 }
 
 .clear-filters-floating:active {
   transform: scale(0.95);
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .clear-filters-floating {
+    height: 32px;
+    min-height: 32px;
+    padding: 0 10px !important;
+    font-size: 0.8rem;
+    bottom: 20px;
+    left: 10px;
+  }
 }
 /* D:/nAPPo_trails/src/index.css  cambio de Android console*/
 

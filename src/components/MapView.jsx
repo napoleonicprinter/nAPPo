@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MapContainer, TileLayer, Popup, Marker, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, useBackHandler } from '../context/AppContext';
 import SiteCard, { getCategoryColor } from './SiteCard';
 import DealsView from './DealsView';
 import L from 'leaflet';
@@ -198,20 +198,8 @@ const MapView = () => {
         `;
     }, [theme]);
 
-    // Inside the MapView component
-    useEffect(() => {
-        const handleBackButton = (event) => {
-            // If there is a selected site, close it and prevent browser navigation
-            if (selectedSite) {
-                setSelectedSite(null);
-                // We stay on the page because we handle the 'back' logic manually
-            }
-        };
-        window.addEventListener('popstate', handleBackButton);
-        return () => {
-            window.removeEventListener('popstate', handleBackButton);
-        };
-    }, [selectedSite, setSelectedSite]);
+    // Mobile back/undo button handler for deals modal
+    useBackHandler('dealsModal', showDeals, () => setShowDeals(false), 30);
 
     const MapEventsHandler = () => {
         useMapEvents({ click: () => setSelectedSite(null) });

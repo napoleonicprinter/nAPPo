@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon, Map } from 'lucide-react';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, useBackHandler } from '../context/AppContext';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -19,6 +19,10 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     const [selectedYear, setSelectedYear] = useState('All years');
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
     const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
+
+    useBackHandler('historyYearDropdown', isYearDropdownOpen, () => setIsYearDropdownOpen(false), 45);
+    useBackHandler('historyDateEvents', !!selectedDateEvents, () => setSelectedDateEvents(null), 40);
+    useBackHandler('historyCalendarModalSelf', !selectedDateEvents && !isYearDropdownOpen && !!onClose, () => onClose(), 38);
 
     // Use selected year to align weekdays, or 2024 (leap year) for 'All years' to ensure all days fit
     const gridYear = selectedYear === 'All years' ? 2024 : selectedYear;

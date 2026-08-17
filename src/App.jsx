@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppProvider, useAppContext } from './context/AppContext';
+import { AppProvider, useAppContext, useBackHandler } from './context/AppContext';
 import Header from './components/Header';
 import MapView from './components/MapView';
 import CardView from './components/CardView';
@@ -10,7 +10,7 @@ import AnnouncementModal from './components/AnnouncementModal';
 //import { useAppContext } from './context/AppContext';
 //import FloatingViewToggle from './components/FloatingViewToggle';
 import HelpCard from './components/HelpCard';
-import { X } from 'lucide-react';
+import { Eraser } from 'lucide-react';
 
 const MainApp = () => {
   const { view, messagesData,
@@ -51,6 +51,8 @@ const MainApp = () => {
     setAnnouncementMessage(null);
   };
 
+  useBackHandler('announcementModal', !!announcementMessage, handleCloseAnnouncement, 40);
+
   return (
     <div className="app-container">
       <Header />
@@ -70,12 +72,15 @@ const MainApp = () => {
         />
       )}
 
-      {isMobileLike && isFiltered && (    <button
-              className="clear-filters-floating animate-fade-in"
-              onClick={clearAllFilters}
-          >
-              <X size={18} strokeWidth={3} /> CLEAR ALL
-          </button>
+      {isMobileLike && isFiltered && (
+        <button
+          className="clear-filters-floating glass-panel filters-active-red animate-fade-in"
+          onClick={clearAllFilters}
+          title="Clear all filters"
+        >
+          <Eraser size={15} />
+          <span>Clear All</span>
+        </button>
       )}
 
       <HelpCard />
