@@ -2,6 +2,7 @@ import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { HELP_ITEMS } from '../data/helpData'; // This pulls from the file we fixed in Step 1
+import { handleImageFallback } from '../utils/imageUtils';
 
 const HelpCard = () => {
     const { selectedHelpItem, setSelectedHelpItem, isMobileLike } = useAppContext();
@@ -50,7 +51,12 @@ const HelpCard = () => {
 
                 {displayImage && (
                     <div style={{ width: '100%', height: '300px', backgroundColor: '#f0f0f0' }}>
-                        <img src={displayImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img 
+                            src={displayImage} 
+                            alt="" 
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                            onError={(e) => handleImageFallback(e, displayImage)}
+                        />
                     </div>
                 )}
 

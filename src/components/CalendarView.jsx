@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useAppContext, useBackHandler } from '../context/AppContext';
 import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X, CalendarDays } from 'lucide-react';
 import ShowsCalendarModal from './ShowsCalendarModal';
+import { handleImageFallback } from '../utils/imageUtils';
 import './CalendarView.css';
 
 const SHOW_CATEGORIES = ['Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
@@ -303,7 +304,12 @@ const CalendarView = ({ onClose }) => {
                                 <div key={show.id} className="show-card glass-panel">
                                     <div className="show-content shows-mobile-fix-content">
                                         <div className="show-image-container shows-mobile-fix-image">
-                                            <img src={show.image} alt={show.name} className="show-image" />
+                                            <img 
+                                                src={show.image} 
+                                                alt={show.name} 
+                                                className="show-image" 
+                                                onError={(e) => handleImageFallback(e, show.image)}
+                                            />
                                             {show.category && (
                                                 <span
                                                     className="badge category-badge"

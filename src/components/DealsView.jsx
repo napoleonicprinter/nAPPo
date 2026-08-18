@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useAppContext } from '../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { ExternalLink, Info, Tag, X } from 'lucide-react';
+import { handleImageFallback } from '../utils/imageUtils';
 import './ShoppingView.css';
 
 const DealsView = ({ onClose }) => {
@@ -76,7 +77,12 @@ const DealsView = ({ onClose }) => {
                                 }}>
                                     <div className="shopping-card-content">
                                         <div className="shopping-image-container" style={{ height: '180px' }}>
-                                            <img src={deal.image} alt={deal.title} className="shopping-image" />
+                                            <img 
+                                                src={deal.image} 
+                                                alt={deal.title} 
+                                                className="shopping-image" 
+                                                onError={(e) => handleImageFallback(e, deal.image)}
+                                            />
                                             <span
                                                 className="badge category-badge"
                                                 style={{

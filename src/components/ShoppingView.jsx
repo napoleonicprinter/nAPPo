@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext, useBackHandler } from '../context/AppContext';
 import { ShoppingCart, ExternalLink, Info, Tag, Package, DollarSign, X, ChevronDown, Mail, Copy, Check } from 'lucide-react';
+import { handleImageFallback } from '../utils/imageUtils';
 import './ShoppingView.css';
 
 const ShoppingView = ({ onClose }) => {
@@ -98,7 +99,12 @@ const ShoppingView = ({ onClose }) => {
                                 <div key={item.id} className="shopping-card glass-panel">
                                     <div className="shopping-card-content">
                                         <div className="shopping-image-container">
-                                            <img src={item.image} alt={item.title} className="shopping-image" />
+                                            <img 
+                                                src={item.image} 
+                                                alt={item.title} 
+                                                className="shopping-image" 
+                                                onError={(e) => handleImageFallback(e, item.image)}
+                                            />
                                             <span 
                                                 className="badge category-badge" 
                                                 style={{ 

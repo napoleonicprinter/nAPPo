@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Newspaper, Calendar as CalendarIcon, ExternalLink, Info } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
+import { handleImageFallback } from '../utils/imageUtils';
 import './CalendarView.css';
 
 const NewsModal = ({ onClose }) => {
@@ -42,7 +43,12 @@ const NewsModal = ({ onClose }) => {
                                     <div className="show-content">
                                         {item.image && (
                                             <div className="news-image-container">
-                                                <img src={item.image} alt={item.title} className="show-image" />
+                                                <img 
+                                                    src={item.image} 
+                                                    alt={item.title} 
+                                                    className="show-image" 
+                                                    onError={(e) => handleImageFallback(e, item.image)}
+                                                />
                                             </div>
                                         )}
                                         <div className="show-info" style={{ padding: '1rem', flex: 1, display: 'flex', flexDirection: 'column' }}>

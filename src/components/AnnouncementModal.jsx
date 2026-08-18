@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ExternalLink, Mail, Copy, Check, Megaphone } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
+import { handleImageFallback } from '../utils/imageUtils';
 import './AnnouncementModal.css';
 
 const AnnouncementModal = ({ message, onClose }) => {
@@ -46,6 +47,7 @@ const AnnouncementModal = ({ message, onClose }) => {
                             src={message.image}
                             alt={message.title}
                             className="announcement-image"
+                            onError={(e) => handleImageFallback(e, message.image)}
                         />
                         <div className="announcement-image-overlay" />
                     </div>

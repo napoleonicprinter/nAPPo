@@ -6,6 +6,7 @@ import {
     Palette, Swords // Add this icon
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
+import { handleImageFallback } from '../utils/imageUtils';
 
 export const getCategoryColor = (category) => {
     const colors = {
@@ -66,7 +67,13 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
             )}
 
             <div className="card-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
-                <img src={site.image} alt={site.name} className="card-image" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img 
+                    src={site.image} 
+                    alt={site.name} 
+                    className="card-image" 
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    onError={(e) => handleImageFallback(e, site.image)}
+                />
 
                 {/* NEW TAG (Upper Left) */}
                 {site.isNew && (
