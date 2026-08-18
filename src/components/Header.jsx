@@ -23,7 +23,6 @@ import CalendarView from './CalendarView';
 import ShoppingView from './ShoppingView';
 import './Header.css';
 import { HELP_ITEMS } from '../data/helpData';
-import HelpCard from './HelpCard';
 
 // Register the custom native plugin we created in MainActivity.java
 const Review = registerPlugin('Review');

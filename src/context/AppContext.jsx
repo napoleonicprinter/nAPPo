@@ -269,22 +269,14 @@ export const AppProvider = ({ children, storeUrl }) => {
             setSyncStatus('syncing');
             try {
                 const t = new Date().getTime();
-                //const fetchOpts = { cache: 'no-store', pragma: 'no-cache' };
-                const fetchOpts = {
-                    cache: 'no-store',
-                    headers: {
-                        'Cache-Control': 'no-cache',
-                        'Pragma': 'no-cache'
-                    }
-                };
                 const fetchRequests = [
-                    fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`, fetchOpts),
-                    fetch(`${GITHUB_RAW_BASE_URL}/deals.json?t=${t}`, fetchOpts)
+                    fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`),
+                    fetch(`${GITHUB_RAW_BASE_URL}/deals.json?t=${t}`)
                 ];
 
                 const fetchRes = await Promise.all(fetchRequests);
