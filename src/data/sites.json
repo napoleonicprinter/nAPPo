@@ -13380,5 +13380,19 @@
     "image": "/assets/images/Sites/Nansouty_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/nansouty-etienne-antoine-marie-champion-comte-de-1768-1815/",
     "createDate": "2026-08-18"
+  },
+  {
+    "id": "734",
+    "name": "Marechal Augereau's tomb",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Père Lachaise Cemetery (Division 59, 2nd line), Paris",
+    "country": "France",
+    "description": "Marechal Pierre François Charles Augereau, Duke of Castiglione, is buried in a humble Family Burial chapel.",
+    "latitude": 48.859453,
+    "longitude": 2.39573,
+    "image": "/assets/images/Sites/Augereau_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/augereau-pierre-francois-charles-duc-de-castiglione-1757-1816/",
+    "createDate": "2026-08-18"
   }
 ]
