@@ -226,17 +226,32 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         }}>
                             {/* Standard Icons Row */}
                             <div style={{ display: 'flex', gap: '20px' }}>
-                                {site.wikipedia_link && (
+                                {site.wikipedia_link && site.wikipedia_link.trim() !== '' && (
                                     <a href={site.wikipedia_link} target="_blank" rel="noreferrer" title="Wikipedia" style={{ color: '#666' }}>
                                         <BookOpen size={22} />
                                     </a>
                                 )}
-                                {site.site_link && (
+                                {site.site_link && site.site_link.trim() !== '' && (
                                     <a href={site.site_link} target="_blank" rel="noreferrer" title="Official Site" style={{ color: '#666' }}>
                                         <Globe size={22} />
                                     </a>
                                 )}
-                                {site.youtube_link && (
+                                {site.more_info_link && site.more_info_link.trim() !== '' && (
+                                    <a href={site.more_info_link} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
+                                        <ExternalLink size={22} />
+                                    </a>
+                                )}
+                                {site.moreInfo && site.moreInfo.trim() !== '' && site.moreInfo !== site.more_info_link && (
+                                    <a href={site.moreInfo} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
+                                        <ExternalLink size={22} />
+                                    </a>
+                                )}
+                                {site.link && site.link.trim() !== '' && site.link !== site.site_link && site.link !== site.wikipedia_link && site.link !== site.more_info_link && site.link !== site.moreInfo && (
+                                    <a href={site.link} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
+                                        <ExternalLink size={22} />
+                                    </a>
+                                )}
+                                {site.youtube_link && site.youtube_link.trim() !== '' && (
                                     <a href={site.youtube_link} target="_blank" rel="noreferrer" title="YouTube Video" style={{ color: '#ff0000' }}>
                                         <Youtube size={22} />
                                     </a>
