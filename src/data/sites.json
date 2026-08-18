@@ -13338,5 +13338,19 @@
     "image": "/assets/images/Sites/Grouchy_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/grouchy-emmanuel-marquis-de-1766-1847/",
     "createDate": "2026-08-18"
+  },
+  {
+    "id": "731",
+    "name": "Marshal Victor's tomb",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Père Lachaise Cemetery (Division 17), Paris",
+    "country": "France",
+    "description": "Located in the 17th Division of Paris's famous Père Lachaise Cemetery, the tomb of Marshal Claude-Victor Perrin (the Duke of Belluno) stands as a dignified, traditional military monument.",
+    "latitude": 48.859480,
+    "longitude": 2.394591,
+    "image": "/assets/images/Sites/Victor_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/victor-claude-victor-perrin-dit-1764-1841/",
+    "createDate": "2026-08-18"
   }
 ]
