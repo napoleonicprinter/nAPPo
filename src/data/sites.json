@@ -9111,7 +9111,7 @@
   {
     "id": "466",
     "name": "Marshal Kellerman Tomb",
-    "category": "Landmark",
+    "category": "Monument",
     "significance": 2,
     "location": "Cimetière du Père-Lachaise (Division 18), Paris",
     "country": "France",
@@ -13305,8 +13305,8 @@
     "location": "Père Lachaise Cemetery (Division 39), Paris",
     "country": "France",
     "description": "Marshal Ney's burial place is one of the most moving sites in Père Lachaise Cemetery. Located in division 29, the grave is marked by a simple, powerful monument featuring a broken sword, symbolizing his execution. This spot is a pilgrimage site for those who admire Ney's courage and tragic end.",
-    "latitude": 48.858799,
-    "longitude": 2.396342,
+    "latitude": 48.85905,
+    "longitude": 2.39673,
     "image": "/assets/images/Sites/Murat_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/murat-joachim-roi-de-naples-1767-1815/",
     "createDate": "2026-08-18"
@@ -13351,6 +13351,34 @@
     "longitude": 2.394591,
     "image": "/assets/images/Sites/Victor_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/victor-claude-victor-perrin-dit-1764-1841/",
+    "createDate": "2026-08-18"
+  },
+  {
+    "id": "732",
+    "name": "Marshal Gouvion Saint-Cyr's tomb",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Père Lachaise Cemetery (Division 37), Paris",
+    "country": "France",
+    "description": "Standing as one of the most majestic military monuments in Paris's historic Père Lachaise Cemetery, the tomb honors Laurent de Gouvion Saint-Cyr, Marquis and Marshal of France. Designed by architect Louis Visconti, the imposing monument is topped with a life-sized white marble statue of the Marshal standing upright on a tall, rectangular pedestal. Carved by sculptor Pierre-Jean David d'Angers in 1833, the figure holds a strategic battle plan in one hand.",
+    "latitude": 48.858604,
+    "longitude": 2.396215,
+    "image": "/assets/images/Sites/Cyr_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/gouvion-saint-cyr-laurent-gouvion-dit-1764-1830/",
+    "createDate": "2026-08-18"
+  },
+  {
+    "id": "733",
+    "name": "General Étienne de Nansouty's tomb",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Père Lachaise Cemetery (Division 27, 5th line), Paris",
+    "country": "France",
+    "description": "He served as the First Inspector General of the Cavalry of the Imperial Guard and famously commanded the Guard's elite heavy cavalry squadrons during the grueling 1812 Russian Campaign and the 1814 Defensive Campaign in France.",
+    "latitude": 48.859453,
+    "longitude": 2.39573,
+    "image": "/assets/images/Sites/Nansouty_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/nansouty-etienne-antoine-marie-champion-comte-de-1768-1815/",
     "createDate": "2026-08-18"
   }
 ]
