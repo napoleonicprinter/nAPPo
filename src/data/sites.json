@@ -13394,5 +13394,20 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Augereau_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/augereau-pierre-francois-charles-duc-de-castiglione-1757-1816/",
     "createDate": "2026-08-18"
+  },
+  {
+    "id": "735",
+    "name": "Dode de la Brunerie's tomb",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Père Lachaise Cemetery (Division 54, 21st line), Paris",
+    "country": "France",
+    "description": "Guillaume Dode, is buried in a Family Burial chapel. He served in Egypt, Spain and Russia,",
+    "latitude": 48.862119,
+    "longitude": 2.392486,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Augereau_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/dode-de-la-brunerie-guillaume-vicomte-1775-1851/",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guillaume_Dode_de_la_Brunerie",
+    "createDate": "2026-08-18"
   }
 ]
