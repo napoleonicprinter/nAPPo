@@ -13481,5 +13481,35 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gauldree_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/gauldree-boilleau-jean-baptiste-charles-1782-1852/",
     "createDate": "2026-08-18"
+  },
+  {
+    "id": "741",
+    "name": "General François Joseph Gérard's tomb",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Père Lachaise Cemetery (Division 38, chemin Masséna, 1ère ligne, M=L-32), Paris",
+    "country": "France",
+    "description": "François Joseph Gérard, served as Colonel of Hussards in 1806 and raised to General de Brigade in 1809 and General de Division in 1813.",
+    "latitude": 48.859320,
+    "longitude": 2.397053,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gerard_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/gerard-francois-joseph-baron-1772-1832/",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_G%C3%A9rard",
+    "createDate": "2026-08-18"
+  },
+  {
+    "id": "742",
+    "name": "Manuel Godoy's tomb",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Père Lachaise Cemetery (Division 45, avenue Transversale n°1 ; 3ème ligne, M=O-19), Paris",
+    "country": "France",
+    "description": "Manuel Godoy, was a Spanish statesman who was the private secretary to King Charles IV of Spain from 1792 to 1798, and Prime Minister from 1798 to 1808. He was a key figure in the history of Spain during the Peninsular War, serving as a minister to King Charles IV of Spain during the French invasion of Spain in 1808.",
+    "latitude": 48.861399,
+    "longitude": 2.394842,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Godoy_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/godoy_manuel_prince_de_la_paix_1767_1851/",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Manuel_Godoy",
+    "createDate": "2026-08-18"
   }
 ]
