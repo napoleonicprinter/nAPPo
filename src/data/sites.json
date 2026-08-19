@@ -13658,5 +13658,18 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Walewski_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/walewski-alexandre-florian-joseph-colonna-comte-1810-1868/",
     "createDate": "2026-08-19"
+  },
+  {
+    "id": "753",
+    "name": "Marie Walewska's tomb",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Kiernozia",
+    "country": "Poland",
+    "description": "Saint Margaret's Church in Kiernozia is a historic, brick-built Roman Catholic parish church located in Kiernozia, Poland, famous for holding the family crypt and remains of Marie Walewska.",
+    "latitude": 52.268395,
+    "longitude": 19.872041,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Walewska_tomb.webp",
+    "createDate": "2026-08-19"
   }
 ]
