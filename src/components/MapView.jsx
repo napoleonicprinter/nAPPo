@@ -340,14 +340,14 @@ const MapView = () => {
                         top: isStrictMobile ? '145px' : '50%',
                         left: '50%',
                         transform: isStrictMobile ? 'translateX(-50%)' : 'translate(-50%, -50%)',
-                        width: '92%',
-                        maxWidth: '400px',
+                        width: '300px',
+                        maxWidth: '92vw',
                         zIndex: 2147483640,
                         pointerEvents: 'none'
                     }}>
                         <div className="animate-fade-in" style={{
                             pointerEvents: 'auto',
-                            padding: '10px 40px 80px 40px',
+                            padding: '0 0 20px 0',
                             maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
                             overflowY: 'auto',
                             scrollbarWidth: 'none'
@@ -356,7 +356,7 @@ const MapView = () => {
                                 site={liveSite}
                                 onClose={() => { setSelectedSite(null); if(setCallerSite) setCallerSite(null); }}
                                 isCompact={false}
-                                />
+                            />
                         </div>
                     </div>
                 );
