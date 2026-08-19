@@ -13630,5 +13630,33 @@
     "site_link": "https://www.appl-lachaise.net/perignon-dominique-marquis-de-1754-1818/",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Catherine-Dominique_de_P%C3%A9rignon",
     "createDate": "2026-08-19"
+  },
+  {
+    "id": "751",
+    "name": "Marie Walewska's carditaphe",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Père Lachaise Cemetery (Division 67, chemin d'Ornano, 1ère ligne)",
+    "country": "France",
+    "description": "The Family d'Ornano vault contains the heart of Marie Walewska,her body was returned to Poland where she rests in the church of Kiernozia.",
+    "latitude": 48.861582,
+    "longitude": 2.390301,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Walewsky_heart.webp",
+    "site_link": "https://www.appl-lachaise.net/walewska-maria-comtesse-nee-laczynska-1786-1817/",
+    "createDate": "2026-08-19"
+  },
+  {
+    "id": "752",
+    "name": "Alexandre Colonna, comte Walewski's tomb",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Père Lachaise Cemetery (Division 66, avenue Circulaire, 1ère ligne)",
+    "country": "France",
+    "description": "Alexandre Colonna-Walewski was the son of Napoleon I and comtesse Maria Walewska, «l'épouse polonaise de Napoléon».",
+    "latitude": 48.86248,
+    "longitude": 2.38987,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Walewski_tomb.webp",
+    "site_link": "https://www.appl-lachaise.net/walewski-alexandre-florian-joseph-colonna-comte-1810-1868/",
+    "createDate": "2026-08-19"
   }
 ]
