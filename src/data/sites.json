@@ -13893,5 +13893,19 @@
     "longitude": 2.896856,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Corneille_tomb.webp",
     "createDate": "2026-08-19"
+  },
+  {
+    "id": "770",
+    "name": "Yper Museum",
+    "category": "Museum",
+    "significance": 1,
+    "location": "Ypres",
+    "country": "Belgium",
+    "description": "There was a flourishing and active 'Association of Former Comrades-in-Arms of the French Empire' in the city, and the Ypres Museum possesses several beautiful porcelain cards from this veterans' association.",
+    "latitude": 50.85151,
+    "longitude": 2.886344,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Yper_museum.webp",
+    "site_link": "https://www.ypermuseum.be/nl/collectie-yper-museum/oudstrijders-van-napoleon-in-ieper/",
+    "createDate": "2026-08-19"
   }
 ]
