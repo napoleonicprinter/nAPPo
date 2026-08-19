@@ -16,12 +16,15 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    background: var(--bg-color, white);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .site-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
 .site-card.visited {

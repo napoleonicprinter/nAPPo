@@ -122,6 +122,65 @@ const LocationMarker = ({ isFiltered }) => {
     return <Marker position={[userCoords.lat, userCoords.lon]} icon={blueIcon} zIndexOffset={1000} />;
 };
 
+const MapEventsHandler = ({ onMapClick }) => {
+    useMapEvents({ click: onMapClick });
+    return null;
+};
+
+const CenterControl = ({ userCoords, isMobileLike }) => {
+    const map = useMap();
+    if (!userCoords) return null;
+    return (
+        <div
+            className={isMobileLike ? "leaflet-bottom leaflet-right" : "leaflet-top leaflet-right"}
+            style={{
+                marginTop: isMobileLike ? '0' : '74px',
+                marginBottom: isMobileLike ? '82px' : '0',
+                marginRight: '10px',
+                pointerEvents: 'auto',
+                zIndex: 5000
+            }}
+        >
+            <div className="leaflet-control leaflet-bar" style={{ border: 'none', boxShadow: 'none', margin: 0 }}>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
+                    }}
+                    style={{ backgroundColor: 'white', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', border: '2px solid rgba(0,0,0,0.2)', borderRadius: '4px', boxShadow: '0 1px 5px rgba(0,0,0,0.3)' }}
+                >
+                    <LocateFixed size={18} strokeWidth={2.5} color="#444" />
+                </button>
+            </div>
+        </div>
+    );
+};
+
+const FitFilteredSites = ({ sites, isFiltered, selectedSite }) => {
+    const map = useMap();
+    const lastSitesRef = useRef("");
+
+    useEffect(() => {
+        if (selectedSite) return;
+
+        const currentSitesKey = (sites || []).map(s => s.id).join(',');
+
+        if (isFiltered && sites && sites.length > 0 && lastSitesRef.current !== currentSitesKey) {
+            lastSitesRef.current = currentSitesKey;
+            const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
+
+            map.fitBounds(bounds, {
+                padding: [70, 70],
+                maxZoom: 12,
+                duration: 1.5
+            });
+        }
+    }, [sites, isFiltered, map, selectedSite]);
+
+    return null;
+};
+
 const MapView = () => {
     const {
         sites, theme, mapStyle, clusterRadius,
@@ -143,9 +202,6 @@ const MapView = () => {
             document.head.appendChild(style);
         }
 
-        const shadowColor = theme === 'dark' ? 'rgba(200, 200, 200, 0.4)' : 'rgba(0, 0, 0, 0.45)';
-        const shadowDeep = theme === 'dark' ? 'rgba(180, 180, 180, 0.2)' : 'rgba(0, 0, 0, 0.3)';
-
         style.innerHTML = `
             .filters-active-red {
                 background: rgba(255, 68, 68, 0.1) !important;
@@ -162,7 +218,7 @@ const MapView = () => {
             .leaflet-popup-content-wrapper { background: transparent !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; border: none !important; }
             .leaflet-popup-content { margin: 0 !important; width: auto !important; overflow: visible !important; border: none !important; }
             .site-card {
-                box-shadow: 0 30px 60px -12px ${shadowColor}, 0 18px 36px -18px ${shadowDeep} !important;
+                box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4) !important;
                 border: none !important; border-radius: 12px !important; background: var(--bg-color, white) !important;
                 transform: none !important; transition: none !important;
                 position: relative !important;
@@ -200,64 +256,6 @@ const MapView = () => {
     // Mobile back/undo button handler for deals modal
     useBackHandler('dealsModal', showDeals, () => setShowDeals(false), 30);
 
-    const MapEventsHandler = () => {
-        useMapEvents({ click: () => setSelectedSite(null) });
-        return null;
-    };
-
-    const CenterControl = () => {
-        const map = useMap();
-        if (!userCoords) return null;
-        return (
-            <div
-                className={isMobileLike ? "leaflet-bottom leaflet-right" : "leaflet-top leaflet-right"}
-                style={{
-                    marginTop: isMobileLike ? '0' : '74px',
-                    marginBottom: isMobileLike ? '82px' : '0',
-                    marginRight: '10px',
-                    pointerEvents: 'auto',
-                    zIndex: 5000
-                }}
-            >
-                <div className="leaflet-control leaflet-bar" style={{ border: 'none', boxShadow: 'none', margin: 0 }}>
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
-                        }}
-                        style={{ backgroundColor: 'white', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', border: '2px solid rgba(0,0,0,0.2)', borderRadius: '4px', boxShadow: '0 1px 5px rgba(0,0,0,0.3)' }}
-                    >
-                        <LocateFixed size={18} strokeWidth={2.5} color="#444" />
-                    </button>
-                </div>
-            </div>
-        );
-    };
-
-    const FitFilteredSites = () => {
-        const map = useMap();        const lastSitesRef = useRef("");
-
-        useEffect(() => {
-            if (selectedSite) return;
-
-            const currentSitesKey = sites.map(s => s.id).join(',');
-
-            if (isFiltered && sites.length > 0 && lastSitesRef.current !== currentSitesKey) {
-                lastSitesRef.current = currentSitesKey;
-                const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
-
-                map.fitBounds(bounds, {
-                    padding: [70, 70],
-                    maxZoom: 12,
-                    duration: 1.5
-                });
-            }
-        }, [sites, isFiltered, map, selectedSite]);
-
-        return null;
-    };
-
     const defaultCenter = [48.8566, 2.3522];
 
     return (
@@ -275,9 +273,9 @@ const MapView = () => {
                 <TileLayer key={mapStyle} url={TILE_LAYERS[mapStyle]?.url} attribution={TILE_LAYERS[mapStyle]?.attribution} noWrap={true} />
                 <ZoomControl position="topright" />
                 <LocationMarker isFiltered={isFiltered} />
-                <CenterControl />
-                <FitFilteredSites />
-                <MapEventsHandler />
+                <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
+                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
+                <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
 
                 <MarkerClusterGroup
@@ -346,17 +344,17 @@ const MapView = () => {
                         pointerEvents: 'none'
                     }}>
                         <div className="animate-fade-in" style={{
-                            pointerEvents: 'auto',
-                            padding: '0 0 20px 0',
+                            pointerEvents: 'none',
                             maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
-                            overflowY: 'auto',
-                            scrollbarWidth: 'none'
+                            overflow: 'visible'
                         }}>
-                            <SiteCard
-                                site={liveSite}
-                                onClose={() => { setSelectedSite(null); if(setCallerSite) setCallerSite(null); }}
-                                isCompact={false}
-                            />
+                            <div style={{ pointerEvents: 'auto', width: '100%' }}>
+                                <SiteCard
+                                    site={liveSite}
+                                    onClose={() => { setSelectedSite(null); if(setCallerSite) setCallerSite(null); }}
+                                    isCompact={false}
+                                />
+                            </div>
                         </div>
                     </div>
                 );

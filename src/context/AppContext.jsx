@@ -459,16 +459,16 @@ export const AppProvider = ({ children, storeUrl }) => {
         });
     }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius, filterWithMaps]);
 
-    const passYear = (site) => {
+    const passYear = useCallback((site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
         return filterYear === 'all' || siteYearStr === filterYear;
-    };
+    }, [filterYear]);
 
-    const passCmd = (site) => {
+    const passCmd = useCallback((site) => {
         return filterCommander === 'all' || (site.commanders && site.commanders.includes(filterCommander));
-    };
+    }, [filterCommander]);
 
-    const passCat = (site) => {
+    const passCat = useCallback((site) => {
         if (filterCategory.length === 0) return true;
         const hasTodaysBattle = filterCategory.includes("Today's Battle");
         const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
@@ -488,7 +488,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         if (otherCategories.length > 0 && otherCategories.includes(site.category)) return true;
         if (hasTodaysBattle && matchesToday) return true;
         return false;
-    };
+    }, [filterCategory]);
 
     const passesAllFiltersExcept = (site, excludeFacet) => {
         if (showOnlyNew && !site.isNew) return false;
