@@ -1277,7 +1277,7 @@
     "description": "Château de Versailles. Artist: Jean-Baptiste Wicar",
     "latitude": 48.804889,
     "longitude": 2.120417,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Joseph_Bonaparte_%28by_Wicar%29.jpg/640px-Joseph_Bonaparte_%28by_Wicar%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Joseph_Naples_Ver.webp",
     "more_info_link": "https://collections.chateauversailles.fr/?queryid=88496a67-6f34-43c6-a808-14eb2005f337#/query/56dd569f-ad9a-47ae-b05d-291fbc308d9",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
