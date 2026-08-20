@@ -108,14 +108,14 @@ export const HELP_ITEMS = [
         id: 'mapstyle',
         title: 'Settings - Map Style',
         imagePc: '/assets/images/Help_Map_Style.webp',
-        imageMobile: '/assets/images/Help_Map_Style.webp',
+        imageMobile: '/assets/images/Help_Map_Style_M.webp',
         content: 'The Map Style in the Settings drawer allows you to select among three different styles.'
     },
     {
         id: 'mapcluster',
         title: 'Settings - Map Clustering',
         imagePc: '/assets/images/Help_Cluster.webp',
-        imageMobile: '/assets/images/Help_Cluster.webp',
+        imageMobile: '/assets/images/Help_Cluster_M.webp',
         content: '"Map Clustering" allows you to group site markers defining the cluster density. The lowest the value the less clustered the markers will be.'
     },
     {
@@ -143,6 +143,7 @@ export const HELP_ITEMS = [
         id: 'calendar',
         title: 'Today in history',
         imagePc: '/assets/images/Help_Today.webp',
+        imageMobile: '/assets/images/Help_Today_M.webp',
         content: 'Click this tag and you will find events and battles that happened on the current date during the Napoleonic Wars. Swithc to "calendar" to view all events in any date. The small number next to the tag indicates the count of events for that date.'
     },
     {
