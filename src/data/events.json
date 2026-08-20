@@ -3875,5 +3875,13 @@
         "date": "1805-11-19",
         "location": "Bovec, Slovenia",
         "description": "On November 19th 1805, two Austrian battalions under command of General Major Siegenthal stop the advance of Brigade General Lacour's four dragoon regiments."
+    },
+    {
+        "id": "439",
+        "siteId": 776,
+        "title": "Death of General Gudin",
+        "date": "1812-08-22",
+        "location": "Smolensk, Russia",
+        "description": "General Gudin was mortally wounded on August 19th, 1812, during the Battle of Borodino. He was evacuated to the Smolensk hospital, where his leg was amputated. He died a few days later despite treatment. By Napoleon's order, Gudin was buried in a single grave on one of the bastions of the Royal Fortress, to the right of the entrance to the fortification."
     }
 ]
