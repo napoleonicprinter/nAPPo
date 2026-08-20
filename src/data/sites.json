@@ -14047,5 +14047,57 @@
     "longitude": 32.039808,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Smolensk_monument.webp",
     "createDate": "2026-08-20"
+  },
+  {
+    "id": "780",
+    "name": "Heroes' Memorial Square",
+    "category": "Monument",
+    "significance": 3,
+    "location": "Smolensk",
+    "country": "Russia",
+    "description": "opened in 1912 by Emperor Nicholas II to celebrate the centenary of the Patriotic War of 1812 against Napoleon, it is  nestled directly along the ancient Smolensk Fortress wall in the center of Smolensk.",
+    "latitude": 54.778742,
+    "longitude": 32.047112,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Smolensk_Heroes.webp",
+    "createDate": "2026-08-20"
+  },
+  {
+    "id": "781",
+    "name": "Grateful Russia to the Heroes of 1812",
+    "category": "Monument",
+    "significance": 3,
+    "location": "Smolensk",
+    "country": "Russia",
+    "description": "Also known as the Eagle Monument, features two eagles on a massive boulder defending their nest from a sword-wielding warrior, symbolizing the unified Russian armies resisting Napoleon's forces.",
+    "latitude": 54.77908,
+    "longitude": 32.047302,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Smolensk_Eagle.webp",
+    "createDate": "2026-08-20"
+  },
+  {
+    "id": "782",
+    "name": "General Anton Antonovich Skalon grave",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Smolensk",
+    "country": "Russia",
+    "description": "Erected in 1912, by his grandchildren to mark the centennial of the 1812 Patriotic War. On August 5th 1812, aiming to prevent the French attack, Skalon attacked quickly, but was killed on the spot in the Battle of Smolensk, which pushed his force into retreat. His body fell into enemy hands and at Napoleon's personal command it was buried with full military honours three days after the French occupation of Smolensk.",
+    "latitude": 54.783765,
+    "longitude": 32.037191,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Skalon.webp",
+    "createDate": "2026-08-20"
+  },
+  {
+    "id": "783",
+    "name": " Dormition Cathedral in Smolensk",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Smolensk",
+    "country": "Russia",
+    "description": "During the 1812 Battle of Smolensk, the retreating Russian army took the city's highly venerated icon, Our Lady of Smolensk, to protect it from the invading forces. Napoleon himself ordered guards to protect the cathedral from being looted or completely destroyed by the fires ravaging the city.",
+    "latitude": 54.783765,
+    "longitude": 32.037191,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Smolensk_Cathedral.webp",
+    "createDate": "2026-08-20"
   }
 ]
