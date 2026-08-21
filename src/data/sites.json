@@ -14313,5 +14313,52 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Belliard_birth.webp",
     "more_info_link": "https://collections.heritage.brussels/fr/objects/83170",
     "createDate": "2026-08-21"
+  },
+  {
+    "id": "799",
+    "name": "Battle of Castelfranco Veneto",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Castelfranco",
+    "country": "Italy",
+    "year": "1805",
+    "date": "1805-11-24",
+    "description": "The ancestral home of the Bonaparte family and the birthplace of Napoleon Bonaparte.",
+    "latitude": 45.671782,
+    "longitude": 11.9283,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castelfranco.webp",
+    "victor": "France",
+    "defeated": "Austria",
+    "special": "3",
+    "commanders": [
+      "Laurent Gouvion Saint-Cyr",
+      "Louis Victor de Rohan"
+    ],
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castelfranco_Veneto",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "800",
+    "name": "Battle of Wischau",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Vyškov",
+    "country": "Czech Republic",
+    "year": "1805",
+    "date": "1805-11-28",
+    "description": "The Battle of Wischau, fought on November 28th 1805, was a cavalry skirmish fought near the town of Wischau (now Vyškov) in Moravia between French cavalry and Russian forces under the command of Mikhail Kutuzov. This clash was a prelude to the Battle of Austerlitz.",
+    "latitude": 49.286944,
+    "longitude": 16.995278,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wischau.webp",
+    "victor": "Russia",
+    "defeated": "France",
+    "special": "3",
+    "commanders": [
+      "Pyotr Bagration",
+      "Antoine Charles Louis de Lasalle",
+      "Frédéric Henri Walther"
+    ],
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wischau",
+    "createDate": "2026-08-21"
   }
 ]
