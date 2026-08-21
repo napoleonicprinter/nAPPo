@@ -19,6 +19,7 @@ const CommanderFilter = ({ className }) => {
             value={filterCommander}
             onChange={setFilterCommander}
             placeholder="Commander"
+            searchable={true}
             menuClassName="custom-select-menu"
         />
     );

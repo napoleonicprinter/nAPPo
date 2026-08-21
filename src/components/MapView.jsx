@@ -31,9 +31,16 @@ const getSiteIcon = (site) => {
     const rate = Number(site.significance) || 1;
     const size = rate >= 3 ? 22 : rate === 2 ? 18 : 15;
 
+    const isArc = site?.special
+        ? (Array.isArray(site.special) ? site.special.includes('arc') : String(site.special).toLowerCase().includes('arc'))
+        : false;
+    const borderColor = isArc ? '#FFD700' : 'white';
+    const borderWidth = isArc ? 2.5 : 2;
+    const boxShadow = isArc ? '0 2px 8px rgba(0,0,0,0.6)' : '0 2px 6px rgba(0,0,0,0.4)';
+
     return L.divIcon({
         className: 'custom-div-icon',
-        html: `<div style="background-color: ${color} !important; width: ${size}px !important; height: ${size}px !important; border-radius: 50% 50% 50% 0 !important; transform: rotate(-45deg) !important; border: 2px solid white !important; box-shadow: 0 2px 6px rgba(0,0,0,0.4) !important;"></div>`,
+        html: `<div style="background-color: ${color} !important; width: ${size}px !important; height: ${size}px !important; border-radius: 50% 50% 50% 0 !important; transform: rotate(-45deg) !important; border: ${borderWidth}px solid ${borderColor} !important; box-shadow: ${boxShadow} !important;"></div>`,
         iconSize: [size, size],
         iconAnchor: [size / 2, size],
         popupAnchor: [0, -size - 5]
@@ -285,32 +292,43 @@ const MapView = () => {
                     key={`cluster-${clusterRadius}`}
                     maxClusterRadius={clusterRadius}
                     zoomToBoundsOnClick={true}
+                    spiderfyOnMaxZoom={true}
+                    showCoverageOnHover={false}
+                    removeOutsideVisibleBounds={false}
+                    animate={false}
+                    animateAddingMarkers={false}
                 >
-                    {sites.map(site => (
-                        <Marker
-                            key={site.id}
-                            position={[site.latitude, site.longitude]}
-                            icon={getSiteIcon(site)}
-                            eventHandlers={{
-                                click: (e) => {
-                                    if (e.originalEvent) e.originalEvent.stopPropagation();
-                                    window.history.pushState({ siteId: site.id }, "");
-                                    if (selectedSite) setSelectedSite(null);
-                                    const map = e.target._map;
-                                    const latlng = e.target.getLatLng();
-                                    const currentZoom = map.getZoom();
-                                    const targetPoint = map.project(latlng, currentZoom);
-                                    targetPoint.y -= 150;
-                                    const targetLatLng = map.unproject(targetPoint, currentZoom);
-                                    map.panTo(targetLatLng, { animate: true, duration: 0.5 });
-                                    e.target.openPopup();
-                                }
-                            }}
-                            ref={(r) => {
-                                if (r) markerRefs.current.set(site.id, r);
-                                else markerRefs.current.delete(site.id);
-                            }}
-                        >
+                    {[...sites].sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1)).map(site => {
+                        const rate = Number(site.significance) || 1;
+                        // Smaller pins (rate 1) get higher zIndexOffset (300) so they render in front of larger pins (rate 3 = 100)
+                        const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
+                        return (
+                            <Marker
+                                key={site.id}
+                                position={[site.latitude, site.longitude]}
+                                icon={getSiteIcon(site)}
+                                zIndexOffset={zIndexOffset}
+                                riseOnHover={true}
+                                eventHandlers={{
+                                    click: (e) => {
+                                        if (e.originalEvent) e.originalEvent.stopPropagation();
+                                        window.history.pushState({ siteId: site.id }, "");
+                                        if (selectedSite) setSelectedSite(null);
+                                        const map = e.target._map;
+                                        const latlng = e.target.getLatLng();
+                                        const currentZoom = map.getZoom();
+                                        const targetPoint = map.project(latlng, currentZoom);
+                                        targetPoint.y -= 150;
+                                        const targetLatLng = map.unproject(targetPoint, currentZoom);
+                                        map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                                        e.target.openPopup();
+                                    }
+                                }}
+                                ref={(r) => {
+                                    if (r) markerRefs.current.set(site.id, r);
+                                    else markerRefs.current.delete(site.id);
+                                }}
+                            >
                             <Popup autoPan={false} autoPanPadding={[50, 50]} closeButton={false} onClose={() => setSelectedSite(null)}>
                                 <div style={{ width: '300px', position: 'relative' }}>
                                     <SiteCard
@@ -325,7 +343,8 @@ const MapView = () => {
                                 </div>
                             </Popup>
                         </Marker>
-                    ))}
+                    );
+                })}
                 </MarkerClusterGroup>
             </MapContainer>
 

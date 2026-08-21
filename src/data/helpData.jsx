@@ -89,7 +89,7 @@ export const HELP_ITEMS = [
         title: 'Arc de Triomphe',
         imagePc: '/assets/images/Help_Arc.webp',
         imageMobile: '/assets/images/Help_Arc_M.webp',
-        content: 'The "Arc de Triomphe" filter show you the battlefields included in the app listed at the Arc de Triomphe in Paris fought during the Napoleonic Wars or fought by Napoleon during the French Revolution Wars.'
+        content: 'The "Arc de Triomphe" filter show you the battlefields included in the app listed at the Arc de Triomphe in Paris fought during the Napoleonic Wars or fought by Napoleon during the French Revolution Wars. Also the site pin rim for such battles is yellow to differentiate them from the rest.'
     },
     {
         id: 'significance',

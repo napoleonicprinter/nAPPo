@@ -3098,12 +3098,13 @@
     "category": "Battle site",
     "significance": 1,
     "year": 1805,
+    "date": "1805-11-28",
     "location": "Wischau",
     "country": "Czech Republic",
     "description": "Occurred on November 28th 1805 between the Russian and French armies. The conflict resulted in a minor Russian success.",
     "latitude": 49.2775,
     "longitude": 16.998889,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_campaign.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wischau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wischau",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "3",
@@ -5832,7 +5833,8 @@
       "Guy-Victor Duperré",
       "Jacques Hamelin",
       "Samuel Pym"
-    ]
+    ],
+    "special": "arc"
   },
   {
     "id": "293",
@@ -7669,6 +7671,7 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "4",
+      "arc",
       "Franco Swedish War"
     ],
     "commanders": [
@@ -14329,7 +14332,10 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castelfranco.webp",
     "victor": "France",
     "defeated": "Austria",
-    "special": "3",
+    "special": [
+      "arc",
+      "3"
+    ],
     "commanders": [
       "Laurent Gouvion Saint-Cyr",
       "Louis Victor de Rohan"
@@ -14339,26 +14345,137 @@
   },
   {
     "id": "800",
-    "name": "Battle of Wischau",
-    "category": "Battle site",
+    "name": "General Sigismond-Frédéric de Berckheim's tomb",
+    "category": "Landmark",
     "significance": 1,
-    "location": "Vyškov",
+    "location": "Père Lachaise Cemetery (Division 24, chemin de la Citerne, 1ère ligne), Paris",
+    "country": "France",
+    "description": "He joined an infantry regiment at the age of 14. In 1807 he became the commanding officer of the 1st Cuirassier Regiment. In 1809 he led his cavalrymen at Eckmühl, Ratisbon, Aspern-Essling and Wagram. He died at Paris on December 28th 1819.",
+    "latitude": 48.86100,
+    "longitude": 2.394258,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Berckheim_tomb.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sigismond_Fr%C3%A9d%C3%A9ric_de_Berckheim",
+    "site_link": "https://www.appl-lachaise.net/berckheim-frederic-sigismond-baron-de-1775-1819/",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "801",
+    "name": "Battle of Stecken memorial",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Štoky",
     "country": "Czech Republic",
+    "description": "Memorial to the battle of Stecken fought on December 5th 1805.",
+    "latitude": 49.484326,
+    "longitude": 15.591314,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Stecken_memorial.webp",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "802",
+    "name": "Battle of Stecken",
+    "category": "Battle site",
     "year": "1805",
-    "date": "1805-11-28",
-    "description": "The Battle of Wischau, fought on November 28th 1805, was a cavalry skirmish fought near the town of Wischau (now Vyškov) in Moravia between French cavalry and Russian forces under the command of Mikhail Kutuzov. This clash was a prelude to the Battle of Austerlitz.",
-    "latitude": 49.286944,
-    "longitude": 16.995278,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wischau.webp",
-    "victor": "Russia",
-    "defeated": "France",
-    "special": "3",
+    "date": "1805-12-05",
+    "significance": 1,
+    "location": "Štoky",
+    "country": "Czech Republic",
+    "description": "Fought on December 5th 1805, resulting in an Austrian victory over Napoleon's Bavarian allies. Fought just a few days after the major French victory at Austerlitz—though the engaged forces were initially unaware of that outcome—it involved a surprise Austrian counter-attack led by Prince Friedrich of Hohenzollern-Hechingen and Archduke Ferdinand against Bavarian forces commanded by Carl Philipp von Wrede.",
+    "latitude": 49.485931,
+    "longitude": 15.59396,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Stecken.webp",
+    "wikipedia_link": "https://cs.wikipedia.org/wiki/Bitva_u_%C5%A0tok%C5%AF",
+    "Special": "3",
+    "victor": "Austria",
+    "defeated": "Bavaria",
     "commanders": [
-      "Pyotr Bagration",
-      "Antoine Charles Louis de Lasalle",
-      "Frédéric Henri Walther"
+      "Karl von Schwarzenberg",
+      "Carl Philipp von Wrede"
     ],
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wischau",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "803",
+    "name": "Battle of Wonau",
+    "category": "Battle site",
+    "year": "1805",
+    "date": "1805-12-02",
+    "significance": 1,
+    "location": "Zvonějov",
+    "country": "Czech Republic",
+    "description": "The Battle of Wonau (also known as the action or skirmish of Wonau) was a minor engagement fought on December 2nd 1805, resulting in an Austrian victory over Bavarian forces allied with France. Wrede, commanding the 3rd and 5th Bavarian brigades, had the duty of protecting Napoleon's flank.",
+    "latitude": 49.477479,
+    "longitude": 15.595251,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wonau.webp",
+    "Special": "3",
+    "victor": "Austria",
+    "defeated": "Bavaria",
+    "commanders": [
+      "Karl von Schwarzenberg",
+      "Carl Philipp von Wrede"
+    ],
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "804",
+    "name": "Battle of Lippa",
+    "category": "Battle site",
+    "year": "1805",
+    "date": "1805-12-06",
+    "significance": 1,
+    "location": "Studena",
+    "country": "Croatia",
+    "description": "The Battle of Lippa was a minor rearguard engagement fought on December 6th 1805 occurring just four days after Napoleon's decisive triumph at the Battle of Austerlitz",
+    "latitude": 45.419506,
+    "longitude": 14.391875,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa.webp",
+    "Special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "805",
+    "name": "Battle of St. Mathia",
+    "category": "Battle site",
+    "year": "1805",
+    "date": "1805-12-09",
+    "significance": 1,
+    "location": "Marčelji",
+    "country": "Croatia",
+    "description": "This was the last clash for the campaign, between French and Austrian forces fought on December 9th 1805.",
+    "latitude": 45.3984,
+    "longitude": 14.38545,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mathia.webp",
+    "Special": "3",
+    "victor": "France",
+    "defeated": "Austria",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "806",
+    "name": "Battle of Prenzlau",
+    "category": "Battle site",
+    "year": "1806",
+    "date": "1806-10-28",
+    "significance": 2,
+    "location": "Prenzlau",
+    "country": "Germany",
+    "description": "In the Battle of Prenzlau or Capitulation of Prenzlau on October 28th 1806 two divisions of French cavalry and some infantry led by Marshal Joachim Murat intercepted a retreating Prussian corps led by Frederick Louis, Prince of Hohenlohe-Ingelfingen.",
+    "latitude": 53.314961,
+    "longitude": 13.857837,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Prenzlau.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Prenzlau",
+    "Special": [
+      "arc",
+      "4"
+    ],
+    "victor": "France",
+    "defeated": "Prussia",
+    "commanders": [
+      "Joachim Murat",
+      "Prince of Hohenlohe"
+    ],
     "createDate": "2026-08-21"
   }
 ]

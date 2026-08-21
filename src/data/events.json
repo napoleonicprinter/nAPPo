@@ -1016,6 +1016,7 @@
         "id": 113,
         "title": "Battle of Wischau",
         "date": "1805-11-28",
+        "siteId": 158,
         "location": "Wischau, Czech Republic",
         "description": "Occurred on November 28th 1805 between the Russian and French armies. The conflict resulted in a minor Russian success.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wischau"
@@ -3901,10 +3902,42 @@
     },
     {
         "id": "442",
-        "title": "Battle of Wischau",
-        "siteId": 800,
-        "date": "1805-11-28",
-        "location": "Vyškov, Czech Republic",
-        "description": "The Battle of Wischau, fought on November 28th 1805, was a cavalry skirmish fought near the town of Wischau (now Vyškov) in Moravia between French cavalry and Russian forces under the command of Pyotr Bagration. This clash was a prelude to the Battle of Austerlitz."
+        "title": "Battle of Stecken",
+        "siteId": 802,
+        "date": "1805-12-05",
+        "location": "Štoky, Czech Republic",
+        "description": "Fought on December 5th 1805, resulting in an Austrian victory over Napoleon's Bavarian allies. Fought just a few days after the major French victory at Austerlitz—though the engaged forces were initially unaware of that outcome—it involved a surprise Austrian counter-attack led by Prince Friedrich of Hohenzollern-Hechingen and Archduke Ferdinand against Bavarian forces commanded by Carl Philipp von Wrede."
+    },
+    {
+        "id": "443",
+        "title": "Battle of Wonau",
+        "siteId": 803,
+        "date": "1805-12-02",
+        "location": "Zvonějov, Czech Republic",
+        "description": "Fought on December 5th 1805, resulting in an Austrian victory over Napoleon's Bavarian allies. Fought just a few days after the major French victory at Austerlitz—though the engaged forces were initially unaware of that outcome—it involved a surprise Austrian counter-attack led by Prince Friedrich of Hohenzollern-Hechingen and Archduke Ferdinand against Bavarian forces commanded by Carl Philipp von Wrede."
+    },
+    {
+        "id": "443",
+        "title": "Battle of Lippa",
+        "siteId": 804,
+        "date": "1805-12-06",
+        "location": "Studena, Croatia",
+        "description": "The Battle of Lippa was a minor rearguard engagement fought on December 6th 1805 occurring just four days after Napoleon's decisive triumph at the Battle of Austerlitz"
+    },
+    {
+        "id": "444",
+        "title": "Battle of St. Mathia",
+        "siteId": 805,
+        "date": "1805-12-09",
+        "location": "Marčelji, Croatia",
+        "description": "This was the last clash for the campaign, between French and Austrian forces fought on December 9th 1805."
+    },
+    {
+        "id": "445",
+        "title": "Battle of Prenzlau",
+        "siteId": 806,
+        "date": "1806-10-28",
+        "location": "Prenzlau, Germany",
+        "description": "In the Battle of Prenzlau or Capitulation of Prenzlau on October 28th 1806 two divisions of French cavalry and some infantry led by Marshal Joachim Murat intercepted a retreating Prussian corps led by Frederick Louis, Prince of Hohenlohe-Ingelfingen."
     }
 ]
