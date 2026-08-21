@@ -171,7 +171,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 overflowY: 'auto',
                 overflowX: 'hidden'
                 }}>
-                <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0', paddingRight: '35px' }}>{site.name}</h2>
+                <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0' }}>{site.name}</h2>
 
                 {/* --- STARS / DATE / DETAILS ROW --- */}
                 <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>

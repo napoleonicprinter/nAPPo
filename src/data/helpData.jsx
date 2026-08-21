@@ -15,6 +15,20 @@ export const HELP_ITEMS = [
         )
     },
     {
+        id: 'sitePin',
+        title: 'Site Pin',
+        imagePc: '/assets/images/Help_Pin.webp',// Large horizontal image
+        imageMobile: '/assets/images/Help_Pin_M.webp', // Tall vertical image
+        content: 'When you click a site pin a site card opens. Click on "Details" and a new card opens with a brief description and additional external links to get more information. Pins are coloured base on the category of the site.'
+    },
+    {
+        id: 'clusterPin',
+        title: 'Cluster Pin',
+        imagePc: '/assets/images/Help_ClusterPin.webp',// Large horizontal image
+        imageMobile: '/assets/images/Help_ClusterPin_M.webp', // Tall vertical image
+        content: 'The number in it indicates the quantity of sites in the cluster. Click on a cluster to zoom in and see the sites individually.'
+    },
+    {
         id: 'location',
         title: 'Location',
         imagePc: '/assets/images/Help_Location.webp',// Large horizontal image
@@ -26,7 +40,7 @@ export const HELP_ITEMS = [
         title: 'My GPS Location',
         imagePc: '/assets/images/Help_GPSLocation.webp',
         imageMobile: '/assets/images/Help_GPSLocation_M.webp',
-        content: 'You have to authorize the app to access your location to use this feature. Use the location icon to center the map on your current position.'
+        content: 'You have to authorize the app to access your location to use this feature. Use the location icon to center the map to your current position.'
     },
     {
         id: 'All Areas',
@@ -54,7 +68,7 @@ export const HELP_ITEMS = [
         title: 'Battle site',
         imagePc: '/assets/images/Help_BattleSite.webp',
         imageMobile: '/assets/images/Help_BattleSite_M.webp',
-        content: 'When "Battle Site" category is selected three additional filters will be activated. "Year", "Commander" and "Acr de Triomphe"'
+        content: 'When "Battle Site" category is selected three additional filters will be activated. "Year", "Commander" and "Acr de Triomphe. Also works for "Naval Battle".'
     },
     {
         id: 'year',
@@ -68,7 +82,7 @@ export const HELP_ITEMS = [
         title: 'All Commanders',
         imagePc: '/assets/images/Help_Commanders.webp',
         imageMobile: '/assets/images/Help_Commanders_M.webp',
-        content: 'The "All Commanders" filter will show you the battlefields for the selected commander. The number in brackets indicates the count of sites a vailable for that commander.'
+        content: 'The "All Commanders" filter will show you the battlefields for the selected commander. The number in brackets indicates the count of sites available for that commander.'
     },
     {
         id: 'arc',
@@ -137,14 +151,14 @@ export const HELP_ITEMS = [
         title: 'Events',
         imagePc: '/assets/images/Help_Event.webp',
         imageMobile: '/assets/images/Help_Event_M.webp',
-        content: 'Here you can find information about upcoming events and historical gatherings related to the Napoleonic Wars such as reenactments, conferences, exhibitions, conferences, book presentations. Do you want to publish yours? Send us an email to nAPPoTrails@proton.me and we inform you.'
+        content: 'Here you can find information about upcoming events and historical gatherings related to the Napoleonic Wars such as reenactments, conferences, exhibitions, book presentations. Do you want to publish yours? Send us an email to nAPPoTrails@proton.me and we inform you.'
     },
     {
         id: 'calendar',
         title: 'Today in history',
         imagePc: '/assets/images/Help_Today.webp',
         imageMobile: '/assets/images/Help_Today_M.webp',
-        content: 'Click this tag and you will find events and battles that happened on the current date during the Napoleonic Wars. Swithc to "calendar" to view all events in any date. The small number next to the tag indicates the count of events for that date.'
+        content: 'Click this tag and you will find events and battles that happened on the current date during the Napoleonic Wars. Switch to "calendar" to view all events in any date. The small number next to the tag indicates the count of events for that date.'
     },
     {
         id: 'listmode',

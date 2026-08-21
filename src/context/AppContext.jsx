@@ -350,18 +350,24 @@ export const AppProvider = ({ children, storeUrl }) => {
         return null;
     });
 
-    const [filterCategory, setFilterCategory] = useState([]);
-    const [filterSignificance, setFilterSignificance] = useState('');
-    const [filterVisited, setFilterVisited] = useState('all');
-    const [filterRadius, setFilterRadius] = useState('all');
-    const [filterSearch, setFilterSearch] = useState('');
-    const [filterYear, setFilterYear] = useState('all');
-    const [filterCommander, setFilterCommander] = useState('all');
-    const [filterCountry, setFilterCountry] = useState('all');
-    const [filterCoalition, setFilterCoalition] = useState('all');
-    const [filterCampaign, setFilterCampaign] = useState('all');
-    const [showArcOnly, setShowArcOnly] = useState(false);
-    const [filterWithMaps, setFilterWithMaps] = useState(false);
+    const [filterCategory, setFilterCategory] = useState(() => {
+        const saved = localStorage.getItem('filterCategory');
+        if (saved && saved !== "undefined") {
+            try { return JSON.parse(saved); } catch (e) { return []; }
+        }
+        return [];
+    });
+    const [filterSignificance, setFilterSignificance] = useState(() => localStorage.getItem('filterSignificance') || '');
+    const [filterVisited, setFilterVisited] = useState(() => localStorage.getItem('filterVisited') || 'all');
+    const [filterRadius, setFilterRadius] = useState(() => localStorage.getItem('filterRadius') || 'all');
+    const [filterSearch, setFilterSearch] = useState(() => localStorage.getItem('filterSearch') || '');
+    const [filterYear, setFilterYear] = useState(() => localStorage.getItem('filterYear') || 'all');
+    const [filterCommander, setFilterCommander] = useState(() => localStorage.getItem('filterCommander') || 'all');
+    const [filterCountry, setFilterCountry] = useState(() => localStorage.getItem('filterCountry') || 'all');
+    const [filterCoalition, setFilterCoalition] = useState(() => localStorage.getItem('filterCoalition') || 'all');
+    const [filterCampaign, setFilterCampaign] = useState(() => localStorage.getItem('filterCampaign') || 'all');
+    const [showArcOnly, setShowArcOnly] = useState(() => localStorage.getItem('showArcOnly') === 'true');
+    const [filterWithMaps, setFilterWithMaps] = useState(() => localStorage.getItem('filterWithMaps') === 'true');
     const [selectedHelpItem, setSelectedHelpItem] = useState(null);
     const [visitedSites, setVisitedSites] = useState(() => {
         if (!currentUser) return [];
@@ -712,6 +718,18 @@ export const AppProvider = ({ children, storeUrl }) => {
     useEffect(() => { localStorage.setItem('showOnlyNew', showOnlyNew.toString()); }, [showOnlyNew]);
     useEffect(() => { localStorage.setItem('developerMode', developerMode.toString()); }, [developerMode]);
     useEffect(() => { localStorage.setItem('mapStyle', mapStyle); }, [mapStyle]);
+    useEffect(() => { localStorage.setItem('filterCategory', JSON.stringify(filterCategory)); }, [filterCategory]);
+    useEffect(() => { localStorage.setItem('filterSignificance', filterSignificance || ''); }, [filterSignificance]);
+    useEffect(() => { localStorage.setItem('filterVisited', filterVisited || 'all'); }, [filterVisited]);
+    useEffect(() => { localStorage.setItem('filterRadius', filterRadius || 'all'); }, [filterRadius]);
+    useEffect(() => { localStorage.setItem('filterSearch', filterSearch || ''); }, [filterSearch]);
+    useEffect(() => { localStorage.setItem('filterYear', filterYear || 'all'); }, [filterYear]);
+    useEffect(() => { localStorage.setItem('filterCommander', filterCommander || 'all'); }, [filterCommander]);
+    useEffect(() => { localStorage.setItem('filterCountry', filterCountry || 'all'); }, [filterCountry]);
+    useEffect(() => { localStorage.setItem('filterCoalition', filterCoalition || 'all'); }, [filterCoalition]);
+    useEffect(() => { localStorage.setItem('filterCampaign', filterCampaign || 'all'); }, [filterCampaign]);
+    useEffect(() => { localStorage.setItem('showArcOnly', showArcOnly.toString()); }, [showArcOnly]);
+    useEffect(() => { localStorage.setItem('filterWithMaps', filterWithMaps.toString()); }, [filterWithMaps]);
 
     useEffect(() => {
         localStorage.setItem('appTheme', theme);

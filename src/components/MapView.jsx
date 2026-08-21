@@ -171,7 +171,8 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite }) => {
             const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
 
             map.fitBounds(bounds, {
-                padding: [70, 70],
+                padding: [40, 40],
+                minZoom: 2.5,
                 maxZoom: 12,
                 duration: 1.5
             });
@@ -263,6 +264,7 @@ const MapView = () => {
             <MapContainer
                 center={defaultCenter}
                 zoom={5}
+                minZoom={2.5}
                 zoomSnap={0.5}
                 zoomDelta={0.5}
                 style={{ height: '100%', width: '100%', minHeight: '100vh' }}
