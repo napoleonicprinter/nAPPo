@@ -3967,5 +3967,31 @@
         "location": "Dubrovnik, Croatia",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Ragusa_(1806)",
         "description": "After French occupied the maritime republic of Ragusa, Russian and allied forces under the leadership of Vice Admiral Dmitry Senyavin laid siege to it for months."
+    },
+    {
+        "id": "449",
+        "title": "Invasion of Capri",
+        "siteId": 818,
+        "date": "1808-10-04",
+        "location": "Capri, Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
+        "description": "The invasion of Capri was the successful recapture of the Italian island of Capri from Britain by the Kingdom of Naples on 4–18 October 1808."
+    },
+    {
+        "id": "450",
+        "title": "Napoleon assassination attempt at Schönbrunn",
+        "siteId": 819,
+        "date": "1809-10-12",
+        "location": "Schönbrunn Palace, Vienna",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Friedrich_Staps",
+        "description": "On October 12th 1809, a young German theology student named Friedrich Staps attempted to assassinate Napoleon in the gardens of Schönbrunn Palace, where the Emperor was holding court. Staps, armed with a large dagger, was arrested before he could reach Napoleon, and later executed."
+    },
+    {
+        "id": "451",
+        "title": "Bernadotte was elected the Crown Prince of Sweeden",
+        "date": "1810-08-21",
+        "location": "Stockholm, Sweden",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Charles_XIV_John",
+        "description": "Thanks to the advocacy of Baron Carl Otto Mörner, Bernadotte was elected Crown Prince on August 21st 1810. This was partly because a large sector of the Swedish army, anticipating future complications with Russia, favored the choice of a soldier as heir, and partly also because Bernadotte was very popular in Sweden, due to the chivalry with which he had treated Swedish prisoners during the last war with Denmark."
     }
 ]

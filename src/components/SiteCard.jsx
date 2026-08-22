@@ -25,6 +25,30 @@ export const getCategoryColor = (category) => {
     return colors[category] || '#8b949e';
 };
 
+const calculateDistance = (lat1, lon1, lat2, lon2) => {
+    const l1 = Number(lat1);
+    const ln1 = Number(lon1);
+    const l2 = Number(lat2);
+    const ln2 = Number(lon2);
+    if (isNaN(l1) || isNaN(ln1) || isNaN(l2) || isNaN(ln2)) return undefined;
+
+    const R = 6371; // Earth radius in km
+    const dLat = (l2 - l1) * Math.PI / 180;
+    const dLon = (ln2 - ln1) * Math.PI / 180;
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(l1 * Math.PI / 180) * Math.cos(l2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+};
+
+const formatDistanceTag = (dist) => {
+    if (dist === undefined || dist === null || isNaN(dist)) return null;
+    const d = Number(dist);
+    return `${Math.round(d)} km`;
+};
+
 const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => {
     const {
         theme,
@@ -134,35 +158,67 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         {site.visited ? 'Visited' : 'Mark as Visited'}
                     </button>
 
-                    {/* FIX: Removed geolocationEnabled check. Button shows if userCoords exists */}
-                    {userCoords && (
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                e.preventDefault();
-                                const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
-                                window.open(url, '_blank');
-                            }}
-                            title="Navigate with Google Maps"
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                background: 'var(--accent-primary, #58a6ff)',
-                                color: '#000',
-                                border: 'none',
-                                width: '28px',
-                                height: '28px',
-                                borderRadius: '50%',
-                                cursor: 'pointer',
-                                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                                padding: 0
-                            }}
-                        >
-                            <Navigation size={14} />
-                        </button>
-                    )}
                 </div>
+                {/* DISTANCE TAG & NAVIGATION BUTTON (Above Category Badge) */}
+                {userCoords && (site.distance !== undefined || (site.latitude && site.longitude)) && (() => {
+                    const distVal = site.distance !== undefined
+                        ? site.distance
+                        : calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude);
+                    const formattedDist = formatDistanceTag(distVal);
+                    if (!formattedDist) return null;
+
+                    return (
+                        <div style={{
+                            position: 'absolute',
+                            bottom: '38px',
+                            right: '10px',
+                            zIndex: 15,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px'
+                        }}>
+                            <span style={{
+                                backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                                backdropFilter: 'blur(4px)',
+                                color: '#ffffff',
+                                padding: '3px 7px',
+                                borderRadius: '4px',
+                                fontSize: '0.7rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                                whiteSpace: 'nowrap'
+                            }}>
+                                {formattedDist}
+                            </span>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    e.preventDefault();
+                                    const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                    window.open(url, '_blank');
+                                }}
+                                title="Navigate with Google Maps"
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'var(--accent-primary, #ef5350)',
+                                    color: '#ffffff',
+                                    border: 'none',
+                                    width: '22px',
+                                    height: '22px',
+                                    borderRadius: '4px',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                                    padding: 0
+                                }}
+                            >
+                                <Navigation size={12} />
+                            </button>
+                        </div>
+                    );
+                })()}
+
                 {/* CATEGORY BADGE (Lower Right) */}
                 <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
                     <span className="badge" style={{ backgroundColor: getCategoryColor(site.category), color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>

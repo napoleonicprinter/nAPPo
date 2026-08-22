@@ -4,7 +4,7 @@ import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
     Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket,
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
-    LogOut, Newspaper, Tablet, Monitor, Star
+    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload
 } from 'lucide-react';
 import { useAppContext, useBackHandler, EUROPEAN_CAPITALS } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
@@ -52,7 +52,8 @@ const Header = () => {
         activeMapOverlays, clearMapOverlays,
         showAuth, setShowAuth, setAuthMessage,
         setSelectedHelpItem,
-        filterYear, filterCommander
+        filterYear, filterCommander,
+        exportUserData, importUserData
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
@@ -65,6 +66,27 @@ const Header = () => {
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
     const [showHelpDropdown, setShowHelpDropdown] = useState(false); // Toggle for dropdown
+    const [importStatus, setImportStatus] = useState('');
+    const fileInputRef = useRef(null);
+
+    const handleFileUpload = (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const content = event.target.result;
+            const res = importUserData(content);
+            if (res.success) {
+                setImportStatus(`✅ ${res.message}`);
+            } else {
+                setImportStatus(`❌ ${res.message}`);
+            }
+            setTimeout(() => setImportStatus(''), 6000);
+        };
+        reader.readAsText(file);
+        e.target.value = '';
+    };
 
     // Mobile back/undo button handlers
     useBackHandler('headerSettings', showSettings, () => setShowSettings(false), 30);
@@ -491,6 +513,48 @@ const Header = () => {
                                             </button>
                                         )}
                                     </div>
+
+                                    {/* BACKUP & RESTORE SECTION */}
+                                    <div className="settings-section" style={{ marginBottom: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
+                                        <h3 style={{ marginBottom: '6px' }}>Backup & Sync Data</h3>
+                                        <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginBottom: '10px', lineHeight: '1.4' }}>
+                                            Export your visited sites to a JSON file to transfer or restore them on a new device.
+                                        </p>
+
+                                        <div style={{ display: 'flex', gap: '8px' }}>
+                                            <button
+                                                onClick={exportUserData}
+                                                className="btn-outline"
+                                                style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '6px', alignItems: 'center', padding: '8px 10px', fontSize: '0.82rem' }}
+                                                title="Export visited sites backup JSON file"
+                                            >
+                                                <Download size={15} /> Export
+                                            </button>
+
+                                            <button
+                                                onClick={() => fileInputRef.current && fileInputRef.current.click()}
+                                                className="btn-outline"
+                                                style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '6px', alignItems: 'center', padding: '8px 10px', fontSize: '0.82rem' }}
+                                                title="Import visited sites backup JSON file"
+                                            >
+                                                <Upload size={15} /> Import
+                                            </button>
+                                            <input
+                                                type="file"
+                                                ref={fileInputRef}
+                                                onChange={handleFileUpload}
+                                                accept=".json"
+                                                style={{ display: 'none' }}
+                                            />
+                                        </div>
+
+                                        {importStatus && (
+                                            <div style={{ marginTop: '8px', fontSize: '0.8rem', padding: '6px 10px', borderRadius: '6px', background: 'rgba(255,255,255,0.08)', color: 'var(--text-primary)', border: '1px solid var(--border-color)' }}>
+                                                {importStatus}
+                                            </div>
+                                        )}
+                                    </div>
+
                                     <div className="settings-section" style={{ marginBottom: '0.8rem' }}>
                                         <h3 style={{ marginBottom: '10px' }}>Support us</h3>
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

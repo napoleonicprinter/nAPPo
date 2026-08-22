@@ -1,17 +1,50 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { Calendar, ArrowDownAZ, ArrowUp, ArrowDown } from 'lucide-react';
+import { Calendar, ArrowDownAZ, Navigation, ChevronUp } from 'lucide-react';
 import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
 import './CardView.css';
 
-const CardView = () => {
-    const { sites, selectedSite, setSelectedSite, setCallerSite } = useAppContext();
+const calculateDistance = (lat1, lon1, lat2, lon2) => {
+    const l1 = Number(lat1);
+    const ln1 = Number(lon1);
+    const l2 = Number(lat2);
+    const ln2 = Number(lon2);
+    if (isNaN(l1) || isNaN(ln1) || isNaN(l2) || isNaN(ln2)) return Infinity;
 
-    const [sortField, setSortField] = useState(() => localStorage.getItem('listSortField') || 'date');
+    const R = 6371; // Earth radius in km
+    const dLat = (l2 - l1) * Math.PI / 180;
+    const dLon = (ln2 - ln1) * Math.PI / 180;
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(l1 * Math.PI / 180) * Math.cos(l2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+};
+
+const CardView = () => {
+    const { sites, selectedSite, setSelectedSite, setCallerSite, userCoords } = useAppContext();
+
+    const [sortField, setSortField] = useState(() => {
+        const saved = localStorage.getItem('listSortField');
+        if (saved) return saved;
+        return userCoords ? 'distance' : 'date';
+    });
     const [sortOrder, setSortOrder] = useState(() => localStorage.getItem('listSortOrder') || 'asc');
+    const [showTopBtn, setShowTopBtn] = useState(false);
+
+    const containerRef = useRef(null);
+    const prevUserCoordsRef = useRef(userCoords);
 
     useBackHandler('detailViewCardView', !!selectedSite, () => setSelectedSite(null), 35);
+
+    useEffect(() => {
+        if (userCoords && !prevUserCoordsRef.current) {
+            setSortField('distance');
+        }
+        prevUserCoordsRef.current = userCoords;
+    }, [userCoords]);
 
     useEffect(() => {
         localStorage.setItem('listSortField', sortField);
@@ -20,6 +53,18 @@ const CardView = () => {
     useEffect(() => {
         localStorage.setItem('listSortOrder', sortOrder);
     }, [sortOrder]);
+
+    const handleScroll = () => {
+        if (containerRef.current) {
+            setShowTopBtn(containerRef.current.scrollTop > 180);
+        }
+    };
+
+    const scrollToTop = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     // Helper to get comparable date string (site.date > site.year > fallback)
     const getDateValue = (site) => {
@@ -35,7 +80,11 @@ const CardView = () => {
     const sortedSites = useMemo(() => {
         return [...sites].sort((a, b) => {
             let result = 0;
-            if (sortField === 'date') {
+            if (sortField === 'distance' && userCoords) {
+                const distA = a.distance !== undefined ? a.distance : calculateDistance(userCoords.lat, userCoords.lon, a.latitude, a.longitude);
+                const distB = b.distance !== undefined ? b.distance : calculateDistance(userCoords.lat, userCoords.lon, b.latitude, b.longitude);
+                result = distA - distB;
+            } else if (sortField === 'date') {
                 const dateA = getDateValue(a);
                 const dateB = getDateValue(b);
                 if (dateA !== dateB) {
@@ -53,14 +102,13 @@ const CardView = () => {
             }
             return sortOrder === 'desc' ? -result : result;
         });
-    }, [sites, sortField, sortOrder]);
+    }, [sites, sortField, sortOrder, userCoords]);
 
     return (
         <div className="card-view-wrapper animate-fade-in" style={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
-            <div className="card-view-container">
+            <div className="card-view-container" ref={containerRef} onScroll={handleScroll}>
                 <div className="card-view-header glass-panel">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span className="sort-label">Sort by:</span>
                         <button
                             type="button"
                             className={`sort-tag-btn ${sortField === 'alphabetic' ? 'active' : ''}`}
@@ -77,6 +125,16 @@ const CardView = () => {
                             <Calendar size={14} style={{ marginRight: '4px' }} />
                             Date
                         </button>
+                        {userCoords && (
+                            <button
+                                type="button"
+                                className={`sort-tag-btn ${sortField === 'distance' ? 'active' : ''}`}
+                                onClick={() => setSortField('distance')}
+                            >
+                                <Navigation size={14} style={{ marginRight: '4px' }} />
+                                Distance
+                            </button>
+                        )}
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -86,8 +144,7 @@ const CardView = () => {
                             onClick={() => setSortOrder('asc')}
                             title="Ascending Order"
                         >
-                            <ArrowUp size={14} style={{ marginRight: '3px' }} />
-                            Ascending
+                            ▲
                         </button>
                         <button
                             type="button"
@@ -95,8 +152,7 @@ const CardView = () => {
                             onClick={() => setSortOrder('desc')}
                             title="Descending Order"
                         >
-                            <ArrowDown size={14} style={{ marginRight: '3px' }} />
-                            Descending
+                            ▼
                         </button>
                     </div>
                 </div>
@@ -107,6 +163,19 @@ const CardView = () => {
                     ))}
                 </div>
             </div>
+
+            {/* FLOATING TOP BUTTON AT BOTTOM RIGHT */}
+            {showTopBtn && (
+                <button
+                    type="button"
+                    className="scroll-to-top-btn glass-panel animate-fade-in"
+                    onClick={scrollToTop}
+                    title="Scroll to top"
+                >
+                    <ChevronUp size={16} style={{ marginRight: '4px' }} />
+                    Top
+                </button>
+            )}
 
             {/* FULL DETAIL CARD MODAL CENTERED ON SCREEN */}
             {selectedSite && (() => {

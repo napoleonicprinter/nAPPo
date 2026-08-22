@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext, useBackHandler } from '../context/AppContext';
-import { ShoppingCart, ExternalLink, Info, Tag, Package, DollarSign, X, ChevronDown, Mail, Copy, Check } from 'lucide-react';
+import { ShoppingCart, ExternalLink, Info, Tag, Package, DollarSign, X, ChevronDown, Mail, Copy, Check, ChevronUp } from 'lucide-react';
 import { handleImageFallback } from '../utils/imageUtils';
 import './ShoppingView.css';
 
@@ -10,9 +10,24 @@ const ShoppingView = ({ onClose }) => {
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [copiedId, setCopiedId] = useState(null);
+    const [showTopBtn, setShowTopBtn] = useState(false);
+
+    const containerRef = useRef(null);
 
     useBackHandler('shoppingCategoryDropdown', isCategoryDropdownOpen, () => setIsCategoryDropdownOpen(false), 35);
     useBackHandler('shoppingModalSelf', !isCategoryDropdownOpen && !!onClose, () => onClose && onClose(), 30);
+
+    const handleScroll = () => {
+        if (containerRef.current) {
+            setShowTopBtn(containerRef.current.scrollTop > 180);
+        }
+    };
+
+    const scrollToTop = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     const handleCopyEmail = (email, id) => {
         navigator.clipboard.writeText(email);
@@ -92,7 +107,7 @@ const ShoppingView = ({ onClose }) => {
                 </div>
 
 
-                <div className="shopping-modal-body">
+                <div className="shopping-modal-body" ref={containerRef} onScroll={handleScroll}>
                     <div className="shopping-grid">
                         {filteredItems.length > 0 ? (
                             filteredItems.map(item => (
@@ -169,6 +184,19 @@ const ShoppingView = ({ onClose }) => {
                     </div>
                 </div>
             </div>
+
+            {/* FLOATING TOP BUTTON AT BOTTOM RIGHT */}
+            {showTopBtn && (
+                <button
+                    type="button"
+                    className="scroll-to-top-btn glass-panel animate-fade-in"
+                    onClick={scrollToTop}
+                    title="Scroll to top"
+                >
+                    <ChevronUp size={16} style={{ marginRight: '4px' }} />
+                    Top
+                </button>
+            )}
         </div>,
         getPortalContainer()
     );

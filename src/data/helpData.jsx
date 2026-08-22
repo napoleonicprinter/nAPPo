@@ -167,5 +167,18 @@ export const HELP_ITEMS = [
         imageMobile: '/assets/images/Help_List_M.webp',
         content: 'Switch to a card-based searchable list of all sites or for the ones you filtered. To go back to "map mode", press the "Map" tag wich replaced the "list mode" tag.'
     },
-
+    {
+        id: 'visitedsites',
+        title: 'Visited Sites',
+        imagePc: '/assets/images/Help_Visit.webp',
+        imageMobile: '/assets/images/Help_Visit_M.webp',
+        content: 'You can keep track of the sites you have visited. When you flag a site as "visited" the tag will turn green. In the filters drawer you can select which ones to show. To enable this feature you will be asked to sign in. "Visited" sites record is private and stored in your device and not share with anyone. There is a backup feature in the settings menu to transfer the data to a new device.'
+    },
+    {
+        id: 'backup',
+        title: 'Backup & Sync Data',
+        imagePc: '/assets/images/Help_List.webp',
+        imageMobile: '/assets/images/Help_List_M.webp',
+        content: 'You can export your visited sites into a backup JSON file from the Settings menu (⚙️) and import it on another device to restore all your visited sites seamlessly without needing to manually re-enter data.'
+    }
 ]

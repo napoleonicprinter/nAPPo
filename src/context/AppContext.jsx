@@ -775,6 +775,67 @@ export const AppProvider = ({ children, storeUrl }) => {
         setCurrentUser(null);
     };
 
+    const exportUserData = () => {
+        const data = {
+            appName: 'nAPPo Trails',
+            version: '1.0',
+            exportDate: new Date().toISOString(),
+            username: currentUser ? currentUser.username : 'guest',
+            visitedSites: visitedSites || [],
+            users: users || []
+        };
+        const jsonStr = JSON.stringify(data, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        const nameStr = currentUser ? currentUser.username : 'visited';
+        link.download = `nappo_visited_sites_${nameStr}.json`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    };
+
+    const importUserData = (jsonString) => {
+        try {
+            const data = JSON.parse(jsonString);
+            if (!data || !Array.isArray(data.visitedSites)) {
+                return { success: false, message: 'Invalid backup file format.' };
+            }
+
+            const importedVisited = data.visitedSites.map(id => String(id));
+            const mergedVisited = Array.from(new Set([...visitedSites, ...importedVisited]));
+            setVisitedSites(mergedVisited);
+
+            if (Array.isArray(data.users) && data.users.length > 0) {
+                setUsers(prev => {
+                    const mergedUsers = [...prev];
+                    data.users.forEach(u => {
+                        if (u.username && !mergedUsers.find(existing => existing.username === u.username)) {
+                            mergedUsers.push(u);
+                        }
+                    });
+                    return mergedUsers;
+                });
+            }
+
+            if (currentUser) {
+                localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(mergedVisited));
+            }
+
+            const addedCount = mergedVisited.length - visitedSites.length;
+            return {
+                success: true,
+                totalCount: mergedVisited.length,
+                addedCount,
+                message: `Successfully imported ${importedVisited.length} site(s)! (${mergedVisited.length} total visited sites saved)`
+            };
+        } catch (e) {
+            return { success: false, message: 'Failed to parse JSON backup file. Please ensure it is a valid backup file.' };
+        }
+    };
+
     const requestGeolocation = async () => {
         if (isDevelopment) {
             try {
@@ -1128,6 +1189,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             visitedSites,
             currentUser,
             login, signup, logout, deleteCurrentUser,
+            exportUserData, importUserData,
             newSitesDays, setNewSitesDays,
             clusterRadius, setClusterRadius,
             showOnlyNew, setShowOnlyNew,

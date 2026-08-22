@@ -13465,7 +13465,8 @@
   },
   {
     "id": "736",
-    "name": "Aboville brothers' tomb",
+    "name": "Auguste Marie & Augustin Gabriel Aboville tomb",
+    "date": "1843-01-19",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 25, chemin Laplace 3rd line), Paris",
@@ -13481,6 +13482,7 @@
   {
     "id": "737",
     "name": "Marshal Davout's tomb",
+    "date": "1823-06-01",
     "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 28, chemin Masséna 2nd line), Paris",
@@ -13495,6 +13497,7 @@
   {
     "id": "738",
     "name": "Guillaume François d'Aigremont's tomb",
+    "date": "1827-01-07",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 53, avenue de la Chapelle 2nd line), Paris",
@@ -13509,6 +13512,7 @@
   {
     "id": "739",
     "name": "General Foy's tomb",
+    "date": "1825-11-28",
     "category": "Monument",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 28, chemin Saint-Louis, 1ère ligne, M=R-31), Paris",
@@ -14710,12 +14714,50 @@
     "category": "Artwork",
     "significance": 2,
     "location": "Graves Art Gallery, Sheffield",
-    "country": "France",
-    "description": "The painting, by the French artist Jean-Léon Gérôme, has been owned by the Sheffield Galleries and Museums Trust since 1931, and is now in the collection of the Graves Art Gallery in Sheffield, England",
+    "country": "England",
+    "description": "The painting, by the French artist Jean-Léon Gérôme, has been owned by the Sheffield Galleries and Museums Trust since 1931, and is now in the collection of the Graves Art Gallery in Sheffield, England.",
     "latitude": 53.380119,
     "longitude": -1.466868,
     "wikipedia_link": "https://en.wikipedia.org/wiki/The_Execution_of_Marshal_Ney",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_execution.webp",
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "818",
+    "year": "1808",
+    "date": "1808-10-04",
+    "name": "Invaion of Capri",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Capri",
+    "country": "France",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
+    "description": "The invasion of Capri was the successful recapture of the Italian island of Capri from Britain by the Kingdom of Naples on 4–18 October 1808.",
+    "latitude": 40.55320,
+    "longitude": 14.222,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri.webp",
+    "victor": "Naples",
+    "defeated": "Britain",
+    "commanders": [
+      "Jean Maximilien Lamarque",
+      "Hudson Lowe"
+    ],
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "819",
+    "year": "1809",
+    "date": "1809-10-12",
+    "name": "Napoleon assassination attempt at Schönbrunn",
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Schönbrunn Palace, Vienna",
+    "country": "Austria",
+    "description": "On October 12th 1809, a young German theology student named Friedrich Staps attempted to assassinate Napoleon in the gardens of Schönbrunn Palace, where the Emperor was holding court. Staps, armed with a large dagger, was arrested before he could reach Napoleon, and later executed.",
+    "latitude": 48.184972,
+    "longitude": 16.312318,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Friedrich_Staps",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Schonbrunn.webp",
     "createDate": "2026-08-22"
   }
 ]

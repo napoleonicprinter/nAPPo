@@ -347,7 +347,7 @@ const MapView = () => {
                         zoomToBoundsOnClick={true}
                         spiderfyOnMaxZoom={true}
                         showCoverageOnHover={false}
-                        disableClusteringAtZoom={14}
+                        disableClusteringAtZoom={isFiltered ? 6 : 10}
                         removeOutsideVisibleBounds={false}
                         animate={false}
                         animateAddingMarkers={false}

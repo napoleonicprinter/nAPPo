@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext, useBackHandler } from '../context/AppContext';
-import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X, CalendarDays } from 'lucide-react';
+import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X, CalendarDays, ChevronUp } from 'lucide-react';
 import ShowsCalendarModal from './ShowsCalendarModal';
 import { handleImageFallback } from '../utils/imageUtils';
 import './CalendarView.css';
@@ -30,6 +30,21 @@ const CalendarView = ({ onClose }) => {
     const [isMonthDropdownOpen, setIsMonthDropdownOpen] = useState(false);
     const [selectedDate, setSelectedDate] = useState(null);
     const [isShowsCalendarOpen, setIsShowsCalendarOpen] = useState(false);
+    const [showTopBtn, setShowTopBtn] = useState(false);
+
+    const containerRef = useRef(null);
+
+    const handleScroll = () => {
+        if (containerRef.current) {
+            setShowTopBtn(containerRef.current.scrollTop > 180);
+        }
+    };
+
+    const scrollToTop = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     useBackHandler('showsCalendarModal', isShowsCalendarOpen, () => setIsShowsCalendarOpen(false), 35);
 
@@ -296,7 +311,7 @@ const CalendarView = ({ onClose }) => {
 
                 </div>
 
-                <div className="calendar-modal-body">
+                <div className="calendar-modal-body" ref={containerRef} onScroll={handleScroll}>
 
                     <div className="shows-grid">
                         {filteredShows.length > 0 ? (
@@ -376,6 +391,19 @@ const CalendarView = ({ onClose }) => {
                     </div>
                 </div>
             </div>
+
+            {/* FLOATING TOP BUTTON AT BOTTOM RIGHT */}
+            {showTopBtn && (
+                <button
+                    type="button"
+                    className="scroll-to-top-btn glass-panel animate-fade-in"
+                    onClick={scrollToTop}
+                    title="Scroll to top"
+                >
+                    <ChevronUp size={16} style={{ marginRight: '4px' }} />
+                    Top
+                </button>
+            )}
 
             {isShowsCalendarOpen && (
                 <ShowsCalendarModal
