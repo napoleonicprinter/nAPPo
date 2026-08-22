@@ -1554,8 +1554,7 @@
     "longitude": 2.36274,
     "image": "https://www.parismuseescollections.paris.fr/sites/default/files/styles/pm_notice/public/atoms/images/CAR/lpdp_71365-17.jpg",
     "more_info_link": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bataille-et-prise-de-burgos",
-    "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "createDate": "2025-03-15T10:00:00Z"
   },
   {
     "id": "82",
@@ -1569,8 +1568,7 @@
     "longitude": 2.36274,
     "image": "https://www.parismuseescollections.paris.fr/sites/default/files/styles/pm_notice/public/atoms/images/CAR/aze_carg034217_001.jpg",
     "more_info_link": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/combat-et-prise-de-ratisbonne-0",
-    "createDate": "2025-03-15T10:00:00Z",
-    "special": "arc"
+    "createDate": "2025-03-15T10:00:00Z"
   },
   {
     "id": "83",
@@ -2411,7 +2409,8 @@
     "latitude": 39.17605,
     "longitude": -9.315397,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro.webp",
-    "more_info_link": "https://www.batalhadovimeiro.pt/",
+    "site_link": "https://www.batalhadovimeiro.pt/",
+    "more_info_link": "https://app.batalhadovimeiro.pt/es/about-the-tour",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
   },
@@ -14477,5 +14476,70 @@
       "Prince of Hohenlohe"
     ],
     "createDate": "2026-08-21"
+  },
+  {
+    "id": "807",
+    "name": "Battle of Vimeiro monument",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Vimeiro",
+    "country": "Portugal",
+    "description": "It was inaugurated on August 21st 1908, to celebrate the first centennial of the historic Battle of Vimeiro, and was attended by Portugal's last monarch, King Manuel II, alongside the Minister of War.",
+    "latitude": 39.176244,
+    "longitude": -9.315925,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_monument.webp",
+    "createDate": "2026-08-21"
+  },
+  {
+    "id": "808",
+    "name": "Portuguese Soldier of the Peninsular War",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Vimeiro",
+    "country": "Portugal",
+    "description": "The monument honors the role of Portuguese soldiers in the fight against Napoleonic troops in the historic Battle of Vimeiro. Work of Hélder Silva and Fernando Sarzedas, it was erected in 2007 in the area where decisive clashes took place in the Battle of Vimeiro. (Photo: Alta Falisa)",
+    "latitude": 39.176916,
+    "longitude": -9.321208,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_soldado.webp",
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "809",
+    "name": "Battle of Vimeiro Field Hospital",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Vimeiro",
+    "country": "Portugal",
+    "description": "This house, now in ruins, served precisely as the main medical point (Hospital de Sangue) to care for the wounded soldiers during the battle.",
+    "latitude": 39.179135,
+    "longitude": -9.317659,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_hospital.webp",
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "810",
+    "name": "Wellington's HQ at Vimeiro",
+    "category": "Battle landmark",
+    "significance": 2,
+    "location": "Vimeiro",
+    "country": "Portugal",
+    "description": "This house served as Sir Arthur Wellesley's headquarters during the battle of Vimeiro. The armistice that later would be the basis  to the agreement signed at Sintra for the final evacuation of the French from Portugal was negotiated and signed here.",
+    "latitude": 39.178942,
+    "longitude": -9.317549,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_W_HQ.webp",
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "811",
+    "name": "Church of Vimeiro",
+    "category": "Battle landmark",
+    "significance": 2,
+    "location": "Vimeiro",
+    "country": "Portugal",
+    "description": "During the Battle of Vimeiro on August 21, 1808, a fierce, bloody clash erupted around the local church when French forces under General Junot, failing to take the main British ridge, redirected their assault into the town where hand-to-hand combat ended in a French retreat.",
+    "latitude": 39.179338,
+    "longitude": -9.316942,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_church.webp",
+    "createDate": "2026-08-22"
   }
 ]

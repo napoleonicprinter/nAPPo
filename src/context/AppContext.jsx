@@ -128,7 +128,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= sitesData.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return sitesData;
     });
@@ -142,7 +142,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= showsData.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return showsData;
     });
@@ -156,7 +156,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= shoppingData.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return shoppingData;
     });
@@ -185,7 +185,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= eventsDataFallback.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return eventsDataFallback;
     });
@@ -199,7 +199,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= newsDataFallback.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return newsDataFallback;
     });
@@ -225,7 +225,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= messagesDataFallback.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return messagesDataFallback;
     });
@@ -239,7 +239,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (Array.isArray(parsed) && parsed.length >= dealsDataFallback.length) {
                     return parsed;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
         return dealsDataFallback;
     });
@@ -539,11 +539,11 @@ export const AppProvider = ({ children, storeUrl }) => {
 
         return Object.entries(counts)
             .map(([year, count]) => ({
-                    value: year,
-                    // We pass the raw name and the count separately in the label
-                    name: year,
-                    count: count,
-                    label: year // Fallback
+                value: year,
+                // We pass the raw name and the count separately in the label
+                name: year,
+                count: count,
+                label: year // Fallback
             }))
             .sort((a, b) => a.value - b.value);
     }, [sitesFilteredBase, filterCommander, filterCategory, showArcOnly]);
@@ -560,10 +560,10 @@ export const AppProvider = ({ children, storeUrl }) => {
 
         return Object.entries(counts)
             .map(([name, count]) => ({
-                    value: name,
-                    name: name,
-                    count: count,
-                    label: name // Fallback
+                value: name,
+                name: name,
+                count: count,
+                label: name // Fallback
             }))
             .sort((a, b) => a.value.localeCompare(b.value));
     }, [sitesFilteredBase, filterYear, filterCategory, showArcOnly]);
@@ -1064,7 +1064,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             if (handled) {
                 try {
                     window.history.pushState({ nappoApp: true }, '');
-                } catch (e) {}
+                } catch (e) { }
             }
         };
 

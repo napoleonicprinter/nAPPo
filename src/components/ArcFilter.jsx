@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext';
 const ArcFilter = ({ className, style }) => {
     const { filterCategory, showArcOnly, setShowArcOnly, theme } = useAppContext();
 
-    const allowedCategories = ['Battle site', 'Battle landmark'];
+    const allowedCategories = ['Battle site', 'Battle landmark', 'Naval battle'];
     const isBattleOnly = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
 
     if (!isBattleOnly) return null;
