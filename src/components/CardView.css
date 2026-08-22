@@ -1,7 +1,91 @@
 .card-view-container {
-    padding: 2rem;
+    padding: 1.5rem 2rem 2rem 2rem;
     height: 100%;
     overflow-y: auto;
+}
+
+/* --- LIST VIEW SORT HEADER --- */
+.card-view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 auto 1.5rem auto;
+    max-width: 1400px;
+    border-radius: 30px;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.sort-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.75;
+    margin-right: 4px;
+}
+
+.sort-tag-btn,
+.sort-order-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-primary, #222);
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-tag-btn:hover,
+.sort-order-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.sort-tag-btn.active,
+.sort-order-btn.active {
+    background: var(--accent-primary, #ef5350);
+    color: #ffffff;
+    border-color: var(--accent-primary, #ef5350);
+    box-shadow: 0 2px 8px rgba(239, 83, 80, 0.35);
+}
+
+/* Dark mode styling for header and sort buttons */
+body:not(.light-mode) .card-view-header {
+    background: rgba(22, 27, 34, 0.85);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+body:not(.light-mode) .sort-label {
+    color: #8b949e;
+}
+
+body:not(.light-mode) .sort-tag-btn,
+body:not(.light-mode) .sort-order-btn {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.05);
+    color: #e6edf3;
+}
+
+body:not(.light-mode) .sort-tag-btn:hover,
+body:not(.light-mode) .sort-order-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+body:not(.light-mode) .sort-tag-btn.active,
+body:not(.light-mode) .sort-order-btn.active {
+    background: #ff5e7e;
+    color: #ffffff;
+    border-color: #ff5e7e;
+    box-shadow: 0 2px 8px rgba(255, 94, 126, 0.4);
 }
 
 .cards-grid {

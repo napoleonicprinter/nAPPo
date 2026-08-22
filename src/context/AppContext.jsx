@@ -399,11 +399,12 @@ export const AppProvider = ({ children, storeUrl }) => {
                 return diffDays <= newSitesDays;
             })();
 
+            const rawSpecial = site.special || site.Special;
             return {
                 ...site,
                 visited: visitedSites.includes(site.id),
                 isNew,
-                special: site.special ? (Array.isArray(site.special) ? site.special : [String(site.special)]) : []
+                special: rawSpecial ? (Array.isArray(rawSpecial) ? rawSpecial : [String(rawSpecial)]) : []
             };
         });
     }, [sitesBaseData, visitedSites, newSitesDays]);

@@ -27,6 +27,7 @@ export const getCategoryColor = (category) => {
 
 const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => {
     const {
+        theme,
         toggleVisited,
         userCoords,
         geolocationEnabled,
@@ -39,6 +40,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
     } = useAppContext();
 
     if (!site) return null;
+
+    const spec = site?.special || site?.Special;
+    const isArc = spec
+        ? (Array.isArray(spec) ? spec.includes('arc') : String(spec).toLowerCase().includes('arc'))
+        : false;
 
     // Helper to render stars based on significance data
     const renderSignificanceStars = (sig) => {
@@ -176,6 +182,20 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 {/* --- STARS / DATE / DETAILS ROW --- */}
                 <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        {isArc && (
+                            <img
+                                src="/assets/Arc.png"
+                                alt="Arc de Triomphe"
+                                title="Listed at the Arc de Triomphe"
+                                style={{
+                                    height: '15px',
+                                    width: 'auto',
+                                    marginRight: '2px',
+                                    filter: theme === 'dark' ? 'invert(1)' : 'none',
+                                    verticalAlign: 'middle'
+                                }}
+                            />
+                        )}
                         {renderSignificanceStars(site.significance)}
                         {site.date && (
                             <span style={{ fontSize: '0.8rem', fontWeight: 'bold', color: '#666', display: 'flex', alignItems: 'center' }}>

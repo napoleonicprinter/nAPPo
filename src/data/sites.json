@@ -89,10 +89,11 @@
     "id": "3",
     "name": "Arc de Triomphe",
     "category": "Monument",
+    "date": "1806-08-15",
     "significance": 3,
     "location": "Paris",
     "country": "France",
-    "description": "Commissioned by Napoleon after his victory at Austerlitz, the monument honors those who fought and died for France in the French Revolutionary and Napoleonic Wars.",
+    "description": "Commissioned by Napoleon after his victory at Austerlitz, the monument honors those who fought and died for France in the French Revolutionary and Napoleonic Wars.Its construction started on August 15th 1806 and was inaugurated on July 28th 1836.",
     "latitude": 48.8738,
     "longitude": 2.295,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Arc_Paris.webp",
@@ -207,10 +208,11 @@
     "id": "8",
     "name": "Casa Buonaparte - Napoleon's Birthplace",
     "category": "Museum",
+    "date": "1769-08-15",
     "significance": 3,
     "location": "Ajaccio, Corsica",
     "country": "France",
-    "description": "The ancestral home of the Bonaparte family and the birthplace of Napoleon Bonaparte.",
+    "description": "The ancestral home of the Bonaparte family and the birthplace of Napoleon Bonaparte on August 15th 1769.",
     "latitude": 41.918,
     "longitude": 8.738,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Casa_Buonaparte.webp",
@@ -2258,11 +2260,12 @@
   {
     "id": "112",
     "name": "Capitan General García de la Cuesta - Birthplace",
+    "date": "1741-05-09",
     "category": "Landmark",
     "significance": 1,
     "location": "La Lastra, Cantabria",
     "country": "Spain",
-    "description": "Capitán General de Castilla la Vieja, Extremadura y Mallorca.Algunos biógrafos asignan su nacimiento en Tudanca y otros en La Lastra, poblado a escasos 1.000 metros de distancia.",
+    "description": "Capitán General de Castilla la Vieja, Extremadura y Mallorca. Algunos biógrafos asignan su nacimiento en Tudanca y otros en La Lastra, poblado a escasos 1.000 metros de distancia.",
     "latitude": 43.15,
     "longitude": -4.38125,
     "image": "https://voluntariosdeleon.com/wp-content/uploads/2023/08/Gregorio-de-la-Cuesta-1152x1536.jpg",
@@ -2273,6 +2276,7 @@
   {
     "id": "113",
     "name": "General Castaños - Birthplace",
+    "date": "1758-04-22",
     "category": "Landmark",
     "significance": 2,
     "location": "Madrid, Madrid",
@@ -2462,7 +2466,8 @@
   },
   {
     "id": "123",
-    "name": "Marshal Murat birthplace and museum",
+    "name": "Marshal Murat Birthplace and Museum",
+    "date": "1767-03-25",
     "category": "Museum",
     "significance": 2,
     "location": "Labastide-Murat, Lot",
@@ -2477,8 +2482,9 @@
   },
   {
     "id": "124",
-    "name": "Marshal Lannes birthplace",
+    "name": "Marshal Lannes Birthplace",
     "category": "Landmark",
+    "date": "1769-04-10",
     "significance": 2,
     "location": "Lectoure, Gers",
     "country": "France",
@@ -2491,8 +2497,9 @@
   },
   {
     "id": "125",
-    "name": "Marshal Michel Ney birthplace",
+    "name": "Marshal Michel Ney Birthplace",
     "category": "Landmark",
+    "date": "1769-01-10",
     "significance": 2,
     "location": "Saarlouis, Saarland",
     "country": "Germany",
@@ -4228,6 +4235,7 @@
   {
     "id": "211",
     "name": "Marshal Davout's Birthplace",
+    "date": "1770-05-10",
     "category": "Landmark",
     "significance": 3,
     "location": "Annoux, Burgundy",
@@ -7424,6 +7432,7 @@
   {
     "id": "368",
     "name": "General von Pirch tomb",
+    "date": "1838-04-03",
     "category": "Landmark",
     "significance": 1,
     "location": "Invalidenfriedhof Berlin",
@@ -7438,6 +7447,7 @@
   {
     "id": "369",
     "name": "Gerhard von Scharnhorst tomb",
+    "date": "1813-06-28",
     "category": "Landmark",
     "significance": 2,
     "location": "Invalidenfriedhof Berlin",
@@ -7736,7 +7746,7 @@
     "date": "1798-07-02",
     "victor": "France",
     "defeated": "Ottoman Empire",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sediman.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Chebreiss.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shubra_Khit",
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
@@ -7980,7 +7990,7 @@
   },
   {
     "id": "395",
-    "name": "'Little Frenchman' memorial - Dürenstein",
+    "name": "Little Frenchman Memorial - Dürenstein",
     "category": "Monument",
     "significance": 2,
     "location": "Dürenstein",
@@ -8473,7 +8483,7 @@
   },
   {
     "id": "425",
-    "name": "'Jeune Voltigeur' - Toulouse battle",
+    "name": "Jeune Voltigeur - Toulouse battle",
     "description": "The work of artist Sonia Queija was inaugurated on February 15, 2025. The monument pays tribute to the soldiers who participated in the Battle of Toulouse in 1814.",
     "link": "https://actu.fr/occitanie/toulouse_31555/toulouse-quand-l-inauguration-d-une-statue-d-un-soldat-de-napoleon-tourne-a-la-bataille-politique_62259301.html",
     "category": "Monument",
@@ -8558,6 +8568,7 @@
   {
     "id": "431",
     "name": "Louis Bonaparte's tomb",
+    "date": "1846-07-25",
     "category": "Landmark",
     "significance": 2,
     "wikipedia_link": "https://en.wikipedia.org/wiki/%C3%89glise_Saint-Leu-Saint_Gilles_(Saint-Leu-la-For%C3%AAt)",
@@ -9059,6 +9070,7 @@
   {
     "id": "462",
     "name": "Marshal Bernadotte's Birthplace",
+    "date": "1763-01-26",
     "category": "Museum",
     "significance": 2,
     "year": 1763,
@@ -9074,6 +9086,7 @@
   {
     "id": "463",
     "name": "Marshal Poniatowski's Birthplace",
+    "date": "1763-05-07",
     "category": "Landmark",
     "significance": 2,
     "year": 1763,
@@ -9092,6 +9105,7 @@
     "category": "Landmark",
     "significance": 2,
     "year": 1735,
+    "date": "1735-05-28",
     "location": "Strasbourg",
     "country": "France",
     "description": "He was born on May 28th 1735 into a Saxon noble family established in Strasbourg.",
@@ -10518,6 +10532,7 @@
   {
     "id": "560",
     "name": "Marshal Masséna Birthplace",
+    "date": "1758-05-06",
     "category": "Landmark",
     "significance": 2,
     "location": "Nice",
@@ -10530,6 +10545,7 @@
   {
     "id": "561",
     "name": "Marshal Soult Birthplace",
+    "date": "1769-03-29",
     "category": "Landmark",
     "significance": 2,
     "location": "Saint-Amans-Soult",
@@ -10542,6 +10558,7 @@
   {
     "id": "562",
     "name": "Marshal Bessières Birthplace",
+    "date": "1769-08-06",
     "category": "Landmark",
     "significance": 2,
     "location": "Prayssac",
@@ -10554,6 +10571,7 @@
   {
     "id": "563",
     "name": "Marshal Suchet Birthplace",
+    "date": "1770-03-02",
     "category": "Landmark",
     "significance": 2,
     "location": "Lyon",
@@ -10566,6 +10584,7 @@
   {
     "id": "564",
     "name": "Marshal Suchet official Birthplace",
+    "date": "1770-03-02",
     "category": "Landmark",
     "significance": 2,
     "location": "Lyon",
@@ -10590,6 +10609,7 @@
   {
     "id": "566",
     "name": "Marshal Moncey Birthplace",
+    "date": "1754-07-31",
     "category": "Landmark",
     "significance": 2,
     "location": "Palise",
@@ -10602,6 +10622,7 @@
   {
     "id": "567",
     "name": "LG William Payne Birthplace",
+    "year": "1759",
     "category": "Landmark",
     "significance": 2,
     "location": "Sandy Point Town",
@@ -10615,6 +10636,7 @@
   {
     "id": "568",
     "name": "LG Rowland Hill Birthplace",
+    "date": "1772-08-11",
     "category": "Landmark",
     "significance": 2,
     "location": "Prees, Shropshire",
@@ -10888,6 +10910,7 @@
   {
     "id": "581",
     "name": "Archduke Charles of Austria Birthplace",
+    "date": "1771-09-05",
     "category": "Landmark",
     "significance": 2,
     "location": "Florence",
@@ -10902,6 +10925,7 @@
   {
     "id": "582",
     "name": "Karl Mack von Leiberich Birthplace",
+    "date": "1752-08-25",
     "category": "Landmark",
     "significance": 2,
     "location": "Nennslingen",
@@ -10915,6 +10939,7 @@
   {
     "id": "583",
     "name": "Marshal Joseph Radetzky Birthplace",
+    "date": "1766-11-02",
     "category": "Landmark",
     "significance": 2,
     "location": "Třebnice, Sedlčany",
@@ -10928,6 +10953,7 @@
   {
     "id": "584",
     "name": "Karl Philipp, Prince of Schwarzenberg Birthplace",
+    "date": "1771-04-18",
     "category": "Landmark",
     "significance": 2,
     "location": "Vienna",
@@ -10942,6 +10968,7 @@
   {
     "id": "585",
     "name": "Michael von Melas Birthplace",
+    "date": "1729-05-12",
     "category": "Landmark",
     "significance": 2,
     "location": "Roadeș",
@@ -10955,6 +10982,7 @@
   {
     "id": "586",
     "name": "József Alvinczi Birthplace",
+    "date": "1735-02-01",
     "category": "Landmark",
     "significance": 2,
     "location": "Vințu de Jos",
@@ -10969,6 +10997,7 @@
   {
     "id": "587",
     "name": "Johann I Joseph, Prince of Liechtenstein Birthplace",
+    "date": "1760-06-26",
     "category": "Landmark",
     "significance": 2,
     "location": "Vienna",
@@ -10982,6 +11011,7 @@
   {
     "id": "588",
     "name": "Frederick William, Duke of Brunswick, Birthplace",
+    "date": "1771-10-09",
     "category": "Landmark",
     "significance": 2,
     "location": "Braunschweig",
@@ -11085,6 +11115,7 @@
     "id": "593",
     "name": "Arthur Wellesley, Lord Wellington, Birthplace",
     "category": "Landmark",
+    "date": "1769-05-01",
     "significance": 3,
     "location": "Dublin",
     "country": "Ireland",
@@ -11099,6 +11130,7 @@
     "id": "594",
     "name": "Sir John Moore Birthplace",
     "category": "Landmark",
+    "date": "1761-11-13",
     "significance": 2,
     "location": "Glasgow",
     "country": "Scotland",
@@ -11113,6 +11145,7 @@
     "id": "595",
     "name": "Sir Thomas Picton Birthplace",
     "category": "Landmark",
+    "date": "1758-08-24",
     "significance": 2,
     "location": "Haverfordwest, Pembrokeshire",
     "country": "Wales",
@@ -11141,6 +11174,7 @@
     "id": "597",
     "name": "Major-General Robert Craufurd Birthplace",
     "category": "Landmark",
+    "date": "1764-05-05",
     "significance": 2,
     "location": "Chigwell, Essex",
     "country": "England",
@@ -11155,6 +11189,7 @@
     "id": "598",
     "name": "William Carr Beresford Birthplace",
     "category": "Landmark",
+    "date": "1768-10-02",
     "significance": 2,
     "location": "Waterford",
     "country": "Ireland",
@@ -11169,6 +11204,7 @@
     "id": "599",
     "name": "General Miguel de Álava Birthplace",
     "category": "Landmark",
+    "date": "1770-07-07",
     "significance": 2,
     "location": "Vitoria-Gasteiz, Álava",
     "country": "Spain",
@@ -11183,6 +11219,7 @@
     "id": "600",
     "name": "General Palafox Birthplace",
     "category": "Landmark",
+    "date": "1775-10-28",
     "significance": 2,
     "location": "Zaragoza, Aragón",
     "country": "Spain",
@@ -12549,7 +12586,7 @@
   },
   {
     "id": "683",
-    "name": "'Le Presbytère'",
+    "name": "Le Presbytère",
     "category": "Landmark",
     "significance": 2,
     "location": "Avesnes-sur-Helpe",
@@ -12603,6 +12640,7 @@
   {
     "id": "687",
     "name": "Jean-Andoche Junot Birthplace",
+    "date": "1771-09-25",
     "category": "Landmark",
     "significance": 2,
     "location": "Bussy-le-Grand",
@@ -12656,6 +12694,7 @@
     "id": "690",
     "name": "General Henryk Dąbrowski's Birthplace",
     "category": "Landmark",
+    "date": "1755-08-02",
     "significance": 2,
     "location": "Pierzchów",
     "country": "Poland",
@@ -13146,6 +13185,7 @@
   {
     "id": "717",
     "name": "General Rowland Hill Birthplace",
+    "date": "1772-08-11",
     "category": "Landmark",
     "significance": 2,
     "location": "Prees, Shropshire",
@@ -13292,6 +13332,7 @@
   {
     "id": "727",
     "name": "Marshal Ney's tomb",
+    "date": "1815-12-07",
     "category": "Monument",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 29), Paris",
@@ -13320,6 +13361,7 @@
   {
     "id": "729",
     "name": "Marshal Suchet's tomb",
+    "date": "1826-01-03",
     "category": "Monument",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 39), Paris",
@@ -13334,6 +13376,7 @@
   {
     "id": "730",
     "name": "Marshal Grouchy's tomb",
+    "date": "1847-05-29",
     "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 57), Paris",
@@ -13348,6 +13391,7 @@
   {
     "id": "731",
     "name": "Marshal Victor's tomb",
+    "date": "1841-03-01",
     "category": "Monument",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 17), Paris",
@@ -13362,6 +13406,7 @@
   {
     "id": "732",
     "name": "Marshal Gouvion Saint-Cyr's tomb",
+    "date": "1830-03-17",
     "category": "Monument",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 37), Paris",
@@ -13376,6 +13421,7 @@
   {
     "id": "733",
     "name": "General Étienne de Nansouty's tomb",
+    "date": "1815-02-12",
     "category": "Monument",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 27, 5th line), Paris",
@@ -13390,6 +13436,7 @@
   {
     "id": "734",
     "name": "Marechal Augereau's tomb",
+    "date": "1816-06-12",
     "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 59, 2nd line), Paris",
@@ -13535,8 +13582,9 @@
   },
   {
     "id": "744",
-    "name": "Charles-Étienne Gudin's birthplace",
+    "name": "Charles-Étienne Gudin's Birthplace",
     "category": "Landmark",
+    "date": "1768-02-13",
     "significance": 2,
     "location": "Montargis",
     "country": "France",
@@ -13765,7 +13813,8 @@
   },
   {
     "id": "760",
-    "name": "Captain Coignet birthplace",
+    "name": "Captain Coignet Birthplace",
+    "date": "1776-08-16",
     "category": "Landmark",
     "significance": 2,
     "location": "Druyes-les-Belles-Fontaines,",
@@ -13926,7 +13975,7 @@
     "description": "Two Austrian battalions under command of General Major Siegenthal stop the advance of Brigade General Lacour's four dragoon regiments on November 19th 1805.",
     "latitude": 46.337639,
     "longitude": 13.551683,
-    "Special": "3",
+    "special": "3",
     "victor": "Austria",
     "defeated": "France",
     "commanders": [
@@ -14161,7 +14210,8 @@
   },
   {
     "id": "788",
-    "name": "General Joseph de Barbanègre birthplace",
+    "name": "General Joseph de Barbanègre Birthplace",
+    "date": "1772-08-22",
     "category": "Landmark",
     "significance": 2,
     "location": "Pontacq",
@@ -14247,7 +14297,8 @@
   },
   {
     "id": "794",
-    "name": "General Augustin Belliard birthplace",
+    "name": "General Augustin Belliard Birthplace",
+    "date": "1769-05-25",
     "category": "Landmark",
     "significance": 2,
     "location": "Fontenay-le-Comte",
@@ -14384,7 +14435,7 @@
     "longitude": 15.59396,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Stecken.webp",
     "wikipedia_link": "https://cs.wikipedia.org/wiki/Bitva_u_%C5%A0tok%C5%AF",
-    "Special": "3",
+    "special": "3",
     "victor": "Austria",
     "defeated": "Bavaria",
     "commanders": [
@@ -14406,7 +14457,7 @@
     "latitude": 49.477479,
     "longitude": 15.595251,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wonau.webp",
-    "Special": "3",
+    "special": "3",
     "victor": "Austria",
     "defeated": "Bavaria",
     "commanders": [
@@ -14428,7 +14479,7 @@
     "latitude": 45.419506,
     "longitude": 14.391875,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa.webp",
-    "Special": "3",
+    "special": "3",
     "victor": "France",
     "defeated": "Austria",
     "createDate": "2026-08-21"
@@ -14446,7 +14497,7 @@
     "latitude": 45.3984,
     "longitude": 14.38545,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mathia.webp",
-    "Special": "3",
+    "special": "3",
     "victor": "France",
     "defeated": "Austria",
     "createDate": "2026-08-21"
@@ -14465,7 +14516,7 @@
     "longitude": 13.857837,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Prenzlau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Prenzlau",
-    "Special": [
+    "special": [
       "arc",
       "4"
     ],
@@ -14541,5 +14592,127 @@
     "longitude": -9.316942,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vimeiro_church.webp",
     "createDate": "2026-08-22"
-  }
-]
+  },
+  {
+    "id": "812",
+    "name": "Siege of Breslau",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1806",
+    "date": "1806-12-07",
+    "location": "Wrocław",
+    "country": "Poland",
+    "description": "The siege of Breslau began on December 7th 1806, when General Vandamme ordered the opening of the first trenches and fire batteries near the suburb of Saint Nicolas. The city formally surrendered on January 3rd 1807, with the garrison's departure as prisoners of war agreed upon for January 7th.",
+    "latitude": 51.111058,
+    "longitude": 17.035331,
+    "more_info_link": "https://www.napoleon-series.org/military-info/battles/1807/PolishCampaign/Eylau/eylau/c_eylaueng102.html",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Breslau.webp",
+    "special": [
+      "arc",
+      "4"
+    ],
+    "victor": "France",
+    "defeated": "Prussia",
+    "commanders": [
+      "Dominique Vandamme",
+      "Jérôme Bonaparte",
+      "Friedrich Gideon von Thiele",
+      "Príncipe de Anhalt-Ples"
+    ],
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "813",
+    "name": "Siege of Gaeta",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-02-26",
+    "location": "Gaeta",
+    "country": "Italy",
+    "description": "The fortress city of Gaeta and its Neapolitan garrison under General Louis of Hesse-Philippsthal were besieged from February 26th to July 18th 1806 by an Imperial French corps led by Marshal André Masséna. After a prolonged defense in which Hesse was severely wounded, Gaeta surrendered, and Masséna granted its garrison generous terms.",
+    "latitude": 41.208427,
+    "longitude": 13.589137,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Gaeta_(1806)",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gaeta.webp",
+    "special": [
+      "arc",
+      "4"
+    ],
+    "victor": "France",
+    "defeated": "Kingdom of Naples",
+    "commanders": [
+      "Louis von Hesse-Philippsthal",
+      "André Masséna",
+      "Nicolas de Lacour"
+    ],
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "814",
+    "name": "Siege of Ragusa",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-05-27",
+    "location": "Dubrovnik",
+    "country": "Croatia",
+    "description": "After French occupied the maritime republic of Ragusa, Russian and allied forces under the leadership of Vice Admiral Dmitry Senyavin laid siege to it for months.",
+    "latitude": 42.640278,
+    "longitude": 18.093889,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Ragusa_(1806)",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ragusa.webp",
+    "special": [
+      "arc",
+      "4"
+    ],
+    "victor": "France",
+    "defeated": "Russia",
+    "commanders": [
+      "Dmitry Senyavin",
+      "Auguste de Marmont",
+      "Jacques Lauriston"
+    ],
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "815",
+    "date": "1853-12-7",
+    "name": "Marshal Ney's statue",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Paris",
+    "country": "France",
+    "description": "Sculpted by François Rude and unveiled on December 7th 1853 stands where the famous Marshal, called 'the bravest of the brave' by Napoleon himself, was executed by a Bourbonic firing squad for treason in 1815.",
+    "latitude": 48.840041,
+    "longitude": 2.336362,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_statue.webp",
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "816",
+    "year": "1868",
+    "name": "Marshal Ney, December 7, 1815",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "musée d'Arts de Nantes, Nantes",
+    "country": "France",
+    "description": "Sculpted by Henri Alfred Jacquemart in 1868.",
+    "latitude": 47.219534,
+    "longitude": -1.547490,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_statue_nantes.webp",
+    "createDate": "2026-08-22"
+  },
+  {
+    "id": "817",
+    "year": "1868",
+    "name": "The Execution of Marshal Ney",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "Graves Art Gallery, Sheffield",
+    "country": "France",
+    "description": "The painting, by the French artist Jean-Léon Gérôme, has been owned by the Sheffield Galleries and Museums Trust since 1931, and is now in the collection of the Graves Art Gallery in Sheffield, England",
+    "latitude": 53.380119,
+    "longitude": -1.466868,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/The_Execution_of_Marshal_Ney",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_e

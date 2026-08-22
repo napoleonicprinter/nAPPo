@@ -2359,11 +2359,12 @@
     {
         "id": "268",
         "title": "Siege of Breslau",
+        "siteId": 812,
         "description": "The siege of Breslau took place from December 7, 1806, until January 9, 1807, when the city capitulated to the French army.",
         "date": "1806-12-07",
         "location": "Breslau",
         "country": "Poland",
-        "wikipedia_link": "https://www.napoleon-series.org/military-info/battles/1807/PolishCampaign/Eylau/eylau/c_eylaueng102.html"
+        "more_info_link": "https://www.napoleon-series.org/military-info/battles/1807/PolishCampaign/Eylau/eylau/c_eylaueng102.html"
     },
     {
         "id": "269",
@@ -3938,6 +3939,33 @@
         "siteId": 806,
         "date": "1806-10-28",
         "location": "Prenzlau, Germany",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Prenzlau",
         "description": "In the Battle of Prenzlau or Capitulation of Prenzlau on October 28th 1806 two divisions of French cavalry and some infantry led by Marshal Joachim Murat intercepted a retreating Prussian corps led by Frederick Louis, Prince of Hohenlohe-Ingelfingen."
+    },
+    {
+        "id": "446",
+        "title": "Arc de Triumphe construction begins",
+        "siteId": 3,
+        "date": "1806-08-15",
+        "location": "Paris, France",
+        "description": "It was commissioned in 1806, after the victory at Austerlitz by Emperor Napoleon at the peak of his successes. Laying the foundations alone took two years and in 1810, when Napoleon entered Paris from the west with his new bride, Archduchess Marie-Louise of Austria, he had a wooden mock-up of the completed arch constructed. The architect, Jean-François Chalgrin, died in 1811 and the work was taken over by Louis-Robert Goust."
+    },
+    {
+        "id": "447",
+        "title": "Siege of Gaeta",
+        "siteId": 813,
+        "date": "1806-02-26",
+        "location": "Gaeta, Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Gaeta_(1806)",
+        "description": "The fortress city of Gaeta and its Neapolitan garrison under General Louis of Hesse-Philippsthal were besieged from February 26th to July 18th 1806 by an Imperial French corps led by Marshal André Masséna. After a prolonged defense in which Hesse was severely wounded, Gaeta surrendered, and Masséna granted its garrison generous terms."
+    },
+    {
+        "id": "448",
+        "title": "Siege of Ragusa ",
+        "siteId": 814,
+        "date": "1806-05-27",
+        "location": "Dubrovnik, Croatia",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Ragusa_(1806)",
+        "description": "After French occupied the maritime republic of Ragusa, Russian and allied forces under the leadership of Vice Admiral Dmitry Senyavin laid siege to it for months."
     }
 ]

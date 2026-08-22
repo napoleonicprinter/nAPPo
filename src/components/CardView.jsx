@@ -1,73 +1,106 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { MapPin, Calendar, CheckCircle, Globe, Youtube, BookOpen, ExternalLink } from 'lucide-react';
+import { Calendar, ArrowDownAZ, ArrowUp, ArrowDown } from 'lucide-react';
+import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
 import './CardView.css';
 
-// Map categories to dynamic colors (same as MapView)
-const getCategoryColor = (category) => {
-    switch (category) {
-        case 'Battle site': return '#f85149';
-        case 'Naval battle': return '#38bdf8';
-        case 'Battle landmark': return '#d29922';
-        case 'Museum': return '#a371f7';
-        case 'Monument': return '#10b981';
-        case 'Building': return '#ff7b72';
-        case 'Artwork': return '#d2a8ff';
-        case 'Event site': return '#fde047';
-        case 'Landmark': return '#7b5a25ff';
-        case 'Store': return '#ffffff';
-        case 'Movie set': return '#4800FF';
-        default: return '#8b949e';
-    }
-};
-
 const CardView = () => {
-    const { sites, userCoords, geolocationEnabled, mapBounds, isFiltered, clearAllFilters } = useAppContext();
+    const { sites, selectedSite, setSelectedSite, setCallerSite } = useAppContext();
 
-    // Sort sites primarily by bounds (if in map view bounds, rank higher), then distance if geolocation is enabled
-    const sortedSites = React.useMemo(() => {
-        let sorted = [...sites];
+    const [sortField, setSortField] = useState(() => localStorage.getItem('listSortField') || 'date');
+    const [sortOrder, setSortOrder] = useState(() => localStorage.getItem('listSortOrder') || 'asc');
 
-        // Helper to check if a site is in map bounds
-        const isSiteInBounds = (site) => {
-            if (!mapBounds) return false;
-            const lat = site.latitude;
-            const lng = site.longitude;
-            const north = mapBounds.getNorth();
-            const south = mapBounds.getSouth();
-            const east = mapBounds.getEast();
-            const west = mapBounds.getWest();
+    useBackHandler('detailViewCardView', !!selectedSite, () => setSelectedSite(null), 35);
 
-            // Handle map wrapping for longitude
-            const inLng = west <= east
-                ? (lng >= west && lng <= east)
-                : (lng >= west || lng <= east);
+    useEffect(() => {
+        localStorage.setItem('listSortField', sortField);
+    }, [sortField]);
 
-            return lat >= south && lat <= north && inLng;
-        };
+    useEffect(() => {
+        localStorage.setItem('listSortOrder', sortOrder);
+    }, [sortOrder]);
 
-        sorted = sorted.sort((a, b) => {
-            if (mapBounds) {
-                const aInBounds = isSiteInBounds(a);
-                const bInBounds = isSiteInBounds(b);
+    // Helper to get comparable date string (site.date > site.year > fallback)
+    const getDateValue = (site) => {
+        if (site.date) return String(site.date).trim();
+        if (site.year) {
+            const y = String(site.year).trim();
+            return y.length === 4 ? `${y}-01-01` : y;
+        }
+        return '9999-99-99'; // Sites without date/year appear at the end
+    };
 
-                if (aInBounds && !bInBounds) return -1;
-                if (!aInBounds && bInBounds) return 1;
+    // Sort sites by selected field and order
+    const sortedSites = useMemo(() => {
+        return [...sites].sort((a, b) => {
+            let result = 0;
+            if (sortField === 'date') {
+                const dateA = getDateValue(a);
+                const dateB = getDateValue(b);
+                if (dateA !== dateB) {
+                    result = dateA.localeCompare(dateB);
+                } else {
+                    result = (a.name || '').localeCompare(b.name || '');
+                }
+            } else {
+                result = (a.name || '').localeCompare(b.name || '');
+                if (result === 0) {
+                    const dateA = getDateValue(a);
+                    const dateB = getDateValue(b);
+                    result = dateA.localeCompare(dateB);
+                }
             }
-
-            if (geolocationEnabled && userCoords) {
-                return (a.distance || 0) - (b.distance || 0);
-            }
-            return 0;
+            return sortOrder === 'desc' ? -result : result;
         });
-
-        return sorted;
-    }, [sites, userCoords, geolocationEnabled, mapBounds]);
+    }, [sites, sortField, sortOrder]);
 
     return (
         <div className="card-view-wrapper animate-fade-in" style={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
             <div className="card-view-container">
+                <div className="card-view-header glass-panel">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span className="sort-label">Sort by:</span>
+                        <button
+                            type="button"
+                            className={`sort-tag-btn ${sortField === 'alphabetic' ? 'active' : ''}`}
+                            onClick={() => setSortField('alphabetic')}
+                        >
+                            <ArrowDownAZ size={14} style={{ marginRight: '4px' }} />
+                            Alphabetic
+                        </button>
+                        <button
+                            type="button"
+                            className={`sort-tag-btn ${sortField === 'date' ? 'active' : ''}`}
+                            onClick={() => setSortField('date')}
+                        >
+                            <Calendar size={14} style={{ marginRight: '4px' }} />
+                            Date
+                        </button>
+                    </div>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <button
+                            type="button"
+                            className={`sort-order-btn ${sortOrder === 'asc' ? 'active' : ''}`}
+                            onClick={() => setSortOrder('asc')}
+                            title="Ascending Order"
+                        >
+                            <ArrowUp size={14} style={{ marginRight: '3px' }} />
+                            Ascending
+                        </button>
+                        <button
+                            type="button"
+                            className={`sort-order-btn ${sortOrder === 'desc' ? 'active' : ''}`}
+                            onClick={() => setSortOrder('desc')}
+                            title="Descending Order"
+                        >
+                            <ArrowDown size={14} style={{ marginRight: '3px' }} />
+                            Descending
+                        </button>
+                    </div>
+                </div>
+
                 <div className="cards-grid">
                     {sortedSites.map(site => (
                         <SiteCard key={site.id} site={site} isCompact={true} />
@@ -75,6 +108,47 @@ const CardView = () => {
                 </div>
             </div>
 
+            {/* FULL DETAIL CARD MODAL CENTERED ON SCREEN */}
+            {selectedSite && (() => {
+                const liveSite = sites.find(s => s.id === selectedSite.id) || selectedSite;
+                return (
+                    <div
+                        onClick={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }}
+                        style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100vw',
+                            height: '100vh',
+                            backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                            backdropFilter: 'blur(4px)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            zIndex: 2147483640,
+                            padding: '16px'
+                        }}
+                    >
+                        <div
+                            onClick={(e) => e.stopPropagation()}
+                            className="animate-fade-in"
+                            style={{
+                                width: '380px',
+                                maxWidth: '92vw',
+                                maxHeight: '85vh',
+                                overflow: 'visible',
+                                borderRadius: '16px'
+                            }}
+                        >
+                            <SiteCard
+                                site={liveSite}
+                                onClose={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }}
+                                isCompact={false}
+                            />
+                        </div>
+                    </div>
+                );
+            })()}
         </div>
     );
 };

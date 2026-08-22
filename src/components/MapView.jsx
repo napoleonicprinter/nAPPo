@@ -316,6 +316,8 @@ const MapView = () => {
         );
     });
 
+    const sitesKey = (sites || []).map(s => s.id).join(',');
+
     return (
         <div style={{ height: '100%', width: '100%', position: 'relative' }} className={`animate-fade-in ${selectedSite ? 'detail-view-active' : ''}`}>
             <MapContainer
@@ -340,7 +342,7 @@ const MapView = () => {
                 {clusterRadius > 0 ? (
                     <MarkerClusterGroup
                         ref={setClusterInstance}
-                        key={`cluster-${clusterRadius}`}
+                        key={`cluster-${clusterRadius}-${sitesKey}`}
                         maxClusterRadius={clusterRadius}
                         zoomToBoundsOnClick={true}
                         spiderfyOnMaxZoom={true}
