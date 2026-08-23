@@ -3,7 +3,7 @@ import React from 'react';
 import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
-    Palette, Swords // Add this icon
+    Palette, Swords, Link2
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
@@ -233,6 +233,33 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 overflowY: 'auto',
                 overflowX: 'hidden'
                 }}>
+                {callerSite && callerSite.id !== site.id && (
+                    <div style={{ marginBottom: '8px' }}>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const prev = callerSite;
+                                setCallerSite(null);
+                                setSelectedSite(prev);
+                            }}
+                            style={{
+                                border: 'none',
+                                background: 'rgba(88, 166, 255, 0.15)',
+                                color: 'var(--accent-primary, #58a6ff)',
+                                padding: '4px 8px',
+                                borderRadius: '4px',
+                                fontSize: '0.75rem',
+                                fontWeight: 'bold',
+                                cursor: 'pointer',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px'
+                            }}
+                        >
+                            &larr; Back to {callerSite.name}
+                        </button>
+                    </div>
+                )}
                 <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0' }}>{site.name}</h2>
 
                 {/* --- STARS / DATE / DETAILS ROW --- */}
@@ -427,6 +454,67 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     )}
                                 </div>
                             )}
+                            {/* --- RELATED SITES SECTION --- */}
+                            {(() => {
+                                const relatedList = Array.isArray(site.relatedSites)
+                                    ? site.relatedSites
+                                    : Array.isArray(site.related_sites)
+                                        ? site.related_sites
+                                        : Array.isArray(site.related)
+                                            ? site.related
+                                            : [];
+
+                                if (!relatedList || relatedList.length === 0) return null;
+
+                                return (
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'flex-start',
+                                        gap: '8px',
+                                        fontSize: '0.85rem',
+                                        color: 'var(--text-primary)',
+                                        marginTop: '4px'
+                                    }}>
+                                        <Link2 size={20} style={{ color: '#666', flexShrink: 0, marginTop: '2px' }} />
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                                            <span style={{ fontWeight: '600' }}>Related:</span>
+                                            {relatedList.map((relItem, idx) => {
+                                                const targetId = String(relItem.id || relItem.siteId || relItem).trim();
+                                                const targetSite = (allSites || []).find(s => String(s.id).trim() === targetId);
+                                                const label = relItem.title || relItem.description || relItem.name || relItem.label || targetSite?.name || `Site #${targetId}`;
+
+                                                return (
+                                                    <button
+                                                        key={idx}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            if (targetSite) {
+                                                                setCallerSite(site);         // Save calling site
+                                                                setSelectedSite(targetSite); // Set target site as selectedSite
+                                                            } else {
+                                                                console.warn("Related site record not found for ID:", targetId);
+                                                            }
+                                                        }}
+                                                        style={{
+                                                            border: 'none',
+                                                            background: 'none',
+                                                            padding: 0,
+                                                            textAlign: 'left',
+                                                            color: 'var(--accent-primary, #58a6ff)',
+                                                            cursor: targetSite ? 'pointer' : 'default',
+                                                            fontWeight: 'bold',
+                                                            fontSize: '0.85rem',
+                                                            textDecoration: 'underline'
+                                                        }}
+                                                    >
+                                                        {label}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                );
+                            })()}
                         </div>
                     </>
                 )}

@@ -90,6 +90,27 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
     return null;
 };
 
+const SelectedSiteFlyer = () => {
+    const { selectedSite } = useAppContext();
+    const map = useMap();
+    const lastFlewIdRef = useRef(null);
+
+    useEffect(() => {
+        if (!selectedSite || selectedSite.latitude === undefined || selectedSite.longitude === undefined) return;
+        if (lastFlewIdRef.current === selectedSite.id) return;
+        lastFlewIdRef.current = selectedSite.id;
+
+        const currentZoom = map.getZoom();
+        const targetZoom = Math.max(currentZoom, 11);
+        map.flyTo([selectedSite.latitude, selectedSite.longitude], targetZoom, {
+            animate: true,
+            duration: 1.2
+        });
+    }, [selectedSite, map]);
+
+    return null;
+};
+
 const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, clusterInstance, isTodaysBattleActive }) => {
     const map = useMap();
     const openedKeyRef = useRef("");
@@ -407,6 +428,7 @@ const MapView = () => {
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
+                <SelectedSiteFlyer />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}

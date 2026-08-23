@@ -14804,7 +14804,13 @@
     "longitude": 2.296402,
     "site_link": "https://www.marmottan.fr/notice/1047/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_Capri.webp",
-    "createDate": "2026-08-23"
+    "createDate": "2026-08-23",
+    "relatedSites": [
+      {
+        "id": "832",
+        "title": "Villa Murat"
+      }
+    ]
   },
   {
     "id": "822",
@@ -14952,7 +14958,7 @@
     "year": "1808",
     "name": "Murat's HQ during he invasion of Capri",
     "category": "Battle landmark",
-    "significance": 2,
+    "significance": 1,
     "location": "Massa Lubrense, Naples",
     "country": "Italy",
     "description": "In October 1808, Joachim Murat, King of Naples, made this Villa his headquarters to command the siege and recapture of Capri from British forces allied with the Bourbons. He chose the site for its strategic vantage point, telling his generals it provided the best view of the sea around Capri to track the battle in real time.",
@@ -14960,6 +14966,12 @@
     "longitude": 14.334647,
     "site_link": "https://feelingitaly.com/property-collection/villa-murat",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vila_murat.webp",
-    "createDate": "2026-08-23"
+    "createDate": "2026-08-23",
+    "relatedSites": [
+      {
+        "id": "822",
+        "title": "Schmidt canvas"
+      }
+    ]
   }
 ]
