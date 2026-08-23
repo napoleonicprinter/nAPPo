@@ -14971,6 +14971,31 @@
       {
         "id": "822",
         "title": "Schmidt canvas"
+      },
+      {
+        "id": "833",
+        "title": "Fischetti canvas"
+      }
+    ]
+  },
+  {
+    "id": "833",
+    "year": "1811",
+    "name": "Murat, King of Naples, Watches the Capture of Capri",
+    "category": "Artwork",
+    "significance": 1,
+    "location": "Museo della Certosa di San Martino, Naples",
+    "country": "Italy",
+    "description": "This historical painting by Odoardo Fischetti, painted between 1809 and 1811, captures King Joachim Murat of Naples directing the October 1808 military assault to recapture the island of Capri from British forces.",
+    "latitude": 40.8436,
+    "longitude": 14.240769,
+    "site_link": "https://cultura.gov.it/luogo/certosa-di-san-giacomo",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_capri_fischetti.webp",
+    "createDate": "2026-08-23",
+    "relatedSites": [
+      {
+        "id": "832",
+        "title": "Villa Murat"
       }
     ]
   }
