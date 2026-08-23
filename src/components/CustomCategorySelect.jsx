@@ -9,14 +9,14 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
     const triggerRef = useRef(null);
     const dropdownRef = useRef(null);
     const menuRef = useRef(null);
-    const { getPortalContainer } = useAppContext();
+    const { getPortalContainer, setView } = useAppContext();
 
     // Map categories to dynamic colors (same as MapView)
     const getCategoryColor = (category) => {
         switch (category) {
             case "Today's Battle": return '#ff4500'; // Distinctive orange/red
             case 'Battle site': return '#ef5350';
-            case 'Battle landmark': return '#ff5e7e';
+            case 'Battle landmark': return '#ff9ebb';
             case 'Naval battle': return '#26c6da';
             case 'Museum': return '#9575cd';
             case 'Artwork': return '#ce93d8';
@@ -103,6 +103,11 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
         } else {
             newValue = [...value, category];
         }
+
+        if (!value.includes("Today's Battle") && newValue.includes("Today's Battle")) {
+            if (setView) setView('map');
+        }
+
         onChange(newValue);
     };
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Popup, Marker, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { useAppContext, useBackHandler } from '../context/AppContext';
@@ -86,6 +86,47 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
             }
         }
     }, [siteToOpenPopup, clusterInstance, map]);
+
+    return null;
+};
+
+const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, clusterInstance, isTodaysBattleActive }) => {
+    const map = useMap();
+    const openedKeyRef = useRef("");
+
+    useEffect(() => {
+        if (!isTodaysBattleActive || !todaysBattleSites || todaysBattleSites.length === 0) {
+            openedKeyRef.current = "";
+            return;
+        }
+
+        const sitesKey = todaysBattleSites.map(s => s.id).sort().join(',');
+        if (openedKeyRef.current === sitesKey) return;
+
+        const timer = setTimeout(() => {
+            openedKeyRef.current = sitesKey;
+            todaysBattleSites.forEach(site => {
+                const marker = markerRefs.current.get(site.id);
+                if (marker) {
+                    const openMarkerPopup = () => {
+                        try {
+                            marker.openPopup();
+                        } catch (err) {
+                            // ignore
+                        }
+                    };
+
+                    if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                        clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
+                    } else {
+                        openMarkerPopup();
+                    }
+                }
+            });
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [isTodaysBattleActive, todaysBattleSites, clusterInstance, map, markerRefs]);
 
     return null;
 };
@@ -195,8 +236,29 @@ const MapView = () => {
     const {
         sites, theme, mapStyle, clusterRadius,
         selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
-        userCoords, isFiltered, previewDevice, clearAllFilters
+        userCoords, isFiltered, previewDevice, clearAllFilters,
+        filterCategory
     } = useAppContext();
+
+    const isTodaysBattleActive = useMemo(() => {
+        return Array.isArray(filterCategory) && filterCategory.includes("Today's Battle");
+    }, [filterCategory]);
+
+    const todaysBattleSites = useMemo(() => {
+        if (!isTodaysBattleActive) return [];
+        const today = new Date();
+        const currentMonth = today.getMonth() + 1;
+        const currentDay = today.getDate();
+        return (sites || []).filter(site => {
+            if ((site.category === 'Battle site' || site.category === 'Naval battle') && site.date) {
+                const parts = site.date.split('-');
+                if (parts.length >= 3) {
+                    return parseInt(parts[1], 10) === currentMonth && parseInt(parts[2], 10) === currentDay;
+                }
+            }
+            return false;
+        });
+    }, [sites, isTodaysBattleActive]);
 
     const [showDeals, setShowDeals] = useState(false);
     const markerRefs = useRef(new Map());
@@ -299,7 +361,14 @@ const MapView = () => {
                     else markerRefs.current.delete(site.id);
                 }}
             >
-                <Popup autoPan={false} autoPanPadding={[50, 50]} closeButton={false} onClose={() => setSelectedSite(null)}>
+                <Popup
+                    autoPan={false}
+                    autoPanPadding={[50, 50]}
+                    closeButton={false}
+                    autoClose={!isTodaysBattleActive}
+                    closeOnClick={!isTodaysBattleActive}
+                    onClose={() => setSelectedSite(null)}
+                >
                     <div style={{ width: '300px', position: 'relative' }}>
                         <SiteCard
                             site={site}
@@ -338,6 +407,12 @@ const MapView = () => {
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
+                <TodaysBattlePopupOpener
+                    todaysBattleSites={todaysBattleSites}
+                    markerRefs={markerRefs}
+                    clusterInstance={clusterInstance}
+                    isTodaysBattleActive={isTodaysBattleActive}
+                />
 
                 {clusterRadius > 0 ? (
                     <MarkerClusterGroup
@@ -347,7 +422,7 @@ const MapView = () => {
                         zoomToBoundsOnClick={true}
                         spiderfyOnMaxZoom={true}
                         showCoverageOnHover={false}
-                        disableClusteringAtZoom={isFiltered ? 6 : 10}
+                        disableClusteringAtZoom={18}
                         removeOutsideVisibleBounds={false}
                         animate={false}
                         animateAddingMarkers={false}

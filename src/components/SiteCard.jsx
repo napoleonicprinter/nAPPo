@@ -12,7 +12,7 @@ export const getCategoryColor = (category) => {
     const colors = {
         "Today's Battle": '#ff4500',
         'Battle site': '#ef5350',
-        'Battle landmark': '#ff5e7e',
+        'Battle landmark': '#ff9ebb',
         'Naval battle': '#26c6da',
         'Museum': '#9575cd',
         'Artwork': '#ce93d8',
