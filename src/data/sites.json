@@ -83,6 +83,16 @@
           ]
         ]
       }
+    ],
+    "relatedSites": [
+      {
+        "id": "179",
+        "title": "Lady Butler's Scot greys canvas"
+      },
+      {
+        "id": "839",
+        "title": "Lady Butler's Dawn of Waterloo canvas"
+      }
     ]
   },
   {
@@ -1629,7 +1639,18 @@
       "Peninsular War",
       "Guerra de Independencia"
     ],
-    "commanders": []
+    "commanders": [
+      "Nicolas Soult",
+      "Jean-Baptiste Girard",
+      "William Beresford",
+      "Joaquin Blake"
+    ],
+    "relatedSites": [
+      {
+        "id": "837",
+        "title": "Canvas by William Wollen"
+      }
+    ]
   },
   {
     "id": "86",
@@ -1928,6 +1949,12 @@
     "commanders": [
       "Francisco Castaños",
       "Pierre Dupont de l'Étang"
+    ],
+    "relatedSites": [
+      {
+        "id": "159",
+        "title": "Bailén surrender canvas"
+      }
     ]
   },
   {
@@ -2738,7 +2765,12 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Malasana_2.webp",
     "more_info_link": "https://alfayomega.es/la-iglesia-del-buen-suceso-y-el-2-de-mayo-del-ano-1808/",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "142",
+        "title": "Dumont painting"
+      }
+    ]
   },
   {
     "id": "140",
@@ -2783,7 +2815,12 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Malasana_1.webp",
     "more_info_link": "https://www.modernalia.es/items/show/644",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "139",
+        "title": "Painting site"
+      }
+    ]
   },
   {
     "id": "143",
@@ -3135,7 +3172,12 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg/1280px-La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg",
     "more_info_link": "https://www.museodelprado.es/en/the-collection/art-work/the-surrender-of-bailen/ec14e35d-3fdf-43d7-9efe-2cce72cec348?rdf",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "99",
+        "title": "Bailén battlefield"
+      }
+    ]
   },
   {
     "id": "160",
@@ -3191,6 +3233,12 @@
             4.496932
           ]
         ]
+      }
+    ],
+    "relatedSites": [
+      {
+        "id": "840",
+        "title": "Lady Butler's canvas"
       }
     ]
   },
@@ -3512,6 +3560,7 @@
   {
     "id": "179",
     "name": "Painting - Scotland forever",
+    "year": "1881",
     "category": "Artwork",
     "significance": 3,
     "location": "Leeds Art Gallery, Leeds",
@@ -3523,7 +3572,12 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Scotland_Forever!",
     "youtube_link": "https://youtu.be/j8psf5hCa3U?si=FBVr1Y7fgbwVkfrR",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "2",
+        "title": "Battlefield"
+      }
+    ]
   },
   {
     "id": "180",
@@ -7567,6 +7621,16 @@
     "commanders": [
       "Jacques-François Menou ",
       "Ralph Abercromby"
+    ],
+    "relatedSites": [
+      {
+        "id": "835",
+        "title": "Canvas by Robert Porter"
+      },
+      {
+        "id": "835",
+        "title": "Canvas by P. Loutherbourg "
+      }
     ]
   },
   {
@@ -13342,6 +13406,12 @@
     "longitude": 2.396342,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/ney-michel-duc-delchingen-1769-1815/",
+    "relatedSites": [
+      {
+        "id": "815",
+        "title": "Ney's execution site"
+      }
+    ],
     "createDate": "2026-08-18"
   },
   {
@@ -13582,6 +13652,12 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gudin_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/gudin-charles-cesar-etienne-comte-1768-1812/",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Charles-%C3%89tienne_Gudin_de_La_Sablonni%C3%A8re",
+    "relatedSites": [
+      {
+        "id": "776",
+        "title": "Gudin burial site"
+      }
+    ],
     "createDate": "2026-08-18"
   },
   {
@@ -14059,6 +14135,12 @@
     "longitude": 32.038562,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gudin_burial.webp",
     "more_info_link": "https://archaeolog.ru/en/press/articles/arkheologi-nashli-pod-smolenskom-sledy-srazheniy-1812-goda",
+    "relatedSites": [
+      {
+        "id": "743",
+        "title": "Gudin tomb"
+      }
+    ],
     "createDate": "2026-08-20"
   },
   {
@@ -14691,6 +14773,16 @@
     "latitude": 48.840041,
     "longitude": 2.336362,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_statue.webp",
+    "relatedSites": [
+      {
+        "id": "727",
+        "title": "Marshal Ney tomb"
+      },
+      {
+        "id": "817",
+        "title": "Canvas by Gérôme"
+      }
+    ],
     "createDate": "2026-08-22"
   },
   {
@@ -14705,6 +14797,12 @@
     "latitude": 47.219534,
     "longitude": -1.547490,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_statue_nantes.webp",
+    "relatedSites": [
+      {
+        "id": "815",
+        "title": "Ney's execution site"
+      }
+    ],
     "createDate": "2026-08-22"
   },
   {
@@ -14720,6 +14818,12 @@
     "longitude": -1.466868,
     "wikipedia_link": "https://en.wikipedia.org/wiki/The_Execution_of_Marshal_Ney",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_execution.webp",
+    "relatedSites": [
+      {
+        "id": "815",
+        "title": "Ney's execution site"
+      }
+    ],
     "createDate": "2026-08-22"
   },
   {
@@ -14996,6 +15100,147 @@
       {
         "id": "832",
         "title": "Villa Murat"
+      }
+    ]
+  },
+  {
+    "id": "834",
+    "year": "1798",
+    "date": "1798-07-22",
+    "name": "Capture of Cairo",
+    "category": "Battle site",
+    "significance": 3,
+    "location": "Cairo",
+    "country": "Egypt",
+    "description": "Napoleon captured Cairo on July 22nd 1798, following his decisive victory over the Mamluk army at the Battle of the Pyramids on July 21st.",
+    "latitude": 30.044420,
+    "longitude": 31.235712,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cairo.webp",
+    "createDate": "2026-08-23",
+    "Victor": "France",
+    "special": [
+      "arc",
+      "2",
+      "Egyptian Campaign"
+    ]
+  },
+  {
+    "id": "835",
+    "year": "1801",
+    "name": "The Battle of Alexandria (sketch canvas)",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "National Army Museum, Study Collection, London",
+    "country": "England",
+    "description": "'The Battle of Alexandria, 21 March 1801' is a dramatic oil on canvas painted by Robert Ker Porter around 1801. This vigorous sketch captures the night battle between French and British forces and served as a preparatory study for a massive, now-lost panoramic painting.",
+    "latitude": 51.486405,
+    "longitude": -0.160441,
+    "site_link": "https://collection.nam.ac.uk/detail.php?acc=1999-10-12-1",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alexandria_canvas.webp",
+    "createDate": "2026-08-23",
+    "relatedSites": [
+      {
+        "id": "375",
+        "title": "Battlefield"
+      }
+    ]
+  },
+  {
+    "id": "836",
+    "year": "1805",
+    "name": "The Battle of Alexandria (canvas)",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "National Army Museum, Study Collection, London",
+    "country": "England",
+    "description": "Oil on canvas after Philippe Jacques de Loutherbourg (1740-1812), 1805 (c).",
+    "latitude": 51.486405,
+    "longitude": -0.160441,
+    "site_link": "https://collection.nam.ac.uk/detail.php?acc=1969-02-8-1",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alexandria_canvas2.webp",
+    "createDate": "2026-08-23",
+    "relatedSites": [
+      {
+        "id": "375",
+        "title": "Battlefield"
+      }
+    ]
+  },
+  {
+    "id": "837",
+    "year": "1912",
+    "name": "The Flag (canvas)",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "National Army Museum, Study Collection, London",
+    "country": "England",
+    "description": "Painted by William Barnes Wollen in 1912, 'The Flag (Albuhera, May 16, 1811)', recreates the historic defense of the British 3rd Regiment of Foot's colors during the brutal Battle of Albuera.",
+    "latitude": 51.486405,
+    "longitude": -0.160441,
+    "site_link": "https://collection.nam.ac.uk/detail.php?acc=2001-04-325-1",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Albuera_canvas.webp",
+    "createDate": "2026-08-24",
+    "relatedSites": [
+      {
+        "id": "85",
+        "title": "Battlefield"
+      }
+    ]
+  },
+  {
+    "id": "838",
+    "year": "1960",
+    "name": "National Army Museum",
+    "category": "Museum",
+    "significance": 3,
+    "location": "Chelsea, London",
+    "country": "England",
+    "description": "The National Army Museum in Chelsea, London, holds extensive collections documenting the British Army's involvement in the Peninsular War (1808–1814), featuring personal archives, uniform items, fine art, and campaign relics from the Duke of Wellington's campaigns in Spain and Portugal and Waterloo.",
+    "latitude": 51.486405,
+    "longitude": -0.160441,
+    "site_link": "https://www.nam.ac.uk/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/NAM.webp",
+    "createDate": "2026-08-24"
+  },
+  {
+    "id": "839",
+    "year": "1895",
+    "name": "Dawn of Waterloo",
+    "category": "Artwork",
+    "significance": 3,
+    "location": "National Army Museum, Myth and Reality, London",
+    "country": "England",
+    "description": "Oil on canvas by renowned British military painter Lady Butler (Elizabeth Southerden Butler, née Thompson), signed with initials and dated lower left '18 EB 95'. Created in 1895, this work was exhibited that same year at the Royal Academy of Arts in London.",
+    "latitude": 51.486405,
+    "longitude": -0.160441,
+    "site_link": "https://collection.nam.ac.uk/detail.php?acc=2021-12-1-1-1",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dawn_waterloo.webp",
+    "createDate": "2026-08-24",
+    "relatedSites": [
+      {
+        "id": "2",
+        "title": "Battlefield"
+      }
+    ]
+  },
+  {
+    "id": "840",
+    "year": "1875",
+    "name": "The 28th Regiment at Quatre Bras",
+    "category": "Artwork",
+    "significance": 3,
+    "location": "National Gallery of Victoria, Melbourne",
+    "country": "Australia",
+    "description": "The 28th Regiment at Quatre Bras is a famous 1875 oil-on-canvas historical battle painting by the renowned British military artist Elizabeth Thompson (later known as Lady Butler).",
+    "latitude": -37.822594,
+    "longitude": 144.968927,
+    "site_link": "https://www.ngv.vic.gov.au/explore/collection/work/4408/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Butler_QBras.webp",
+    "createDate": "2026-08-24",
+    "relatedSites": [
+      {
+        "id": "161",
+        "title": "Battlefield"
       }
     ]
   }

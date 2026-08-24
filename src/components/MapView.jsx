@@ -111,7 +111,7 @@ const SelectedSiteFlyer = () => {
     return null;
 };
 
-const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, clusterInstance, isTodaysBattleActive }) => {
+const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattleActive }) => {
     const map = useMap();
     const openedKeyRef = useRef("");
 
@@ -129,25 +129,17 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, clusterInstanc
             todaysBattleSites.forEach(site => {
                 const marker = markerRefs.current.get(site.id);
                 if (marker) {
-                    const openMarkerPopup = () => {
-                        try {
-                            marker.openPopup();
-                        } catch (err) {
-                            // ignore
-                        }
-                    };
-
-                    if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-                        clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
-                    } else {
-                        openMarkerPopup();
+                    try {
+                        marker.openPopup();
+                    } catch (err) {
+                        // ignore
                     }
                 }
             });
-        }, 500);
+        }, 300);
 
         return () => clearTimeout(timer);
-    }, [isTodaysBattleActive, todaysBattleSites, clusterInstance, map, markerRefs]);
+    }, [isTodaysBattleActive, todaysBattleSites, map, markerRefs]);
 
     return null;
 };
@@ -200,30 +192,232 @@ const MapEventsHandler = ({ onMapClick }) => {
 
 const CenterControl = ({ userCoords, isMobileLike }) => {
     const map = useMap();
-    if (!userCoords) return null;
+    if (!userCoords || !isMobileLike) return null; // Rendered in zoom stack on desktop
+
     return (
         <div
-            className={isMobileLike ? "leaflet-bottom leaflet-right" : "leaflet-top leaflet-right"}
+            className="leaflet-bottom leaflet-right"
             style={{
-                marginTop: isMobileLike ? '0' : '74px',
-                marginBottom: isMobileLike ? '82px' : '0',
+                marginBottom: '82px',
                 marginRight: '10px',
                 pointerEvents: 'auto',
                 zIndex: 5000
             }}
         >
-            <div className="leaflet-control leaflet-bar" style={{ border: 'none', boxShadow: 'none', margin: 0 }}>
+            <div className="leaflet-control" style={{ margin: 0 }}>
                 <button
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
                     }}
-                    style={{ backgroundColor: 'white', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', border: '2px solid rgba(0,0,0,0.2)', borderRadius: '4px', boxShadow: '0 1px 5px rgba(0,0,0,0.3)' }}
+                    title="Center on my location"
+                    style={{
+                        backgroundColor: 'white',
+                        width: '32px',
+                        height: '32px',
+                        minWidth: '32px',
+                        minHeight: '32px',
+                        maxWidth: '32px',
+                        maxHeight: '32px',
+                        boxSizing: 'border-box',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        border: '2px solid rgba(0,0,0,0.2)',
+                        borderRadius: '4px',
+                        boxShadow: '0 1px 5px rgba(0,0,0,0.3)',
+                        padding: 0
+                    }}
                 >
-                    <LocateFixed size={18} strokeWidth={2.5} color="#444" />
+                    <LocateFixed size={18} strokeWidth={2.5} color="#111" />
                 </button>
             </div>
+        </div>
+    );
+};
+
+const CustomZoomControl = ({ isMobileLike }) => {
+    const map = useMap();
+    const { userCoords } = useAppContext();
+
+    const handleFastZoomIn = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentZoom = map.getZoom();
+        const maxZoom = map.getMaxZoom() ?? 18;
+        map.setZoom(Math.min(maxZoom, currentZoom + 2), { animate: true });
+    };
+
+    const handleZoomIn = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        map.zoomIn(0.5);
+    };
+
+    const handleZoomOut = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        map.zoomOut(0.5);
+    };
+
+    const handleFastZoomOut = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentZoom = map.getZoom();
+        const minZoom = map.getMinZoom() ?? 2.5;
+        map.setZoom(Math.max(minZoom, currentZoom - 2), { animate: true });
+    };
+
+    const handleCenterLocate = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (userCoords) {
+            map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
+        }
+    };
+
+    const sqBtnStyle = {
+        backgroundColor: 'white',
+        width: '32px',
+        height: '32px',
+        minWidth: '32px',
+        minHeight: '32px',
+        maxWidth: '32px',
+        maxHeight: '32px',
+        boxSizing: 'border-box',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        border: '2px solid rgba(0,0,0,0.2)',
+        borderRadius: '4px',
+        boxShadow: '0 1px 5px rgba(0,0,0,0.3)',
+        padding: 0,
+        margin: 0
+    };
+
+    return (
+        <div
+            className="leaflet-top leaflet-right"
+            style={{
+                marginTop: '10px',
+                marginRight: '10px',
+                pointerEvents: 'auto',
+                zIndex: 5000,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '5px'
+            }}
+        >
+            {/* FAST ZOOM IN (+++) */}
+            <div className="leaflet-control" style={{ margin: 0 }}>
+                <button
+                    onClick={handleFastZoomIn}
+                    title="Fast Zoom In (+2 levels)"
+                    style={sqBtnStyle}
+                >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3 6h4M5 4v4" />
+                        <path d="M10 12h4M12 10v4" />
+                        <path d="M17 18h4M19 16v4" />
+                    </svg>
+                </button>
+            </div>
+
+            {/* STANDARD ZOOM (+ / -) */}
+            <div
+                className="leaflet-control"
+                style={{
+                    margin: 0,
+                    backgroundColor: 'white',
+                    width: '32px',
+                    height: '62px',
+                    minWidth: '32px',
+                    minHeight: '62px',
+                    maxWidth: '32px',
+                    maxHeight: '62px',
+                    boxSizing: 'border-box',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    border: '2px solid rgba(0,0,0,0.2)',
+                    borderRadius: '4px',
+                    boxShadow: '0 1px 5px rgba(0,0,0,0.3)',
+                    overflow: 'hidden'
+                }}
+            >
+                <button
+                    onClick={handleZoomIn}
+                    title="Zoom In (+0.5 level)"
+                    style={{
+                        width: '100%',
+                        height: '29px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        color: '#111',
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        border: 'none',
+                        borderBottom: '1px solid rgba(0,0,0,0.15)',
+                        background: 'none',
+                        padding: 0
+                    }}
+                >
+                    +
+                </button>
+                <button
+                    onClick={handleZoomOut}
+                    title="Zoom Out (-0.5 level)"
+                    style={{
+                        width: '100%',
+                        height: '29px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        color: '#111',
+                        fontSize: '20px',
+                        fontWeight: 'bold',
+                        border: 'none',
+                        background: 'none',
+                        padding: 0
+                    }}
+                >
+                    &minus;
+                </button>
+            </div>
+
+            {/* FAST ZOOM OUT (---) */}
+            <div className="leaflet-control" style={{ margin: 0 }}>
+                <button
+                    onClick={handleFastZoomOut}
+                    title="Fast Zoom Out (-2 levels)"
+                    style={sqBtnStyle}
+                >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3 6h5" />
+                        <path d="M9.5 12h5" />
+                        <path d="M16 18h5" />
+                    </svg>
+                </button>
+            </div>
+
+            {/* DESKTOP CENTER / LOCATE BUTTON (Stacks directly in column) */}
+            {userCoords && !isMobileLike && (
+                <div className="leaflet-control" style={{ margin: 0 }}>
+                    <button
+                        onClick={handleCenterLocate}
+                        title="Center on my location"
+                        style={sqBtnStyle}
+                    >
+                        <LocateFixed size={18} strokeWidth={2.5} color="#111" />
+                    </button>
+                </div>
+            )}
         </div>
     );
 };
@@ -422,7 +616,7 @@ const MapView = () => {
                 maxBoundsViscosity={1.0}
             >
                 <TileLayer key={mapStyle} url={TILE_LAYERS[mapStyle]?.url} attribution={TILE_LAYERS[mapStyle]?.attribution} noWrap={true} />
-                <ZoomControl position="topright" />
+                <CustomZoomControl isMobileLike={isMobileLike} />
                 <LocationMarker isFiltered={isFiltered} />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
@@ -432,11 +626,10 @@ const MapView = () => {
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}
-                    clusterInstance={clusterInstance}
                     isTodaysBattleActive={isTodaysBattleActive}
                 />
 
-                {clusterRadius > 0 ? (
+                {clusterRadius > 0 && !isTodaysBattleActive ? (
                     <MarkerClusterGroup
                         ref={setClusterInstance}
                         key={`cluster-${clusterRadius}-${sitesKey}`}
@@ -444,10 +637,8 @@ const MapView = () => {
                         zoomToBoundsOnClick={true}
                         spiderfyOnMaxZoom={true}
                         showCoverageOnHover={false}
-                        disableClusteringAtZoom={18}
-                        removeOutsideVisibleBounds={false}
-                        animate={false}
-                        animateAddingMarkers={false}
+                        disableClusteringAtZoom={15}
+                        chunkedLoading={true}
                     >
                         {renderedMarkers}
                     </MarkerClusterGroup>
