@@ -516,10 +516,36 @@ const Header = () => {
 
                                     {/* BACKUP & RESTORE SECTION */}
                                     <div className="settings-section" style={{ marginBottom: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                        <h3 style={{ marginBottom: '6px' }}>Backup & Sync Data</h3>
-                                        <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginBottom: '10px', lineHeight: '1.4' }}>
-                                            Export your visited sites to a JSON file to transfer or restore them on a new device.
-                                        </p>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                            <h3 style={{ margin: 0 }}>Backup & Sync</h3>
+                                            <button
+                                                onClick={() => {
+                                                     const backupHelp = HELP_ITEMS.find(i => i.id === 'backup');
+                                                     if (backupHelp) {
+                                                         setSelectedHelpItem(backupHelp);
+                                                     }
+                                                 }}
+                                                title="Backup & Sync Help"
+                                                style={{
+                                                    background: 'rgba(255,255,255,0.12)',
+                                                    border: '1px solid var(--border-color)',
+                                                    borderRadius: '50%',
+                                                    width: '20px',
+                                                    height: '20px',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    cursor: 'pointer',
+                                                    fontSize: '0.75rem',
+                                                    fontWeight: 'bold',
+                                                    color: 'var(--text-primary)',
+                                                    padding: 0,
+                                                    lineHeight: 1
+                                                }}
+                                            >
+                                                ?
+                                            </button>
+                                        </div>
 
                                         <div style={{ display: 'flex', gap: '8px' }}>
                                             <button
@@ -593,7 +619,34 @@ const Header = () => {
                                     </div>
 
                                     <div className="settings-section">
-                                        <h3 style={{ marginBottom: '10px' }}>Theme</h3>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                            <h3 style={{ margin: 0 }}>Theme</h3>
+                                            <button
+                                                onClick={() => {
+                                                    const themeHelp = HELP_ITEMS.find(i => i.id === 'theme' || i.id === 'settings');
+                                                    if (themeHelp) setSelectedHelpItem(themeHelp);
+                                                }}
+                                                title="Theme Help"
+                                                style={{
+                                                    background: 'rgba(255,255,255,0.12)',
+                                                    border: '1px solid var(--border-color)',
+                                                    borderRadius: '50%',
+                                                    width: '20px',
+                                                    height: '20px',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    cursor: 'pointer',
+                                                    fontSize: '0.75rem',
+                                                    fontWeight: 'bold',
+                                                    color: 'var(--text-primary)',
+                                                    padding: 0,
+                                                    lineHeight: 1
+                                                }}
+                                            >
+                                                ?
+                                            </button>
+                                        </div>
                                         <button onClick={toggleTheme} className="glass-panel" style={{ width: '100%', padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
                                             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
                                             {theme === 'dark' ? 'Day Mode' : 'Night Mode'}
@@ -601,7 +654,34 @@ const Header = () => {
                                     </div>
 
                                     <div className="settings-section" style={{ marginTop: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                        <h3 style={{ marginBottom: '10px' }}>Map Style</h3>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                            <h3 style={{ margin: 0 }}>Map Style</h3>
+                                            <button
+                                                onClick={() => {
+                                                    const mapStyleHelp = HELP_ITEMS.find(i => i.id === 'mapstyle');
+                                                    if (mapStyleHelp) setSelectedHelpItem(mapStyleHelp);
+                                                }}
+                                                title="Map Style Help"
+                                                style={{
+                                                    background: 'rgba(255,255,255,0.12)',
+                                                    border: '1px solid var(--border-color)',
+                                                    borderRadius: '50%',
+                                                    width: '20px',
+                                                    height: '20px',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    cursor: 'pointer',
+                                                    fontSize: '0.75rem',
+                                                    fontWeight: 'bold',
+                                                    color: 'var(--text-primary)',
+                                                    padding: 0,
+                                                    lineHeight: 1
+                                                }}
+                                            >
+                                                ?
+                                            </button>
+                                        </div>
                                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
                                             {[
                                                 { key: 'dark', label: 'Night', icon: '🌙' },
@@ -635,7 +715,34 @@ const Header = () => {
                                     </div>
 
                                     <div className="settings-section" style={{ marginTop: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                        <h3 style={{ marginBottom: '8px' }}>Map Clustering</h3>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                                            <h3 style={{ margin: 0 }}>Map Clustering</h3>
+                                            <button
+                                                onClick={() => {
+                                                    const mapClusterHelp = HELP_ITEMS.find(i => i.id === 'mapcluster');
+                                                    if (mapClusterHelp) setSelectedHelpItem(mapClusterHelp);
+                                                }}
+                                                title="Map Clustering Help"
+                                                style={{
+                                                    background: 'rgba(255,255,255,0.12)',
+                                                    border: '1px solid var(--border-color)',
+                                                    borderRadius: '50%',
+                                                    width: '20px',
+                                                    height: '20px',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    cursor: 'pointer',
+                                                    fontSize: '0.75rem',
+                                                    fontWeight: 'bold',
+                                                    color: 'var(--text-primary)',
+                                                    padding: 0,
+                                                    lineHeight: 1
+                                                }}
+                                            >
+                                                ?
+                                            </button>
+                                        </div>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'space-between' }}>
                                             <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.9, lineHeight: '1.3', maxWidth: '75%' }}>
                                                 Adjust the sensitivity for markers clustering:

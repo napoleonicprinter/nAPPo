@@ -564,8 +564,8 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 50%;
-    max-width: 50%;
+    width: 320px;
+    max-width: 90vw;
     background: var(--bg-card);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -580,8 +580,8 @@
 
 @media (min-width: 1025px) {
     .settings-drawer {
-        width: 20vw;
-        max-width: 300px;
+        width: 340px;
+        max-width: 340px;
     }
 }
 

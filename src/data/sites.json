@@ -15243,5 +15243,52 @@
         "title": "Battlefield"
       }
     ]
+  },
+  {
+    "id": "841",
+    "name": "General César Berthier's tomb",
+    "date": "1819-08-17",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Père Lachaise Cemetery (Division 53, chemin du Bastion, 6ème ligne, M=U-13), Paris",
+    "country": "France",
+    "description": "Brother of Louis-Alexandre Berthier the Empire maréchal, the division general Victor Léopold Berthier, and maréchal de camp Joseph-Alexandre Berthier, 1st Viscount Berthier (1821).",
+    "latitude": 48.86190,
+    "longitude": 2.392702,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cesar_Berthier_tomb.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/C%C3%A9sar_Berthier",
+    "site_link": "https://www.appl-lachaise.net/berthier-de-berluy-louis-gabriel-cesar-comte-1765-1819//",
+    "createDate": "2026-08-24"
+  },
+  {
+    "id": "842",
+    "name": "General Victor Berthier's tomb",
+    "date": "1807-03-21",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Père Lachaise Cemetery (Division 11, chemin Denon, 3ème ligne, M=X-22), Paris",
+    "country": "France",
+    "description": "Brother of Marshal Louis-Alexandre, he served during the French Revolutionary and Napoleonic Wars, rising to the rank of general of division.",
+    "latitude": 48.86023,
+    "longitude": 2.39283,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Victor_Berthier_tomb.webp",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Victor_L%C3%A9opold_Berthier",
+    "site_link": "https://www.appl-lachaise.net/berthier-victor-leopold-1770-1807/",
+    "createDate": "2026-08-24"
+  },
+  {
+    "id": "843",
+    "name": "Blücher Museum",
+    "date": "1913-01-17",
+    "category": "Museum",
+    "significance": 2,
+    "location": "Kaub",
+    "country": "Germany",
+    "description": "Housed at Blücher's headquarters at that time, the main theme of the museum is the crossing of the Rhine by the Silesian Army, which, after the Battle of Leipzig in the first week of New Year's 1814, crossed the Rhine on a Russian pontoon bridge at the nearby Pfalz under the Prussian Field Marshal Blücher.",
+    "latitude": 50.087156,
+    "longitude": 7.763661,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_museum.webp",
+    "site_link": "https://bluechermuseum-kaub.de/",
+    "createDate": "2026-08-24"
   }
 ]

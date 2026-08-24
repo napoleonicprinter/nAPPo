@@ -348,7 +348,11 @@
 
 /* Force mobile width for drawers in emulator to override desktop media queries */
 .device-mobile .settings-drawer,
-.device-tablet .settings-drawer,
+.device-tablet .settings-drawer {
+    width: 80% !important;
+    max-width: 320px !important;
+}
+
 .device-mobile .mobile-controls-drawer,
 .device-tablet .mobile-controls-drawer {
     width: 50% !important;

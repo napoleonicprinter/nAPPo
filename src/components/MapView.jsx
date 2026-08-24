@@ -14,15 +14,21 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 const TILE_LAYERS = {
     light: {
         url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd',
+        maxNativeZoom: 19
     },
     dark: {
         url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd',
+        maxNativeZoom: 19
     },
     satellite: {
         url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        attribution: 'Tiles &copy; Esri'
+        attribution: 'Tiles &copy; Esri',
+        subdomains: 'abcd',
+        maxNativeZoom: 18
     }
 };
 
@@ -187,6 +193,33 @@ const LocationMarker = ({ isFiltered }) => {
 
 const MapEventsHandler = ({ onMapClick }) => {
     useMapEvents({ click: onMapClick });
+    return null;
+};
+
+const MapResizeHandler = () => {
+    const map = useMap();
+
+    useEffect(() => {
+        if (!map) return;
+
+        map.invalidateSize();
+
+        const t1 = setTimeout(() => map.invalidateSize(), 200);
+        const t2 = setTimeout(() => map.invalidateSize(), 500);
+
+        const handleResize = () => {
+            map.invalidateSize();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            clearTimeout(t1);
+            clearTimeout(t2);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [map]);
+
     return null;
 };
 
@@ -612,10 +645,19 @@ const MapView = () => {
                 zoomDelta={0.5}
                 style={{ height: '100%', width: '100%', minHeight: '100vh' }}
                 zoomControl={false}
-                maxBounds={[[-90, -180], [90, 180]]}
-                maxBoundsViscosity={1.0}
+                maxBounds={[[-85.05112878, -180], [85.05112878, 180]]}
+                maxBoundsViscosity={0.8}
             >
-                <TileLayer key={mapStyle} url={TILE_LAYERS[mapStyle]?.url} attribution={TILE_LAYERS[mapStyle]?.attribution} noWrap={true} />
+                <TileLayer
+                    key={mapStyle}
+                    url={TILE_LAYERS[mapStyle]?.url}
+                    attribution={TILE_LAYERS[mapStyle]?.attribution}
+                    subdomains={TILE_LAYERS[mapStyle]?.subdomains || 'abcd'}
+                    maxZoom={19}
+                    maxNativeZoom={TILE_LAYERS[mapStyle]?.maxNativeZoom || 18}
+                    keepBuffer={4}
+                />
+                <MapResizeHandler />
                 <CustomZoomControl isMobileLike={isMobileLike} />
                 <LocationMarker isFiltered={isFiltered} />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />

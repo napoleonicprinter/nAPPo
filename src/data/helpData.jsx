@@ -119,6 +119,13 @@ export const HELP_ITEMS = [
         content: 'Settings allow you to configure theme, map style and site markers cluster density.'
     },
     {
+        id: 'theme',
+        title: 'Settings - Theme',
+        imagePc: '/assets/images/Help_Theme.webp',
+        imageMobile: '/assets/images/Help_Theme_M.webp',
+        content: 'Theme in the Settings drawer allows you to toggle between Day Mode and Night Mode visual appearances.'
+    },
+    {
         id: 'mapstyle',
         title: 'Settings - Map Style',
         imagePc: '/assets/images/Help_Map_Style.webp',
