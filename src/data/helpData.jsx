@@ -22,6 +22,13 @@ export const HELP_ITEMS = [
         content: 'When you click a site pin a site card opens. Click on "Details" and a new card opens with a brief description and additional external links to get more information. Pins are coloured base on the category of the site.'
     },
     {
+        id: 'related',
+        title: 'Related Sites',
+        imagePc: '/assets/images/Help_Related.webp',// Large horizontal image
+        imageMobile: '/assets/images/Help_Related_M.webp', // Tall vertical image
+        content: 'At the bottom of some of the site cards you can find links to other sites related to the event described in that site card.'
+    },
+    {
         id: 'clusterPin',
         title: 'Cluster Pin',
         imagePc: '/assets/images/Help_ClusterPin.webp',// Large horizontal image
@@ -123,7 +130,7 @@ export const HELP_ITEMS = [
         title: 'Settings - Theme',
         imagePc: '/assets/images/Help_Theme.webp',
         imageMobile: '/assets/images/Help_Theme_M.webp',
-        content: 'Theme in the Settings drawer allows you to toggle between Day Mode and Night Mode visual appearances.'
+        content: 'Theme in the Settings drawer allows you to toggle between Day Mode and Night Mode visual appearances. Night mode will show header and nemus in black.'
     },
     {
         id: 'mapstyle',
@@ -184,8 +191,8 @@ export const HELP_ITEMS = [
     {
         id: 'backup',
         title: 'Backup & Sync Data',
-        imagePc: '/assets/images/Help_List.webp',
-        imageMobile: '/assets/images/Help_List_M.webp',
+        imagePc: '/assets/images/Help_Backup.webp',
+        imageMobile: '/assets/images/Help_Backup_M.webp',
         content: 'You can export your visited sites into a backup JSON file from the Settings menu (⚙️) and import it on another device to restore all your visited sites seamlessly without needing to manually re-enter data.'
     }
 ]

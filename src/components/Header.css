@@ -590,8 +590,8 @@
 }
 
 .settings-drawer-header {
-    /* Reduced from 48px to 1.25rem to match the bottom padding */
-    padding: 1.25rem 1rem;
+    /* Reduced padding for compact layout */
+    padding: 0.8rem 1rem;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
@@ -599,7 +599,7 @@
     background: rgba(255, 255, 255, 0.02);
 }
 .settings-drawer-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--text-primary);
     display: flex;
@@ -609,8 +609,8 @@
 }
 
 .settings-drawer-close {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     display: flex;
@@ -630,10 +630,10 @@
 .settings-drawer-content {
     flex: 1;
     overflow-y: auto;
-    padding: 1.5rem;
+    padding: 0.8rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.5rem;
 }
 
 .filter-group {

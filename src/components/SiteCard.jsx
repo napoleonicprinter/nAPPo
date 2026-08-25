@@ -97,10 +97,10 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
             )}
 
             <div className="card-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
-                <img 
-                    src={site.image} 
-                    alt={site.name} 
-                    className="card-image" 
+                <img
+                    src={site.image}
+                    alt={site.name}
+                    className="card-image"
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                     onError={(e) => handleImageFallback(e, site.image)}
                 />
@@ -228,10 +228,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
             </div>
 
             <div className="card-content"
-                style={{ padding: '12px',
-                maxHeight: '300px',
-                overflowY: 'auto',
-                overflowX: 'hidden'
+                style={{
+                    padding: '12px',
+                    maxHeight: '300px',
+                    overflowY: 'auto',
+                    overflowX: 'hidden'
                 }}>
                 {callerSite && callerSite.id !== site.id && (
                     <div style={{ marginBottom: '8px' }}>
@@ -314,7 +315,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
 
                 {!isCompact && (
                     <>
-                        <div className="description" style={{ fontSize: '0.9rem', lineHeight: '1.4', marginBottom: '15px', color: 'var(--text-primary)' }}>
+                        <div className="description" style={{ fontSize: '0.9rem', lineHeight: '1.4', marginBottom: '8px', color: 'var(--text-primary)' }}>
                             {site.description}
                         </div>
 
@@ -322,9 +323,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         <div className="card-external-links" style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '10px',
-                            marginTop: '15px',
-                            paddingTop: '10px',
+                            gap: '4px',
+                            marginTop: '8px',
+                            paddingTop: '6px',
                             borderTop: '1px solid rgba(0,0,0,0.1)'
                         }}>
                             {/* Standard Icons Row */}
@@ -368,7 +369,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     alignItems: 'center',
                                     gap: '8px',
                                     fontSize: '0.85rem',
-                                    marginTop: '5px'
+                                    marginTop: '2px'
                                 }}>
                                     <Swords size={20} color="#666" />
                                     <button
@@ -408,7 +409,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     gap: '8px',
                                     fontSize: '0.85rem',
                                     color: 'var(--text-primary)',
-                                    marginTop: '5px'
+                                    marginTop: '2px'
                                 }}>
                                     <Palette size={20} style={{ color: '#666' }} />
 
@@ -473,11 +474,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         gap: '8px',
                                         fontSize: '0.85rem',
                                         color: 'var(--text-primary)',
-                                        marginTop: '4px'
+                                        marginTop: '0px'
                                     }}>
                                         <Link2 size={20} style={{ color: '#666', flexShrink: 0, marginTop: '2px' }} />
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                                            <span style={{ fontWeight: '600' }}>Related:</span>
+                                            <span style={{ fontWeight: '600' }}>Related site:</span>
                                             {relatedList.map((relItem, idx) => {
                                                 const targetId = String(relItem.id || relItem.siteId || relItem).trim();
                                                 const targetSite = (allSites || []).find(s => String(s.id).trim() === targetId);
@@ -489,8 +490,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             if (targetSite) {
-                                                                setCallerSite(site);         // Save calling site
-                                                                setSelectedSite(targetSite); // Set target site as selectedSite
+                                                                setSelectedSite(null);
+                                                                setSiteToOpenPopup(targetSite);
+                                                                setView('map');
                                                             } else {
                                                                 console.warn("Related site record not found for ID:", targetId);
                                                             }

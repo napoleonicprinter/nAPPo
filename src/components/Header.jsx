@@ -226,14 +226,14 @@ const Header = () => {
                         {/* PC DROPDOWN LIST */}
                         {showHelpDropdown && (
                             <div className="custom-select-dropdown glass-panel animate-fade-in"
-                                 style={{ position: 'absolute', top: '45px', left: 0, zIndex: 1000, minWidth: '180px' }}>
+                                style={{ position: 'absolute', top: '45px', left: 0, zIndex: 1000, minWidth: '180px' }}>
                                 {HELP_ITEMS.map((item) => (
                                     <div key={item.id} className="custom-select-option"
-                                         onClick={() => {
-                                             console.log("Selected Item:", item); // Add this to debug
-                                             setSelectedHelpItem(item); // Opens the help card
-                                             setShowHelpDropdown(false); // Closes this list
-                                         }}>
+                                        onClick={() => {
+                                            console.log("Selected Item:", item); // Add this to debug
+                                            setSelectedHelpItem(item); // Opens the help card
+                                            setShowHelpDropdown(false); // Closes this list
+                                        }}>
                                         {item.title}
                                     </div>
                                 ))}
@@ -278,13 +278,13 @@ const Header = () => {
 
                         {/* Logic: Only show if one of these three categories is selected */}
                         {(filterCategory.includes('Battle site') ||
-                          filterCategory.includes('Naval battle') ||
-                          filterCategory.includes('Battle landmark')) && (
-                            <>
-                                <YearFilter className={`desktop-year-filter ${filterYear !== 'all' ? 'filters-active-red' : ''}`}/>
-                                <CommanderFilter className={`desktop-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}/>
-                            </>
-                        )}
+                            filterCategory.includes('Naval battle') ||
+                            filterCategory.includes('Battle landmark')) && (
+                                <>
+                                    <YearFilter className={`desktop-year-filter ${filterYear !== 'all' ? 'filters-active-red' : ''}`} />
+                                    <CommanderFilter className={`desktop-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`} />
+                                </>
+                            )}
                         <ArcFilter className="desktop-arc-filter" />
 
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear</button>}
@@ -380,18 +380,18 @@ const Header = () => {
 
                     {/* Logic: Only show if one of these three categories is selected */}
                     {(filterCategory.includes('Battle site') ||
-                      filterCategory.includes('Naval battle') ||
-                      filterCategory.includes('Battle landmark')) && (
-                        <>
-                            <YearFilter
-                            className={`mobile-tag-filter year-filter-mobile ${filterYear !== 'all' ? 'filters-active-red' : ''}`}
-                            />
-                            <CommanderFilter
-                                /* Fixed typo: changed 'year-filter-mobile' to 'mobile-commander-filter' */
-                                className={`mobile-tag-filter mobile-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}
-                            />
-                        </>
-                    )}
+                        filterCategory.includes('Naval battle') ||
+                        filterCategory.includes('Battle landmark')) && (
+                            <>
+                                <YearFilter
+                                    className={`mobile-tag-filter year-filter-mobile ${filterYear !== 'all' ? 'filters-active-red' : ''}`}
+                                />
+                                <CommanderFilter
+                                    /* Fixed typo: changed 'year-filter-mobile' to 'mobile-commander-filter' */
+                                    className={`mobile-tag-filter mobile-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}
+                                />
+                            </>
+                        )}
 
                     <ArcFilter
                         /* Fixed: changed 'desktop-arc-filter' to 'mobile-tag-filter mobile-arc-filter' */
@@ -515,16 +515,16 @@ const Header = () => {
                                     </div>
 
                                     {/* BACKUP & RESTORE SECTION */}
-                                    <div className="settings-section" style={{ marginBottom: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                                             <h3 style={{ margin: 0 }}>Backup & Sync</h3>
                                             <button
                                                 onClick={() => {
-                                                     const backupHelp = HELP_ITEMS.find(i => i.id === 'backup');
-                                                     if (backupHelp) {
-                                                         setSelectedHelpItem(backupHelp);
-                                                     }
-                                                 }}
+                                                    const backupHelp = HELP_ITEMS.find(i => i.id === 'backup');
+                                                    if (backupHelp) {
+                                                        setSelectedHelpItem(backupHelp);
+                                                    }
+                                                }}
                                                 title="Backup & Sync Help"
                                                 style={{
                                                     background: 'rgba(255,255,255,0.12)',
@@ -551,7 +551,7 @@ const Header = () => {
                                             <button
                                                 onClick={exportUserData}
                                                 className="btn-outline"
-                                                style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '6px', alignItems: 'center', padding: '8px 10px', fontSize: '0.82rem' }}
+                                                style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '6px', alignItems: 'center', padding: '6px 8px', fontSize: '0.82rem' }}
                                                 title="Export visited sites backup JSON file"
                                             >
                                                 <Download size={15} /> Export
@@ -560,7 +560,7 @@ const Header = () => {
                                             <button
                                                 onClick={() => fileInputRef.current && fileInputRef.current.click()}
                                                 className="btn-outline"
-                                                style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '6px', alignItems: 'center', padding: '8px 10px', fontSize: '0.82rem' }}
+                                                style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '6px', alignItems: 'center', padding: '6px 8px', fontSize: '0.82rem' }}
                                                 title="Import visited sites backup JSON file"
                                             >
                                                 <Upload size={15} /> Import
@@ -575,21 +575,21 @@ const Header = () => {
                                         </div>
 
                                         {importStatus && (
-                                            <div style={{ marginTop: '8px', fontSize: '0.8rem', padding: '6px 10px', borderRadius: '6px', background: 'rgba(255,255,255,0.08)', color: 'var(--text-primary)', border: '1px solid var(--border-color)' }}>
+                                            <div style={{ marginTop: '6px', fontSize: '0.8rem', padding: '4px 8px', borderRadius: '6px', background: 'rgba(255,255,255,0.08)', color: 'var(--text-primary)', border: '1px solid var(--border-color)' }}>
                                                 {importStatus}
                                             </div>
                                         )}
                                     </div>
 
-                                    <div className="settings-section" style={{ marginBottom: '0.8rem' }}>
-                                        <h3 style={{ marginBottom: '10px' }}>Support us</h3>
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
+                                        <h3 style={{ marginBottom: '4px' }}>Support us</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                                             <a
                                                 href="https://www.patreon.com/c/nAPPoTrails"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="btn-outline patreon-btn"
-                                                style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}
+                                                style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center', padding: '6px 8px' }}
                                             >
                                                 <svg className="patreon-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                                                     <path d="M0 .48v23.04h4.22V.48H0zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.636 0-4.77-3.865-8.65-8.615-8.65z" />
@@ -599,7 +599,7 @@ const Header = () => {
 
                                             <a
                                                 href={storeUrl}
-                                                target="_blank"rel="noopener noreferrer"
+                                                target="_blank" rel="noopener noreferrer"
                                                 className="btn-outline"
                                                 style={{
                                                     width: '100%',
@@ -609,21 +609,21 @@ const Header = () => {
                                                     alignItems: 'center',
                                                     textDecoration: 'none',
                                                     color: 'inherit',
-                                                    marginTop: '4px' // Consistent spacing
+                                                    padding: '6px 8px'
                                                 }}
                                             >
-                                                <Star size={18} />
+                                                <Star size={16} />
                                                 <span>Rate App</span>
                                             </a>
                                         </div>
                                     </div>
 
-                                    <div className="settings-section">
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                                             <h3 style={{ margin: 0 }}>Theme</h3>
                                             <button
                                                 onClick={() => {
-                                                    const themeHelp = HELP_ITEMS.find(i => i.id === 'theme' || i.id === 'settings');
+                                                    const themeHelp = HELP_ITEMS.find(i => i.id === 'theme');
                                                     if (themeHelp) setSelectedHelpItem(themeHelp);
                                                 }}
                                                 title="Theme Help"
@@ -647,14 +647,14 @@ const Header = () => {
                                                 ?
                                             </button>
                                         </div>
-                                        <button onClick={toggleTheme} className="glass-panel" style={{ width: '100%', padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                                            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                                        <button onClick={toggleTheme} className="glass-panel" style={{ width: '100%', padding: '6px 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                                            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
                                             {theme === 'dark' ? 'Day Mode' : 'Night Mode'}
                                         </button>
                                     </div>
 
-                                    <div className="settings-section" style={{ marginTop: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                                             <h3 style={{ margin: 0 }}>Map Style</h3>
                                             <button
                                                 onClick={() => {
@@ -682,7 +682,7 @@ const Header = () => {
                                                 ?
                                             </button>
                                         </div>
-                                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
+                                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px' }}>
                                             {[
                                                 { key: 'dark', label: 'Night', icon: '🌙' },
                                                 { key: 'light', label: 'Day', icon: '☀️' },
@@ -693,29 +693,29 @@ const Header = () => {
                                                     onClick={() => setMapStyle(style.key)}
                                                     className={`glass-panel ${mapStyle === style.key ? 'active' : ''}`}
                                                     style={{
-                                                        padding: '10px 5px',
+                                                        padding: '6px 4px',
                                                         display: 'flex',
                                                         flexDirection: 'column',
                                                         alignItems: 'center',
-                                                        gap: '6px',
+                                                        gap: '4px',
                                                         border: mapStyle === style.key ? '1px solid var(--accent-primary)' : '1px solid var(--border-color)',
                                                         background: mapStyle === style.key ? 'rgba(88, 166, 255, 0.15)' : 'rgba(255, 255, 255, 0.05)',
                                                         color: 'var(--text-primary)',
-                                                        fontSize: '0.8rem',
+                                                        fontSize: '0.78rem',
                                                         cursor: 'pointer',
                                                         borderRadius: '8px',
                                                         transition: 'all 0.2s'
                                                     }}
                                                 >
-                                                    <span style={{ fontSize: '1.2rem' }}>{style.icon}</span>
+                                                    <span style={{ fontSize: '1.1rem' }}>{style.icon}</span>
                                                     <span>{style.label}</span>
                                                 </button>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="settings-section" style={{ marginTop: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                                    <div className="settings-section" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                                             <h3 style={{ margin: 0 }}>Map Clustering</h3>
                                             <button
                                                 onClick={() => {
