@@ -13,13 +13,13 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 // --- CONSTANTS ---
 const TILE_LAYERS = {
     light: {
-        url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+        url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
         attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
         subdomains: 'abcd',
         maxNativeZoom: 19
     },
     dark: {
-        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
         attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
         subdomains: 'abcd',
         maxNativeZoom: 19
@@ -578,7 +578,10 @@ const MapView = () => {
 
     const defaultCenter = [48.8566, 2.3522];
 
-    const renderedMarkers = [...sites].sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1)).map(site => {
+    const renderedMarkers = [...sites]
+        .filter(site => site && typeof site.latitude === 'number' && typeof site.longitude === 'number' && !isNaN(site.latitude) && !isNaN(site.longitude))
+        .sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1))
+        .map(site => {
         const rate = Number(site.significance) || 1;
         // Smaller pins (rate 1) get higher zIndexOffset (300) so they render in front of larger pins (rate 3 = 100)
         const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
