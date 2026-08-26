@@ -54,7 +54,7 @@ const FiltersModal = ({ onClose }) => {
     return createPortal(
         <>
             <div className="settings-drawer-backdrop open" onClick={onClose} />
-            <div className="settings-drawer open" onClick={(e) => e.stopPropagation()}>
+            <div className="settings-drawer filters-drawer open" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
                 <div className="settings-drawer-header" style={{
                     padding: '15px 20px',    /* Reduced top/bottom padding from default (usually 20px) to 10px */

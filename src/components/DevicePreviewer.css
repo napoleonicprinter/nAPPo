@@ -346,11 +346,16 @@
     display: none !important;
 }
 
-/* Force mobile width for drawers in emulator to override desktop media queries */
 .device-mobile .settings-drawer,
 .device-tablet .settings-drawer {
     width: 80% !important;
     max-width: 320px !important;
+}
+
+.device-mobile .filters-drawer,
+.device-tablet .filters-drawer {
+    width: 80% !important;
+    max-width: 300px !important;
 }
 
 .device-mobile .mobile-controls-drawer,

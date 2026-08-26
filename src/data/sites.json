@@ -15290,5 +15290,49 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_museum.webp",
     "site_link": "https://bluechermuseum-kaub.de/",
     "createDate": "2026-08-24"
+  },
+  {
+    "id": "844",
+    "name": "Blücher Memorial Stone",
+    "date": "1853-11-01",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Bacharach",
+    "country": "Germany",
+    "description": "The memorial stone, unveiled on November 1853, commemorates the Prussian Field Marshal Blücher for his spectacular crossing of the Rhine on New Year's Eve 1813/1814.",
+    "latitude": 50.08120,
+    "longitude": 7.764239,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_stone.webp",
+    "site_link": "https://www.romantischer-rhein.de/en/a-bluecher-gedenkstein",
+    "createDate": "2026-08-25"
+  },
+  {
+    "id": "845",
+    "name": "Blücher Statue at Kaub",
+    "date": "1894-06-18",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Kaub",
+    "country": "Germany",
+    "description": "This bronze statue of Marshal Blücher sculpted in 1893 by the prominent Berlin sculptor Prof. Friedrich Schaper was unveiled on June 18, 1894 to mark the anniversary of the Battle of Waterloo. Generalfeldmarschall Blücher is depicted in the military uniform he wore during the German Wars of Liberation (1813-1815).",
+    "latitude": 50.086369,
+    "longitude": 7.76392,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_stone.webp",
+    "site_link": "https://www.romantischer-rhein.de/en/a-bluecher-gedenkstein",
+    "createDate": "2026-08-25"
+  },
+  {
+    "id": "846",
+    "name": "Russian Ulhan Regiment Memorial ",
+    "date": "1912-11-06",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Krasny, Smolensk",
+    "country": "Russia",
+    "description": "This memorial was erected on November 6th 1912 to honor the Regiment of Uhlans who distinguished themselves in the battles of 1812.",
+    "latitude": 54.565160,
+    "longitude": 31.434217,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasny_ulhans.webp",
+    "createDate": "2026-08-25"
   }
 ]

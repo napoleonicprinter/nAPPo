@@ -287,7 +287,7 @@ const Header = () => {
                             )}
                         <ArcFilter className="desktop-arc-filter" />
 
-                        {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear</button>}
+                        {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear All</button>}
                         {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
 
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>

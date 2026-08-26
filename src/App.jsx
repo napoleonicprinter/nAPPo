@@ -10,6 +10,7 @@ import AnnouncementModal from './components/AnnouncementModal';
 //import { useAppContext } from './context/AppContext';
 //import FloatingViewToggle from './components/FloatingViewToggle';
 import HelpCard from './components/HelpCard';
+import ExitConfirmModal from './components/ExitConfirmModal';
 import { Eraser } from 'lucide-react';
 
 const MainApp = () => {
@@ -84,6 +85,7 @@ const MainApp = () => {
       )}
 
       <HelpCard />
+      <ExitConfirmModal />
     </div>
   );
 };

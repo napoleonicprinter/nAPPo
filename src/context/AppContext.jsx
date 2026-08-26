@@ -334,6 +334,7 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const [view, setView] = useState('map');
     const [innerView, setInnerView] = useState('map');
+    const [showExitConfirm, setShowExitConfirm] = useState(false);
     const [mapBounds, setMapBounds] = useState(null);
     const [selectedSite, setSelectedSite] = useState(null);
     const [siteToOpenPopup, setSiteToOpenPopup] = useState(null);
@@ -1094,20 +1095,14 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
 
         // 4. If user is at pristine baseline with nothing left to undo:
-        // Require double-press within 2s to exit app on Android
-        const now = Date.now();
-        if (lastExitPressRef.current && (now - lastExitPressRef.current) < 2000) {
-            if (Capacitor.isNativePlatform()) {
-                App.exitApp();
-                return true;
-            }
-        } else {
-            lastExitPressRef.current = now;
-            return true; // Consume the first back press at root so it doesn't abruptly quit!
+        // Show pop-up warning ("Do you want to close the App?")
+        if (!showExitConfirm) {
+            setShowExitConfirm(true);
+            return true;
         }
 
         return false;
-    }, [restoreSnapshot, selectedSite, selectedHelpItem, activeMapOverlays, clearMapOverlays, view, setView, previewDevice, setPreviewDevice, isFiltered, clearAllFilters, setCallerSite]);
+    }, [restoreSnapshot, selectedSite, selectedHelpItem, activeMapOverlays, clearMapOverlays, view, setView, previewDevice, setPreviewDevice, isFiltered, clearAllFilters, setCallerSite, showExitConfirm, setShowExitConfirm]);
 
     // Native Capacitor Back Button & Web Popstate listener
     useEffect(() => {
@@ -1218,6 +1213,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             setCallerSite,
             selectedHelpItem,
             setSelectedHelpItem,
+            showExitConfirm,
+            setShowExitConfirm,
         }}>
             {children}
         </AppContext.Provider>

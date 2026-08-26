@@ -26,7 +26,7 @@ export const HELP_ITEMS = [
         title: 'Related Sites',
         imagePc: '/assets/images/Help_Related.webp',// Large horizontal image
         imageMobile: '/assets/images/Help_Related_M.webp', // Tall vertical image
-        content: 'At the bottom of some of the site cards you can find links to other sites related to the event described in that site card.'
+        content: 'At the bottom of some of the site cards you can find links to other sites related to the event described in such site card.'
     },
     {
         id: 'clusterPin',
@@ -103,7 +103,7 @@ export const HELP_ITEMS = [
         title: 'Stars',
         imagePc: '/assets/images/Help_Stars.webp',
         imageMobile: '/assets/images/Help_Stars_M.webp',
-        content: 'Stars represent the historical importance of the site. Site Pin size increases with significance. Press again the third star and will show all sites.'
+        content: 'Stars represent the historical importance of the site. Site Pin size increases with significance. Press again the selected star and will show all sites.'
     },
     {
         id: 'filters',
