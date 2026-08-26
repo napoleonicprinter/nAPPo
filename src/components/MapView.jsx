@@ -57,41 +57,40 @@ const getSiteIcon = (site) => {
 
 // Look for this component near the top of your file
 const PopupOpener = ({ markerRefs, clusterInstance }) => {
-    const { siteToOpenPopup } = useAppContext();
+    const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
     const map = useMap();
-    const lastOpenedId = useRef(null);
 
     useEffect(() => {
-        if (!siteToOpenPopup || lastOpenedId.current === siteToOpenPopup.id) return;
+        if (!siteToOpenPopup || typeof siteToOpenPopup.latitude !== 'number' || typeof siteToOpenPopup.longitude !== 'number') return;
 
-        const marker = markerRefs.current.get(siteToOpenPopup.id);
-        if (marker) {
-            lastOpenedId.current = siteToOpenPopup.id;
+        const targetSite = siteToOpenPopup;
+        const marker = markerRefs.current.get(targetSite.id);
 
-            const openMarkerPopup = () => {
-                const latlng = marker.getLatLng();
-                const currentZoom = map.getZoom();
+        const openMarkerPopup = () => {
+            const currentZoom = map.getZoom();
+            const targetZoom = Math.max(currentZoom, 11);
 
-                const targetPoint = map.project(latlng, currentZoom);
-                targetPoint.y -= 150;
-                const targetLatLng = map.unproject(targetPoint, currentZoom);
+            const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
+            targetPoint.y -= 150;
+            const targetLatLng = map.unproject(targetPoint, targetZoom);
 
-                map.panTo(targetLatLng, { animate: true, duration: 0.6 });
+            map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.8 });
 
-                setTimeout(() => {
-                    if (markerRefs.current.get(siteToOpenPopup.id)) {
-                        marker.openPopup();
-                    }
-                }, 400);
-            };
+            setTimeout(() => {
+                const currentMarker = markerRefs.current.get(targetSite.id);
+                if (currentMarker) {
+                    currentMarker.openPopup();
+                }
+                setSiteToOpenPopup(null);
+            }, 600);
+        };
 
-            if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-                clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
-            } else {
-                openMarkerPopup();
-            }
+        if (marker && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+            clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
+        } else {
+            openMarkerPopup();
         }
-    }, [siteToOpenPopup, clusterInstance, map]);
+    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup]);
 
     return null;
 };
@@ -683,7 +682,7 @@ const MapView = () => {
                     spiderfyDistanceMultiplier={1.5}
                     spiderLegPolylineOptions={{ weight: 1.5, color: '#555', opacity: 0.7 }}
                     showCoverageOnHover={false}
-                    disableClusteringAtZoom={clusterRadius === 0 || isTodaysBattleActive ? 20 : 15}
+                    disableClusteringAtZoom={clusterRadius === 0 ? 0 : (isTodaysBattleActive ? 20 : 15)}
                     chunkedLoading={true}
                 >
                     {renderedMarkers}

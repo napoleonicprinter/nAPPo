@@ -491,8 +491,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                             e.stopPropagation();
                                                             if (targetSite) {
                                                                 setSelectedSite(null);
-                                                                setSiteToOpenPopup(targetSite);
-                                                                setView('map');
+                                                                setSiteToOpenPopup(null);
+                                                                setTimeout(() => {
+                                                                    setSiteToOpenPopup(targetSite);
+                                                                    setView('map');
+                                                                }, 10);
                                                             } else {
                                                                 console.warn("Related site record not found for ID:", targetId);
                                                             }
