@@ -3,7 +3,7 @@ import React from 'react';
 import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
-    Palette, Swords, Link2
+    Palette, Swords, Link2, X
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
@@ -86,13 +86,20 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
     return (
         <div className={`site-card ${site.visited ? 'visited' : ''}`} style={{ position: 'relative' }}>
 
-            {/* --- RED CLOSE BUTTON --- */}
+            {/* --- RED CIRCLE CLOSE BUTTON WITH WHITE CROSS --- */}
             {onClose && (
                 <button
                     onClick={(e) => { e.stopPropagation(); onClose(); }}
-                    className="close-details-btn"
+                    className="modal-close-btn close-details-btn"
+                    title="Close"
+                    style={{
+                        position: 'absolute',
+                        top: '10px',
+                        right: '10px',
+                        zIndex: 100001
+                    }}
                 >
-                    <span>×</span>
+                    <X size={18} strokeWidth={2.5} color="white" />
                 </button>
             )}
 

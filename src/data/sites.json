@@ -212,6 +212,12 @@
     "commanders": [
       "Napoleon",
       "Kutuzov"
+    ],
+    "relatedSites": [
+      {
+        "id": "721",
+        "title": "Albrecht Adam canvas"
+      }
     ]
   },
   {
@@ -299,16 +305,27 @@
     "commanders": [
       "Józef Antoni Poniatowski",
       "Archduke Ferdinand Karl Joseph"
+    ],
+    "relatedSites": [
+      {
+        "id": "14",
+        "title": "Wojciech Kossak's canvas"
+      },
+      {
+        "id": "13",
+        "title": "Death of Godebski at Raszyn canvas"
+      }
     ]
   },
   {
     "id": "13",
     "name": "Death of Godebski at Raszyn",
     "category": "Artwork",
+    "year": "1855",
     "significance": 2,
     "location": "National Museum, Warsaw",
     "country": "Poland",
-    "description": "The artist, pupil of Horace Vernet, depicts  the death of the Polish writer and soldier Cyprian Godebski while Józef Poniatowski rides on horseback in the centre of the scene.",
+    "description": "January Suchodolski, pupil of Horace Vernet, depicts  the death of the Polish writer and soldier Cyprian Godebski while Józef Poniatowski rides on horseback in the centre of the scene.",
     "latitude": 52.231667,
     "longitude": 21.024722,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Smierc_Godebskiego.jpg/1280px-Smierc_Godebskiego.jpg",
@@ -316,28 +333,40 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/The_Death_of_Cyprian_Godebski_at_Raszyn",
     "more_info_link": "https://cyfrowe.mnw.art.pl/pl/zbiory/446340",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "12",
+        "title": "Battlefield"
+      }
+    ]
   },
   {
     "id": "14",
     "name": "Battle of Raszyn",
     "category": "Artwork",
+    "year": "1913",
     "significance": 2,
     "location": "National Museum, Warsaw",
     "country": "Poland",
-    "description": "In this monumental composition, the artist depicts the first moments of the Battle of Raszyn.",
+    "description": "This panoramic oil painting is Battle of Raszyn (1809), created in 1913 by the renowned Polish military and history painter Wojciech Kossak. The original masterpiece resides in the National Museum in Warsaw.",
     "latitude": 52.231667,
     "longitude": 21.024722,
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Kossak_Battle_of_Raszyn.jpg",
     "site_link": "https://cyfrowe.mnw.art.pl/en/home",
     "more_info_link": "https://cyfrowe.mnw.art.pl/en/catalog/445122",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "12",
+        "title": "Battlefield"
+      }
+    ]
   },
   {
     "id": "15",
     "name": "Battle of Somosierra",
     "category": "Artwork",
+    "year": "1860",
     "significance": 2,
     "location": "National Museum, Warsaw",
     "country": "Poland",
@@ -347,6 +376,16 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/La_batalla_de_Somosierra%2C_por_January_Suchodolski.jpg/1280px-La_batalla_de_Somosierra%2C_por_January_Suchodolski.jpg",
     "site_link": "https://cyfrowe.mnw.art.pl/en/home",
     "more_info_link": "https://cyfrowe.mnw.art.pl/en/catalog/446701",
+    "relatedSites": [
+      {
+        "id": "102",
+        "title": "Battlefield"
+      },
+      {
+        "id": "79",
+        "title": "Engraving"
+      }
+    ],
     "createDate": "2025-02-26T10:00:00Z"
   },
   {
@@ -363,6 +402,12 @@
     "longitude": 35.326667,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/W._%26_A._K._Johnston%2C_Battle_of_Mount_Thabor.16th_April_1799_%28FL37129674_3911851%29.jpg/960px-W._%26_A._K._Johnston%2C_Battle_of_Mount_Thabor.16th_April_1799_%28FL37129674_3911851%29.jpg",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mount_Tabor_(1799)",
+    "relatedSites": [
+      {
+        "id": "283",
+        "title": "Canvas by Antoine-Jean Gros"
+      }
+    ],
     "createDate": "2025-02-26T10:00:00Z",
     "special": [
       "arc",
@@ -1206,7 +1251,7 @@
     "description": "El asedio de Cádiz es como se le conoce al sitio de Cádiz y San Fernando que tuvo lugar el 5 de febrero de 1810, estableciendo un cerco a la ciudad de Cádiz y San Fernando hasta el 24 de agosto de 1812.",
     "latitude": 36.521,
     "longitude": -6.280442,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/SitiodeCadiz.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sitio_Cadiz.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitio_de_C%C3%A1diz",
     "createDate": "2025-03-15T10:00:00Z",
     "special": [
@@ -1537,7 +1582,12 @@
     "image": "https://www.parismuseescollections.paris.fr/sites/default/files/styles/pm_notice/public/atoms/images/CAR/aze_carg033643_001.jpg",
     "more_info_link": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bataille-de-somo-sierra#infos-principales",
     "createDate": "2026-03-15T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "102",
+        "title": "Battlefield"
+      }
+    ]
   },
   {
     "id": "80",
@@ -2037,6 +2087,12 @@
     "commanders": [
       "Napoleon",
       "Benito de San Juan"
+    ],
+    "relatedSites": [
+      {
+        "id": "15",
+        "title": "Suchodolski's canvas"
+      }
     ]
   },
   {
@@ -2502,7 +2558,7 @@
     "description": "Rue Joachim Murat, 46240 Labastide-Murat. His birthplace is now a museum dedicated to his life and career.",
     "latitude": 44.646437,
     "longitude": 1.56738,
-    "image": "https://www.napoleon.org/wp-content/thumbnails/uploads/2002/09/456327_1-tt-width-273-height-400-crop-1-bgcolor-ffffff-lazyload-0.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_birthplace.webp",
     "more_info_link": "https://www.napoleon.org/en/magazine/places/musee-murat-labastide-murat-lot/#:~:text=Category:%20Museums%2C%20Stately%20Homes%20and,murat.pagesperso%2Dorange.fr",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -2682,13 +2738,14 @@
     "id": "134",
     "name": "La muerte de Daoíz en el Parque de Artillería de Monteleón",
     "category": "Artwork",
+    "year": "1835",
     "significance": 2,
     "location": "Madrid, Madrid",
     "country": "Spain",
     "description": "Museo Nacional del Romanticismo.  Obra de  Alenza y Nieto, Leonardo. Escena de batalla, desarrollada durante la Guerra de la Independencia. Representa los hechos acaecidos durante el 2 de Mayo de 1808, en el Parque de Artillería de Monteleón.",
     "latitude": 40.425895,
     "longitude": -3.698764,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/Daoíz.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Daoiz.webp",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
   },
@@ -3568,7 +3625,7 @@
     "description": "Lady Butler's depiction of the Scots Greys famous charge at the Battle of Waterloo. In actuality, it appears that they were unable to build up the momentum of a gallop, because the broken ground obliged them to advance at a canter.",
     "latitude": 53.80024,
     "longitude": -1.5483,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Scotland_Forever%21.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scotland_forever.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Scotland_Forever!",
     "youtube_link": "https://youtu.be/j8psf5hCa3U?si=FBVr1Y7fgbwVkfrR",
     "createDate": "2025-03-21T10:00:00Z",
@@ -3581,15 +3638,16 @@
   },
   {
     "id": "180",
-    "name": "Painting - The year of the famine in Madrid",
+    "name": "The year of the famine in Madrid",
+    "year": "1818",
     "category": "Artwork",
     "significance": 1,
     "location": "Museo de Historia de Madrid, Madrid",
     "country": "Spain",
-    "description": "Exhibited at the 'Museo de Historia de Madrid'. Painted by José Aparicio, often associated with the 1811–1812 famine period, with some sources mentioning it was completed around 1818.'The Year of the Famine in Madrid' (Spanish: El año del hambre en Madrid) depicts the dire food shortages in Madrid during the French occupation from 1811–1812. The oil on canvas portrays the misery of the population, with hungry, ragged individuals receiving food from French soldiers.",
+    "description": "Exhibited at the 'Museo de Historia de Madrid'. Painted by José Aparicio, often associated with the 1811-1812 famine period, with some sources mentioning it was completed around 1818.'The Year of the Famine in Madrid' (Spanish: El año del hambre en Madrid) depicts the dire food shortages in Madrid during the French occupation from 1811–1812. The oil on canvas portrays the misery of the population, with hungry, ragged individuals receiving food from French soldiers.",
     "latitude": 40.425743,
     "longitude": -3.70067,
-    "image": "https://content3.cdnprado.net/imagenes/Documentos/imgsem/90/90db/90db7bbc-71a1-41a9-bd94-1c4d04dd352c/aae9f0ae-210f-497a-a76e-01e0ea49542d_832.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hambruna_madrid.webp",
     "more_info_link": "https://www.museodelprado.es/en/the-collection/art-work/the-year-of-the-famine-in-madrid/90db7bbc-71a1-41a9-bd94-1c4d04dd352c",
     "createDate": "2025-03-21T10:00:00Z",
     "special": false
@@ -3731,6 +3789,12 @@
     ],
     "victor": "France",
     "defeated": "Russia",
+    "relatedSites": [
+      {
+        "id": "436",
+        "title": "Horace Vernet artwork"
+      }
+    ],
     "maps": [
       {
         "id": "firedland-phase1",
@@ -4630,7 +4694,7 @@
   },
   {
     "id": "227",
-    "name": "Battle of Klyastitsy",
+    "name": "Battle of Kliastitsy",
     "category": "Battle site",
     "significance": 1,
     "year": 1812,
@@ -4647,6 +4711,12 @@
       "Yakov Kulnev"
     ],
     "special": "Russian Campaign",
+    "relatedSites": [
+      {
+        "id": "722",
+        "title": "Peter von Hess canvas"
+      }
+    ],
     "createDate": "2025-03-22T10:00:00Z"
   },
   {
@@ -5729,6 +5799,12 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/The_Battle_of_Nazareth_%28Gros%29",
     "site_link": "https://museedartsdenantes.nantesmetropole.fr",
     "more_info_link": "https://www.artera.ae/artworks/cee322cf-b185-489e-b05d-543d045f965b",
+    "relatedSites": [
+      {
+        "id": "16",
+        "title": "Battlefield"
+      }
+    ],
     "createDate": "2025-03-22T10:00:00Z"
   },
   {
@@ -5901,7 +5977,13 @@
       "Jacques Hamelin",
       "Samuel Pym"
     ],
-    "special": "arc"
+    "special": "arc",
+    "relatedSites": [
+      {
+        "id": "294",
+        "title": "Canvas by Pierre-Julien Gilbert"
+      }
+    ]
   },
   {
     "id": "293",
@@ -5915,6 +5997,12 @@
     "longitude": 2.287323,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CombatGrandPort.webp",
     "site_link": "https://www.musee-marine.fr/en/our-museums/paris/practical-information.html",
+    "relatedSites": [
+      {
+        "id": "293",
+        "title": "Battle site"
+      }
+    ],
     "createDate": "2025-03-22T10:00:00Z"
   },
   {
@@ -8720,6 +8808,12 @@
     "longitude": 2.120417,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Friedland_vernet.webp",
     "more_info_link": "https://en.chateauversailles.fr/discover/estate/palace/gallery-great-battles#the-historic-galleries-also-include",
+    "relatedSites": [
+      {
+        "id": "186",
+        "title": "Battlefield"
+      }
+    ],
     "createDate": "2025-03-15T10:00:00Z"
   },
   {
@@ -13332,6 +13426,12 @@
     "latitude": 59.939832,
     "longitude": 30.31456,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borodino_Adam.webp",
+    "relatedSites": [
+      {
+        "id": "7",
+        "title": "Battlefield"
+      }
+    ],
     "createDate": "2026-08-12"
   },
   {
@@ -13345,6 +13445,12 @@
     "latitude": 59.939832,
     "longitude": 30.31456,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Klyastitsy_canvas.webp",
+    "relatedSites": [
+      {
+        "id": "227",
+        "title": "Battlefield"
+      }
+    ],
     "createDate": "2026-08-16"
   },
   {

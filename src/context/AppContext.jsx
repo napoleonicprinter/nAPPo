@@ -126,12 +126,11 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
-        if (isDevelopment) return sitesData;
         const saved = localStorage.getItem('sitesData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= sitesData.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -140,12 +139,11 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [showsBaseData, setShowsBaseData] = useState(() => {
-        if (isDevelopment) return showsData;
         const saved = localStorage.getItem('showsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= showsData.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -154,12 +152,11 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [shoppingBaseData, setShoppingBaseData] = useState(() => {
-        if (isDevelopment) return shoppingData;
         const saved = localStorage.getItem('shoppingData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= shoppingData.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -183,12 +180,11 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [shoppingBaseData]);
 
     const [eventsBaseData, setEventsBaseData] = useState(() => {
-        if (isDevelopment) return eventsDataFallback;
         const saved = localStorage.getItem('eventsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= eventsDataFallback.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -197,12 +193,11 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
-        if (isDevelopment) return newsDataFallback;
         const saved = localStorage.getItem('newsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= newsDataFallback.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -223,12 +218,11 @@ export const AppProvider = ({ children, storeUrl }) => {
     const clearMapOverlays = () => setActiveMapOverlays([]);
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
-        if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= messagesDataFallback.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -237,12 +231,11 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [dealsBaseData, setDealsBaseData] = useState(() => {
-        if (isDevelopment) return dealsDataFallback;
         const saved = localStorage.getItem('dealsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length >= dealsDataFallback.length) {
+                if (Array.isArray(parsed) && parsed.length > 0) {
                     return parsed;
                 }
             } catch (e) { }
@@ -290,37 +283,37 @@ export const AppProvider = ({ children, storeUrl }) => {
 
                 if (resSites.ok) {
                     const data = await resSites.json();
-                    if (!isDevelopment) setSitesBaseData(data);
+                    setSitesBaseData(data);
                     localStorage.setItem('sitesData', JSON.stringify(data));
                 }
                 if (resShows.ok) {
                     const data = await resShows.json();
-                    if (!isDevelopment) setShowsBaseData(data);
+                    setShowsBaseData(data);
                     localStorage.setItem('showsData', JSON.stringify(data));
                 }
                 if (resShopping.ok) {
                     const data = await resShopping.json();
-                    if (!isDevelopment) setShoppingBaseData(data);
+                    setShoppingBaseData(data);
                     localStorage.setItem('shoppingData', JSON.stringify(data));
                 }
                 if (resEvents.ok) {
                     const data = await resEvents.json();
-                    if (!isDevelopment) setEventsBaseData(data);
+                    setEventsBaseData(data);
                     localStorage.setItem('eventsData', JSON.stringify(data));
                 }
                 if (resNews && resNews.ok) {
                     const data = await resNews.json();
-                    if (!isDevelopment) setNewsBaseData(data);
+                    setNewsBaseData(data);
                     localStorage.setItem('newsData', JSON.stringify(data));
                 }
                 if (resMessages && resMessages.ok) {
                     const data = await resMessages.json();
-                    if (!isDevelopment) setMessagesBaseData(data);
+                    setMessagesBaseData(data);
                     localStorage.setItem('messagesData', JSON.stringify(data));
                 }
                 if (resDeals && resDeals.ok) {
                     const data = await resDeals.json();
-                    if (!isDevelopment) setDealsBaseData(data);
+                    setDealsBaseData(data);
                     localStorage.setItem('dealsData', JSON.stringify(data));
                 }
 
@@ -334,8 +327,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         };
 
-        const timer = setTimeout(syncData, 2000);
-        return () => clearTimeout(timer);
+        syncData();
     }, []);
 
     const [view, setView] = useState(() => {
