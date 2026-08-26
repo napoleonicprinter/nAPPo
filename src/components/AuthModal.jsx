@@ -64,10 +64,12 @@ const AuthModal = ({ onClose }) => {
                 }}
             >
                 <button
+                    className="modal-close-btn"
                     onClick={onClose}
-                    style={{ position: 'absolute', top: '15px', right: '15px', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
+                    title="Close"
+                    style={{ position: 'absolute', top: '15px', right: '15px' }}
                 >
-                    <X size={24} />
+                    <X size={18} strokeWidth={2.5} color="white" />
                 </button>
 
                 <h2 style={{ marginBottom: '1.5rem', color: 'var(--text-primary)', fontSize: authMessage ? '1.3rem' : '1.65rem', lineHeight: '1.4', fontWeight: '700' }}>

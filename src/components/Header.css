@@ -622,22 +622,28 @@
 }
 
 .settings-drawer-close {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-primary);
-    transition: all var(--transition-fast);
-    border: none;
-    cursor: pointer;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    border-radius: 50% !important;
+    background: #ff4444 !important;
+    color: white !important;
+    border: 2px solid white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.2s ease, background 0.2s ease !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 .settings-drawer-close:hover {
-    background: var(--accent-danger);
-    color: white;
+    background: #cc0000 !important;
+    color: white !important;
+    transform: scale(1.08) !important;
 }
 
 .settings-drawer-content {

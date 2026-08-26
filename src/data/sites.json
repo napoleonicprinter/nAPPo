@@ -2593,8 +2593,8 @@
     "location": "Großbeeren, Brandenburg",
     "country": "Germany",
     "description": "Occurred on August 23rd 1813 in neighboring Blankenfelde and Sputendorf [de] between the Prussian III Corps under Friedrich von Bülow and the Franco-Saxon VII Corps under Jean Reynier.",
-    "latitude": 52.363,
-    "longitude": 13.2727,
+    "latitude": 52.371836,
+    "longitude": 13.27968,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Grobbeeren.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gro%C3%9Fbeeren",
     "createDate": "2025-03-15T10:00:00Z",
@@ -15314,6 +15314,16 @@
     "longitude": 7.764239,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_stone.webp",
     "site_link": "https://www.romantischer-rhein.de/en/a-bluecher-gedenkstein",
+    "relatedSites"[
+      {
+        "id": "849",
+        "title": "Camphausen's painting (1859 version)"
+      },
+      {
+        "id": "850",
+        "title": "Camphausen's painting (1860 version)"
+      }
+    ],
     "createDate": "2026-08-25"
   },
   {
@@ -15372,6 +15382,54 @@
     "longitude": 31.470005,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi_column.webp",
     "more_info_link": "https://fr.wikipedia.org/wiki/Bataille_de_Krasno%C3%AF#/media/Fichier:Memorial_to_the_battle_of_Krasnoi_(November_1812).jpg",
+    "createDate": "2026-08-26"
+  },
+  {
+    "id": "849",
+    "name": "Blücher's crossing of the Rhine (1859)",
+    "year": "1859",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "Mittelrhein-Museum, Koblenz",
+    "country": "Germany",
+    "description": "The 1859 oil on Wood artwork done by Wilhelm Camphausen is housed in the Mittelrhein-Museum in Koblenz. In this first verion a dense group of civilian spectators and children standing closely on the right bank.",
+    "latitue": 54.57598,
+    "longitude": 31.470005,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Camphausen_1859.webp",
+    "relatedSites": [
+      {
+        "id": "844",
+        "title": "Blücher Memorial Stone"
+      },
+      {
+        "id": "850",
+        "title": "Camphausen's 1860 version"
+      }
+    ],
+    "createDate": "2026-08-26"
+  },
+  {
+    "id": "850",
+    "name": "Blücher's crossing of the Rhine (1860)",
+    "year": "1860",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "Alte Nationalgalerie, Berlin",
+    "country": "Germany",
+    "description": "The 1860 oil on canvas by Wilhelm Camphausen is a second and larger version of Blücher crossing of the Rhine scene. In this second verion the civilian crowd is significantly minimized, focusing much heavier attention on rows of uniformed soldiers.",
+    "latitude": 50.358876,
+    "longitude": 7.596046,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Camphausen_1860.webp",
+    "relatedSites"[
+      {
+        "id": "844",
+        "title": "Blücher Memorial Stone"
+      },
+      {
+        "id": "849",
+        "title": "Camphausen's 1859 version"
+      }
+    ],
     "createDate": "2026-08-26"
   }
 ]

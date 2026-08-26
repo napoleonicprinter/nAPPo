@@ -1,4 +1,5 @@
 import React from 'react';
+import { LocateFixed } from 'lucide-react';
 
 export const HELP_ITEMS = [
     {
@@ -40,14 +41,22 @@ export const HELP_ITEMS = [
         title: 'Location',
         imagePc: '/assets/images/Help_Location.webp',// Large horizontal image
         imageMobile: '/assets/images/Help_Location_M.webp', // Tall vertical image
-        content: 'Use the location menu to center the map on European capitals. A blue pointer will appear on the selected location. The location icon allows you to center the map to the selected city.'
+        content: (
+            <>
+                Use the location menu to center the map on European capitals. A blue pointer will appear on the selected location. The center icon (<LocateFixed size={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 2px' }} />) allows you to center the map to the selected city.
+            </>
+        )
     },
     {
         id: 'GPS location',
         title: 'My GPS Location',
         imagePc: '/assets/images/Help_GPSLocation.webp',
         imageMobile: '/assets/images/Help_GPSLocation_M.webp',
-        content: 'You have to authorize the app to access your location to use this feature. Use the location icon to center the map to your current position.'
+        content: (
+            <>
+                You have to authorize the app to access your location to use this feature. Use the center icon (<LocateFixed size={15} style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 2px' }} />) to center the map to your current position.
+            </>
+        )
     },
     {
         id: 'All Areas',
@@ -130,7 +139,7 @@ export const HELP_ITEMS = [
         title: 'Settings - Theme',
         imagePc: '/assets/images/Help_Theme.webp',
         imageMobile: '/assets/images/Help_Theme_M.webp',
-        content: 'Theme in the Settings drawer allows you to toggle between Day Mode and Night Mode visual appearances. Night mode will show header and nemus in black.'
+        content: 'Theme in the Settings drawer allows you to toggle between Day Mode and Night Mode visual appearances. Night mode will show header and menus in black.'
     },
     {
         id: 'mapstyle',
