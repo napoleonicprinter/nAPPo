@@ -3788,9 +3788,12 @@
     "description": "The Battle of Trafalgar was fought on October 21, 1805, between the British Royal Navy and the combined fleets of the French and Spanish Navies.",
     "latitude": 36.239983,
     "longitude": -6.18796,
-    "tier": false,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Trafalgar.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar",
+    "special": [
+      "3",
+      "Trafalgar Campaign"
+    ],
     "createDate": "2025-03-15T10:00:00Z"
   },
   {
@@ -5014,11 +5017,14 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/BasqueRoad.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Basque_Roads#Gambier's_blockade",
     "createDate": "2025-03-22T10:00:00Z",
+    "victor": "Britain",
+    "defeated": "France",
     "commanders": [
       "James Gambier",
       "Thomas Cochrane",
       "Zacharie Allemand"
-    ]
+    ],
+    "special": "5"
   },
   {
     "id": "247",
@@ -6079,6 +6085,10 @@
     "commanders": [
       "Horatio Nelson",
       "Brueys d'Aigalliers"
+    ],
+    "special": [
+      "2",
+      "Egyptian Campaign"
     ]
   },
   {
@@ -15323,7 +15333,7 @@
   },
   {
     "id": "846",
-    "name": "Russian Ulhan Regiment Memorial ",
+    "name": "Russian Ulhan Regiment Memorial",
     "date": "1912-11-06",
     "category": "Monument",
     "significance": 2,
@@ -15333,6 +15343,20 @@
     "latitude": 54.565160,
     "longitude": 31.434217,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasny_ulhans.webp",
+    "createDate": "2026-08-25"
+  },
+  {
+    "id": "847",
+    "name": "Battle of Krasnoi Memorial",
+    "date": "1912-11-16",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Krasny, Smolensk",
+    "country": "Russia",
+    "description": "This memorial Cross dedicated to the 100th anniversary of the Battle of Krasnoi was first laid down and inaugurated in 1912 to mark the exact centennial anniversary of the battle. During the Soviet era, the monument suffered severe neglect, but the square and the historical memorial cross complex were fully restored and updated in the post-Soviet period.",
+    "latitude": 54.574938,
+    "longitude": 31.436517,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi_memorial.webp",
     "createDate": "2026-08-25"
   }
 ]

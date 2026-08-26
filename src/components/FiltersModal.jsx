@@ -77,9 +77,9 @@ const FiltersModal = ({ onClose }) => {
                     <button
                         className="settings-drawer-close"
                         onClick={onClose}
-                        style={{ padding: '4px' }} /* Tighter button padding */
+                        title="Close"
                     >
-                        <X size={18} />
+                        <X size={18} strokeWidth={2.5} color="white" />
                     </button>
                 </div>
                 {/*<div className="settings-drawer-header">

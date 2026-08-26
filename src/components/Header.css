@@ -160,6 +160,7 @@
     .custom-select-container {
         min-width: 115px;
     }
+
     .hide-on-desktop {
         display: flex !important;
     }
@@ -471,6 +472,7 @@
 .custom-select-trigger.filters-active-red.active * {
     color: white !important;
 }
+
 .settings-btn {
     padding: 8px 12px;
     display: flex;
@@ -579,7 +581,7 @@
 }
 
 .filters-drawer {
-    width: 300px;
+    width: 250px;
     max-width: 90vw;
 }
 
@@ -588,6 +590,7 @@
         width: 340px;
         max-width: 340px;
     }
+
     .filters-drawer {
         width: 300px;
         max-width: 300px;
@@ -607,6 +610,7 @@
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.02);
 }
+
 .settings-drawer-header h3 {
     font-size: 1.35rem;
     font-weight: 700;
@@ -1482,6 +1486,7 @@
         width: 14px !important;
         height: 14px !important;
     }
+
     /* --- Final Header Layout Fixes --- */
 
     /* Ensures Logo/Counter are left and Actions are right */
@@ -1536,11 +1541,13 @@
         overflow-x: auto;
         padding: 10px 12px;
         gap: 10px;
-        scrollbar-width: none; /* Hide scrollbar Firefox */
+        scrollbar-width: none;
+        /* Hide scrollbar Firefox */
         -webkit-overflow-scrolling: touch;
     }
 
     .mobile-filters-scroll::-webkit-scrollbar {
-        display: none; /* Hide scrollbar Chrome/Safari */
+        display: none;
+        /* Hide scrollbar Chrome/Safari */
     }
-}
+}                                                                                                                 

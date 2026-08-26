@@ -67,8 +67,8 @@ const ShoppingView = ({ onClose }) => {
                             <h2>Marketplace</h2>
                             <p>If you want to place an ad here email us to nAPPoTrails@proton.me</p>
                         </div>
-                        <button className="modal-close-btn" onClick={onClose}>
-                            <X size={24} />
+                        <button className="modal-close-btn" onClick={onClose} title="Close">
+                            <X size={18} strokeWidth={2.5} color="white" />
                         </button>
                     </div>
 

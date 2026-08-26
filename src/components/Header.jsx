@@ -481,8 +481,9 @@ const Header = () => {
                                     <button
                                         className="settings-drawer-close"
                                         onClick={() => setShowSettings(false)}
+                                        title="Close"
                                     >
-                                        <X size={20} />
+                                        <X size={18} strokeWidth={2.5} color="white" />
                                     </button>
                                 </div>
 

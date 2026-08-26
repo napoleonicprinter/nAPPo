@@ -697,9 +697,8 @@ export const AppProvider = ({ children, storeUrl }) => {
         if (!showFilter) {
             setFilterCommander('all');
             setFilterYear('all');
+            setShowArcOnly(false);
         }
-        const isBattleSiteAlone = filterCategory.length === 1 && filterCategory[0] === 'Battle site';
-        if (!isBattleSiteAlone) setShowArcOnly(false);
     }, [filterCategory]);
 
     useEffect(() => {

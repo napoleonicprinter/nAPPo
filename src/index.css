@@ -306,36 +306,26 @@ button {
 .modal-close-btn {
   width: 32px;
   height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: #ff4444;
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s;
-  color: var(--text-primary);
-  transition: all 0.2s;
+  transition: transform 0.2s ease, background 0.2s ease;
   flex-shrink: 0;
-  border: none;
-}
-
-/* Let modal title row handle the layout with space-between */
-.modal-title-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  justify-content: space-between;
-}
-
-/* Ensure title info fills space so button stays on the right */
-.modal-title-info {
-  flex: 1;
+  padding: 0;
 }
 
 .modal-close-btn:hover {
-  background: var(--accent-danger);
+  background: #cc0000;
   color: white;
+  transform: scale(1.08);
 }
 
 /* Custom Dropdowns (Glassmorphic) */

@@ -184,7 +184,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                             )}
                         </div>
                         <button className="modal-close-btn" onClick={onClose} title="Close">
-                            <X size={24} />
+                            <X size={18} strokeWidth={2.5} color="white" />
                         </button>
                     </div>
 

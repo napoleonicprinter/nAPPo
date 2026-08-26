@@ -23,8 +23,8 @@ const NewsModal = ({ onClose }) => {
                             <h2>nAPPo Trails News</h2>
                             <p>Latest updates</p>
                         </div>
-                        <button className="modal-close-btn" onClick={onClose}>
-                            <X size={24} />
+                        <button className="modal-close-btn" onClick={onClose} title="Close">
+                            <X size={18} strokeWidth={2.5} color="white" />
                         </button>
                     </div>
                 </div>
