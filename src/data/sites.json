@@ -15431,5 +15431,19 @@
       }
     ],
     "createDate": "2026-08-26"
+  },
+  {
+    "id": "851",
+    "name": "General Joaquín Blake house",
+    "date": "1827-04-27",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Valladolid",
+    "country": "Spain",
+    "description": "Site where the house stood in which General Joaquín Blake died on April 27, 1827 at the age of 67.",
+    "latitude": 41.650280,
+    "longitude": -4.723819,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blake_death.webp.webp",
+    "createDate": "2026-08-26"
   }
 ]

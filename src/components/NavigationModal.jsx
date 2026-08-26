@@ -102,14 +102,13 @@ const NavigationModal = ({ userCoords, site, onClose }) => {
                         zoom={13}
                         style={{ height: '100%', width: '100%' }}
                         zoomControl={false}
-                        maxBounds={[[-90, -180], [90, 180]]}
-                        maxBoundsViscosity={1.0}
+                        maxBounds={[[-85.05112878, -180], [85.05112878, 180]]}
+                        maxBoundsViscosity={0.8}
                         minZoom={2}
                     >
                         <TileLayer
-                            attribution='&copy; CARTO'
-                            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                            noWrap={true}
+                            attribution='Tiles &copy; Esri'
+                            url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
                         />
 
                         <MapFitter userCoords={userCoords} site={site} />

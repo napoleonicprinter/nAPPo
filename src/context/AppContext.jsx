@@ -100,7 +100,13 @@ export const AppProvider = ({ children, storeUrl }) => {
         return saved === 'true';
     });
 
-    const [previewDevice, setPreviewDevice] = useState('desktop');
+    const [previewDevice, setPreviewDevice] = useState(() => {
+        return localStorage.getItem('previewDevice') || 'desktop';
+    });
+
+    useEffect(() => {
+        localStorage.setItem('previewDevice', previewDevice);
+    }, [previewDevice]);
 
     // Portal container ref — when inside DevicePreviewer, portals render into device-screen
     const portalContainerRef = useRef(null);
@@ -332,7 +338,14 @@ export const AppProvider = ({ children, storeUrl }) => {
         return () => clearTimeout(timer);
     }, []);
 
-    const [view, setView] = useState('map');
+    const [view, setView] = useState(() => {
+        return localStorage.getItem('appView') || 'map';
+    });
+
+    useEffect(() => {
+        localStorage.setItem('appView', view);
+    }, [view]);
+
     const [innerView, setInnerView] = useState('map');
     const [showExitConfirm, setShowExitConfirm] = useState(false);
     const [mapBounds, setMapBounds] = useState(null);
@@ -381,12 +394,12 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
-        return saved ? parseInt(saved, 10) : 7;
+        return saved !== null && saved !== undefined ? parseInt(saved, 10) : 30;
     });
 
     const [clusterRadius, setClusterRadius] = useState(() => {
         const saved = localStorage.getItem('clusterRadius');
-        return saved ? parseInt(saved, 10) : 25;
+        return saved !== null && saved !== undefined ? parseInt(saved, 10) : 25;
     });
 
     const derivedSites = useMemo(() => {
@@ -412,7 +425,13 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
-    const [locationMode, setLocationMode] = useState('none');
+    const [locationMode, setLocationMode] = useState(() => {
+        return localStorage.getItem('locationMode') || 'none';
+    });
+
+    useEffect(() => {
+        localStorage.setItem('locationMode', locationMode);
+    }, [locationMode]);
 
     const [showOnlyNew, setShowOnlyNew] = useState(() => {
         const saved = localStorage.getItem('showOnlyNew');
@@ -714,8 +733,8 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [visitedSites, currentUser]);
 
     useEffect(() => { localStorage.setItem('appUsers', JSON.stringify(users)); }, [users]);
-    useEffect(() => { localStorage.setItem('newSitesDays', (newSitesDays || 30).toString()); }, [newSitesDays]);
-    useEffect(() => { localStorage.setItem('clusterRadius', (clusterRadius || 25).toString()); }, [clusterRadius]);
+    useEffect(() => { localStorage.setItem('newSitesDays', (newSitesDays !== undefined && newSitesDays !== null ? newSitesDays : 30).toString()); }, [newSitesDays]);
+    useEffect(() => { localStorage.setItem('clusterRadius', (clusterRadius !== undefined && clusterRadius !== null ? clusterRadius : 25).toString()); }, [clusterRadius]);
     useEffect(() => { localStorage.setItem('showOnlyNew', showOnlyNew.toString()); }, [showOnlyNew]);
     useEffect(() => { localStorage.setItem('developerMode', developerMode.toString()); }, [developerMode]);
     useEffect(() => { localStorage.setItem('mapStyle', mapStyle); }, [mapStyle]);
