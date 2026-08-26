@@ -15314,7 +15314,7 @@
     "longitude": 7.764239,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_stone.webp",
     "site_link": "https://www.romantischer-rhein.de/en/a-bluecher-gedenkstein",
-    "relatedSites"[
+    "relatedSites": [
       {
         "id": "849",
         "title": "Camphausen's painting (1859 version)"
@@ -15420,7 +15420,7 @@
     "latitude": 50.358876,
     "longitude": 7.596046,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Camphausen_1860.webp",
-    "relatedSites"[
+    "relatedSites": [
       {
         "id": "844",
         "title": "Blücher Memorial Stone"
