@@ -15343,7 +15343,7 @@
     "latitude": 54.565160,
     "longitude": 31.434217,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasny_ulhans.webp",
-    "createDate": "2026-08-25"
+    "createDate": "2026-08-26"
   },
   {
     "id": "847",
@@ -15357,6 +15357,21 @@
     "latitude": 54.574938,
     "longitude": 31.436517,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi_memorial.webp",
-    "createDate": "2026-08-25"
+    "createDate": "2026-08-26"
+  },
+  {
+    "id": "848",
+    "name": "Battle of Krasnoi Column",
+    "date": "1912-11-16",
+    "category": "Monument",
+    "significance": 3,
+    "location": "Krasny, Smolensk",
+    "country": "Russia",
+    "description": "It was originally designed by the Swiss architect Antonio Adamini and first erected in 1847 to commemorate the fierce battles of November 1812, where Russian troops ambushed Napoleon's weakened Grande Armée during its retreat. Although the original cast-iron structure was destroyed in the 1930s during the Soviet era, an exact replica was rebuilt and opened in 2012 to celebrate the bicentenary of the war.",
+    "latitude": 54.57598,
+    "longitude": 31.470005,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi_column.webp",
+    "more_info_link": "https://fr.wikipedia.org/wiki/Bataille_de_Krasno%C3%AF#/media/Fichier:Memorial_to_the_battle_of_Krasnoi_(November_1812).jpg",
+    "createDate": "2026-08-26"
   }
 ]
