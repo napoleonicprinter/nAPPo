@@ -4005,5 +4005,13 @@
         "date": "1808-08-15",
         "location": "Óbidos, Portugal",
         "description": "This was the first clash of the Peninsular War. On August 15th 1808 four companies of riflemen from the 60th and 95th regiments encounter French troops of General Delaborde. British reinforcements under Major-General Spencer saved the day."
+    },
+    {
+        "id": "453",
+        "siteId": "861",
+        "title": "Battle of Maida",
+        "date": "1806-07-04",
+        "location": "San Pietro Lamentino, Calabria, Italy",
+        "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria."
     }
 ]

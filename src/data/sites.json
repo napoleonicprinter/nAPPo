@@ -15704,5 +15704,31 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Gaeiras.webp",
     "site_link": "https://turismo.obidos.pt/2020/09/29/nucleo-guerra-peninsular/",
     "createDate": "2026-08-27"
+  },
+  {
+    "id": "861",
+    "name": "Battlefield of Maida",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1806-07-04",
+    "year": 1806,
+    "location": "San Pietro Lamentino, Calabria",
+    "country": "Italy",
+    "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria.",
+    "latitude": 38.869473,
+    "longitude": 16.268134,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
+    "createDate": "2026-08-27",
+    "commanders": [
+      "Jean Reynier",
+      "John Stuart"
+    ],
+    "victor": "Britain",
+    "defeated": "France",
+    "special": [
+      "3",
+      "Naples Invasion"
+    ]
   }
 ]
