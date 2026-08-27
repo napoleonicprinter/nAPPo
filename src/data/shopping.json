@@ -27,5 +27,14 @@
     "category": "Books",
     "startDate": "2026-01-01",
     "endDate": "2099-12-31"
+  },
+  {
+    "id": 4,
+    "title": "GSM Salamanca - Full size replica",
+    "description": "40€ + shipping contact nAPPoTrails@proton.me",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shop/GSM.webp",
+    "category": "Medal Replica",
+    "startDate": "2026-01-01",
+    "endDate": "2099-12-31"
   }
 ]

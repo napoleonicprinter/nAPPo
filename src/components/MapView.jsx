@@ -139,21 +139,53 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
         const sitesKey = todaysBattleSites.map(s => s.id).sort().join(',');
         if (openedKeyRef.current === sitesKey) return;
 
-        const timer = setTimeout(() => {
-            openedKeyRef.current = sitesKey;
+        let attempts = 0;
+        const maxAttempts = 10;
+        let timer = null;
+
+        const tryOpen = () => {
+            attempts++;
+            let allOpened = true;
+
             todaysBattleSites.forEach(site => {
                 const marker = markerRefs.current.get(site.id);
                 if (marker) {
                     try {
-                        marker.openPopup();
+                        if (!marker.isPopupOpen()) {
+                            marker.openPopup();
+                        }
                     } catch (err) {
-                        // ignore
+                        allOpened = false;
                     }
+                } else {
+                    allOpened = false;
                 }
             });
-        }, 300);
 
-        return () => clearTimeout(timer);
+            if (allOpened) {
+                openedKeyRef.current = sitesKey;
+            } else if (attempts < maxAttempts) {
+                timer = setTimeout(tryOpen, 200);
+            } else {
+                openedKeyRef.current = sitesKey;
+            }
+        };
+
+        // Frame view to show all Today's Battle sites
+        const validCoords = todaysBattleSites
+            .filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude))
+            .map(s => [s.latitude, s.longitude]);
+
+        if (validCoords.length === 1) {
+            map.setView(validCoords[0], Math.max(map.getZoom(), 8));
+        } else if (validCoords.length > 1) {
+            map.fitBounds(validCoords, { padding: [50, 50], maxZoom: 12 });
+        }
+
+        timer = setTimeout(tryOpen, 250);
+        return () => {
+            if (timer) clearTimeout(timer);
+        };
     }, [isTodaysBattleActive, todaysBattleSites, map, markerRefs]);
 
     return null;

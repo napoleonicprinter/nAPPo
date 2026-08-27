@@ -303,7 +303,7 @@
     "victor": "Poland",
     "defeated": "Austria",
     "commanders": [
-      "Józef Antoni Poniatowski",
+      "Józef Poniatowski",
       "Archduke Ferdinand Karl Joseph"
     ],
     "relatedSites": [
@@ -950,7 +950,7 @@
     "victor": "France",
     "defeated": "Spain",
     "commanders": [
-      "Junot",
+      "Jean-Andoche Junot",
       "Santocildes"
     ]
   },
@@ -1693,7 +1693,7 @@
       "Nicolas Soult",
       "Jean-Baptiste Girard",
       "William Beresford",
-      "Joaquin Blake"
+      "Joaquín Blake"
     ],
     "relatedSites": [
       {
@@ -2664,7 +2664,7 @@
       "Friedrich von Bülow",
       "Jean Reynier",
       "Nicolas Oudinot",
-      "Charles John"
+      "Charles John of Sweden"
     ]
   },
   {
@@ -3147,7 +3147,7 @@
       "Alexander I of Russia",
       "Jean-Baptiste Bernadotte",
       "Napoleon",
-      "Prince Józef Poniatowski",
+      "Józef Poniatowski",
       "Joachim Murat",
       "Frederick William III"
     ]
@@ -4893,7 +4893,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Piave_River_(1809)",
     "commanders": [
       "Eugéne de Beauharnais",
-      "Archduke John"
+      "Archduke John of Austria"
     ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
@@ -6790,7 +6790,7 @@
       "Louis Nicolas Davout",
       "Eugéne de Beauharnais",
       "Michel Ney",
-      "Józef Antoni Poniatowski",
+      "Józef Poniatowski",
       "Józef Zajączek"
     ]
   },
@@ -7718,7 +7718,7 @@
       "Egyptian Campaign"
     ],
     "commanders": [
-      "Jacques-François Menou ",
+      "Jacques-François Menou",
       "Ralph Abercromby"
     ],
     "relatedSites": [
@@ -7754,7 +7754,7 @@
       "Egyptian Campaign"
     ],
     "commanders": [
-      "Jacques-François Menou ",
+      "Jacques-François Menou",
       "Ralph Abercromby"
     ]
   },
@@ -11422,7 +11422,7 @@
     "special": [
       "arc",
       "2",
-      "Marengo campaign"
+      "Marengo Campaign"
     ],
     "createDate": "2026-07-15"
   },

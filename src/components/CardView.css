@@ -1,13 +1,18 @@
 .card-view-container {
-    padding: 135px 2rem 2rem 2rem;
+    padding: 105px 1.5rem 1.5rem 1.5rem;
     height: 100%;
     overflow-y: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .card-view-container {
-        padding: 145px 1rem 2rem 1rem;
+        padding: 95px 0.75rem 1.5rem 0.75rem;
     }
+}
+
+.device-mobile .card-view-container,
+.device-tablet .card-view-container {
+    padding-top: 95px !important;
 }
 
 /* --- LIST VIEW SORT HEADER --- */
@@ -15,16 +20,38 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    margin: 0 auto 1.5rem auto;
+    padding: 8px 12px;
+    margin: 0 auto 0.6rem auto;
     max-width: 1400px;
     border-radius: 30px;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 8px;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.sort-buttons-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sort-buttons-row::-webkit-scrollbar {
+    display: none;
+}
+
+.sort-arrows-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 .sort-label {

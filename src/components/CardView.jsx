@@ -108,7 +108,7 @@ const CardView = () => {
         <div className="card-view-wrapper animate-fade-in" style={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
             <div className="card-view-container" ref={containerRef} onScroll={handleScroll}>
                 <div className="card-view-header glass-panel">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div className="sort-buttons-row">
                         <button
                             type="button"
                             className={`sort-tag-btn ${sortField === 'alphabetic' ? 'active' : ''}`}
@@ -135,25 +135,24 @@ const CardView = () => {
                                 Distance
                             </button>
                         )}
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <button
-                            type="button"
-                            className={`sort-order-btn ${sortOrder === 'asc' ? 'active' : ''}`}
-                            onClick={() => setSortOrder('asc')}
-                            title="Ascending Order"
-                        >
-                            ▲
-                        </button>
-                        <button
-                            type="button"
-                            className={`sort-order-btn ${sortOrder === 'desc' ? 'active' : ''}`}
-                            onClick={() => setSortOrder('desc')}
-                            title="Descending Order"
-                        >
-                            ▼
-                        </button>
+                        <div className="sort-arrows-group">
+                            <button
+                                type="button"
+                                className={`sort-order-btn ${sortOrder === 'asc' ? 'active' : ''}`}
+                                onClick={() => setSortOrder('asc')}
+                                title="Ascending Order"
+                            >
+                                ▲
+                            </button>
+                            <button
+                                type="button"
+                                className={`sort-order-btn ${sortOrder === 'desc' ? 'active' : ''}`}
+                                onClick={() => setSortOrder('desc')}
+                                title="Descending Order"
+                            >
+                                ▼
+                            </button>
+                        </div>
                     </div>
                 </div>
 
