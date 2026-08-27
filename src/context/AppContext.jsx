@@ -290,37 +290,37 @@ export const AppProvider = ({ children, storeUrl }) => {
 
                 if (resSites.ok) {
                     const data = await resSites.json();
-                    setSitesBaseData(data);
+                    if (!isDevelopment) setSitesBaseData(data);
                     localStorage.setItem('sitesData', JSON.stringify(data));
                 }
                 if (resShows.ok) {
                     const data = await resShows.json();
-                    setShowsBaseData(data);
+                    if (!isDevelopment) setShowsBaseData(data);
                     localStorage.setItem('showsData', JSON.stringify(data));
                 }
                 if (resShopping.ok) {
                     const data = await resShopping.json();
-                    setShoppingBaseData(data);
+                    if (!isDevelopment) setShoppingBaseData(data);
                     localStorage.setItem('shoppingData', JSON.stringify(data));
                 }
                 if (resEvents.ok) {
                     const data = await resEvents.json();
-                    setEventsBaseData(data);
+                    if (!isDevelopment) setEventsBaseData(data);
                     localStorage.setItem('eventsData', JSON.stringify(data));
                 }
                 if (resNews && resNews.ok) {
                     const data = await resNews.json();
-                    setNewsBaseData(data);
+                    if (!isDevelopment) setNewsBaseData(data);
                     localStorage.setItem('newsData', JSON.stringify(data));
                 }
                 if (resMessages && resMessages.ok) {
                     const data = await resMessages.json();
-                    setMessagesBaseData(data);
+                    if (!isDevelopment) setMessagesBaseData(data);
                     localStorage.setItem('messagesData', JSON.stringify(data));
                 }
                 if (resDeals && resDeals.ok) {
                     const data = await resDeals.json();
-                    setDealsBaseData(data);
+                    if (!isDevelopment) setDealsBaseData(data);
                     localStorage.setItem('dealsData', JSON.stringify(data));
                 }
 

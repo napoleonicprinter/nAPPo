@@ -15611,5 +15611,47 @@
     "longitude": 1.312898,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hart_tomb.webp",
     "createDate": "2026-08-27"
+  },
+  {
+    "id": "856",
+    "name": "Battlefield of Os'ma River",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1812-08-27",
+    "year": 1812,
+    "location": "Semlevo",
+    "country": "Russia",
+    "description": "The battle took place on the Os'ma river, near the village of Semlevo, on August 27th 1812 when Murat's cavalry attacked the Russian rearguard. The Russians were able to hold off the French and prevent them from cutting off the retreating Russian army.",
+    "latitude": 55.04692,
+    "longitude": 33.976459,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Osma_river.webp",
+    "createDate": "2026-08-27",
+    "commanders": "Joaquim Murat",
+    "victor": "France",
+    "defeated": "Russia",
+    "special": "Russian Campaign"
+  },
+  {
+    "id": "857",
+    "name": "Raid on Griessie",
+    "category": "Naval battle",
+    "significance": 1,
+    "date": "1807-12-05",
+    "year": 1807,
+    "location": "Gresik",
+    "country": "Java",
+    "description": "The December 1807 raid on Griessie was a British attack on the Dutch East Indies port during the Java campaign. It was the final battle between the British Indian Ocean squadron and the Dutch navy forces in Java.",
+    "latitude": -7.169174,
+    "longitude": 112.678552,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Griesse.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie",
+    "createDate": "2026-08-27",
+    "commanders": [
+      "Edward Pellew",
+      "William Cowell"
+    ],
+    "victor": "Britain",
+    "defeated": "Holland",
+    "special": "Java Campaign"
   }
 ]

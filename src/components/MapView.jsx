@@ -56,7 +56,7 @@ const getSiteIcon = (site) => {
 // --- STABILIZED INTERNAL COMPONENTS ---
 
 // Look for this component near the top of your file
-const PopupOpener = ({ markerRefs, clusterInstance }) => {
+const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
     const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
     const map = useMap();
 
@@ -67,22 +67,30 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
         const marker = markerRefs.current.get(targetSite.id);
 
         const openMarkerPopup = () => {
-            const currentZoom = map.getZoom();
-            const targetZoom = Math.max(currentZoom, 11);
+            if (isMobileLike) {
+                const currentZoom = map.getZoom();
+                const targetZoom = Math.max(currentZoom, 11);
 
-            const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
-            targetPoint.y -= 150;
-            const targetLatLng = map.unproject(targetPoint, targetZoom);
+                const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
+                targetPoint.y -= 150;
+                const targetLatLng = map.unproject(targetPoint, targetZoom);
 
-            map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.8 });
+                map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.8 });
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    const currentMarker = markerRefs.current.get(targetSite.id);
+                    if (currentMarker) {
+                        currentMarker.openPopup();
+                    }
+                    setSiteToOpenPopup(null);
+                }, 600);
+            } else {
                 const currentMarker = markerRefs.current.get(targetSite.id);
                 if (currentMarker) {
                     currentMarker.openPopup();
                 }
                 setSiteToOpenPopup(null);
-            }, 600);
+            }
         };
 
         if (marker && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
@@ -90,12 +98,12 @@ const PopupOpener = ({ markerRefs, clusterInstance }) => {
         } else {
             openMarkerPopup();
         }
-    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup]);
+    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike]);
 
     return null;
 };
 
-const SelectedSiteFlyer = () => {
+const SelectedSiteFlyer = ({ isMobileLike }) => {
     const { selectedSite } = useAppContext();
     const map = useMap();
     const lastFlewIdRef = useRef(null);
@@ -105,13 +113,15 @@ const SelectedSiteFlyer = () => {
         if (lastFlewIdRef.current === selectedSite.id) return;
         lastFlewIdRef.current = selectedSite.id;
 
-        const currentZoom = map.getZoom();
-        const targetZoom = Math.max(currentZoom, 11);
-        map.flyTo([selectedSite.latitude, selectedSite.longitude], targetZoom, {
-            animate: true,
-            duration: 1.2
-        });
-    }, [selectedSite, map]);
+        if (isMobileLike) {
+            const currentZoom = map.getZoom();
+            const targetZoom = Math.max(currentZoom, 11);
+            map.flyTo([selectedSite.latitude, selectedSite.longitude], targetZoom, {
+                animate: true,
+                duration: 1.2
+            });
+        }
+    }, [selectedSite, map, isMobileLike]);
 
     return null;
 };
@@ -596,13 +606,15 @@ const MapView = () => {
                         if (e.originalEvent) e.originalEvent.stopPropagation();
                         window.history.pushState({ siteId: site.id }, "");
                         if (selectedSite) setSelectedSite(null);
-                        const map = e.target._map;
-                        const latlng = e.target.getLatLng();
-                        const currentZoom = map.getZoom();
-                        const targetPoint = map.project(latlng, currentZoom);
-                        targetPoint.y -= 150;
-                        const targetLatLng = map.unproject(targetPoint, currentZoom);
-                        map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                        if (isMobileLike) {
+                            const map = e.target._map;
+                            const latlng = e.target.getLatLng();
+                            const currentZoom = map.getZoom();
+                            const targetPoint = map.project(latlng, currentZoom);
+                            targetPoint.y -= 150;
+                            const targetLatLng = map.unproject(targetPoint, currentZoom);
+                            map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                        }
                         e.target.openPopup();
                     }
                 }}
@@ -665,8 +677,8 @@ const MapView = () => {
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
-                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} />
-                <SelectedSiteFlyer />
+                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} />
+                <SelectedSiteFlyer isMobileLike={isMobileLike} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}

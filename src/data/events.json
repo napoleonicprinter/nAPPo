@@ -1403,9 +1403,10 @@
     {
         "id": 161,
         "title": "Raid on Griessie",
-        "date": "1807-08-27",
+        "siteId": "827",
+        "date": "1807-12-05",
         "location": "Gresik, Java",
-        "description": "The British invasion of the French island of Réunion, then known as Isle Bonaparte, was a successful operation by the British Royal Navy and Army against the French garrison. The island was captured on July 8th 1810.",
+        "description": "The December 1807 raid on Griessie was a British attack on the Dutch East Indies port during the Java campaign. It was the final battle between the British Indian Ocean squadron and the Dutch navy forces in Java.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie"
     },
     {
@@ -2380,9 +2381,10 @@
     {
         "id": "270",
         "title": "Battle on Os'ma river",
+        "siteId": "856",
         "description": "The battle took place on the Os'ma river, near the village of Semlevo, on August 27th 1812 when Murat's cavalry attacked the Russian rearguard. The Russians were able to hold off the French and prevent them from cutting off the retreating Russian army.",
         "date": "1812-08-27",
-        "location": "Semlevo",
+        "location": "Semlevo, Russia",
         "country": "Russia"
     },
     {
