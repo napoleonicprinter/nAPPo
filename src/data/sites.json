@@ -15653,5 +15653,56 @@
     "victor": "Britain",
     "defeated": "Holland",
     "special": "Java Campaign"
+  },
+  {
+    "id": "858",
+    "name": "Combat at Obidos",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1808-08-15",
+    "year": 1808,
+    "location": "Óbidos",
+    "country": "Portugal",
+    "description": "This was the first clash of the Peninsular War. On August 15th 1808 four companies of riflemen from the 60th and 95th regiments encounter French troops of General Delaborde. British reinforcements under Major-General Spencer saved the day.",
+    "latitude": 39.367085,
+    "longitude": -9.162814,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Obidos.webp",
+    "createDate": "2026-08-27",
+    "commanders": [
+      "Henri-François Delaborde",
+      "Sir Brent Spencer"
+    ],
+    "special": "Peninsular War"
+  },
+  {
+    "id": "859",
+    "name": "Óbidos field hospital",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1808-08-15",
+    "year": 1808,
+    "location": "Óbidos",
+    "country": "Portugal",
+    "description": "This house is known as 'Rifleman Harris House'. It served as a temporary field hospital following the initial battle between British and French troops. The site is named after Benjamin Harris, a private in the renowned 95th Rifles, whose famous 1848 memoirs provided a gritty, firsthand account of frontline combat.",
+    "latitude": 39.366013,
+    "longitude": -9.158016,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Harris_house.webp",
+    "createDate": "2026-08-27"
+  },
+  {
+    "id": "860",
+    "name": "Núcleo Guerra Peninsular",
+    "category": "Museum",
+    "significance": 2,
+    "date": "2020-09-29",
+    "year": 2020,
+    "location": "Gaeiras, Óbidos",
+    "country": "Portugal",
+    "description": "This museum houses part of the collection assembled by Frederico Pinto Basto at the beginning of the 20th century, dedicated to the period of the French invasions and Napoleonic Wars. It focuses particularly on the conflict that occurred on the Iberian Peninsula between 1808 and 1814.",
+    "latitude": 39.373915,
+    "longitude": -9.129773,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Gaeiras.webp",
+    "site_link": "https://turismo.obidos.pt/2020/09/29/nucleo-guerra-peninsular/",
+    "createDate": "2026-08-27"
   }
 ]

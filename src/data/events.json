@@ -3997,5 +3997,13 @@
         "location": "Stockholm, Sweden",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Charles_XIV_John",
         "description": "Thanks to the advocacy of Baron Carl Otto Mörner, Bernadotte was elected Crown Prince on August 21st 1810. This was partly because a large sector of the Swedish army, anticipating future complications with Russia, favored the choice of a soldier as heir, and partly also because Bernadotte was very popular in Sweden, due to the chivalry with which he had treated Swedish prisoners during the last war with Denmark."
+    },
+    {
+        "id": "452",
+        "siteId": "858",
+        "title": "Combat at Obidos",
+        "date": "1808-08-15",
+        "location": "Óbidos, Portugal",
+        "description": "This was the first clash of the Peninsular War. On August 15th 1808 four companies of riflemen from the 60th and 95th regiments encounter French troops of General Delaborde. British reinforcements under Major-General Spencer saved the day."
     }
 ]
