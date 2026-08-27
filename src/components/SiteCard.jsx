@@ -300,7 +300,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                             {!hideMapLink && (
                                 <button
-                                    onClick={(e) => { e.stopPropagation(); setSiteToOpenPopup(site); setView('map'); }}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setSelectedSite(null);
+                                        setSiteToOpenPopup(site);
+                                        setView('map');
+                                    }}
                                     style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'gray', fontSize: '0.85rem', fontWeight: 'bold' }}
                                 >
                                     Map

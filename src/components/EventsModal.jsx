@@ -86,7 +86,10 @@ const EventsModal = ({ onClose }) => {
                                         {todayString}
                                     </p>
                                     <button
-                                        onClick={() => setIsCalendarOpen(true)}
+                                        onClick={() => {
+                                            document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+                                            setIsCalendarOpen(true);
+                                        }}
                                         style={{
                                             display: 'flex',
                                             alignItems: 'center',

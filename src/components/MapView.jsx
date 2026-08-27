@@ -64,41 +64,59 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
         if (!siteToOpenPopup || typeof siteToOpenPopup.latitude !== 'number' || typeof siteToOpenPopup.longitude !== 'number') return;
 
         const targetSite = siteToOpenPopup;
-        const marker = markerRefs.current.get(targetSite.id);
+        let attempts = 0;
+        const maxAttempts = 15;
+        let timer = null;
 
-        const openMarkerPopup = () => {
-            if (isMobileLike) {
-                const currentZoom = map.getZoom();
-                const targetZoom = Math.max(currentZoom, 11);
+        const attemptOpen = () => {
+            attempts++;
+            const marker = markerRefs.current.get(targetSite.id);
 
-                const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
-                targetPoint.y -= 150;
-                const targetLatLng = map.unproject(targetPoint, targetZoom);
+            const openMarkerPopup = () => {
+                if (isMobileLike) {
+                    const currentZoom = map.getZoom();
+                    const targetZoom = Math.max(currentZoom, 11);
 
-                map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.8 });
+                    const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
+                    targetPoint.y -= 150;
+                    const targetLatLng = map.unproject(targetPoint, targetZoom);
 
-                setTimeout(() => {
+                    map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.8 });
+
+                    setTimeout(() => {
+                        const currentMarker = markerRefs.current.get(targetSite.id);
+                        if (currentMarker) {
+                            currentMarker.openPopup();
+                        }
+                        setSiteToOpenPopup(null);
+                    }, 600);
+                } else {
                     const currentMarker = markerRefs.current.get(targetSite.id);
                     if (currentMarker) {
                         currentMarker.openPopup();
                     }
                     setSiteToOpenPopup(null);
-                }, 600);
-            } else {
-                const currentMarker = markerRefs.current.get(targetSite.id);
-                if (currentMarker) {
-                    currentMarker.openPopup();
                 }
+            };
+
+            if (marker) {
+                if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                    clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
+                } else {
+                    openMarkerPopup();
+                }
+            } else if (attempts < maxAttempts) {
+                timer = setTimeout(attemptOpen, 150);
+            } else {
                 setSiteToOpenPopup(null);
             }
         };
 
-        if (marker && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-            clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
-        } else {
-            openMarkerPopup();
-        }
-    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike]);
+        timer = setTimeout(attemptOpen, 100);
+        return () => {
+            if (timer) clearTimeout(timer);
+        };
+    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs]);
 
     return null;
 };

@@ -441,36 +441,23 @@
     box-shadow: var(--shadow-glow);
 }
 
-.custom-select-trigger.filters-active-red {
-    border-color: var(--accent-danger) !important;
-    color: var(--accent-danger) !important;
-    background: rgba(248, 81, 73, 0.1) !important;
+/* Estado: Filtros activos (Mismo fondo translúcido y transparencia que el botón 'Clear All') */
+.custom-select-trigger.filters-active-red,
+.custom-select-trigger.filters-active-red.active,
+.custom-select-trigger.filters-active-solid {
+    border: 1.5px solid #ff4444 !important;
+    border-color: #ff4444 !important;
+    color: #ff4444 !important;
+    background: rgba(255, 68, 68, 0.1) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
 }
 
-/*.custom-select-trigger.filters-active-red.active {
-    background: var(--accent-danger) !important;
-    color: white !important;
-}*/
-
-/*1. Estado: Filtros activos pero ventana CERRADA (Rojo translúcido) */
-.custom-select-trigger.filters-active-red {
-    border-color: var(--accent-danger) !important;
-    color: var(--accent-danger) !important;
-    background: rgba(248, 81, 73, 0.1) !important;
-}
-
-/* 2. Estado: Filtros activos Y ventana ABIERTA (Rojo Sólido) */
-.custom-select-trigger.filters-active-solid,
-.custom-select-trigger.filters-active-red.active {
-    background: var(--accent-danger) !important;
-    color: white !important;
-    border-color: var(--accent-danger) !important;
-}
-
-/* Asegura que el icono y el texto sean blancos en el modo sólido */
-.custom-select-trigger.filters-active-solid *,
-.custom-select-trigger.filters-active-red.active * {
-    color: white !important;
+/* Asegura que el icono y el texto mantengan el color rojo translúcido */
+.custom-select-trigger.filters-active-red *,
+.custom-select-trigger.filters-active-red.active *,
+.custom-select-trigger.filters-active-solid * {
+    color: #ff4444 !important;
 }
 
 .settings-btn {

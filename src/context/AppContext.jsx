@@ -793,7 +793,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setCurrentUser(null);
     };
 
-    const exportUserData = () => {
+    const exportUserData = async () => {
         const data = {
             appName: 'nAPPo Trails',
             version: '1.0',
@@ -803,16 +803,54 @@ export const AppProvider = ({ children, storeUrl }) => {
             users: users || []
         };
         const jsonStr = JSON.stringify(data, null, 2);
-        const blob = new Blob([jsonStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
         const nameStr = currentUser ? currentUser.username : 'visited';
-        link.download = `nappo_visited_sites_${nameStr}.json`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
+        const fileName = `nappo_visited_sites_${nameStr}.json`;
+
+        // 1. Try Web Share API for Mobile Devices / Capacitor WebViews
+        if (navigator.share && typeof File !== 'undefined') {
+            try {
+                const file = new File([jsonStr], fileName, { type: 'application/json' });
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        title: 'nAPPo Trails Backup',
+                        text: 'Visited sites backup data file',
+                        files: [file]
+                    });
+                    return;
+                }
+            } catch (err) {
+                if (err && err.name === 'AbortError') return; // User cancelled share sheet
+                console.log("Web Share API failed, falling back to download link:", err);
+            }
+        }
+
+        // 2. Fallback: Blob URL download
+        try {
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(() => {
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }, 1000);
+        } catch (e) {
+            // 3. Fallback: Data URI download
+            const encodedUri = "data:text/json;charset=utf-8," + encodeURIComponent(jsonStr);
+            const link = document.createElement('a');
+            link.setAttribute('href', encodedUri);
+            link.setAttribute('download', fileName);
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(() => {
+                document.body.removeChild(link);
+            }, 1000);
+        }
     };
 
     const importUserData = (jsonString) => {
@@ -854,45 +892,92 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
     };
 
-    const requestGeolocation = async () => {
-        if (isDevelopment) {
-            try {
-                const testLocationModule = await import('../data/testLocation.json');
-                const testLocation = testLocationModule.default;
-                if (testLocation && testLocation.enabled) {
-                    setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
-                    setGeolocationEnabled(true);
-                    setLocationMode('geo');
-                    return;
+    // Automatic OS GPS watcher: connects when locationMode === 'geo' and disconnects automatically if GPS service is turned off or disconnected
+    useEffect(() => {
+        if (locationMode !== 'geo') return;
+
+        let watchId = null;
+        let navWatchId = null;
+        let isCleanedUp = false;
+
+        const startWatcher = async () => {
+            if (isDevelopment) {
+                try {
+                    const testLocationModule = await import('../data/testLocation.json');
+                    const testLocation = testLocationModule.default;
+                    if (testLocation && testLocation.enabled) {
+                        setUserCoords({ lat: testLocation.lat, lon: testLocation.lon });
+                        setGeolocationEnabled(true);
+                        return;
+                    }
+                } catch (err) {
+                    console.log("No testLocation.json found or invalid");
                 }
-            } catch (err) {
-                console.log("No testLocation.json found or invalid");
             }
-        }
-        try {
-            const permissions = await Geolocation.checkPermissions();
-            if (permissions.location !== 'granted') await Geolocation.requestPermissions();
-            const position = await Geolocation.getCurrentPosition({ enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
-            setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
-            setGeolocationEnabled(true);
-            setLocationMode('geo');
-        } catch (error) {
-            if (!navigator.geolocation) {
-                alert("Geolocation is not supported by your device/browser");
-                return;
+
+            const handleGpsError = (err) => {
+                if (isCleanedUp) return;
+                console.warn("GPS service disconnected or lost:", err);
+                setGeolocationEnabled(false);
+                setUserCoords(null);
+                setLocationMode('none');
+            };
+
+            try {
+                const permissions = await Geolocation.checkPermissions();
+                if (permissions.location !== 'granted') {
+                    const req = await Geolocation.requestPermissions();
+                    if (req.location !== 'granted') {
+                        handleGpsError('Permission denied');
+                        return;
+                    }
+                }
+
+                watchId = await Geolocation.watchPosition(
+                    { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
+                    (position, err) => {
+                        if (err) {
+                            handleGpsError(err);
+                            return;
+                        }
+                        if (position && position.coords) {
+                            setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
+                            setGeolocationEnabled(true);
+                        }
+                    }
+                );
+            } catch (error) {
+                if (navigator.geolocation) {
+                    navWatchId = navigator.geolocation.watchPosition(
+                        (position) => {
+                            setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
+                            setGeolocationEnabled(true);
+                        },
+                        (err) => handleGpsError(err),
+                        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+                    );
+                } else {
+                    handleGpsError('Geolocation unsupported');
+                }
             }
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    setUserCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
-                    setGeolocationEnabled(true);
-                    setLocationMode('geo');
-                },
-                (err) => alert("Failed to get location. Please ensure location services are enabled."),
-                { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-            );
-        }
+        };
+
+        startWatcher();
+
+        return () => {
+            isCleanedUp = true;
+            if (watchId !== null) {
+                Geolocation.clearWatch({ id: watchId }).catch(() => {});
+            }
+            if (navWatchId !== null && navigator.geolocation) {
+                navigator.geolocation.clearWatch(navWatchId);
+            }
+        };
+    }, [locationMode]);
+
+    const requestGeolocation = () => {
+        setLocationMode('geo');
     };
-    // Add these near your other useState calls in AppContext.jsx
 
     const [isMobileLike, setIsMobileLike] = useState(window.innerWidth <= 1024);
 
@@ -911,7 +996,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             setUserCoords(null);
             setLocationMode('none');
         } else if (mode === 'geo') {
-            requestGeolocation();
+            setLocationMode('geo');
         } else {
             const capital = EUROPEAN_CAPITALS.find(c => c.name === mode);
             if (capital) {
