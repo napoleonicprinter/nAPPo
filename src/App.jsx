@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { AppProvider, useAppContext, useBackHandler } from './context/AppContext';
 import Header from './components/Header';
 import MapView from './components/MapView';
-import CardView from './components/CardView';
-import CalendarView from './components/CalendarView';
-import ShoppingView from './components/ShoppingView';
-import DevicePreviewer from './components/DevicePreviewer';
-import AnnouncementModal from './components/AnnouncementModal';
-//import { useAppContext } from './context/AppContext';
-//import FloatingViewToggle from './components/FloatingViewToggle';
-import HelpCard from './components/HelpCard';
-import ExitConfirmModal from './components/ExitConfirmModal';
 import { Eraser } from 'lucide-react';
+
+const CardView = lazy(() => import('./components/CardView'));
+const CalendarView = lazy(() => import('./components/CalendarView'));
+const ShoppingView = lazy(() => import('./components/ShoppingView'));
+const DevicePreviewer = lazy(() => import('./components/DevicePreviewer'));
+const AnnouncementModal = lazy(() => import('./components/AnnouncementModal'));
+const HelpCard = lazy(() => import('./components/HelpCard'));
+const ExitConfirmModal = lazy(() => import('./components/ExitConfirmModal'));
 
 const MainApp = () => {
   const { view, messagesData,
@@ -58,34 +57,38 @@ const MainApp = () => {
     <div className="app-container">
       <Header />
       <main className="main-content">
-        {view === 'map' ? <MapView /> : 
-         view === 'calendar' ? <CalendarView /> : 
-         view === 'shopping' ? <ShoppingView /> : 
-         view === 'preview' ? <DevicePreviewer /> :
-         <CardView />}
+        <Suspense fallback={null}>
+          {view === 'map' ? <MapView /> : 
+           view === 'calendar' ? <CalendarView /> : 
+           view === 'shopping' ? <ShoppingView /> : 
+           view === 'preview' ? <DevicePreviewer /> :
+           <CardView />}
+        </Suspense>
       </main>
 
-      {/* Auto-show announcement popup */}
-      {announcementMessage && (
-        <AnnouncementModal
-          message={announcementMessage}
-          onClose={handleCloseAnnouncement}
-        />
-      )}
+      <Suspense fallback={null}>
+        {/* Auto-show announcement popup */}
+        {announcementMessage && (
+          <AnnouncementModal
+            message={announcementMessage}
+            onClose={handleCloseAnnouncement}
+          />
+        )}
 
-      {isMobileLike && isFiltered && (
-        <button
-          className="clear-filters-floating glass-panel filters-active-red animate-fade-in"
-          onClick={clearAllFilters}
-          title="Clear all filters"
-        >
-          <Eraser size={15} />
-          <span>Clear All</span>
-        </button>
-      )}
+        {isMobileLike && isFiltered && (
+          <button
+            className="clear-filters-floating glass-panel filters-active-red animate-fade-in"
+            onClick={clearAllFilters}
+            title="Clear all filters"
+          >
+            <Eraser size={15} />
+            <span>Clear All</span>
+          </button>
+        )}
 
-      <HelpCard />
-      <ExitConfirmModal />
+        <HelpCard />
+        <ExitConfirmModal />
+      </Suspense>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, lazy, Suspense } from 'react';
 import { createPortal } from 'react-dom';
 import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
@@ -10,19 +10,20 @@ import { useAppContext, useBackHandler, EUROPEAN_CAPITALS } from '../context/App
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
 import CustomCategorySelect from './CustomCategorySelect';
 import CustomSimpleSelect from './CustomSimpleSelect';
-import AuthModal from './AuthModal';
-import EventsModal from './EventsModal';
-import FiltersModal from './FiltersModal';
 import SignificanceFilter from './SignificanceFilter';
 import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
-import NewsModal from './NewsModal';
 import ArcFilter from './ArcFilter';
 import FloatingViewToggle from './FloatingViewToggle';
-import CalendarView from './CalendarView';
-import ShoppingView from './ShoppingView';
 import './Header.css';
 import { HELP_ITEMS } from '../data/helpData';
+
+const AuthModal = lazy(() => import('./AuthModal'));
+const EventsModal = lazy(() => import('./EventsModal'));
+const FiltersModal = lazy(() => import('./FiltersModal'));
+const NewsModal = lazy(() => import('./NewsModal'));
+const CalendarView = lazy(() => import('./CalendarView'));
+const ShoppingView = lazy(() => import('./ShoppingView'));
 
 // Register the custom native plugin we created in MainActivity.java
 const Review = registerPlugin('Review');
@@ -812,12 +813,14 @@ const Header = () => {
             </div>
 
 
-            {showAuth && <AuthModal onClose={() => { setShowAuth(false); setAuthMessage(null); }} />}
-            {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
-            {showNews && <NewsModal onClose={() => setShowNews(false)} />}
-            {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
-            {showShoppingView && <ShoppingView onClose={() => setShowShoppingView(false)} />}
-            {showCalendarView && <CalendarView onClose={() => setShowCalendarView(false)} />}
+            <Suspense fallback={null}>
+                {showAuth && <AuthModal onClose={() => { setShowAuth(false); setAuthMessage(null); }} />}
+                {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
+                {showNews && <NewsModal onClose={() => setShowNews(false)} />}
+                {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
+                {showShoppingView && <ShoppingView onClose={() => setShowShoppingView(false)} />}
+                {showCalendarView && <CalendarView onClose={() => setShowCalendarView(false)} />}
+            </Suspense>
         </header>
     );
 };
