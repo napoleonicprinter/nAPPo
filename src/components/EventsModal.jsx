@@ -113,7 +113,7 @@ const EventsModal = ({ onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div className="calendar-modal-body" style={{ padding: '2rem' }}>
+                <div className="calendar-modal-body" style={{ flex: 1, overflowY: 'auto', padding: '2rem' }}>
                     {/* Announcement retrieval cards */}
                     {activeMessages.map(msg => (
                         <div

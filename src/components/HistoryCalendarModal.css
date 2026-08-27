@@ -75,9 +75,32 @@
     letter-spacing: -0.02em;
 }
 
-.history-calendar-body {
+.history-calendar-body,
+.calendar-modal-body {
     padding: 1.5rem;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary, #ff4500) rgba(0, 0, 0, 0.2);
+}
+
+.history-calendar-body::-webkit-scrollbar,
+.calendar-modal-body::-webkit-scrollbar,
+.day-popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-calendar-body::-webkit-scrollbar-track,
+.calendar-modal-body::-webkit-scrollbar-track,
+.day-popup-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.history-calendar-body::-webkit-scrollbar-thumb,
+.calendar-modal-body::-webkit-scrollbar-thumb,
+.day-popup-content::-webkit-scrollbar-thumb {
+    background: var(--accent-primary, #ff4500);
+    border-radius: 4px;
 }
 
 .calendar-weekdays {
