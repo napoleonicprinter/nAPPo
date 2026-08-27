@@ -15582,5 +15582,33 @@
     "site_link": "https://musees-nationaux-malmaison.fr/musees-napoleonien-africain/en/practical-information",
     "youtube_link": "https://youtu.be/jSwFYrYjgX4",
     "createDate": "2026-08-26"
+  },
+  {
+    "id": "854",
+    "name": "Private Samuel Gibson's grave",
+    "date": "1891-12-15",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Caterham, Tandridge District, Surrey",
+    "country": "England",
+    "description": "Gibson enlisted as a boy , around 1803, joining the 27th Regiment of Foot (Inniskilling Regiment). Veteran of the Peninsular War, he fought at Waterloo. He died at Caterham in December 1891, aged 101. (Photo: Sue Fopiano)",
+    "latitude": 51.282847,
+    "longitude": -0.08419,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gibson_tomb.webp",
+    "createDate": "2026-08-27"
+  },
+  {
+    "id": "855",
+    "name": "Lieutenant James Hart's grave",
+    "date": "1815-06-18",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Georgeham, Braunton",
+    "country": "England",
+    "description": "Lieutenant James Hart, aged 23, died at Waterloo while serving at the 33rd Regiment of foot.",
+    "latitude": 51.12582,
+    "longitude": 1.312898,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hart_tomb.webp",
+    "createDate": "2026-08-27"
   }
 ]

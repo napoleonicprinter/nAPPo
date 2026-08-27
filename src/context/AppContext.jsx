@@ -126,6 +126,7 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
+        if (isDevelopment) return sitesData;
         const saved = localStorage.getItem('sitesData');
         if (saved && saved !== "undefined") {
             try {
@@ -139,6 +140,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [showsBaseData, setShowsBaseData] = useState(() => {
+        if (isDevelopment) return showsData;
         const saved = localStorage.getItem('showsData');
         if (saved && saved !== "undefined") {
             try {
@@ -152,6 +154,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [shoppingBaseData, setShoppingBaseData] = useState(() => {
+        if (isDevelopment) return shoppingData;
         const saved = localStorage.getItem('shoppingData');
         if (saved && saved !== "undefined") {
             try {
@@ -180,6 +183,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [shoppingBaseData]);
 
     const [eventsBaseData, setEventsBaseData] = useState(() => {
+        if (isDevelopment) return eventsDataFallback;
         const saved = localStorage.getItem('eventsData');
         if (saved && saved !== "undefined") {
             try {
@@ -193,6 +197,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
+        if (isDevelopment) return newsDataFallback;
         const saved = localStorage.getItem('newsData');
         if (saved && saved !== "undefined") {
             try {
@@ -218,6 +223,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const clearMapOverlays = () => setActiveMapOverlays([]);
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
+        if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
         if (saved && saved !== "undefined") {
             try {
@@ -231,6 +237,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [dealsBaseData, setDealsBaseData] = useState(() => {
+        if (isDevelopment) return dealsDataFallback;
         const saved = localStorage.getItem('dealsData');
         if (saved && saved !== "undefined") {
             try {
