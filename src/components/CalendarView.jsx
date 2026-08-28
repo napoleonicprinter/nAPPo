@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext, useBackHandler } from '../context/AppContext';
 import { Calendar, MapPin, User, Info, ExternalLink, Filter, Tag, ChevronDown, Globe, X, CalendarDays, ChevronUp } from 'lucide-react';
@@ -45,6 +45,22 @@ const CalendarView = ({ onClose }) => {
             containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
+
+    const closeAllDropdowns = () => {
+        setIsCategoryDropdownOpen(false);
+        setIsCountryDropdownOpen(false);
+        setIsMonthDropdownOpen(false);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (!e.target.closest('.custom-dropdown-container')) {
+                closeAllDropdowns();
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     useBackHandler('showsCalendarModal', isShowsCalendarOpen, () => setIsShowsCalendarOpen(false), 35);
 
@@ -299,7 +315,11 @@ const CalendarView = ({ onClose }) => {
                         <div className="custom-dropdown-container">
                             <button
                                 className="category-filter-wrapper glass-panel"
-                                onClick={() => setIsShowsCalendarOpen(true)}
+                                onClick={() => {
+                                    closeAllDropdowns();
+                                    document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+                                    setIsShowsCalendarOpen(true);
+                                }}
                                 style={{ justifyContent: 'center', cursor: 'pointer' }}
                                 title="Calendar View"
                             >

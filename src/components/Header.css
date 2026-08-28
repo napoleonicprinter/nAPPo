@@ -460,6 +460,82 @@
     color: #ff4444 !important;
 }
 
+/* Mobile & Tablet Mode: Solid white background when tags in horizontal scroll menu are selected & turn red */
+@media (max-width: 1024px) {
+    .mobile-overlay-filters .filters-active-red,
+    .mobile-overlay-filters .filters-active-red.active,
+    .mobile-overlay-filters .custom-select-trigger.filters-active-red,
+    .mobile-tag-filter .filters-active-red,
+    .mobile-tag-filter.filters-active-red,
+    .mobile-tag-filter .custom-select-trigger.filters-active-red,
+    .mobile-arc-filter.filters-active-red,
+    .arc-filter-btn.filters-active-red,
+    .mobile-tag-filter .significance-filter.filters-active-red,
+    .mobile-icon-btn.filters-active-red {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        border: 1.5px solid #ff4444 !important;
+        color: #ff4444 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .mobile-overlay-filters .filters-active-red *,
+    .mobile-overlay-filters .custom-select-trigger.filters-active-red *,
+    .mobile-tag-filter .filters-active-red *,
+    .mobile-tag-filter.filters-active-red *,
+    .mobile-tag-filter .custom-select-trigger.filters-active-red *,
+    .mobile-arc-filter.filters-active-red *,
+    .arc-filter-btn.filters-active-red *,
+    .mobile-tag-filter .significance-filter.filters-active-red *,
+    .mobile-icon-btn.filters-active-red * {
+        color: #ff4444 !important;
+    }
+}
+
+.device-mobile .mobile-overlay-filters .filters-active-red,
+.device-mobile .mobile-overlay-filters .custom-select-trigger.filters-active-red,
+.device-mobile .mobile-tag-filter .filters-active-red,
+.device-mobile .mobile-tag-filter.filters-active-red,
+.device-mobile .mobile-tag-filter .custom-select-trigger.filters-active-red,
+.device-mobile .mobile-arc-filter.filters-active-red,
+.device-mobile .arc-filter-btn.filters-active-red,
+.device-mobile .mobile-tag-filter .significance-filter.filters-active-red,
+.device-mobile .mobile-icon-btn.filters-active-red,
+.device-tablet .mobile-overlay-filters .filters-active-red,
+.device-tablet .mobile-overlay-filters .custom-select-trigger.filters-active-red,
+.device-tablet .mobile-tag-filter .filters-active-red,
+.device-tablet .mobile-tag-filter.filters-active-red,
+.device-tablet .mobile-tag-filter .custom-select-trigger.filters-active-red,
+.device-tablet .mobile-arc-filter.filters-active-red,
+.device-tablet .arc-filter-btn.filters-active-red,
+.device-tablet .mobile-tag-filter .significance-filter.filters-active-red,
+.device-tablet .mobile-icon-btn.filters-active-red {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1.5px solid #ff4444 !important;
+    color: #ff4444 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.device-mobile .mobile-overlay-filters .filters-active-red *,
+.device-mobile .mobile-tag-filter .filters-active-red *,
+.device-mobile .mobile-tag-filter.filters-active-red *,
+.device-mobile .mobile-tag-filter .custom-select-trigger.filters-active-red *,
+.device-mobile .mobile-arc-filter.filters-active-red *,
+.device-mobile .arc-filter-btn.filters-active-red *,
+.device-mobile .mobile-tag-filter .significance-filter.filters-active-red *,
+.device-mobile .mobile-icon-btn.filters-active-red *,
+.device-tablet .mobile-overlay-filters .filters-active-red *,
+.device-tablet .mobile-tag-filter .filters-active-red *,
+.device-tablet .mobile-tag-filter.filters-active-red *,
+.device-tablet .mobile-tag-filter .custom-select-trigger.filters-active-red *,
+.device-tablet .mobile-arc-filter.filters-active-red *,
+.device-tablet .arc-filter-btn.filters-active-red *,
+.device-tablet .mobile-tag-filter .significance-filter.filters-active-red *,
+.device-tablet .mobile-icon-btn.filters-active-red * {
+    color: #ff4444 !important;
+}
+
 .settings-btn {
     padding: 8px 12px;
     display: flex;

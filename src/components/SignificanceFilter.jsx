@@ -32,7 +32,7 @@ const SignificanceFilter = ({ compact = false, className = '' }) => {
     const currentRank = getRank(filterSignificance);
 
     return (
-        <div className={`significance-filter glass-panel${compact ? ' significance-filter--compact' : ''} ${className}`.trim()}>
+        <div className={`significance-filter glass-panel${compact ? ' significance-filter--compact' : ''} ${currentRank > 0 ? 'filters-active-red' : ''} ${className}`.trim()}>
             {[1, 2, 3].map((star) => (
                 <button
                     key={star}

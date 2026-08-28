@@ -256,6 +256,23 @@ const MapResizeHandler = () => {
     return null;
 };
 
+const GpsCenteringHandler = () => {
+    const { userCoords, locationMode } = useAppContext();
+    const map = useMap();
+    const lastCenteredModeRef = useRef(null);
+
+    useEffect(() => {
+        if (locationMode === 'geo' && userCoords?.lat && userCoords?.lon && lastCenteredModeRef.current !== 'geo') {
+            lastCenteredModeRef.current = 'geo';
+            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
+        } else if (locationMode !== 'geo') {
+            lastCenteredModeRef.current = locationMode;
+        }
+    }, [locationMode, userCoords?.lat, userCoords?.lon, map]);
+
+    return null;
+};
+
 const CenterControl = ({ userCoords, isMobileLike }) => {
     const map = useMap();
     if (!userCoords || !isMobileLike) return null; // Rendered in zoom stack on desktop
@@ -275,7 +292,7 @@ const CenterControl = ({ userCoords, isMobileLike }) => {
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
+                        map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
                     }}
                     title="Center on my location"
                     style={{
@@ -340,7 +357,7 @@ const CustomZoomControl = ({ isMobileLike }) => {
         e.preventDefault();
         e.stopPropagation();
         if (userCoords) {
-            map.flyTo([userCoords.lat, userCoords.lon], 14, { duration: 1.5 });
+            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
         }
     };
 
@@ -698,6 +715,7 @@ const MapView = () => {
                 <MapResizeHandler />
                 <CustomZoomControl isMobileLike={isMobileLike} />
                 <LocationMarker isFiltered={isFiltered} />
+                <GpsCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
