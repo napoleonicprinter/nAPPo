@@ -4,6 +4,7 @@ import MarkerClusterGroup from 'react-leaflet-cluster';
 import { useAppContext, useBackHandler } from '../context/AppContext';
 import SiteCard, { getCategoryColor } from './SiteCard';
 import DealsView from './DealsView';
+import MapOverlaysLayer from './MapOverlaysLayer';
 import L from 'leaflet';
 import { LocateFixed } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
@@ -535,8 +536,12 @@ const MapView = () => {
         sites, theme, mapStyle, clusterRadius,
         selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
         userCoords, isFiltered, previewDevice, clearAllFilters,
-        filterCategory
+        filterCategory, activeMapOverlays
     } = useAppContext();
+
+    const hasActiveOverlays = useMemo(() => {
+        return Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
+    }, [activeMapOverlays]);
 
     const isTodaysBattleActive = useMemo(() => {
         return Array.isArray(filterCategory) && filterCategory.includes("Today's Battle");
@@ -607,6 +612,8 @@ const MapView = () => {
             .leaflet-popup-tip { background: white !important; box-shadow: none !important; border: none !important; }
             .detail-view-active .leaflet-control-container { visibility: hidden !important; opacity: 0 !important; }
             .custom-div-icon { background: none !important; border: none !important; }
+            .leaflet-overlay-pane { z-index: 400 !important; }
+            .leaflet-marker-pane { z-index: 600 !important; }
             .new-site-badge {
                 position: absolute !important; top: 5px !important; left: 5px !important;
                 width: 70px !important; height: auto !important; z-index: 20 !important;
@@ -712,6 +719,7 @@ const MapView = () => {
                     maxNativeZoom={TILE_LAYERS[mapStyle]?.maxNativeZoom || 18}
                     keepBuffer={4}
                 />
+                <MapOverlaysLayer />
                 <MapResizeHandler />
                 <CustomZoomControl isMobileLike={isMobileLike} />
                 <LocationMarker isFiltered={isFiltered} />
@@ -729,14 +737,14 @@ const MapView = () => {
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}
-                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}`}
-                    maxClusterRadius={isTodaysBattleActive ? 0 : clusterRadius}
+                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
+                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive) ? 0 : clusterRadius}
                     zoomToBoundsOnClick={true}
                     spiderfyOnMaxZoom={true}
                     spiderfyDistanceMultiplier={1.5}
                     spiderLegPolylineOptions={{ weight: 1.5, color: '#555', opacity: 0.7 }}
                     showCoverageOnHover={false}
-                    disableClusteringAtZoom={clusterRadius === 0 ? 0 : (isTodaysBattleActive ? 20 : 15)}
+                    disableClusteringAtZoom={(hasActiveOverlays || clusterRadius === 0) ? 0 : (isTodaysBattleActive ? 20 : 15)}
                     chunkedLoading={true}
                 >
                     {renderedMarkers}

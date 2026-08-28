@@ -328,33 +328,39 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 </div>
 
                 {isCompact && site.maps && site.maps.length > 0 && (
-                    <div style={{ marginTop: '4px', marginBottom: '8px' }}>
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                if (site.maps[0]?.id) toggleMapOverlay(site.maps[0].id);
-                            }}
-                            style={{
-                                width: '100%',
-                                padding: '5px 10px',
-                                borderRadius: '8px',
-                                border: activeMapOverlays?.includes(site.maps[0]?.id) ? '1.5px solid #ff4444' : '1px solid var(--border-color, rgba(255,255,255,0.2))',
-                                background: activeMapOverlays?.includes(site.maps[0]?.id) ? 'rgba(255,68,68,0.2)' : 'rgba(255,255,255,0.1)',
-                                color: activeMapOverlays?.includes(site.maps[0]?.id) ? '#ff4444' : 'var(--text-primary)',
-                                fontWeight: 'bold',
-                                fontSize: '0.82rem',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                gap: '6px',
-                                transition: 'all 0.2s ease'
-                            }}
-                            title={activeMapOverlays?.includes(site.maps[0]?.id) ? 'Hide historical battle map overlay' : 'Overlay historical battle map on leaflet map'}
-                        >
-                            <Layers size={14} />
-                            {activeMapOverlays?.includes(site.maps[0]?.id) ? 'Hide Battle Map' : 'View Battle Map'}
-                        </button>
+                    <div style={{ marginTop: '6px', marginBottom: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        {site.maps.map(map => {
+                            const isActive = activeMapOverlays?.includes(map.id);
+                            return (
+                                <button
+                                    key={map.id}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (map.id) toggleMapOverlay(map.id);
+                                    }}
+                                    style={{
+                                        width: '100%',
+                                        padding: '5px 10px',
+                                        borderRadius: '8px',
+                                        border: isActive ? '1.5px solid #ff4444' : '1px solid var(--border-color, rgba(255,255,255,0.2))',
+                                        background: isActive ? 'rgba(255,68,68,0.2)' : 'rgba(255,255,255,0.1)',
+                                        color: isActive ? '#ff4444' : 'var(--text-primary)',
+                                        fontWeight: 'bold',
+                                        fontSize: '0.82rem',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '6px',
+                                        transition: 'all 0.2s ease'
+                                    }}
+                                    title={isActive ? `Hide historical map: ${map.name || map.id}` : `Overlay historical map: ${map.name || map.id}`}
+                                >
+                                    <Layers size={14} />
+                                    {isActive ? `Hide ${map.name || 'Map'}` : (map.name || 'View Map')}
+                                </button>
+                            );
+                        })}
                     </div>
                 )}
 
@@ -447,10 +453,10 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                         gap: '6px',
                                                         transition: 'all 0.2s ease'
                                                     }}
-                                                    title={isActive ? 'Hide Battle Map' : 'View Battle Map overlay on map'}
+                                                    title={isActive ? `Hide historical map: ${map.name || map.id}` : `Overlay historical map: ${map.name || map.id}`}
                                                 >
                                                     <Layers size={13} />
-                                                    {map.name || 'View Battle Map'}
+                                                    {isActive ? `Hide ${map.name || 'Map'}` : (map.name || 'View Map')}
                                                 </button>
                                             );
                                         })}

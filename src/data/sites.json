@@ -6051,6 +6051,23 @@
     "special": [
       "3",
       "Naples Invasion"
+    ],
+    "maps": [
+      {
+        "id": "Maida-phase1",
+        "name": "Phase 1",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Maida_1.svg",
+        "bounds": [
+          [
+            38.854041,
+            16.222426
+          ],
+          [
+            38.907549,
+            16.337270
+          ]
+        ]
+      }
     ]
   },
   {
