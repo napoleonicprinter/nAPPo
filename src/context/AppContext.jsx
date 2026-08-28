@@ -424,6 +424,7 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
+    const [showGpsDeniedModal, setShowGpsDeniedModal] = useState(false);
     const [locationMode, setLocationMode] = useState(() => {
         return localStorage.getItem('locationMode') || 'none';
     });
@@ -793,7 +794,30 @@ export const AppProvider = ({ children, storeUrl }) => {
         setCurrentUser(null);
     };
 
-    const exportUserData = async () => {
+    const triggerFileDownload = (blob, fileName, jsonStr) => {
+        try {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+        } catch (e) {
+            const encodedUri = "data:text/json;charset=utf-8," + encodeURIComponent(jsonStr);
+            const link = document.createElement('a');
+            link.href = encodedUri;
+            link.download = fileName;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    };
+
+    const exportUserData = () => {
         const data = {
             appName: 'nAPPo Trails',
             version: '1.0',
@@ -805,52 +829,31 @@ export const AppProvider = ({ children, storeUrl }) => {
         const jsonStr = JSON.stringify(data, null, 2);
         const nameStr = currentUser ? currentUser.username : 'visited';
         const fileName = `nappo_visited_sites_${nameStr}.json`;
+        const blob = new Blob([jsonStr], { type: 'application/json' });
 
-        // 1. Try Web Share API for Mobile Devices / Capacitor WebViews
-        if (navigator.share && typeof File !== 'undefined') {
+        // On mobile / WebViews supporting Web Share API with files
+        if (typeof window !== 'undefined' && navigator.share && navigator.canShare) {
             try {
-                const file = new File([jsonStr], fileName, { type: 'application/json' });
-                if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                    await navigator.share({
+                const file = new File([blob], fileName, { type: 'application/json' });
+                if (navigator.canShare({ files: [file] })) {
+                    navigator.share({
                         title: 'nAPPo Trails Backup',
                         text: 'Visited sites backup data file',
                         files: [file]
+                    }).catch((err) => {
+                        if (err && err.name !== 'AbortError') {
+                            triggerFileDownload(blob, fileName, jsonStr);
+                        }
                     });
                     return;
                 }
             } catch (err) {
-                if (err && err.name === 'AbortError') return; // User cancelled share sheet
-                console.log("Web Share API failed, falling back to download link:", err);
+                console.log("Web Share API error, falling back to file download:", err);
             }
         }
 
-        // 2. Fallback: Blob URL download
-        try {
-            const blob = new Blob([jsonStr], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = fileName;
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            setTimeout(() => {
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-            }, 1000);
-        } catch (e) {
-            // 3. Fallback: Data URI download
-            const encodedUri = "data:text/json;charset=utf-8," + encodeURIComponent(jsonStr);
-            const link = document.createElement('a');
-            link.setAttribute('href', encodedUri);
-            link.setAttribute('download', fileName);
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            setTimeout(() => {
-                document.body.removeChild(link);
-            }, 1000);
-        }
+        // Direct browser file download prompt
+        triggerFileDownload(blob, fileName, jsonStr);
     };
 
     const importUserData = (jsonString) => {
@@ -921,6 +924,12 @@ export const AppProvider = ({ children, storeUrl }) => {
                 setGeolocationEnabled(false);
                 setUserCoords(null);
                 setLocationMode('none');
+
+                const errStr = String(err?.message || err || '').toLowerCase();
+                const isPermissionError = errStr.includes('denied') || errStr.includes('permission') || err?.code === 1;
+                if (isPermissionError) {
+                    setShowGpsDeniedModal(true);
+                }
             };
 
             try {
@@ -1263,6 +1272,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             showAuth, setShowAuth,
             authMessage, setAuthMessage,
             geolocationEnabled,
+            showGpsDeniedModal, setShowGpsDeniedModal,
             requestGeolocation,
             disableGeolocation,
             userCoords,

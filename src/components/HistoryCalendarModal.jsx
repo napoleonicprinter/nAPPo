@@ -154,8 +154,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
             >
                 <div className="calendar-modal-header">
                     {/* Year dropdown row — centered */}
-                    <div className="history-year-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-                        <div style={{ width: '32px' }}></div> {/* Spacer to balance the close button */}
+                    <div className="history-year-row" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', position: 'relative' }}>
                         <div className="custom-dropdown-container history-year-dropdown">
                             <button
                                 className="category-filter-wrapper glass-panel dropdown-trigger"
@@ -183,7 +182,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                                 </div>
                             )}
                         </div>
-                        <button className="modal-close-btn" onClick={onClose} title="Close">
+                        <button className="modal-close-btn" style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }} onClick={onClose} title="Close">
                             <X size={18} strokeWidth={2.5} color="white" />
                         </button>
                     </div>

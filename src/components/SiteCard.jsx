@@ -3,7 +3,7 @@ import React from 'react';
 import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
-    Palette, Swords, Link2, X
+    Palette, Swords, Link2, X, Layers, Map as MapIcon
 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
@@ -60,7 +60,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         allSites,
         setSelectedSite,
         callerSite,
-        setCallerSite
+        setCallerSite,
+        activeMapOverlays,
+        toggleMapOverlay
     } = useAppContext();
 
     if (!site) return null;
@@ -325,6 +327,37 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}
                 </div>
 
+                {isCompact && site.maps && site.maps.length > 0 && (
+                    <div style={{ marginTop: '4px', marginBottom: '8px' }}>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (site.maps[0]?.id) toggleMapOverlay(site.maps[0].id);
+                            }}
+                            style={{
+                                width: '100%',
+                                padding: '5px 10px',
+                                borderRadius: '8px',
+                                border: activeMapOverlays?.includes(site.maps[0]?.id) ? '1.5px solid #ff4444' : '1px solid var(--border-color, rgba(255,255,255,0.2))',
+                                background: activeMapOverlays?.includes(site.maps[0]?.id) ? 'rgba(255,68,68,0.2)' : 'rgba(255,255,255,0.1)',
+                                color: activeMapOverlays?.includes(site.maps[0]?.id) ? '#ff4444' : 'var(--text-primary)',
+                                fontWeight: 'bold',
+                                fontSize: '0.82rem',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '6px',
+                                transition: 'all 0.2s ease'
+                            }}
+                            title={activeMapOverlays?.includes(site.maps[0]?.id) ? 'Hide historical battle map overlay' : 'Overlay historical battle map on leaflet map'}
+                        >
+                            <Layers size={14} />
+                            {activeMapOverlays?.includes(site.maps[0]?.id) ? 'Hide Battle Map' : 'View Battle Map'}
+                        </button>
+                    </div>
+                )}
+
                 {!isCompact && (
                     <>
                         <div className="description" style={{ fontSize: '0.9rem', lineHeight: '1.4', marginBottom: '8px', color: 'var(--text-primary)' }}>
@@ -373,6 +406,57 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     </a>
                                 )}
                             </div>
+
+                            {/* --- BATTLE MAP OVERLAYS SECTION --- */}
+                            {site.maps && site.maps.length > 0 && (
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '6px',
+                                    marginTop: '6px',
+                                    paddingTop: '6px',
+                                    borderTop: '1px solid rgba(0,0,0,0.1)'
+                                }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
+                                        <Layers size={18} style={{ color: '#ff4444' }} />
+                                        <span>Historical Battle Maps:</span>
+                                    </div>
+                                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                                        {site.maps.map(map => {
+                                            const isActive = activeMapOverlays?.includes(map.id);
+                                            return (
+                                                <button
+                                                    key={map.id}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        toggleMapOverlay(map.id);
+                                                        setSelectedSite(null);
+                                                        setView('map');
+                                                    }}
+                                                    style={{
+                                                        border: isActive ? '1.5px solid #ff4444' : '1px solid var(--border-color, rgba(255,255,255,0.2))',
+                                                        background: isActive ? 'rgba(255, 68, 68, 0.2)' : 'rgba(255, 255, 255, 0.1)',
+                                                        color: isActive ? '#ff4444' : 'var(--text-primary)',
+                                                        padding: '4px 10px',
+                                                        borderRadius: '6px',
+                                                        cursor: 'pointer',
+                                                        fontWeight: 'bold',
+                                                        fontSize: '0.8rem',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '6px',
+                                                        transition: 'all 0.2s ease'
+                                                    }}
+                                                    title={isActive ? 'Hide Battle Map' : 'View Battle Map overlay on map'}
+                                                >
+                                                    <Layers size={13} />
+                                                    {map.name || 'View Battle Map'}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            )}
 
                             {/* --- BATTLE SITE LINK (Crossed Sabres) --- */}
                             {site.battle_id && (

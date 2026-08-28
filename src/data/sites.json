@@ -6029,22 +6029,28 @@
   },
   {
     "id": "295",
-    "name": "Raid on Griessie",
-    "category": "Naval battle",
-    "date": "1807-12-05",
-    "year": 1807,
+    "name": "Battlefield of Maida",
+    "category": "Battle site",
     "significance": 1,
-    "location": "Gresik",
-    "country": "Java",
-    "description": "The raid on Griessie was a British attack on the port of Griessie in the Dutch East Indies on December 5th to the 11th 1807 during the Java campaign of 1806-1807.",
-    "latitude": -7.1341,
-    "longitude": 112.657554,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Java.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie",
-    "createDate": "2025-03-22T10:00:00Z",
+    "date": "1806-07-04",
+    "year": 1806,
+    "location": "San Pietro Lamentino, Calabria",
+    "country": "Italy",
+    "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria.",
+    "latitude": 38.869473,
+    "longitude": 16.268134,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
+    "createDate": "2026-08-27",
     "commanders": [
-      "Edward Pellew",
-      "William Cowell"
+      "Jean Reynier",
+      "John Stuart"
+    ],
+    "victor": "Britain",
+    "defeated": "France",
+    "special": [
+      "3",
+      "Naples Invasion"
     ]
   },
   {
@@ -15645,7 +15651,7 @@
     "longitude": 112.678552,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Griesse.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie",
-    "createDate": "2026-08-27",
+    "createDate": "2025-08-27",
     "commanders": [
       "Edward Pellew",
       "William Cowell"
@@ -15707,28 +15713,18 @@
   },
   {
     "id": "861",
-    "name": "Battlefield of Maida",
-    "category": "Battle site",
+    "name": "Museo Napoleónico de La Habana",
+    "category": "Museum",
     "significance": 2,
-    "date": "1806-07-04",
-    "year": 1806,
-    "location": "San Pietro Lamentino, Calabria",
-    "country": "Italy",
-    "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria.",
-    "latitude": 38.869473,
-    "longitude": 16.268134,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida.webp",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
-    "createDate": "2026-08-27",
-    "commanders": [
-      "Jean Reynier",
-      "John Stuart"
-    ],
-    "victor": "Britain",
-    "defeated": "France",
-    "special": [
-      "3",
-      "Naples Invasion"
-    ]
+    "year": "1961-12-01",
+    "location": "La Habana",
+    "country": "Cuba",
+    "description": "The Napoleon Museum in Havana, Cuba, houses one of the most important collections from the 18th and 19th centuries preserved in the Western hemisphere.",
+    "latitude": 23.13612,
+    "longitude": -82.380704,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_habana.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon_Museum_(Havana)",
+    "youtube_link": "https://www.youtube.com/watch?v=8aBykgCICXI&t=33s",
+    "createDate": "2026-08-27"
   }
 ]

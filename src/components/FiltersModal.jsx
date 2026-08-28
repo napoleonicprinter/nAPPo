@@ -104,8 +104,8 @@ const FiltersModal = ({ onClose }) => {
 
 
                     <div className="filter-group">
-                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>New Sites</h3>
-                        <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '2px 0' }}>
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>New Sites</h3>
+                        <label className={showOnlyNew ? 'filters-active-red' : ''} style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '6px 12px', borderRadius: '12px', transition: 'all 0.2s' }}>
                             <input
                                 type="checkbox"
                                 checked={showOnlyNew}
@@ -115,7 +115,7 @@ const FiltersModal = ({ onClose }) => {
                                 }}
                                 style={{ transform: 'scale(1.2)' }}
                             />
-                            <span style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1rem', color: 'var(--text-primary)' }}>Only new sites</span>
+                            <span style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1rem', fontWeight: showOnlyNew ? 'bold' : 'normal', color: showOnlyNew ? '#ff4444' : 'var(--text-primary)' }}>Only new sites</span>
                         </label>
 
                         <CustomSimpleSelect
@@ -126,7 +126,7 @@ const FiltersModal = ({ onClose }) => {
                                 { value: '30', label: 'Last 30 days' },
                                 { value: '60', label: 'Last 60 days' },
                             ]}
-                            value={String(newSitesDays)}
+                            value={showOnlyNew ? String(newSitesDays) : 'all'}
                             onChange={(val) => {
                                 const days = parseInt(val, 10);
                                 setNewSitesDays(days);
@@ -138,23 +138,24 @@ const FiltersModal = ({ onClose }) => {
                     </div>
                     {/* Search Section */}
                     <div className="filter-group">
-                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Search Sites</h3>
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Search Sites</h3>
                         <div className="mobile-search-wrapper" style={{ position: 'relative' }}>
                             <input
                                 type="text"
-                                className="mobile-search-input"
+                                className={`mobile-search-input ${filterSearch ? 'filters-active-red' : ''}`}
                                 placeholder="Search sites..."
                                 value={filterSearch || ''}
                                 onChange={(e) => setFilterSearch(e.target.value)}
                                 style={{
                                     width: '100%',
                                     padding: '10px 36px 10px 16px',
-                                    borderRadius: '8px',
-                                    border: '1px solid var(--border-color)',
-                                    background: 'var(--bg-color)',
-                                    color: 'var(--text-primary)',
+                                    borderRadius: '12px',
+                                    border: filterSearch ? '1.5px solid #ff4444' : '1px solid var(--border-color)',
+                                    background: filterSearch ? 'rgba(255, 68, 68, 0.1)' : 'var(--bg-color)',
+                                    color: filterSearch ? '#ff4444' : 'var(--text-primary)',
                                     fontSize: '1rem',
-                                    outline: 'none'
+                                    outline: 'none',
+                                    fontWeight: filterSearch ? 'bold' : 'normal'
                                 }}
                             />
                             {filterSearch ? (
@@ -171,7 +172,7 @@ const FiltersModal = ({ onClose }) => {
                                         transform: 'translateY(-50%)',
                                         background: 'none',
                                         border: 'none',
-                                        color: 'var(--text-secondary)',
+                                        color: '#ff4444',
                                         cursor: 'pointer',
                                         display: 'flex',
                                         alignItems: 'center',
@@ -200,7 +201,7 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Country</h3>
                         <CustomSimpleSelect
                             options={[
                                 { value: 'all', label: 'All' },
@@ -217,12 +218,12 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Campaign</h3>
                         <CampaignFilter />
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Coalition</h3>
                         <CustomSimpleSelect
                             options={[
                                 { value: 'all', label: 'All' },
@@ -244,7 +245,7 @@ const FiltersModal = ({ onClose }) => {
                     </div>
 
                     <div className="filter-group">
-                        <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Visit Status</h3>
                         <CustomSimpleSelect
                             options={[
                                 { value: 'all', label: 'All Status' },
@@ -261,55 +262,55 @@ const FiltersModal = ({ onClose }) => {
 
                     {import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true' && (
                         <div className="filter-group">
-                            <h3 style={{ margin: '0 0 0px 0',lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
-                            <label style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '4px 0' }}>
+                            <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
+                            <label className={filterWithMaps ? 'filters-active-red' : ''} style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '6px 12px', borderRadius: '12px', transition: 'all 0.2s' }}>
                                 <input
                                     type="checkbox"
                                     checked={filterWithMaps}
                                     onChange={(e) => setFilterWithMaps(e.target.checked)}
                                     style={{ transform: 'scale(1.2)' }}
                                 />
-                                <span style={{ fontSize: '1rem', color: 'var(--text-primary)' }}>Only sites with battle maps</span>
+                                <span style={{ fontSize: '1rem', fontWeight: filterWithMaps ? 'bold' : 'normal', color: filterWithMaps ? '#ff4444' : 'var(--text-primary)' }}>Only sites with battle maps</span>
                             </label>
                         </div>
                     )}
 
 
                     <div className="reset-button-wrapper" style={{ marginTop: '-15px', marginBottom: '0px' }}>
-                         <button
-                             onClick={clearModalFilters}
-                             style={{
-                                 flex: 1,
-                                 padding: '14px',
-                                 borderRadius: '12px',
-                                 fontWeight: 'bold',
-                                 fontSize: '1rem',
-                                 border: '1px solid var(--accent-danger)',
-                                 background: 'rgba(248, 81, 73, 0.1)',
-                                 color: 'var(--accent-danger)',
-                                 cursor: 'pointer',
-                                 transition: 'all 0.3s ease',
-                                 display: 'flex',
-                                 justifyContent: 'center',
-                                 alignItems: 'center',
-                                 opacity: isModalFiltered ? 1 : 0.4,
-                                 textTransform: 'uppercase',
-                                 letterSpacing: '0.5px'
-                             }}
-                             onMouseOver={(e) => {
-                                 if (isModalFiltered) {
-                                     e.currentTarget.style.background = 'rgba(248, 81, 73, 0.2)';
-                                     e.currentTarget.style.transform = 'scale(1.02)';
-                                 }
-                             }}
-                             onMouseOut={(e) => {
-                                 e.currentTarget.style.background = 'rgba(248, 81, 73, 0.1)';
-                                 e.currentTarget.style.transform = 'scale(1)';
-                             }}
-                         >
-                             <X size={18} style={{ marginRight: '6px' }} />
-                             Reset All
-                         </button>
+                        <button
+                            onClick={clearModalFilters}
+                            style={{
+                                flex: 1,
+                                padding: '14px',
+                                borderRadius: '12px',
+                                fontWeight: 'bold',
+                                fontSize: '1rem',
+                                border: '1px solid var(--accent-danger)',
+                                background: 'rgba(248, 81, 73, 0.1)',
+                                color: 'var(--accent-danger)',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                opacity: isModalFiltered ? 1 : 0.4,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                            }}
+                            onMouseOver={(e) => {
+                                if (isModalFiltered) {
+                                    e.currentTarget.style.background = 'rgba(248, 81, 73, 0.2)';
+                                    e.currentTarget.style.transform = 'scale(1.02)';
+                                }
+                            }}
+                            onMouseOut={(e) => {
+                                e.currentTarget.style.background = 'rgba(248, 81, 73, 0.1)';
+                                e.currentTarget.style.transform = 'scale(1)';
+                            }}
+                        >
+                            <X size={18} style={{ marginRight: '6px' }} />
+                            Reset All
+                        </button>
                     </div>
 
 

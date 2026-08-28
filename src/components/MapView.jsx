@@ -209,34 +209,8 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
     return null;
 };
 
-const LocationMarker = ({ isFiltered }) => {
+const LocationMarker = () => {
     const { userCoords } = useAppContext();
-    const map = useMap();
-    const lastAnimatedCoords = useRef({ lat: null, lon: null });
-
-    useEffect(() => {
-        if (userCoords?.lat && userCoords?.lon && !isFiltered) {
-            const target = L.latLng(userCoords.lat, userCoords.lon);
-            const currentCenter = map.getCenter();
-
-            // CHECK 1: Is this a different coordinate than our last animation request?
-            const isNewCoord = lastAnimatedCoords.current.lat !== userCoords.lat ||
-                lastAnimatedCoords.current.lon !== userCoords.lon;
-
-            // CHECK 2: Is the map center actually far enough to justify a move?
-            // (Prevents jitter from GPS noise)
-            if (isNewCoord && currentCenter.distanceTo(target) > 5) {
-                lastAnimatedCoords.current = { lat: userCoords.lat, lon: userCoords.lon };
-
-                map.stop();
-                map.panTo(target, {
-                    animate: true,
-                    duration: 1.2
-                });
-
-            }
-        }
-    }, [userCoords?.lat, userCoords?.lon, isFiltered, map]);
 
     if (!userCoords) return null;
 

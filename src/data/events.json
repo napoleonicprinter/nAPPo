@@ -4008,10 +4008,11 @@
     },
     {
         "id": "453",
-        "siteId": "861",
+        "siteId": "295",
         "title": "Battle of Maida",
         "date": "1806-07-04",
         "location": "San Pietro Lamentino, Calabria, Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
         "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria."
     }
 ]

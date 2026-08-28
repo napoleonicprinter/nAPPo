@@ -100,6 +100,12 @@ const Header = () => {
     useBackHandler('headerDeleteConfirm', showDeleteConfirm, () => setShowDeleteConfirm(false), 35);
     useBackHandler('headerHelpDropdown', showHelpDropdown, () => setShowHelpDropdown(false), 25);
 
+    const showBattleFilters = useMemo(() => {
+        if (!Array.isArray(filterCategory) || filterCategory.length === 0) return false;
+        const battleCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
+        return filterCategory.every(cat => battleCategories.includes(cat));
+    }, [filterCategory]);
+
     const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 
     const menuRef = useRef(null);
@@ -278,16 +284,14 @@ const Header = () => {
                             <SignificanceFilter />
                         </div>
 
-                        {/* Logic: Only show if one of these three categories is selected */}
-                        {(filterCategory.includes('Battle site') ||
-                            filterCategory.includes('Naval battle') ||
-                            filterCategory.includes('Battle landmark')) && (
-                                <>
-                                    <YearFilter className={`desktop-year-filter ${filterYear !== 'all' ? 'filters-active-red' : ''}`} />
-                                    <CommanderFilter className={`desktop-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`} />
-                                </>
-                            )}
-                        <ArcFilter className="desktop-arc-filter" />
+                        {/* Logic: Only show if selected categories consist exclusively of battle categories (Battle site, Naval battle, Battle landmark) and NO non-battle categories */}
+                        {showBattleFilters && (
+                            <>
+                                <YearFilter className={`desktop-year-filter ${filterYear !== 'all' ? 'filters-active-red' : ''}`} />
+                                <CommanderFilter className={`desktop-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`} />
+                                <ArcFilter className="desktop-arc-filter" />
+                            </>
+                        )}
 
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear All</button>}
                         {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
@@ -381,25 +385,20 @@ const Header = () => {
                     </div>
                     <SignificanceFilter className="mobile-tag-filter" />
 
-                    {/* Logic: Only show if one of these three categories is selected */}
-                    {(filterCategory.includes('Battle site') ||
-                        filterCategory.includes('Naval battle') ||
-                        filterCategory.includes('Battle landmark')) && (
-                            <>
-                                <YearFilter
-                                    className={`mobile-tag-filter year-filter-mobile ${filterYear !== 'all' ? 'filters-active-red' : ''}`}
-                                />
-                                <CommanderFilter
-                                    /* Fixed typo: changed 'year-filter-mobile' to 'mobile-commander-filter' */
-                                    className={`mobile-tag-filter mobile-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}
-                                />
-                            </>
-                        )}
-
-                    <ArcFilter
-                        /* Fixed: changed 'desktop-arc-filter' to 'mobile-tag-filter mobile-arc-filter' */
-                        className="mobile-tag-filter mobile-arc-filter"
-                    />
+                    {/* Logic: Only show if selected categories consist exclusively of battle categories (Battle site, Naval battle, Battle landmark) and NO non-battle categories */}
+                    {showBattleFilters && (
+                        <>
+                            <YearFilter
+                                className={`mobile-tag-filter year-filter-mobile ${filterYear !== 'all' ? 'filters-active-red' : ''}`}
+                            />
+                            <CommanderFilter
+                                className={`mobile-tag-filter mobile-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}
+                            />
+                            <ArcFilter
+                                className="mobile-tag-filter mobile-arc-filter"
+                            />
+                        </>
+                    )}
 
                     <div className="mobile-tag-filter">
                         <div className="custom-select-container">

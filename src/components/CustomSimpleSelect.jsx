@@ -13,7 +13,7 @@ import { useAppContext } from '../context/AppContext';
  *   disabled?: boolean
  *   title?: string
  */
-const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false, persistentValues = ['all'], menuClassName = '' }) => {
+const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...', disabled = false, title, searchable = false, persistentValues = ['all'], menuClassName = '', className = '' }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [menuStyle, setMenuStyle] = useState({});
@@ -22,6 +22,8 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
     const menuRef = useRef(null);
     const searchInputRef = useRef(null);
     const { getPortalContainer } = useAppContext();
+
+    const isFilterSelected = (value && value !== 'all' && value !== 'none' && value !== '') || (className && className.includes('filters-active-red'));
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -110,10 +112,10 @@ const CustomSimpleSelect = ({ options, value, onChange, placeholder = 'Select...
         : options;
 
     return (
-        <div className="custom-select-container" ref={dropdownRef} title={title}>
+        <div className={`custom-select-container ${className.replace(/filters-active-red/g, '')}`.trim()} ref={dropdownRef} title={title}>
             <button
                 ref={triggerRef}
-                className={`custom-select-trigger filter-select glass-panel ${isOpen ? 'open' : ''}`}
+                className={`custom-select-trigger filter-select glass-panel ${isOpen ? 'open' : ''} ${isFilterSelected ? 'filters-active-red' : ''}`}
                 onClick={() => !disabled && setIsOpen(!isOpen)}
                 type="button"
                 disabled={disabled}

@@ -115,7 +115,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
         <div className="custom-select-container" ref={dropdownRef}>
             <button
                 ref={triggerRef}
-                className={`custom-select-trigger filter-select glass-panel ${isOpen ? 'open' : ''}`}
+                className={`custom-select-trigger filter-select glass-panel ${isOpen ? 'open' : ''} ${value && value.length > 0 ? 'filters-active-red' : ''}`}
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
             >
