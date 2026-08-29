@@ -6081,7 +6081,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
     "createDate": "2026-08-27",
     "commanders": [
-      "Jean Reynier",
+      "Jean Regnier",
       "John Stuart"
     ],
     "victor": "Britain",
@@ -6094,7 +6094,7 @@
       {
         "id": "Maida-phase1",
         "name": "Phase 1",
-        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Maida_1.svg",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Maida.svg",
         "bounds": [
           [
             38.876041,
