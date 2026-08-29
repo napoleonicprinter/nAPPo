@@ -223,11 +223,12 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [activeMapOverlays, setActiveMapOverlays] = useState([]);
 
     const toggleMapOverlay = (mapId) => {
-        setActiveMapOverlays(prev =>
-            prev.includes(mapId)
-                ? []
-                : [mapId]
-        );
+        setActiveMapOverlays(prev => {
+            const current = Array.isArray(prev) ? prev : [];
+            return current.includes(mapId)
+                ? current.filter(id => id !== mapId)
+                : [...current, mapId];
+        });
     };
 
     const clearMapOverlays = () => setActiveMapOverlays([]);

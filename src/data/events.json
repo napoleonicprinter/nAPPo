@@ -839,6 +839,7 @@
     },
     {
         "id": 92,
+        "siteId": "206",
         "title": "Battle of Køge",
         "date": "1807-08-29",
         "location": "Køge, Denmark",
@@ -1268,6 +1269,7 @@
     {
         "id": 144,
         "title": "Battle of Kulm",
+        "siteId": "271",
         "date": "1813-08-29",
         "location": "Kulm, Czech Republic",
         "description": "Fought on August 29th - 30th 1813, was a major engagement of the Napoleonic Wars. The battle took place around the village of Kulm in modern-day Czech Republic, then the capital of the Kingdom of Bohemia.",

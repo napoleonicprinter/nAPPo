@@ -681,8 +681,8 @@ const MapView = () => {
                     autoPan={false}
                     autoPanPadding={[50, 50]}
                     closeButton={false}
-                    autoClose={!isTodaysBattleActive}
-                    closeOnClick={!isTodaysBattleActive}
+                    autoClose={!isTodaysBattleActive && !hasActiveOverlays}
+                    closeOnClick={!isTodaysBattleActive && !hasActiveOverlays}
                     onClose={() => setSelectedSite(null)}
                 >
                     <div style={{ width: '300px', position: 'relative' }}>
