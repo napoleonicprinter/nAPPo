@@ -754,7 +754,9 @@ const MapView = () => {
                         spiderLegPolylineOptions={{ weight: 1.5, color: '#555', opacity: 0.7 }}
                         showCoverageOnHover={false}
                         disableClusteringAtZoom={clusterRadius === 0 ? 0 : (isTodaysBattleActive ? 20 : 15)}
-                        chunkedLoading={true}
+                        chunkedLoading={false}
+                        removeOutsideVisibleBounds={false}
+                        animateAddingMarkers={false}
                     >
                         {renderedMarkers}
                     </MarkerClusterGroup>
