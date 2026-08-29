@@ -169,7 +169,7 @@
             8.78625
           ]
         ],
-        "free": true
+        "free": false
       }
     ]
   },
@@ -6075,8 +6075,8 @@
     "location": "San Pietro Lamentino, Calabria",
     "country": "Italy",
     "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria.",
-    "latitude": 38.869473,
-    "longitude": 16.268134,
+    "latitude": 38.898998,
+    "longitude": 16.301318,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
     "createDate": "2026-08-27",
@@ -15782,5 +15782,36 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon_Museum_(Havana)",
     "youtube_link": "https://www.youtube.com/watch?v=8aBykgCICXI&t=33s",
     "createDate": "2026-08-27"
+  },
+  {
+    "id": "862",
+    "name": "Stuart's army landing point",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-07-01",
+    "year": 1806,
+    "location": "Gizzeria Lido",
+    "country": "Italy",
+    "description": "On the night of June 30th 1806 Stuart's army arrived at Santa Eufemia bay. At daybreak, Lieutenant-Colonel Oswald commanded a forward group to protect the beachhead. Regnier anticipated a landing at the Bay of Saint Euphemia, where a minor contingent of Polish soldiers occupied the beach during the British arrival. Nowadyas the cost line have moved aproximately 500 meters west, that is why the landing point is now within the town of Gizzeria Lido.",
+    "latitude": 38.92976,
+    "longitude": 16.217790,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida_landing.webp",
+    "createDate": "2026-08-29"
+  },
+  {
+    "id": "863",
+    "name": "Bastione di Malta",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-07-01",
+    "year": 1806,
+    "location": "Lamezia Terme",
+    "country": "Italy",
+    "description": "The small Polish detachment, commanded by Colonel Grabinski, was stationed at the Bastione di Malta, a square, squat fortified tower situated just behind the beach. When the British initiated their landing under the cover of Captain Fellowes' ships, these Polish troops quickly withdrew into the interior instead of mounting an attack, allowing General Stuart's forces to come ashore unopposed.",
+    "latitude": 38.930363,
+    "longitude": 16.221523,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bastione_di_malta.webp",
+    "wikipedia_link": "https://it.wikipedia.org/wiki/Bastione_di_Malta",
+    "createDate": "2026-08-29"
   }
 ]
