@@ -4,7 +4,7 @@ import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
     Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket,
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
-    LogOut, Newspaper, Tablet, Monitor, Star
+    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload, Layers
 } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
@@ -282,6 +282,22 @@ const Header = () => {
                     <YearFilter className="mobile-tag-filter year-filter-mobile" />
                     <CommanderFilter className="mobile-tag-filter mobile-commander-filter" />
                     <ArcFilter className="mobile-tag-filter mobile-arc-filter" />
+
+                    {activeMapOverlays && activeMapOverlays.length > 0 && (
+                        <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
+                            <button
+                                className="custom-select-trigger mobile-icon-btn glass-panel filters-active-red"
+                                onClick={clearMapOverlays}
+                                style={{ justifyContent: 'center', height: '40px', padding: '0 12px' }}
+                                title="Close active battle maps"
+                            >
+                                <div className="custom-select-value" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <Layers size={16} />
+                                    <span>Close Map</span>
+                                </div>
+                            </button>
+                        </div>
+                    )}
 
                     <div className="mobile-tag-filter">
                         <div className="custom-select-container">

@@ -4,7 +4,7 @@ import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
     Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket,
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
-    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload
+    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload, Layers
 } from 'lucide-react';
 import { useAppContext, useBackHandler, EUROPEAN_CAPITALS } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
@@ -294,7 +294,7 @@ const Header = () => {
                         )}
 
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear All</button>}
-                        {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel" onClick={clearMapOverlays}>Clear Maps</button>}
+                        {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel filters-active-red" onClick={clearMapOverlays}>Close Map</button>}
 
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                             <button className={`custom-select-trigger filter-select glass-panel
@@ -398,6 +398,22 @@ const Header = () => {
                                 className="mobile-tag-filter mobile-arc-filter"
                             />
                         </>
+                    )}
+
+                    {activeMapOverlays && activeMapOverlays.length > 0 && (
+                        <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
+                            <button
+                                className="custom-select-trigger mobile-icon-btn glass-panel filters-active-red"
+                                onClick={clearMapOverlays}
+                                style={{ justifyContent: 'center', height: '40px', padding: '0 12px' }}
+                                title="Close active battle maps"
+                            >
+                                <div className="custom-select-value" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <Layers size={16} />
+                                    <span>Close Map</span>
+                                </div>
+                            </button>
+                        </div>
                     )}
 
                     <div className="mobile-tag-filter">

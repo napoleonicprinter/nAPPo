@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight, Map } from 'lucide-react';
+import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight, Map, ChevronUp } from 'lucide-react';
 import { useAppContext, useBackHandler } from '../context/AppContext';
 import HistoryCalendarModal from './HistoryCalendarModal';
 import AnnouncementModal from './AnnouncementModal';
@@ -11,6 +11,20 @@ const EventsModal = ({ onClose }) => {
     const { eventsData, messagesData, getPortalContainer, allSites, setView, setSelectedSite, setSiteToOpenPopup } = useAppContext();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [showAnnouncement, setShowAnnouncement] = useState(null);
+    const [showTopBtn, setShowTopBtn] = useState(false);
+    const containerRef = useRef(null);
+
+    const handleScroll = () => {
+        if (containerRef.current) {
+            setShowTopBtn(containerRef.current.scrollTop > 180);
+        }
+    };
+
+    const scrollToTop = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     useBackHandler('eventsHistoryCalendar', isCalendarOpen, () => setIsCalendarOpen(false), 35);
     useBackHandler('eventsAnnouncement', !!showAnnouncement, () => setShowAnnouncement(null), 35);
@@ -118,7 +132,7 @@ const EventsModal = ({ onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div className="calendar-modal-body" style={{ flex: 1, overflowY: 'auto', padding: '2rem' }}>
+                <div className="calendar-modal-body" ref={containerRef} onScroll={handleScroll} style={{ flex: 1, overflowY: 'auto', padding: '2rem' }}>
                     {/* Announcement retrieval cards */}
                     {activeMessages.map(msg => (
                         <div
@@ -211,6 +225,19 @@ const EventsModal = ({ onClose }) => {
                     )}
                 </div>
             </div>
+
+            {/* FLOATING TOP BUTTON AT BOTTOM RIGHT */}
+            {showTopBtn && (
+                <button
+                    type="button"
+                    className="scroll-to-top-btn glass-panel animate-fade-in"
+                    onClick={scrollToTop}
+                    title="Scroll to top"
+                >
+                    <ChevronUp size={16} style={{ marginRight: '4px' }} />
+                    Top
+                </button>
+            )}
             {isCalendarOpen && (
                 <HistoryCalendarModal
                     eventsData={eventsData}

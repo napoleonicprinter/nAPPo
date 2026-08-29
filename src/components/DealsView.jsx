@@ -1,14 +1,28 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppContext } from '../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { ExternalLink, Info, Tag, X } from 'lucide-react';
+import { ExternalLink, Info, Tag, X, ChevronUp } from 'lucide-react';
 import { handleImageFallback } from '../utils/imageUtils';
 import './ShoppingView.css';
 
 const DealsView = ({ onClose }) => {
     const { activeDeals, getPortalContainer } = useAppContext();
     const { t } = useTranslation();
+    const [showTopBtn, setShowTopBtn] = useState(false);
+    const containerRef = useRef(null);
+
+    const handleScroll = () => {
+        if (containerRef.current) {
+            setShowTopBtn(containerRef.current.scrollTop > 180);
+        }
+    };
+
+    const scrollToTop = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     const sortedDeals = useMemo(() => {
         return [...activeDeals].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
@@ -49,13 +63,18 @@ const DealsView = ({ onClose }) => {
                 </div>
 
                 {/* Content Body */}
-                <div className="shopping-modal-body" style={{
-                    padding: '1.5rem',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    backgroundColor: 'rgba(0, 0, 0, 0.08)',
-                    overflowY: 'auto'
-                }}>
+                <div
+                    className="shopping-modal-body"
+                    ref={containerRef}
+                    onScroll={handleScroll}
+                    style={{
+                        padding: '1.5rem',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                        overflowY: 'auto'
+                    }}
+                >
                     <div
                         style={{
                             display: 'flex',
@@ -141,6 +160,19 @@ const DealsView = ({ onClose }) => {
                     </div>
                 </div>
             </div>
+
+            {/* FLOATING TOP BUTTON AT BOTTOM RIGHT */}
+            {showTopBtn && (
+                <button
+                    type="button"
+                    className="scroll-to-top-btn glass-panel animate-fade-in"
+                    onClick={scrollToTop}
+                    title="Scroll to top"
+                >
+                    <ChevronUp size={16} style={{ marginRight: '4px' }} />
+                    Top
+                </button>
+            )}
         </div>,
         getPortalContainer()
     );

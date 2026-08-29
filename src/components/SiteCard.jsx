@@ -3,10 +3,43 @@ import React from 'react';
 import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
-    Palette, Swords, Link2, X, Layers, Map as MapIcon
+    Palette, Swords, Link2, X, Layers, Map as MapIcon,
+    Landmark
 } from 'lucide-react';
 import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
+
+const getOnlineReadings = (site) => {
+    if (!site) return [];
+    const raw = site.online_reading || site.online_readings || site.reading_links || site.reading_link;
+    if (!raw) return [];
+
+    let list = [];
+    if (Array.isArray(raw)) {
+        list = raw;
+    } else {
+        list = [raw];
+    }
+
+    return list.map((item, idx) => {
+        if (typeof item === 'string') {
+            const trimmed = item.trim();
+            if (!trimmed) return null;
+            return {
+                title: 'On-line reading',
+                link: trimmed
+            };
+        } else if (item && typeof item === 'object') {
+            const link = (item.link || item.url || '').trim();
+            if (!link) return null;
+            return {
+                title: item.title || item.name || item.book_title || item.label || 'On-line reading',
+                link: link
+            };
+        }
+        return null;
+    }).filter(Boolean);
+};
 
 export const getCategoryColor = (category) => {
     const colors = {
@@ -397,7 +430,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                             borderTop: '1px solid rgba(0,0,0,0.1)'
                         }}>
                             {/* Standard Icons Row */}
-                            <div style={{ display: 'flex', gap: '20px' }}>
+                            <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                                 {site.wikipedia_link && site.wikipedia_link.trim() !== '' && (
                                     <a href={site.wikipedia_link} target="_blank" rel="noreferrer" title="Wikipedia" style={{ color: '#666' }}>
                                         <BookOpen size={22} />
@@ -649,6 +682,49 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                     </button>
                                                 );
                                             })}
+                                        </div>
+                                    </div>
+                                );
+                            })()}
+
+                            {/* --- ON-LINE READING SECTION --- */}
+                            {(() => {
+                                const readings = getOnlineReadings(site);
+                                if (readings.length === 0) return null;
+
+                                return (
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'flex-start',
+                                        gap: '8px',
+                                        fontSize: '0.85rem',
+                                        color: 'var(--text-primary)',
+                                        marginTop: '4px'
+                                    }}>
+                                        <img
+                                            src="/assets/Library.png"
+                                            alt="Library"
+                                            style={{ width: '22px', height: '22px', objectFit: 'contain', flexShrink: 0, marginTop: '2px' }}
+                                        />
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                                            <span style={{ fontWeight: '600' }}>On-line reading:</span>
+                                            {readings.map((item, idx) => (
+                                                <a
+                                                    key={idx}
+                                                    href={item.link}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    style={{
+                                                        color: 'var(--accent-primary, #58a6ff)',
+                                                        fontWeight: 'bold',
+                                                        fontSize: '0.85rem',
+                                                        textDecoration: 'underline',
+                                                        lineHeight: '1.4'
+                                                    }}
+                                                >
+                                                    {item.title}
+                                                </a>
+                                            ))}
                                         </div>
                                     </div>
                                 );

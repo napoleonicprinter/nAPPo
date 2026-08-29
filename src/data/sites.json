@@ -6079,6 +6079,12 @@
     "longitude": 16.301318,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maida",
+    "online_reading": [
+      {
+        "title": "The Battle of Maida 1806 (Richard Hopton)",
+        "link": "https://archive.org/details/battleofmaida1800000hopt"
+      }
+    ],
     "createDate": "2026-08-27",
     "commanders": [
       "Jean Regnier",
@@ -15785,7 +15791,7 @@
   },
   {
     "id": "862",
-    "name": "Stuart's army landing point",
+    "name": "Stuart's army landing point - battle of Maida",
     "category": "Battle landmark",
     "significance": 1,
     "date": "1806-07-01",
@@ -15812,6 +15818,51 @@
     "longitude": 16.221523,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bastione_di_malta.webp",
     "wikipedia_link": "https://it.wikipedia.org/wiki/Bastione_di_Malta",
+    "createDate": "2026-08-29"
+  },
+  {
+    "id": "864",
+    "name": "British camp - battle of Maida",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-07-02",
+    "year": 1806,
+    "location": "Sante Eufemia Lamezia",
+    "country": "Italy",
+    "description": "The small Polish detachment, commanded by Colonel Grabinski, was stationed at the Bastione di Malta, a square, squat fortified tower situated just behind the beach. When the British initiated their landing under the cover of Captain Fellowes' ships, these Polish troops quickly withdrew into the interior instead of mounting an attack, allowing General Stuart's forces to come ashore unopposed.",
+    "latitude": 38.91757,
+    "longitude": 16.23450,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida_british_camp.webp",
+    "createDate": "2026-08-29"
+  },
+  {
+    "id": "865",
+    "name": "Nicastro - battle of Maida",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-07-02",
+    "year": 1806,
+    "location": "Nicastro ",
+    "country": "Italy",
+    "description": "On July 2, Stuart commanded an advanced unit to occupy Nicastro, an elevated northern hillside village about seven miles from the shore. This vantage point offered an excellent view of the entire Maida plain.",
+    "latitude": 38.979601,
+    "longitude": 16.316584,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nicastro.webp",
+    "createDate": "2026-08-29"
+  },
+  {
+    "id": "866",
+    "name": "Battle of Santa Eufemia (Maida)",
+    "category": "Artwork",
+    "significance": 1,
+    "year": 1820,
+    "location": "Museo Pontevedra, Pontevedra",
+    "country": "Spain",
+    "description": "This 19th-century drawing by Thomas Young and engraved by Emile and Adolphe Rouargue depicts the battle of Maida and is housed at the 'Museo Pontevedra'.",
+    "latitude": 42.433544,
+    "longitude": -8.641952,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida_art.webp",
+    "site_link": "https://museo.depo.gal/en/coleccion/explora-a-coleccion/-/patrimonio/8939",
     "createDate": "2026-08-29"
   }
 ]

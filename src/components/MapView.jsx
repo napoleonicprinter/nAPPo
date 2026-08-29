@@ -741,20 +741,24 @@ const MapView = () => {
                     isTodaysBattleActive={isTodaysBattleActive}
                 />
 
-                <MarkerClusterGroup
-                    ref={setClusterInstance}
-                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
-                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive) ? 0 : clusterRadius}
-                    zoomToBoundsOnClick={true}
-                    spiderfyOnMaxZoom={true}
-                    spiderfyDistanceMultiplier={1.5}
-                    spiderLegPolylineOptions={{ weight: 1.5, color: '#555', opacity: 0.7 }}
-                    showCoverageOnHover={false}
-                    disableClusteringAtZoom={(hasActiveOverlays || clusterRadius === 0) ? 0 : (isTodaysBattleActive ? 20 : 15)}
-                    chunkedLoading={true}
-                >
-                    {renderedMarkers}
-                </MarkerClusterGroup>
+                {hasActiveOverlays ? (
+                    renderedMarkers
+                ) : (
+                    <MarkerClusterGroup
+                        ref={setClusterInstance}
+                        key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}`}
+                        maxClusterRadius={isTodaysBattleActive ? 0 : clusterRadius}
+                        zoomToBoundsOnClick={true}
+                        spiderfyOnMaxZoom={true}
+                        spiderfyDistanceMultiplier={1.5}
+                        spiderLegPolylineOptions={{ weight: 1.5, color: '#555', opacity: 0.7 }}
+                        showCoverageOnHover={false}
+                        disableClusteringAtZoom={clusterRadius === 0 ? 0 : (isTodaysBattleActive ? 20 : 15)}
+                        chunkedLoading={true}
+                    >
+                        {renderedMarkers}
+                    </MarkerClusterGroup>
+                )}
             </MapContainer>
 
             {/* MODAL DE DETALLE */}

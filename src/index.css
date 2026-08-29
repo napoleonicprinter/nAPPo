@@ -706,3 +706,46 @@ button {
     height: 14px !important;
   }
 }
+
+/* --- FLOATING SCROLL TO TOP BUTTON --- */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 2147483647;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  color: var(--text-primary, #222);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scroll-to-top-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent-primary, #ef5350);
+  color: #ffffff;
+  border-color: var(--accent-primary, #ef5350);
+  box-shadow: 0 6px 18px rgba(239, 83, 80, 0.4);
+}
+
+body:not(.light-mode) .scroll-to-top-btn {
+  background: rgba(22, 27, 34, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #e6edf3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+body:not(.light-mode) .scroll-to-top-btn:hover {
+  background: #ff5e7e;
+  color: #ffffff;
+  border-color: #ff5e7e;
+  box-shadow: 0 6px 20px rgba(255, 94, 126, 0.45);
+}
