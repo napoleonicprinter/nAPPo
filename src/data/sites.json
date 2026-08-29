@@ -3043,6 +3043,21 @@
             16.965294
           ]
         ]
+      },
+      {
+        "id": "wagram-phase2",
+        "name": "Phase 2 fake: July 5",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Wagram_1.svg",
+        "bounds": [
+          [
+            48.102114,
+            16.21273
+          ],
+          [
+            48.483974,
+            16.965294
+          ]
+        ]
       }
     ]
   },

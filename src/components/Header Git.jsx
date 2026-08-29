@@ -169,7 +169,7 @@ const Header = () => {
                 <div className="filters-line desktop-only hide-in-mobile-tablet">
                     <div className="location-toggle-group">
                         <CustomSimpleSelect
-                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My Location' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
+                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My Location' }, { value: 'manual', label: '✏️ Manual Entry' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
                             value={locationMode}
                             onChange={handleLocationSelect}
                             searchable={true}
@@ -250,7 +250,7 @@ const Header = () => {
                 <div className="mobile-overlay-filters">
                     <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
                         <CustomSimpleSelect
-                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My Location' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
+                            options={[{ value: 'none', label: 'Location...' }, { value: 'geo', label: '⮞ My Location' }, { value: 'manual', label: '✏️ Manual Entry' }, ...EUROPEAN_CAPITALS.map(c => ({ value: c.name, label: c.name }))]}
                             value={locationMode}
                             onChange={handleLocationSelect}
                             searchable={true}

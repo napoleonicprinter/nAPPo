@@ -257,17 +257,23 @@ const MapResizeHandler = () => {
     return null;
 };
 
-const GpsCenteringHandler = () => {
+const LocationCenteringHandler = () => {
     const { userCoords, locationMode } = useAppContext();
     const map = useMap();
-    const lastCenteredModeRef = useRef(null);
+    const lastCenteredKeyRef = useRef(null);
 
     useEffect(() => {
-        if (locationMode === 'geo' && userCoords?.lat && userCoords?.lon && lastCenteredModeRef.current !== 'geo') {
-            lastCenteredModeRef.current = 'geo';
+        if (!userCoords?.lat || !userCoords?.lon) {
+            lastCenteredKeyRef.current = null;
+            return;
+        }
+
+        const currentKey = `${locationMode}-${userCoords.lat}-${userCoords.lon}`;
+        if (lastCenteredKeyRef.current === currentKey) return;
+
+        if (locationMode && locationMode !== 'none') {
+            lastCenteredKeyRef.current = currentKey;
             map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
-        } else if (locationMode !== 'geo') {
-            lastCenteredModeRef.current = locationMode;
         }
     }, [locationMode, userCoords?.lat, userCoords?.lon, map]);
 
@@ -723,7 +729,7 @@ const MapView = () => {
                 <MapResizeHandler />
                 <CustomZoomControl isMobileLike={isMobileLike} />
                 <LocationMarker isFiltered={isFiltered} />
-                <GpsCenteringHandler />
+                <LocationCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />

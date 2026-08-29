@@ -12,6 +12,7 @@ const AnnouncementModal = lazy(() => import('./components/AnnouncementModal'));
 const HelpCard = lazy(() => import('./components/HelpCard'));
 const ExitConfirmModal = lazy(() => import('./components/ExitConfirmModal'));
 const GpsDeniedModal = lazy(() => import('./components/GpsDeniedModal'));
+const ManualLocationModal = lazy(() => import('./components/ManualLocationModal'));
 
 const MainApp = () => {
   const { view, messagesData,
@@ -90,6 +91,7 @@ const MainApp = () => {
         <HelpCard />
         <ExitConfirmModal />
         <GpsDeniedModal />
+        <ManualLocationModal />
       </Suspense>
     </div>
   );

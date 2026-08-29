@@ -425,6 +425,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
     const [showGpsDeniedModal, setShowGpsDeniedModal] = useState(false);
+    const [manualCoords, setManualCoords] = useState(() => {
+        const saved = localStorage.getItem('manualCoords');
+        if (saved) {
+            try { return JSON.parse(saved); } catch (e) { return null; }
+        }
+        return null;
+    });
+    const [showManualLocationModal, setShowManualLocationModal] = useState(false);
     const [locationMode, setLocationMode] = useState(() => {
         return localStorage.getItem('locationMode') || 'none';
     });
@@ -432,6 +440,12 @@ export const AppProvider = ({ children, storeUrl }) => {
     useEffect(() => {
         localStorage.setItem('locationMode', locationMode);
     }, [locationMode]);
+
+    useEffect(() => {
+        if (locationMode === 'manual' && manualCoords) {
+            setUserCoords(manualCoords);
+        }
+    }, []);
 
     const [showOnlyNew, setShowOnlyNew] = useState(() => {
         const saved = localStorage.getItem('showOnlyNew');
@@ -999,6 +1013,23 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const disableGeolocation = () => handleLocationSelect('none');
 
+    const saveManualLocation = (lat, lon) => {
+        const parsedLat = parseFloat(lat);
+        const parsedLon = parseFloat(lon);
+        if (isNaN(parsedLat) || isNaN(parsedLon) || parsedLat < -90 || parsedLat > 90 || parsedLon < -180 || parsedLon > 180) {
+            return false;
+        }
+        const coords = { lat: parsedLat, lon: parsedLon };
+        setManualCoords(coords);
+        localStorage.setItem('manualCoords', JSON.stringify(coords));
+        setUserCoords(coords);
+        setGeolocationEnabled(false);
+        setLocationMode('manual');
+        setShowManualLocationModal(false);
+        setView('map');
+        return true;
+    };
+
     const handleLocationSelect = (mode) => {
         if (mode === 'none') {
             setGeolocationEnabled(false);
@@ -1006,6 +1037,13 @@ export const AppProvider = ({ children, storeUrl }) => {
             setLocationMode('none');
         } else if (mode === 'geo') {
             setLocationMode('geo');
+        } else if (mode === 'manual') {
+            setLocationMode('manual');
+            setGeolocationEnabled(false);
+            if (manualCoords) {
+                setUserCoords(manualCoords);
+            }
+            setShowManualLocationModal(true);
         } else {
             const capital = EUROPEAN_CAPITALS.find(c => c.name === mode);
             if (capital) {
@@ -1278,6 +1316,9 @@ export const AppProvider = ({ children, storeUrl }) => {
             userCoords,
             locationMode,
             handleLocationSelect,
+            manualCoords, setManualCoords,
+            showManualLocationModal, setShowManualLocationModal,
+            saveManualLocation,
             filterSearch, setFilterSearch,
             filterCategory, setFilterCategory,
             filterCountry, setFilterCountry,
