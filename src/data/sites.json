@@ -3046,7 +3046,7 @@
             16.965294
           ]
         ],
-        "free": true
+        "free": false
       },
       {
         "id": "wagram-phase2",
@@ -3508,7 +3508,7 @@
             31.259358
           ]
         ],
-        "free": true
+        "free": false
       }
     ]
   },
@@ -3846,7 +3846,7 @@
             21.055663
           ]
         ],
-        "free": true
+        "free": false
       }
     ]
   },
