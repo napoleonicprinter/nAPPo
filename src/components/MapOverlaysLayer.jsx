@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useRef } from 'react';
 import { ImageOverlay, useMap } from 'react-leaflet';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 
 const OverlayFitter = ({ overlays }) => {
     const map = useMap();
@@ -29,8 +29,9 @@ const MapOverlaysLayer = () => {
         
         const overlays = [];
         (allSites || []).forEach(site => {
-            if (site.maps && site.maps.length > 0) {
-                site.maps.forEach(map => {
+            const maps = getAvailableSiteMaps(site);
+            if (maps && maps.length > 0) {
+                maps.forEach(map => {
                     if (activeMapOverlays.includes(map.id)) {
                         overlays.push(map);
                     }

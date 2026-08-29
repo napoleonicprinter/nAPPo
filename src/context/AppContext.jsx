@@ -53,6 +53,16 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
     return Math.round(d);
 };
 
+export const isPaidVersion = import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true';
+
+export const getAvailableSiteMaps = (site) => {
+    if (!site || !Array.isArray(site.maps) || site.maps.length === 0) return [];
+    if (isPaidVersion) {
+        return site.maps;
+    }
+    return site.maps.filter(map => map && (map.free === true || map.isFree === true || map.free === 'true' || map.is_free === true));
+};
+
 export const EUROPEAN_CAPITALS = [
     { name: "Amsterdam", lat: 52.3676, lon: 4.9041 },
     { name: "Andorra Vella", lat: 42.5063, lon: 1.5218 },
@@ -491,7 +501,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
             if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
             if (showArcOnly && !site.special.includes('arc')) return false;
-            if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
+            if (filterWithMaps && getAvailableSiteMaps(site).length === 0) return false;
 
             if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
                 if (site.distance > parseInt(filterRadius, 10)) return false;
@@ -536,7 +546,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         if (filterSignificance && site.significance !== filterSignificance) return false;
         if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
         if (showArcOnly && !site.special.includes('arc')) return false;
-        if (filterWithMaps && (!site.maps || site.maps.length === 0)) return false;
+        if (filterWithMaps && getAvailableSiteMaps(site).length === 0) return false;
         if (userCoords && filterRadius !== 'all' && site.distance !== undefined) {
             if (site.distance > parseInt(filterRadius, 10)) return false;
         }

@@ -5,7 +5,7 @@ import {
     BookOpen, Globe, Youtube, ExternalLink, Star,
     Palette, Swords, Link2, X, Layers, Map as MapIcon
 } from 'lucide-react';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
 
 export const getCategoryColor = (category) => {
@@ -66,6 +66,8 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
     } = useAppContext();
 
     if (!site) return null;
+
+    const availableMaps = getAvailableSiteMaps(site);
 
     const spec = site?.special || site?.Special;
     const isArc = spec
@@ -327,10 +329,18 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}
                 </div>
 
-                {isCompact && site.maps && site.maps.length > 0 && (
-                    <div style={{ marginTop: '6px', marginBottom: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        {site.maps.map(map => {
+                {isCompact && availableMaps && availableMaps.length > 0 && (
+                    <div style={{
+                        marginTop: '6px',
+                        marginBottom: '8px',
+                        display: 'grid',
+                        gridTemplateColumns: availableMaps.length > 1 ? 'repeat(2, 1fr)' : '1fr',
+                        gap: '6px'
+                    }}>
+                        {availableMaps.map((map, index) => {
                             const isActive = activeMapOverlays?.includes(map.id);
+                            const isOdd = availableMaps.length % 2 !== 0;
+                            const isFirstOfOdd = isOdd && index === 0;
                             return (
                                 <button
                                     key={map.id}
@@ -340,24 +350,31 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     }}
                                     style={{
                                         width: '100%',
-                                        padding: '5px 10px',
+                                        gridColumn: isFirstOfOdd ? 'span 2' : 'auto',
+                                        padding: '5px 8px',
                                         borderRadius: '8px',
                                         border: isActive ? '1.5px solid #ff4444' : '1px solid var(--border-color, rgba(255,255,255,0.2))',
                                         background: isActive ? 'rgba(255,68,68,0.2)' : 'rgba(255,255,255,0.1)',
                                         color: isActive ? '#ff4444' : 'var(--text-primary)',
                                         fontWeight: 'bold',
-                                        fontSize: '0.82rem',
+                                        fontSize: '0.78rem',
                                         cursor: 'pointer',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        gap: '6px',
-                                        transition: 'all 0.2s ease'
+                                        gap: '4px',
+                                        boxSizing: 'border-box',
+                                        transition: 'all 0.2s ease',
+                                        whiteSpace: 'nowrap',
+                                        textOverflow: 'ellipsis',
+                                        overflow: 'hidden'
                                     }}
                                     title={isActive ? `Hide historical map: ${map.name || map.id}` : `Overlay historical map: ${map.name || map.id}`}
                                 >
-                                    <Layers size={14} />
-                                    {isActive ? `Hide ${map.name || 'Map'}` : (map.name || 'View Map')}
+                                    <Layers size={13} style={{ flexShrink: 0 }} />
+                                    <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                        {isActive ? `Hide ${map.name || 'Map'}` : (map.name || 'View Map')}
+                                    </span>
                                 </button>
                             );
                         })}
@@ -414,7 +431,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                             </div>
 
                             {/* --- BATTLE MAP OVERLAYS SECTION --- */}
-                            {site.maps && site.maps.length > 0 && (
+                            {availableMaps && availableMaps.length > 0 && (
                                 <div style={{
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -427,9 +444,15 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         <Layers size={18} style={{ color: '#ff4444' }} />
                                         <span>Historical Battle Maps:</span>
                                     </div>
-                                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                                        {site.maps.map(map => {
+                                    <div style={{
+                                        display: 'grid',
+                                        gridTemplateColumns: availableMaps.length > 1 ? 'repeat(2, 1fr)' : '1fr',
+                                        gap: '6px'
+                                    }}>
+                                        {availableMaps.map((map, index) => {
                                             const isActive = activeMapOverlays?.includes(map.id);
+                                            const isOdd = availableMaps.length % 2 !== 0;
+                                            const isFirstOfOdd = isOdd && index === 0;
                                             return (
                                                 <button
                                                     key={map.id}
@@ -440,23 +463,31 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                         setView('map');
                                                     }}
                                                     style={{
+                                                        width: '100%',
+                                                        gridColumn: isFirstOfOdd ? 'span 2' : 'auto',
                                                         border: isActive ? '1.5px solid #ff4444' : '1px solid var(--border-color, rgba(255,255,255,0.2))',
                                                         background: isActive ? 'rgba(255, 68, 68, 0.2)' : 'rgba(255, 255, 255, 0.1)',
                                                         color: isActive ? '#ff4444' : 'var(--text-primary)',
-                                                        padding: '4px 10px',
+                                                        padding: '6px 10px',
                                                         borderRadius: '6px',
                                                         cursor: 'pointer',
                                                         fontWeight: 'bold',
                                                         fontSize: '0.8rem',
                                                         display: 'flex',
                                                         alignItems: 'center',
+                                                        justifyContent: 'center',
                                                         gap: '6px',
-                                                        transition: 'all 0.2s ease'
+                                                        transition: 'all 0.2s ease',
+                                                        whiteSpace: 'nowrap',
+                                                        textOverflow: 'ellipsis',
+                                                        overflow: 'hidden'
                                                     }}
                                                     title={isActive ? `Hide historical map: ${map.name || map.id}` : `Overlay historical map: ${map.name || map.id}`}
                                                 >
-                                                    <Layers size={13} />
-                                                    {isActive ? `Hide ${map.name || 'Map'}` : (map.name || 'View Map')}
+                                                    <Layers size={13} style={{ flexShrink: 0 }} />
+                                                    <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                                        {isActive ? `Hide ${map.name || 'Map'}` : (map.name || 'View Map')}
+                                                    </span>
                                                 </button>
                                             );
                                         })}

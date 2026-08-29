@@ -81,7 +81,8 @@
             50.69,
             4.45332
           ]
-        ]
+        ],
+        "free": true
       }
     ],
     "relatedSites": [
@@ -167,7 +168,8 @@
             44.957865,
             8.78625
           ]
-        ]
+        ],
+        "free": true
       }
     ]
   },
@@ -2216,7 +2218,8 @@
             40.002897,
             -4.761203
           ]
-        ]
+        ],
+        "free": true
       }
     ]
   },
@@ -3031,7 +3034,23 @@
     "maps": [
       {
         "id": "wagram-phase1",
-        "name": "Phase 1: July 5",
+        "name": "Phase 1",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Wagram_1.svg",
+        "bounds": [
+          [
+            48.102114,
+            16.21273
+          ],
+          [
+            48.483974,
+            16.965294
+          ]
+        ],
+        "free": true
+      },
+      {
+        "id": "wagram-phase2",
+        "name": "Phase 2 fake",
         "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Wagram_1.svg",
         "bounds": [
           [
@@ -3045,8 +3064,8 @@
         ]
       },
       {
-        "id": "wagram-phase2",
-        "name": "Phase 2 fake: July 5",
+        "id": "wagram-phase3",
+        "name": "Phase 3 fake",
         "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Wagram_1.svg",
         "bounds": [
           [
@@ -3304,7 +3323,8 @@
             50.575812,
             4.496932
           ]
-        ]
+        ],
+        "free": true
       }
     ],
     "relatedSites": [
@@ -3487,7 +3507,8 @@
             30.117449,
             31.259358
           ]
-        ]
+        ],
+        "free": true
       }
     ]
   },
@@ -3824,7 +3845,8 @@
             54.478625,
             21.055663
           ]
-        ]
+        ],
+        "free": true
       }
     ]
   },
@@ -6081,7 +6103,8 @@
             38.929549,
             16.337270
           ]
-        ]
+        ],
+        "free": true
       }
     ]
   },

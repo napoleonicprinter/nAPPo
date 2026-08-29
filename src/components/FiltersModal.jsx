@@ -260,20 +260,18 @@ const FiltersModal = ({ onClose }) => {
                         />
                     </div>
 
-                    {import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true' && (
-                        <div className="filter-group">
-                            <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
-                            <label className={filterWithMaps ? 'filters-active-red' : ''} style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '6px 12px', borderRadius: '12px', transition: 'all 0.2s' }}>
-                                <input
-                                    type="checkbox"
-                                    checked={filterWithMaps}
-                                    onChange={(e) => setFilterWithMaps(e.target.checked)}
-                                    style={{ transform: 'scale(1.2)' }}
-                                />
-                                <span style={{ fontSize: '1rem', fontWeight: filterWithMaps ? 'bold' : 'normal', color: filterWithMaps ? '#ff4444' : 'var(--text-primary)' }}>Only sites with battle maps</span>
-                            </label>
-                        </div>
-                    )}
+                    <div className="filter-group">
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Battle Maps</h3>
+                        <label className={filterWithMaps ? 'filters-active-red' : ''} style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', padding: '6px 12px', borderRadius: '12px', transition: 'all 0.2s' }}>
+                            <input
+                                type="checkbox"
+                                checked={filterWithMaps}
+                                onChange={(e) => setFilterWithMaps(e.target.checked)}
+                                style={{ transform: 'scale(1.2)' }}
+                            />
+                            <span style={{ fontSize: '1rem', fontWeight: filterWithMaps ? 'bold' : 'normal', color: filterWithMaps ? '#ff4444' : 'var(--text-primary)' }}>Only sites with battle maps</span>
+                        </label>
+                    </div>
 
 
                     <div className="reset-button-wrapper" style={{ marginTop: '-15px', marginBottom: '0px' }}>
