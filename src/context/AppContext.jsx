@@ -81,7 +81,7 @@ export const EUROPEAN_CAPITALS = [
     { name: "Ljubljana", lat: 46.0569, lon: 14.5058 },
     { name: "London", lat: 51.5074, lon: -0.1278 },
     { name: "Luxembourg", lat: 49.8153, lon: 6.1296 },
-    { name: "Madrid", lat: 40.4168, lon: -3.7038 },
+    { name: "Madrid", lat: 40.41710, lon: -3.70329 },
     { name: "Minsk", lat: 53.9006, lon: 27.5590 },
     { name: "Monaco", lat: 43.7384, lon: 7.4246 },
     { name: "Moscow", lat: 55.7558, lon: 37.6173 },
@@ -453,10 +453,19 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [locationMode]);
 
     useEffect(() => {
-        if (locationMode === 'manual' && manualCoords) {
-            setUserCoords(manualCoords);
+        if (locationMode === 'none') {
+            setUserCoords(null);
+        } else if (locationMode === 'manual') {
+            if (manualCoords) {
+                setUserCoords(manualCoords);
+            }
+        } else if (locationMode !== 'geo') {
+            const capital = EUROPEAN_CAPITALS.find(c => c.name === locationMode);
+            if (capital) {
+                setUserCoords({ lat: capital.lat, lon: capital.lon });
+            }
         }
-    }, []);
+    }, [locationMode, manualCoords]);
 
     const [showOnlyNew, setShowOnlyNew] = useState(() => {
         const saved = localStorage.getItem('showOnlyNew');
@@ -1001,7 +1010,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         return () => {
             isCleanedUp = true;
             if (watchId !== null) {
-                Geolocation.clearWatch({ id: watchId }).catch(() => {});
+                Geolocation.clearWatch({ id: watchId }).catch(() => { });
             }
             if (navWatchId !== null && navigator.geolocation) {
                 navigator.geolocation.clearWatch(navWatchId);

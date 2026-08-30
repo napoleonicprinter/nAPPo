@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { MapContainer, TileLayer, Popup, Marker, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Popup, Marker, Tooltip, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { useAppContext, useBackHandler } from '../context/AppContext';
 import SiteCard, { getCategoryColor } from './SiteCard';
@@ -211,18 +211,41 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
 };
 
 const LocationMarker = () => {
-    const { userCoords } = useAppContext();
+    const { userCoords, locationMode } = useAppContext();
 
-    if (!userCoords) return null;
+    if (!userCoords || !locationMode || locationMode === 'none') return null;
 
     const blueIcon = L.icon({
         iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
         shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
     });
 
-    return <Marker position={[userCoords.lat, userCoords.lon]} icon={blueIcon} zIndexOffset={1000} />;
+    const locationLabel = locationMode === 'geo'
+        ? 'My GPS Location'
+        : locationMode === 'manual'
+            ? 'Manual Entry'
+            : locationMode;
+
+    return (
+        <Marker
+            position={[userCoords.lat, userCoords.lon]}
+            icon={blueIcon}
+            zIndexOffset={1000}
+            title={`Your Location (${locationLabel})`}
+        >
+            <Popup autoPan={false}>
+                <div style={{ padding: '4px 8px', textAlign: 'center', fontWeight: 'bold', fontSize: '0.85rem', color: '#222' }}>
+                    📍 Your Location ({locationLabel})
+                </div>
+            </Popup>
+            <Tooltip direction="top" offset={[0, -38]} opacity={0.95}>
+                Your Location ({locationLabel})
+            </Tooltip>
+        </Marker>
+    );
 };
 
 const MapEventsHandler = ({ onMapClick }) => {
@@ -273,7 +296,9 @@ const LocationCenteringHandler = () => {
 
         if (locationMode && locationMode !== 'none') {
             lastCenteredKeyRef.current = currentKey;
-            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
+            const minZoom = map.getMinZoom() ?? 2.5;
+            const targetZoom = minZoom + 7.5; // 8 zoom levels in from the all zoom out starting point (2.5 + 7.5 = 10)
+            map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
         }
     }, [locationMode, userCoords?.lat, userCoords?.lon, map]);
 
@@ -299,7 +324,9 @@ const CenterControl = ({ userCoords, isMobileLike }) => {
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
+                        const minZoom = map.getMinZoom() ?? 2.5;
+                        const targetZoom = minZoom + 8;
+                        map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
                     }}
                     title="Center on my location"
                     style={{
@@ -364,7 +391,9 @@ const CustomZoomControl = ({ isMobileLike }) => {
         e.preventDefault();
         e.stopPropagation();
         if (userCoords) {
-            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
+            const minZoom = map.getMinZoom() ?? 2.5;
+            const targetZoom = minZoom + 8;
+            map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
         }
     };
 
@@ -645,61 +674,61 @@ const MapView = () => {
         .filter(site => site && typeof site.latitude === 'number' && typeof site.longitude === 'number' && !isNaN(site.latitude) && !isNaN(site.longitude))
         .sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1))
         .map(site => {
-        const rate = Number(site.significance) || 1;
-        // Smaller pins (rate 1) get higher zIndexOffset (300) so they render in front of larger pins (rate 3 = 100)
-        const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
-        return (
-            <Marker
-                key={site.id}
-                position={[site.latitude, site.longitude]}
-                icon={getSiteIcon(site)}
-                zIndexOffset={zIndexOffset}
-                riseOnHover={true}
-                eventHandlers={{
-                    click: (e) => {
-                        if (e.originalEvent) e.originalEvent.stopPropagation();
-                        window.history.pushState({ siteId: site.id }, "");
-                        if (selectedSite) setSelectedSite(null);
-                        if (isMobileLike) {
-                            const map = e.target._map;
-                            const latlng = e.target.getLatLng();
-                            const currentZoom = map.getZoom();
-                            const targetPoint = map.project(latlng, currentZoom);
-                            targetPoint.y -= 150;
-                            const targetLatLng = map.unproject(targetPoint, currentZoom);
-                            map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+            const rate = Number(site.significance) || 1;
+            // Smaller pins (rate 1) get higher zIndexOffset (300) so they render in front of larger pins (rate 3 = 100)
+            const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
+            return (
+                <Marker
+                    key={site.id}
+                    position={[site.latitude, site.longitude]}
+                    icon={getSiteIcon(site)}
+                    zIndexOffset={zIndexOffset}
+                    riseOnHover={true}
+                    eventHandlers={{
+                        click: (e) => {
+                            if (e.originalEvent) e.originalEvent.stopPropagation();
+                            window.history.pushState({ siteId: site.id }, "");
+                            if (selectedSite) setSelectedSite(null);
+                            if (isMobileLike) {
+                                const map = e.target._map;
+                                const latlng = e.target.getLatLng();
+                                const currentZoom = map.getZoom();
+                                const targetPoint = map.project(latlng, currentZoom);
+                                targetPoint.y -= 150;
+                                const targetLatLng = map.unproject(targetPoint, currentZoom);
+                                map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                            }
+                            e.target.openPopup();
                         }
-                        e.target.openPopup();
-                    }
-                }}
-                ref={(r) => {
-                    if (r) markerRefs.current.set(site.id, r);
-                    else markerRefs.current.delete(site.id);
-                }}
-            >
-                <Popup
-                    autoPan={false}
-                    autoPanPadding={[50, 50]}
-                    closeButton={false}
-                    autoClose={!isTodaysBattleActive && !hasActiveOverlays}
-                    closeOnClick={!isTodaysBattleActive && !hasActiveOverlays}
-                    onClose={() => setSelectedSite(null)}
+                    }}
+                    ref={(r) => {
+                        if (r) markerRefs.current.set(site.id, r);
+                        else markerRefs.current.delete(site.id);
+                    }}
                 >
-                    <div style={{ width: '300px', position: 'relative' }}>
-                        <SiteCard
-                            site={site}
-                            isCompact={true}
-                            hideMapLink={true}
-                            onClose={() => {
-                                const marker = markerRefs.current.get(site.id);
-                                if (marker) marker.closePopup();
-                            }}
-                        />
-                    </div>
-                </Popup>
-            </Marker>
-        );
-    });
+                    <Popup
+                        autoPan={false}
+                        autoPanPadding={[50, 50]}
+                        closeButton={false}
+                        autoClose={!isTodaysBattleActive && !hasActiveOverlays}
+                        closeOnClick={!isTodaysBattleActive && !hasActiveOverlays}
+                        onClose={() => setSelectedSite(null)}
+                    >
+                        <div style={{ width: '300px', position: 'relative' }}>
+                            <SiteCard
+                                site={site}
+                                isCompact={true}
+                                hideMapLink={true}
+                                onClose={() => {
+                                    const marker = markerRefs.current.get(site.id);
+                                    if (marker) marker.closePopup();
+                                }}
+                            />
+                        </div>
+                    </Popup>
+                </Marker>
+            );
+        });
 
     const sitesKey = (sites || []).map(s => s.id).join(',');
 
@@ -741,26 +770,21 @@ const MapView = () => {
                     isTodaysBattleActive={isTodaysBattleActive}
                 />
 
-                {hasActiveOverlays ? (
-                    renderedMarkers
-                ) : (
-                    <MarkerClusterGroup
-                        ref={setClusterInstance}
-                        key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}`}
-                        maxClusterRadius={isTodaysBattleActive ? 0 : clusterRadius}
-                        zoomToBoundsOnClick={true}
-                        spiderfyOnMaxZoom={true}
-                        spiderfyDistanceMultiplier={1.5}
-                        spiderLegPolylineOptions={{ weight: 1.5, color: '#555', opacity: 0.7 }}
-                        showCoverageOnHover={false}
-                        disableClusteringAtZoom={clusterRadius === 0 ? 0 : (isTodaysBattleActive ? 20 : 15)}
-                        chunkedLoading={false}
-                        removeOutsideVisibleBounds={false}
-                        animateAddingMarkers={false}
-                    >
-                        {renderedMarkers}
-                    </MarkerClusterGroup>
-                )}
+                <MarkerClusterGroup
+                    ref={setClusterInstance}
+                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
+                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive) ? 0 : clusterRadius}
+                    zoomToBoundsOnClick={true}
+                    spiderfyOnMaxZoom={true}
+                    spiderfyDistanceMultiplier={1.8}
+                    spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
+                    showCoverageOnHover={false}
+                    chunkedLoading={false}
+                    removeOutsideVisibleBounds={false}
+                    animateAddingMarkers={false}
+                >
+                    {renderedMarkers}
+                </MarkerClusterGroup>
             </MapContainer>
 
             {/* MODAL DE DETALLE */}

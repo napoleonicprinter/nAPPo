@@ -780,7 +780,7 @@ const Header = () => {
                                                     textAlign: 'center'
                                                 }}
                                             >
-                                                {[0, 5, 10, 15, 20, 25, 30, 35].map(radius => (
+                                                {[0, 3, 5, 10, 15, 20, 25, 30, 35].map(radius => (
                                                     <option
                                                         key={radius}
                                                         value={radius}

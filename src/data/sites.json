@@ -2253,7 +2253,7 @@
     "id": "108",
     "name": "Batalla de Ocaña",
     "category": "Battle site",
-    "significance": 2,
+    "significance": 1,
     "year": 1809,
     "date": "1809-11-19",
     "location": "Ocaña, Toledo",
@@ -2777,7 +2777,7 @@
     "country": "Spain",
     "description": "Monumento a los héroes del levantamiento del 2 de mayo de 1808 en Madrid.",
     "latitude": 40.426969,
-    "longitude": -3.70405,
+    "longitude": -3.71505,
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Monumento_a_Daoíz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
     "more_info_link": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextoid=6528091d1b9c4510091d1b9c45102e085a0aRCRD&vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD",
     "createDate": "2025-03-15T10:00:00Z",
@@ -15864,5 +15864,35 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida_art.webp",
     "site_link": "https://museo.depo.gal/en/coleccion/explora-a-coleccion/-/patrimonio/8939",
     "createDate": "2026-08-29"
+  },
+  {
+    "id": "867",
+    "name": "Monument to the Belgians at Waterloo",
+    "category": "Monument",
+    "significance": 2,
+    "year": 1914,
+    "location": "Waterloo",
+    "country": "Belgium",
+    "description": "The Monument to the Belgians at Waterloo was inaugurated in 1914, and it is dedicated to the Belgian officers and soldiers who fought and died in this battlefield.",
+    "latitude": 50.680596,
+    "longitude": 4.412065,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Belgian_waterloo.webp",
+    "site_link": "https://waterloo-tourisme.be/en/monument-to-the-belgians/",
+    "createDate": "2026-08-29"
+  },
+  {
+    "id": "868",
+    "name": "Monument to the Prussians at Waterloo",
+    "category": "Monument",
+    "significance": 2,
+    "year": 1819,
+    "location": "Waterloo",
+    "country": "Belgium",
+    "description": "The Prussian Monument at Waterloo is a neo-Gothic memorial located in the village of Plancenoit, commemorating the decisive role of Field Marshal Blücher's troops in defeating Napoleon. Designed by the famous architect Karl Friedrich Schinkel and erected in 1819, the monument features a distinctive black iron spire topped with an Iron Cross. It honors the fallen soldiers who secured the village after brutal, house-to-house combat on the French right flank.",
+    "latitude": 50.663760,
+    "longitude": 4.428147,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Prussians_waterloo.webp",
+    "site_link": "https://waterloo-tourisme.be/en/monument-to-the-prussians/",
+    "createDate": "2026-08-30"
   }
 ]
