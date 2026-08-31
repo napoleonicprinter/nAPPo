@@ -59,6 +59,13 @@ export const HELP_ITEMS = [
         )
     },
     {
+        id: 'manuel location',
+        title: 'Manual Location',
+        imagePc: '/assets/images/Help_LocationManual.webp',
+        imageMobile: '/assets/images/Help_LocationManual_M.webp',
+        content: "Use this option to explore sites around a location you will visit or just want to explore. Enter the latitude and longitude values and press 'set location'."
+    },
+    {
         id: 'All Areas',
         title: 'All Areas',
         imagePc: '/assets/images/Help_AllAreas.webp',
