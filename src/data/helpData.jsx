@@ -59,7 +59,7 @@ export const HELP_ITEMS = [
         )
     },
     {
-        id: 'manuel location',
+        id: 'manual location',
         title: 'Manual Location',
         imagePc: '/assets/images/Help_LocationManual.webp',
         imageMobile: '/assets/images/Help_LocationManual_M.webp',
