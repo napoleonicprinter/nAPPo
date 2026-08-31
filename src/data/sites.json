@@ -616,7 +616,12 @@
     "longitude": -3.786947,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sordo.webp",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "29",
+        "title": "Artwork - Scene fight at la 'nuria del sordo'"
+      }
+    ]
   },
   {
     "id": "29",
@@ -625,13 +630,18 @@
     "significance": 2,
     "location": "Biblioteca Histórica Marqués de Valdecilla, Madrid",
     "country": "Spain",
-    "description": "Not on display. Artist Ricardo Balaca y Orejas Canseco",
+    "description": "Not on display. Artist Ricardo Balaca y Orejas Canseco. The scene describe the intense fight for the water during the battle under the intense summer sun.",
     "latitude": 40.42547,
     "longitude": -3.707898,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Episodio_de_la_batalla_de_Bail%C3%A9n%2C_de_Ricardo_Balaca_%28Museo_del_Prado%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bailen_episodio.webp",
     "site_link": "https://www.museodelprado.es/coleccion/obra-de-arte/episodio-de-la-batalla-de-bailen/b4a88286-497d-4286-83cc-f20a2904ce57",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": false
+    "relatedSites": [
+      {
+        "id": "28",
+        "title": "Nuria del sordo - Site of this scene"
+      }
+    ]
   },
   {
     "id": "30",
@@ -1975,8 +1985,8 @@
     "description": "Sublevación popular en Madrid contra la ocupación francesa que desencadenó la guerra de independenca española.",
     "latitude": 40.4168,
     "longitude": -3.7038,
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El_dos_de_mayo_de_1808_en_Madrid.jpg",
-    "more_info_link": "",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Puerta_sol.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Dos_de_Mayo_Uprising",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
   },
@@ -2694,7 +2704,7 @@
     "description": "Museo del Prado. Obra de Francisco de Goya. Representa la revuelta popular del 2 de mayo de 1808 en Madrid contra la ocupación francesa.",
     "latitude": 40.414814,
     "longitude": -3.692545,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/El_dos_de_mayo_de_1808_en_Madrid.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dosmayo_goya.webp",
     "more_info_link": "https://www.museodelprado.es/en/the-collection/art-work/the-2nd-of-may-1808-in-madrid-or-the-fight/57dacf2e-5d10-4ded-85aa-9ff6f741f6b1",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -2763,7 +2773,7 @@
     "description": "Durante el Levantamiento del 2 de mayo de 1808 la iglesia sufre graves daños en su fachada e interior. Las luchas que se producen contra las tropas francesas en la Puerta del Sol afectan seriamente a su estructura, a la vez que convierten a la iglesia del Buen Suceso en un símbolo de la resistencia madrileña.",
     "latitude": 40.416946,
     "longitude": -3.70226,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/1806-1820%2C_Voyage_pittoresque_et_historique_de_l%27Espagne%2C_tomo_II%2C_Vista_de_la_Puerta_del_Sol_y_de_la_Casa_de_Correos_%28cropped%29.jpg/1920px-1806-1820%2C_Voyage_pittoresque_et_historique_de_l%27Espagne%2C_tomo_II%2C_Vista_de_la_Puerta_del_Sol_y_de_la_Casa_de_Correos_%28cropped%29.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Buen_suceso.webp",
     "more_info_link": "https://es.wikipedia.org/wiki/Iglesia_del_Buen_Suceso_%28Puerta_del_Sol%29",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -2777,8 +2787,8 @@
     "country": "Spain",
     "description": "Monumento a los héroes del levantamiento del 2 de mayo de 1808 en Madrid.",
     "latitude": 40.426969,
-    "longitude": -3.71505,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Monumento_a_Daoíz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
+    "longitude": -3.704050,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Daoiz_Velarde_Madrid.webp",
     "more_info_link": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextoid=6528091d1b9c4510091d1b9c45102e085a0aRCRD&vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
