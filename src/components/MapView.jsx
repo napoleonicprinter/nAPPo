@@ -66,7 +66,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
 
         const targetSite = siteToOpenPopup;
         let attempts = 0;
-        const maxAttempts = 15;
+        const maxAttempts = 25;
         let timer = null;
 
         const attemptOpen = () => {
@@ -74,30 +74,23 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
             const marker = markerRefs.current.get(targetSite.id);
 
             const openMarkerPopup = () => {
-                if (isMobileLike) {
-                    const currentZoom = map.getZoom();
-                    const targetZoom = Math.max(currentZoom, 11);
+                map.invalidateSize();
+                const currentZoom = map.getZoom();
+                const targetZoom = Math.max(currentZoom, 11);
 
-                    const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
-                    targetPoint.y -= 150;
-                    const targetLatLng = map.unproject(targetPoint, targetZoom);
+                const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
+                targetPoint.y -= isMobileLike ? 140 : 120;
+                const targetLatLng = map.unproject(targetPoint, targetZoom);
 
-                    map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.8 });
+                map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.6 });
 
-                    setTimeout(() => {
-                        const currentMarker = markerRefs.current.get(targetSite.id);
-                        if (currentMarker) {
-                            currentMarker.openPopup();
-                        }
-                        setSiteToOpenPopup(null);
-                    }, 600);
-                } else {
+                setTimeout(() => {
                     const currentMarker = markerRefs.current.get(targetSite.id);
                     if (currentMarker) {
                         currentMarker.openPopup();
                     }
                     setSiteToOpenPopup(null);
-                }
+                }, 400);
             };
 
             if (marker) {
@@ -107,13 +100,13 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
                     openMarkerPopup();
                 }
             } else if (attempts < maxAttempts) {
-                timer = setTimeout(attemptOpen, 150);
+                timer = setTimeout(attemptOpen, 100);
             } else {
                 setSiteToOpenPopup(null);
             }
         };
 
-        timer = setTimeout(attemptOpen, 100);
+        timer = setTimeout(attemptOpen, 120);
         return () => {
             if (timer) clearTimeout(timer);
         };

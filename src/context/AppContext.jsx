@@ -865,6 +865,12 @@ export const AppProvider = ({ children, storeUrl }) => {
         const fileName = `nappo_visited_sites_${nameStr}.json`;
         const blob = new Blob([jsonStr], { type: 'application/json' });
 
+        setBackupExportInfo({
+            fileName: fileName,
+            folder: 'Downloads folder'
+        });
+        setShowBackupExportModal(true);
+
         // On mobile / WebViews supporting Web Share API with files
         if (typeof window !== 'undefined' && navigator.share && navigator.canShare) {
             try {
@@ -1075,6 +1081,8 @@ export const AppProvider = ({ children, storeUrl }) => {
     };
     // Dentro de AppContext.jsx
     const [callerSite, setCallerSite] = useState(null);
+    const [showBackupExportModal, setShowBackupExportModal] = useState(false);
+    const [backupExportInfo, setBackupExportInfo] = useState(null);
 
     // Global back-handlers registry
     const backHandlersRef = useRef([]);
@@ -1388,6 +1396,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             setSelectedHelpItem,
             showExitConfirm,
             setShowExitConfirm,
+            showBackupExportModal,
+            setShowBackupExportModal,
+            backupExportInfo,
+            setBackupExportInfo,
         }}>
             {children}
         </AppContext.Provider>

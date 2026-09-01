@@ -340,8 +340,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setSelectedSite(null);
-                                        setSiteToOpenPopup(site);
-                                        setView('map');
+                                        setSiteToOpenPopup(null);
+                                        setTimeout(() => {
+                                            setSiteToOpenPopup(site);
+                                            setView('map');
+                                        }, 10);
                                     }}
                                     style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'gray', fontSize: '0.85rem', fontWeight: 'bold' }}
                                 >
@@ -493,6 +496,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                         e.stopPropagation();
                                                         toggleMapOverlay(map.id);
                                                         setSelectedSite(null);
+                                                        setSiteToOpenPopup(site);
                                                         setView('map');
                                                     }}
                                                     style={{

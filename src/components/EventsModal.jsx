@@ -41,38 +41,41 @@ const EventsModal = ({ onClose }) => {
         });
     }, [messagesData]);
 
-    const todaysEvents = useMemo(() => {
+    const upcomingEvents = useMemo(() => {
         const today = new Date();
         const currentMonth = today.getMonth() + 1; // 1-12
         const currentDay = today.getDate(); // 1-31
+        const currentMmDd = currentMonth * 100 + currentDay;
 
-        return (eventsData || []).filter(event => {
-            if (!event.date) return false;
+        const all = (eventsData || []).filter(event => event && event.date);
+
+        const withIndices = all.map(event => {
             const parts = event.date.split('-');
-            if (parts.length >= 3) {
-                const eventMonth = parseInt(parts[1], 10);
-                const eventDay = parseInt(parts[2], 10);
-                return eventMonth === currentMonth && eventDay === currentDay;
+            const year = parseInt(parts[0], 10) || 0;
+            const month = parseInt(parts[1], 10) || 1;
+            const day = parseInt(parts[2], 10) || 1;
+            const mmDd = month * 100 + day;
+            let diff = mmDd - currentMmDd;
+            if (diff < 0) {
+                diff += 1232; // Wrap around for full annual cycle
             }
-            return false;
-        }).sort((a, b) => {
-            const yearA = parseInt(a.date.split('-')[0], 10) || 0;
-            const yearB = parseInt(b.date.split('-')[0], 10) || 0;
-            return yearA - yearB;
+            const isToday = (month === currentMonth && day === currentDay);
+            return { event, year, month, day, mmDd, diff, isToday };
         });
+
+        withIndices.sort((a, b) => {
+            if (a.diff !== b.diff) return a.diff - b.diff;
+            return a.year - b.year;
+        });
+
+        return withIndices;
     }, [eventsData]);
 
     const handleOpenOnMap = (siteId) => {
         const site = allSites.find(s => String(s.id) === String(siteId));
         if (site) {
-            // 1. Close any existing full-screen detailed card
             setSelectedSite(null);
-
-            // 2. Clear current popup state first to ensure the MapView logic re-centers
-            // and re-opens the popup even if clicking the same event again.
             setSiteToOpenPopup(null);
-
-            // 3. Set the new site and navigate with a slight delay to allow state cleanup
             setTimeout(() => {
                 setSiteToOpenPopup(site);
                 setView('map');
@@ -93,11 +96,11 @@ const EventsModal = ({ onClose }) => {
                             <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                             <div className="modal-title-info" style={{ display: 'flex', flexDirection: 'column', minWidth: '0' }}>
                                 <h2 style={{ letterSpacing: '-0.5px', lineHeight: '1.2' }}>
-                                    Today in <span className="title-break">History</span>
+                                    Upcoming <span className="title-break">Events</span>
                                 </h2>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '2px' }}>
                                     <p style={{ margin: 0, fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: '600', opacity: 1, whiteSpace: 'nowrap' }}>
-                                        {todayString}
+                                        From {todayString}
                                     </p>
                                     <button
                                         onClick={() => {
@@ -151,31 +154,60 @@ const EventsModal = ({ onClose }) => {
                         </div>
                     ))}
 
-                    {todaysEvents.length === 0 ? (
+                    {upcomingEvents.length === 0 ? (
                         <div style={{ textAlign: 'center', color: 'var(--text-secondary)', padding: '2rem 0' }}>
                             <CalendarIcon size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
-                            <p>No major historic events recorded for today.</p>
+                            <p>No historic events recorded.</p>
                         </div>
                     ) : (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            {todaysEvents.map(event => {
-                                const year = parseInt(event.date.split('-')[0], 10);
+                            {upcomingEvents.map(item => {
+                                const { event, year, month, day, isToday } = item;
                                 const targetSiteId = event.siteId || event.siteid;
+                                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                                const formattedDate = `${day} ${monthNames[month - 1]}`;
 
                                 return (
                                     <div key={event.id} style={{
                                         padding: '1rem',
                                         borderRadius: '8px',
                                         backgroundColor: 'rgba(255,255,255,0.05)',
-                                        borderLeft: '4px solid var(--accent-primary)'
+                                        borderLeft: isToday ? '4px solid #ef5350' : '4px solid var(--accent-primary)'
                                     }}>
-                                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '8px' }}>
-                                            <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'var(--accent-primary)' }}>
-                                                {year}
-                                            </span>
-                                            <h3 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                                {event.title}
-                                            </h3>
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
+                                            <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                                                <span style={{ fontSize: '1.15rem', fontWeight: 'bold', color: 'var(--accent-primary)' }}>
+                                                    {year}
+                                                </span>
+                                                <h3 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-primary)' }}>
+                                                    {event.title}
+                                                </h3>
+                                            </div>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                                {isToday && (
+                                                    <span style={{
+                                                        backgroundColor: '#ef5350',
+                                                        color: '#fff',
+                                                        fontSize: '0.7rem',
+                                                        fontWeight: '700',
+                                                        padding: '2px 8px',
+                                                        borderRadius: '12px',
+                                                        letterSpacing: '0.5px'
+                                                    }}>
+                                                        TODAY
+                                                    </span>
+                                                )}
+                                                <span style={{
+                                                    fontSize: '0.8rem',
+                                                    fontWeight: '600',
+                                                    backgroundColor: 'rgba(255,255,255,0.1)',
+                                                    padding: '2px 8px',
+                                                    borderRadius: '10px',
+                                                    color: 'var(--text-secondary)'
+                                                }}>
+                                                    {formattedDate}
+                                                </span>
+                                            </div>
                                         </div>
 
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)', fontSize: '0.85rem', marginBottom: '12px' }}>
