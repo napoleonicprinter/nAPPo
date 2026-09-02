@@ -66,14 +66,14 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
 
         const targetSite = siteToOpenPopup;
         let attempts = 0;
-        const maxAttempts = 25;
+        const maxAttempts = 30;
         let timer = null;
 
         const attemptOpen = () => {
             attempts++;
             const marker = markerRefs.current.get(targetSite.id);
 
-            const openMarkerPopup = () => {
+            if (marker) {
                 map.invalidateSize();
                 const currentZoom = map.getZoom();
                 const targetZoom = Math.max(currentZoom, 11);
@@ -82,22 +82,31 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
                 targetPoint.y -= isMobileLike ? 140 : 120;
                 const targetLatLng = map.unproject(targetPoint, targetZoom);
 
-                map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.6 });
+                const visibleParent = clusterInstance && typeof clusterInstance.getVisibleParent === 'function'
+                    ? clusterInstance.getVisibleParent(marker)
+                    : null;
 
-                setTimeout(() => {
-                    const currentMarker = markerRefs.current.get(targetSite.id);
-                    if (currentMarker) {
-                        currentMarker.openPopup();
-                    }
-                    setSiteToOpenPopup(null);
-                }, 400);
-            };
+                const isClustered = visibleParent && visibleParent !== marker;
 
-            if (marker) {
-                if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-                    clusterInstance.zoomToShowLayer(marker, openMarkerPopup);
+                if (isClustered && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                    clusterInstance.zoomToShowLayer(marker, () => {
+                        setTimeout(() => {
+                            const currentMarker = markerRefs.current.get(targetSite.id);
+                            if (currentMarker) {
+                                currentMarker.openPopup();
+                            }
+                            setSiteToOpenPopup(null);
+                        }, 150);
+                    });
                 } else {
-                    openMarkerPopup();
+                    map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.6 });
+                    setTimeout(() => {
+                        const currentMarker = markerRefs.current.get(targetSite.id);
+                        if (currentMarker) {
+                            currentMarker.openPopup();
+                        }
+                        setSiteToOpenPopup(null);
+                    }, 450);
                 }
             } else if (attempts < maxAttempts) {
                 timer = setTimeout(attemptOpen, 100);
@@ -274,11 +283,15 @@ const MapResizeHandler = () => {
 };
 
 const LocationCenteringHandler = () => {
-    const { userCoords, locationMode } = useAppContext();
+    const { userCoords, locationMode, siteToOpenPopup } = useAppContext();
     const map = useMap();
     const lastCenteredKeyRef = useRef(null);
 
     useEffect(() => {
+        if (siteToOpenPopup) {
+            return;
+        }
+
         if (!userCoords?.lat || !userCoords?.lon) {
             lastCenteredKeyRef.current = null;
             return;
@@ -290,10 +303,10 @@ const LocationCenteringHandler = () => {
         if (locationMode && locationMode !== 'none') {
             lastCenteredKeyRef.current = currentKey;
             const minZoom = map.getMinZoom() ?? 2.5;
-            const targetZoom = minZoom + 7.5; // 8 zoom levels in from the all zoom out starting point (2.5 + 7.5 = 10)
+            const targetZoom = minZoom + 7.5; // 8 zoom levels in from minZoom starting point
             map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
         }
-    }, [locationMode, userCoords?.lat, userCoords?.lon, map]);
+    }, [locationMode, userCoords?.lat, userCoords?.lon, map, siteToOpenPopup]);
 
     return null;
 };

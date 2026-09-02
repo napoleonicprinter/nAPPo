@@ -16009,5 +16009,19 @@
     "longitude": 35.087112,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Arce_cemetery.webp",
     "createDate": "2026-09-01"
+  },
+  {
+    "id": "876",
+    "name": "Jean Louis Godefroy grave",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1844,
+    "location": "Montmarnasse cemetery (13e Division, Avenue principale 1st line), Paris",
+    "country": "France",
+    "description": "Jean Louis Godefroy (1778 - 1844) was a French Lieutenant-colonel and Officer of the Legion of Honour. Veteran of 23 campaigns from Maubeuge to Waterloo, he rose through the ranks from lieutenant to battalion commander.",
+    "latitude": 48.839018,
+    "longitude": 2.326869,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Godefroy_grave.webp",
+    "createDate": "2026-09-01"
   }
 ]
