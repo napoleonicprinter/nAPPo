@@ -57,7 +57,7 @@ const getSiteIcon = (site) => {
 // --- STABILIZED INTERNAL COMPONENTS ---
 
 // Look for this component near the top of your file
-const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
+const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSiteIdRef }) => {
     const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
     const map = useMap();
 
@@ -65,6 +65,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
         if (!siteToOpenPopup || typeof siteToOpenPopup.latitude !== 'number' || typeof siteToOpenPopup.longitude !== 'number') return;
 
         const targetSite = siteToOpenPopup;
+        if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
         let attempts = 0;
         const maxAttempts = 30;
         let timer = null;
@@ -119,7 +120,42 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike }) => {
         return () => {
             if (timer) clearTimeout(timer);
         };
-    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs]);
+    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef]);
+
+    return null;
+};
+
+const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef }) => {
+    const map = useMap();
+
+    useMapEvents({
+        zoomend: () => {
+            const siteId = activePopupSiteIdRef?.current;
+            if (!siteId) return;
+
+            const marker = markerRefs.current.get(siteId);
+            if (!marker) return;
+
+            setTimeout(() => {
+                const visibleParent = clusterInstance && typeof clusterInstance.getVisibleParent === 'function'
+                    ? clusterInstance.getVisibleParent(marker)
+                    : null;
+
+                const isClustered = visibleParent && visibleParent !== marker;
+
+                if (isClustered && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                    clusterInstance.zoomToShowLayer(marker, () => {
+                        setTimeout(() => {
+                            const m = markerRefs.current.get(siteId);
+                            if (m) m.openPopup();
+                        }, 50);
+                    });
+                } else {
+                    marker.openPopup();
+                }
+            }, 100);
+        }
+    });
 
     return null;
 };
@@ -606,6 +642,7 @@ const MapView = () => {
 
     const [showDeals, setShowDeals] = useState(false);
     const markerRefs = useRef(new Map());
+    const activePopupSiteIdRef = useRef(null);
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
@@ -694,6 +731,7 @@ const MapView = () => {
                         click: (e) => {
                             if (e.originalEvent) e.originalEvent.stopPropagation();
                             window.history.pushState({ siteId: site.id }, "");
+                            activePopupSiteIdRef.current = site.id;
                             if (selectedSite) setSelectedSite(null);
                             if (isMobileLike) {
                                 const map = e.target._map;
@@ -716,9 +754,8 @@ const MapView = () => {
                         autoPan={false}
                         autoPanPadding={[50, 50]}
                         closeButton={false}
-                        autoClose={!isTodaysBattleActive && !hasActiveOverlays}
-                        closeOnClick={!isTodaysBattleActive && !hasActiveOverlays}
-                        onClose={() => setSelectedSite(null)}
+                        autoClose={false}
+                        closeOnClick={false}
                     >
                         <div style={{ width: '300px', position: 'relative' }}>
                             <SiteCard
@@ -726,6 +763,7 @@ const MapView = () => {
                                 isCompact={true}
                                 hideMapLink={true}
                                 onClose={() => {
+                                    activePopupSiteIdRef.current = null;
                                     const marker = markerRefs.current.get(site.id);
                                     if (marker) marker.closePopup();
                                 }}
@@ -768,7 +806,8 @@ const MapView = () => {
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
-                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} />
+                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} />
+                <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} />
                 <SelectedSiteFlyer isMobileLike={isMobileLike} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
