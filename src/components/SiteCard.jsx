@@ -91,6 +91,8 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         locationMode,
         filterRadius,
         setFilterRadius,
+        filterCategory,
+        setFilterCategory,
         geolocationEnabled,
         setView,
         setSiteToOpenPopup,
@@ -103,7 +105,27 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         getPortalContainer
     } = useAppContext();
 
-    const [outOfAreaError, setOutOfAreaError] = useState(null);
+    const [navErrorModal, setNavErrorModal] = useState(null);
+
+    const isCategorySelected = (targetSite) => {
+        if (!filterCategory || !Array.isArray(filterCategory) || filterCategory.length === 0) return true;
+        const hasTodaysBattle = filterCategory.includes("Today's Battle");
+        const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
+
+        if (otherCategories.includes(targetSite.category)) return true;
+
+        if (hasTodaysBattle && (targetSite.category === 'Battle site' || targetSite.category === 'Naval battle') && targetSite.date) {
+            const today = new Date();
+            const parts = targetSite.date.split('-');
+            if (parts.length >= 3) {
+                const month = parseInt(parts[1], 10);
+                const day = parseInt(parts[2], 10);
+                if (month === today.getMonth() + 1 && day === today.getDate()) return true;
+            }
+        }
+
+        return false;
+    };
 
     const handleNavigateToSite = (targetSite) => {
         if (!targetSite) return;
@@ -114,19 +136,47 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 ? 'Manual Location'
                 : (locationMode || 'selected location');
 
-        if (userCoords && filterRadius && filterRadius !== 'all' && targetSite.latitude !== undefined && targetSite.longitude !== undefined) {
-            const dist = calculateDistance(userCoords.lat, userCoords.lon, targetSite.latitude, targetSite.longitude);
-            const radiusLimit = parseInt(filterRadius, 10);
+        const catPass = isCategorySelected(targetSite);
+        let areaPass = true;
+        let dist = undefined;
 
+        if (userCoords && filterRadius && filterRadius !== 'all' && targetSite.latitude !== undefined && targetSite.longitude !== undefined) {
+            dist = calculateDistance(userCoords.lat, userCoords.lon, targetSite.latitude, targetSite.longitude);
+            const radiusLimit = parseInt(filterRadius, 10);
             if (dist !== undefined && dist > radiusLimit) {
-                const errorMsg = `Site is out of the selected area, ${filterRadius} km from ${locationLabel}`;
-                setOutOfAreaError({
-                    message: errorMsg,
-                    targetSite: targetSite,
-                    distance: Math.round(dist)
-                });
-                return;
+                areaPass = false;
             }
+        }
+
+        if (!catPass && !areaPass) {
+            setNavErrorModal({
+                type: 'both',
+                title: 'Site Out of Category & Selected Area',
+                message: `Site is out of the selected category, category "${targetSite.category}" is not selected and site is ${Math.round(dist)} km from ${locationLabel}`,
+                targetSite: targetSite,
+                resetButtonText: 'Reset Filters & View',
+                distance: Math.round(dist)
+            });
+            return;
+        } else if (!catPass) {
+            setNavErrorModal({
+                type: 'category',
+                title: 'Site Category Not Selected',
+                message: `Site is out of the selected category, category "${targetSite.category}" is not selected`,
+                targetSite: targetSite,
+                resetButtonText: 'Reset Category & View'
+            });
+            return;
+        } else if (!areaPass) {
+            setNavErrorModal({
+                type: 'area',
+                title: 'Site Out of Selected Area',
+                message: `Site is out of the selected area, ${filterRadius} km from ${locationLabel}`,
+                targetSite: targetSite,
+                resetButtonText: 'Reset Area & View',
+                distance: Math.round(dist)
+            });
+            return;
         }
 
         setSelectedSite(null);
@@ -161,7 +211,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
 
     return (
         <>
-            {outOfAreaError && createPortal(
+            {navErrorModal && createPortal(
                 <div
                     style={{
                         position: 'fixed',
@@ -178,7 +228,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         zIndex: 2147483647,
                         padding: '20px'
                     }}
-                    onClick={() => setOutOfAreaError(null)}
+                    onClick={() => setNavErrorModal(null)}
                 >
                     <div
                         className="glass-panel animate-pop-in"
@@ -200,7 +250,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     >
                         <button
                             type="button"
-                            onClick={() => setOutOfAreaError(null)}
+                            onClick={() => setNavErrorModal(null)}
                             style={{
                                 position: 'absolute',
                                 top: '14px',
@@ -236,14 +286,14 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         </div>
 
                         <h3 style={{ margin: '0 0 10px 0', fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                            Site Out of Selected Area
+                            {navErrorModal.title}
                         </h3>
 
                         <p style={{ margin: '0 0 16px 0', fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: '1.45', fontWeight: 500 }}>
-                            {outOfAreaError.message}
+                            {navErrorModal.message}
                         </p>
 
-                        {outOfAreaError.distance !== undefined && (
+                        {navErrorModal.distance !== undefined && (
                             <div style={{
                                 fontSize: '0.82rem',
                                 color: 'var(--text-secondary)',
@@ -252,14 +302,14 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                 borderRadius: '8px',
                                 marginBottom: '20px'
                             }}>
-                                Distance to site: <strong>{outOfAreaError.distance} km</strong>
+                                Distance to site: <strong>{navErrorModal.distance} km</strong>
                             </div>
                         )}
 
                         <div style={{ display: 'flex', gap: '10px', width: '100%' }}>
                             <button
                                 type="button"
-                                onClick={() => setOutOfAreaError(null)}
+                                onClick={() => setNavErrorModal(null)}
                                 style={{
                                     flex: 1,
                                     padding: '11px',
@@ -274,13 +324,18 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                             >
                                 OK
                             </button>
-                            {outOfAreaError.targetSite && (
+                            {navErrorModal.targetSite && (
                                 <button
                                     type="button"
                                     onClick={() => {
-                                        const target = outOfAreaError.targetSite;
-                                        setOutOfAreaError(null);
-                                        setFilterRadius('all');
+                                        const target = navErrorModal.targetSite;
+                                        if (navErrorModal.type === 'category' || navErrorModal.type === 'both') {
+                                            setFilterCategory([]);
+                                        }
+                                        if (navErrorModal.type === 'area' || navErrorModal.type === 'both') {
+                                            setFilterRadius('all');
+                                        }
+                                        setNavErrorModal(null);
                                         setSelectedSite(null);
                                         setSiteToOpenPopup(null);
                                         setTimeout(() => {
@@ -300,7 +355,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         cursor: 'pointer'
                                     }}
                                 >
-                                    Reset Area & View
+                                    {navErrorModal.resetButtonText}
                                 </button>
                             )}
                         </div>
@@ -739,7 +794,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
 
                                                 if (battleSite) {
                                                     setCallerSite(site);      // Save the current card in memory
-                                                    setSelectedSite(battleSite); // Switch to the Battle Site record
+                                                    handleNavigateToSite(battleSite);
                                                 } else {
                                                     console.warn("Battle site record not found for ID:", targetId);
                                                 }
@@ -776,7 +831,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     const artSite = allSites.find(s => s.id === site.artwork_ids[0]);
-                                                    if (artSite) setSelectedSite(artSite);
+                                                    if (artSite) handleNavigateToSite(artSite);
                                                 }}
                                                 style={{ border: 'none', background: 'none', padding: 0, color: 'var(--accent-primary)', cursor: 'pointer', fontWeight: 'bold', textDecoration: 'underline' }}
                                             >
@@ -792,7 +847,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                             onClick={(e) => {
                                                                 e.stopPropagation();
                                                                 const artSite = allSites.find(s => s.id === id);
-                                                                if (artSite) setSelectedSite(artSite);
+                                                                if (artSite) handleNavigateToSite(artSite);
                                                             }}
                                                             style={{
                                                                 border: '1px solid var(--accent-primary)',

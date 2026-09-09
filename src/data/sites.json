@@ -6029,7 +6029,7 @@
     "special": "arc",
     "relatedSites": [
       {
-        "id": "294",
+        "id": "293",
         "title": "Canvas by Pierre-Julien Gilbert"
       }
     ]
@@ -13595,9 +13595,9 @@
   },
   {
     "id": "727",
-    "name": "Marshal Ney's tomb",
+    "name": "Marshal Ney's grave",
     "date": "1815-12-07",
-    "category": "Monument",
+    "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 29), Paris",
     "country": "France",
@@ -13630,13 +13630,13 @@
   },
   {
     "id": "729",
-    "name": "Marshal Suchet's tomb",
+    "name": "Marshal Suchet's grave",
     "date": "1826-01-03",
-    "category": "Monument",
+    "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 39), Paris",
     "country": "France",
-    "description": "Marshal Suchet's tomb is a significant landmark in Père Lachaise Cemetery, located in division 39.",
+    "description": "Marshal Suchet's grave is a significant landmark in Père Lachaise Cemetery, located in division 39.",
     "latitude": 48.859362,
     "longitude": 2.396942,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suchet_tomb.webp",
@@ -13645,13 +13645,13 @@
   },
   {
     "id": "730",
-    "name": "Marshal Grouchy's tomb",
+    "name": "Marshal Grouchy's grave",
     "date": "1847-05-29",
     "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 57), Paris",
     "country": "France",
-    "description": "Unlike Napoleon's top commanders—like Ney, Davout, and Masséna—who rest together in the cemetery's famous 'Marshals' Corner,' Grouchy's tomb sits isolated in a distant eastern section. This physical separation mirrors his historical legacy, as he was famously blamed for the French defeat at Waterloo and branded an outcast.",
+    "description": "Unlike Napoleon's top commanders—like Ney, Davout, and Masséna—who rest together in the cemetery's famous 'Marshals' Corner,' Grouchy's grave sits isolated in a distant eastern section. This physical separation mirrors his historical legacy, as he was famously blamed for the French defeat at Waterloo and branded an outcast.",
     "latitude": 48.861104,
     "longitude": 2.391687,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Grouchy_tomb.webp",
@@ -13660,9 +13660,9 @@
   },
   {
     "id": "731",
-    "name": "Marshal Victor's tomb",
+    "name": "Marshal Victor's grave",
     "date": "1841-03-01",
-    "category": "Monument",
+    "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 17), Paris",
     "country": "France",
@@ -13675,9 +13675,9 @@
   },
   {
     "id": "732",
-    "name": "Marshal Gouvion Saint-Cyr's tomb",
+    "name": "Marshal Gouvion Saint-Cyr's grave",
     "date": "1830-03-17",
-    "category": "Monument",
+    "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 37), Paris",
     "country": "France",
@@ -13690,7 +13690,7 @@
   },
   {
     "id": "733",
-    "name": "General Étienne de Nansouty's tomb",
+    "name": "General Étienne de Nansouty's grave",
     "date": "1815-02-12",
     "category": "Monument",
     "significance": 1,
@@ -13705,7 +13705,7 @@
   },
   {
     "id": "734",
-    "name": "Marechal Augereau's tomb",
+    "name": "Marechal Augereau's grave",
     "date": "1816-06-12",
     "category": "Landmark",
     "significance": 3,
@@ -13720,7 +13720,7 @@
   },
   {
     "id": "735",
-    "name": "Dode de la Brunerie's tomb",
+    "name": "Dode de la Brunerie's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 54, 1st line), Paris",
@@ -13751,7 +13751,7 @@
   },
   {
     "id": "737",
-    "name": "Marshal Davout's tomb",
+    "name": "Marshal Davout's grave",
     "date": "1823-06-01",
     "category": "Landmark",
     "significance": 3,
@@ -13766,7 +13766,7 @@
   },
   {
     "id": "738",
-    "name": "Guillaume François d'Aigremont's tomb",
+    "name": "Guillaume François d'Aigremont's grave",
     "date": "1827-01-07",
     "category": "Landmark",
     "significance": 1,
@@ -13781,9 +13781,9 @@
   },
   {
     "id": "739",
-    "name": "General Foy's tomb",
+    "name": "General Foy's grave",
     "date": "1825-11-28",
-    "category": "Monument",
+    "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 28, chemin Saint-Louis, 1ère ligne, M=R-31), Paris",
     "country": "France",
@@ -13797,7 +13797,7 @@
   },
   {
     "id": "740",
-    "name": "General Jean Baptiste Gauldrée Boilleau's tomb",
+    "name": "General Jean Baptiste Gauldrée Boilleau's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 01, avenue Principale, 5ème ligne, M=AJ-16), Paris",
@@ -13811,7 +13811,7 @@
   },
   {
     "id": "741",
-    "name": "General François Joseph Gérard's tomb",
+    "name": "General François Joseph Gérard's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 38, chemin Masséna, 1ère ligne, M=L-32), Paris",
@@ -13826,7 +13826,7 @@
   },
   {
     "id": "742",
-    "name": "Manuel Godoy's tomb",
+    "name": "Manuel Godoy's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 45, avenue Transversale n°1 ; 3ème ligne, M=O-19), Paris",
@@ -13841,7 +13841,7 @@
   },
   {
     "id": "743",
-    "name": "Charles-Étienne Gudin's tomb",
+    "name": "Charles-Étienne Gudin's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 40, chemin des Anglais, 1ère ligne, M=M-29, carditaphe), Paris",
@@ -13877,7 +13877,7 @@
   },
   {
     "id": "745",
-    "name": "Marshal McDonald's tomb",
+    "name": "Marshal McDonald's grave",
     "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 37, avenue des Acacias, 1ère ligne, M=Q-34), Paris",
@@ -13892,8 +13892,8 @@
   },
   {
     "id": "746",
-    "name": "Marshal François Joseph Lefèbvre's tomb",
-    "category": "Monument",
+    "name": "Marshal François Joseph Lefèbvre's grave",
+    "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 28, chemin Camille Jordan, 1ère ligne), Paris",
     "country": "France",
@@ -13907,12 +13907,12 @@
   },
   {
     "id": "747",
-    "name": "Marshal André Masséna's tomb",
-    "category": "Monument",
+    "name": "Marshal André Masséna's grave",
+    "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 28, chemin Masséna, 1ère ligne, M=O-33), Paris",
     "country": "France",
-    "description": "A marble obelisk adorned with a profile of Masséna by François Joseph Bosio and his coat of arms (with the angel of victory), from which hang two medals, under a crown and on a garland held by two swords honors him at his tomb.",
+    "description": "A marble obelisk adorned with a profile of Masséna by François Joseph Bosio and his coat of arms (with the angel of victory), from which hang two medals, under a crown and on a garland held by two swords honors him at his grave.",
     "latitude": 48.858958,
     "longitude": 2.396529,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massena_tomb.webp",
@@ -13952,7 +13952,7 @@
   },
   {
     "id": "750",
-    "name": "Marshal Dominique Pérignon's tomb",
+    "name": "Marshal Dominique Pérignon's grave",
     "category": "Landmark",
     "significance": 3,
     "location": "Père Lachaise Cemetery (Division 24, chemin Laplace, 1ère ligne, M=P-20), Paris",
@@ -13981,7 +13981,7 @@
   },
   {
     "id": "752",
-    "name": "Alexandre Colonna, comte Walewski's tomb",
+    "name": "Alexandre Colonna, comte Walewski's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 66, avenue Circulaire, 1ère ligne), Paris",
@@ -13995,7 +13995,7 @@
   },
   {
     "id": "753",
-    "name": "Marie Walewska's tomb",
+    "name": "Marie Walewska's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Kiernozia",
@@ -14021,7 +14021,7 @@
   },
   {
     "id": "755",
-    "name": "General Maurice d'Albignac's tomb,",
+    "name": "General Maurice d'Albignac's grave,",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 23, avenue Transversale n° 1, 5ème ligne, M=P-18), Paris",
@@ -14035,7 +14035,7 @@
   },
   {
     "id": "756",
-    "name": "General Pierre Alexandre Allent's tomb",
+    "name": "General Pierre Alexandre Allent's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 10, chemin du Père Eternel, 1ère ligne, M=AB-19), Paris",
@@ -14049,7 +14049,7 @@
   },
   {
     "id": "757",
-    "name": "General Alexandre d'Alton's tomb",
+    "name": "General Alexandre d'Alton's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 25, chemin Molière et La Fontaine, 1ère ligne, M=Q-22), Paris",
@@ -14063,7 +14063,7 @@
   },
   {
     "id": "758",
-    "name": "Colonel François Anthoine's tomb",
+    "name": "Colonel François Anthoine's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 35, avenue des Acacias, 6ème ligne), Paris",
@@ -14078,7 +14078,7 @@
   },
   {
     "id": "759",
-    "name": "General Jacques Philippe Avice's tomb",
+    "name": "General Jacques Philippe Avice's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 38, chemin Masséna, 1ère ligne), Paris",
@@ -14452,7 +14452,7 @@
   },
   {
     "id": "785",
-    "name": "Colonel Jacques Henry Baltazar d'Arcy's tomb",
+    "name": "Colonel Jacques Henry Baltazar d'Arcy's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 01, avenue Thirion, 1ère ligne, M=AH-15), Paris",
@@ -14466,7 +14466,7 @@
   },
   {
     "id": "786",
-    "name": "General Joseph de Barbanègre's tomb",
+    "name": "General Joseph de Barbanègre's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 28, chemin du Dragon, 6ème ligne, M=R-32), Paris",
@@ -14481,7 +14481,7 @@
   },
   {
     "id": "787",
-    "name": "General Pierre Barrois's tomb",
+    "name": "General Pierre Barrois's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 28, chemin Saint-Louis, 2ème ligne), Paris",
@@ -14525,7 +14525,7 @@
   },
   {
     "id": "790",
-    "name": "General Barbanègre's brothers tomb",
+    "name": "General Barbanègre's brothers grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Pontacq",
@@ -14553,7 +14553,7 @@
   },
   {
     "id": "792",
-    "name": "General Henri François Baudrand's tomb",
+    "name": "General Henri François Baudrand's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 44, chemin du Quinconce, 14ème ligne, M=M-17), Paris",
@@ -14568,7 +14568,7 @@
   },
   {
     "id": "793",
-    "name": "General La Bonninière's tomb",
+    "name": "General La Bonninière's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 28, chemin Masséna, 2ème ligne, M=P-33), Paris",
@@ -14626,7 +14626,7 @@
   },
   {
     "id": "797",
-    "name": "General Augustin Belliard's tomb",
+    "name": "General Augustin Belliard's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Père Lachaise Cemetery (Division 35, avenue des Acacias, 3ème ligne, M=M-34), Paris",
@@ -14681,7 +14681,7 @@
   },
   {
     "id": "800",
-    "name": "General Sigismond-Frédéric de Berckheim's tomb",
+    "name": "General Sigismond-Frédéric de Berckheim's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Père Lachaise Cemetery (Division 24, chemin de la Citerne, 1ère ligne), Paris",
@@ -15446,7 +15446,7 @@
   },
   {
     "id": "841",
-    "name": "General César Berthier's tomb",
+    "name": "General César Berthier's grave",
     "date": "1819-08-17",
     "category": "Landmark",
     "significance": 1,
@@ -15462,7 +15462,7 @@
   },
   {
     "id": "842",
-    "name": "General Victor Berthier's tomb",
+    "name": "General Victor Berthier's grave",
     "date": "1807-03-21",
     "category": "Landmark",
     "significance": 1,
@@ -16056,12 +16056,12 @@
     "category": "Landmark",
     "significance": 1,
     "year": 1844,
-    "location": "Brompton Cemetery, London",
+    "location": "Brompton Cemetery (I section), London",
     "country": "England",
     "description": "Corporal Jonathan Glossop served with the 1st Life Guards cavalry regiment at Waterloo where he was wounded. He died on January 20th 1844 aged 52.",
     "latitude": 51.487033,
     "longitude": -0.192091,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Glossop_grave.webp",
-    "createDate": "2026-09-09"
+    "createDate": "2026-01-09"
   }
 ]
