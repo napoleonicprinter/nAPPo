@@ -16062,6 +16062,21 @@
     "latitude": 51.487033,
     "longitude": -0.192091,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Glossop_grave.webp",
-    "createDate": "2026-01-09"
+    "createDate": "2026-09-09"
+  },
+  {
+    "id": "879",
+    "name": "Ensign Agustín Mollon's grave",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Odense",
+    "country": "Denmark",
+    "description": "In July 1808, a young Danish lieutenant named Bloch accidentally shot and killed his friend, a Spanish officer named Don Augustin Mollon, After a dinner, Bloch made a joke about easily killing him if he were an enemy, Then, believing his musket was unloaded aimed him and pulled the trigger, unaware that a fatal charge remained inside. A few days later the Spanish officer was buried in the evening with great solemnity.",
+    "latitude": 55.399490,
+    "longitude": 10.387328,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Molion_grave.webp",
+    "more_info_link": "https://museumodense.dk/udgivelser/da-spanierne-var-her/",
+    "createDate": "2026-09-09"
   }
 ]
