@@ -160,6 +160,41 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef 
     return null;
 };
 
+const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef }) => {
+    useMapEvents({
+        popupopen: (e) => {
+            const newlyOpenedPopup = e.popup;
+            if (!markerRefs.current) return;
+
+            markerRefs.current.forEach((marker, siteId) => {
+                if (!marker) return;
+                const markerPopup = typeof marker.getPopup === 'function' ? marker.getPopup() : null;
+                if (markerPopup === newlyOpenedPopup) {
+                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = siteId;
+                } else if (markerPopup && typeof marker.isPopupOpen === 'function' && marker.isPopupOpen()) {
+                    marker.closePopup();
+                }
+            });
+        },
+        popupclose: (e) => {
+            const closedPopup = e.popup;
+            if (!markerRefs.current) return;
+
+            markerRefs.current.forEach((marker, siteId) => {
+                if (!marker) return;
+                const markerPopup = typeof marker.getPopup === 'function' ? marker.getPopup() : null;
+                if (markerPopup === closedPopup) {
+                    if (activePopupSiteIdRef && activePopupSiteIdRef.current === siteId) {
+                        activePopupSiteIdRef.current = null;
+                    }
+                }
+            });
+        }
+    });
+
+    return null;
+};
+
 const SelectedSiteFlyer = ({ isMobileLike }) => {
     const { selectedSite } = useAppContext();
     const map = useMap();
@@ -808,6 +843,7 @@ const MapView = () => {
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} />
+                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} />
                 <SelectedSiteFlyer isMobileLike={isMobileLike} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}

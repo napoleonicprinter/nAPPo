@@ -10227,6 +10227,12 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polotsk_1812_1st.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Polotsk",
+    "relatedSites": [
+      {
+        "id": "877",
+        "title": "Canvas by Wilhelm von Kobell"
+      }
+    ],
     "createDate": "2025-03-15T10:00:00Z"
   },
   {
@@ -16023,5 +16029,39 @@
     "longitude": 2.326869,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Godefroy_grave.webp",
     "createDate": "2026-09-01"
+  },
+  {
+    "id": "877",
+    "name": "The Battle of Polotsk on August 18, 1812",
+    "category": "Artwork",
+    "significance": 1,
+    "year": 1843,
+    "location": "Residenz Museum, Münich",
+    "country": "Germany",
+    "description": "This painting titled Erste Schlacht bei Polozk 1812 (The First Battle of Polotsk 1812), created in 1813 by the German military and landscape painter Wilhelm von Kobell, dramatically depicts when General of the Infantry Bernhard Erasmus von Deroy , mortally wounded by a musket shot to the abdomen, is carried on his muskets by soldiers of the 9th Infantry Regiment and accompanied by a doctor (front right).",
+    "latitude": 48.140338,
+    "longitude": 11.578302,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polotsk_vonHesse.webp",
+    "relatedSites": [
+      {
+        "id": "522",
+        "title": "Battlefield"
+      }
+    ],
+    "createDate": "2026-09-01"
+  },
+  {
+    "id": "878",
+    "name": "Corporal Glossop's grave",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1844,
+    "location": "Brompton Cemetery, London",
+    "country": "England",
+    "description": "Corporal Jonathan Glossop served with the 1st Life Guards cavalry regiment at Waterloo where he was wounded. He died on January 20th 1844 aged 52.",
+    "latitude": 51.487033,
+    "longitude": -0.192091,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Glossop_grave.webp",
+    "createDate": "2026-09-09"
   }
 ]
