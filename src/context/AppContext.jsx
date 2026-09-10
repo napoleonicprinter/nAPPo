@@ -851,7 +851,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
     };
 
-    const exportUserData = () => {
+    const exportUserData = async () => {
         const data = {
             appName: 'nAPPo Trails',
             version: '1.0',
@@ -865,20 +865,48 @@ export const AppProvider = ({ children, storeUrl }) => {
         const fileName = `nappo_visited_sites_${nameStr}.json`;
         const blob = new Blob([jsonStr], { type: 'application/json' });
 
-        setBackupExportInfo({
-            fileName: fileName,
-            folder: 'Downloads folder'
-        });
-        setShowBackupExportModal(true);
+        // 1. Try File System Access API (showSaveFilePicker) - Allows selecting folder on PC / Mobile / Tablet
+        if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
+            try {
+                const handle = await window.showSaveFilePicker({
+                    suggestedName: fileName,
+                    types: [{
+                        description: 'JSON Backup File',
+                        accept: { 'application/json': ['.json'] }
+                    }]
+                });
+                const writable = await handle.createWritable();
+                await writable.write(blob);
+                await writable.close();
 
-        // On mobile / WebViews supporting Web Share API with files
+                setBackupExportInfo({
+                    fileName: handle.name || fileName,
+                    folder: 'Selected folder'
+                });
+                setShowBackupExportModal(true);
+                return;
+            } catch (err) {
+                if (err && err.name === 'AbortError') {
+                    return;
+                }
+                console.log("showSaveFilePicker failed or not supported, falling back:", err);
+            }
+        }
+
+        // 2. On Mobile / Tablet supporting Web Share API with files (opens native "Save to Files" / folder picker)
         if (typeof window !== 'undefined' && navigator.share && navigator.canShare) {
             try {
                 const file = new File([blob], fileName, { type: 'application/json' });
                 if (navigator.canShare({ files: [file] })) {
+                    setBackupExportInfo({
+                        fileName: fileName,
+                        folder: 'Selected folder (Save to Files / Share menu)'
+                    });
+                    setShowBackupExportModal(true);
+
                     navigator.share({
                         title: 'nAPPo Trails Backup',
-                        text: 'Visited sites backup data file',
+                        text: 'Select folder or app to save your visited sites backup file',
                         files: [file]
                     }).catch((err) => {
                         if (err && err.name !== 'AbortError') {
@@ -888,11 +916,16 @@ export const AppProvider = ({ children, storeUrl }) => {
                     return;
                 }
             } catch (err) {
-                console.log("Web Share API error, falling back to file download:", err);
+                console.log("Web Share API error, falling back to direct file download:", err);
             }
         }
 
-        // Direct browser file download prompt
+        // 3. Fallback direct browser file download prompt
+        setBackupExportInfo({
+            fileName: fileName,
+            folder: 'Downloads folder'
+        });
+        setShowBackupExportModal(true);
         triggerFileDownload(blob, fileName, jsonStr);
     };
 

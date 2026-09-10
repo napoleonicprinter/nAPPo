@@ -11,7 +11,8 @@ const BackupExportModal = () => {
         getPortalContainer,
         registerBackHandler,
         unregisterBackHandler,
-        theme
+        theme,
+        exportUserData
     } = useAppContext();
 
     useEffect(() => {
@@ -144,31 +145,66 @@ const BackupExportModal = () => {
                         <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>
                             Saved Location / Folder
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '6px' }}>
                             <FolderCheck size={18} style={{ color: '#2ecc71' }} />
                             <span>Downloads Folder</span>
+                        </div>
+                        <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left', backgroundColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)', padding: '8px 10px', borderRadius: '6px' }}>
+                            • <strong>Android:</strong> Open <strong>Files</strong> (or <em>My Files</em>) app &rarr; <strong>Downloads</strong> folder.<br />
+                            • <strong>iPhone (iOS):</strong> Open <strong>Files</strong> app &rarr; <strong>On My iPhone</strong> (or <em>iCloud Drive</em>) &rarr; <strong>Downloads</strong>.<br />
+                            • <strong>Web Share Sheet:</strong> If a share menu popped up, the file was sent to the app or destination you selected (e.g. Google Drive, WhatsApp, Files).
                         </div>
                     </div>
                 </div>
 
-                <button
-                    type="button"
-                    onClick={() => setShowBackupExportModal(false)}
-                    style={{
-                        width: '100%',
-                        padding: '12px',
-                        borderRadius: '10px',
-                        border: 'none',
-                        backgroundColor: 'var(--accent-primary)',
-                        color: '#fff',
-                        fontWeight: 600,
-                        fontSize: '0.95rem',
-                        cursor: 'pointer',
-                        transition: 'opacity 0.2s ease'
-                    }}
-                >
-                    OK
-                </button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            setShowBackupExportModal(false);
+                            setTimeout(() => {
+                                exportUserData();
+                            }, 100);
+                        }}
+                        style={{
+                            width: '100%',
+                            padding: '11px',
+                            borderRadius: '10px',
+                            border: '1px solid var(--accent-primary)',
+                            backgroundColor: 'transparent',
+                            color: 'var(--accent-primary)',
+                            fontWeight: 600,
+                            fontSize: '0.9rem',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px'
+                        }}
+                    >
+                        <FolderCheck size={16} />
+                        <span>Choose Folder / Share File</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={() => setShowBackupExportModal(false)}
+                        style={{
+                            width: '100%',
+                            padding: '12px',
+                            borderRadius: '10px',
+                            border: 'none',
+                            backgroundColor: 'var(--accent-primary)',
+                            color: '#fff',
+                            fontWeight: 600,
+                            fontSize: '0.95rem',
+                            cursor: 'pointer',
+                            transition: 'opacity 0.2s ease'
+                        }}
+                    >
+                        OK
+                    </button>
+                </div>
             </div>
         </div>
     );
