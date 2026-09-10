@@ -16077,6 +16077,105 @@
     "longitude": 10.387328,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Molion_grave.webp",
     "more_info_link": "https://museumodense.dk/udgivelser/da-spanierne-var-her/",
+    "relatedSites": [
+      {
+        "id": "880",
+        "title": "Søren Mortensen's Inn"
+      }
+    ],
     "createDate": "2026-09-09"
+  },
+  {
+    "id": "880",
+    "name": "Søren Mortensen's Inn",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Odense",
+    "country": "Denmark",
+    "description": "Site where stood the inn where, in July 1808, Spaniard Ensign Agustín Mollon was accidentally killed by Danish lieutenant Bloch. After a dinner, Bloch made a joke about easily killing him if he were an enemy, Then, believing his musket was unloaded aimed him and pulled the trigger, unaware that a fatal charge remained inside. A few days later the Spanish officer was buried in the evening with great solemnity.",
+    "latitude": 55.395860,
+    "longitude": 10.390516,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mortensen_inn.webp",
+    "more_info_link": "https://museumodense.dk/udgivelser/da-spanierne-var-her/",
+    "relatedSites": [
+      {
+        "id": "879",
+        "title": "Ensign Agustín Mollon's grave"
+      }
+    ],
+    "createDate": "2026-09-09"
+  },
+  {
+    "id": "881",
+    "name": "Odense Palace",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Odense",
+    "country": "Denmark",
+    "description": "Serving as the military command center for coalition forces, the palace hosted several high-ranking generals. Most famously, French Marshal Jean-Baptiste Bernadotte—appointed by Napoleon as commander of the coalition army in Denmark and northern Germany—stayed and operated his headquarters here in 1808.",
+    "latitude": 55.399333,
+    "longitude": 10.38646,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Odense_Palace.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Odense_Palace",
+    "createDate": "2026-09-10"
+  },
+  {
+    "id": "882",
+    "name": "Sortebrødre Torv",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Odense",
+    "country": "Denmark",
+    "description": "This expansive open square was heavily utilized as a military staging and muster ground during the troop deployments of 1808. The Spanish division under the Marquis de la Romana used central squares like this to gather, organize provisions, and interact extensively with the local Danish population, who viewed the 'exotic' soldiers with immense curiosity.",
+    "latitude": 55.39850,
+    "longitude": 10.392522,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sortebrodre.webp",
+    "createDate": "2026-09-10"
+  },
+  {
+    "id": "883",
+    "name": "St. Canute's Cathedral",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Odense",
+    "country": "Denmark",
+    "description": "The area immediately surrounding the central Gothic cathedral served as a primary hub for quartered troops. Because thousands of Spanish and French Catholic troops were stationed in a strictly Protestant Danish city, the presence of foreign soldiers conducting religious practices around local historic churches created significant social and cultural exchanges recorded in the childhood memories of local writer Hans Christian Andersen.",
+    "latitude": 55.395327,
+    "longitude": 10.388551,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Canute_Cathedral.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/St._Canute%27s_Cathedral",
+    "createDate": "2026-09-10"
+  },
+  {
+    "id": "884",
+    "name": "Odense Tugthus (Old Jailhouse)",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Odense",
+    "country": "Denmark",
+    "description": "Location of the prison on Klaregade, which was utilized during the Napoleonic conflicts to assist with administrative and security logistics for the city garrison. The intense militarization of the city required using every large municipal structure available to stabilize logistics, keep the piece, and handle regional military command tasks.",
+    "latitude": 55.393634,
+    "longitude": 10.386792,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Odense_Tugthus.webp",
+    "createDate": "2026-09-10"
+  },
+  {
+    "id": "885",
+    "name": "Stengade Skov",
+    "category": "Landmark",
+    "significance": 1,
+    "year": 1808,
+    "location": "Stengade Skov,Langeland Municipality",
+    "country": "Denmark",
+    "description": "At Stengade Skov on eastern Langeland, Baltic fleet Admiral James Saumarez first met Spanish commander Marquis de la Romana. They congratulated each other on the successful operation. With the embarkation executed perfectly according to plan, most of the Spanish troops were now aboard British ships, ready to fight for their homeland's freedom.",
+    "latitude": 55.967161,
+    "longitude": 10.850297,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Langeland.webp",
+    "createDate": "2026-09-10"
   }
 ]
