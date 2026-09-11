@@ -4025,5 +4025,23 @@
         "location": "Castelnaudary, Languedoc, France",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Antoine-Fran%C3%A7ois_Andr%C3%A9ossy",
         "description": "Antoine-François, comte Andréossy was born on March 6th 1761 at his place. He was a Franco-Italian nobleman, who served as a French Army artillery general, diplomat and parliamentarian."
+    },
+    {
+        "id": "455",
+        "siteId": "886",
+        "title": "Battle of Campo Tenese",
+        "date": "1806-03-09",
+        "location": "Campotenese, Cosenza, Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Campo_Tenese",
+        "description": "On March 9, 1806, Jean Reynier led two divisions of the French Army of Naples in an attack against the left wing of Roger de Damas's Royal Neapolitan Army at Campotenese."
+    },
+    {
+        "id": "456",
+        "siteId": "887",
+        "title": "Surrender at Monteleone",
+        "date": "1806-07-06",
+        "location": "Campotenese, Cosenza, Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Campo_Tenese",
+        "description": "During the Invasion of Naples and two days after the Battle of Maida, on July 6th 1806, a half-battalion of the Polish-Italian Legion stationed at Monteleone surrendered to British General John Stuart"
     }
 ]

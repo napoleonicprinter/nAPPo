@@ -7175,6 +7175,7 @@
     "id": "349",
     "name": "Battlefield of Lippa",
     "category": "Battle site",
+    "date": "1813-09-07",
     "year": 1813,
     "significance": 1,
     "location": "Rupa",
@@ -7182,7 +7183,7 @@
     "description": "It was an engagement which took place on September 7th 1813 in what is now Croatia where the Austrians defeated the Franco-Italians. ",
     "latitude": 45.4846,
     "longitude": 14.243617,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lippa_1813.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lippa",
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
@@ -16176,6 +16177,47 @@
     "latitude": 55.967161,
     "longitude": 10.850297,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Langeland.webp",
+    "createDate": "2026-09-10"
+  },
+  {
+    "id": "886",
+    "name": "Battlefield of Campo Tenese",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1806",
+    "date": "1806-03-09",
+    "location": "Campotenese, Cosenza",
+    "country": "Italy",
+    "description": "On March 9, 1806, Jean Reynier led two divisions of the French Army of Naples in an attack against the left wing of Roger de Damas's Royal Neapolitan Army at Campotenese.",
+    "latitude": 39.867506,
+    "longitude": 16.073473,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Campotenese.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Campo_Tenese",
+    "special": [
+      "3",
+      "Naples Invasion"
+    ],
+    "Victor": "France",
+    "defeated": "Kingdom of Naples",
+    "commanders": [
+      "Jean Reynier",
+      "Roger de Damas"
+    ],
+    "createDate": "2026-09-10"
+  },
+  {
+    "id": "887",
+    "name": "Surrender at Monteleone",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-07-06",
+    "location": "Vibo Valentia, Cosenza",
+    "country": "Italy",
+    "description": "Following the Allied victory at the Battle of Maida on July 4, 1806, British forces commanded by General John Stuart advanced rapidly through the Calabria region. On July 6, 1806, Stuart successfully captured half a battalion of Polish troops fighting under French command in Monteleone.",
+    "latitude": 38.67555,
+    "longitude": 16.099470,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Monteleone.webp",
     "createDate": "2026-09-10"
   }
 ]
