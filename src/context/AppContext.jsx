@@ -935,7 +935,8 @@ export const AppProvider = ({ children, storeUrl }) => {
                     title: 'Backup Saved Successfully',
                     message: 'Your visited sites backup file has been saved to your selected location.',
                     fileName: handle.name || fileName,
-                    folder: handle.name ? `Selected folder (${handle.name})` : folderName
+                    folder: handle.name ? `Selected folder (${handle.name})` : folderName,
+                    jsonStr: jsonStr
                 });
                 setShowBackupExportModal(true);
                 return;
@@ -969,7 +970,8 @@ export const AppProvider = ({ children, storeUrl }) => {
                         title: 'Backup Saved Successfully',
                         message: 'Your visited sites backup file has been saved to your selected location.',
                         fileName: fileName,
-                        folder: folderName
+                        folder: folderName,
+                        jsonStr: jsonStr
                     });
                     setShowBackupExportModal(true);
                     return;
@@ -982,14 +984,15 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         }
 
-        // 3. If native picker/share unsupported or skipped: Show interactive Folder Selection Save window on mobile screen
+        // 3. Direct browser file download prompt & multi-method save modal
         triggerFileDownload(blob, fileName, jsonStr);
         setBackupExportInfo({
-            isSaved: false,
-            title: 'Export Visited Sites Backup',
-            message: 'Select a folder or location on your device to save your visited sites backup file.',
+            isSaved: true,
+            title: 'Backup Ready & Saved',
+            message: 'Your visited sites backup file has been generated and saved to your device.',
             fileName: fileName,
-            folder: folderName
+            folder: folderName,
+            jsonStr: jsonStr
         });
         setShowBackupExportModal(true);
     };

@@ -4065,8 +4065,17 @@
         "siteId": "890",
         "title": "First Siege of Scylla",
         "date": "1806-07-12",
-        "location": "Reggio, Calabria, Italy",
+        "location": "Scilla, Reggio, Calabria",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
         "description": "The first siege of Scylla (Scilla) took place from 12 to 24 July 1806 in Calabria, southern Italy, during the British expedition to Sicily aimed at countering the French invasion of the Kingdom of Naples."
+    },
+    {
+        "id": "460",
+        "siteId": "891",
+        "title": "Second Siege of Scylla",
+        "date": "1808-02-07",
+        "location": "Scilla, Reggio, Calabria",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
+        "description": "It lasted from February 7th until the 17th 1808. A British garrison under severe pressure held out against a heavy ten-day French bombardment. Recognizing that the heavily damaged fort could no longer be maintained, the British forces executed a successful evacuation by sea under enemy fire, safely retreating across the straits to Sicily while the French retook control of the castle."
     }
 ]
