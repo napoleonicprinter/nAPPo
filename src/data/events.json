@@ -4051,5 +4051,13 @@
         "date": "1806-07-06",
         "location": "Tropea, Cosenza, Italy",
         "description": "On 8 July 1806, during the invasion of Naples, 400 Polish soldiers surrendered at Tropea Castle to the captain of HMS Apollo."
+    },
+    {
+        "id": "458",
+        "siteId": "889",
+        "title": "Surrender at Reggio",
+        "date": "1806-07-09",
+        "location": "Reggio, Calabria, Italy",
+        "description": "At 7:00 AM on July 9, General Broderick landed 1,200 Anglo-Sicilian troops south of Reggio. Joined by Captain William Hoste in the HMS Amphion, they launched a dual land and sea assault on the town. By evening, under heavy bombardment, the 632 French defenders surrendered."
     }
 ]

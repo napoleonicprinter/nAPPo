@@ -16235,5 +16235,20 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tropea.webp",
     "more_info_link": "https://en.wikipedia.org/wiki/Tropea_Castle",
     "createDate": "2026-09-11"
+  },
+  {
+    "id": "889",
+    "name": "Surrender at Reggio",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-07-09",
+    "location": "Reggio, Calabria",
+    "country": "Italy",
+    "description": "At 7:00 AM on July 9, General Broderick landed 1,200 Anglo-Sicilian troops south of Reggio. Joined by Captain William Hoste in the HMS Amphion, they launched a dual land and sea assault on the town. By evening, under heavy bombardment, the 632 French defenders surrendered.",
+    "latitude": 38.105927,
+    "longitude": 15.642645,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Reggio.webp",
+    "createDate": "2026-09-11"
   }
 ]
