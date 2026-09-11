@@ -915,8 +915,8 @@ export const AppProvider = ({ children, storeUrl }) => {
         const blob = new Blob([jsonStr], { type: 'application/json' });
         const folderName = chosenFolder || 'Downloads Folder';
 
-        // 1. Try Desktop File System Access API (showSaveFilePicker) - Opens native Windows / macOS Save As window
-        if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
+        // 1. Try Desktop File System Access API (showSaveFilePicker) - For PC Chrome / Edge desktop
+        if (typeof window !== 'undefined' && 'showSaveFilePicker' in window && window.innerWidth > 1024) {
             try {
                 const handle = await window.showSaveFilePicker({
                     suggestedName: fileName,
@@ -929,7 +929,6 @@ export const AppProvider = ({ children, storeUrl }) => {
                 await writable.write(blob);
                 await writable.close();
 
-                // Update modal info AFTER save is performed successfully
                 setBackupExportInfo({
                     isSaved: true,
                     title: 'Backup Saved Successfully',
@@ -944,51 +943,16 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (err && err.name === 'AbortError') {
                     return;
                 }
-                console.log("showSaveFilePicker failed or not supported, trying Web Share / mobile fallback:", err);
+                console.log("showSaveFilePicker failed or cancelled, falling back:", err);
             }
         }
 
-        // 2. Try Mobile / Tablet Web Share API (opens native Android My Files / iOS Files app folder picker window)
-        if (typeof window !== 'undefined' && navigator.share) {
-            try {
-                const jsonFile = new File([blob], fileName, { type: 'application/json' });
-                const textFile = new File([jsonStr], fileName, { type: 'text/plain' });
-                const canShareJson = navigator.canShare && navigator.canShare({ files: [jsonFile] });
-                const canShareText = navigator.canShare && navigator.canShare({ files: [textFile] });
-                const fileToShare = canShareJson ? jsonFile : (canShareText ? textFile : null);
-
-                if (fileToShare) {
-                    await navigator.share({
-                        title: 'nAPPo Trails Backup',
-                        text: `Save visited sites backup file (${fileName})`,
-                        files: [fileToShare]
-                    });
-
-                    // Update modal info AFTER share / folder save is performed
-                    setBackupExportInfo({
-                        isSaved: true,
-                        title: 'Backup Saved Successfully',
-                        message: 'Your visited sites backup file has been saved to your selected location.',
-                        fileName: fileName,
-                        folder: folderName,
-                        jsonStr: jsonStr
-                    });
-                    setShowBackupExportModal(true);
-                    return;
-                }
-            } catch (err) {
-                if (err && err.name === 'AbortError') {
-                    return;
-                }
-                console.log("Web Share API error, falling back to direct download / modal dialog:", err);
-            }
-        }
-
-        // 3. Direct browser file download prompt & multi-method save modal
+        // 2. On Android / Mobile / Tablet and all standard browsers:
+        // Trigger browser file download directly & immediately show BackupExportModal on screen
         triggerFileDownload(blob, fileName, jsonStr);
         setBackupExportInfo({
             isSaved: true,
-            title: 'Backup Ready & Saved',
+            title: 'Backup Saved Successfully',
             message: 'Your visited sites backup file has been generated and saved to your device.',
             fileName: fileName,
             folder: folderName,
