@@ -52,6 +52,8 @@ const BackupExportModal = () => {
                 style={{
                     width: '100%',
                     maxWidth: '420px',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
                     backgroundColor: isDark ? 'rgba(25, 27, 31, 0.95)' : 'rgba(255, 255, 255, 0.95)',
                     border: '1px solid var(--border-color)',
                     borderRadius: '16px',

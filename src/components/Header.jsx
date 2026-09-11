@@ -511,7 +511,7 @@ const Header = () => {
                                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)' }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                                     <UserCircle size={20} style={{ color: 'var(--accent-primary)' }} />
-                                                    <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>{currentUser.displayName || currentUser.email}</span>
+                                                    <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Hello, "{currentUser.username || currentUser.displayName || currentUser.email || 'User'}"</span>
                                                 </div>
                                                 <button
                                                     onClick={() => { logout(); }}

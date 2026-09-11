@@ -397,10 +397,15 @@ export const AppProvider = ({ children, storeUrl }) => {
         if (!currentUser) return [];
         const saved = localStorage.getItem(`visitedSites_${currentUser.username}`);
         if (saved && saved !== "undefined") {
-            try { return JSON.parse(saved); } catch (e) { return []; }
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) return parsed.map(String);
+            } catch (e) { return []; }
         }
         return [];
     });
+
+    const activeUsernameRef = useRef(currentUser ? currentUser.username : null);
 
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
@@ -411,6 +416,8 @@ export const AppProvider = ({ children, storeUrl }) => {
         const saved = localStorage.getItem('clusterRadius');
         return saved !== null && saved !== undefined ? parseInt(saved, 10) : 25;
     });
+
+    const visitedSet = useMemo(() => new Set((visitedSites || []).map(id => String(id))), [visitedSites]);
 
     const derivedSites = useMemo(() => {
         return (sitesBaseData || []).map(site => {
@@ -426,12 +433,12 @@ export const AppProvider = ({ children, storeUrl }) => {
             const rawSpecial = site.special || site.Special;
             return {
                 ...site,
-                visited: visitedSites.includes(site.id),
+                visited: visitedSet.has(String(site.id)),
                 isNew,
                 special: rawSpecial ? (Array.isArray(rawSpecial) ? rawSpecial : [String(rawSpecial)]) : []
             };
         });
-    }, [sitesBaseData, visitedSites, newSitesDays]);
+    }, [sitesBaseData, visitedSet, newSitesDays]);
 
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
@@ -755,15 +762,31 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [filterCategory]);
 
     useEffect(() => {
-        if (currentUser) localStorage.setItem('currentUser', JSON.stringify(currentUser));
-        else {
+        if (currentUser) {
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            if (activeUsernameRef.current !== currentUser.username) {
+                activeUsernameRef.current = currentUser.username;
+                const saved = localStorage.getItem(`visitedSites_${currentUser.username}`);
+                let loaded = [];
+                if (saved && saved !== "undefined") {
+                    try {
+                        const parsed = JSON.parse(saved);
+                        if (Array.isArray(parsed)) loaded = parsed.map(String);
+                    } catch (e) { loaded = []; }
+                }
+                setVisitedSites(loaded);
+            }
+        } else {
             localStorage.removeItem('currentUser');
+            activeUsernameRef.current = null;
             setVisitedSites([]);
         }
     }, [currentUser]);
 
     useEffect(() => {
-        if (currentUser) localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(visitedSites));
+        if (currentUser && activeUsernameRef.current === currentUser.username) {
+            localStorage.setItem(`visitedSites_${currentUser.username}`, JSON.stringify(visitedSites));
+        }
     }, [visitedSites, currentUser]);
 
     useEffect(() => { localStorage.setItem('appUsers', JSON.stringify(users)); }, [users]);
@@ -799,12 +822,30 @@ export const AppProvider = ({ children, storeUrl }) => {
             setShowAuth(true);
             return;
         }
-        setVisitedSites(prev => prev.includes(id) ? prev.filter(siteId => siteId !== id) : [...prev, id]);
+        const strId = String(id);
+        setVisitedSites(prev => {
+            const strList = (prev || []).map(String);
+            if (strList.includes(strId)) {
+                return strList.filter(sId => sId !== strId);
+            } else {
+                return [...strList, strId];
+            }
+        });
     };
 
     const login = (username, password) => {
-        const user = users.find(u => u.username === username && u.password === password);
+        const user = users.find(u => u.username.toLowerCase() === username.toLowerCase() && u.password === password);
         if (user) {
+            const saved = localStorage.getItem(`visitedSites_${user.username}`);
+            let loaded = [];
+            if (saved && saved !== "undefined") {
+                try {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed)) loaded = parsed.map(String);
+                } catch (e) { loaded = []; }
+            }
+            activeUsernameRef.current = user.username;
+            setVisitedSites(loaded);
             setCurrentUser({ username: user.username });
             return true;
         }
@@ -812,19 +853,27 @@ export const AppProvider = ({ children, storeUrl }) => {
     };
 
     const signup = (username, password) => {
-        if (users.find(u => u.username === username)) return false;
-        setUsers([...users, { username, password }]);
+        if (users.find(u => u.username.toLowerCase() === username.toLowerCase())) return false;
+        setUsers(prev => [...prev, { username, password }]);
+        activeUsernameRef.current = username;
+        setVisitedSites([]);
         setCurrentUser({ username });
         return true;
     };
 
-    const logout = () => setCurrentUser(null);
+    const logout = () => {
+        activeUsernameRef.current = null;
+        setVisitedSites([]);
+        setCurrentUser(null);
+    };
 
     const deleteCurrentUser = () => {
         if (!currentUser) return;
         const usernameToDelete = currentUser.username;
         setUsers(prev => prev.filter(u => u.username !== usernameToDelete));
         localStorage.removeItem(`visitedSites_${usernameToDelete}`);
+        activeUsernameRef.current = null;
+        setVisitedSites([]);
         setCurrentUser(null);
     };
 
@@ -865,7 +914,14 @@ export const AppProvider = ({ children, storeUrl }) => {
         const fileName = `nappo_visited_sites_${nameStr}.json`;
         const blob = new Blob([jsonStr], { type: 'application/json' });
 
-        // 1. Try File System Access API (showSaveFilePicker) - Allows selecting folder on PC / Mobile / Tablet
+        // Always show the backup export modal pop up on screen immediately (Mobile, Tablet, PC)
+        setBackupExportInfo({
+            fileName: fileName,
+            folder: 'Downloads folder'
+        });
+        setShowBackupExportModal(true);
+
+        // 1. Try File System Access API (showSaveFilePicker) - For PC / supported desktop browsers
         if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
             try {
                 const handle = await window.showSaveFilePicker({
@@ -883,7 +939,6 @@ export const AppProvider = ({ children, storeUrl }) => {
                     fileName: handle.name || fileName,
                     folder: 'Selected folder'
                 });
-                setShowBackupExportModal(true);
                 return;
             } catch (err) {
                 if (err && err.name === 'AbortError') {
@@ -902,7 +957,6 @@ export const AppProvider = ({ children, storeUrl }) => {
                         fileName: fileName,
                         folder: 'Selected folder (Save to Files / Share menu)'
                     });
-                    setShowBackupExportModal(true);
 
                     navigator.share({
                         title: 'nAPPo Trails Backup',
@@ -921,11 +975,6 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
 
         // 3. Fallback direct browser file download prompt
-        setBackupExportInfo({
-            fileName: fileName,
-            folder: 'Downloads folder'
-        });
-        setShowBackupExportModal(true);
         triggerFileDownload(blob, fileName, jsonStr);
     };
 
