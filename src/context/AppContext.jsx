@@ -900,7 +900,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
     };
 
-    const exportUserData = async () => {
+    const exportUserData = async (chosenFolder = null) => {
         const data = {
             appName: 'nAPPo Trails',
             version: '1.0',
@@ -914,15 +914,22 @@ export const AppProvider = ({ children, storeUrl }) => {
         const fileName = `nappo_visited_sites_${nameStr}.json`;
         const blob = new Blob([jsonStr], { type: 'application/json' });
 
+        const folderName = chosenFolder || 'Downloads Folder';
+
         // Show export modal pop up with initial status ("Export Visited Sites Backup")
         setBackupExportInfo({
             isSaved: false,
             title: 'Export Visited Sites Backup',
             message: 'Select a folder or location on your device to save your visited sites backup file.',
             fileName: fileName,
-            folder: 'Pending folder selection...'
+            folder: chosenFolder || 'Pending folder selection...'
         });
         setShowBackupExportModal(true);
+
+        // If called without specifying a target folder and in mobile mode, return to allow folder overlay popup to show first
+        if (!chosenFolder && (window.innerWidth <= 1024 || !('showSaveFilePicker' in window))) {
+            return;
+        }
 
         // 1. Try File System Access API (showSaveFilePicker) - For PC / supported desktop browsers
         if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
@@ -944,7 +951,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                     title: 'Backup Saved Successfully',
                     message: 'Your visited sites backup file has been saved to your selected location.',
                     fileName: handle.name || fileName,
-                    folder: 'Selected folder'
+                    folder: chosenFolder || 'Selected folder'
                 });
                 return;
             } catch (err) {
@@ -962,7 +969,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (navigator.canShare({ files: [file] })) {
                     await navigator.share({
                         title: 'nAPPo Trails Backup',
-                        text: 'Select folder or app to save your visited sites backup file',
+                        text: `Select folder or app to save your visited sites backup file (${folderName})`,
                         files: [file]
                     });
 
@@ -972,7 +979,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                         title: 'Backup Saved Successfully',
                         message: 'Your visited sites backup file has been saved to your selected location.',
                         fileName: fileName,
-                        folder: 'Selected folder (Save to Files / Share menu)'
+                        folder: folderName
                     });
                     return;
                 }
@@ -991,7 +998,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             title: 'Backup Saved Successfully',
             message: 'Your visited sites backup file has been generated and saved to your device.',
             fileName: fileName,
-            folder: 'Downloads folder'
+            folder: folderName
         });
     };
 
