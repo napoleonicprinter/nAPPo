@@ -16250,5 +16250,31 @@
     "longitude": 15.642645,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Reggio.webp",
     "createDate": "2026-09-11"
+  },
+  {
+    "id": "890",
+    "name": "First Siege of Scylla",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-07-12",
+    "location": "Scilla, Reggio, Calabria",
+    "country": "Italy",
+    "description": "The first siege of Scylla (Scilla) took place from 12 to 24 July 1806. A force of 2,600 British soldiers under the command of Colonel John Oswald laid siege to the historic Scylla Castle. The castle's French garrison, consisting of 231 men from the 23rd Light infantry regiment, stubbornly held out for nearly two weeks before officially surrendering on 24 July 1806.",
+    "latitude": 38.25547,
+    "longitude": 15.714813,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Reggio.webp",
+    "commanders": [
+      "John Oswald",
+      "Colonel Michel"
+    ],
+    "victor": "Britain",
+    "defeated": "France",
+    "special": [
+      "3",
+      "Naples Invasion"
+    ],
+    "createDate": "2026-09-11"
   }
 ]

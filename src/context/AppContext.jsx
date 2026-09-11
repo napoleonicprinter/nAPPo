@@ -948,14 +948,19 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
 
         // 2. Try Mobile / Tablet Web Share API (opens native Android My Files / iOS Files app folder picker window)
-        if (typeof window !== 'undefined' && navigator.share && navigator.canShare) {
+        if (typeof window !== 'undefined' && navigator.share) {
             try {
-                const file = new File([blob], fileName, { type: 'application/json' });
-                if (navigator.canShare({ files: [file] })) {
+                const jsonFile = new File([blob], fileName, { type: 'application/json' });
+                const textFile = new File([jsonStr], fileName, { type: 'text/plain' });
+                const canShareJson = navigator.canShare && navigator.canShare({ files: [jsonFile] });
+                const canShareText = navigator.canShare && navigator.canShare({ files: [textFile] });
+                const fileToShare = canShareJson ? jsonFile : (canShareText ? textFile : null);
+
+                if (fileToShare) {
                     await navigator.share({
                         title: 'nAPPo Trails Backup',
-                        text: `Select folder or location to save backup file (${fileName})`,
-                        files: [file]
+                        text: `Save visited sites backup file (${fileName})`,
+                        files: [fileToShare]
                     });
 
                     // Update modal info AFTER share / folder save is performed
@@ -977,12 +982,12 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         }
 
-        // 3. Fallback direct browser file download prompt & interactive save modal
+        // 3. If native picker/share unsupported or skipped: Show interactive Folder Selection Save window on mobile screen
         triggerFileDownload(blob, fileName, jsonStr);
         setBackupExportInfo({
-            isSaved: true,
-            title: 'Backup Saved Successfully',
-            message: 'Your visited sites backup file has been generated and saved to your device.',
+            isSaved: false,
+            title: 'Export Visited Sites Backup',
+            message: 'Select a folder or location on your device to save your visited sites backup file.',
             fileName: fileName,
             folder: folderName
         });

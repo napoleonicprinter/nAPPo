@@ -4059,5 +4059,14 @@
         "date": "1806-07-09",
         "location": "Reggio, Calabria, Italy",
         "description": "At 7:00 AM on July 9, General Broderick landed 1,200 Anglo-Sicilian troops south of Reggio. Joined by Captain William Hoste in the HMS Amphion, they launched a dual land and sea assault on the town. By evening, under heavy bombardment, the 632 French defenders surrendered."
+    },
+    {
+        "id": "459",
+        "siteId": "890",
+        "title": "First Siege of Scylla",
+        "date": "1806-07-12",
+        "location": "Reggio, Calabria, Italy",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
+        "description": "The first siege of Scylla (Scilla) took place from 12 to 24 July 1806 in Calabria, southern Italy, during the British expedition to Sicily aimed at countering the French invasion of the Kingdom of Naples."
     }
 ]
