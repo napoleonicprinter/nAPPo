@@ -913,30 +913,15 @@ export const AppProvider = ({ children, storeUrl }) => {
         const nameStr = currentUser ? currentUser.username : 'visited';
         const fileName = `nappo_visited_sites_${nameStr}.json`;
         const blob = new Blob([jsonStr], { type: 'application/json' });
-
         const folderName = chosenFolder || 'Downloads Folder';
 
-        // When opened from drawer (chosenFolder === null), initialize modal state & show modal without launching OS dialog yet
-        if (!chosenFolder) {
-            setBackupExportInfo({
-                isSaved: false,
-                title: 'Export Visited Sites Backup',
-                message: 'Select a folder or location on your device to save your visited sites backup file.',
-                fileName: fileName,
-                folder: 'Downloads Folder'
-            });
-            setShowBackupExportModal(true);
-            return;
-        }
-
-        // When user clicks Save/Choose Folder button inside the modal:
-        // 1. Try File System Access API (showSaveFilePicker) on PC / supported desktop browsers
+        // 1. Try Desktop File System Access API (showSaveFilePicker) - Opens native Windows / macOS Save As window
         if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
             try {
                 const handle = await window.showSaveFilePicker({
                     suggestedName: fileName,
                     types: [{
-                        description: 'JSON Backup File',
+                        description: 'JSON Backup File (*.json)',
                         accept: { 'application/json': ['.json'] }
                     }]
                 });
@@ -950,25 +935,26 @@ export const AppProvider = ({ children, storeUrl }) => {
                     title: 'Backup Saved Successfully',
                     message: 'Your visited sites backup file has been saved to your selected location.',
                     fileName: handle.name || fileName,
-                    folder: handle.name ? `Selected location (${handle.name})` : folderName
+                    folder: handle.name ? `Selected folder (${handle.name})` : folderName
                 });
+                setShowBackupExportModal(true);
                 return;
             } catch (err) {
                 if (err && err.name === 'AbortError') {
                     return;
                 }
-                console.log("showSaveFilePicker failed or not supported, falling back:", err);
+                console.log("showSaveFilePicker failed or not supported, trying Web Share / mobile fallback:", err);
             }
         }
 
-        // 2. On Mobile / Tablet supporting Web Share API with files (opens native "Save to Files" / folder picker)
+        // 2. Try Mobile / Tablet Web Share API (opens native Android My Files / iOS Files app folder picker window)
         if (typeof window !== 'undefined' && navigator.share && navigator.canShare) {
             try {
                 const file = new File([blob], fileName, { type: 'application/json' });
                 if (navigator.canShare({ files: [file] })) {
                     await navigator.share({
                         title: 'nAPPo Trails Backup',
-                        text: `Select folder or app to save your visited sites backup file (${folderName})`,
+                        text: `Select folder or location to save backup file (${fileName})`,
                         files: [file]
                     });
 
@@ -980,17 +966,18 @@ export const AppProvider = ({ children, storeUrl }) => {
                         fileName: fileName,
                         folder: folderName
                     });
+                    setShowBackupExportModal(true);
                     return;
                 }
             } catch (err) {
                 if (err && err.name === 'AbortError') {
                     return;
                 }
-                console.log("Web Share API error, falling back to direct file download:", err);
+                console.log("Web Share API error, falling back to direct download / modal dialog:", err);
             }
         }
 
-        // 3. Fallback direct browser file download prompt
+        // 3. Fallback direct browser file download prompt & interactive save modal
         triggerFileDownload(blob, fileName, jsonStr);
         setBackupExportInfo({
             isSaved: true,
@@ -999,6 +986,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             fileName: fileName,
             folder: folderName
         });
+        setShowBackupExportModal(true);
     };
 
     const importUserData = (jsonString) => {
