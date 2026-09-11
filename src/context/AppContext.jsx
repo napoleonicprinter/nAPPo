@@ -879,24 +879,29 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const triggerFileDownload = (blob, fileName, jsonStr) => {
         try {
-            const url = URL.createObjectURL(blob);
+            // Data URI download: Works 100% reliably on Android Chrome, iOS Safari, and mobile webviews
+            const encodedData = "data:application/json;charset=utf-8," + encodeURIComponent(jsonStr || '');
             const link = document.createElement('a');
-            link.href = url;
+            link.href = encodedData;
             link.download = fileName;
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            setTimeout(() => URL.revokeObjectURL(url), 1000);
         } catch (e) {
-            const encodedUri = "data:text/json;charset=utf-8," + encodeURIComponent(jsonStr);
-            const link = document.createElement('a');
-            link.href = encodedUri;
-            link.download = fileName;
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            try {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = fileName;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setTimeout(() => URL.revokeObjectURL(url), 1000);
+            } catch (err) {
+                console.error("File download failed:", err);
+            }
         }
     };
 

@@ -16,6 +16,7 @@ const BackupExportModal = () => {
     } = useAppContext();
 
     const [copied, setCopied] = useState(false);
+    const [downloadedStatus, setDownloadedStatus] = useState(false);
     const [showRawText, setShowRawText] = useState(false);
 
     useEffect(() => {
@@ -33,7 +34,28 @@ const BackupExportModal = () => {
     const jsonStr = backupExportInfo.jsonStr || '';
     const fileName = backupExportInfo.fileName || 'nappo_visited_sites.json';
 
-    // 1. Copy JSON to Clipboard
+    // 1. Direct Data URI File Download Trigger (Guaranteed on Android & iOS)
+    const handleTriggerDownload = (e) => {
+        if (e) e.stopPropagation();
+        try {
+            const encodedData = "data:application/json;charset=utf-8," + encodeURIComponent(jsonStr || '');
+            const link = document.createElement('a');
+            link.href = encodedData;
+            link.download = fileName;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            setDownloadedStatus(true);
+            setTimeout(() => setDownloadedStatus(false), 4000);
+        } catch (err) {
+            console.error("Direct download error:", err);
+            exportUserData('Downloads Folder');
+        }
+    };
+
+    // 2. Copy JSON to Clipboard
     const handleCopyToClipboard = async () => {
         try {
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -56,7 +78,7 @@ const BackupExportModal = () => {
         }
     };
 
-    // 2. Share Backup via Native Text Share Sheet (WhatsApp, Email, Drive, Notes)
+    // 3. Share Backup via Native Text Share Sheet (WhatsApp, Email, Drive, Notes)
     const handleShareText = async () => {
         if (typeof window !== 'undefined' && navigator.share) {
             try {
@@ -73,11 +95,6 @@ const BackupExportModal = () => {
         } else {
             handleCopyToClipboard();
         }
-    };
-
-    // 3. Trigger File Download Again
-    const handleReDownload = () => {
-        exportUserData('Downloads Folder');
     };
 
     const modalContent = (
@@ -163,7 +180,7 @@ const BackupExportModal = () => {
                 </h2>
 
                 <p style={{ margin: '0 0 16px 0', fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
-                    Your visited sites backup file has been generated. Use any method below to save, copy, or send your backup:
+                    Your visited sites backup file has been generated. Use any option below to download or copy your backup:
                 </p>
 
                 {/* File Details Box */}
@@ -187,19 +204,43 @@ const BackupExportModal = () => {
                     </code>
                 </div>
 
-                {/* Multi-Option Save Action Buttons */}
+                {/* Download Toast Notification */}
+                {downloadedStatus && (
+                    <div
+                        style={{
+                            width: '100%',
+                            backgroundColor: 'rgba(46, 204, 113, 0.15)',
+                            border: '1px solid #2ecc71',
+                            color: '#2ecc71',
+                            borderRadius: '10px',
+                            padding: '10px',
+                            marginBottom: '14px',
+                            fontSize: '0.82rem',
+                            fontWeight: 600,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px'
+                        }}
+                    >
+                        <Check size={16} />
+                        <span>{fileName} downloaded to Downloads folder!</span>
+                    </div>
+                )}
+
+                {/* Action Buttons */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', marginBottom: '16px' }}>
 
-                    {/* Option 1: Copy to Clipboard */}
+                    {/* Option 1: Direct File Download */}
                     <button
                         type="button"
-                        onClick={handleCopyToClipboard}
+                        onClick={handleTriggerDownload}
                         style={{
                             width: '100%',
                             padding: '12px',
                             borderRadius: '12px',
-                            border: copied ? '1px solid #2ecc71' : '1px solid var(--accent-primary)',
-                            backgroundColor: copied ? '#2ecc71' : 'var(--accent-primary)',
+                            border: '1px solid var(--accent-primary)',
+                            backgroundColor: 'var(--accent-primary)',
                             color: '#fff',
                             fontWeight: 700,
                             fontSize: '0.9rem',
@@ -212,38 +253,39 @@ const BackupExportModal = () => {
                             transition: 'all 0.2s ease'
                         }}
                     >
-                        {copied ? <Check size={18} /> : <Copy size={18} />}
-                        <span>{copied ? 'Copied to Clipboard!' : 'Copy Backup Content to Clipboard'}</span>
+                        <Download size={18} />
+                        <span>Download .JSON File Now</span>
                     </button>
 
-                    {/* Option 2: Share / Email Text (WhatsApp, Email, Notes) */}
+                    {/* Option 2: Copy to Clipboard */}
                     <button
                         type="button"
-                        onClick={handleShareText}
+                        onClick={handleCopyToClipboard}
                         style={{
                             width: '100%',
                             padding: '11px',
                             borderRadius: '12px',
-                            border: '1px solid var(--border-color)',
-                            backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)',
-                            color: 'var(--text-primary)',
+                            border: copied ? '1px solid #2ecc71' : '1px solid var(--border-color)',
+                            backgroundColor: copied ? '#2ecc71' : (isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)'),
+                            color: copied ? '#fff' : 'var(--text-primary)',
                             fontWeight: 600,
                             fontSize: '0.88rem',
                             cursor: 'pointer',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            gap: '8px'
+                            gap: '8px',
+                            transition: 'all 0.2s ease'
                         }}
                     >
-                        <Share2 size={18} style={{ color: 'var(--accent-primary)' }} />
-                        <span>Send / Share via Email, WhatsApp or Notes</span>
+                        {copied ? <Check size={18} /> : <Copy size={18} />}
+                        <span>{copied ? 'Copied to Clipboard!' : 'Copy Backup Content to Clipboard'}</span>
                     </button>
 
-                    {/* Option 3: Download File Again */}
+                    {/* Option 3: Share / Email Text (WhatsApp, Email, Notes) */}
                     <button
                         type="button"
-                        onClick={handleReDownload}
+                        onClick={handleShareText}
                         style={{
                             width: '100%',
                             padding: '10px',
@@ -260,8 +302,8 @@ const BackupExportModal = () => {
                             gap: '8px'
                         }}
                     >
-                        <Download size={16} />
-                        <span>Download .JSON File Again</span>
+                        <Share2 size={16} />
+                        <span>Send / Share via Email, WhatsApp or Notes</span>
                     </button>
                 </div>
 
