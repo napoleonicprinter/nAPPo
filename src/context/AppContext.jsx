@@ -914,10 +914,13 @@ export const AppProvider = ({ children, storeUrl }) => {
         const fileName = `nappo_visited_sites_${nameStr}.json`;
         const blob = new Blob([jsonStr], { type: 'application/json' });
 
-        // Always show the backup export modal pop up on screen immediately (Mobile, Tablet, PC)
+        // Show export modal pop up with initial status ("Export Visited Sites Backup")
         setBackupExportInfo({
+            isSaved: false,
+            title: 'Export Visited Sites Backup',
+            message: 'Select a folder or location on your device to save your visited sites backup file.',
             fileName: fileName,
-            folder: 'Downloads folder'
+            folder: 'Pending folder selection...'
         });
         setShowBackupExportModal(true);
 
@@ -935,7 +938,11 @@ export const AppProvider = ({ children, storeUrl }) => {
                 await writable.write(blob);
                 await writable.close();
 
+                // Update modal info AFTER save is performed successfully
                 setBackupExportInfo({
+                    isSaved: true,
+                    title: 'Backup Saved Successfully',
+                    message: 'Your visited sites backup file has been saved to your selected location.',
                     fileName: handle.name || fileName,
                     folder: 'Selected folder'
                 });
@@ -953,29 +960,39 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const file = new File([blob], fileName, { type: 'application/json' });
                 if (navigator.canShare({ files: [file] })) {
-                    setBackupExportInfo({
-                        fileName: fileName,
-                        folder: 'Selected folder (Save to Files / Share menu)'
-                    });
-
-                    navigator.share({
+                    await navigator.share({
                         title: 'nAPPo Trails Backup',
                         text: 'Select folder or app to save your visited sites backup file',
                         files: [file]
-                    }).catch((err) => {
-                        if (err && err.name !== 'AbortError') {
-                            triggerFileDownload(blob, fileName, jsonStr);
-                        }
+                    });
+
+                    // Update modal info AFTER share / folder save is performed
+                    setBackupExportInfo({
+                        isSaved: true,
+                        title: 'Backup Saved Successfully',
+                        message: 'Your visited sites backup file has been saved to your selected location.',
+                        fileName: fileName,
+                        folder: 'Selected folder (Save to Files / Share menu)'
                     });
                     return;
                 }
             } catch (err) {
+                if (err && err.name === 'AbortError') {
+                    return;
+                }
                 console.log("Web Share API error, falling back to direct file download:", err);
             }
         }
 
         // 3. Fallback direct browser file download prompt
         triggerFileDownload(blob, fileName, jsonStr);
+        setBackupExportInfo({
+            isSaved: true,
+            title: 'Backup Saved Successfully',
+            message: 'Your visited sites backup file has been generated and saved to your device.',
+            fileName: fileName,
+            folder: 'Downloads folder'
+        });
     };
 
     const importUserData = (jsonString) => {

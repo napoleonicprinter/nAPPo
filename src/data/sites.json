@@ -16219,5 +16219,21 @@
     "longitude": 16.099470,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Monteleone.webp",
     "createDate": "2026-09-10"
+  },
+  {
+    "id": "888",
+    "name": "Surrender at Tropea Castle",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-07-08",
+    "location": "Tropea, Cosenza",
+    "country": "Italy",
+    "description": "The fortress was built on a massive, 15-meter-high (50 feet) rocky terrace overlooking the road. On July 8th 1806 400 Polish soldiers surrendered at Tropea Castle to the captain of HMS Apollo. The castle was completely demolished between 1825 and 1876, it no longer stands today. Its former site is currently occupied by the Palazzo Toraldo-Serra, built in 1887.",
+    "latitude": 38.677554,
+    "longitude": 15.89759,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tropea.webp",
+    "more_info_link": "https://en.wikipedia.org/wiki/Tropea_Castle",
+    "createDate": "2026-09-11"
   }
 ]

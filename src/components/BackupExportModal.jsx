@@ -27,6 +27,9 @@ const BackupExportModal = () => {
     if (!showBackupExportModal || !backupExportInfo) return null;
 
     const isDark = theme === 'dark';
+    const isSaved = backupExportInfo.isSaved !== false;
+    const titleText = backupExportInfo.title || (isSaved ? 'Backup Saved Successfully' : 'Export Visited Sites Backup');
+    const messageText = backupExportInfo.message || (isSaved ? 'Your visited sites backup file has been saved to your device.' : 'Select a folder or location on your device to save your visited sites backup file.');
 
     const modalContent = (
         <div
@@ -92,24 +95,24 @@ const BackupExportModal = () => {
                         width: '56px',
                         height: '56px',
                         borderRadius: '50%',
-                        backgroundColor: 'rgba(46, 204, 113, 0.15)',
-                        border: '1.5px solid rgba(46, 204, 113, 0.4)',
+                        backgroundColor: isSaved ? 'rgba(46, 204, 113, 0.15)' : 'rgba(88, 166, 255, 0.15)',
+                        border: isSaved ? '1.5px solid rgba(46, 204, 113, 0.4)' : '1.5px solid rgba(88, 166, 255, 0.4)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         marginBottom: '16px',
-                        color: '#2ecc71'
+                        color: isSaved ? '#2ecc71' : 'var(--accent-primary, #58a6ff)'
                     }}
                 >
-                    <CheckCircle2 size={32} />
+                    {isSaved ? <CheckCircle2 size={32} /> : <FolderCheck size={32} />}
                 </div>
 
                 <h2 style={{ margin: '0 0 8px 0', fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                    Backup Saved Successfully
+                    {titleText}
                 </h2>
 
                 <p style={{ margin: '0 0 16px 0', fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
-                    Your visited sites backup file has been generated and saved automatically to your device.
+                    {messageText}
                 </p>
 
                 <div
@@ -145,11 +148,11 @@ const BackupExportModal = () => {
 
                     <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '10px' }}>
                         <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>
-                            Saved Location / Folder
+                            {isSaved ? 'Saved Location / Folder' : 'Target Location'}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '6px' }}>
-                            <FolderCheck size={18} style={{ color: '#2ecc71' }} />
-                            <span>Downloads Folder</span>
+                            <FolderCheck size={18} style={{ color: isSaved ? '#2ecc71' : 'var(--accent-primary)' }} />
+                            <span>{backupExportInfo.folder || 'Downloads Folder'}</span>
                         </div>
                         <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left', backgroundColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)', padding: '8px 10px', borderRadius: '6px' }}>
                             • <strong>Android:</strong> Open <strong>Files</strong> (or <em>My Files</em>) app &rarr; <strong>Downloads</strong> folder.<br />
@@ -163,18 +166,15 @@ const BackupExportModal = () => {
                     <button
                         type="button"
                         onClick={() => {
-                            setShowBackupExportModal(false);
-                            setTimeout(() => {
-                                exportUserData();
-                            }, 100);
+                            exportUserData();
                         }}
                         style={{
                             width: '100%',
                             padding: '11px',
                             borderRadius: '10px',
                             border: '1px solid var(--accent-primary)',
-                            backgroundColor: 'transparent',
-                            color: 'var(--accent-primary)',
+                            backgroundColor: 'var(--accent-primary)',
+                            color: '#fff',
                             fontWeight: 600,
                             fontSize: '0.9rem',
                             cursor: 'pointer',
@@ -184,8 +184,8 @@ const BackupExportModal = () => {
                             gap: '6px'
                         }}
                     >
-                        <FolderCheck size={16} />
-                        <span>Choose Folder / Share File</span>
+                        <FolderCheck size={18} />
+                        <span>{isSaved ? 'Choose Another Folder / Share File' : 'Choose Folder / Save File'}</span>
                     </button>
 
                     <button
@@ -193,18 +193,18 @@ const BackupExportModal = () => {
                         onClick={() => setShowBackupExportModal(false)}
                         style={{
                             width: '100%',
-                            padding: '12px',
+                            padding: '10px',
                             borderRadius: '10px',
-                            border: 'none',
-                            backgroundColor: 'var(--accent-primary)',
-                            color: '#fff',
+                            border: '1px solid var(--border-color)',
+                            backgroundColor: 'transparent',
+                            color: 'var(--text-primary)',
                             fontWeight: 600,
-                            fontSize: '0.95rem',
+                            fontSize: '0.9rem',
                             cursor: 'pointer',
                             transition: 'opacity 0.2s ease'
                         }}
                     >
-                        OK
+                        {isSaved ? 'OK' : 'Close'}
                     </button>
                 </div>
             </div>
