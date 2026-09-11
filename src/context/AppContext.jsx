@@ -916,22 +916,21 @@ export const AppProvider = ({ children, storeUrl }) => {
 
         const folderName = chosenFolder || 'Downloads Folder';
 
-        // Show export modal pop up with initial status ("Export Visited Sites Backup")
-        setBackupExportInfo({
-            isSaved: false,
-            title: 'Export Visited Sites Backup',
-            message: 'Select a folder or location on your device to save your visited sites backup file.',
-            fileName: fileName,
-            folder: chosenFolder || 'Pending folder selection...'
-        });
-        setShowBackupExportModal(true);
-
-        // If called without specifying a target folder and in mobile mode, return to allow folder overlay popup to show first
-        if (!chosenFolder && (window.innerWidth <= 1024 || !('showSaveFilePicker' in window))) {
+        // When opened from drawer (chosenFolder === null), initialize modal state & show modal without launching OS dialog yet
+        if (!chosenFolder) {
+            setBackupExportInfo({
+                isSaved: false,
+                title: 'Export Visited Sites Backup',
+                message: 'Select a folder or location on your device to save your visited sites backup file.',
+                fileName: fileName,
+                folder: 'Downloads Folder'
+            });
+            setShowBackupExportModal(true);
             return;
         }
 
-        // 1. Try File System Access API (showSaveFilePicker) - For PC / supported desktop browsers
+        // When user clicks Save/Choose Folder button inside the modal:
+        // 1. Try File System Access API (showSaveFilePicker) on PC / supported desktop browsers
         if (typeof window !== 'undefined' && 'showSaveFilePicker' in window) {
             try {
                 const handle = await window.showSaveFilePicker({
@@ -951,7 +950,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                     title: 'Backup Saved Successfully',
                     message: 'Your visited sites backup file has been saved to your selected location.',
                     fileName: handle.name || fileName,
-                    folder: chosenFolder || 'Selected folder'
+                    folder: handle.name ? `Selected location (${handle.name})` : folderName
                 });
                 return;
             } catch (err) {
