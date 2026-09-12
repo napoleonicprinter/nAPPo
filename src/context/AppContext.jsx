@@ -879,26 +879,30 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const triggerFileDownload = (blob, fileName, jsonStr) => {
         try {
-            // Data URI download: Works 100% reliably on Android Chrome, iOS Safari, and mobile webviews
-            const encodedData = "data:application/json;charset=utf-8," + encodeURIComponent(jsonStr || '');
+            // Use application/octet-stream blob so mobile OS (Android & iOS) download managers force saving as binary file attachment to Downloads folder
+            const content = jsonStr || '';
+            const octetBlob = new Blob([content], { type: 'application/octet-stream' });
+            const url = URL.createObjectURL(octetBlob);
             const link = document.createElement('a');
-            link.href = encodedData;
+            link.href = url;
             link.download = fileName;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
         } catch (e) {
             try {
-                const url = URL.createObjectURL(blob);
+                const encodedData = "data:application/octet-stream;charset=utf-8," + encodeURIComponent(jsonStr || '');
                 const link = document.createElement('a');
-                link.href = url;
+                link.href = encodedData;
                 link.download = fileName;
                 link.style.display = 'none';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-                setTimeout(() => URL.revokeObjectURL(url), 1000);
             } catch (err) {
                 console.error("File download failed:", err);
             }

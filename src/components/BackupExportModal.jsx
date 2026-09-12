@@ -34,24 +34,41 @@ const BackupExportModal = () => {
     const jsonStr = backupExportInfo.jsonStr || '';
     const fileName = backupExportInfo.fileName || 'nappo_visited_sites.json';
 
-    // 1. Direct Data URI File Download Trigger (Guaranteed on Android & iOS)
+    // 1. Direct Binary Octet-Stream File Download Trigger (Forces Android Download Manager to save .json file to Downloads folder)
     const handleTriggerDownload = (e) => {
         if (e) e.stopPropagation();
         try {
-            const encodedData = "data:application/json;charset=utf-8," + encodeURIComponent(jsonStr || '');
+            const octetBlob = new Blob([jsonStr], { type: 'application/octet-stream' });
+            const url = URL.createObjectURL(octetBlob);
             const link = document.createElement('a');
-            link.href = encodedData;
+            link.href = url;
             link.download = fileName;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
 
             setDownloadedStatus(true);
             setTimeout(() => setDownloadedStatus(false), 4000);
         } catch (err) {
-            console.error("Direct download error:", err);
-            exportUserData('Downloads Folder');
+            try {
+                const encodedData = "data:application/octet-stream;charset=utf-8," + encodeURIComponent(jsonStr || '');
+                const link = document.createElement('a');
+                link.href = encodedData;
+                link.download = fileName;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setDownloadedStatus(true);
+                setTimeout(() => setDownloadedStatus(false), 4000);
+            } catch (e2) {
+                console.error("Direct download error:", e2);
+                exportUserData('Downloads Folder');
+            }
         }
     };
 
@@ -231,7 +248,7 @@ const BackupExportModal = () => {
                 {/* Action Buttons */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', marginBottom: '16px' }}>
 
-                    {/* Option 1: Direct File Download */}
+                    {/* Option 1: Direct Binary File Download */}
                     <button
                         type="button"
                         onClick={handleTriggerDownload}
@@ -254,7 +271,7 @@ const BackupExportModal = () => {
                         }}
                     >
                         <Download size={18} />
-                        <span>Download .JSON File Now</span>
+                        <span>Save .JSON File to Downloads Folder</span>
                     </button>
 
                     {/* Option 2: Copy to Clipboard */}
@@ -325,7 +342,7 @@ const BackupExportModal = () => {
                         <span>How to Find Your Downloaded File:</span>
                     </div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.45' }}>
-                        • 🤖 <strong>Android Phone:</strong> Open <strong>Files</strong> (or <em>My Files</em>) app &rarr; <strong>Downloads</strong> folder.<br />
+                        • 🤖 <strong>Android Phone:</strong> Open <strong>Files</strong> (or <em>My Files</em>) app &rarr; <strong>Downloads</strong> folder (or search for <em>nappo</em>).<br />
                         • 🍎 <strong>iPhone (iOS):</strong> Open <strong>Files</strong> app &rarr; <strong>On My iPhone</strong> (or <em>iCloud Drive</em>) &rarr; <strong>Downloads</strong>.
                     </div>
                 </div>
