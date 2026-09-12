@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { CheckCircle2, Download, Copy, Share2, FileText, X, Check, FolderCheck, ChevronDown, ChevronUp } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
@@ -34,45 +34,22 @@ const BackupExportModal = () => {
     const jsonStr = backupExportInfo.jsonStr || '';
     const fileName = backupExportInfo.fileName || 'nappo_visited_sites.json';
 
-    // 1. Direct Binary Octet-Stream File Download Trigger (Forces Android Download Manager to save .json file to Downloads folder)
-    const handleTriggerDownload = (e) => {
-        if (e) e.stopPropagation();
-        try {
-            const octetBlob = new Blob([jsonStr], { type: 'application/octet-stream' });
-            const url = URL.createObjectURL(octetBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = fileName;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            setTimeout(() => URL.revokeObjectURL(url), 10000);
+    // Create clean Blob Object URL for direct <a> tag download (Android Chrome & iOS Safari compatible)
+    const downloadBlobUrl = useMemo(() => {
+        if (!jsonStr) return '#';
+        const blob = new Blob([jsonStr], { type: 'application/octet-stream' });
+        return URL.createObjectURL(blob);
+    }, [jsonStr]);
 
-            setDownloadedStatus(true);
-            setTimeout(() => setDownloadedStatus(false), 4000);
-        } catch (err) {
-            try {
-                const encodedData = "data:application/octet-stream;charset=utf-8," + encodeURIComponent(jsonStr || '');
-                const link = document.createElement('a');
-                link.href = encodedData;
-                link.download = fileName;
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                setDownloadedStatus(true);
-                setTimeout(() => setDownloadedStatus(false), 4000);
-            } catch (e2) {
-                console.error("Direct download error:", e2);
-                exportUserData('Downloads Folder');
+    useEffect(() => {
+        return () => {
+            if (downloadBlobUrl && downloadBlobUrl.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadBlobUrl);
             }
-        }
-    };
+        };
+    }, [downloadBlobUrl]);
 
-    // 2. Copy JSON to Clipboard
+    // 1. Copy JSON to Clipboard
     const handleCopyToClipboard = async () => {
         try {
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -95,9 +72,27 @@ const BackupExportModal = () => {
         }
     };
 
-    // 3. Share Backup via Native Text Share Sheet (WhatsApp, Email, Drive, Notes)
+    // 2. Share Backup via Native System Share Sheet (Supports native "Save to Device / Files / Downloads")
     const handleShareText = async () => {
         if (typeof window !== 'undefined' && navigator.share) {
+            try {
+                // Try sharing actual file attachment if browser supports file sharing
+                const file = new File([jsonStr], fileName, { type: 'application/json' });
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        files: [file],
+                        title: 'nAPPo Trails Backup Data',
+                        text: 'nAPPo Trails visited sites backup file.'
+                    });
+                    setDownloadedStatus(true);
+                    setTimeout(() => setDownloadedStatus(false), 5000);
+                    return;
+                }
+            } catch (err) {
+                if (err && err.name === 'AbortError') return;
+                console.log("File share failed, falling back to text share:", err);
+            }
+
             try {
                 await navigator.share({
                     title: 'nAPPo Trails Backup Data',
@@ -153,25 +148,15 @@ const BackupExportModal = () => {
                 }}
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close Button */}
+                {/* Close Button (Red and white modal-close-btn) */}
                 <button
                     type="button"
+                    className="modal-close-btn"
                     onClick={() => setShowBackupExportModal(false)}
-                    style={{
-                        position: 'absolute',
-                        top: '14px',
-                        right: '14px',
-                        background: 'transparent',
-                        border: 'none',
-                        color: 'var(--text-secondary)',
-                        cursor: 'pointer',
-                        padding: '4px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
+                    title="Close"
+                    style={{ position: 'absolute', top: '15px', right: '15px' }}
                 >
-                    <X size={20} />
+                    <X size={18} strokeWidth={2.5} color="white" />
                 </button>
 
                 {/* Status Badge */}
@@ -197,7 +182,7 @@ const BackupExportModal = () => {
                 </h2>
 
                 <p style={{ margin: '0 0 16px 0', fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
-                    Your visited sites backup file has been generated. Use any option below to download or copy your backup:
+                    Your visited sites backup file has been generated. Tap below to save your backup file directly to your phone's Downloads folder:
                 </p>
 
                 {/* File Details Box */}
@@ -241,38 +226,50 @@ const BackupExportModal = () => {
                         }}
                     >
                         <Check size={16} />
-                        <span>{fileName} downloaded to Downloads folder!</span>
+                        <span>{fileName} saved to Downloads folder!</span>
                     </div>
                 )}
 
                 {/* Action Buttons */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', marginBottom: '16px' }}>
 
-                    {/* Option 1: Direct Binary File Download */}
-                    <button
-                        type="button"
-                        onClick={handleTriggerDownload}
+                    {/* Option 1: Direct Real <a> Link Download (Required for Android Chrome compatibility) */}
+                    <a
+                        href={downloadBlobUrl}
+                        download={fileName}
+                        onClick={() => {
+                            setDownloadedStatus(true);
+                            setTimeout(() => setDownloadedStatus(false), 5000);
+                        }}
                         style={{
                             width: '100%',
-                            padding: '12px',
-                            borderRadius: '12px',
-                            border: '1px solid var(--accent-primary)',
-                            backgroundColor: 'var(--accent-primary)',
-                            color: '#fff',
-                            fontWeight: 700,
-                            fontSize: '0.9rem',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '8px',
-                            boxShadow: '0 4px 12px rgba(88, 166, 255, 0.3)',
-                            transition: 'all 0.2s ease'
+                            textDecoration: 'none',
+                            display: 'block'
                         }}
                     >
-                        <Download size={18} />
-                        <span>Save .JSON File to Downloads Folder</span>
-                    </button>
+                        <div
+                            style={{
+                                width: '100%',
+                                padding: '12px',
+                                borderRadius: '12px',
+                                border: '1px solid var(--accent-primary)',
+                                backgroundColor: 'var(--accent-primary)',
+                                color: '#fff',
+                                fontWeight: 700,
+                                fontSize: '0.9rem',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '8px',
+                                boxShadow: '0 4px 12px rgba(88, 166, 255, 0.3)',
+                                boxSizing: 'border-box'
+                            }}
+                        >
+                            <Download size={18} />
+                            <span>Save .JSON File to Downloads Folder</span>
+                        </div>
+                    </a>
 
                     {/* Option 2: Copy to Clipboard */}
                     <button
