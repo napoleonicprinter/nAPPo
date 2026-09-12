@@ -879,15 +879,13 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const triggerFileDownload = (blob, fileName, jsonStr) => {
         try {
-            // Use application/octet-stream blob so mobile OS (Android & iOS) download managers force saving as binary file attachment to Downloads folder
+            // Use application/octet-stream blob so mobile OS (Android & iOS) download managers force saving as binary file attachment
             const content = jsonStr || '';
             const octetBlob = new Blob([content], { type: 'application/octet-stream' });
             const url = URL.createObjectURL(octetBlob);
             const link = document.createElement('a');
             link.href = url;
             link.download = fileName;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
@@ -956,13 +954,12 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         }
 
-        // 2. On Android / Mobile / Tablet and all standard browsers:
-        // Trigger browser file download directly & immediately show BackupExportModal on screen
-        triggerFileDownload(blob, fileName, jsonStr);
+        // 2. On Android / Mobile / Tablet and standard web browsers:
+        // Set backup info and immediately open BackupExportModal (prevents white screens and target="_blank" popups)
         setBackupExportInfo({
             isSaved: true,
-            title: 'Backup Saved Successfully',
-            message: 'Your visited sites backup file has been generated and saved to your device.',
+            title: 'Backup Ready & Saved',
+            message: 'Your visited sites backup file has been generated. Tap below to save your backup file directly to your device:',
             fileName: fileName,
             folder: folderName,
             jsonStr: jsonStr
