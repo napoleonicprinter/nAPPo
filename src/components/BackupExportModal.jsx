@@ -19,20 +19,8 @@ const BackupExportModal = () => {
     const [downloadedStatus, setDownloadedStatus] = useState(false);
     const [showRawText, setShowRawText] = useState(false);
 
-    useEffect(() => {
-        if (showBackupExportModal) {
-            registerBackHandler('backupExportModal', () => {
-                setShowBackupExportModal(false);
-            }, 95);
-            return () => unregisterBackHandler('backupExportModal');
-        }
-    }, [showBackupExportModal, registerBackHandler, unregisterBackHandler, setShowBackupExportModal]);
-
-    if (!showBackupExportModal || !backupExportInfo) return null;
-
-    const isDark = theme === 'dark';
-    const jsonStr = backupExportInfo.jsonStr || '';
-    const fileName = backupExportInfo.fileName || 'nappo_visited_sites.json';
+    const jsonStr = backupExportInfo?.jsonStr || '';
+    const fileName = backupExportInfo?.fileName || 'nappo_visited_sites.json';
 
     // Create clean Blob Object URL for direct <a> tag download (Android Chrome & iOS Safari compatible)
     const downloadBlobUrl = useMemo(() => {
@@ -48,6 +36,19 @@ const BackupExportModal = () => {
             }
         };
     }, [downloadBlobUrl]);
+
+    useEffect(() => {
+        if (showBackupExportModal) {
+            registerBackHandler('backupExportModal', () => {
+                setShowBackupExportModal(false);
+            }, 95);
+            return () => unregisterBackHandler('backupExportModal');
+        }
+    }, [showBackupExportModal, registerBackHandler, unregisterBackHandler, setShowBackupExportModal]);
+
+    if (!showBackupExportModal || !backupExportInfo) return null;
+
+    const isDark = theme === 'dark';
 
     // 1. Copy JSON to Clipboard
     const handleCopyToClipboard = async () => {
