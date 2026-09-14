@@ -12,7 +12,7 @@ const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const ShowsCalendarModal = ({ onClose, showsData, onDayClick }) => {
     const [month, setMonth] = useState(new Date().getMonth());
-    const [gridYear, setGridYear] = useState(2026); // Shows are mainly in 2026
+    const [gridYear, setGridYear] = useState(() => new Date().getFullYear());
 
     useBackHandler('showsCalendarModalSelf', !!onClose, () => onClose && onClose(), 38);
 

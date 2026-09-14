@@ -2742,6 +2742,7 @@
     },
     {
         "id": "314",
+        "siteId": "570",
         "title": "Kutuzov's Council of Fili",
         "description": " In a modest log cabin in the village of Fili, just outside Moscow, Russian General Mikhail Kutuzov convened a legendary council of war. Despite fierce opposition from several generals, Kutuzov made the agonizing strategic decision to abandon Moscow to Napoleon without a fight, famously declaring that losing Moscow did not mean losing Russia, whereas losing the army would mean losing both.",
         "date": "1812-09-13",
@@ -3413,7 +3414,7 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/John_Moore_(British_Army_officer)"
     },
     {
-        "id": "395",
+        "id": "396",
         "title": "Birth of Major-General Robert Craufurd",
         "date": "1764-05-05",
         "location": "Haverfordwest",
@@ -3422,7 +3423,7 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/Robert_Craufurd"
     },
     {
-        "id": "396",
+        "id": "397",
         "title": "Birth of William Carr Beresford",
         "date": "1768-10-02",
         "location": "Waterford County",
@@ -3431,7 +3432,7 @@
         "more_info_link": "https://www.dib.ie/biography/beresford-william-carr-a0606"
     },
     {
-        "id": "397",
+        "id": "398",
         "title": "Birth of General Miguel de Álava",
         "date": "1770-07-07",
         "location": "Vitoria-Gasteiz, Álava",
@@ -3440,7 +3441,7 @@
         "more_info_link": "https://www.dib.ie/biography/beresford-william-carr-a0606"
     },
     {
-        "id": "398",
+        "id": "399",
         "title": "Birth of General Palafox",
         "date": "1775-10-28",
         "location": "Vitoria-Gasteiz, Álava",
@@ -3449,21 +3450,13 @@
         "more_info_link": "https://www.elviajedelalibelula.com/single-post/2017/04/15/el-antiguo-palacio-palafox-zaragoza"
     },
     {
-        "id": "399",
+        "id": "400",
         "title": "Battle of Montebello",
         "date": "1800-06-09",
         "location": "Montebello della Battaglia, Lombardy",
         "country": "Italy",
         "description": "The action occurred in the Marengo campaign during the War of the Second Coalition. During the lead-up to the Battle of Marengo, the vanguard of the French army in Italy engaged and defeated an Austrian force in a 'glorious victory'",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montebello_(1800)"
-    },
-    {
-        "id": "400",
-        "title": "Danube river crossing",
-        "date": "1805-10-07",
-        "location": "Donauwörth",
-        "country": "Germany",
-        "description": "Napoleon directed the crossing of the Danube river from Donauwörth, Germany, at the begining of the German Campaign of the Third Coalition. He stayed in this city for two days."
     },
     {
         "id": "401",
@@ -3714,14 +3707,6 @@
         "description": "French 1st Hussars under Jacques Tilly halted a bogged-down Austrian advance led by Prince Friedrich von Hohenzollern at Langenau."
     },
     {
-        "id": "428",
-        "title": "General Jan Henryk Dąbrowski birth",
-        "siteId": 690,
-        "date": "1755-08-02",
-        "location": "Pierzchów, Poland",
-        "description": "He was born on August 2nd 1755 in Pierzchów. A prominent Polish military commander and national hero best known for organizing the Polish Legions in Italy during the Napoleonic Wars. His legacy is permanently immortalized in 'Mazurek Dąbrowskiego', the patriotic anthem he inspired that later became Poland's official national anthem."
-    },
-    {
         "id": "429",
         "title": "Clash at Herbrechtingen (Ulm campaign)",
         "siteId": 694,
@@ -3746,7 +3731,7 @@
         "description": "On October 17th 1805 Murat commanding the Reserve cavalry pursued twelve retreating Austrian corps cavalry squadrons commanded by Karl Philipp, Prince of Schwarzenberg."
     },
     {
-        "id": "422",
+        "id": "432",
         "title": "Capture of Veste Oberhaus",
         "siteId": 699,
         "date": "1805-10-25",
@@ -3754,7 +3739,7 @@
         "description": "On October 25th 1805 Austrian forces under Count Nostitz reduced the Bavarian garrison and captured the fortress."
     },
     {
-        "id": "423",
+        "id": "433",
         "title": "Battle of Lambach",
         "siteId": 700,
         "date": "1805-10-31",
@@ -3763,7 +3748,7 @@
         "description": "A series of sharp rearguard actions took place at Haag and Lambach on October 31, 1805, as the French III Corps under Marshal Davout clashed with the retreating Austro-Russian rearguard commanded by Prince Bagration and General Schustekh."
     },
     {
-        "id": "424",
+        "id": "434",
         "title": "Strub Pass clash",
         "siteId": 701,
         "date": "1805-11-02",
@@ -3772,7 +3757,7 @@
         "wikipedia_link": "https://de.wikipedia.org/wiki/Festung_Pass_Strub"
     },
     {
-        "id": "425",
+        "id": "435",
         "title": "Steyer clash",
         "siteId": 702,
         "date": "1805-11-04",
@@ -3781,7 +3766,7 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Steyr"
     },
     {
-        "id": "426",
+        "id": "436",
         "title": "Scharnitz clash",
         "siteId": 703,
         "date": "1805-11-04",
@@ -3790,7 +3775,7 @@
         "wikipedia_link": "https://de.wikipedia.org/wiki/Porta_Claudia"
     },
     {
-        "id": "427",
+        "id": "437",
         "title": "Leutasch clash",
         "siteId": 704,
         "date": "1805-11-04",
@@ -3798,35 +3783,35 @@
         "description": "On November 4 1805, Ney was able to overrun the fortified pass of Leutasch opening the road to Innsbruck."
     },
     {
-        "id": "428",
+        "id": "438",
         "title": "Marshall Ney enters Innsbruck",
         "date": "1805-11-07",
         "location": "Innsbruck, Austria",
         "description": "On November 7th 1805, as a result of a rapid mountain campaign consisting of smaller skirmishes and strategic maneuvering, Ney was able to capture teh city of Innsbruck. This helped secure the Alpine flank, preventing Austrian forces from assisting at the decisive Battle of Austerlitz."
     },
     {
-        "id": "429",
+        "id": "439",
         "title": "Rear guard action at San Pietro in Gu",
         "date": "1805-11-04",
         "location": "San Pietro in Gu, Padua, Italy",
         "description": "Archduke Charles retreated from the battlefield of Caldiero when the French forces commanded by General Molitor raached his rearguard commanded by General Frimont at San Pietro in Gu on November 4th. One battalion of the Kreutzer Grenz Infantry Regiment Nr. 5 was destroyed."
     },
     {
-        "id": "430",
+        "id": "440",
         "title": "Clash at Weyer",
         "date": "1805-11-07",
         "location": "Weyer, Austria",
         "description": "On November 7th 1805, was a small but successful military action where Marshal Auguste Marmont's French II Corps captured two battalions of Austrian troops under Count Maximilian von Merveldt which will not be fighting at Austerlitz."
     },
     {
-        "id": "431",
+        "id": "441",
         "title": "Kufstein fortress capitulation",
         "date": "1805-11-08",
         "location": "Kufstein, Austria",
         "description": "The Kufstein Fortress capitulated without a fight on November 8th 1805,allowing Franco-Bavarian forces to occupy the strategic stronghold. This surrender led to Tyrol being formally ceded to the Kingdom of Bavaria under the Peace of Pressburg."
     },
     {
-        "id": "432",
+        "id": "442",
         "siteId": 713,
         "title": "Combat at Mariazell",
         "date": "1805-11-08",
@@ -3835,7 +3820,7 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mariazell"
     },
     {
-        "id": "433",
+        "id": "443",
         "siteId": 714,
         "title": "Combat of Valvasone",
         "date": "1805-11-08",
@@ -3843,7 +3828,7 @@
         "description": "A minor rearguard action was fought at Valvasone, near the Tagliamento River, on November 11th 1805, where Austrian forces under Archduke Charles successfully fended off pursuing French cavalry during their retreat."
     },
     {
-        "id": "434",
+        "id": "444",
         "siteId": 715,
         "title": "Capitulation of Dornbirn",
         "date": "1805-11-13",
@@ -3851,7 +3836,7 @@
         "description": "The Austrain forces commanded by Feldmarschall-Leutnant Franz Jellacic were isolated near Lake Constance  by superior numbers of French troops under Marshal Pierre Augereau. On November 13th 1805 (some authors state it was on the 15th) Jellacic surrendered the infantry and artillery under his command. However, his cavalry managed to escape to Bohemia."
     },
     {
-        "id": "435",
+        "id": "445",
         "siteId": 716,
         "title": "Battlefield of Schöngrabern",
         "date": "1805-11-16",
@@ -3860,7 +3845,7 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sch%C3%B6ngrabern"
     },
     {
-        "id": "436",
+        "id": "446",
         "siteId": 717,
         "title": "Birth of General Rowland Hill",
         "date": "1772-11-08",
@@ -3869,7 +3854,7 @@
         "wikipedia_link": "https://en.wikipedia.org/wiki/Rowland_Hill,_1st_Viscount_Hill"
     },
     {
-        "id": "437",
+        "id": "447",
         "siteId": 719,
         "title": "Combat of Gradisca",
         "date": "1805-11-16",
@@ -3877,7 +3862,7 @@
         "description": "On November 16th 1805, Austrian forces under Karl von Vincent successfully held off an attempt by French general Claude-Prieur Molitor's forces to cross the Isonzo River at Gradisca d'Isonzo, as Archduke Charles's Austrian army retreated eastward."
     },
     {
-        "id": "438",
+        "id": "448",
         "siteId": 771,
         "title": "Skirmish at Flitscher-Klause",
         "date": "1805-11-19",
@@ -3885,7 +3870,7 @@
         "description": "On November 19th 1805, two Austrian battalions under command of General Major Siegenthal stop the advance of Brigade General Lacour's four dragoon regiments."
     },
     {
-        "id": "439",
+        "id": "449",
         "siteId": 776,
         "title": "Death of General Gudin",
         "date": "1812-08-22",
@@ -3893,14 +3878,14 @@
         "description": "General Gudin was mortally wounded on August 19th, 1812, during the Battle of Borodino. He was evacuated to the Smolensk hospital, where his leg was amputated. He died a few days later despite treatment. By Napoleon's order, Gudin was buried in a single grave on one of the bastions of the Royal Fortress, to the right of the entrance to the fortification."
     },
     {
-        "id": "440",
+        "id": "450",
         "title": "Surrender of Huningue garrison",
         "date": "1815-08-26",
         "location": "Huningue, France",
         "description": "General Barbanègre , at the head of a garrison of fewer than 400 men, held the city for two months against an Austrian force of 20.000 men, even though Napoleon had abdicated nearly 20 days earlier. Upon his surrender,August 26The city was nothing but a ruin.After Napoleon's second abdication, the fortress of Huningue remained in French hands, loyal to the former emperor. However, an Allied army under the command of the Duke of Wellington besieged the fortress. On August 26th, 1815, the French garrison surrendered."
     },
     {
-        "id": "441",
+        "id": "451",
         "title": "Battle of Castelfranco Veneto",
         "siteId": 799,
         "date": "1805-11-24",
@@ -3908,7 +3893,7 @@
         "description": "Two divisions of the French Army of Italy confronted an Austrian brigade led by Louis Victor Meriadec de Rohan-Guéméné. The Austrians had made a remarkable march from deep in the Alps to the plains of northern Italy. But, caught between the divisions of Jean Reynier and Laurent Gouvion Saint-Cyr, Rohan surrendered his command after failing to fight his way out."
     },
     {
-        "id": "442",
+        "id": "452",
         "title": "Battle of Stecken",
         "siteId": 802,
         "date": "1805-12-05",
@@ -3916,7 +3901,7 @@
         "description": "Fought on December 5th 1805, resulting in an Austrian victory over Napoleon's Bavarian allies. Fought just a few days after the major French victory at Austerlitz—though the engaged forces were initially unaware of that outcome—it involved a surprise Austrian counter-attack led by Prince Friedrich of Hohenzollern-Hechingen and Archduke Ferdinand against Bavarian forces commanded by Carl Philipp von Wrede."
     },
     {
-        "id": "443",
+        "id": "453",
         "title": "Battle of Wonau",
         "siteId": 803,
         "date": "1805-12-02",
@@ -3924,15 +3909,7 @@
         "description": "Fought on December 5th 1805, resulting in an Austrian victory over Napoleon's Bavarian allies. Fought just a few days after the major French victory at Austerlitz—though the engaged forces were initially unaware of that outcome—it involved a surprise Austrian counter-attack led by Prince Friedrich of Hohenzollern-Hechingen and Archduke Ferdinand against Bavarian forces commanded by Carl Philipp von Wrede."
     },
     {
-        "id": "443",
-        "title": "Battle of Lippa",
-        "siteId": 804,
-        "date": "1805-12-06",
-        "location": "Studena, Croatia",
-        "description": "The Battle of Lippa was a minor rearguard engagement fought on December 6th 1805 occurring just four days after Napoleon's decisive triumph at the Battle of Austerlitz"
-    },
-    {
-        "id": "444",
+        "id": "454",
         "title": "Battle of St. Mathia",
         "siteId": 805,
         "date": "1805-12-09",
@@ -3940,7 +3917,7 @@
         "description": "This was the last clash for the campaign, between French and Austrian forces fought on December 9th 1805."
     },
     {
-        "id": "445",
+        "id": "455",
         "title": "Battle of Prenzlau",
         "siteId": 806,
         "date": "1806-10-28",
@@ -3949,7 +3926,7 @@
         "description": "In the Battle of Prenzlau or Capitulation of Prenzlau on October 28th 1806 two divisions of French cavalry and some infantry led by Marshal Joachim Murat intercepted a retreating Prussian corps led by Frederick Louis, Prince of Hohenlohe-Ingelfingen."
     },
     {
-        "id": "446",
+        "id": "456",
         "title": "Arc de Triumphe construction begins",
         "siteId": 3,
         "date": "1806-08-15",
@@ -3957,7 +3934,7 @@
         "description": "It was commissioned in 1806, after the victory at Austerlitz by Emperor Napoleon at the peak of his successes. Laying the foundations alone took two years and in 1810, when Napoleon entered Paris from the west with his new bride, Archduchess Marie-Louise of Austria, he had a wooden mock-up of the completed arch constructed. The architect, Jean-François Chalgrin, died in 1811 and the work was taken over by Louis-Robert Goust."
     },
     {
-        "id": "447",
+        "id": "457",
         "title": "Siege of Gaeta",
         "siteId": 813,
         "date": "1806-02-26",
@@ -3966,7 +3943,7 @@
         "description": "The fortress city of Gaeta and its Neapolitan garrison under General Louis of Hesse-Philippsthal were besieged from February 26th to July 18th 1806 by an Imperial French corps led by Marshal André Masséna. After a prolonged defense in which Hesse was severely wounded, Gaeta surrendered, and Masséna granted its garrison generous terms."
     },
     {
-        "id": "448",
+        "id": "458",
         "title": "Siege of Ragusa ",
         "siteId": 814,
         "date": "1806-05-27",
@@ -3975,7 +3952,7 @@
         "description": "After French occupied the maritime republic of Ragusa, Russian and allied forces under the leadership of Vice Admiral Dmitry Senyavin laid siege to it for months."
     },
     {
-        "id": "449",
+        "id": "459",
         "title": "Invasion of Capri",
         "siteId": 818,
         "date": "1808-10-04",
@@ -3984,7 +3961,7 @@
         "description": "The invasion of Capri was the successful recapture of the Italian island of Capri from Britain by the Kingdom of Naples on 4–18 October 1808."
     },
     {
-        "id": "450",
+        "id": "460",
         "title": "Napoleon assassination attempt at Schönbrunn",
         "siteId": 819,
         "date": "1809-10-12",
@@ -3993,7 +3970,7 @@
         "description": "On October 12th 1809, a young German theology student named Friedrich Staps attempted to assassinate Napoleon in the gardens of Schönbrunn Palace, where the Emperor was holding court. Staps, armed with a large dagger, was arrested before he could reach Napoleon, and later executed."
     },
     {
-        "id": "451",
+        "id": "461",
         "title": "Bernadotte was elected the Crown Prince of Sweeden",
         "date": "1810-08-21",
         "location": "Stockholm, Sweden",
@@ -4001,7 +3978,7 @@
         "description": "Thanks to the advocacy of Baron Carl Otto Mörner, Bernadotte was elected Crown Prince on August 21st 1810. This was partly because a large sector of the Swedish army, anticipating future complications with Russia, favored the choice of a soldier as heir, and partly also because Bernadotte was very popular in Sweden, due to the chivalry with which he had treated Swedish prisoners during the last war with Denmark."
     },
     {
-        "id": "452",
+        "id": "462",
         "siteId": "858",
         "title": "Combat at Obidos",
         "date": "1808-08-15",
@@ -4009,7 +3986,7 @@
         "description": "This was the first clash of the Peninsular War. On August 15th 1808 four companies of riflemen from the 60th and 95th regiments encounter French troops of General Delaborde. British reinforcements under Major-General Spencer saved the day."
     },
     {
-        "id": "453",
+        "id": "463",
         "siteId": "295",
         "title": "Battle of Maida",
         "date": "1806-07-04",
@@ -4018,7 +3995,7 @@
         "description": "The Battle of Maida was fought on July 4th 1806 between the British and French armies outside Maida, Calabria."
     },
     {
-        "id": "454",
+        "id": "464",
         "siteId": "869",
         "title": "Birth of General Antoine-François Andréossy",
         "date": "1761-03-06",
@@ -4027,7 +4004,7 @@
         "description": "Antoine-François, comte Andréossy was born on March 6th 1761 at his place. He was a Franco-Italian nobleman, who served as a French Army artillery general, diplomat and parliamentarian."
     },
     {
-        "id": "455",
+        "id": "465",
         "siteId": "886",
         "title": "Battle of Campo Tenese",
         "date": "1806-03-09",
@@ -4036,7 +4013,7 @@
         "description": "On March 9, 1806, Jean Reynier led two divisions of the French Army of Naples in an attack against the left wing of Roger de Damas's Royal Neapolitan Army at Campotenese."
     },
     {
-        "id": "456",
+        "id": "466",
         "siteId": "887",
         "title": "Surrender at Monteleone",
         "date": "1806-07-06",
@@ -4045,7 +4022,7 @@
         "description": "During the Invasion of Naples and two days after the Battle of Maida, on July 6th 1806, a half-battalion of the Polish-Italian Legion stationed at Monteleone surrendered to British General John Stuart."
     },
     {
-        "id": "457",
+        "id": "467",
         "siteId": "888",
         "title": "Surrender at Tropea Castle",
         "date": "1806-07-06",
@@ -4053,7 +4030,7 @@
         "description": "On 8 July 1806, during the invasion of Naples, 400 Polish soldiers surrendered at Tropea Castle to the captain of HMS Apollo."
     },
     {
-        "id": "458",
+        "id": "468",
         "siteId": "889",
         "title": "Surrender at Reggio",
         "date": "1806-07-09",
@@ -4061,7 +4038,7 @@
         "description": "At 7:00 AM on July 9, General Broderick landed 1,200 Anglo-Sicilian troops south of Reggio. Joined by Captain William Hoste in the HMS Amphion, they launched a dual land and sea assault on the town. By evening, under heavy bombardment, the 632 French defenders surrendered."
     },
     {
-        "id": "459",
+        "id": "469",
         "siteId": "890",
         "title": "First Siege of Scylla",
         "date": "1806-07-12",
@@ -4070,12 +4047,68 @@
         "description": "The first siege of Scylla (Scilla) took place from 12 to 24 July 1806 in Calabria, southern Italy, during the British expedition to Sicily aimed at countering the French invasion of the Kingdom of Naples."
     },
     {
-        "id": "460",
+        "id": "470",
         "siteId": "891",
         "title": "Second Siege of Scylla",
         "date": "1808-02-07",
         "location": "Scilla, Reggio, Calabria",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
         "description": "It lasted from February 7th until the 17th 1808. A British garrison under severe pressure held out against a heavy ten-day French bombardment. Recognizing that the heavily damaged fort could no longer be maintained, the British forces executed a successful evacuation by sea under enemy fire, safely retreating across the straits to Sicily while the French retook control of the castle."
+    },
+    {
+        "id": "471",
+        "siteId": "894",
+        "title": "Armistice between France and Austria",
+        "date": "1805-12-06",
+        "location": "Slavkov u Brna, Czech Republic",
+        "description": "On December 6th 1805, at the Austerlitz Castle, the armistice between the French and the Austrians was signed by Marshal Berthier and the Prince of Liechtenstein."
+    },
+    {
+        "id": "472",
+        "siteId": "96",
+        "title": "Emperors Napoleon I and Francis II meeting",
+        "date": "1805-12-04",
+        "location": "Jáňův Dvůr, Czech Republic",
+        "description": "Napoleon and Francis II met to discuss peace two days after the battle in a small town 16 kilometers south of Austerlitz"
+    },
+    {
+        "id": "473",
+        "siteId": "894",
+        "title": "Armistice between France and Austria",
+        "date": "1805-12-06",
+        "location": "Slavkov u Brna, Czech Republic",
+        "description": "On December 6th 1805, at the Austerlitz Castle, the armistice between the French and the Austrians was signed by Marshal Berthier and the Prince of Liechtenstein."
+    },
+    {
+        "id": "474",
+        "title": "Danube river crossing",
+        "date": "1805-10-07",
+        "location": "Donauwörth",
+        "country": "Germany",
+        "description": "Napoleon directed the crossing of the Danube river from Donauwörth, Germany, at the begining of the German Campaign of the Third Coalition. He stayed in this city for two days."
+    },
+    {
+        "id": "475",
+        "title": "General Jan Henryk Dąbrowski birth",
+        "siteId": 690,
+        "date": "1755-08-02",
+        "location": "Pierzchów, Poland",
+        "description": "He was born on August 2nd 1755 in Pierzchów. A prominent Polish military commander and national hero best known for organizing the Polish Legions in Italy during the Napoleonic Wars. His legacy is permanently immortalized in 'Mazurek Dąbrowskiego', the patriotic anthem he inspired that later became Poland's official national anthem."
+    },
+    {
+        "id": "476",
+        "title": "Battle of Lippa",
+        "siteId": 804,
+        "date": "1805-12-06",
+        "location": "Studena, Croatia",
+        "description": "The Battle of Lippa was a minor rearguard engagement fought on December 6th 1805 occurring just four days after Napoleon's decisive triumph at the Battle of Austerlitz"
+    },
+    {
+        "id": "477",
+        "siteId": "894",
+        "title": "Proclamation to the Grande Armée",
+        "date": "1805-12-03",
+        "location": "Slavkov u Brna, Czech Republic",
+        "description": "Napoleon's famous speech after the victory at the Battle of Austerlitz (officially known as the Proclamation to the Grande Armée) was dictated on December 3rd 1805, one day after the battle, and was delivered from the balcony of the Austerlitz Castle."
     }
 ]

@@ -1139,7 +1139,7 @@
     "description": "Obelisco conmemorativo de la batalla de Villagodio. «Los zamoranos de 1908 dedican esta inscripción a los héroes del 6 de enero de 1809. Este monumento fue erigido en 1819",
     "latitude": 41.52777,
     "longitude": -5.702213,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Obelisco_de_la_Batalla_de_Villagodio.JPG",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Villagodio.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Villagodio",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -2394,7 +2394,7 @@
     "description": "Data del siglo XII y fue destruido en 1811 por las tropas francesas para evitar fuera refugio de guerrilleros.",
     "latitude": 40.172433,
     "longitude": -6.780583,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Vista_del_Castillo_de_Trevejo.jpg/1280px-Vista_del_Castillo_de_Trevejo.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Trevejo.webp",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
   },
@@ -2409,7 +2409,7 @@
     "description": "A cannonball fired in 1809 by Napoleonic troops remains embedded in the Old Town Hall tower.",
     "latitude": 48.143785,
     "longitude": 17.108657,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Vista_del_Castillo_de_Trevejo.jpg/1280px-Vista_del_Castillo_de_Trevejo.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/cannonball.webp",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
   },
@@ -16299,5 +16299,50 @@
     "defeated": "Britain",
     "special": "Naples Invasion",
     "createDate": "2026-09-11"
+  },
+  {
+    "id": "892",
+    "name": "The Rifleman's Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1917",
+    "location": "Winchester",
+    "country": "England",
+    "description": "The Rifleman Museum is dedicated to the history of the Rifleman, which played a significant role in the Peninsular War. Its  collection contains uniforms from all periods of the history of Riflemen – from the only surviving 5/60th Rifles Officer’s uniform and the Duke of Wellington’s Rifle Brigade court dress and a 25 square metre model of the Battle of Waterloo featuring 30,000 model soldiers and horses.",
+    "latitude": 51.062461,
+    "longitude": -1.320276,
+    "site_link": "https://riflemansmuseum.co.uk/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Rifleman_museum.webp",
+    "createDate": "2026-09-11"
+  },
+  {
+    "id": "893",
+    "name": "Expozice Austerlitz 1805",
+    "category": "Museum",
+    "significance": 2,
+    "year": "2026",
+    "location": "Slavkov u Brna",
+    "country": "Czech Republic",
+    "description": "Inaugurated on May 6th 2026, it provides a modern, immersive look at the Battle of Austerlitz (December 2, 1805)—widely considered Napoleon Bonaparte's greatest military masterpiece—and its profound geopolitical impact on Europe.",
+    "latitude": 49.154731,
+    "longitude": 16.875960,
+    "site_link": "https://www.zamek-slavkov.cz/en/the-austerlitz-1805-exhibition/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_Exhibition.webp",
+    "createDate": "2026-09-14"
+  },
+  {
+    "id": "894",
+    "name": "Austerlitz Castle",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1805",
+    "location": "Slavkov u Brna",
+    "country": "Czech Republic",
+    "description": "Following the Battle of Austerlitz on December 2, 1805, Napoleon established his headquarters at the Slavkov Castle (historically known as Austerlitz Castle) in Moravia. It was from this baroque residence that the French Emperor dictated his famous proclamation to his soldiers ('Soldats, je suis content de vous...') and negotiated the armistice with the defeated Austrian Empire.",
+    "latitude": 49.154815,
+    "longitude": 16.874609,
+    "site_link": "https://www.zamek-slavkov.cz/en/history/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Slavkov_chateau.webp",
+    "createDate": "2026-09-14"
   }
 ]

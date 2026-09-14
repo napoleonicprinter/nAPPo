@@ -24,8 +24,9 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     useBackHandler('historyDateEvents', !!selectedDateEvents, () => setSelectedDateEvents(null), 40);
     useBackHandler('historyCalendarModalSelf', !selectedDateEvents && !isYearDropdownOpen && !!onClose, () => onClose(), 38);
 
-    // Use selected year to align weekdays, or 2024 (leap year) for 'All years' to ensure all days fit
-    const gridYear = selectedYear === 'All years' ? 2024 : selectedYear;
+    // Use selected year to align weekdays, or current year for 'All years'
+    const currentYear = new Date().getFullYear();
+    const gridYear = selectedYear === 'All years' ? currentYear : selectedYear;
 
     const currentYearEvents = useMemo(() => {
         // Find all events for the currently viewed month
