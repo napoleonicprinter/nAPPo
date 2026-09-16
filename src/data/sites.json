@@ -16344,5 +16344,20 @@
     "site_link": "https://www.zamek-slavkov.cz/en/history/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Slavkov_chateau.webp",
     "createDate": "2026-09-14"
+  },
+  {
+    "id": "895",
+    "name": "Jules Legendre's grave",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1840",
+    "location": "Dundee",
+    "country": "Scotland",
+    "description": "Jules Legendre served as a Lieutenant in the French Imperial Guard. Following his military service, he earned a living for his family as a French teacher, a profession later followed by several of his daughters and granddaughters. Born in Chartres (Eure-et-Loir, Centre, France) on February 28, 1785, he passed away on September 1, 1840, at the age of 55.",
+    "latitude": 56.461853,
+    "longitude": -2.973428,
+    "youtube_link": "https://youtu.be/VZhRDBSR3R4?si=GuHkzzqtZtijvZlr&t=4029",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legendre.webp",
+    "createDate": "2026-05-16"
   }
 ]
