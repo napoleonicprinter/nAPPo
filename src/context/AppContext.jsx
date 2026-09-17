@@ -450,13 +450,14 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
         return null;
     });
-    const [showManualLocationModal, setShowManualLocationModal] = useState(false);
-    const [locationMode, setLocationMode] = useState(() => {
-        return localStorage.getItem('locationMode') || 'none';
-    });
+    const [locationMode, setLocationMode] = useState('none');
 
     useEffect(() => {
-        localStorage.setItem('locationMode', locationMode);
+        if (locationMode === 'none') {
+            localStorage.removeItem('locationMode');
+        } else {
+            localStorage.setItem('locationMode', locationMode);
+        }
     }, [locationMode]);
 
     useEffect(() => {
