@@ -16595,5 +16595,22 @@
     "more_info_link": "https://manxnationalheritage.im/news/napoleonic-uniforms-conserving-the-manx-museum-collection/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Manx.webp",
     "createDate": "2026-09-16"
+  },
+  {
+    "id": "907",
+    "name": "Sohail Castle",
+    "category": "Battle landmark",
+    "significance": 2,
+    "year": "1810",
+    "location": " Fuengirola, Málaga",
+    "country": "Spain",
+    "description": "During the Battle of Fuengirola (October 14 - 15, 1810), Sohail Castle served as the strategic epicenter and defensive anchor for a small, heavily outnumbered Polish garrison fighting under the French Napoleonic Empire against a much larger British-Spanish expeditionary force.",
+    "latitude": 36.525340,
+    "longitude": -4.628957,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sohail_Castle",
+    "site_link": "https://www.castillosohail.es/historia.html",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sohail.webp",
+    "Special": "Peninsular_War",
+    "createDate": "2026-09-16"
   }
 ]

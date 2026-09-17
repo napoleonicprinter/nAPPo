@@ -364,7 +364,12 @@ const LocationCenteringHandler = () => {
             return;
         }
 
-        const currentKey = `${locationMode}-${userCoords.lat}-${userCoords.lon}`;
+        // For GPS mode ('geo'), center ONCE per locationMode activation to avoid
+        // re-zooming on continuous GPS watchPosition updates.
+        // For manual/city modes, center when the mode or coords change.
+        const currentKey = locationMode === 'geo'
+            ? locationMode
+            : `${locationMode}-${userCoords.lat}-${userCoords.lon}`;
 
         if (siteToOpenPopup) {
             // When opening a site card on map, mark current location key as handled
