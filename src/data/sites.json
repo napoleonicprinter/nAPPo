@@ -3478,6 +3478,12 @@
   },
   {
     "id": "170",
+    "site_link": [
+      {
+        "id": "900",
+        "title": "Artwork sketch"
+      }
+    ],
     "name": "Battlefield of Pyramids of Giza",
     "category": "Battle site",
     "significance": 3,
@@ -3604,7 +3610,7 @@
   },
   {
     "id": "176",
-    "name": "San Carlos Garden- Gen. Moore's Tomb",
+    "name": "San Carlos Garden- Gen. Moore's grave",
     "category": "Landmark",
     "significance": 1,
     "year": 1809,
@@ -6699,7 +6705,7 @@
     "description": "Second Lieutenant Marie Étienne Maximin died on June 28th 1815 in the Retz forest.",
     "latitude": 49.25817,
     "longitude": 3.10963,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tomb_Marie.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/grave_Marie.webp",
     "link": "https://www.lunion.fr/art/92706/article/2018-05-23/la-tombe-d-un-soldat-napoleonien-restauree-en-foret-de-villers-cotterets#:~:text=La%20s%C3%A9pulture%20du%20sous%2Dlieutenant%20Marie%2C%20situ%C3%A9e%20en,est%20mort%20le%2028%20juin%201815%20dans",
     "createDate": "2025-03-22T10:00:00Z"
   },
@@ -9332,6 +9338,12 @@
   },
   {
     "id": "463",
+    "relatedSites": [
+      {
+        "id": "896",
+        "title": "Poniatowski's death site"
+      }
+    ],
     "name": "Marshal Poniatowski's Birthplace",
     "date": "1763-05-07",
     "category": "Landmark",
@@ -9376,7 +9388,7 @@
   },
   {
     "id": "466",
-    "name": "Marshal Kellerman Tomb",
+    "name": "Marshal Kellerman grave",
     "category": "Monument",
     "significance": 3,
     "location": "Cimetière du Père-Lachaise (Division 18), Paris",
@@ -10102,7 +10114,7 @@
   },
   {
     "id": "515",
-    "name": "Tomb of the Maréchal Guillaume Brune",
+    "name": "Grave of the Maréchal Guillaume Brune",
     "category": "Landmark",
     "significance": 2,
     "location": "Saint Just Sauvage",
@@ -13567,7 +13579,7 @@
   },
   {
     "id": "725",
-    "name": "Tomb of General Dorsenne",
+    "name": "Grave of General Dorsenne",
     "category": "Monument",
     "significance": 1,
     "location": "Neuwiller-lès-Saverne, Bas-Rhin",
@@ -14179,7 +14191,7 @@
   },
   {
     "id": "766",
-    "name": "General François Durutte's Tomb",
+    "name": "General François Durutte's grave",
     "category": "Landmark",
     "significance": 2,
     "location": "Ypres",
@@ -14193,7 +14205,7 @@
   },
   {
     "id": "767",
-    "name": "Martin Le Graverand's Tomb",
+    "name": "Martin Le Graverand's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Ypres",
@@ -14206,7 +14218,7 @@
   },
   {
     "id": "768",
-    "name": "Lt. Colonel Philippe de Coenens's Tomb",
+    "name": "Lt. Colonel Philippe de Coenens's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Ypres",
@@ -14219,7 +14231,7 @@
   },
   {
     "id": "769",
-    "name": "Captain Lambert Joseph de Stuers's Tomb",
+    "name": "Captain Lambert Joseph de Stuers's grave",
     "category": "Landmark",
     "significance": 1,
     "location": "Ypres",
@@ -16350,8 +16362,9 @@
     "name": "Jules Legendre's grave",
     "category": "Landmark",
     "significance": 1,
+    "date": "1840-09-01",
     "year": "1840",
-    "location": "Dundee",
+    "location": "The Howff cemetery, Dundee",
     "country": "Scotland",
     "description": "Jules Legendre served as a Lieutenant in the French Imperial Guard. Following his military service, he earned a living for his family as a French teacher, a profession later followed by several of his daughters and granddaughters. Born in Chartres (Eure-et-Loir, Centre, France) on February 28, 1785, he passed away on September 1, 1840, at the age of 55.",
     "latitude": 56.461853,
@@ -16359,5 +16372,228 @@
     "youtube_link": "https://youtu.be/VZhRDBSR3R4?si=GuHkzzqtZtijvZlr&t=4029",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legendre.webp",
     "createDate": "2026-05-16"
+  },
+  {
+    "id": "896",
+    "name": "Manument to the fallen on May 11th 1813",
+    "category": "Monument",
+    "significance": 1,
+    "date": "2013-05-11",
+    "year": "2013",
+    "location": "Castro-Urdiales, Cantabria",
+    "country": "Spain",
+    "description": "This understated, presented on May 11th 2013, honors the heroic resistance of Castro's citizens and commemorates the more than 300 residents, including men, women, and children, who perished at the hands of the Napoleonic forces led by General Maximilien Foy.",
+    "latitude": 43.381651,
+    "longitude": -3.217360,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CastroUrdiales.webp",
+    "createDate": "2026-09-06"
+  },
+  {
+    "id": "897",
+    "relatedSites": [
+      {
+        "id": "463",
+        "title": "Poniatowski birthplace"
+      },
+      {
+        "id": "898",
+        "title": "Poniatowski's death tapestry"
+      }
+    ],
+    "name": "Poniatowski Memorial",
+    "category": "Monument",
+    "significance": 3,
+    "date": "2026-09-14",
+    "year": "2026",
+    "location": "Leipzig",
+    "country": "Germany",
+    "description": "This memorial was completely refurbished and re-unveiled on September 14, 2026. During the chaotic French retreat at the Battle of the Leipzig (Battle of the Nations), a key bridge was prematurely blown up. Already wounded multiple times, Poniatowski chose to attempt a crossing of the flooded Elstermühlgraben river on horseback rather than surrender, but tragically drowned on October 19, 1813.",
+    "latitude": 51.341235,
+    "longitude": 12.362691,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Poniatowski_memorial.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "898",
+    "relatedSites": [
+      {
+        "id": "897",
+        "title": "Poniatowski death site"
+      }
+    ],
+    "name": "Death of Prince Joseph Poniatowski",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1814",
+    "location": "Metropolitan Museum of Arts, New York",
+    "country": "United States",
+    "description": "This is an early 19th-century embroidered textile crafted from silk and metal thread on a silk backing. The composition is directly based on a well-known battle painting or lithograph by French artist Horace Vernet. (not on view - Photo: MET)",
+    "latitude": 40.7794,
+    "longitude": -73.963244,
+    "more_info_link": "https://www.metmuseum.org/art/collection/search/226553",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Poniatowski_tapestry.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "899",
+    "name": "Portrait of a 'Mamelouk'",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1810",
+    "location": "Metropolitan Museum of Arts (Gallery 804), New York",
+    "country": "United States",
+    "description": "Portrait of a 'Mamelouk' is an 1810 oil painting by the celebrated French battle painter Horace Vernet. It depicts an unidentified member of the elite Mamluk corps, a military unit conscripted into the French army following Napoleon Bonaparte's invasion of Egypt.",
+    "latitude": 40.7794,
+    "longitude": -73.963244,
+    "more_info_link": "https://www.metmuseum.org/art/collection/search/439337",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mameluke.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "900",
+    "relatedSites": [
+      {
+        "id": "170",
+        "title": "Battle site"
+      }
+    ],
+    "name": "Battle of the Pyramids, July 21, 1798",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1800",
+    "location": "Metropolitan Museum of Arts, New York",
+    "country": "United States",
+    "description": "'Battle of the Pyramids, July 21, 1798' is an energetic, ca. 1800 ink and wash study by François André Vincent created for an uncompleted commission from the French ministry to commemorate Napoleon's invasion of Egypt. The detailed composition contrasts the chaotic rush of the Mamluk cavalry against the highly disciplined, orderly ranks of the French military forces. (not on view - Photo: MET)",
+    "latitude": 40.7794,
+    "longitude": -73.963244,
+    "more_info_link": "https://www.metmuseum.org/art/collection/search/339816",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pyramids_sketch.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "901",
+    "name": "Battle of Kassel",
+    "category": "Battle site",
+    "special": [
+      "6",
+      "German Campaign"
+    ],
+    "significance": 1,
+    "year": "1813",
+    "date": "1813-09-29",
+    "location": "Cassel",
+    "country": "Germany",
+    "description": "On September 14, 1813, Russian Commander Alexandre Chernyshev launched a rapid and daring raid behind enemy lines with a force of Cossacks and regular cavalry. Intending to ignite a regional revolt, his troops advanced swiftly and attacked Cassel, the Westphalian capital, on September 29 1813.",
+    "latitude": 51.311883,
+    "longitude": 9.491575,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kassel.webp",
+    "victor": "Russia",
+    "defeated": "France",
+    "commanders": [
+      "Alexandre Chernyshev",
+      "Jacques Alexandre Allix"
+    ],
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "902",
+    "name": "Battle of Braunschweig",
+    "category": "Battle site",
+    "special": [
+      "6",
+      "German Campaign"
+    ],
+    "significance": 1,
+    "year": "1813",
+    "date": "1813-09-25",
+    "location": "Brunswick",
+    "country": "Germany",
+    "description": "On September 25, 1813, a Prussian force of 400 men under Lieutenant Colonel von der Marwitz successfully captured the walled town of Braunschweig from the occupying Westphalian forces. The panicked Westphalian garrison under General von Klösterlein dissolved and fled to Wolfsburg, resulting in zero Prussian casualties and the capture of 376 Westphalian troops.",
+    "latitude": 52.26779,
+    "longitude": 10.524567,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Braunschweig.webp",
+    "victor": "Prussia",
+    "defeated": "Westphalia",
+    "commanders": [
+      "Karl von Klösterlein)",
+      "Friedrich von der Marwitz"
+    ],
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "903",
+    "name": "Franciszek Młokosiewicz's grave",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1845",
+    "date": "1845-03-23",
+    "location": "Powązki Cemetery (sector 25 row 3), Warsaw",
+    "country": "Poland",
+    "description": "The impressive cast iron tombstone still exists. The inscription reads: Franciszek Młokosiewicz, former Polish soldier, was born on May 5, 1769, and died in Warsaw on March 23, 1845. He devoted his life to the service of his country and lived without fear of reproach. Honor to his memory! Eternal rest.",
+    "latitude": 52.253203,
+    "longitude": 20.975092,
+    "wikipedia_link": "https://pl.wikipedia.org/wiki/Franciszek_M%C5%82okosiewicz",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mlokosiewicz_grave.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "904",
+    "relatedSites": [
+      {
+        "id": "905",
+        "title": "Blayney's grave"
+      }
+    ],
+    "name": "General Blayney sabre",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1810",
+    "location": "Czartoryski Museum, Kraków",
+    "country": "Poland",
+    "description": "This weapon originally belonged to the British General Andrew Thomas Blayney. The sabre ended up in Poland after being captured by a contingent of Polish soldiers during the Battle of Fuengirola (Málaga, Spain) in 1810. During this historic clash, a vastly outnumbered Polish garrison successfully defended the local castle, defeating the British forces and taking General Blayney prisoner.",
+    "latitude": 50.06469,
+    "longitude": 19.940099,
+    "site_link": "https://mnk.pl/oddzialy/czartoryscy/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blayney_sabre.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "905",
+    "relatedSites": [
+      {
+        "id": "904",
+        "title": "Blayney surrended sabre"
+      }
+    ],
+    "name": "General Blayney's grave",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1834",
+    "date": "1834-04-08",
+    "location": "St. Maeldoid's Church Cemetery, Castleblayney, Monaghan County",
+    "country": "Ireland",
+    "description": "Following his sudden death at Bilton's Hotel in Dublin on April 8, 1834, his body was returned to the town he extensively developed and modernized during his lifetime. His tomb is located directly on the historic grounds of the St. Maeldoid's churchyard.",
+    "latitude": 54.118006,
+    "longitude": -6.732598,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Andrew_Blayney,_11th_Baron_Blayney",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blayney_grave.webp",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "906",
+    "name": "Manx Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1866",
+    "location": "Douglas",
+    "country": "Isle of Man",
+    "description": "The Manx Museum houses a rare collection of military uniforms, worn by local people during Napoleonic times. Captain Quilliam's naval uniform wore aboard HMS Victory at Trafalgar in 1805 and the light cavalry uniform worn on the battlefield at Waterloo by Caesar Bacon art part of its collection.",
+    "latitude": 54.154540,
+    "longitude": -4.481883,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Manx_Museum",
+    "site_link": "https://manxnationalheritage.im/our-sites/manx-museum/",
+    "more_info_link": "https://manxnationalheritage.im/news/napoleonic-uniforms-conserving-the-manx-museum-collection/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Manx.webp",
+    "createDate": "2026-09-16"
   }
 ]

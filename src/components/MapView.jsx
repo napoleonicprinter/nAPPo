@@ -359,16 +359,20 @@ const LocationCenteringHandler = () => {
     const lastCenteredKeyRef = useRef(null);
 
     useEffect(() => {
-        if (siteToOpenPopup) {
-            return;
-        }
-
         if (!userCoords?.lat || !userCoords?.lon) {
             lastCenteredKeyRef.current = null;
             return;
         }
 
         const currentKey = `${locationMode}-${userCoords.lat}-${userCoords.lon}`;
+
+        if (siteToOpenPopup) {
+            // When opening a site card on map, mark current location key as handled
+            // so clearing siteToOpenPopup to null won't trigger a flyTo userCoords.
+            lastCenteredKeyRef.current = currentKey;
+            return;
+        }
+
         if (lastCenteredKeyRef.current === currentKey) return;
 
         if (locationMode && locationMode !== 'none') {
@@ -618,12 +622,12 @@ const CustomZoomControl = ({ isMobileLike }) => {
     );
 };
 
-const FitFilteredSites = ({ sites, isFiltered, selectedSite }) => {
+const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup }) => {
     const map = useMap();
     const lastSitesRef = useRef("");
 
     useEffect(() => {
-        if (selectedSite) return;
+        if (selectedSite || siteToOpenPopup) return;
 
         const currentSitesKey = (sites || []).map(s => s.id).join(',');
 
@@ -638,7 +642,7 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite }) => {
                 duration: 1.5
             });
         }
-    }, [sites, isFiltered, map, selectedSite]);
+    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup]);
 
     return null;
 };
@@ -839,7 +843,7 @@ const MapView = () => {
                 <LocationMarker isFiltered={isFiltered} />
                 <LocationCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
-                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} />
+                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} />

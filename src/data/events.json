@@ -4110,5 +4110,21 @@
         "date": "1805-12-03",
         "location": "Slavkov u Brna, Czech Republic",
         "description": "Napoleon's famous speech after the victory at the Battle of Austerlitz (officially known as the Proclamation to the Grande Armée) was dictated on December 3rd 1805, one day after the battle, and was delivered from the balcony of the Austerlitz Castle."
+    },
+    {
+        "id": "478",
+        "siteId": "901",
+        "title": "Battle of Kassel",
+        "date": "1813-09-29",
+        "location": "Cassel, Germany",
+        "description": "On September 14, 1813, Russian Commander Alexandre Chernyshev launched a rapid and daring raid behind enemy lines with a force of Cossacks and regular cavalry. Intending to ignite a regional revolt, his troops advanced swiftly and attacked Cassel, the Westphalian capital, on September 29 1813."
+    },
+    {
+        "id": "479",
+        "siteId": "902",
+        "title": "Battle of Braunschweig",
+        "date": "1813-09-25",
+        "location": "Brunswick, Germany",
+        "description": "On September 25, 1813, a Prussian force of 400 men under Lieutenant Colonel von der Marwitz successfully captured the walled town of Braunschweig from the occupying Westphalian forces. The panicked Westphalian garrison under General von Klösterlein dissolved and fled to Wolfsburg, resulting in zero Prussian casualties and the capture of 376 Westphalian troops."
     }
 ]
