@@ -2,16 +2,56 @@ import React, { useState, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight, Map, ChevronUp } from 'lucide-react';
 import { useAppContext, useBackHandler } from '../context/AppContext';
+import { validateSiteFilters } from '../utils/filterValidation';
 import HistoryCalendarModal from './HistoryCalendarModal';
 import AnnouncementModal from './AnnouncementModal';
+import NavErrorModal from './NavErrorModal';
 import './AnnouncementModal.css';
 import './CardView.css';
 
 const EventsModal = ({ onClose }) => {
-    const { eventsData, messagesData, getPortalContainer, allSites, setView, setSelectedSite, setSiteToOpenPopup } = useAppContext();
+    const {
+        eventsData,
+        messagesData,
+        getPortalContainer,
+        allSites,
+        setView,
+        setSelectedSite,
+        setSiteToOpenPopup,
+        userCoords,
+        locationMode,
+        filterRadius,
+        setFilterRadius,
+        filterCategory,
+        setFilterCategory,
+        filterYear,
+        setFilterYear,
+        filterCommander,
+        setFilterCommander,
+        filterCountry,
+        setFilterCountry,
+        filterCoalition,
+        setFilterCoalition,
+        filterCampaign,
+        setFilterCampaign,
+        filterSignificance,
+        setFilterSignificance,
+        filterVisited,
+        setFilterVisited,
+        showArcOnly,
+        setShowArcOnly,
+        filterWithMaps,
+        setFilterWithMaps,
+        showOnlyNew,
+        setShowOnlyNew,
+        filterSearch,
+        setFilterSearch
+    } = useAppContext();
+
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [showAnnouncement, setShowAnnouncement] = useState(null);
     const [showTopBtn, setShowTopBtn] = useState(false);
+    const [navErrorModal, setNavErrorModal] = useState(null);
     const containerRef = useRef(null);
 
     const handleScroll = () => {
@@ -26,8 +66,40 @@ const EventsModal = ({ onClose }) => {
         }
     };
 
+    useBackHandler('eventsNavError', !!navErrorModal, () => setNavErrorModal(null), 50);
     useBackHandler('eventsHistoryCalendar', isCalendarOpen, () => setIsCalendarOpen(false), 35);
     useBackHandler('eventsAnnouncement', !!showAnnouncement, () => setShowAnnouncement(null), 35);
+
+    const filterContext = {
+        locationMode,
+        userCoords,
+        filterRadius,
+        setFilterRadius,
+        filterCategory,
+        setFilterCategory,
+        filterYear,
+        setFilterYear,
+        filterCommander,
+        setFilterCommander,
+        filterCountry,
+        setFilterCountry,
+        filterCoalition,
+        setFilterCoalition,
+        filterCampaign,
+        setFilterCampaign,
+        showArcOnly,
+        setShowArcOnly,
+        filterSignificance,
+        setFilterSignificance,
+        filterVisited,
+        setFilterVisited,
+        filterWithMaps,
+        setFilterWithMaps,
+        showOnlyNew,
+        setShowOnlyNew,
+        filterSearch,
+        setFilterSearch
+    };
 
     // Find active announcements within date range
     const activeMessages = useMemo(() => {
@@ -65,6 +137,12 @@ const EventsModal = ({ onClose }) => {
     const handleOpenOnMap = (siteId) => {
         const site = allSites.find(s => String(s.id) === String(siteId));
         if (site) {
+            const validation = validateSiteFilters(site, filterContext);
+            if (!validation.passed) {
+                setNavErrorModal(validation.errorData);
+                return;
+            }
+
             // 1. Close any existing full-screen detailed card
             setSelectedSite(null);
 
@@ -79,6 +157,17 @@ const EventsModal = ({ onClose }) => {
                 onClose();
             }, 100);
         }
+    };
+
+    const handleResetAndView = (targetSite) => {
+        setNavErrorModal(null);
+        setSelectedSite(null);
+        setSiteToOpenPopup(null);
+        setTimeout(() => {
+            setSiteToOpenPopup(targetSite);
+            setView('map');
+            onClose();
+        }, 50);
     };
 
     const todayString = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
@@ -249,6 +338,13 @@ const EventsModal = ({ onClose }) => {
                 <AnnouncementModal
                     message={showAnnouncement}
                     onClose={() => setShowAnnouncement(null)}
+                />
+            )}
+            {navErrorModal && (
+                <NavErrorModal
+                    errorData={navErrorModal}
+                    onClose={() => setNavErrorModal(null)}
+                    onResetAndView={handleResetAndView}
                 />
             )}
         </div>,

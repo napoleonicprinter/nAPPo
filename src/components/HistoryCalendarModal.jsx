@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon, Map } from 'lucide-react';
 import { useAppContext, useBackHandler } from '../context/AppContext';
+import { validateSiteFilters } from '../utils/filterValidation';
+import NavErrorModal from './NavErrorModal';
 import './HistoryCalendarModal.css';
 
 const MONTHS = [
@@ -14,15 +16,83 @@ const YEARS = ['All years', ...Array.from({length: 1815 - 1793 + 1}, (_, i) => 1
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
-    const { getPortalContainer, allSites, setView, setSelectedSite, setSiteToOpenPopup } = useAppContext();
+    const {
+        getPortalContainer,
+        allSites,
+        setView,
+        setSelectedSite,
+        setSiteToOpenPopup,
+        userCoords,
+        locationMode,
+        filterRadius,
+        setFilterRadius,
+        filterCategory,
+        setFilterCategory,
+        filterYear,
+        setFilterYear,
+        filterCommander,
+        setFilterCommander,
+        filterCountry,
+        setFilterCountry,
+        filterCoalition,
+        setFilterCoalition,
+        filterCampaign,
+        setFilterCampaign,
+        filterSignificance,
+        setFilterSignificance,
+        filterVisited,
+        setFilterVisited,
+        showArcOnly,
+        setShowArcOnly,
+        filterWithMaps,
+        setFilterWithMaps,
+        showOnlyNew,
+        setShowOnlyNew,
+        filterSearch,
+        setFilterSearch
+    } = useAppContext();
+
     const [month, setMonth] = useState(new Date().getMonth());
     const [selectedYear, setSelectedYear] = useState('All years');
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
     const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
+    const [navErrorModal, setNavErrorModal] = useState(null);
 
+    useBackHandler('historyNavError', !!navErrorModal, () => setNavErrorModal(null), 50);
     useBackHandler('historyYearDropdown', isYearDropdownOpen, () => setIsYearDropdownOpen(false), 45);
-    useBackHandler('historyDateEvents', !!selectedDateEvents, () => setSelectedDateEvents(null), 40);
-    useBackHandler('historyCalendarModalSelf', !selectedDateEvents && !isYearDropdownOpen && !!onClose, () => onClose(), 38);
+    useBackHandler('historyDateEvents', !!selectedDateEvents && !navErrorModal, () => setSelectedDateEvents(null), 40);
+    useBackHandler('historyCalendarModalSelf', !selectedDateEvents && !isYearDropdownOpen && !navErrorModal && !!onClose, () => onClose(), 38);
+
+    const filterContext = {
+        locationMode,
+        userCoords,
+        filterRadius,
+        setFilterRadius,
+        filterCategory,
+        setFilterCategory,
+        filterYear,
+        setFilterYear,
+        filterCommander,
+        setFilterCommander,
+        filterCountry,
+        setFilterCountry,
+        filterCoalition,
+        setFilterCoalition,
+        filterCampaign,
+        setFilterCampaign,
+        showArcOnly,
+        setShowArcOnly,
+        filterSignificance,
+        setFilterSignificance,
+        filterVisited,
+        setFilterVisited,
+        filterWithMaps,
+        setFilterWithMaps,
+        showOnlyNew,
+        setShowOnlyNew,
+        filterSearch,
+        setFilterSearch
+    };
 
     // Use selected year to align weekdays, or current year for 'All years'
     const currentYear = new Date().getFullYear();
@@ -98,6 +168,12 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     const handleOpenOnMap = (siteId) => {
         const site = allSites.find(s => String(s.id) === String(siteId));
         if (site) {
+            const validation = validateSiteFilters(site, filterContext);
+            if (!validation.passed) {
+                setNavErrorModal(validation.errorData);
+                return;
+            }
+
             // Close any existing full-screen detailed card
             setSelectedSite(null);
 
@@ -113,6 +189,18 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                 if (onCloseParent) onCloseParent(); // Close the Today in History modal (EventsModal)
             }, 100);
         }
+    };
+
+    const handleResetAndView = (targetSite) => {
+        setNavErrorModal(null);
+        setSelectedSite(null);
+        setSiteToOpenPopup(null);
+        setTimeout(() => {
+            setSiteToOpenPopup(targetSite);
+            setView('map');
+            onClose();
+            if (onCloseParent) onCloseParent();
+        }, 50);
     };
 
     // Calculate calendar grid
@@ -277,6 +365,13 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                     </div>
                 )}
             </div>
+            {navErrorModal && (
+                <NavErrorModal
+                    errorData={navErrorModal}
+                    onClose={() => setNavErrorModal(null)}
+                    onResetAndView={handleResetAndView}
+                />
+            )}
         </div>,
         getPortalContainer()
     );

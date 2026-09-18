@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
+import { validateSiteFilters } from '../utils/filterValidation';
+import NavErrorModal from './NavErrorModal';
 
 const getOnlineReadings = (site) => {
     if (!site) return [];
@@ -130,286 +132,43 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
 
     const [navErrorModal, setNavErrorModal] = useState(null);
 
-    const isCategorySelected = (targetSite) => {
-        if (!filterCategory || !Array.isArray(filterCategory) || filterCategory.length === 0) return true;
-        const hasTodaysBattle = filterCategory.includes("Today's Battle");
-        const otherCategories = filterCategory.filter(c => c !== "Today's Battle");
-
-        if (otherCategories.includes(targetSite.category)) return true;
-
-        if (hasTodaysBattle && (targetSite.category === 'Battle site' || targetSite.category === 'Naval battle') && targetSite.date) {
-            const today = new Date();
-            const parts = targetSite.date.split('-');
-            if (parts.length >= 3) {
-                const month = parseInt(parts[1], 10);
-                const day = parseInt(parts[2], 10);
-                if (month === today.getMonth() + 1 && day === today.getDate()) return true;
-            }
-        }
-
-        return false;
+    const filterContext = {
+        locationMode,
+        userCoords,
+        filterRadius,
+        setFilterRadius,
+        filterCategory,
+        setFilterCategory,
+        filterYear,
+        setFilterYear,
+        filterCommander,
+        setFilterCommander,
+        filterCountry,
+        setFilterCountry,
+        filterCoalition,
+        setFilterCoalition,
+        filterCampaign,
+        setFilterCampaign,
+        showArcOnly,
+        setShowArcOnly,
+        filterSignificance,
+        setFilterSignificance,
+        filterVisited,
+        setFilterVisited,
+        filterWithMaps,
+        setFilterWithMaps,
+        showOnlyNew,
+        setShowOnlyNew,
+        filterSearch,
+        setFilterSearch
     };
 
     const handleNavigateToSite = (targetSite) => {
         if (!targetSite) return;
 
-        const locationLabel = locationMode === 'geo'
-            ? 'My GPS Location'
-            : locationMode === 'manual'
-                ? 'Manual Location'
-                : (locationMode || 'selected location');
-
-        const failedFilters = [];
-
-        // 1. Category Filter
-        const catPass = isCategorySelected(targetSite);
-        if (!catPass) {
-            failedFilters.push({
-                type: 'category',
-                label: 'Category',
-                message: `category "${targetSite.category}" is not selected`,
-                reset: () => setFilterCategory([])
-            });
-        }
-
-        // 2. Area / Radius Filter
-        let dist = undefined;
-        if (userCoords && filterRadius && filterRadius !== 'all' && targetSite.latitude !== undefined && targetSite.longitude !== undefined) {
-            dist = calculateDistance(userCoords.lat, userCoords.lon, targetSite.latitude, targetSite.longitude);
-            const radiusLimit = parseInt(filterRadius, 10);
-            if (dist !== undefined && dist > radiusLimit) {
-                failedFilters.push({
-                    type: 'area',
-                    label: 'Area',
-                    message: `${filterRadius} km from ${locationLabel}`,
-                    distance: Math.round(dist),
-                    reset: () => setFilterRadius('all')
-                });
-            }
-        }
-
-        // 3. Year Filter
-        if (filterYear && filterYear !== 'all') {
-            const siteYearStr = targetSite.year ? String(targetSite.year).trim() : '';
-            if (siteYearStr !== filterYear) {
-                failedFilters.push({
-                    type: 'year',
-                    label: 'Year',
-                    message: `year "${targetSite.year || 'N/A'}" is not selected`,
-                    reset: () => setFilterYear('all')
-                });
-            }
-        }
-
-        // 4. Commander Filter
-        if (filterCommander && filterCommander !== 'all') {
-            const cmds = Array.isArray(targetSite.commanders) ? targetSite.commanders : [targetSite.commander].filter(Boolean);
-            if (!cmds.includes(filterCommander)) {
-                failedFilters.push({
-                    type: 'commander',
-                    label: 'Commander',
-                    message: `commander "${filterCommander}" is not selected`,
-                    reset: () => setFilterCommander('all')
-                });
-            }
-        }
-
-        // 5. Country Filter
-        if (filterCountry && filterCountry !== 'all') {
-            if (targetSite.country !== filterCountry) {
-                failedFilters.push({
-                    type: 'country',
-                    label: 'Country',
-                    message: `country "${targetSite.country || 'N/A'}" is not selected`,
-                    reset: () => setFilterCountry('all')
-                });
-            }
-        }
-
-        // 6. Coalition Filter
-        if (filterCoalition && filterCoalition !== 'all') {
-            const specList = targetSite.special ? (Array.isArray(targetSite.special) ? targetSite.special : [String(targetSite.special)]) : [];
-            if (!specList.includes(String(filterCoalition))) {
-                failedFilters.push({
-                    type: 'coalition',
-                    label: 'Coalition',
-                    message: `coalition filter "${filterCoalition}" is active`,
-                    reset: () => setFilterCoalition('all')
-                });
-            }
-        }
-
-        // 7. Campaign Filter
-        if (filterCampaign && filterCampaign !== 'all') {
-            const specList = targetSite.special ? (Array.isArray(targetSite.special) ? targetSite.special : [String(targetSite.special)]) : [];
-            if (!specList.includes(filterCampaign)) {
-                failedFilters.push({
-                    type: 'campaign',
-                    label: 'Campaign',
-                    message: `campaign filter "${filterCampaign}" is active`,
-                    reset: () => setFilterCampaign('all')
-                });
-            }
-        }
-
-        // 8. Arc de Triomphe Filter
-        if (showArcOnly) {
-            const specList = targetSite.special ? (Array.isArray(targetSite.special) ? targetSite.special : [String(targetSite.special)]) : [];
-            if (!specList.includes('arc')) {
-                failedFilters.push({
-                    type: 'arc',
-                    label: 'Arc de Triomphe',
-                    message: `site is not listed at the Arc de Triomphe`,
-                    reset: () => setShowArcOnly(false)
-                });
-            }
-        }
-
-        // 9. Significance Filter
-        if (filterSignificance && filterSignificance !== '') {
-            if (String(targetSite.significance) !== String(filterSignificance)) {
-                failedFilters.push({
-                    type: 'significance',
-                    label: 'Significance',
-                    message: `significance rating does not match filter (${filterSignificance} star${filterSignificance > 1 ? 's' : ''})`,
-                    reset: () => setFilterSignificance('')
-                });
-            }
-        }
-
-        // 10. Visited Filter
-        if (filterVisited && filterVisited !== 'all') {
-            if ((filterVisited === 'visited' && !targetSite.visited) || (filterVisited === 'unvisited' && targetSite.visited)) {
-                failedFilters.push({
-                    type: 'visited',
-                    label: 'Visited Status',
-                    message: `site is ${targetSite.visited ? 'visited' : 'unvisited'}, but filter is set to "${filterVisited}"`,
-                    reset: () => setFilterVisited('all')
-                });
-            }
-        }
-
-        // 11. With Maps Filter
-        if (filterWithMaps) {
-            if (getAvailableSiteMaps(targetSite).length === 0) {
-                failedFilters.push({
-                    type: 'withMaps',
-                    label: 'With Maps',
-                    message: `site has no historical maps available`,
-                    reset: () => setFilterWithMaps(false)
-                });
-            }
-        }
-
-        // 12. Only New Filter
-        if (showOnlyNew) {
-            if (!targetSite.isNew) {
-                failedFilters.push({
-                    type: 'onlyNew',
-                    label: 'Only New',
-                    message: `site is not marked as new`,
-                    reset: () => setShowOnlyNew(false)
-                });
-            }
-        }
-
-        // 13. Search Filter
-        if (filterSearch && filterSearch.trim() !== '') {
-            if (!targetSite.name || !targetSite.name.toLowerCase().includes(filterSearch.toLowerCase().trim())) {
-                failedFilters.push({
-                    type: 'search',
-                    label: 'Search',
-                    message: `site name does not match search query "${filterSearch}"`,
-                    reset: () => setFilterSearch('')
-                });
-            }
-        }
-
-        if (failedFilters.length > 0) {
-            let title = '';
-            let message = '';
-            let resetButtonText = '';
-            let areaDist = failedFilters.find(f => f.type === 'area')?.distance;
-
-            if (failedFilters.length === 1) {
-                const single = failedFilters[0];
-                if (single.type === 'category') {
-                    title = 'Site Category Not Selected';
-                    message = `Site is out of the selected category, category "${targetSite.category}" is not selected`;
-                    resetButtonText = 'Reset Category & View';
-                } else if (single.type === 'area') {
-                    title = 'Site Out of Selected Area';
-                    message = `Site is out of the selected area, ${filterRadius} km from ${locationLabel}`;
-                    resetButtonText = 'Reset Area & View';
-                } else if (single.type === 'year') {
-                    title = 'Site Out of Selected Year';
-                    message = `Site is out of the selected year, year "${targetSite.year || 'N/A'}" is not selected`;
-                    resetButtonText = 'Reset Year & View';
-                } else if (single.type === 'commander') {
-                    title = 'Site Out of Selected Commander';
-                    message = `Site is out of the selected commander, commander "${filterCommander}" is not selected`;
-                    resetButtonText = 'Reset Commander & View';
-                } else if (single.type === 'country') {
-                    title = 'Site Out of Selected Country';
-                    message = `Site is out of the selected country, country "${targetSite.country || 'N/A'}" is not selected`;
-                    resetButtonText = 'Reset Country & View';
-                } else if (single.type === 'coalition') {
-                    title = 'Site Out of Selected Coalition';
-                    message = `Site is out of the selected coalition ("${filterCoalition}")`;
-                    resetButtonText = 'Reset Coalition & View';
-                } else if (single.type === 'campaign') {
-                    title = 'Site Out of Selected Campaign';
-                    message = `Site is out of the selected campaign ("${filterCampaign}")`;
-                    resetButtonText = 'Reset Campaign & View';
-                } else if (single.type === 'arc') {
-                    title = 'Site Not at Arc de Triomphe';
-                    message = `Site is not listed at the Arc de Triomphe`;
-                    resetButtonText = 'Reset Arc Filter & View';
-                } else if (single.type === 'significance') {
-                    title = 'Site Out of Selected Significance';
-                    message = `Site significance rating does not match selected filter (${filterSignificance} star${filterSignificance > 1 ? 's' : ''})`;
-                    resetButtonText = 'Reset Significance & View';
-                } else if (single.type === 'visited') {
-                    title = 'Site Out of Selected Visited Status';
-                    message = `Site is ${targetSite.visited ? 'visited' : 'unvisited'}, but filter is set to "${filterVisited}"`;
-                    resetButtonText = 'Reset Visited & View';
-                } else if (single.type === 'withMaps') {
-                    title = 'Site Has No Maps';
-                    message = `Site has no historical maps available, but "With Maps" filter is active`;
-                    resetButtonText = 'Reset Maps Filter & View';
-                } else if (single.type === 'onlyNew') {
-                    title = 'Site Is Not New';
-                    message = `Site is not marked as new, but "Only New" filter is active`;
-                    resetButtonText = 'Reset New Filter & View';
-                } else if (single.type === 'search') {
-                    title = 'Site Filtered Out by Search';
-                    message = `Site name does not match search query "${filterSearch}"`;
-                    resetButtonText = 'Reset Search & View';
-                } else {
-                    title = `Site Out of Selected ${single.label}`;
-                    message = `Site is hidden by ${single.label} filter: ${single.message}`;
-                    resetButtonText = `Reset ${single.label} & View`;
-                }
-            } else if (failedFilters.length === 2 && failedFilters.some(f => f.type === 'category') && failedFilters.some(f => f.type === 'area')) {
-                title = 'Site Out of Category & Selected Area';
-                message = `Site is out of the selected category, category "${targetSite.category}" is not selected and site is ${Math.round(dist)} km from ${locationLabel}`;
-                resetButtonText = 'Reset Filters & View';
-            } else {
-                title = 'Site Out of Selected Filters';
-                const messagesList = failedFilters.map(f => f.message).join(', ');
-                message = `Site is hidden by active filters: ${messagesList}`;
-                resetButtonText = 'Reset Filters & View';
-            }
-
-            setNavErrorModal({
-                type: 'custom',
-                failedFilters: failedFilters,
-                title: title,
-                message: message,
-                targetSite: targetSite,
-                resetButtonText: resetButtonText,
-                distance: areaDist
-            });
+        const validation = validateSiteFilters(targetSite, filterContext);
+        if (!validation.passed) {
+            setNavErrorModal(validation.errorData);
             return;
         }
 
@@ -419,6 +178,16 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
             setSiteToOpenPopup(targetSite);
             setView('map');
         }, 10);
+    };
+
+    const handleResetAndView = (targetSite) => {
+        setNavErrorModal(null);
+        setSelectedSite(null);
+        setSiteToOpenPopup(null);
+        setTimeout(() => {
+            setSiteToOpenPopup(targetSite);
+            setView('map');
+        }, 20);
     };
 
     if (!site) return null;
@@ -445,163 +214,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
 
     return (
         <>
-            {navErrorModal && createPortal(
-                <div
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                        backgroundColor: 'rgba(0, 0, 0, 0.65)',
-                        backdropFilter: 'blur(4px)',
-                        WebkitBackdropFilter: 'blur(4px)',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        zIndex: 2147483647,
-                        padding: '20px'
-                    }}
-                    onClick={() => setNavErrorModal(null)}
-                >
-                    <div
-                        className="glass-panel animate-pop-in"
-                        style={{
-                            width: '100%',
-                            maxWidth: '420px',
-                            backgroundColor: theme === 'dark' ? 'rgba(25, 27, 31, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                            border: '1px solid var(--border-color)',
-                            borderRadius: '16px',
-                            boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-                            padding: '24px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                            position: 'relative'
-                        }}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button
-                            type="button"
-                            onClick={() => setNavErrorModal(null)}
-                            style={{
-                                position: 'absolute',
-                                top: '14px',
-                                right: '14px',
-                                background: 'transparent',
-                                border: 'none',
-                                color: 'var(--text-secondary)',
-                                cursor: 'pointer',
-                                padding: '4px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            <X size={20} />
-                        </button>
-
-                        <div
-                            style={{
-                                width: '56px',
-                                height: '56px',
-                                borderRadius: '50%',
-                                backgroundColor: 'rgba(239, 83, 80, 0.15)',
-                                border: '1.5px solid rgba(239, 83, 80, 0.4)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                marginBottom: '16px',
-                                color: '#ef5350'
-                            }}
-                        >
-                            <AlertTriangle size={32} />
-                        </div>
-
-                        <h3 style={{ margin: '0 0 10px 0', fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                            {navErrorModal.title}
-                        </h3>
-
-                        <p style={{ margin: '0 0 16px 0', fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: '1.45', fontWeight: 500 }}>
-                            {navErrorModal.message}
-                        </p>
-
-                        {navErrorModal.distance !== undefined && (
-                            <div style={{
-                                fontSize: '0.82rem',
-                                color: 'var(--text-secondary)',
-                                backgroundColor: 'rgba(0,0,0,0.06)',
-                                padding: '6px 12px',
-                                borderRadius: '8px',
-                                marginBottom: '20px'
-                            }}>
-                                Distance to site: <strong>{navErrorModal.distance} km</strong>
-                            </div>
-                        )}
-
-                        <div style={{ display: 'flex', gap: '10px', width: '100%' }}>
-                            <button
-                                type="button"
-                                onClick={() => setNavErrorModal(null)}
-                                style={{
-                                    flex: 1,
-                                    padding: '11px',
-                                    borderRadius: '10px',
-                                    border: '1px solid var(--border-color)',
-                                    backgroundColor: 'transparent',
-                                    color: 'var(--text-primary)',
-                                    fontWeight: 600,
-                                    fontSize: '0.9rem',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                OK
-                            </button>
-                            {navErrorModal.targetSite && (
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        const target = navErrorModal.targetSite;
-                                        if (navErrorModal.failedFilters && navErrorModal.failedFilters.length > 0) {
-                                            navErrorModal.failedFilters.forEach(f => {
-                                                if (typeof f.reset === 'function') f.reset();
-                                            });
-                                        } else {
-                                            if (navErrorModal.type === 'category' || navErrorModal.type === 'both') {
-                                                setFilterCategory([]);
-                                            }
-                                            if (navErrorModal.type === 'area' || navErrorModal.type === 'both') {
-                                                setFilterRadius('all');
-                                            }
-                                        }
-                                        setNavErrorModal(null);
-                                        setSelectedSite(null);
-                                        setSiteToOpenPopup(null);
-                                        setTimeout(() => {
-                                            setSiteToOpenPopup(target);
-                                            setView('map');
-                                        }, 20);
-                                    }}
-                                    style={{
-                                        flex: 1.5,
-                                        padding: '11px',
-                                        borderRadius: '10px',
-                                        border: 'none',
-                                        backgroundColor: 'var(--accent-primary)',
-                                        color: '#fff',
-                                        fontWeight: 600,
-                                        fontSize: '0.88rem',
-                                        cursor: 'pointer'
-                                    }}
-                                >
-                                    {navErrorModal.resetButtonText}
-                                </button>
-                            )}
-                        </div>
-                    </div>
-                </div>,
-                getPortalContainer ? getPortalContainer() : document.body
+            {navErrorModal && (
+                <NavErrorModal
+                    errorData={navErrorModal}
+                    onClose={() => setNavErrorModal(null)}
+                    onResetAndView={handleResetAndView}
+                />
             )}
 
             <div className={`site-card ${site.visited ? 'visited' : ''}`} style={{ position: 'relative' }}>

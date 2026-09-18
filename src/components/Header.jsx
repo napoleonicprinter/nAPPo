@@ -410,7 +410,7 @@ const Header = () => {
                             >
                                 <div className="custom-select-value" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <Layers size={16} />
-                                    <span>Close Map</span>
+                                    <span>Close Maps</span>
                                 </div>
                             </button>
                         </div>
