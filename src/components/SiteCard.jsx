@@ -866,6 +866,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             if (map.id) toggleMapOverlay(map.id);
+                                            setSelectedSite(null);
+                                            setSiteToOpenPopup(null);
+                                            setTimeout(() => {
+                                                setSiteToOpenPopup(site);
+                                                setView('map');
+                                            }, 10);
                                         }}
                                         style={{
                                             width: '100%',
@@ -977,10 +983,13 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                         key={map.id}
                                                         onClick={(e) => {
                                                             e.stopPropagation();
-                                                            toggleMapOverlay(map.id);
+                                                            if (map.id) toggleMapOverlay(map.id);
                                                             setSelectedSite(null);
-                                                            setSiteToOpenPopup(site);
-                                                            setView('map');
+                                                            setSiteToOpenPopup(null);
+                                                            setTimeout(() => {
+                                                                setSiteToOpenPopup(site);
+                                                                setView('map');
+                                                            }, 10);
                                                         }}
                                                         style={{
                                                             width: '100%',

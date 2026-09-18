@@ -294,7 +294,7 @@ const Header = () => {
                         )}
 
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear All</button>}
-                        {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel filters-active-red" onClick={clearMapOverlays}>Close Map</button>}
+                        {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel filters-active-red" onClick={clearMapOverlays}>Close Maps</button>}
 
                         <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                             <button className={`custom-select-trigger filter-select glass-panel

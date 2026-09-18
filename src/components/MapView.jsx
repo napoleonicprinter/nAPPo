@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Popup, Marker, Tooltip, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { useAppContext, useBackHandler } from '../context/AppContext';
+import { useAppContext, useBackHandler, getAvailableSiteMaps } from '../context/AppContext';
 import SiteCard, { getCategoryColor } from './SiteCard';
 import DealsView from './DealsView';
 import MapOverlaysLayer from './MapOverlaysLayer';
@@ -58,7 +58,7 @@ const getSiteIcon = (site) => {
 
 // Look for this component near the top of your file
 const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSiteIdRef }) => {
-    const { siteToOpenPopup, setSiteToOpenPopup } = useAppContext();
+    const { siteToOpenPopup, setSiteToOpenPopup, activeMapOverlays } = useAppContext();
     const map = useMap();
 
     useEffect(() => {
@@ -77,7 +77,13 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
             if (marker) {
                 map.invalidateSize();
                 const currentZoom = map.getZoom();
-                const targetZoom = Math.max(currentZoom, 11);
+
+                const siteMaps = getAvailableSiteMaps(targetSite);
+                const hasMaps = siteMaps && siteMaps.length > 0;
+                const activeOverlay = hasMaps ? siteMaps.find(m => activeMapOverlays?.includes(m.id)) : null;
+
+                const minTargetZoom = activeOverlay ? 14 : hasMaps ? 13.5 : 12;
+                const targetZoom = Math.max(currentZoom, minTargetZoom);
 
                 const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
                 targetPoint.y -= isMobileLike ? 140 : 120;
@@ -89,9 +95,21 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
 
                 const isClustered = visibleParent && visibleParent !== marker;
 
-                if (isClustered && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                if (activeOverlay && activeOverlay.bounds) {
+                    map.flyToBounds(activeOverlay.bounds, { padding: [50, 50], duration: 0.8 });
+                    setTimeout(() => {
+                        const currentMarker = markerRefs.current.get(targetSite.id);
+                        if (currentMarker) {
+                            currentMarker.openPopup();
+                        }
+                        setSiteToOpenPopup(null);
+                    }, 850);
+                } else if (isClustered && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
                     clusterInstance.zoomToShowLayer(marker, () => {
                         setTimeout(() => {
+                            if (map.getZoom() < targetZoom) {
+                                map.setZoom(targetZoom);
+                            }
                             const currentMarker = markerRefs.current.get(targetSite.id);
                             if (currentMarker) {
                                 currentMarker.openPopup();
@@ -107,7 +125,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                             currentMarker.openPopup();
                         }
                         setSiteToOpenPopup(null);
-                    }, 450);
+                    }, 500);
                 }
             } else if (attempts < maxAttempts) {
                 timer = setTimeout(attemptOpen, 100);
@@ -354,7 +372,7 @@ const MapResizeHandler = () => {
 };
 
 const LocationCenteringHandler = () => {
-    const { userCoords, locationMode, siteToOpenPopup } = useAppContext();
+    const { userCoords, locationMode, siteToOpenPopup, activeMapOverlays } = useAppContext();
     const map = useMap();
     const lastCenteredKeyRef = useRef(null);
 
@@ -371,9 +389,11 @@ const LocationCenteringHandler = () => {
             ? locationMode
             : `${locationMode}-${userCoords.lat}-${userCoords.lon}`;
 
-        if (siteToOpenPopup) {
-            // When opening a site card on map, mark current location key as handled
-            // so clearing siteToOpenPopup to null won't trigger a flyTo userCoords.
+        const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
+
+        if (siteToOpenPopup || hasOverlays) {
+            // When opening a site card on map or displaying active battle overlays,
+            // mark current location key as handled so clearing siteToOpenPopup won't trigger flyTo.
             lastCenteredKeyRef.current = currentKey;
             return;
         }
@@ -386,7 +406,7 @@ const LocationCenteringHandler = () => {
             const targetZoom = minZoom + 7.5; // 8 zoom levels in from minZoom starting point
             map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
         }
-    }, [locationMode, userCoords?.lat, userCoords?.lon, map, siteToOpenPopup]);
+    }, [locationMode, userCoords?.lat, userCoords?.lon, map, siteToOpenPopup, activeMapOverlays]);
 
     return null;
 };
@@ -627,14 +647,18 @@ const CustomZoomControl = ({ isMobileLike }) => {
     );
 };
 
-const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup }) => {
+const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, activeMapOverlays }) => {
     const map = useMap();
     const lastSitesRef = useRef("");
 
     useEffect(() => {
-        if (selectedSite || siteToOpenPopup) return;
-
         const currentSitesKey = (sites || []).map(s => s.id).join(',');
+        const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
+
+        if (selectedSite || siteToOpenPopup || hasOverlays) {
+            lastSitesRef.current = currentSitesKey;
+            return;
+        }
 
         if (isFiltered && sites && sites.length > 0 && lastSitesRef.current !== currentSitesKey) {
             lastSitesRef.current = currentSitesKey;
@@ -647,7 +671,7 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup }) 
                 duration: 1.5
             });
         }
-    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup]);
+    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays]);
 
     return null;
 };
@@ -848,7 +872,7 @@ const MapView = () => {
                 <LocationMarker isFiltered={isFiltered} />
                 <LocationCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
-                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} />
+                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} />

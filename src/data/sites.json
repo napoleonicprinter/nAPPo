@@ -1564,6 +1564,12 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bataille_d%27Espinosa%2C_G.33629.jpg/1280px-Bataille_d%27Espinosa%2C_G.33629.jpg",
     "more_info_link": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bataille-d-espinosa-1",
     "createDate": "2026-03-15T10:00:00Z",
+    "relatedSites": [
+      {
+        "id": "100",
+        "title": "Battle site"
+      }
+    ],
     "special": false
   },
   {
@@ -2044,6 +2050,16 @@
       "Claude Victor",
       "Joaquín Blake",
       " Pedro Caro, Marquis of la Romana"
+    ],
+    "relatedSites": [
+      {
+        "id": "908",
+        "title": "Museum"
+      },
+      {
+        "id": "77",
+        "title": "Artwork"
+      }
     ]
   },
   {
@@ -16611,6 +16627,68 @@
     "site_link": "https://www.castillosohail.es/historia.html",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sohail.webp",
     "Special": "Peninsular_War",
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "908",
+    "name": "Monteros del Rey Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "2006",
+    "date": "2006-06-09",
+    "location": "Espinosa de los Monteros, Burgos",
+    "country": "Spain",
+    "description": "The museum has a room commemorating the Battle of Espinosa, fought against Napoleonic forces on November 10-11, 1808. It features three detailed scale models illustrating the movements of both armies, along with weaponry and artifacts recovered from the battlefield.",
+    "latitude": 43.078808,
+    "longitude": -3.551948,
+    "more_info_link": "https://museosvivos.com/museo-de-los-monteros-del-rey-en-espinosa-de-los-monteros/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Monteros_delRey.webp",
+    "relatedSites": [
+      {
+        "id": "100",
+        "title": "Battle site"
+      }
+    ],
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "909",
+    "name": "Monument to the Cantabrian Sailors Who Fought at Trafalgar",
+    "category": "Monument",
+    "significance": 1,
+    "date": "2005-10-21",
+    "location": "Santander, Cantabria",
+    "country": "Spain",
+    "description": "The 'Monumento a los marinos cántabros que lucharon en Trafalgar' was officially inaugurated on October 21, 2005, exactly coinciding with the bicentennial of the Battle of Trafalgar. It stands as a moving tribute to the brave sailors of the Spanish Navy who fought in the historic Battle of Trafalgar in 1805 against the British Navy.",
+    "latitude": 43.461968,
+    "longitude": -3.800829,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Marinos_cantabros.webp",
+    "relatedSites": [
+      {
+        "id": "188",
+        "title": "Battle site"
+      }
+    ],
+    "createDate": "2026-09-16"
+  },
+  {
+    "id": "910",
+    "name": "Velarde Monument",
+    "category": "Monument",
+    "significance": 1,
+    "date": "2008-05-02",
+    "location": "Muriedas, Cantabria",
+    "country": "Spain",
+    "description": "In May 2008, a mural was installed to commemorate the bicentennial of the uprising of May 2, 1808, which was spearheaded by General Pedro Velarde—a native of Muriedas. This work was created by the Camargo-based artisan Juanjo Revuelta.",
+    "latitude": 43.42344,
+    "longitude": -3.85441,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Velarde_Muriedas_monumento.webp",
+    "relatedSites": [
+      {
+        "id": "138",
+        "title": "Velarde's death site"
+      }
+    ],
     "createDate": "2026-09-16"
   }
 ]

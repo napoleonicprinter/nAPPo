@@ -443,6 +443,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [geolocationEnabled, setGeolocationEnabled] = useState(false);
     const [userCoords, setUserCoords] = useState(null);
     const [showGpsDeniedModal, setShowGpsDeniedModal] = useState(false);
+    const [showManualLocationModal, setShowManualLocationModal] = useState(false);
     const [manualCoords, setManualCoords] = useState(() => {
         const saved = localStorage.getItem('manualCoords');
         if (saved) {
