@@ -4126,5 +4126,12 @@
         "date": "1813-09-25",
         "location": "Brunswick, Germany",
         "description": "On September 25, 1813, a Prussian force of 400 men under Lieutenant Colonel von der Marwitz successfully captured the walled town of Braunschweig from the occupying Westphalian forces. The panicked Westphalian garrison under General von Klösterlein dissolved and fled to Wolfsburg, resulting in zero Prussian casualties and the capture of 376 Westphalian troops."
+    },
+    {
+        "id": "480",
+        "title": "Prussian Campaign begins",
+        "date": "1806-09-17",
+        "location": "Hannover, Germany",
+        "description": "On September 17, 1806, the Army of the North, commanded by Bernadotte, received orders to march toward Bayreuth as the military campaign against Prussia commenced."
     }
 ]

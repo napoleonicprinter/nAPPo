@@ -15206,7 +15206,7 @@
     "latitude": 40.543626,
     "longitude": 14.198019,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri_mezzo.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_mezzo.webp",
     "createDate": "2026-08-23"
   },
   {
@@ -15223,7 +15223,7 @@
     "longitude": 14.197232,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
     "more_info_link": "https://en.wikipedia.org/wiki/Forts_of_Capri",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri_mesola.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_mesola.webp",
     "createDate": "2026-08-23"
   },
   {
@@ -16690,5 +16690,65 @@
       }
     ],
     "createDate": "2026-09-16"
+  },
+  {
+    "id": "911",
+    "name": "Museo Nazionale del Risorgimento Italiano",
+    "category": "Museum",
+    "significance": 3,
+    "year": "1878",
+    "location": "Torino",
+    "country": "Italy",
+    "description": "The Museo Nazionale del Risorgimento Italiano in Turín houses an impressive collection of the Napoleonic era (1796-1815). Throughout our halls we exhibit military uniforms, historical busts, banners from the era of annexation to France and art works that depict the impact of Napoleon Bonaparte in Piamonte and all of Italy.",
+    "latitude": 45.068792,
+    "longitude": 7.68603,
+    "site_link": "https://www.museorisorgimentotorino.it/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Ris_Turin.webp",
+    "createDate": "2026-09-18"
+  },
+  {
+    "id": "912",
+    "name": "Museo del Risorgimento",
+    "category": "Museum",
+    "significance": 3,
+    "date": "1886-06-24",
+    "location": "Milano",
+    "country": "Italy",
+    "description": "The Museo del Risorgimento in Milan houses some of the most prestigious treasures from May 26, 1805, when Napoleon Bonaparte was crowned King of Italy inside the Milan Cathedral. The collection features his striking green and gold embroidered coronation mantle, the royal insignia, and his official crown.",
+    "latitude": 45.472255,
+    "longitude": 9.189800,
+    "site_link": "https://www2.comune.milano.it/web/civiche-raccolte-storiche",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Ris_Milano.webp",
+    "createDate": "2026-09-18"
+  },
+  {
+    "id": "913",
+    "name": "Museo Centrale del Risorgimento",
+    "category": "Museum",
+    "significance": 2,
+    "date": "1970-10-02",
+    "location": "Rome",
+    "country": "Italy",
+    "description": "The exhibition addresses the Napoleonic era by the campaigns of Napoleon Bonaparte in the Italian peninsula (the finals of the XVIII century and the principles of the movement of national unification (the Risorgimento).",
+    "latitude": 41.894008,
+    "longitude": 12.483809,
+    "site_link": "https://www.turismoroma.it/it/luoghi/museo-centrale-del-risorgimento",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Ris_Rome.webp",
+    "createDate": "2026-09-18"
+  },
+  {
+    "id": "914",
+    "name": "Palazzo Bonaparte",
+    "category": "Landmark",
+    "significance": 1,
+    "date": "1818",
+    "location": "Rome",
+    "country": "Italy",
+    "description": "Following Napoleon's downfall, his mother, Letizia Bonaparte, was exiled from France and purchased the grand estate in 1818. She lived on the piano nobile (the main first floor) until her death in 1836.",
+    "latitude": 41.896759,
+    "longitude": 12.481939,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Palazzo_Bonaparte",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palazzo_BonaparteS.webp",
+    "createDate": "2026-09-18"
   }
 ]
