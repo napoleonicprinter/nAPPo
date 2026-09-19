@@ -4133,5 +4133,29 @@
         "date": "1806-09-17",
         "location": "Hannover, Germany",
         "description": "On September 17, 1806, the Army of the North, commanded by Bernadotte, received orders to march toward Bayreuth as the military campaign against Prussia commenced."
+    },
+    {
+        "id": "481",
+        "siteId": 918,
+        "title": "British Capture of Cotrone",
+        "date": "1806-07-28",
+        "location": "Cotrone, Italy",
+        "description": "At Cotrone on July 28, 1806, Colonel Macleod's 78th Regiment of Foot, operating alongside Captain William Hoste commanding the Royal Navy frigate HMS Amphion, successfully targeted the garrison. Cut off from reinforcements, the 3rd Battalion of the 1st Polish-Italian Legion, a 500-man force fighting under the French Imperial banner, capitulated and was captured by the British forces."
+    },
+    {
+        "id": "482",
+        "title": "Capture of Spandau Citadel",
+        "siteId": 919,
+        "date": "1806-10-25",
+        "location": "Spandau, Berlin",
+        "description": "On October 25th 1806 the citadel's garrison surrendered to the French army under Napoleon without firing a shot during the Fall of Berlin."
+    },
+    {
+        "id": "483",
+        "title": "French occupation of Berlin",
+        "date": "1806-10-24",
+        "location": "Berlin, Germany",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Fall_of_Berlin_(1806)",
+        "description": "French forces captured Berlin on October 24, 1806, following the decisive Prussian defeat at the Battle of Jena–Auerstedt. The Prussian capital fell a mere 15 days after the outbreak of the war. Three days later, Emperor Napoleon entered the city unopposed and issued the Berlin Decree to establish his Continental System economic blockade. In the wake of the takeover, French troops subjected Berlin to extensive looting."
     }
 ]

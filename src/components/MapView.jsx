@@ -6,7 +6,7 @@ import SiteCard, { getCategoryColor } from './SiteCard';
 import DealsView from './DealsView';
 import MapOverlaysLayer from './MapOverlaysLayer';
 import L from 'leaflet';
-import { LocateFixed } from 'lucide-react';
+import { LocateFixed, ZoomOut } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -430,9 +430,7 @@ const CenterControl = ({ userCoords, isMobileLike }) => {
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        const minZoom = map.getMinZoom() ?? 2.5;
-                        const targetZoom = minZoom + 8;
-                        map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
+                        map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
                     }}
                     title="Center on my location"
                     style={{
@@ -497,9 +495,7 @@ const CustomZoomControl = ({ isMobileLike }) => {
         e.preventDefault();
         e.stopPropagation();
         if (userCoords) {
-            const minZoom = map.getMinZoom() ?? 2.5;
-            const targetZoom = minZoom + 8;
-            map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
+            map.flyTo([userCoords.lat, userCoords.lon], map.getZoom(), { duration: 1.5 });
         }
     };
 
@@ -647,6 +643,182 @@ const CustomZoomControl = ({ isMobileLike }) => {
     );
 };
 
+const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onClusterClickRef }) => {
+    const map = useMap();
+    const { selectedSite, siteToOpenPopup, activeMapOverlays } = useAppContext();
+    const [previousClusterView, setPreviousClusterView] = useState(null);
+    const isRestoringZoomRef = useRef(false);
+    const lastStableViewRef = useRef({
+        zoom: map.getZoom(),
+        center: map.getCenter()
+    });
+    const pendingClusterZoomRef = useRef(null);
+
+    // Track stable map view continuously so we always have the exact view before a click
+    const updateStableView = () => {
+        if (!pendingClusterZoomRef.current && !isRestoringZoomRef.current) {
+            lastStableViewRef.current = {
+                zoom: map.getZoom(),
+                center: map.getCenter()
+            };
+        }
+    };
+
+    const handleClusterClick = (e) => {
+        // Only trigger on cluster circle icon clicks (which have getChildCount / child markers)
+        const isClusterMarker = e && e.layer && typeof e.layer.getChildCount === 'function';
+        if (!isClusterMarker && !e?.latlng) return;
+
+        // Origin zoom is the stable zoom before this click was initiated
+        const originZoom = lastStableViewRef.current ? lastStableViewRef.current.zoom : map.getZoom();
+        const originCenter = lastStableViewRef.current ? lastStableViewRef.current.center : map.getCenter();
+
+        pendingClusterZoomRef.current = {
+            zoom: originZoom,
+            center: originCenter
+        };
+
+        // Immediately prepare zoom back to the zoom value before cluster circle was clicked
+        setPreviousClusterView({
+            zoom: originZoom,
+            center: originCenter,
+            activeZoom: null
+        });
+    };
+
+    // Keep ref updated so MarkerClusterGroup onClick can call it directly
+    useEffect(() => {
+        if (onClusterClickRef) {
+            onClusterClickRef.current = handleClusterClick;
+        }
+    }, [onClusterClickRef, map]);
+
+    // Also attach directly to clusterInstance
+    useEffect(() => {
+        if (!clusterInstance) return;
+
+        clusterInstance.on('clusterclick', handleClusterClick);
+        return () => {
+            clusterInstance.off('clusterclick', handleClusterClick);
+        };
+    }, [clusterInstance, map]);
+
+    // Clear previous view if a site detail opens or active overlays change
+    useEffect(() => {
+        if (selectedSite || siteToOpenPopup || (activeMapOverlays && activeMapOverlays.length > 0)) {
+            setPreviousClusterView(null);
+            pendingClusterZoomRef.current = null;
+        }
+    }, [selectedSite, siteToOpenPopup, activeMapOverlays]);
+
+    useMapEvents({
+        moveend: () => {
+            updateStableView();
+        },
+        zoomend: () => {
+            if (isRestoringZoomRef.current) {
+                isRestoringZoomRef.current = false;
+                pendingClusterZoomRef.current = null;
+                lastStableViewRef.current = {
+                    zoom: map.getZoom(),
+                    center: map.getCenter()
+                };
+                return;
+            }
+
+            const currentZoom = map.getZoom();
+
+            // When cluster zoom in finishes, check if zoom actually increased
+            if (pendingClusterZoomRef.current) {
+                const origin = pendingClusterZoomRef.current;
+                pendingClusterZoomRef.current = null;
+                if (currentZoom > origin.zoom) {
+                    setPreviousClusterView({
+                        zoom: origin.zoom,
+                        center: origin.center,
+                        activeZoom: currentZoom
+                    });
+                    lastStableViewRef.current = {
+                        zoom: currentZoom,
+                        center: map.getCenter()
+                    };
+                } else {
+                    setPreviousClusterView(null);
+                    updateStableView();
+                }
+                return;
+            }
+
+            // If user changes zoom while cluster is open, dismiss the Zoom Back button
+            if (previousClusterView && previousClusterView.activeZoom !== null) {
+                if (Math.abs(currentZoom - previousClusterView.activeZoom) > 0.05) {
+                    setPreviousClusterView(null);
+                }
+            }
+
+            updateStableView();
+        }
+    });
+
+    if (!previousClusterView) return null;
+
+    const handleZoomBack = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (previousClusterView) {
+            isRestoringZoomRef.current = true;
+            const targetZoom = previousClusterView.zoom;
+            const targetCenter = previousClusterView.center;
+            setPreviousClusterView(null);
+            pendingClusterZoomRef.current = null;
+            map.flyTo(targetCenter, targetZoom, { duration: 0.8 });
+        }
+    };
+
+    return (
+        <div
+            className="leaflet-top"
+            style={{
+                left: '50%',
+                transform: 'translateX(-50%)',
+                top: isMobileLike ? '70px' : '16px',
+                pointerEvents: 'auto',
+                zIndex: 5000,
+                display: 'flex',
+                justifyContent: 'center'
+            }}
+        >
+            <div className="leaflet-control" style={{ margin: 0 }}>
+                <button
+                    onClick={handleZoomBack}
+                    className="cluster-zoom-back-btn glass-panel animate-scale-up"
+                    title="Return to zoom before opening cluster"
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '7px 14px',
+                        borderRadius: '20px',
+                        backgroundColor: theme === 'dark' ? 'rgba(22, 27, 34, 0.92)' : 'rgba(255, 255, 255, 0.95)',
+                        color: theme === 'dark' ? '#f0f6fc' : '#1f2328',
+                        border: '1.5px solid var(--accent-primary, #58a6ff)',
+                        boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35)',
+                        fontSize: '0.84rem',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        backdropFilter: 'blur(8px)',
+                        WebkitBackdropFilter: 'blur(8px)',
+                        whiteSpace: 'nowrap'
+                    }}
+                >
+                    <ZoomOut size={16} strokeWidth={2.4} color="var(--accent-primary, #58a6ff)" />
+                    <span>Zoom Back</span>
+                </button>
+            </div>
+        </div>
+    );
+};
+
 const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, activeMapOverlays }) => {
     const map = useMap();
     const lastSitesRef = useRef("");
@@ -711,6 +883,7 @@ const MapView = () => {
     const [showDeals, setShowDeals] = useState(false);
     const markerRefs = useRef(new Map());
     const activePopupSiteIdRef = useRef(null);
+    const onClusterClickRef = useRef(null);
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
@@ -765,6 +938,16 @@ const MapView = () => {
                 width: 70px !important; height: auto !important; z-index: 20 !important;
                 background-color: transparent !important; border: none !important;
                 box-shadow: none !important; pointer-events: none !important;
+            }
+            .cluster-zoom-back-btn {
+                transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+            }
+            .cluster-zoom-back-btn:hover {
+                transform: scale(1.05) !important;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+            }
+            .cluster-zoom-back-btn:active {
+                transform: scale(0.95) !important;
             }
 
             ${theme === 'dark' ? `
@@ -872,6 +1055,7 @@ const MapView = () => {
                 <LocationMarker isFiltered={isFiltered} />
                 <LocationCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
+                <ClusterZoomBackControl clusterInstance={clusterInstance} isMobileLike={isMobileLike} theme={theme} onClusterClickRef={onClusterClickRef} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} />
@@ -886,6 +1070,11 @@ const MapView = () => {
 
                 <MarkerClusterGroup
                     ref={setClusterInstance}
+                    onClick={(e) => {
+                        if (onClusterClickRef.current) {
+                            onClusterClickRef.current(e);
+                        }
+                    }}
                     key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
                     maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive) ? 0 : clusterRadius}
                     zoomToBoundsOnClick={true}

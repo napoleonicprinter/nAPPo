@@ -4442,6 +4442,7 @@
     "name": "Second Battle of Polotsk",
     "category": "Battle site",
     "significance": 1,
+    "date": "1812-10-18",
     "year": 1812,
     "location": "Polotsk",
     "country": "Belarus",
@@ -16790,10 +16791,53 @@
     "location": "Mombasiglio, Cuneo",
     "country": "Italy",
     "description": " Located inside a medieval castle, this modern exhibition documents the passage of the French armies during the 1796 campaign through a rich archive of prints, historical documents, and military images.",
-    "latitude": 44.368171,
+    "latitude": 44.38171,
     "longitude": 7.970214,
     "site_link": "https://castelliaperti.it/it/beni/cuneo/museo-general.html",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Generale_Bonaparte.webp",
     "createDate": "2026-09-18"
+  },
+  {
+    "id": "918",
+    "name": "Battle of Cotrone",
+    "category": "Battle site",
+    "special": [
+      "3",
+      "Naples Invasion"
+    ],
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-07-28",
+    "location": "Cotrone",
+    "country": "Italy",
+    "description": "At Cotrone on July 28, 1806, Colonel Macleod's 78th Regiment of Foot, operating alongside Captain William Hoste commanding the Royal Navy frigate HMS Amphion, successfully targeted the garrison. Cut off from reinforcements, the 3rd Battalion of the 1st Polish-Italian Legion, a 500-man force fighting under the French Imperial banner, capitulated and was captured by the British forces.",
+    "latitude": 39.080785,
+    "longitude": 17.127163,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cotrone.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Naples_(1806)",
+    "victor": "Britain",
+    "defeated": "France",
+    "commanders": [
+      "Macleod",
+      "Hoste"
+    ],
+    "createDate": "2026-09-19"
+  },
+  {
+    "id": "919",
+    "name": "Spandau Citadel",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1806",
+    "date": "1806-10-25",
+    "location": "Spandau, Berlin",
+    "country": "Germany",
+    "description": "On October 25 1806, while the Prussian commander was negotiating the surrender of the dilapidated fortress, French troops charged the gate guards and broke inside. Major Benekendorf was subsequently court-martialed in 1808 and sentenced to death by firing squad, though the King later commuted his sentence to life in prison.",
+    "latitude": 52.540853,
+    "longitude": 13.212800,
+    "site_link": "https://www.zitadelle-berlin.de/en/",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Spandau_Citadel",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Spandau.webp",
+    "createDate": "2026-09-19"
   }
 ]
