@@ -793,11 +793,11 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
 
     return (
         <div
-            className="leaflet-top"
+            className="leaflet-top cluster-zoom-back-wrapper"
             style={{
                 left: '50%',
                 transform: 'translateX(-50%)',
-                top: isMobileLike ? '70px' : '16px',
+                top: isMobileLike ? '110px' : '16px',
                 pointerEvents: 'auto',
                 zIndex: 5000,
                 display: 'flex',
@@ -954,6 +954,14 @@ const MapView = () => {
                 width: 70px !important; height: auto !important; z-index: 20 !important;
                 background-color: transparent !important; border: none !important;
                 box-shadow: none !important; pointer-events: none !important;
+            }
+            .cluster-zoom-back-wrapper {
+                top: 16px;
+            }
+            @media (max-width: 1024px) {
+                .cluster-zoom-back-wrapper {
+                    top: 110px !important;
+                }
             }
             .cluster-zoom-back-btn {
                 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
