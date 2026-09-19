@@ -12342,8 +12342,8 @@
     "year": "1806",
     "date": "1806-10-26",
     "description": "Retreating from Jena, Ludwig von Yorck's rearguard established a strong defensive line along the Elbe River,near Altenzaun, to protect the crossing. French infantry tried to outflank them but he was able to stop them allowing the remaining Prussian troops to cross the Elbe safely.",
-    "latitude": 52.74344,
-    "longitude": 12.019556,
+    "latitude": 53.01483,
+    "longitude": 13.387934,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Altenzaun.webp",
     "more_info_link": "https://warfare.ueuo.com/19C/NapoleonicSkirmishingInPracticeByPeterHofschroer.htm",
     "special": "4",
@@ -12356,14 +12356,20 @@
     "id": "656",
     "name": "Battlefield of Zehdenick",
     "category": "Battle site",
+    "relatedSites": [
+      {
+        "id": "920",
+        "title": "Memorial stone"
+      }
+    ],
     "significance": 1,
     "location": "Altenzaun",
     "country": "Germany",
     "year": "1806",
     "date": "1806-10-26",
-    "description": "The Prussian light cavalry, commanded by Generalmajor Schimmelpfennig, charged home against Lasalle's hussars and were holding their own until Grouchy's dragoons arrived.",
-    "latitude": 52.981057,
-    "longitude": 13.326,
+    "description": "The Prussian light cavalry, commanded by Generalmajor Schimmelpfennig, charged against Lasalle's hussars at the narrow forest, formed by the narrow Timmsbrück forest bridge, towards the village of Storkow, which the Hussars had already blocked, the dragoons were cornered and forced into marshy terrain. Many Prussians were killed, wounded, and captured.",
+    "latitude": 52.016327,
+    "longitude": 13.388826,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick.webp",
     "special": "4",
     "commanders": [
@@ -16838,6 +16844,66 @@
     "site_link": "https://www.zitadelle-berlin.de/en/",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Spandau_Citadel",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Spandau.webp",
+    "createDate": "2026-09-19"
+  },
+  {
+    "id": "920",
+    "name": "Memorial to the fallen at Zehdenick",
+    "relatedSites": [
+      {
+        "id": "656",
+        "title": "Battlefield"
+      }
+    ],
+    "category": "Landmark",
+    "significance": 1,
+    "year": "2016",
+    "location": "Timmsbrück forest, Zehdenick",
+    "country": "Germany",
+    "description": "The memorial remember the soldiers who fell in the 1806 cavalry skirmish. It was erected by Members of the Historienwanderweg 1806 and local supporters.",
+    "latitude": 53.01483,
+    "longitude": 13.387934,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick_memorial.webp",
+    "createDate": "2026-09-19"
+  },
+  {
+    "id": "921",
+    "name": "Memorial to two Prussian Dragoons",
+    "relatedSites": [
+      {
+        "id": "656",
+        "title": "Battlefield"
+      }
+    ],
+    "category": "Landmark",
+    "significance": 1,
+    "year": "2016",
+    "location": "Timmsbrück forest, Zehdenick",
+    "country": "Germany",
+    "description": "In memory of two Prussian Dragoons who fell at Timmsbrück on October 26, 1806, in an attempt to halt the pursuit of the Napoleonic army.",
+    "latitude": 53.018264,
+    "longitude": 13.395878,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick_two.webp",
+    "createDate": "2026-09-19"
+  },
+  {
+    "id": "922",
+    "name": "Prussian Cavalry assembly site",
+    "relatedSites": [
+      {
+        "id": "656",
+        "title": "Battlefield"
+      }
+    ],
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-10-26",
+    "location": "Zehdenick",
+    "country": "Germany",
+    "description": "At approximately 14:30 hours on October 26th 1806, the Prussian Queen's Dragoons and the 2nd Battalion of the Schimmelpfennig Hussars, having assembled at the Jewish cemetery in Zehdenick, were outflanked by French forces and subsequently made a hurried retreat into the forest toward Storkow.",
+    "latitude": 53.99201,
+    "longitude": 13.345105,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick_map.webp",
     "createDate": "2026-09-19"
   }
 ]
