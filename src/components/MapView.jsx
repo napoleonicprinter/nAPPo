@@ -797,7 +797,7 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
             style={{
                 left: '50%',
                 transform: 'translateX(-50%)',
-                top: isMobileLike ? '110px' : '16px',
+                top: isMobileLike ? '60px' : '16px',
                 pointerEvents: 'auto',
                 zIndex: 5000,
                 display: 'flex',
