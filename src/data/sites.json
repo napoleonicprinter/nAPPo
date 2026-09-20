@@ -82,7 +82,7 @@
             4.45332
           ]
         ],
-        "free": true
+        "free": false
       }
     ],
     "relatedSites": [
@@ -169,7 +169,7 @@
             8.78625
           ]
         ],
-        "free": false
+        "free": true
       }
     ]
   },
@@ -2245,7 +2245,7 @@
             -4.761203
           ]
         ],
-        "free": true
+        "free": false
       }
     ]
   },
@@ -3350,7 +3350,7 @@
             4.496932
           ]
         ],
-        "free": true
+        "free": false
       }
     ],
     "relatedSites": [
@@ -6144,7 +6144,7 @@
             16.337270
           ]
         ],
-        "free": true
+        "free": false
       }
     ]
   },
@@ -16905,5 +16905,34 @@
     "longitude": 13.345105,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick_map.webp",
     "createDate": "2026-09-19"
+  },
+  {
+    "id": "923",
+    "name": "Memorial to the fallen at Lychen",
+    "category": "Monument",
+    "significance": 1,
+    "year": "2024",
+    "date": "2024-11-24",
+    "location": "near Lychen",
+    "country": "Germany",
+    "description": "Erected on November 24, 2024, the 1806 Memorial Stone in Menz was installed by local community groups and historian Stefan Hückler. This monument honors the Prussian and French soldiers fallen at the clash near Lychen on October 27th 1806 during the dramatic retreat following the battles of Jena and Auerstedt.",
+    "latitude": 53.210376,
+    "longitude": 13.265599,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lychen_memorial.webp",
+    "createDate": "2026-09-20"
+  },
+  {
+    "id": "924",
+    "name": "Patriotenkreuz",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1844",
+    "location": "Dedelow, Prenzlau",
+    "country": "Germany",
+    "description": "Erected in 1841, this 4.50-meter-high red granite cross commemorates a key and painful event in Prussian military history: the so-called 'Capitulation of Prenzlau' (or the Schmach von Prenzlau, the infamy of Prenzlau) which occurred on October 28, 1806-",
+    "latitude": 53.356166,
+    "longitude": 13.836130,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Patriotenkreuz.webp",
+    "createDate": "2026-09-20"
   }
 ]
