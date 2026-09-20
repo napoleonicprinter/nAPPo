@@ -69,29 +69,34 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
         let attempts = 0;
         const maxAttempts = 30;
         let timer = null;
+        let pollInterval = null;
 
-        const openTargetMarker = (m) => {
-            if (!m) return;
-            if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
-            m.openPopup();
-            setTimeout(() => {
-                if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
+        const startPopupPolling = (targetMarker) => {
+            let pollCount = 0;
+            if (pollInterval) clearInterval(pollInterval);
+            pollInterval = setInterval(() => {
+                pollCount++;
+                const m = markerRefs.current.get(targetSite.id) || targetMarker;
+                if (m) {
                     if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
-                    m.openPopup();
+                    try {
+                        m.openPopup();
+                    } catch (err) {
+                        // ignore if DOM not ready yet
+                    }
+                    if (typeof m.isPopupOpen === 'function' && m.isPopupOpen()) {
+                        clearInterval(pollInterval);
+                        pollInterval = null;
+                        setTimeout(() => setSiteToOpenPopup(null), 150);
+                        return;
+                    }
+                }
+                if (pollCount >= 25) {
+                    clearInterval(pollInterval);
+                    pollInterval = null;
+                    setSiteToOpenPopup(null);
                 }
             }, 100);
-            setTimeout(() => {
-                if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
-                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
-                    m.openPopup();
-                }
-            }, 300);
-            setTimeout(() => {
-                if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
-                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
-                    m.openPopup();
-                }
-            }, 600);
         };
 
         const attemptOpen = () => {
@@ -112,16 +117,12 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                 if (activeOverlay && activeOverlay.bounds) {
                     map.flyToBounds(activeOverlay.bounds, { padding: [50, 50], duration: 0.8 });
                     setTimeout(() => {
-                        const currentMarker = markerRefs.current.get(targetSite.id) || marker;
-                        openTargetMarker(currentMarker);
-                        setSiteToOpenPopup(null);
+                        startPopupPolling(marker);
                     }, 850);
                 } else if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-                    // zoomToShowLayer automatically zooms in and spiderfies if markers share same coordinates
+                    // zoomToShowLayer automatically zooms to reveal marker and spiderfies if markers share coordinates
                     clusterInstance.zoomToShowLayer(marker, () => {
-                        const currentMarker = markerRefs.current.get(targetSite.id) || marker;
-                        openTargetMarker(currentMarker);
-                        setSiteToOpenPopup(null);
+                        startPopupPolling(marker);
                     });
                 } else {
                     const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
@@ -130,9 +131,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
 
                     map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.6 });
                     setTimeout(() => {
-                        const currentMarker = markerRefs.current.get(targetSite.id) || marker;
-                        openTargetMarker(currentMarker);
-                        setSiteToOpenPopup(null);
+                        startPopupPolling(marker);
                     }, 650);
                 }
             } else if (attempts < maxAttempts) {
@@ -142,9 +141,10 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
             }
         };
 
-        timer = setTimeout(attemptOpen, 120);
+        timer = setTimeout(attemptOpen, 100);
         return () => {
             if (timer) clearTimeout(timer);
+            if (pollInterval) clearInterval(pollInterval);
         };
     }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef, activeMapOverlays]);
 
