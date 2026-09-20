@@ -225,10 +225,9 @@ const SelectedSiteFlyer = ({ isMobileLike }) => {
 
         if (isMobileLike) {
             const currentZoom = map.getZoom();
-            const targetZoom = Math.max(currentZoom, 11);
-            map.flyTo([selectedSite.latitude, selectedSite.longitude], targetZoom, {
+            map.flyTo([selectedSite.latitude, selectedSite.longitude], currentZoom, {
                 animate: true,
-                duration: 1.2
+                duration: 0.8
             });
         }
     }, [selectedSite, map, isMobileLike]);
@@ -645,52 +644,33 @@ const CustomZoomControl = ({ isMobileLike }) => {
 
 const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onClusterClickRef }) => {
     const map = useMap();
-    const { selectedSite, siteToOpenPopup, activeMapOverlays } = useAppContext();
-    const [previousClusterView, setPreviousClusterView] = useState(null);
-    const activeClusterViewRef = useRef(null);
-    const isRestoringZoomRef = useRef(false);
-    const lastStableViewRef = useRef({
-        zoom: map.getZoom(),
-        center: map.getCenter()
-    });
-    const pendingClusterZoomRef = useRef(null);
+    const { siteToOpenPopup, activeMapOverlays } = useAppContext();
+    const [zoomBackView, setZoomBackView] = useState(null);
+    const clusterHistoryRef = useRef(null);
     const lastClickTimeRef = useRef(0);
-
-    // Track stable map view continuously so we always have the exact view before a click
-    const updateStableView = () => {
-        if (!pendingClusterZoomRef.current && !isRestoringZoomRef.current) {
-            lastStableViewRef.current = {
-                zoom: map.getZoom(),
-                center: map.getCenter()
-            };
-        }
-    };
 
     const handleClusterClick = (e) => {
         const now = Date.now();
-        if (now - lastClickTimeRef.current < 250) return; // Debounce duplicate events from dual listeners
+        if (now - lastClickTimeRef.current < 250) return;
         lastClickTimeRef.current = now;
 
-        // Only trigger on cluster circle icon clicks (which have getChildCount / child markers)
-        const isClusterMarker = e && e.layer && typeof e.layer.getChildCount === 'function';
-        if (!isClusterMarker && !e?.latlng) return;
+        const cluster = e && e.layer;
+        const isCluster = cluster && typeof cluster.getChildCount === 'function';
+        if (!isCluster && !e?.latlng) return;
 
-        // Origin zoom is the stable zoom before this click was initiated
-        const originZoom = lastStableViewRef.current ? lastStableViewRef.current.zoom : map.getZoom();
-        const originCenter = lastStableViewRef.current ? lastStableViewRef.current.center : map.getCenter();
+        // The exact zoom level at which this cluster was rendered
+        const originZoom = (cluster && typeof cluster._zoom === 'number')
+            ? cluster._zoom
+            : map.getZoom();
+        const originCenter = map.getCenter();
 
-        pendingClusterZoomRef.current = {
-            zoom: originZoom,
-            center: originCenter
+        const view = {
+            originZoom,
+            originCenter,
+            targetZoom: null
         };
-
-        const initialView = {
-            zoom: originZoom,
-            center: originCenter,
-            activeZoom: null
-        };
-        activeClusterViewRef.current = initialView;
-        setPreviousClusterView(initialView);
+        clusterHistoryRef.current = view;
+        setZoomBackView(view);
     };
 
     // Keep ref updated so MarkerClusterGroup onClick can call it directly
@@ -710,84 +690,52 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
         };
     }, [clusterInstance, map]);
 
-    // Clear previous view if a site detail opens or active overlays change
+    // Clear previous view if active overlays change or explicit site popup navigation is triggered
     useEffect(() => {
-        if (selectedSite || siteToOpenPopup || (activeMapOverlays && activeMapOverlays.length > 0)) {
-            activeClusterViewRef.current = null;
-            setPreviousClusterView(null);
-            pendingClusterZoomRef.current = null;
+        if (siteToOpenPopup || (activeMapOverlays && activeMapOverlays.length > 0)) {
+            clusterHistoryRef.current = null;
+            setZoomBackView(null);
         }
-    }, [selectedSite, siteToOpenPopup, activeMapOverlays]);
+    }, [siteToOpenPopup, activeMapOverlays]);
 
     useMapEvents({
-        moveend: () => {
-            updateStableView();
-        },
         zoomend: () => {
-            if (isRestoringZoomRef.current) {
-                isRestoringZoomRef.current = false;
-                pendingClusterZoomRef.current = null;
-                activeClusterViewRef.current = null;
-                lastStableViewRef.current = {
-                    zoom: map.getZoom(),
-                    center: map.getCenter()
-                };
-                return;
-            }
-
             const currentZoom = map.getZoom();
+            const currentHistory = clusterHistoryRef.current;
 
-            // When cluster zoom in finishes, check if zoom actually increased
-            if (pendingClusterZoomRef.current) {
-                const origin = pendingClusterZoomRef.current;
-                pendingClusterZoomRef.current = null;
-                if (currentZoom > origin.zoom) {
-                    const view = {
-                        zoom: origin.zoom,
-                        center: origin.center,
-                        activeZoom: currentZoom
-                    };
-                    activeClusterViewRef.current = view;
-                    setPreviousClusterView(view);
-                    lastStableViewRef.current = {
-                        zoom: currentZoom,
-                        center: map.getCenter()
-                    };
+            if (currentHistory) {
+                if (currentHistory.targetZoom === null) {
+                    // Cluster zoom-in completed
+                    if (currentZoom > currentHistory.originZoom) {
+                        currentHistory.targetZoom = currentZoom;
+                    } else {
+                        // Did not zoom in (e.g. spiderfy only)
+                        clusterHistoryRef.current = null;
+                        setZoomBackView(null);
+                    }
                 } else {
-                    activeClusterViewRef.current = null;
-                    setPreviousClusterView(null);
-                    updateStableView();
-                }
-                return;
-            }
-
-            // If user changes zoom manually while cluster is open, dismiss the Zoom Back button
-            const activeView = activeClusterViewRef.current;
-            if (activeView && activeView.activeZoom !== null) {
-                if (Math.abs(currentZoom - activeView.activeZoom) > 0.05) {
-                    activeClusterViewRef.current = null;
-                    setPreviousClusterView(null);
+                    // Map was at targetZoom. If user manually zoomed to a different level:
+                    if (Math.abs(currentZoom - currentHistory.targetZoom) > 0.1 &&
+                        Math.abs(currentZoom - currentHistory.originZoom) > 0.1) {
+                        clusterHistoryRef.current = null;
+                        setZoomBackView(null);
+                    }
                 }
             }
-
-            updateStableView();
         }
     });
 
-    if (!previousClusterView) return null;
+    if (!zoomBackView) return null;
 
     const handleZoomBack = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const currentView = activeClusterViewRef.current || previousClusterView;
-        if (currentView) {
-            isRestoringZoomRef.current = true;
-            const targetZoom = currentView.zoom;
-            const targetCenter = currentView.center;
-            activeClusterViewRef.current = null;
-            setPreviousClusterView(null);
-            pendingClusterZoomRef.current = null;
-            map.flyTo(targetCenter, targetZoom, { duration: 0.8 });
+        const currentHistory = clusterHistoryRef.current || zoomBackView;
+        if (currentHistory) {
+            const { originZoom, originCenter } = currentHistory;
+            clusterHistoryRef.current = null;
+            setZoomBackView(null);
+            map.flyTo(originCenter, originZoom, { duration: 0.6 });
         }
     };
 
@@ -960,7 +908,7 @@ const MapView = () => {
             }
             @media (max-width: 1024px) {
                 .cluster-zoom-back-wrapper {
-                    top: 110px !important;
+                    top: 60px !important;
                 }
             }
             .cluster-zoom-back-btn {
