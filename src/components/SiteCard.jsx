@@ -177,7 +177,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         setTimeout(() => {
             setSiteToOpenPopup(targetSite);
             setView('map');
-        }, 10);
+        }, 20);
     };
 
     const handleResetAndView = (targetSite) => {
@@ -227,7 +227,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                 {/* --- RED CIRCLE CLOSE BUTTON WITH WHITE CROSS --- */}
                 {onClose && (
                     <button
-                        onClick={(e) => { e.stopPropagation(); onClose(); }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (setCallerSite) setCallerSite(null);
+                            onClose();
+                        }}
                         className="modal-close-btn close-details-btn"
                         title="Close"
                         style={{
@@ -386,7 +390,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     e.stopPropagation();
                                     const prev = callerSite;
                                     setCallerSite(null);
-                                    setSelectedSite(prev);
+                                    handleNavigateToSite(prev);
                                 }}
                                 style={{
                                     border: 'none',
@@ -660,7 +664,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                 const battleSite = (allSites || []).find(s => String(s.id).trim() === targetId);
 
                                                 if (battleSite) {
-                                                    setCallerSite(site);      // Save the current card in memory
+                                                    setCallerSite(site);
                                                     handleNavigateToSite(battleSite);
                                                 } else {
                                                     console.warn("Battle site record not found for ID:", targetId);
@@ -697,8 +701,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    const artSite = allSites.find(s => s.id === site.artwork_ids[0]);
-                                                    if (artSite) handleNavigateToSite(artSite);
+                                                    const targetId = String(site.artwork_ids[0]).trim();
+                                                    const artSite = (allSites || []).find(s => String(s.id).trim() === targetId);
+                                                    if (artSite) {
+                                                        setCallerSite(site);
+                                                        handleNavigateToSite(artSite);
+                                                    }
                                                 }}
                                                 style={{ border: 'none', background: 'none', padding: 0, color: 'var(--accent-primary)', cursor: 'pointer', fontWeight: 'bold', textDecoration: 'underline' }}
                                             >
@@ -713,8 +721,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                             key={id}
                                                             onClick={(e) => {
                                                                 e.stopPropagation();
-                                                                const artSite = allSites.find(s => s.id === id);
-                                                                if (artSite) handleNavigateToSite(artSite);
+                                                                const targetId = String(id).trim();
+                                                                const artSite = (allSites || []).find(s => String(s.id).trim() === targetId);
+                                                                if (artSite) {
+                                                                    setCallerSite(site);
+                                                                    handleNavigateToSite(artSite);
+                                                                }
                                                             }}
                                                             style={{
                                                                 border: '1px solid var(--accent-primary)',
@@ -735,6 +747,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         )}
                                     </div>
                                 )}
+
                                 {/* --- RELATED SITES SECTION --- */}
                                 {(() => {
                                     const relatedList = Array.isArray(site.relatedSites)
@@ -770,6 +783,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                             onClick={(e) => {
                                                                 e.stopPropagation();
                                                                 if (targetSite) {
+                                                                    setCallerSite(site);
                                                                     handleNavigateToSite(targetSite);
                                                                 } else {
                                                                     console.warn("Related site record not found for ID:", targetId);

@@ -21,6 +21,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         allSites,
         setView,
         setSelectedSite,
+        setCallerSite,
         setSiteToOpenPopup,
         userCoords,
         locationMode,
@@ -176,6 +177,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
 
             // Close any existing full-screen detailed card
             setSelectedSite(null);
+            if (setCallerSite) setCallerSite(null);
 
             // Clear current popup state first to ensure the MapView logic re-centers
             // and re-opens the popup even if clicking the same event again.
@@ -194,6 +196,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     const handleResetAndView = (targetSite) => {
         setNavErrorModal(null);
         setSelectedSite(null);
+        if (setCallerSite) setCallerSite(null);
         setSiteToOpenPopup(null);
         setTimeout(() => {
             setSiteToOpenPopup(targetSite);

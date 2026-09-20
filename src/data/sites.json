@@ -11582,6 +11582,12 @@
   },
   {
     "id": "605",
+    "relatedSites": [
+      {
+        "id": "772",
+        "title": "Musée de la Légion d'honneur"
+      }
+    ],
     "name": "Légion d'honneur Memorial",
     "category": "Monument",
     "significance": 3,
@@ -11596,17 +11602,18 @@
   },
   {
     "id": "606",
-    "name": "Légion d'honneur Memorial",
-    "category": "Monument",
-    "significance": 3,
-    "location": "Wimereux, Boulogne-Sur-Mer",
-    "country": "France",
-    "description": "The Legion of Honour memorial, also called the Legion of Honour stele, is a pyramid-shaped monument recalling the exact position of Napoleon I's throne on August 16, 1804, when the emperor first distributed the Legion of Honour crosses to the soldiers of the Grande Armée at the Boulogne camp.",
-    "latitude": 50.742893,
-    "longitude": 1.5992744,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Legion_Stele.webp",
-    "wikipedia_link": "https://fr.wikipedia.org/wiki/M%C3%A9morial_de_la_L%C3%A9gion_d%27honneur",
-    "createDate": "2026-07-15"
+    "name": "Zehdenick town bridge",
+    "category": "Battle landmark",
+    "date": "1806-10-26",
+    "year": "1806",
+    "significance": 1,
+    "location": "Zehdenick, Brandenburg",
+    "country": "Germany",
+    "description": "Location of the town bridge where the French 7th Hussars under General Lasalle and the Prussian Queen's Dragoons under Colonel von Zieten clashed al around 13:00 hours.",
+    "latitude": 52.981295,
+    "longitude": 13.334634,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick_bridge.webp",
+    "createDate": "2026-9-20"
   },
   {
     "id": "607",
@@ -14303,6 +14310,12 @@
   },
   {
     "id": "772",
+    "relatedSites": [
+      {
+        "id": "605",
+        "title": "Légion d'honneur Memorial"
+      }
+    ],
     "name": "Musée de la Légion d'honneur",
     "category": "Museum",
     "significance": 2,
@@ -16901,8 +16914,8 @@
     "location": "Zehdenick",
     "country": "Germany",
     "description": "At approximately 14:30 hours on October 26th 1806, the Prussian Queen's Dragoons and the 2nd Battalion of the Schimmelpfennig Hussars, having assembled at the Jewish cemetery in Zehdenick, were outflanked by French forces and subsequently made a hurried retreat into the forest toward Storkow.",
-    "latitude": 53.99201,
-    "longitude": 13.345105,
+    "latitude": 52.991516,
+    "longitude": 13.345526,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick_map.webp",
     "createDate": "2026-09-19"
   },
@@ -16948,6 +16961,20 @@
     "latitude": 53.356108,
     "longitude": 13.836296,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fallen_dragoons_memorial.webp",
+    "createDate": "2026-09-20"
+  },
+  {
+    "id": "926",
+    "name": "Memorial stone",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "2024",
+    "location": "Etashof, Hammelspring",
+    "country": "Germany",
+    "description": "Memorial stone and information panel at Etashof in Hammelspring.",
+    "latitude": 53.066566,
+    "longitude": 13.447707,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Etashof.webp",
     "createDate": "2026-09-20"
   }
 ]

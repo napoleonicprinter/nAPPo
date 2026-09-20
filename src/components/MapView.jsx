@@ -54,215 +54,6 @@ const getSiteIcon = (site) => {
     });
 };
 
-// --- STABILIZED INTERNAL COMPONENTS ---
-
-// Look for this component near the top of your file
-const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSiteIdRef, isNavigatingRef }) => {
-    const { siteToOpenPopup, setSiteToOpenPopup, activeMapOverlays } = useAppContext();
-    const map = useMap();
-
-    useEffect(() => {
-        if (!siteToOpenPopup || typeof siteToOpenPopup.latitude !== 'number' || typeof siteToOpenPopup.longitude !== 'number') return;
-
-        const targetSite = siteToOpenPopup;
-        if (isNavigatingRef) isNavigatingRef.current = true;
-        if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
-        let attempts = 0;
-        const maxAttempts = 30;
-        let timer = null;
-        let pollInterval = null;
-
-        const startPopupPolling = (targetMarker) => {
-            let pollCount = 0;
-            if (pollInterval) clearInterval(pollInterval);
-            pollInterval = setInterval(() => {
-                pollCount++;
-                const m = markerRefs.current.get(targetSite.id) || targetMarker;
-                if (m) {
-                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
-                    try {
-                        m.openPopup();
-                    } catch (err) {
-                        // ignore if DOM not ready yet
-                    }
-                    if (typeof m.isPopupOpen === 'function' && m.isPopupOpen()) {
-                        clearInterval(pollInterval);
-                        pollInterval = null;
-                        setSiteToOpenPopup(null);
-                        setTimeout(() => {
-                            if (isNavigatingRef) isNavigatingRef.current = false;
-                        }, 2000);
-                        return;
-                    }
-                }
-                if (pollCount >= 30) {
-                    clearInterval(pollInterval);
-                    pollInterval = null;
-                    setSiteToOpenPopup(null);
-                    setTimeout(() => {
-                        if (isNavigatingRef) isNavigatingRef.current = false;
-                    }, 1000);
-                }
-            }, 100);
-        };
-
-        const attemptOpen = () => {
-            attempts++;
-            const marker = markerRefs.current.get(targetSite.id);
-
-            if (marker) {
-                map.invalidateSize();
-                const currentZoom = map.getZoom();
-
-                const siteMaps = getAvailableSiteMaps(targetSite);
-                const hasMaps = siteMaps && siteMaps.length > 0;
-                const activeOverlay = hasMaps ? siteMaps.find(m => activeMapOverlays?.includes(m.id)) : null;
-
-                const minTargetZoom = activeOverlay ? 14 : hasMaps ? 13.5 : 12;
-                const targetZoom = Math.max(currentZoom, minTargetZoom);
-
-                if (activeOverlay && activeOverlay.bounds) {
-                    map.flyToBounds(activeOverlay.bounds, { padding: [50, 50], duration: 0.8 });
-                    setTimeout(() => {
-                        startPopupPolling(marker);
-                    }, 850);
-                } else if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-                    // zoomToShowLayer automatically zooms to reveal marker and spiderfies if markers share coordinates
-                    clusterInstance.zoomToShowLayer(marker, () => {
-                        startPopupPolling(marker);
-                    });
-                } else {
-                    const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
-                    targetPoint.y -= isMobileLike ? 140 : 120;
-                    const targetLatLng = map.unproject(targetPoint, targetZoom);
-
-                    map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.6 });
-                    setTimeout(() => {
-                        startPopupPolling(marker);
-                    }, 650);
-                }
-            } else if (attempts < maxAttempts) {
-                timer = setTimeout(attemptOpen, 100);
-            } else {
-                setSiteToOpenPopup(null);
-                if (isNavigatingRef) isNavigatingRef.current = false;
-            }
-        };
-
-        timer = setTimeout(attemptOpen, 100);
-        return () => {
-            if (timer) clearTimeout(timer);
-            if (pollInterval) clearInterval(pollInterval);
-        };
-    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef, activeMapOverlays, isNavigatingRef]);
-
-    return null;
-};
-
-const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef, isNavigatingRef }) => {
-    const { siteToOpenPopup } = useAppContext();
-    const map = useMap();
-
-    useMapEvents({
-        zoomend: () => {
-            if (siteToOpenPopup || isNavigatingRef?.current) return;
-
-            const siteId = activePopupSiteIdRef?.current;
-            if (!siteId) return;
-
-            const marker = markerRefs.current.get(siteId);
-            if (!marker) return;
-
-            setTimeout(() => {
-                if (isNavigatingRef?.current || siteToOpenPopup) return;
-                if (typeof marker.isPopupOpen === 'function' && marker.isPopupOpen()) return;
-
-                const visibleParent = clusterInstance && typeof clusterInstance.getVisibleParent === 'function'
-                    ? clusterInstance.getVisibleParent(marker)
-                    : null;
-
-                const isClustered = visibleParent && visibleParent !== marker;
-
-                if (isClustered && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
-                    clusterInstance.zoomToShowLayer(marker, () => {
-                        setTimeout(() => {
-                            const m = markerRefs.current.get(siteId);
-                            if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
-                                m.openPopup();
-                            }
-                        }, 100);
-                    });
-                } else if (typeof marker.isPopupOpen === 'function' && !marker.isPopupOpen()) {
-                    marker.openPopup();
-                }
-            }, 300);
-        }
-    });
-
-    return null;
-};
-
-const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef }) => {
-    const { siteToOpenPopup } = useAppContext();
-
-    useMapEvents({
-        popupopen: (e) => {
-            const newlyOpenedPopup = e.popup;
-            if (!markerRefs.current) return;
-
-            markerRefs.current.forEach((marker, siteId) => {
-                if (!marker) return;
-                const markerPopup = typeof marker.getPopup === 'function' ? marker.getPopup() : null;
-                if (markerPopup === newlyOpenedPopup) {
-                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = siteId;
-                } else if (markerPopup && typeof marker.isPopupOpen === 'function' && marker.isPopupOpen()) {
-                    marker.closePopup();
-                }
-            });
-        },
-        popupclose: (e) => {
-            if (siteToOpenPopup || isNavigatingRef?.current) return;
-
-            const closedPopup = e.popup;
-            if (!markerRefs.current) return;
-
-            markerRefs.current.forEach((marker, siteId) => {
-                if (!marker) return;
-                const markerPopup = typeof marker.getPopup === 'function' ? marker.getPopup() : null;
-                if (markerPopup === closedPopup) {
-                    if (activePopupSiteIdRef && activePopupSiteIdRef.current === siteId) {
-                        activePopupSiteIdRef.current = null;
-                    }
-                }
-            });
-        }
-    });
-
-    return null;
-};
-
-const SelectedSiteFlyer = ({ isMobileLike }) => {
-    const { selectedSite } = useAppContext();
-    const map = useMap();
-    const lastFlewIdRef = useRef(null);
-
-    useEffect(() => {
-        if (!selectedSite || selectedSite.latitude === undefined || selectedSite.longitude === undefined) return;
-        if (lastFlewIdRef.current === selectedSite.id) return;
-        lastFlewIdRef.current = selectedSite.id;
-
-        if (isMobileLike) {
-            const currentZoom = map.getZoom();
-            map.flyTo([selectedSite.latitude, selectedSite.longitude], currentZoom, {
-                animate: true,
-                duration: 0.8
-            });
-        }
-    }, [selectedSite, map, isMobileLike]);
-
-    return null;
-};
-
 const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattleActive }) => {
     const map = useMap();
     const openedKeyRef = useRef("");
@@ -273,7 +64,7 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
             return;
         }
 
-        const sitesKey = todaysBattleSites.map(s => s.id).sort().join(',');
+        const sitesKey = todaysBattleSites.map(s => String(s.id).trim()).sort().join(',');
         if (openedKeyRef.current === sitesKey) return;
 
         let attempts = 0;
@@ -285,7 +76,8 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
             let allOpened = true;
 
             todaysBattleSites.forEach(site => {
-                const marker = markerRefs.current.get(site.id);
+                const siteIdStr = String(site.id).trim();
+                const marker = markerRefs.current.get(siteIdStr);
                 if (marker) {
                     try {
                         if (!marker.isPopupOpen()) {
@@ -308,7 +100,6 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
             }
         };
 
-        // Frame view to show all Today's Battle sites
         const validCoords = todaysBattleSites
             .filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude))
             .map(s => [s.latitude, s.longitude]);
@@ -327,6 +118,210 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
 
     return null;
 };
+
+const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSiteIdRef, isNavigatingRef }) => {
+    const map = useMap();
+    const { siteToOpenPopup, setSiteToOpenPopup, selectedSite, setSelectedSite } = useAppContext();
+
+    useEffect(() => {
+        if (!siteToOpenPopup) return;
+
+        const targetSite = siteToOpenPopup;
+        const targetIdStr = String(targetSite.id).trim();
+
+        // Ensure selectedSite modal is closed so the map popup is visible
+        if (selectedSite) {
+            setSelectedSite(null);
+        }
+
+        // Mark navigation active and track the active site ID
+        isNavigatingRef.current = true;
+        activePopupSiteIdRef.current = targetIdStr;
+
+        // Close any other currently open popups first
+        markerRefs.current.forEach((marker, idStr) => {
+            if (idStr !== targetIdStr) {
+                try {
+                    marker.closePopup();
+                } catch (e) {}
+            }
+        });
+
+        let cancelled = false;
+        let retryTimer = null;
+        let pollAttempts = 0;
+        const maxPollAttempts = 20;
+
+        const executeOpen = () => {
+            if (cancelled) return;
+
+            const marker = markerRefs.current.get(targetIdStr);
+            if (!marker) {
+                pollAttempts++;
+                if (pollAttempts < maxPollAttempts) {
+                    retryTimer = setTimeout(executeOpen, 80);
+                } else {
+                    isNavigatingRef.current = false;
+                    setSiteToOpenPopup(null);
+                }
+                return;
+            }
+
+            const targetLatLng = marker.getLatLng ? marker.getLatLng() : L.latLng(targetSite.latitude, targetSite.longitude);
+
+            // Check if marker is in a cluster
+            const isClustered = clusterInstance && typeof clusterInstance.hasLayer === 'function' && clusterInstance.hasLayer(marker);
+            const isVisible = clusterInstance && typeof clusterInstance.getVisibleParent === 'function' ? clusterInstance.getVisibleParent(marker) === marker : true;
+
+            if (isClustered && !isVisible && typeof clusterInstance.zoomToShowLayer === 'function') {
+                // The marker is inside a cluster. Use zoomToShowLayer which zooms and spiderfies if overlapping
+                try {
+                    clusterInstance.zoomToShowLayer(marker, () => {
+                        if (cancelled) return;
+                        try {
+                            marker.openPopup();
+                        } catch (err) {}
+
+                        // Settle navigation state quickly
+                        setTimeout(() => {
+                            if (!cancelled) {
+                                try { marker.openPopup(); } catch (e) {}
+                                isNavigatingRef.current = false;
+                                setSiteToOpenPopup(null);
+                            }
+                        }, 150);
+                    });
+                } catch (e) {
+                    map.setView(targetLatLng, Math.max(map.getZoom(), 14));
+                    setTimeout(() => {
+                        if (!cancelled) {
+                            try { marker.openPopup(); } catch (err) {}
+                            isNavigatingRef.current = false;
+                            setSiteToOpenPopup(null);
+                        }
+                    }, 200);
+                }
+            } else {
+                // Marker is not in a collapsed cluster (either standalone or already unclustered)
+                const currentZoom = map.getZoom();
+                const targetZoom = Math.max(currentZoom, 13);
+                const yOffset = isMobileLike ? 150 : 120;
+                const targetPoint = map.project(targetLatLng, targetZoom);
+                targetPoint.y -= yOffset;
+                const centerLatLng = map.unproject(targetPoint, targetZoom);
+
+                map.flyTo(centerLatLng, targetZoom, { duration: 0.5 });
+
+                setTimeout(() => {
+                    if (cancelled) return;
+                    const m = markerRefs.current.get(targetIdStr);
+                    if (m) {
+                        try {
+                            m.openPopup();
+                        } catch (e) {}
+                    }
+                    isNavigatingRef.current = false;
+                    setSiteToOpenPopup(null);
+                }, 350);
+            }
+        };
+
+        // Start opening process
+        executeOpen();
+
+        return () => {
+            cancelled = true;
+            if (retryTimer) clearTimeout(retryTimer);
+            isNavigatingRef.current = false;
+        };
+    }, [siteToOpenPopup, map, clusterInstance, markerRefs, isMobileLike, setSiteToOpenPopup, setSelectedSite, selectedSite, activePopupSiteIdRef, isNavigatingRef]);
+
+    return null;
+};
+
+const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef, isNavigatingRef }) => {
+    const map = useMap();
+
+    useMapEvents({
+        zoomend: () => {
+            if (isNavigatingRef.current) return;
+            const activeId = activePopupSiteIdRef.current;
+            if (!activeId) return;
+
+            const marker = markerRefs.current.get(String(activeId).trim());
+            if (!marker) return;
+
+            // If marker icon exists (unclustered or spiderfied), keep popup open
+            if (marker._icon) {
+                try {
+                    if (!marker.isPopupOpen()) {
+                        marker.openPopup();
+                    }
+                } catch (e) {}
+            }
+        }
+    });
+
+    return null;
+};
+
+const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef, setCallerSite }) => {
+    const map = useMap();
+
+    useEffect(() => {
+        const handlePopupOpen = (e) => {
+            if (isNavigatingRef.current) return;
+            const openedPopup = e.popup;
+            if (!openedPopup) return;
+
+            let openedSiteId = null;
+            markerRefs.current.forEach((marker, siteId) => {
+                if (marker.getPopup && marker.getPopup() === openedPopup) {
+                    openedSiteId = siteId;
+                }
+            });
+
+            if (openedSiteId) {
+                activePopupSiteIdRef.current = openedSiteId;
+                // Close any other open marker popups so only one leaflet is open at any time
+                markerRefs.current.forEach((marker, siteId) => {
+                    if (siteId !== openedSiteId) {
+                        try {
+                            marker.closePopup();
+                        } catch (err) {}
+                    }
+                });
+            }
+        };
+
+        const handlePopupClose = (e) => {
+            if (isNavigatingRef.current) return;
+            const closedPopup = e.popup;
+            if (!closedPopup) return;
+
+            const activeId = activePopupSiteIdRef.current;
+            if (activeId) {
+                const activeMarker = markerRefs.current.get(activeId);
+                if (activeMarker && activeMarker.getPopup && activeMarker.getPopup() === closedPopup) {
+                    activePopupSiteIdRef.current = null;
+                    if (setCallerSite) setCallerSite(null);
+                }
+            }
+        };
+
+        map.on('popupopen', handlePopupOpen);
+        map.on('popupclose', handlePopupClose);
+
+        return () => {
+            map.off('popupopen', handlePopupOpen);
+            map.off('popupclose', handlePopupClose);
+        };
+    }, [map, markerRefs, activePopupSiteIdRef, isNavigatingRef, setCallerSite]);
+
+    return null;
+};
+
+
 
 const LocationMarker = () => {
     const { userCoords, locationMode } = useAppContext();
@@ -811,15 +806,16 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
     );
 };
 
-const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, activeMapOverlays }) => {
+const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef }) => {
     const map = useMap();
     const lastSitesRef = useRef("");
 
     useEffect(() => {
         const currentSitesKey = (sites || []).map(s => s.id).join(',');
         const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
+        const hasActivePopup = activePopupSiteIdRef && activePopupSiteIdRef.current;
 
-        if (selectedSite || siteToOpenPopup || hasOverlays) {
+        if (selectedSite || siteToOpenPopup || hasActivePopup || hasOverlays) {
             lastSitesRef.current = currentSitesKey;
             return;
         }
@@ -835,7 +831,7 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
                 duration: 1.5
             });
         }
-    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays]);
+    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef]);
 
     return null;
 };
@@ -845,7 +841,7 @@ const MapView = () => {
         sites, theme, mapStyle, clusterRadius,
         selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
         userCoords, isFiltered, previewDevice, clearAllFilters,
-        filterCategory, activeMapOverlays
+        filterCategory, activeMapOverlays, setCallerSite
     } = useAppContext();
 
     const hasActiveOverlays = useMemo(() => {
@@ -965,67 +961,83 @@ const MapView = () => {
 
     const defaultCenter = [48.8566, 2.3522];
 
-    const renderedMarkers = [...sites]
-        .filter(site => site && typeof site.latitude === 'number' && typeof site.longitude === 'number' && !isNaN(site.latitude) && !isNaN(site.longitude))
-        .sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1))
-        .map(site => {
-            const rate = Number(site.significance) || 1;
-            // Smaller pins (rate 1) get higher zIndexOffset (300) so they render in front of larger pins (rate 3 = 100)
-            const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
-            return (
-                <Marker
-                    key={site.id}
-                    position={[site.latitude, site.longitude]}
-                    icon={getSiteIcon(site)}
-                    zIndexOffset={zIndexOffset}
-                    riseOnHover={true}
-                    eventHandlers={{
-                        click: (e) => {
-                            if (e.originalEvent) e.originalEvent.stopPropagation();
-                            window.history.pushState({ siteId: site.id }, "");
-                            activePopupSiteIdRef.current = site.id;
-                            if (selectedSite) setSelectedSite(null);
-                            const isSpiderfied = e.target && e.target.__parent && e.target.__parent._spiderfied;
-                            if (isMobileLike && !isSpiderfied) {
-                                const map = e.target._map;
-                                const latlng = e.target.getLatLng();
-                                const currentZoom = map.getZoom();
-                                const targetPoint = map.project(latlng, currentZoom);
-                                targetPoint.y -= 150;
-                                const targetLatLng = map.unproject(targetPoint, currentZoom);
-                                map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+    const renderedMarkers = useMemo(() => {
+        return [...sites]
+            .filter(site => site && typeof site.latitude === 'number' && typeof site.longitude === 'number' && !isNaN(site.latitude) && !isNaN(site.longitude))
+            .sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1))
+            .map(site => {
+                const rate = Number(site.significance) || 1;
+                // Smaller pins (rate 1) get higher zIndexOffset (300) so they render in front of larger pins (rate 3 = 100)
+                const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
+                return (
+                    <Marker
+                        key={site.id}
+                        position={[site.latitude, site.longitude]}
+                        icon={getSiteIcon(site)}
+                        zIndexOffset={zIndexOffset}
+                        riseOnHover={true}
+                        eventHandlers={{
+                            click: (e) => {
+                                if (e.originalEvent) e.originalEvent.stopPropagation();
+                                window.history.pushState({ siteId: site.id }, "");
+                                const clickedIdStr = String(site.id).trim();
+                                activePopupSiteIdRef.current = clickedIdStr;
+                                if (selectedSite) setSelectedSite(null);
+                                if (setCallerSite) setCallerSite(null);
+
+                                // Close any previous marker popups so only ONE leaflet is open at any time
+                                markerRefs.current.forEach((marker, idStr) => {
+                                    if (idStr !== clickedIdStr) {
+                                        try {
+                                            marker.closePopup();
+                                        } catch (err) {}
+                                    }
+                                });
+
+                                const isSpiderfied = e.target && e.target.__parent && e.target.__parent._spiderfied;
+                                if (isMobileLike && !isSpiderfied) {
+                                    const map = e.target._map;
+                                    const latlng = e.target.getLatLng();
+                                    const currentZoom = map.getZoom();
+                                    const targetPoint = map.project(latlng, currentZoom);
+                                    targetPoint.y -= 150;
+                                    const targetLatLng = map.unproject(targetPoint, currentZoom);
+                                    map.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                                }
+                                e.target.openPopup();
                             }
-                            e.target.openPopup();
-                        }
-                    }}
-                    ref={(r) => {
-                        if (r) markerRefs.current.set(site.id, r);
-                        else markerRefs.current.delete(site.id);
-                    }}
-                >
-                    <Popup
-                        autoPan={false}
-                        autoPanPadding={[50, 50]}
-                        closeButton={false}
-                        autoClose={false}
-                        closeOnClick={false}
+                        }}
+                        ref={(r) => {
+                            const sId = String(site.id).trim();
+                            if (r) markerRefs.current.set(sId, r);
+                            else markerRefs.current.delete(sId);
+                        }}
                     >
-                        <div style={{ width: '300px', position: 'relative' }}>
-                            <SiteCard
-                                site={site}
-                                isCompact={true}
-                                hideMapLink={true}
-                                onClose={() => {
-                                    activePopupSiteIdRef.current = null;
-                                    const marker = markerRefs.current.get(site.id);
-                                    if (marker) marker.closePopup();
-                                }}
-                            />
-                        </div>
-                    </Popup>
-                </Marker>
-            );
-        });
+                        <Popup
+                            autoPan={false}
+                            autoPanPadding={[50, 50]}
+                            closeButton={false}
+                            autoClose={false}
+                            closeOnClick={false}
+                        >
+                            <div style={{ width: '300px', position: 'relative' }}>
+                                <SiteCard
+                                    site={site}
+                                    isCompact={true}
+                                    hideMapLink={true}
+                                    onClose={() => {
+                                        activePopupSiteIdRef.current = null;
+                                        const marker = markerRefs.current.get(String(site.id).trim());
+                                        if (marker) marker.closePopup();
+                                        if (setCallerSite) setCallerSite(null);
+                                    }}
+                                />
+                            </div>
+                        </Popup>
+                    </Marker>
+                );
+            });
+    }, [sites, theme, isMobileLike, setCallerSite]);
 
     const sitesKey = (sites || []).map(s => s.id).join(',');
 
@@ -1058,12 +1070,11 @@ const MapView = () => {
                 <LocationCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <ClusterZoomBackControl clusterInstance={clusterInstance} isMobileLike={isMobileLike} theme={theme} onClusterClickRef={onClusterClickRef} />
-                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} />
-                <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
+                <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} activePopupSiteIdRef={activePopupSiteIdRef} />
+                <MapEventsHandler onMapClick={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
-                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
-                <SelectedSiteFlyer isMobileLike={isMobileLike} />
+                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} setCallerSite={setCallerSite} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}

@@ -17,6 +17,7 @@ const EventsModal = ({ onClose }) => {
         allSites,
         setView,
         setSelectedSite,
+        setCallerSite,
         setSiteToOpenPopup,
         userCoords,
         locationMode,
@@ -145,6 +146,7 @@ const EventsModal = ({ onClose }) => {
 
             // 1. Close any existing full-screen detailed card
             setSelectedSite(null);
+            if (setCallerSite) setCallerSite(null);
 
             // 2. Clear current popup state first to ensure the MapView logic re-centers
             // and re-opens the popup even if clicking the same event again.
@@ -162,6 +164,7 @@ const EventsModal = ({ onClose }) => {
     const handleResetAndView = (targetSite) => {
         setNavErrorModal(null);
         setSelectedSite(null);
+        if (setCallerSite) setCallerSite(null);
         setSiteToOpenPopup(null);
         setTimeout(() => {
             setSiteToOpenPopup(targetSite);
