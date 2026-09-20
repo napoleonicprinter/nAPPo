@@ -70,6 +70,30 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
         const maxAttempts = 30;
         let timer = null;
 
+        const openTargetMarker = (m) => {
+            if (!m) return;
+            if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
+            m.openPopup();
+            setTimeout(() => {
+                if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
+                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
+                    m.openPopup();
+                }
+            }, 100);
+            setTimeout(() => {
+                if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
+                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
+                    m.openPopup();
+                }
+            }, 300);
+            setTimeout(() => {
+                if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
+                    if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
+                    m.openPopup();
+                }
+            }, 600);
+        };
+
         const attemptOpen = () => {
             attempts++;
             const marker = markerRefs.current.get(targetSite.id);
@@ -85,47 +109,31 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                 const minTargetZoom = activeOverlay ? 14 : hasMaps ? 13.5 : 12;
                 const targetZoom = Math.max(currentZoom, minTargetZoom);
 
-                const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
-                targetPoint.y -= isMobileLike ? 140 : 120;
-                const targetLatLng = map.unproject(targetPoint, targetZoom);
-
-                const visibleParent = clusterInstance && typeof clusterInstance.getVisibleParent === 'function'
-                    ? clusterInstance.getVisibleParent(marker)
-                    : null;
-
-                const isClustered = visibleParent && visibleParent !== marker;
-
                 if (activeOverlay && activeOverlay.bounds) {
                     map.flyToBounds(activeOverlay.bounds, { padding: [50, 50], duration: 0.8 });
                     setTimeout(() => {
-                        const currentMarker = markerRefs.current.get(targetSite.id);
-                        if (currentMarker) {
-                            currentMarker.openPopup();
-                        }
+                        const currentMarker = markerRefs.current.get(targetSite.id) || marker;
+                        openTargetMarker(currentMarker);
                         setSiteToOpenPopup(null);
                     }, 850);
-                } else if (isClustered && clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                } else if (clusterInstance && typeof clusterInstance.zoomToShowLayer === 'function') {
+                    // zoomToShowLayer automatically zooms in and spiderfies if markers share same coordinates
                     clusterInstance.zoomToShowLayer(marker, () => {
-                        setTimeout(() => {
-                            if (map.getZoom() < targetZoom) {
-                                map.setZoom(targetZoom);
-                            }
-                            const currentMarker = markerRefs.current.get(targetSite.id);
-                            if (currentMarker) {
-                                currentMarker.openPopup();
-                            }
-                            setSiteToOpenPopup(null);
-                        }, 150);
+                        const currentMarker = markerRefs.current.get(targetSite.id) || marker;
+                        openTargetMarker(currentMarker);
+                        setSiteToOpenPopup(null);
                     });
                 } else {
+                    const targetPoint = map.project([targetSite.latitude, targetSite.longitude], targetZoom);
+                    targetPoint.y -= isMobileLike ? 140 : 120;
+                    const targetLatLng = map.unproject(targetPoint, targetZoom);
+
                     map.flyTo(targetLatLng, targetZoom, { animate: true, duration: 0.6 });
                     setTimeout(() => {
-                        const currentMarker = markerRefs.current.get(targetSite.id);
-                        if (currentMarker) {
-                            currentMarker.openPopup();
-                        }
+                        const currentMarker = markerRefs.current.get(targetSite.id) || marker;
+                        openTargetMarker(currentMarker);
                         setSiteToOpenPopup(null);
-                    }, 500);
+                    }, 650);
                 }
             } else if (attempts < maxAttempts) {
                 timer = setTimeout(attemptOpen, 100);
@@ -138,16 +146,19 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
         return () => {
             if (timer) clearTimeout(timer);
         };
-    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef]);
+    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef, activeMapOverlays]);
 
     return null;
 };
 
 const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef }) => {
+    const { siteToOpenPopup } = useAppContext();
     const map = useMap();
 
     useMapEvents({
         zoomend: () => {
+            if (siteToOpenPopup) return;
+
             const siteId = activePopupSiteIdRef?.current;
             if (!siteId) return;
 
@@ -155,6 +166,8 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef 
             if (!marker) return;
 
             setTimeout(() => {
+                if (typeof marker.isPopupOpen === 'function' && marker.isPopupOpen()) return;
+
                 const visibleParent = clusterInstance && typeof clusterInstance.getVisibleParent === 'function'
                     ? clusterInstance.getVisibleParent(marker)
                     : null;
@@ -165,13 +178,15 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef 
                     clusterInstance.zoomToShowLayer(marker, () => {
                         setTimeout(() => {
                             const m = markerRefs.current.get(siteId);
-                            if (m) m.openPopup();
-                        }, 50);
+                            if (m && typeof m.isPopupOpen === 'function' && !m.isPopupOpen()) {
+                                m.openPopup();
+                            }
+                        }, 100);
                     });
-                } else {
+                } else if (typeof marker.isPopupOpen === 'function' && !marker.isPopupOpen()) {
                     marker.openPopup();
                 }
-            }, 100);
+            }, 150);
         }
     });
 
@@ -179,6 +194,8 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef 
 };
 
 const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef }) => {
+    const { siteToOpenPopup } = useAppContext();
+
     useMapEvents({
         popupopen: (e) => {
             const newlyOpenedPopup = e.popup;
@@ -195,6 +212,8 @@ const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef }) => {
             });
         },
         popupclose: (e) => {
+            if (siteToOpenPopup) return;
+
             const closedPopup = e.popup;
             if (!markerRefs.current) return;
 
@@ -956,7 +975,8 @@ const MapView = () => {
                             window.history.pushState({ siteId: site.id }, "");
                             activePopupSiteIdRef.current = site.id;
                             if (selectedSite) setSelectedSite(null);
-                            if (isMobileLike) {
+                            const isSpiderfied = e.target && e.target.__parent && e.target.__parent._spiderfied;
+                            if (isMobileLike && !isSpiderfied) {
                                 const map = e.target._map;
                                 const latlng = e.target.getLatLng();
                                 const currentZoom = map.getZoom();

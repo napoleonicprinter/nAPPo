@@ -15132,27 +15132,6 @@
     "createDate": "2026-08-23"
   },
   {
-    "id": "825",
-    "year": "1811",
-    "name": "Murat Ordering the Capture of Capri",
-    "category": "Artwork",
-    "significance": 2,
-    "location": "Musée Marmottan Monet, Paris",
-    "country": "France",
-    "description": "The canvas 'Murat Ordering the Capture of Capri in 1808' was painted by the German artist Johann Heinrich Schmidt in 1811. The original oil on canvas artwork is housed at the Musée Marmottan Monet in Paris, France.",
-    "latitude": 48.860278,
-    "longitude": 2.296402,
-    "site_link": "https://www.marmottan.fr/notice/1047/",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_Capri.webp",
-    "createDate": "2026-08-23",
-    "relatedSites": [
-      {
-        "id": "832",
-        "title": "Villa Murat"
-      }
-    ]
-  },
-  {
     "id": "822",
     "year": "1808",
     "date": "1808-10-04",
@@ -15199,6 +15178,27 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri_west.webp",
     "createDate": "2026-08-23"
+  },
+  {
+    "id": "825",
+    "year": "1811",
+    "name": "Murat Ordering the Capture of Capri",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "Musée Marmottan Monet, Paris",
+    "country": "France",
+    "description": "The canvas 'Murat Ordering the Capture of Capri in 1808' was painted by the German artist Johann Heinrich Schmidt in 1811. The original oil on canvas artwork is housed at the Musée Marmottan Monet in Paris, France.",
+    "latitude": 48.860278,
+    "longitude": 2.296402,
+    "site_link": "https://www.marmottan.fr/notice/1047/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Murat_Capri.webp",
+    "createDate": "2026-08-23",
+    "relatedSites": [
+      {
+        "id": "832",
+        "title": "Villa Murat"
+      }
+    ]
   },
   {
     "id": "826",
@@ -15309,7 +15309,7 @@
     "createDate": "2026-08-23",
     "relatedSites": [
       {
-        "id": "822",
+        "id": "825",
         "title": "Schmidt canvas"
       },
       {
@@ -16933,6 +16933,21 @@
     "latitude": 53.356166,
     "longitude": 13.836130,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Patriotenkreuz.webp",
+    "createDate": "2026-09-20"
+  },
+  {
+    "id": "925",
+    "name": "Memorial Cross of the Dragoons",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-10-27",
+    "location": "Dedelow, Prenzlau",
+    "country": "Germany",
+    "description": "Memorial cross for the fallen and buried French dragoons of the 21st Dragoon Regiment in 1806",
+    "latitude": 53.356108,
+    "longitude": 13.836296,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Fallen_dragoons_memorial.webp",
     "createDate": "2026-09-20"
   }
 ]
