@@ -57,7 +57,7 @@ const getSiteIcon = (site) => {
 // --- STABILIZED INTERNAL COMPONENTS ---
 
 // Look for this component near the top of your file
-const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSiteIdRef }) => {
+const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSiteIdRef, isNavigatingRef }) => {
     const { siteToOpenPopup, setSiteToOpenPopup, activeMapOverlays } = useAppContext();
     const map = useMap();
 
@@ -65,6 +65,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
         if (!siteToOpenPopup || typeof siteToOpenPopup.latitude !== 'number' || typeof siteToOpenPopup.longitude !== 'number') return;
 
         const targetSite = siteToOpenPopup;
+        if (isNavigatingRef) isNavigatingRef.current = true;
         if (activePopupSiteIdRef) activePopupSiteIdRef.current = targetSite.id;
         let attempts = 0;
         const maxAttempts = 30;
@@ -87,14 +88,20 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                     if (typeof m.isPopupOpen === 'function' && m.isPopupOpen()) {
                         clearInterval(pollInterval);
                         pollInterval = null;
-                        setTimeout(() => setSiteToOpenPopup(null), 150);
+                        setSiteToOpenPopup(null);
+                        setTimeout(() => {
+                            if (isNavigatingRef) isNavigatingRef.current = false;
+                        }, 2000);
                         return;
                     }
                 }
-                if (pollCount >= 25) {
+                if (pollCount >= 30) {
                     clearInterval(pollInterval);
                     pollInterval = null;
                     setSiteToOpenPopup(null);
+                    setTimeout(() => {
+                        if (isNavigatingRef) isNavigatingRef.current = false;
+                    }, 1000);
                 }
             }, 100);
         };
@@ -138,6 +145,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                 timer = setTimeout(attemptOpen, 100);
             } else {
                 setSiteToOpenPopup(null);
+                if (isNavigatingRef) isNavigatingRef.current = false;
             }
         };
 
@@ -146,18 +154,18 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
             if (timer) clearTimeout(timer);
             if (pollInterval) clearInterval(pollInterval);
         };
-    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef, activeMapOverlays]);
+    }, [siteToOpenPopup, clusterInstance, map, setSiteToOpenPopup, isMobileLike, markerRefs, activePopupSiteIdRef, activeMapOverlays, isNavigatingRef]);
 
     return null;
 };
 
-const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef }) => {
+const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef, isNavigatingRef }) => {
     const { siteToOpenPopup } = useAppContext();
     const map = useMap();
 
     useMapEvents({
         zoomend: () => {
-            if (siteToOpenPopup) return;
+            if (siteToOpenPopup || isNavigatingRef?.current) return;
 
             const siteId = activePopupSiteIdRef?.current;
             if (!siteId) return;
@@ -166,6 +174,7 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef 
             if (!marker) return;
 
             setTimeout(() => {
+                if (isNavigatingRef?.current || siteToOpenPopup) return;
                 if (typeof marker.isPopupOpen === 'function' && marker.isPopupOpen()) return;
 
                 const visibleParent = clusterInstance && typeof clusterInstance.getVisibleParent === 'function'
@@ -186,14 +195,14 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef 
                 } else if (typeof marker.isPopupOpen === 'function' && !marker.isPopupOpen()) {
                     marker.openPopup();
                 }
-            }, 150);
+            }, 300);
         }
     });
 
     return null;
 };
 
-const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef }) => {
+const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef }) => {
     const { siteToOpenPopup } = useAppContext();
 
     useMapEvents({
@@ -212,7 +221,7 @@ const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef }) => {
             });
         },
         popupclose: (e) => {
-            if (siteToOpenPopup) return;
+            if (siteToOpenPopup || isNavigatingRef?.current) return;
 
             const closedPopup = e.popup;
             if (!markerRefs.current) return;
@@ -866,6 +875,7 @@ const MapView = () => {
     const [showDeals, setShowDeals] = useState(false);
     const markerRefs = useRef(new Map());
     const activePopupSiteIdRef = useRef(null);
+    const isNavigatingRef = useRef(false);
     const onClusterClickRef = useRef(null);
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
@@ -1050,9 +1060,9 @@ const MapView = () => {
                 <ClusterZoomBackControl clusterInstance={clusterInstance} isMobileLike={isMobileLike} theme={theme} onClusterClickRef={onClusterClickRef} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} />
                 <MapEventsHandler onMapClick={() => setSelectedSite(null)} />
-                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} />
-                <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} />
-                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} />
+                <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
+                <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
+                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <SelectedSiteFlyer isMobileLike={isMobileLike} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
