@@ -37,6 +37,13 @@ export const HELP_ITEMS = [
         content: 'The number in it indicates the quantity of sites in the cluster. Click on a cluster to zoom in and see the sites individually.'
     },
     {
+        id: 'zoomBack',
+        title: 'Zoom Back',
+        imagePc: '/assets/images/Help_ZoomBack.webp',// Large horizontal image
+        imageMobile: '/assets/images/Help_ZoomBack_M.webp', // Tall vertical image
+        content: 'When a clustered pin is cliked a "Zoom Back" button will appear at the top of the map. You can click it after opening the indivicual pins to return to the previous zoom level, but if you zoom at this view the buttom will disapear.'
+    },
+    {
         id: 'location',
         title: 'Location',
         imagePc: '/assets/images/Help_Location.webp',// Large horizontal image
