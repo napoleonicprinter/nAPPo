@@ -1162,7 +1162,8 @@ const MapView = () => {
                         }
                     }}
                     key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
-                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive) ? 0 : clusterRadius}
+                    disableClusteringAtZoom={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 0 : null}
+                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 80 : Number(clusterRadius)}
                     zoomToBoundsOnClick={true}
                     spiderfyOnMaxZoom={true}
                     spiderfyDistanceMultiplier={1.8}
