@@ -17134,5 +17134,34 @@
     "longitude": 10.949656,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Memorial_Greuben.webp",
     "createDate": "2026-09-21"
+  },
+  {
+    "id": "938",
+    "name": "Nordhaussen Memorial Stone",
+    "category": "Monument",
+    "significance": 1,
+    "year": "2023",
+    "location": "Nordhaussen",
+    "country": "Germany",
+    "description": "Erected in 2023 by the 'Interest Group Historical Hiking Trail 1806' to comemorate the Battle of Nordhausen against the French on October 17, 1806 when the Prussians covered their retreat to the north.",
+    "latitude": 51.496574,
+    "longitude": 10.790521,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nordhaussen_stele.webp",
+    "createDate": "2026-09-21"
+  },
+  {
+    "id": "939",
+    "name": "Battlefield of Nordhaussen",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-101-17",
+    "location": "Nordhaussen",
+    "country": "Germany",
+    "description": "The battle of Nordhausen on October 17, 1806, was a minor rearguard engagement and subsequent French occupation during the pursuit of the defeated Prussian army after the Battle of Jena-Auerstedt.",
+    "latitude": 51.496574,
+    "longitude": 10.790521,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nordhaussen.webp",
+    "createDate": "2026-09-21"
   }
 ]

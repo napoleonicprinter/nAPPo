@@ -4157,5 +4157,13 @@
         "location": "Berlin, Germany",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Fall_of_Berlin_(1806)",
         "description": "French forces captured Berlin on October 24, 1806, following the decisive Prussian defeat at the Battle of Jena–Auerstedt. The Prussian capital fell a mere 15 days after the outbreak of the war. Three days later, Emperor Napoleon entered the city unopposed and issued the Berlin Decree to establish his Continental System economic blockade. In the wake of the takeover, French troops subjected Berlin to extensive looting."
+    },
+    {
+        "id": "484",
+        "siteId": 939,
+        "title": "Battle of Nordhausen",
+        "date": "1806-10-17",
+        "location": "Nordhausen, Germany",
+        "description": "The battle of Nordhausen on October 17, 1806, was a minor rearguard engagement and subsequent French occupation during the pursuit of the defeated Prussian army after the Battle of Jena-Auerstedt."
     }
 ]
