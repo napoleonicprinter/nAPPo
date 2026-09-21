@@ -17155,13 +17155,36 @@
     "category": "Battle site",
     "significance": 1,
     "year": "1806",
-    "date": "1806-101-17",
+    "date": "1806-10-17",
     "location": "Nordhaussen",
     "country": "Germany",
     "description": "The battle of Nordhausen on October 17, 1806, was a minor rearguard engagement and subsequent French occupation during the pursuit of the defeated Prussian army after the Battle of Jena-Auerstedt.",
     "latitude": 51.496574,
     "longitude": 10.790521,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nordhaussen.webp",
+    "special": "4",
+    "defeated": "Prussia",
+    "victor": "France",
+    "commanders": [
+      "Jean de Dieu Soult",
+      "Gebhard Leberecht von Blücher",
+      "Prince August of Prussia"
+    ],
+    "createDate": "2026-09-21"
+  },
+  {
+    "id": "940",
+    "name": "Garnisonsmuseum",
+    "category": "Museum",
+    "significance": 1,
+    "year": "2006",
+    "location": "Quedlinburg",
+    "country": "Germany",
+    "description": "Managed by a dedicated local association, the museum's ten exhibition rooms trace the history of regional military troop deployments from 1698 until 1993, showcasing historical uniforms, medals, and weaponry.",
+    "latitude": 51.789853,
+    "longitude": 11.153554,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Garrisonmuseum.webp",
+    "site_link": "https://museen.de/garnisonmuseum-quedlinburg.html",
     "createDate": "2026-09-21"
   }
 ]
