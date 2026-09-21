@@ -265,7 +265,7 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef,
     return null;
 };
 
-const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef, setCallerSite }) => {
+const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef, setCallerSite, setSelectedSite }) => {
     const map = useMap();
 
     useEffect(() => {
@@ -283,6 +283,7 @@ const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef
 
             if (openedSiteId) {
                 activePopupSiteIdRef.current = openedSiteId;
+                if (setSelectedSite) setSelectedSite(null);
                 // Close any other open marker popups so only one leaflet is open at any time
                 markerRefs.current.forEach((marker, siteId) => {
                     if (siteId !== openedSiteId) {
@@ -316,7 +317,7 @@ const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef
             map.off('popupopen', handlePopupOpen);
             map.off('popupclose', handlePopupClose);
         };
-    }, [map, markerRefs, activePopupSiteIdRef, isNavigatingRef, setCallerSite]);
+    }, [map, markerRefs, activePopupSiteIdRef, isNavigatingRef, setCallerSite, setSelectedSite]);
 
     return null;
 };
@@ -324,7 +325,7 @@ const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef
 
 
 const LocationMarker = () => {
-    const { userCoords, locationMode } = useAppContext();
+    const { userCoords, locationMode, setSelectedSite, setCallerSite } = useAppContext();
 
     if (!userCoords || !locationMode || locationMode === 'none') return null;
 
@@ -348,6 +349,12 @@ const LocationMarker = () => {
             icon={blueIcon}
             zIndexOffset={1000}
             title={`Your Location (${locationLabel})`}
+            eventHandlers={{
+                click: () => {
+                    if (setSelectedSite) setSelectedSite(null);
+                    if (setCallerSite) setCallerSite(null);
+                }
+            }}
         >
             <Popup autoPan={false}>
                 <div style={{ padding: '4px 8px', textAlign: 'center', fontWeight: 'bold', fontSize: '0.85rem', color: '#222' }}>
@@ -808,30 +815,94 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
 
 const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef }) => {
     const map = useMap();
+    const { filterSearch } = useAppContext();
     const lastSitesRef = useRef("");
+    const lastSearchRef = useRef(filterSearch || "");
 
     useEffect(() => {
         const currentSitesKey = (sites || []).map(s => s.id).join(',');
+        const currentSearch = (filterSearch || "").trim();
         const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
         const hasActivePopup = activePopupSiteIdRef && activePopupSiteIdRef.current;
 
         if (selectedSite || siteToOpenPopup || hasActivePopup || hasOverlays) {
             lastSitesRef.current = currentSitesKey;
+            lastSearchRef.current = currentSearch;
             return;
         }
 
-        if (isFiltered && sites && sites.length > 0 && lastSitesRef.current !== currentSitesKey) {
-            lastSitesRef.current = currentSitesKey;
-            const bounds = L.latLngBounds(sites.map(s => [s.latitude, s.longitude]));
+        const isSearching = Boolean(currentSearch !== '');
+        const searchChanged = currentSearch !== lastSearchRef.current;
+        const sitesChanged = currentSitesKey !== lastSitesRef.current;
 
-            map.fitBounds(bounds, {
-                padding: [40, 40],
-                minZoom: 2.5,
-                maxZoom: 12,
-                duration: 1.5
-            });
+        if (!isFiltered || !sites || sites.length === 0) {
+            lastSitesRef.current = currentSitesKey;
+            lastSearchRef.current = currentSearch;
+            return;
         }
-    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef]);
+
+        if (isSearching) {
+            if (searchChanged || sitesChanged) {
+                const timer = setTimeout(() => {
+                    lastSitesRef.current = currentSitesKey;
+                    lastSearchRef.current = currentSearch;
+
+                    const validSites = sites.filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude));
+                    if (validSites.length === 0) return;
+
+                    if (validSites.length === 1) {
+                        const targetLat = validSites[0].latitude;
+                        const targetLon = validSites[0].longitude;
+                        // For a single searched site, zoom 1 level less (10.5 instead of 11.5-12)
+                        const targetZoom = 10.5;
+                        map.flyTo([targetLat, targetLon], targetZoom, { duration: 1.2 });
+                    } else {
+                        const bounds = L.latLngBounds(validSites.map(s => [s.latitude, s.longitude]));
+                        const padding = [80, 80];
+                        const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
+
+                        // When search site filter is used, zoom in one level less (calculatedZoom - 1)
+                        const zoomReduction = 1.0;
+                        const minMapZoom = map.getMinZoom() ?? 2.5;
+                        const maxAllowedZoom = 12;
+                        const finalZoom = Math.max(minMapZoom, Math.min(calculatedZoom - zoomReduction, maxAllowedZoom));
+                        const center = bounds.getCenter();
+
+                        map.flyTo(center, finalZoom, { duration: 1.2 });
+                    }
+                }, 2000);
+
+                return () => clearTimeout(timer);
+            }
+        } else {
+            // Non-search filter changes (category, country, campaign, etc.) fit immediately
+            if (sitesChanged) {
+                lastSitesRef.current = currentSitesKey;
+                lastSearchRef.current = currentSearch;
+
+                const validSites = sites.filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude));
+                if (validSites.length === 0) return;
+
+                if (validSites.length === 1) {
+                    const targetLat = validSites[0].latitude;
+                    const targetLon = validSites[0].longitude;
+                    const targetZoom = 11.5;
+                    map.flyTo([targetLat, targetLon], targetZoom, { duration: 1.2 });
+                } else {
+                    const bounds = L.latLngBounds(validSites.map(s => [s.latitude, s.longitude]));
+                    const padding = [60, 60];
+                    const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
+                    const zoomReduction = 0.5;
+                    const minMapZoom = map.getMinZoom() ?? 2.5;
+                    const maxAllowedZoom = 13;
+                    const finalZoom = Math.max(minMapZoom, Math.min(calculatedZoom - zoomReduction, maxAllowedZoom));
+                    const center = bounds.getCenter();
+
+                    map.flyTo(center, finalZoom, { duration: 1.2 });
+                }
+            }
+        }
+    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef, filterSearch]);
 
     return null;
 };
@@ -982,7 +1053,7 @@ const MapView = () => {
                                 window.history.pushState({ siteId: site.id }, "");
                                 const clickedIdStr = String(site.id).trim();
                                 activePopupSiteIdRef.current = clickedIdStr;
-                                if (selectedSite) setSelectedSite(null);
+                                setSelectedSite(null);
                                 if (setCallerSite) setCallerSite(null);
 
                                 // Close any previous marker popups so only ONE leaflet is open at any time
@@ -1037,7 +1108,7 @@ const MapView = () => {
                     </Marker>
                 );
             });
-    }, [sites, theme, isMobileLike, setCallerSite]);
+    }, [sites, theme, isMobileLike, setCallerSite, setSelectedSite]);
 
     const sitesKey = (sites || []).map(s => s.id).join(',');
 
@@ -1074,7 +1145,7 @@ const MapView = () => {
                 <MapEventsHandler onMapClick={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }} />
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
-                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} setCallerSite={setCallerSite} />
+                <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} setCallerSite={setCallerSite} setSelectedSite={setSelectedSite} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}
@@ -1084,6 +1155,8 @@ const MapView = () => {
                 <MarkerClusterGroup
                     ref={setClusterInstance}
                     onClick={(e) => {
+                        setSelectedSite(null);
+                        if (setCallerSite) setCallerSite(null);
                         if (onClusterClickRef.current) {
                             onClusterClickRef.current(e);
                         }
