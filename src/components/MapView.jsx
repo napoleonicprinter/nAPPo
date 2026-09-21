@@ -966,16 +966,6 @@ const MapView = () => {
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
-    const isClusteringDisabled = useMemo(() => {
-        return Boolean(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0);
-    }, [hasActiveOverlays, isTodaysBattleActive, clusterRadius]);
-
-    useEffect(() => {
-        if (isClusteringDisabled) {
-            setClusterInstance(null);
-        }
-    }, [isClusteringDisabled]);
-
     useEffect(() => {
         const styleId = 'map-view-custom-styles';
         let style = document.getElementById(styleId);
@@ -1181,32 +1171,29 @@ const MapView = () => {
                     isTodaysBattleActive={isTodaysBattleActive}
                 />
 
-                {isClusteringDisabled ? (
-                    renderedMarkers
-                ) : (
-                    <MarkerClusterGroup
-                        ref={setClusterInstance}
-                        onClick={(e) => {
-                            setSelectedSite(null);
-                            if (setCallerSite) setCallerSite(null);
-                            if (onClusterClickRef.current) {
-                                onClusterClickRef.current(e);
-                            }
-                        }}
-                        key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
-                        maxClusterRadius={Number(clusterRadius) || 25}
-                        zoomToBoundsOnClick={true}
-                        spiderfyOnMaxZoom={true}
-                        spiderfyDistanceMultiplier={1.8}
-                        spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
-                        showCoverageOnHover={false}
-                        chunkedLoading={false}
-                        removeOutsideVisibleBounds={false}
-                        animateAddingMarkers={false}
-                    >
-                        {renderedMarkers}
-                    </MarkerClusterGroup>
-                )}
+                <MarkerClusterGroup
+                    ref={setClusterInstance}
+                    onClick={(e) => {
+                        setSelectedSite(null);
+                        if (setCallerSite) setCallerSite(null);
+                        if (onClusterClickRef.current) {
+                            onClusterClickRef.current(e);
+                        }
+                    }}
+                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
+                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 1 : Number(clusterRadius)}
+                    spiderfyOnEveryZoom={Boolean(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0)}
+                    zoomToBoundsOnClick={true}
+                    spiderfyOnMaxZoom={true}
+                    spiderfyDistanceMultiplier={1.8}
+                    spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
+                    showCoverageOnHover={false}
+                    chunkedLoading={false}
+                    removeOutsideVisibleBounds={false}
+                    animateAddingMarkers={false}
+                >
+                    {renderedMarkers}
+                </MarkerClusterGroup>
             </MapContainer>
 
             {/* MODAL DE DETALLE */}

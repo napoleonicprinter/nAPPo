@@ -4165,5 +4165,22 @@
         "date": "1806-10-17",
         "location": "Nordhausen, Germany",
         "description": "The battle of Nordhausen on October 17, 1806, was a minor rearguard engagement and subsequent French occupation during the pursuit of the defeated Prussian army after the Battle of Jena-Auerstedt."
+    },
+    {
+        "id": "485",
+        "title": "Siege of Givet begins",
+        "siteId": 941,
+        "date": "1815-06-22",
+        "location": "Givet, France",
+        "description": "The siege of Givet began on June 22, 1815, with the arrival of Prussian forces under the command of Prince Augustus of Prussia. The French garrison, commanded by General Jean-Raymond Bourke, held out for six months until December 17, 1815."
+    },
+    {
+        "id": "486",
+        "title": "General Bourke capitulation",
+        "siteId": 941,
+        "date": "1815-12-16",
+        "location": "Givet, France",
+        "wikipedia_link": "https://far.wikipedia.org/wiki/Si%C3%A8ge_de_Givet",
+        "description": "General Jean Raymond Charles Bourke officially capitulated at the fortress of Givet on December 16, 1815. He held out for months following Napoleon's defeat at Waterloo, only surrendering after receiving a formal order from Paris."
     }
 ]

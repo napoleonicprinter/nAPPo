@@ -17058,7 +17058,7 @@
     "location": "Lanitz-Hassel-Tal",
     "country": "Germany",
     "description": "This is the oldest marker at the site, placed in 1815 (just two years after the battle) to mark the precise spot where the Prussian Commander-in-Chief was mortally wounded.",
-    "latitude": 51.124930,
+    "latitude": 51.1248,
     "longitude": 11.646302,
     "wikipedia_link": "https://de.wikipedia.org/wiki/Karl-Wilhelm-Ferdinand-Denkmal_(Taugwitz)",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Duke_Brunswick_monument.webp",
@@ -17185,6 +17185,44 @@
     "longitude": 11.153554,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Garrisonmuseum.webp",
     "site_link": "https://museen.de/garnisonmuseum-quedlinburg.html",
+    "createDate": "2026-09-21"
+  },
+  {
+    "id": "941",
+    "name": "Siege of Givet",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1815",
+    "date": "1815-06-22",
+    "location": "Givet",
+    "country": "France",
+    "description": "The siege of Givet took place from June 22, 1815, to December 17, 1815, involving the besieged French troops under General Bourke and the Prussian besiegers under Prince Augustus of Prussia.",
+    "latitude": 50.136386,
+    "longitude": 4.824387,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Givet.webp",
+    "wikipedia_link": "https://far.wikipedia.org/wiki/Si%C3%A8ge_de_Givet",
+    "special": "100 Days",
+    "victor": "Prussia",
+    "defeated": "France",
+    "commanders": [
+      "Jean-Raymond Bourke",
+      "Prince August of Prussia"
+    ],
+    "createDate": "2026-09-21"
+  },
+  {
+    "id": "942",
+    "name": "Citadel of Charlemont",
+    "category": "Battle landmark",
+    "significance": 2,
+    "year": "1815",
+    "location": "Givet",
+    "country": "France",
+    "description": "On September 1815, General Jean-Raymond Bourke decided to evacuate the town of Givet and entrench himself in the citadel of Charlemont.",
+    "latitude": 50.134634,
+    "longitude": 4.811489,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Charlemont.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Reduction_of_the_French_fortresses_in_1815",
     "createDate": "2026-09-21"
   }
 ]
