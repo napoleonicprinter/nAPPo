@@ -815,9 +815,21 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
 
 const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef }) => {
     const map = useMap();
-    const { filterSearch } = useAppContext();
+    const {
+        filterSearch,
+        filterCountry,
+        filterCampaign,
+        filterCoalition,
+        filterVisited,
+        showOnlyNew,
+        newSitesDays,
+        filterWithMaps
+    } = useAppContext();
+
+    const drawerFiltersKey = `${(filterSearch || '').trim()}|${filterCountry || 'all'}|${filterCampaign || 'all'}|${filterCoalition || 'all'}|${filterVisited || 'all'}|${showOnlyNew ? String(newSitesDays) : 'false'}|${Boolean(filterWithMaps)}`;
+
+    const lastDrawerFiltersKeyRef = useRef(drawerFiltersKey);
     const lastSitesRef = useRef("");
-    const lastSearchRef = useRef(filterSearch || "");
 
     useEffect(() => {
         const currentSitesKey = (sites || []).map(s => s.id).join(',');
@@ -825,60 +837,38 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
         const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
         const hasActivePopup = activePopupSiteIdRef && activePopupSiteIdRef.current;
 
+        const isDrawerFiltered = Boolean(
+            currentSearch !== '' ||
+            (filterCountry && filterCountry !== 'all') ||
+            (filterCampaign && filterCampaign !== 'all') ||
+            (filterCoalition && filterCoalition !== 'all') ||
+            (filterVisited && filterVisited !== 'all') ||
+            showOnlyNew ||
+            filterWithMaps
+        );
+
         if (selectedSite || siteToOpenPopup || hasActivePopup || hasOverlays) {
+            lastDrawerFiltersKeyRef.current = drawerFiltersKey;
             lastSitesRef.current = currentSitesKey;
-            lastSearchRef.current = currentSearch;
+            return;
+        }
+
+        const drawerFiltersChanged = drawerFiltersKey !== lastDrawerFiltersKeyRef.current;
+
+        // ONLY zoom in/adjust map view when filters from the Filters drawer are modified and active.
+        // Horizontal scroll menu filters (Categories, Significance, Year, Commander, Arc, etc.) maintain current zoom level.
+        if (!drawerFiltersChanged || !isDrawerFiltered || !sites || sites.length === 0) {
+            lastDrawerFiltersKeyRef.current = drawerFiltersKey;
+            lastSitesRef.current = currentSitesKey;
             return;
         }
 
         const isSearching = Boolean(currentSearch !== '');
-        const searchChanged = currentSearch !== lastSearchRef.current;
-        const sitesChanged = currentSitesKey !== lastSitesRef.current;
-
-        if (!isFiltered || !sites || sites.length === 0) {
-            lastSitesRef.current = currentSitesKey;
-            lastSearchRef.current = currentSearch;
-            return;
-        }
 
         if (isSearching) {
-            if (searchChanged || sitesChanged) {
-                const timer = setTimeout(() => {
-                    lastSitesRef.current = currentSitesKey;
-                    lastSearchRef.current = currentSearch;
-
-                    const validSites = sites.filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude));
-                    if (validSites.length === 0) return;
-
-                    if (validSites.length === 1) {
-                        const targetLat = validSites[0].latitude;
-                        const targetLon = validSites[0].longitude;
-                        // For a single searched site, zoom 1 level less (10.5 instead of 11.5-12)
-                        const targetZoom = 10.5;
-                        map.flyTo([targetLat, targetLon], targetZoom, { duration: 1.2 });
-                    } else {
-                        const bounds = L.latLngBounds(validSites.map(s => [s.latitude, s.longitude]));
-                        const padding = [80, 80];
-                        const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
-
-                        // When search site filter is used, zoom in one level less (calculatedZoom - 1)
-                        const zoomReduction = 1.0;
-                        const minMapZoom = map.getMinZoom() ?? 2.5;
-                        const maxAllowedZoom = 12;
-                        const finalZoom = Math.max(minMapZoom, Math.min(calculatedZoom - zoomReduction, maxAllowedZoom));
-                        const center = bounds.getCenter();
-
-                        map.flyTo(center, finalZoom, { duration: 1.2 });
-                    }
-                }, 2000);
-
-                return () => clearTimeout(timer);
-            }
-        } else {
-            // Non-search filter changes (category, country, campaign, etc.) fit immediately
-            if (sitesChanged) {
+            const timer = setTimeout(() => {
+                lastDrawerFiltersKeyRef.current = drawerFiltersKey;
                 lastSitesRef.current = currentSitesKey;
-                lastSearchRef.current = currentSearch;
 
                 const validSites = sites.filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude));
                 if (validSites.length === 0) return;
@@ -886,23 +876,52 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
                 if (validSites.length === 1) {
                     const targetLat = validSites[0].latitude;
                     const targetLon = validSites[0].longitude;
-                    const targetZoom = 11.5;
+                    const targetZoom = 10.5;
                     map.flyTo([targetLat, targetLon], targetZoom, { duration: 1.2 });
                 } else {
                     const bounds = L.latLngBounds(validSites.map(s => [s.latitude, s.longitude]));
-                    const padding = [60, 60];
+                    const padding = [80, 80];
                     const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
-                    const zoomReduction = 0.5;
+                    const zoomReduction = 1.0;
                     const minMapZoom = map.getMinZoom() ?? 2.5;
-                    const maxAllowedZoom = 13;
+                    const maxAllowedZoom = 12;
                     const finalZoom = Math.max(minMapZoom, Math.min(calculatedZoom - zoomReduction, maxAllowedZoom));
                     const center = bounds.getCenter();
 
                     map.flyTo(center, finalZoom, { duration: 1.2 });
                 }
+            }, 2000);
+
+            return () => clearTimeout(timer);
+        } else {
+            lastDrawerFiltersKeyRef.current = drawerFiltersKey;
+            lastSitesRef.current = currentSitesKey;
+
+            const validSites = sites.filter(s => typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude));
+            if (validSites.length === 0) return;
+
+            if (validSites.length === 1) {
+                const targetLat = validSites[0].latitude;
+                const targetLon = validSites[0].longitude;
+                const targetZoom = 11.5;
+                map.flyTo([targetLat, targetLon], targetZoom, { duration: 1.2 });
+            } else {
+                const bounds = L.latLngBounds(validSites.map(s => [s.latitude, s.longitude]));
+                const padding = [60, 60];
+                const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
+                const zoomReduction = 0.5;
+                const minMapZoom = map.getMinZoom() ?? 2.5;
+                const maxAllowedZoom = 13;
+                const finalZoom = Math.max(minMapZoom, Math.min(calculatedZoom - zoomReduction, maxAllowedZoom));
+                const center = bounds.getCenter();
+
+                map.flyTo(center, finalZoom, { duration: 1.2 });
             }
         }
-    }, [sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef, filterSearch]);
+    }, [
+        sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef,
+        drawerFiltersKey, filterSearch, filterCountry, filterCampaign, filterCoalition, filterVisited, showOnlyNew, newSitesDays, filterWithMaps
+    ]);
 
     return null;
 };
@@ -946,6 +965,16 @@ const MapView = () => {
     const onClusterClickRef = useRef(null);
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
+
+    const isClusteringDisabled = useMemo(() => {
+        return Boolean(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0);
+    }, [hasActiveOverlays, isTodaysBattleActive, clusterRadius]);
+
+    useEffect(() => {
+        if (isClusteringDisabled) {
+            setClusterInstance(null);
+        }
+    }, [isClusteringDisabled]);
 
     useEffect(() => {
         const styleId = 'map-view-custom-styles';
@@ -1152,29 +1181,32 @@ const MapView = () => {
                     isTodaysBattleActive={isTodaysBattleActive}
                 />
 
-                <MarkerClusterGroup
-                    ref={setClusterInstance}
-                    onClick={(e) => {
-                        setSelectedSite(null);
-                        if (setCallerSite) setCallerSite(null);
-                        if (onClusterClickRef.current) {
-                            onClusterClickRef.current(e);
-                        }
-                    }}
-                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
-                    disableClusteringAtZoom={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 0 : null}
-                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 80 : Number(clusterRadius)}
-                    zoomToBoundsOnClick={true}
-                    spiderfyOnMaxZoom={true}
-                    spiderfyDistanceMultiplier={1.8}
-                    spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
-                    showCoverageOnHover={false}
-                    chunkedLoading={false}
-                    removeOutsideVisibleBounds={false}
-                    animateAddingMarkers={false}
-                >
-                    {renderedMarkers}
-                </MarkerClusterGroup>
+                {isClusteringDisabled ? (
+                    renderedMarkers
+                ) : (
+                    <MarkerClusterGroup
+                        ref={setClusterInstance}
+                        onClick={(e) => {
+                            setSelectedSite(null);
+                            if (setCallerSite) setCallerSite(null);
+                            if (onClusterClickRef.current) {
+                                onClusterClickRef.current(e);
+                            }
+                        }}
+                        key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
+                        maxClusterRadius={Number(clusterRadius) || 25}
+                        zoomToBoundsOnClick={true}
+                        spiderfyOnMaxZoom={true}
+                        spiderfyDistanceMultiplier={1.8}
+                        spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
+                        showCoverageOnHover={false}
+                        chunkedLoading={false}
+                        removeOutsideVisibleBounds={false}
+                        animateAddingMarkers={false}
+                    >
+                        {renderedMarkers}
+                    </MarkerClusterGroup>
+                )}
             </MapContainer>
 
             {/* MODAL DE DETALLE */}
