@@ -1200,7 +1200,6 @@ const MapView = () => {
                     }}
                     key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
                     maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 1 : Number(clusterRadius)}
-                    spiderfyOnEveryZoom={Boolean(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0)}
                     zoomToBoundsOnClick={true}
                     spiderfyOnMaxZoom={true}
                     spiderfyDistanceMultiplier={1.8}
