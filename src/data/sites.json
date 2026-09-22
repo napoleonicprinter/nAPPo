@@ -10745,7 +10745,7 @@
     "significance": 2,
     "location": "Toul",
     "country": "France",
-    "description": "Historical records note that he was born in a house on Rue de l’Ingressin, near a small stream of the same name. His father was a butcher. Old maps show the Rue de l'Ingressin adjacent to Rue de la Boucherie.",
+    "description": "Historical records note that he was born in a house on Rue de l'Ingressin, near a small stream of the same name. His father was a butcher. Old maps show the Rue de l'Ingressin adjacent to Rue de la Boucherie.",
     "latitude": 48.677844,
     "longitude": 5.889728,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cyr_Birthplace.webp"
@@ -17224,5 +17224,35 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Charlemont.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Reduction_of_the_French_fortresses_in_1815",
     "createDate": "2026-09-21"
+  },
+  {
+    "id": "943",
+    "name": "Monument to the Peninsular War Heros",
+    "category": "Monument",
+    "significance": 3,
+    "date": "1933-01-08",
+    "location": "Lisbon",
+    "country": "Portugal",
+    "description": " The cornerstone was laid in September 1908 with King Manuel II, and the site was officially inaugurated on January 8, 1933. It features detailed bronze sculptural groups surrounding a tall base and pillar.",
+    "latitude": 38.748331,
+    "longitude": -9.148373,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Heroes_Lisboa.webp",
+    "site_link": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/aos-herois-da-guerra-peninsular",
+    "createDate": "2026-09-22"
+  },
+  {
+    "id": "944",
+    "name": "Heroes of the Peninsular War Monument",
+    "category": "Monument",
+    "significance": 3,
+    "date": "1952-09-07",
+    "location": "Oporto",
+    "country": "Portugal",
+    "description": " This 45-meter-tall monument honors the joint victory of Portuguese and British forces over Napoleon's army during the Peninsular War (1808–1814). The landmark is famous for its massive granite column topped by a lion conquering an eagle, and it was officially inaugurated on September 7, 1952.",
+    "latitude": 41.157977,
+    "longitude": -8.629147,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Heroes_Oporto.webp",
+    "site_link": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/aos-herois-da-guerra-peninsular",
+    "createDate": "2026-09-22"
   }
 ]

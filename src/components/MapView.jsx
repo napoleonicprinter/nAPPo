@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { MapContainer, TileLayer, Popup, Marker, Tooltip, ZoomControl, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Popup, Marker, Tooltip, ZoomControl, useMap, useMapEvents, Polyline, CircleMarker } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { useAppContext, useBackHandler, getAvailableSiteMaps } from '../context/AppContext';
 import SiteCard, { getCategoryColor } from './SiteCard';
@@ -143,7 +143,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
             if (idStr !== targetIdStr) {
                 try {
                     marker.closePopup();
-                } catch (e) {}
+                } catch (e) { }
             }
         });
 
@@ -180,12 +180,12 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                         if (cancelled) return;
                         try {
                             marker.openPopup();
-                        } catch (err) {}
+                        } catch (err) { }
 
                         // Settle navigation state quickly
                         setTimeout(() => {
                             if (!cancelled) {
-                                try { marker.openPopup(); } catch (e) {}
+                                try { marker.openPopup(); } catch (e) { }
                                 isNavigatingRef.current = false;
                                 setSiteToOpenPopup(null);
                             }
@@ -195,7 +195,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                     map.setView(targetLatLng, Math.max(map.getZoom(), 14));
                     setTimeout(() => {
                         if (!cancelled) {
-                            try { marker.openPopup(); } catch (err) {}
+                            try { marker.openPopup(); } catch (err) { }
                             isNavigatingRef.current = false;
                             setSiteToOpenPopup(null);
                         }
@@ -218,7 +218,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                     if (m) {
                         try {
                             m.openPopup();
-                        } catch (e) {}
+                        } catch (e) { }
                     }
                     isNavigatingRef.current = false;
                     setSiteToOpenPopup(null);
@@ -257,7 +257,7 @@ const ZoomPopupPreserver = ({ markerRefs, clusterInstance, activePopupSiteIdRef,
                     if (!marker.isPopupOpen()) {
                         marker.openPopup();
                     }
-                } catch (e) {}
+                } catch (e) { }
             }
         }
     });
@@ -289,7 +289,7 @@ const SinglePopupEnforcer = ({ markerRefs, activePopupSiteIdRef, isNavigatingRef
                     if (siteId !== openedSiteId) {
                         try {
                             marker.closePopup();
-                        } catch (err) {}
+                        } catch (err) { }
                     }
                 });
             }
@@ -944,6 +944,253 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
     return null;
 };
 
+const createClusterIcon = (count) => {
+    const sizeClass = count < 10 ? 'small' : count < 100 ? 'medium' : 'large';
+    const size = count < 10 ? 36 : count < 100 ? 44 : 52;
+    return L.divIcon({
+        html: `<div><span>${count}</span></div>`,
+        className: `marker-cluster marker-cluster-${sizeClass}`,
+        iconSize: L.point(size, size)
+    });
+};
+
+const UnclusteredSpiderfiedMarkers = ({
+    sites,
+    markerRefs,
+    activePopupSiteIdRef,
+    setSelectedSite,
+    setCallerSite,
+    isMobileLike,
+    siteToOpenPopup
+}) => {
+    const map = useMap();
+    const [currentZoom, setCurrentZoom] = useState(map.getZoom());
+    const [expandedKeys, setExpandedKeys] = useState(() => new Set());
+
+    useMapEvents({
+        zoomend: () => setCurrentZoom(map.getZoom()),
+        moveend: () => setCurrentZoom(map.getZoom()),
+        resize: () => setCurrentZoom(map.getZoom()),
+        click: () => {
+            setSelectedSite(null);
+            if (setCallerSite) setCallerSite(null);
+        }
+    });
+
+    // Automatically expand group if a site inside it is targeted for popup opening
+    useEffect(() => {
+        if (siteToOpenPopup && typeof siteToOpenPopup.latitude === 'number' && typeof siteToOpenPopup.longitude === 'number') {
+            const key = `${siteToOpenPopup.latitude.toFixed(6)},${siteToOpenPopup.longitude.toFixed(6)}`;
+            setExpandedKeys(prev => {
+                if (prev.has(key)) return prev;
+                const next = new Set(prev);
+                next.add(key);
+                return next;
+            });
+        }
+    }, [siteToOpenPopup]);
+
+    const coordinateGroups = useMemo(() => {
+        const groups = new Map();
+        const valid = (sites || []).filter(
+            s => s && typeof s.latitude === 'number' && typeof s.longitude === 'number' && !isNaN(s.latitude) && !isNaN(s.longitude)
+        );
+
+        valid.forEach(site => {
+            const key = `${site.latitude.toFixed(6)},${site.longitude.toFixed(6)}`;
+            if (!groups.has(key)) {
+                groups.set(key, { key, sites: [] });
+            }
+            groups.get(key).sites.push(site);
+        });
+
+        return Array.from(groups.values());
+    }, [sites]);
+
+    const renderSiteMarker = (site, position, isSpiderfied = false) => {
+        const rate = Number(site.significance) || 1;
+        const zIndexOffset = rate === 1 ? 300 : rate === 2 ? 200 : 100;
+
+        return (
+            <Marker
+                key={site.id}
+                position={position}
+                icon={getSiteIcon(site)}
+                zIndexOffset={zIndexOffset}
+                riseOnHover={true}
+                eventHandlers={{
+                    click: (e) => {
+                        if (e.originalEvent) e.originalEvent.stopPropagation();
+                        window.history.pushState({ siteId: site.id }, "");
+                        const clickedIdStr = String(site.id).trim();
+                        activePopupSiteIdRef.current = clickedIdStr;
+                        setSelectedSite(null);
+                        if (setCallerSite) setCallerSite(null);
+
+                        markerRefs.current.forEach((marker, idStr) => {
+                            if (idStr !== clickedIdStr) {
+                                try {
+                                    marker.closePopup();
+                                } catch (err) {}
+                            }
+                        });
+
+                        if (isMobileLike && !isSpiderfied) {
+                            const m = e.target._map;
+                            const latlng = e.target.getLatLng();
+                            const zoom = m.getZoom();
+                            const targetPoint = m.project(latlng, zoom);
+                            targetPoint.y -= 150;
+                            const targetLatLng = m.unproject(targetPoint, zoom);
+                            m.panTo(targetLatLng, { animate: true, duration: 0.5 });
+                        }
+                        e.target.openPopup();
+                    }
+                }}
+                ref={(r) => {
+                    const sId = String(site.id).trim();
+                    if (r) markerRefs.current.set(sId, r);
+                    else markerRefs.current.delete(sId);
+                }}
+            >
+                <Popup
+                    autoPan={false}
+                    autoPanPadding={[50, 50]}
+                    closeButton={false}
+                    autoClose={false}
+                    closeOnClick={false}
+                >
+                    <div style={{ width: '300px', position: 'relative' }}>
+                        <SiteCard
+                            site={site}
+                            isCompact={true}
+                            hideMapLink={true}
+                            onClose={() => {
+                                activePopupSiteIdRef.current = null;
+                                const marker = markerRefs.current.get(String(site.id).trim());
+                                if (marker) marker.closePopup();
+                                if (setCallerSite) setCallerSite(null);
+                            }}
+                        />
+                    </div>
+                </Popup>
+            </Marker>
+        );
+    };
+
+    return (
+        <>
+            {coordinateGroups.map(({ key: groupKey, sites: groupSites }) => {
+                if (groupSites.length === 1) {
+                    const site = groupSites[0];
+                    return renderSiteMarker(site, [site.latitude, site.longitude], false);
+                }
+
+                const centerLat = groupSites[0].latitude;
+                const centerLng = groupSites[0].longitude;
+                const isExpanded = expandedKeys.has(groupKey);
+
+                // If not expanded, render cluster icon badge with count
+                if (!isExpanded) {
+                    return (
+                        <Marker
+                            key={`cluster-icon-${groupKey}-${groupSites.length}`}
+                            position={[centerLat, centerLng]}
+                            icon={createClusterIcon(groupSites.length)}
+                            zIndexOffset={400}
+                            eventHandlers={{
+                                click: (e) => {
+                                    if (e.originalEvent) e.originalEvent.stopPropagation();
+                                    setSelectedSite(null);
+                                    if (setCallerSite) setCallerSite(null);
+                                    setExpandedKeys(prev => {
+                                        const next = new Set(prev);
+                                        next.add(groupKey);
+                                        return next;
+                                    });
+                                }
+                            }}
+                        />
+                    );
+                }
+
+                // If expanded, render spiderfy legs and pins around the center reference point
+                const centerLatLng = L.latLng(centerLat, centerLng);
+                const centerPt = map.latLngToLayerPoint(centerLatLng);
+                const count = groupSites.length;
+
+                const sortedGroup = [...groupSites].sort((a, b) => (Number(b.significance) || 1) - (Number(a.significance) || 1));
+
+                return (
+                    <React.Fragment key={`spider-group-${groupKey}-${count}`}>
+                        {/* Center Dot - Clicking it collapses back to cluster icon */}
+                        <CircleMarker
+                            center={[centerLat, centerLng]}
+                            radius={4.5}
+                            pathOptions={{
+                                color: '#ef5350',
+                                fillColor: '#ef5350',
+                                fillOpacity: 0.95,
+                                weight: 2
+                            }}
+                            eventHandlers={{
+                                click: (e) => {
+                                    if (e.originalEvent) e.originalEvent.stopPropagation();
+                                    setExpandedKeys(prev => {
+                                        const next = new Set(prev);
+                                        next.delete(groupKey);
+                                        return next;
+                                    });
+                                }
+                            }}
+                        />
+
+                        {sortedGroup.map((site, i) => {
+                            let pt;
+                            if (count <= 8) {
+                                const legLength = Math.max(38, 25 + count * 4.5);
+                                const angleStep = (2 * Math.PI) / count;
+                                const angle = i * angleStep - Math.PI / 2;
+                                pt = L.point(
+                                    centerPt.x + legLength * Math.cos(angle),
+                                    centerPt.y + legLength * Math.sin(angle)
+                                );
+                            } else {
+                                const legLength = 30 + i * 4;
+                                const angle = i * (Math.PI / 3);
+                                pt = L.point(
+                                    centerPt.x + legLength * Math.cos(angle),
+                                    centerPt.y + legLength * Math.sin(angle)
+                                );
+                            }
+
+                            const spiderLatLng = map.layerPointToLatLng(pt);
+
+                            return (
+                                <React.Fragment key={site.id}>
+                                    <Polyline
+                                        positions={[
+                                            [centerLat, centerLng],
+                                            [spiderLatLng.lat, spiderLatLng.lng]
+                                        ]}
+                                        pathOptions={{
+                                            color: '#ef5350',
+                                            weight: 1.5,
+                                            opacity: 0.85
+                                        }}
+                                        interactive={false}
+                                    />
+                                    {renderSiteMarker(site, [spiderLatLng.lat, spiderLatLng.lng], true)}
+                                </React.Fragment>
+                            );
+                        })}
+                    </React.Fragment>
+                );
+            })}
+        </>
+    );
+};
+
 const MapView = () => {
     const {
         sites, theme, mapStyle, clusterRadius,
@@ -983,6 +1230,12 @@ const MapView = () => {
     const onClusterClickRef = useRef(null);
     const [clusterInstance, setClusterInstance] = useState(null);
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
+
+    useEffect(() => {
+        if (!clusterRadius || Number(clusterRadius) <= 0 || hasActiveOverlays || isTodaysBattleActive) {
+            setClusterInstance(null);
+        }
+    }, [clusterRadius, hasActiveOverlays, isTodaysBattleActive]);
 
     useEffect(() => {
         const styleId = 'map-view-custom-styles';
@@ -1098,7 +1351,7 @@ const MapView = () => {
                                     if (idStr !== clickedIdStr) {
                                         try {
                                             marker.closePopup();
-                                        } catch (err) {}
+                                        } catch (err) { }
                                     }
                                 });
 
@@ -1190,29 +1443,40 @@ const MapView = () => {
                     isTodaysBattleActive={isTodaysBattleActive}
                 />
 
-                <MarkerClusterGroup
-                    ref={setClusterInstance}
-                    onClick={(e) => {
-                        setSelectedSite(null);
-                        if (setCallerSite) setCallerSite(null);
-                        if (onClusterClickRef.current) {
-                            onClusterClickRef.current(e);
-                        }
-                    }}
-                    key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
-                    disableClusteringAtZoom={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 0 : null}
-                    maxClusterRadius={(hasActiveOverlays || isTodaysBattleActive || !clusterRadius || Number(clusterRadius) <= 0) ? 80 : Number(clusterRadius)}
-                    zoomToBoundsOnClick={true}
-                    spiderfyOnMaxZoom={true}
-                    spiderfyDistanceMultiplier={1.8}
-                    spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
-                    showCoverageOnHover={false}
-                    chunkedLoading={false}
-                    removeOutsideVisibleBounds={false}
-                    animateAddingMarkers={false}
-                >
-                    {renderedMarkers}
-                </MarkerClusterGroup>
+                {(!clusterRadius || Number(clusterRadius) <= 0 || hasActiveOverlays || isTodaysBattleActive) ? (
+                    <UnclusteredSpiderfiedMarkers
+                        sites={sites}
+                        markerRefs={markerRefs}
+                        activePopupSiteIdRef={activePopupSiteIdRef}
+                        setSelectedSite={setSelectedSite}
+                        setCallerSite={setCallerSite}
+                        isMobileLike={isMobileLike}
+                        siteToOpenPopup={siteToOpenPopup}
+                    />
+                ) : (
+                    <MarkerClusterGroup
+                        ref={setClusterInstance}
+                        onClick={(e) => {
+                            setSelectedSite(null);
+                            if (setCallerSite) setCallerSite(null);
+                            if (onClusterClickRef.current) {
+                                onClusterClickRef.current(e);
+                            }
+                        }}
+                        key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
+                        maxClusterRadius={Math.max(10, Number(clusterRadius) || 25)}
+                        zoomToBoundsOnClick={true}
+                        spiderfyOnMaxZoom={true}
+                        spiderfyDistanceMultiplier={1.8}
+                        spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}
+                        showCoverageOnHover={false}
+                        chunkedLoading={false}
+                        removeOutsideVisibleBounds={false}
+                        animateAddingMarkers={false}
+                    >
+                        {renderedMarkers}
+                    </MarkerClusterGroup>
+                )}
             </MapContainer>
 
             {/* MODAL DE DETALLE */}
