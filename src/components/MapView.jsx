@@ -401,9 +401,10 @@ const MapResizeHandler = () => {
 };
 
 const LocationCenteringHandler = () => {
-    const { userCoords, locationMode, siteToOpenPopup, activeMapOverlays } = useAppContext();
+    const { userCoords, locationMode, filterRadius, siteToOpenPopup, activeMapOverlays, previewDevice } = useAppContext();
     const map = useMap();
     const lastCenteredKeyRef = useRef(null);
+    const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
     useEffect(() => {
         if (!userCoords?.lat || !userCoords?.lon) {
@@ -411,12 +412,10 @@ const LocationCenteringHandler = () => {
             return;
         }
 
-        // For GPS mode ('geo'), center ONCE per locationMode activation to avoid
-        // re-zooming on continuous GPS watchPosition updates.
-        // For manual/city modes, center when the mode or coords change.
+        // Include filterRadius in the key so changing Area triggers centering & zoom adjustment
         const currentKey = locationMode === 'geo'
-            ? locationMode
-            : `${locationMode}-${userCoords.lat}-${userCoords.lon}`;
+            ? `${locationMode}-${filterRadius || 'all'}`
+            : `${locationMode}-${userCoords.lat}-${userCoords.lon}-${filterRadius || 'all'}`;
 
         const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
 
@@ -431,11 +430,30 @@ const LocationCenteringHandler = () => {
 
         if (locationMode && locationMode !== 'none') {
             lastCenteredKeyRef.current = currentKey;
-            const minZoom = map.getMinZoom() ?? 2.5;
-            const targetZoom = minZoom + 7.5; // 8 zoom levels in from minZoom starting point
-            map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.5 });
+
+            const radiusKm = filterRadius && filterRadius !== 'all' ? parseInt(filterRadius, 10) : null;
+            if (radiusKm && !isNaN(radiusKm) && radiusKm > 0) {
+                try {
+                    // Calculate bounds for the selected radius around the user coordinates (diameter = radius * 2000m)
+                    const bounds = L.latLng(userCoords.lat, userCoords.lon).toBounds(radiusKm * 2000);
+                    const padding = isMobileLike ? [40, 40] : [60, 60];
+                    const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
+                    const minZoom = map.getMinZoom() ?? 2.5;
+                    const maxZoom = 16;
+                    const finalZoom = Math.max(minZoom, Math.min(calculatedZoom, maxZoom));
+                    map.flyTo([userCoords.lat, userCoords.lon], finalZoom, { duration: 1.2 });
+                } catch (err) {
+                    console.error('Error calculating area zoom bounds:', err);
+                    map.flyTo([userCoords.lat, userCoords.lon], 10, { duration: 1.2 });
+                }
+            } else {
+                // 'all' areas selected
+                const minZoom = map.getMinZoom() ?? 2.5;
+                const targetZoom = minZoom + 7.5; // default 10
+                map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.2 });
+            }
         }
-    }, [locationMode, userCoords?.lat, userCoords?.lon, map, siteToOpenPopup, activeMapOverlays]);
+    }, [locationMode, filterRadius, userCoords?.lat, userCoords?.lon, map, siteToOpenPopup, activeMapOverlays, isMobileLike]);
 
     return null;
 };
