@@ -719,6 +719,34 @@ const ClusterZoomBackControl = ({ clusterInstance, isMobileLike, theme, onCluste
         };
         clusterHistoryRef.current = view;
         setZoomBackView(view);
+
+        if (isCluster && typeof cluster.getBounds === 'function') {
+            const bounds = cluster.getBounds();
+            const isSinglePoint = bounds.getNorthEast().equals(bounds.getSouthWest());
+
+            if (isSinglePoint) {
+                if (typeof cluster.spiderfy === 'function') {
+                    cluster.spiderfy();
+                }
+            } else {
+                // Use comfortable padding so edge pins are never cut off by screen edges or bars
+                const padding = isMobileLike ? [75, 75] : [55, 55];
+                const calculatedZoom = map.getBoundsZoom(bounds, false, padding);
+                const minZoom = map.getMinZoom() ?? 2.5;
+                const maxZoom = map.getMaxZoom() ?? 18;
+
+                // Zoom in 1 level less on mobile (0.5 on desktop) so all site pins remain fully visible inside the screen
+                const zoomReduction = isMobileLike ? 1.0 : 0.5;
+                const currentZoom = map.getZoom();
+                const targetZoom = Math.min(
+                    maxZoom,
+                    Math.max(currentZoom + 1, Math.max(minZoom, calculatedZoom - zoomReduction))
+                );
+
+                const center = bounds.getCenter();
+                map.flyTo(center, targetZoom, { duration: 0.8 });
+            }
+        }
     };
 
     // Keep ref updated so MarkerClusterGroup onClick can call it directly
@@ -1465,7 +1493,7 @@ const MapView = () => {
                         }}
                         key={`cluster-${clusterRadius}-${sitesKey}-${isTodaysBattleActive}-${hasActiveOverlays}`}
                         maxClusterRadius={Math.max(10, Number(clusterRadius) || 25)}
-                        zoomToBoundsOnClick={true}
+                        zoomToBoundsOnClick={false}
                         spiderfyOnMaxZoom={true}
                         spiderfyDistanceMultiplier={1.8}
                         spiderLegPolylineOptions={{ weight: 1.5, color: '#ef5350', opacity: 0.8 }}

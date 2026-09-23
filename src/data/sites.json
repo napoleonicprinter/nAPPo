@@ -1285,7 +1285,7 @@
     "description": "Built in 1908, it stands in the places where a parade of troops was held on August 20, 1813, watched by the Austrian Emperor Francis I, the Russian Tsar Alexander I and the Prussian King Frederick William III.",
     "latitude": 50.329653,
     "longitude": 13.988423,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Pomn%C3%ADk_t%C5%99%C3%AD_c%C3%ADsa%C5%99%C5%AF_u_Vran%C3%A9ho_%28Q66566715%29_04.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Liberation_monument.webp",
     "moreInfo": "https://www.tourismato.cz/en/pomnik-k-100-vyroci-osvobozenecke-valky-proti-napoleonovi-p110255",
     "createDate": "2025-03-15T10:00:00Z",
     "special": false
@@ -1316,7 +1316,7 @@
     "description": "Place where the french troops under Massena crossed the river during the second battle of Zurich on September 25th 1799.",
     "latitude": 47.401386,
     "longitude": 8.40892,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Limmat_-_Dietikon_-_Massena_IMG_6095.JPG/960px-Limmat_-_Dietikon_-_Massena_IMG_6095.JPG",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Limat.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Zurich",
     "more_info_link": "https://www.limmattalerzeitung.ch/limmattal/region-limmattal/verwustete-acker-plunderungen-fronarbeit-wie-das-limmattal-unter-den-franzosen-litt-ld.1573856",
     "createDate": "2025-03-15T10:00:00Z",
@@ -17248,11 +17248,26 @@
     "date": "1952-09-07",
     "location": "Oporto",
     "country": "Portugal",
-    "description": " This 45-meter-tall monument honors the joint victory of Portuguese and British forces over Napoleon's army during the Peninsular War (1808–1814). The landmark is famous for its massive granite column topped by a lion conquering an eagle, and it was officially inaugurated on September 7, 1952.",
+    "description": "This 45-meter-tall monument honors the joint victory of Portuguese and British forces over Napoleon's army during the Peninsular War (1808–1814). The landmark is famous for its massive granite column topped by a lion conquering an eagle, and it was officially inaugurated on September 7, 1952.",
     "latitude": 41.157977,
     "longitude": -8.629147,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Heroes_Oporto.webp",
     "site_link": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/aos-herois-da-guerra-peninsular",
     "createDate": "2026-09-22"
+  },
+  {
+    "id": "945",
+    "name": "Monument The Pyramid of Austerlitz",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1804",
+    "location": "Woudenberg",
+    "country": "Netherlands",
+    "description": "It is a 36-meter-high earth pyramid built in 1804 by French soldiers under the command of General Auguste de Marmont, it was constructed to celebrate Napoleon Bonaparte’s victories and keep the troops occupied. The pyramid was inspired by Napoleon’s Egyptian campaign. In 1806, the newly appointed King of Holland, Louis Bonaparte, officially named it the Pyramid of Austerlitz to honor his brother's famous military victory at the Battle of Austerlitz.",
+    "latitude": 41.157977,
+    "longitude": -8.629147,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_pyramid.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Pyramid_of_Austerlitz",
+    "createDate": "2026-09-23"
   }
 ]
