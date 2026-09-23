@@ -45,7 +45,7 @@ const Header = () => {
         theme, toggleTheme,
         mapStyle, setMapStyle,
         categoryCounts,
-        isFiltered, clearAllFilters,
+        isFiltered, isModalFiltered, clearAllFilters,
         filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited,
         // Emulation states from Context
         previewDevice, setPreviewDevice,
@@ -105,8 +105,6 @@ const Header = () => {
         const battleCategories = ['Battle site', 'Naval battle', 'Battle landmark'];
         return filterCategory.every(cat => battleCategories.includes(cat));
     }, [filterCategory]);
-
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 
     const menuRef = useRef(null);
     const toggleRef = useRef(null);

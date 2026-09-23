@@ -192,7 +192,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
                         }, 150);
                     });
                 } catch (e) {
-                    map.setView(targetLatLng, Math.max(map.getZoom(), 14));
+                    map.setView(targetLatLng, map.getZoom());
                     setTimeout(() => {
                         if (!cancelled) {
                             try { marker.openPopup(); } catch (err) { }
@@ -204,7 +204,7 @@ const PopupOpener = ({ markerRefs, clusterInstance, isMobileLike, activePopupSit
             } else {
                 // Marker is not in a collapsed cluster (either standalone or already unclustered)
                 const currentZoom = map.getZoom();
-                const targetZoom = Math.max(currentZoom, 13);
+                const targetZoom = currentZoom;
                 const yOffset = isMobileLike ? 150 : 120;
                 const targetPoint = map.project(targetLatLng, targetZoom);
                 targetPoint.y -= yOffset;
@@ -972,6 +972,38 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
     return null;
 };
 
+const ClusterRefreshHandler = ({ clusterInstance, sites }) => {
+    const map = useMap();
+
+    useEffect(() => {
+        if (!clusterInstance) return;
+
+        const refresh = () => {
+            try {
+                if (typeof clusterInstance.refreshClusters === 'function') {
+                    clusterInstance.refreshClusters();
+                }
+                if (typeof clusterInstance._moveEnd === 'function') {
+                    clusterInstance._moveEnd();
+                }
+            } catch (e) {}
+        };
+
+        refresh();
+        const rAF = requestAnimationFrame(refresh);
+        const t1 = setTimeout(refresh, 50);
+        const t2 = setTimeout(refresh, 200);
+
+        return () => {
+            cancelAnimationFrame(rAF);
+            clearTimeout(t1);
+            clearTimeout(t2);
+        };
+    }, [clusterInstance, sites, map]);
+
+    return null;
+};
+
 const createClusterIcon = (count) => {
     const sizeClass = count < 10 ? 'small' : count < 100 ? 'medium' : 'large';
     const size = count < 10 ? 36 : count < 100 ? 44 : 52;
@@ -1465,6 +1497,7 @@ const MapView = () => {
                 <PopupOpener markerRefs={markerRefs} clusterInstance={clusterInstance} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} clusterInstance={clusterInstance} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} setCallerSite={setCallerSite} setSelectedSite={setSelectedSite} />
+                <ClusterRefreshHandler clusterInstance={clusterInstance} sites={sites} />
                 <TodaysBattlePopupOpener
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}

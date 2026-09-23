@@ -706,36 +706,65 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const filteredSites = useMemo(() => sitesForCategoryCounts.filter(site => passCat(site)), [sitesForCategoryCounts, passCat]);
 
-    // 1. Master Filter: Controls if the "Clear" button appears
-    const isFiltered =
-        // locationMode !== 'none' ||
-        filterRadius !== 'all' ||
-        filterCategory.length > 0 ||
-        filterSignificance !== '' ||
-        filterSearch !== '' ||
-        filterCountry !== 'all' ||
-        filterCoalition !== 'all' ||
-        filterCampaign !== 'all' ||
-        filterVisited !== 'all' ||
-        showOnlyNew || // <--- Checkbox 2
-        filterWithMaps;  // <--- Checkbox 3
+    // 1. Master Filter: Controls if the "Clear All" button appears and if site counter is RED
+    const isFiltered = useMemo(() => {
+        const hasRadiusFilter = Boolean(locationMode && locationMode !== 'none' && userCoords && filterRadius && filterRadius !== 'all');
+        const hasCategoryFilter = Array.isArray(filterCategory) && filterCategory.length > 0;
+        const hasSignificanceFilter = Boolean(filterSignificance !== '' && filterSignificance !== null && filterSignificance !== undefined);
+        const hasSearchFilter = Boolean(filterSearch && filterSearch.trim() !== '');
+        const hasYearFilter = Boolean(filterYear && filterYear !== 'all');
+        const hasCommanderFilter = Boolean(filterCommander && filterCommander !== 'all');
+        const hasArcFilter = Boolean(showArcOnly);
+        const hasCountryFilter = Boolean(filterCountry && filterCountry !== 'all');
+        const hasCoalitionFilter = Boolean(filterCoalition && filterCoalition !== 'all');
+        const hasCampaignFilter = Boolean(filterCampaign && filterCampaign !== 'all');
+        const hasVisitedFilter = Boolean(filterVisited && filterVisited !== 'all');
+        const hasNewFilter = Boolean(showOnlyNew);
+        const hasMapsFilter = Boolean(filterWithMaps);
 
+        return hasRadiusFilter ||
+            hasCategoryFilter ||
+            hasSignificanceFilter ||
+            hasSearchFilter ||
+            hasYearFilter ||
+            hasCommanderFilter ||
+            hasArcFilter ||
+            hasCountryFilter ||
+            hasCoalitionFilter ||
+            hasCampaignFilter ||
+            hasVisitedFilter ||
+            hasNewFilter ||
+            hasMapsFilter;
+    }, [
+        locationMode,
+        userCoords,
+        filterRadius,
+        filterCategory,
+        filterSignificance,
+        filterSearch,
+        filterYear,
+        filterCommander,
+        showArcOnly,
+        filterCountry,
+        filterCoalition,
+        filterCampaign,
+        filterVisited,
+        showOnlyNew,
+        filterWithMaps
+    ]);
 
     // 2. Modal Filter: Specifically turns the "Filters" button RED
-
     const isModalFiltered = useMemo(() => {
-        return filterSearch !== '' ||
-            filterCountry !== 'all' ||
-            filterCoalition !== 'all' ||
-            filterCampaign !== 'all' ||
-            filterVisited !== 'all' ||
-            filterYear !== 'all' ||
-            filterCommander !== 'all' ||
-            showOnlyNew ||      // <-- Add this
-            filterWithMaps;     // <-- Add this
-    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, filterYear, filterCommander, showOnlyNew, filterWithMaps]);
+        return Boolean((filterSearch && filterSearch.trim() !== '') ||
+            (filterCountry && filterCountry !== 'all') ||
+            (filterCoalition && filterCoalition !== 'all') ||
+            (filterCampaign && filterCampaign !== 'all') ||
+            (filterVisited && filterVisited !== 'all') ||
+            showOnlyNew ||
+            filterWithMaps);
+    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, showOnlyNew, filterWithMaps]);
 
-    // 3. Clear Function: Ensure it resets the boxes to false
+    // 3. Clear Function: Resets all active filters to default inactive states
 
     const clearAllFilters = () => {
         setFilterCategory([]);
@@ -1134,6 +1163,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             setGeolocationEnabled(false);
             setUserCoords(null);
             setLocationMode('none');
+            setFilterRadius('all');
         } else if (mode === 'geo') {
             setLocationMode('geo');
         } else if (mode === 'manual') {
@@ -1426,6 +1456,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterCoalition, setFilterCoalition,
             filterCampaign, setFilterCampaign,
             isFiltered,
+            isModalFiltered,
             clearAllFilters,
             filterSignificance, setFilterSignificance,
             filterVisited, setFilterVisited,

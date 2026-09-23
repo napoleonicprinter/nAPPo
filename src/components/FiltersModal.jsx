@@ -19,7 +19,7 @@ const FiltersModal = ({ onClose }) => {
         filterCategory, setFilterCategory,
         filterSignificance, setFilterSignificance,
         filterVisited, setFilterVisited,
-        isFiltered, clearAllFilters,
+        isFiltered, isModalFiltered, clearAllFilters,
         filterRadius, setFilterRadius,
         filterCountry, setFilterCountry,
         locationMode, handleLocationSelect,
@@ -38,8 +38,6 @@ const FiltersModal = ({ onClose }) => {
     const categories = Array.from(new Set(allSites.map(s => s.category)));
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
     const countries = Array.from(new Set(allSites.map(s => s.country))).filter(Boolean).sort();
-
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all' || showOnlyNew || filterWithMaps;
 
     const clearModalFilters = () => {
         setFilterSearch('');

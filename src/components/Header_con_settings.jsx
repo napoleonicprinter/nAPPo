@@ -41,7 +41,7 @@ const Header = () => {
         theme, toggleTheme,
         mapStyle, setMapStyle,
         categoryCounts,
-        isFiltered, clearAllFilters,
+        isFiltered, isModalFiltered, clearAllFilters,
         filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited,
         // Emulation states from Context
         previewDevice, setPreviewDevice,
@@ -59,8 +59,6 @@ const Header = () => {
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const [showShoppingView, setShowShoppingView] = useState(false);
     const [showCalendarView, setShowCalendarView] = useState(false);
-
-    const isModalFiltered = filterSearch !== '' || filterCountry !== 'all' || filterCoalition !== 'all' || filterCampaign !== 'all' || filterVisited !== 'all';
 
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
