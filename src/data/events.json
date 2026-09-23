@@ -4182,5 +4182,14 @@
         "location": "Givet, France",
         "wikipedia_link": "https://far.wikipedia.org/wiki/Si%C3%A8ge_de_Givet",
         "description": "General Jean Raymond Charles Bourke officially capitulated at the fortress of Givet on December 16, 1815. He held out for months following Napoleon's defeat at Waterloo, only surrendering after receiving a formal order from Paris."
+    },
+    {
+        "id": "487",
+        "title": "Capture of Rostock garrison",
+        "siteId": 943,
+        "date": "1807-04-06",
+        "location": "Rostock, Germany",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Great_Sortie_of_Stralsund",
+        "description": "During the Franco Swedish war, the Swedish troops executed a successful night coup, scaling or passing through the city walls to surprise the occupying French detachment.The engagement was largely unbloody as the French garrison was completely surprised and had no time to mount a proper defense; about 150 French soldiers were taken prisoner alongside military equipment."
     }
 ]

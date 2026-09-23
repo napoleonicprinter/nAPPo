@@ -17269,5 +17269,27 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_pyramid.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Pyramid_of_Austerlitz",
     "createDate": "2026-09-23"
+  },
+  {
+    "id": "946",
+    "name": "Capture of Rostock garrison",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1807",
+    "date": "1807-04-06",
+    "location": "Rostock",
+    "country": "Germany",
+    "description": "On the night of April 6th 1807, the Swedish troops executed a successful night coup, scaling or passing through the city walls to surprise the occupying French detachment.The engagement was largely unbloody as the French garrison was completely surprised and had no time to mount a proper defense; about 150 French soldiers were taken prisoner alongside military equipment.",
+    "latitude": 54.087361,
+    "longitude": 12.129603,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Rostock.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Great_Sortie_of_Stralsund",
+    "victor": "Sweeden",
+    "defeated": "France",
+    "special": [
+      "4",
+      "Franco Swedish War"
+    ],
+    "createDate": "2026-09-23"
   }
 ]
