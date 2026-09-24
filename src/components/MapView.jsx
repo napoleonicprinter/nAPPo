@@ -104,9 +104,9 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
             .map(s => [s.latitude, s.longitude]);
 
         if (validCoords.length === 1) {
-            map.setView(validCoords[0], Math.max(map.getZoom(), 8));
+            map.setView(validCoords[0], Math.min(Math.max(map.getZoom(), 6), 7));
         } else if (validCoords.length > 1) {
-            map.fitBounds(validCoords, { padding: [50, 50], maxZoom: 12 });
+            map.fitBounds(validCoords, { padding: [120, 120], maxZoom: 7 });
         }
 
         timer = setTimeout(tryOpen, 250);

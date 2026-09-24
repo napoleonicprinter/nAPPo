@@ -386,6 +386,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [filterRadius, setFilterRadius] = useState(() => localStorage.getItem('filterRadius') || 'all');
     const [filterSearch, setFilterSearch] = useState(() => localStorage.getItem('filterSearch') || '');
     const [filterYear, setFilterYear] = useState(() => localStorage.getItem('filterYear') || 'all');
+    const [filterMonth, setFilterMonth] = useState(() => localStorage.getItem('filterMonth') || 'all');
     const [filterCommander, setFilterCommander] = useState(() => localStorage.getItem('filterCommander') || 'all');
     const [filterCountry, setFilterCountry] = useState(() => localStorage.getItem('filterCountry') || 'all');
     const [filterCoalition, setFilterCoalition] = useState(() => localStorage.getItem('filterCoalition') || 'all');
@@ -534,6 +535,14 @@ export const AppProvider = ({ children, storeUrl }) => {
         return filterYear === 'all' || siteYearStr === filterYear;
     }, [filterYear]);
 
+    const passMonth = useCallback((site) => {
+        if (filterMonth === 'all') return true;
+        if (!site.date) return false;
+        const match = String(site.date).trim().match(/^\d{4}-(\d{1,2})/);
+        if (!match) return false;
+        return String(parseInt(match[1], 10)) === String(parseInt(filterMonth, 10));
+    }, [filterMonth]);
+
     const passCmd = useCallback((site) => {
         return filterCommander === 'all' || (site.commanders && site.commanders.includes(filterCommander));
     }, [filterCommander]);
@@ -585,6 +594,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
         if (excludeFacet !== 'category' && !passCat(site)) return false;
         if (excludeFacet !== 'year' && !passYear(site)) return false;
+        if (excludeFacet !== 'month' && !passMonth(site)) return false;
         if (excludeFacet !== 'commander' && !passCmd(site)) return false;
 
         return true;
@@ -594,7 +604,7 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     // --- DYNAMIC YEARS WITH COUNTS ---
     const availableYears = useMemo(() => {
-        const relevantSites = sitesFilteredBase.filter(site => passCmd(site) && passCat(site));
+        const relevantSites = sitesFilteredBase.filter(site => passCmd(site) && passCat(site) && passMonth(site));
         const counts = {};
         relevantSites.forEach(s => {
             const y = s.year ? String(s.year).trim() : '';
@@ -610,10 +620,45 @@ export const AppProvider = ({ children, storeUrl }) => {
                 label: year // Fallback
             }))
             .sort((a, b) => a.value - b.value);
-    }, [sitesFilteredBase, filterCommander, filterCategory, showArcOnly]);
+    }, [sitesFilteredBase, filterCommander, filterCategory, filterMonth, showArcOnly]);
+
+    const MONTH_NAMES = [
+        { value: '1', label: 'January' },
+        { value: '2', label: 'February' },
+        { value: '3', label: 'March' },
+        { value: '4', label: 'April' },
+        { value: '5', label: 'May' },
+        { value: '6', label: 'June' },
+        { value: '7', label: 'July' },
+        { value: '8', label: 'August' },
+        { value: '9', label: 'September' },
+        { value: '10', label: 'October' },
+        { value: '11', label: 'November' },
+        { value: '12', label: 'December' }
+    ];
+
+    const availableMonths = useMemo(() => {
+        const relevantSites = sitesFilteredBase.filter(site => passCmd(site) && passCat(site) && passYear(site));
+        const counts = {};
+        relevantSites.forEach(s => {
+            if (!s.date) return;
+            const match = String(s.date).trim().match(/^\d{4}-(\d{1,2})/);
+            if (match) {
+                const m = String(parseInt(match[1], 10));
+                counts[m] = (counts[m] || 0) + 1;
+            }
+        });
+
+        return MONTH_NAMES.map(m => ({
+            value: m.value,
+            name: m.label,
+            count: counts[m.value] || 0,
+            label: m.label
+        }));
+    }, [sitesFilteredBase, filterCommander, filterCategory, filterYear, showArcOnly]);
 
     const availableCommanders = useMemo(() => {
-        const relevantSites = sitesFilteredBase.filter(site => passYear(site) && passCat(site));
+        const relevantSites = sitesFilteredBase.filter(site => passYear(site) && passCat(site) && passMonth(site));
         const counts = {};
         relevantSites.forEach(s => {
             const cmds = Array.isArray(s.commanders) ? s.commanders : [s.commander].filter(Boolean);
@@ -630,8 +675,8 @@ export const AppProvider = ({ children, storeUrl }) => {
                 label: name // Fallback
             }))
             .sort((a, b) => a.value.localeCompare(b.value));
-    }, [sitesFilteredBase, filterYear, filterCategory, showArcOnly]);
-    const sitesForCategoryCounts = useMemo(() => sitesFilteredBase.filter(site => passYear(site) && passCmd(site)), [sitesFilteredBase, passYear, passCmd]);
+    }, [sitesFilteredBase, filterYear, filterCategory, filterMonth, showArcOnly]);
+    const sitesForCategoryCounts = useMemo(() => sitesFilteredBase.filter(site => passYear(site) && passCmd(site) && passMonth(site)), [sitesFilteredBase, passYear, passCmd, passMonth]);
 
     const categoryCounts = useMemo(() => {
         const counts = sitesForCategoryCounts.reduce((acc, site) => {
@@ -713,6 +758,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         const hasSignificanceFilter = Boolean(filterSignificance !== '' && filterSignificance !== null && filterSignificance !== undefined);
         const hasSearchFilter = Boolean(filterSearch && filterSearch.trim() !== '');
         const hasYearFilter = Boolean(filterYear && filterYear !== 'all');
+        const hasMonthFilter = Boolean(filterMonth && filterMonth !== 'all');
         const hasCommanderFilter = Boolean(filterCommander && filterCommander !== 'all');
         const hasArcFilter = Boolean(showArcOnly);
         const hasCountryFilter = Boolean(filterCountry && filterCountry !== 'all');
@@ -727,6 +773,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             hasSignificanceFilter ||
             hasSearchFilter ||
             hasYearFilter ||
+            hasMonthFilter ||
             hasCommanderFilter ||
             hasArcFilter ||
             hasCountryFilter ||
@@ -743,6 +790,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         filterSignificance,
         filterSearch,
         filterYear,
+        filterMonth,
         filterCommander,
         showArcOnly,
         filterCountry,
@@ -773,6 +821,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setFilterRadius('all');
         setFilterSearch('');
         setFilterYear('all');
+        setFilterMonth('all');
         setFilterCommander('all');
         setFilterCountry('all');
         setFilterCoalition('all');
@@ -789,6 +838,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             setFilterCommander('all');
             setFilterYear('all');
             setShowArcOnly(false);
+        }
+        const isMonthFilterAllowed = filterCategory.length > 0 && filterCategory.every(c => c === 'Battle site' || c === 'Naval battle');
+        if (!isMonthFilterAllowed) {
+            setFilterMonth('all');
         }
     }, [filterCategory]);
 
@@ -832,6 +885,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     useEffect(() => { localStorage.setItem('filterRadius', filterRadius || 'all'); }, [filterRadius]);
     useEffect(() => { localStorage.setItem('filterSearch', filterSearch || ''); }, [filterSearch]);
     useEffect(() => { localStorage.setItem('filterYear', filterYear || 'all'); }, [filterYear]);
+    useEffect(() => { localStorage.setItem('filterMonth', filterMonth || 'all'); }, [filterMonth]);
     useEffect(() => { localStorage.setItem('filterCommander', filterCommander || 'all'); }, [filterCommander]);
     useEffect(() => { localStorage.setItem('filterCountry', filterCountry || 'all'); }, [filterCountry]);
     useEffect(() => { localStorage.setItem('filterCoalition', filterCoalition || 'all'); }, [filterCoalition]);
@@ -1231,6 +1285,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setFilterRadius(target.filterRadius || 'all');
         setFilterSearch(target.filterSearch || '');
         setFilterYear(target.filterYear || 'all');
+        setFilterMonth(target.filterMonth || 'all');
         setFilterCommander(target.filterCommander || 'all');
         setFilterCountry(target.filterCountry || 'all');
         setFilterCoalition(target.filterCoalition || 'all');
@@ -1261,6 +1316,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterRadius: filterRadius || 'all',
             filterSearch: filterSearch || '',
             filterYear: filterYear || 'all',
+            filterMonth: filterMonth || 'all',
             filterCommander: filterCommander || 'all',
             filterCountry: filterCountry || 'all',
             filterCoalition: filterCoalition || 'all',
@@ -1291,6 +1347,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             last.filterRadius === snapshot.filterRadius &&
             last.filterSearch === snapshot.filterSearch &&
             last.filterYear === snapshot.filterYear &&
+            last.filterMonth === snapshot.filterMonth &&
             last.filterCommander === snapshot.filterCommander &&
             last.filterCountry === snapshot.filterCountry &&
             last.filterCoalition === snapshot.filterCoalition &&
@@ -1310,7 +1367,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
     }, [
         selectedSite, selectedHelpItem, filterCategory, filterSignificance,
-        filterVisited, filterRadius, filterSearch, filterYear, filterCommander,
+        filterVisited, filterRadius, filterSearch, filterYear, filterMonth, filterCommander,
         filterCountry, filterCoalition, filterCampaign, showArcOnly, filterWithMaps,
         showOnlyNew, locationMode, userCoords, activeMapOverlays, view, previewDevice
     ]);
@@ -1462,6 +1519,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterVisited, setFilterVisited,
             filterRadius, setFilterRadius,
             filterYear, setFilterYear, availableYears,
+            filterMonth, setFilterMonth, availableMonths,
             filterCommander, setFilterCommander, availableCommanders,
             showArcOnly, setShowArcOnly,
             isMobileLike,// <--- Add this

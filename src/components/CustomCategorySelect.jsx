@@ -21,7 +21,11 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             case 'Museum': return '#9575cd';
             case 'Artwork': return '#ce93d8';
             case 'Monument': return '#26a69a';
+            case 'Birthplace': return '#ffb300';
+            case 'Grave site': return '#607d8b';
+            case 'Building': return '#f59e0b';
             case 'Landmark': return '#ccff00';
+            case 'Event site': return '#4caf50';
             case 'Restaurant': return '#795548';
             case 'Store': return '#001ECC';
             case 'Movie tip': return '#2c0d55ff';
@@ -102,10 +106,6 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             newValue = value.filter(c => c !== category);
         } else {
             newValue = [...value, category];
-        }
-
-        if (!value.includes("Today's Battle") && newValue.includes("Today's Battle")) {
-            if (setView) setView('map');
         }
 
         onChange(newValue);

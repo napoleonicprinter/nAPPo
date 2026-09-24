@@ -50,6 +50,8 @@ export const validateSiteFilters = (targetSite, context) => {
         setFilterCategory,
         filterYear,
         setFilterYear,
+        filterMonth,
+        setFilterMonth,
         filterCommander,
         setFilterCommander,
         filterCountry,
@@ -116,6 +118,25 @@ export const validateSiteFilters = (targetSite, context) => {
                 label: 'Year',
                 message: `year "${targetSite.year || 'N/A'}" is not selected`,
                 reset: () => setFilterYear && setFilterYear('all')
+            });
+        }
+    }
+
+    // Month Filter
+    if (filterMonth && filterMonth !== 'all') {
+        let siteMonthStr = '';
+        if (targetSite.date) {
+            const match = String(targetSite.date).trim().match(/^\d{4}-(\d{1,2})/);
+            if (match) siteMonthStr = String(parseInt(match[1], 10));
+        }
+        if (siteMonthStr !== String(parseInt(filterMonth, 10))) {
+            const monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const monthLabel = monthNames[parseInt(filterMonth, 10)] || filterMonth;
+            failedFilters.push({
+                type: 'month',
+                label: 'Month',
+                message: `month filter "${monthLabel}" is active`,
+                reset: () => setFilterMonth && setFilterMonth('all')
             });
         }
     }
@@ -264,6 +285,10 @@ export const validateSiteFilters = (targetSite, context) => {
                 title = 'Site Out of Selected Year';
                 message = `Site is out of the selected year, year "${targetSite.year || 'N/A'}" is not selected`;
                 resetButtonText = 'Reset Year & View';
+            } else if (single.type === 'month') {
+                title = 'Site Out of Selected Month';
+                message = `Site is out of the selected month, ${single.message}`;
+                resetButtonText = 'Reset Month & View';
             } else if (single.type === 'commander') {
                 title = 'Site Out of Selected Commander';
                 message = `Site is out of the selected commander, commander "${filterCommander}" is not selected`;

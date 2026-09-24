@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { Calendar, ArrowDownAZ, Navigation, ChevronUp } from 'lucide-react';
+import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays } from 'lucide-react';
 import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
+import CustomSimpleSelect from './CustomSimpleSelect';
 import './CardView.css';
 
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -24,7 +25,28 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
 };
 
 const CardView = () => {
-    const { sites, selectedSite, setSelectedSite, setCallerSite, userCoords } = useAppContext();
+    const {
+        sites,
+        selectedSite,
+        setSelectedSite,
+        setCallerSite,
+        userCoords,
+        filterCategory,
+        filterMonth,
+        setFilterMonth,
+        availableMonths
+    } = useAppContext();
+
+    const isMonthFilterVisible = useMemo(() => {
+        return Array.isArray(filterCategory) &&
+            filterCategory.length > 0 &&
+            filterCategory.every(c => c === 'Battle site' || c === 'Naval battle');
+    }, [filterCategory]);
+
+    const monthOptions = useMemo(() => [
+        { value: 'all', label: 'All Months' },
+        ...(availableMonths || [])
+    ], [availableMonths]);
 
     const [sortField, setSortField] = useState(() => {
         const saved = localStorage.getItem('listSortField');
@@ -45,6 +67,12 @@ const CardView = () => {
         }
         prevUserCoordsRef.current = userCoords;
     }, [userCoords]);
+
+    useEffect(() => {
+        if (sortField === 'day' && (!isMonthFilterVisible || filterMonth === 'all')) {
+            setSortField('date');
+        }
+    }, [isMonthFilterVisible, filterMonth, sortField]);
 
     useEffect(() => {
         localStorage.setItem('listSortField', sortField);
@@ -76,11 +104,37 @@ const CardView = () => {
         return '9999-99-99'; // Sites without date/year appear at the end
     };
 
+    // Helper to get day of the month (1-31) from site.date (e.g. "1809-04-19" -> 19)
+    const getDayValue = (site) => {
+        if (site.date) {
+            const parts = String(site.date).trim().split('-');
+            if (parts.length >= 3) {
+                const d = parseInt(parts[2], 10);
+                if (!isNaN(d)) return d;
+            }
+        }
+        return 999;
+    };
+
     // Sort sites by selected field and order
     const sortedSites = useMemo(() => {
         return [...sites].sort((a, b) => {
             let result = 0;
-            if (sortField === 'distance' && userCoords) {
+            if (sortField === 'day') {
+                const dayA = getDayValue(a);
+                const dayB = getDayValue(b);
+                if (dayA !== dayB) {
+                    result = dayA - dayB;
+                } else {
+                    const dateA = getDateValue(a);
+                    const dateB = getDateValue(b);
+                    if (dateA !== dateB) {
+                        result = dateA.localeCompare(dateB);
+                    } else {
+                        result = (a.name || '').localeCompare(b.name || '');
+                    }
+                }
+            } else if (sortField === 'distance' && userCoords) {
                 const distA = a.distance !== undefined ? a.distance : calculateDistance(userCoords.lat, userCoords.lon, a.latitude, a.longitude);
                 const distB = b.distance !== undefined ? b.distance : calculateDistance(userCoords.lat, userCoords.lon, b.latitude, b.longitude);
                 result = distA - distB;
@@ -125,6 +179,34 @@ const CardView = () => {
                             <Calendar size={14} style={{ marginRight: '4px' }} />
                             Date
                         </button>
+                        {isMonthFilterVisible && (
+                            <div className="sort-month-filter-wrapper">
+                                <CustomSimpleSelect
+                                    className={`sort-month-select ${filterMonth !== 'all' ? 'filters-active-red' : ''}`}
+                                    options={monthOptions}
+                                    value={filterMonth}
+                                    onChange={setFilterMonth}
+                                    placeholder="Month"
+                                />
+                            </div>
+                        )}
+                        {isMonthFilterVisible && filterMonth !== 'all' && (
+                            <button
+                                type="button"
+                                className={`sort-tag-btn ${sortField === 'day' ? 'active' : ''}`}
+                                onClick={() => {
+                                    if (sortField === 'day') {
+                                        setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
+                                    } else {
+                                        setSortField('day');
+                                    }
+                                }}
+                                title="Sort by day within the month"
+                            >
+                                <CalendarDays size={14} style={{ marginRight: '4px' }} />
+                                Day
+                            </button>
+                        )}
                         {userCoords && (
                             <button
                                 type="button"

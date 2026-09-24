@@ -7,9 +7,12 @@ export const CATEGORY_ORDER = [
     'Museum',
     'Artwork',
     'Monument',
+    'Birthplace',
+    'Grave site',
     'Building',
     'Landmark',
     'Event site',
     'Movie tip',
+    'Restaurant',
     'Store',
 ];
