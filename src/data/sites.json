@@ -263,7 +263,7 @@
     "description": "Musée Carnavalet, Paris. Gravure anonyme.",
     "latitude": 48.8573,
     "longitude": 2.36274,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bataille_de_Tudela.jpg/1280px-Bataille_de_Tudela.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Estampe_tudela.webp",
     "site_link": "https://www.carnavalet.paris.fr/",
     "more_info_link": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bataille-de-tudela",
     "createDate": "2025-02-26T10:00:00Z",
