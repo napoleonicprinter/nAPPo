@@ -1,8 +1,8 @@
-/* Ensure the first line looks like this: */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
+
 :root {
   --some-variable: rgba(139, 148, 158, 0.6);
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
 /* --- Smoother Zoom Transitions --- */
 
 /* Ensures map tiles don't flicker during fractional zooms (0.5 steps) */

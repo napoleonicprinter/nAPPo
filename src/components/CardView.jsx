@@ -24,6 +24,8 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
     return R * c;
 };
 
+const BATCH_SIZE = 30;
+
 const CardView = () => {
     const {
         sites,
@@ -38,9 +40,10 @@ const CardView = () => {
     } = useAppContext();
 
     const isMonthFilterVisible = useMemo(() => {
+        const allowed = ['Battle site', 'Naval battle', 'Birthplace', 'Grave site'];
         return Array.isArray(filterCategory) &&
             filterCategory.length > 0 &&
-            filterCategory.every(c => c === 'Battle site' || c === 'Naval battle');
+            filterCategory.every(c => allowed.includes(c));
     }, [filterCategory]);
 
     const monthOptions = useMemo(() => [
@@ -55,8 +58,10 @@ const CardView = () => {
     });
     const [sortOrder, setSortOrder] = useState(() => localStorage.getItem('listSortOrder') || 'asc');
     const [showTopBtn, setShowTopBtn] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
 
     const containerRef = useRef(null);
+    const sentinelRef = useRef(null);
     const prevUserCoordsRef = useRef(userCoords);
 
     useBackHandler('detailViewCardView', !!selectedSite, () => setSelectedSite(null), 35);
@@ -84,7 +89,11 @@ const CardView = () => {
 
     const handleScroll = () => {
         if (containerRef.current) {
-            setShowTopBtn(containerRef.current.scrollTop > 180);
+            const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+            setShowTopBtn(scrollTop > 180);
+            if (scrollTop + clientHeight >= scrollHeight - 400) {
+                setVisibleCount(prev => Math.min(prev + BATCH_SIZE, sites.length));
+            }
         }
     };
 
@@ -157,6 +166,33 @@ const CardView = () => {
             return sortOrder === 'desc' ? -result : result;
         });
     }, [sites, sortField, sortOrder, userCoords]);
+
+    // Reset visible count when sites or sorting/filtering change
+    useEffect(() => {
+        setVisibleCount(BATCH_SIZE);
+    }, [sites, sortField, sortOrder, filterMonth, userCoords]);
+
+    // Sentinel observer for progressive infinite loading
+    useEffect(() => {
+        const sentinelEl = sentinelRef.current;
+        if (!sentinelEl) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setVisibleCount(prev => Math.min(prev + BATCH_SIZE, sortedSites.length));
+                }
+            },
+            { root: containerRef.current, rootMargin: '300px' }
+        );
+
+        observer.observe(sentinelEl);
+        return () => observer.disconnect();
+    }, [sortedSites.length, visibleCount]);
+
+    const visibleSites = useMemo(() => {
+        return sortedSites.slice(0, visibleCount);
+    }, [sortedSites, visibleCount]);
 
     return (
         <div className="card-view-wrapper animate-fade-in" style={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
@@ -239,10 +275,14 @@ const CardView = () => {
                 </div>
 
                 <div className="cards-grid">
-                    {sortedSites.map(site => (
+                    {visibleSites.map(site => (
                         <SiteCard key={site.id} site={site} isCompact={true} />
                     ))}
                 </div>
+
+                {visibleCount < sortedSites.length && (
+                    <div ref={sentinelRef} style={{ height: '20px', margin: '10px 0', pointerEvents: 'none' }} />
+                )}
             </div>
 
             {/* FLOATING TOP BUTTON AT BOTTOM RIGHT */}

@@ -254,6 +254,8 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         src={site.image}
                         alt={site.name}
                         className="card-image"
+                        loading="lazy"
+                        decoding="async"
                         style={{ width: '100%', height: 'auto', display: 'block' }}
                         onError={(e) => handleImageFallback(e, site.image)}
                     />

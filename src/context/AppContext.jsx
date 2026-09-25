@@ -839,7 +839,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             setFilterYear('all');
             setShowArcOnly(false);
         }
-        const isMonthFilterAllowed = filterCategory.length > 0 && filterCategory.every(c => c === 'Battle site' || c === 'Naval battle');
+        const allowedMonthCategories = ['Battle site', 'Naval battle', 'Birthplace', 'Grave site'];
+        const isMonthFilterAllowed = filterCategory.length > 0 && filterCategory.every(c => allowedMonthCategories.includes(c));
         if (!isMonthFilterAllowed) {
             setFilterMonth('all');
         }

@@ -7,8 +7,6 @@ import MapOverlaysLayer from './MapOverlaysLayer';
 import L from 'leaflet';
 import { LocateFixed, ZoomOut } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet.markercluster/dist/MarkerCluster.css';
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 // --- CONSTANTS ---
 const TILE_LAYERS = {
