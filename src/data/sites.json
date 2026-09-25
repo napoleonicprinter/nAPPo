@@ -13696,6 +13696,12 @@
   },
   {
     "id": "730",
+    "relatedSites": [
+      {
+        "id": "951",
+        "title": "Marshal Grouchy's birthplace"
+      }
+    ],
     "name": "Marshal Grouchy's grave",
     "date": "1847-05-29",
     "category": "Grave site",
@@ -13756,6 +13762,12 @@
   },
   {
     "id": "734",
+    "relatedSites": [
+      {
+        "id": "949",
+        "title": "Birthplace of Marshal Augereau"
+      }
+    ],
     "name": "Marechal Augereau's grave",
     "date": "1816-06-12",
     "category": "Grave site",
@@ -17329,6 +17341,66 @@
     "longitude": -8.595402,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Seminary_plaque.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Porto",
+    "createDate": "2026-09-24"
+  },
+  {
+    "id": "949",
+    "relatedSites": [
+      {
+        "id": "734",
+        "title": "Marshal Augereau's grave"
+      }
+    ],
+    "name": "Marshal Pierre Augereau's birthplace",
+    "category": "Birthplace",
+    "significance": 3,
+    "year": "1757",
+    "date": "1757-10-21",
+    "location": "Rue Mouffetard, Paris",
+    "country": "France",
+    "description": "Born on October 21, 1757, on rue Mouffetard (there is no record of the exact site) in Paris, to a servant and a greengrocer of Bavarian origin, Charles Pierre François Augereau was raised in a working-class area of ​​the capital – the Faubourg Saint-Marceau – from which he would retain his manners and language throughout his life.",
+    "latitude": 48.841944,
+    "longitude": 2.349722,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Rue_Mouffetard.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Charles-Pierre_Augereau",
+    "createDate": "2026-09-24"
+  },
+  {
+    "id": "950",
+    "name": "Marshal Lefebvre's birthplace",
+    "category": "Birthplace",
+    "significance": 3,
+    "year": "1755",
+    "date": "1755-10-25",
+    "location": "Rouffach, Alsace",
+    "country": "France",
+    "description": "François Joseph Lefebvre was born in Rouffach, Alsace, on October 25, 1755. After losing his parents at age eight, he was raised by his uncle, a priest who hoped he would also join the seminary. However, the young Lefebvre wanted a military career instead. With his uncle's permission, he enlisted in the French Guards as a soldier in 1773.",
+    "latitude": 47.956820,
+    "longitude": 7.299138,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lefebre_birth.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Lefebvre",
+    "createDate": "2026-09-24"
+  },
+  {
+    "id": "951",
+    "relatedSites": [
+      {
+        "id": "730",
+        "title": "Marshal Grouchy's grave"
+      }
+    ],
+    "name": "Marshal Grouchy's birthplace",
+    "category": "Birthplace",
+    "significance": 3,
+    "year": "1766",
+    "date": "1766-10-23",
+    "location": "Château de Villette, Condécourt",
+    "country": "France",
+    "description": "Grouchy was born on October 23rd 1766 into a highly prominent, aristocratic Norman family belonging to the noblesse d’épée (nobility of the sword). He was the son of François-Jacques de Grouchy, the 1st Marquis de Grouchy, and Gilberte Fréteau de Pény.",
+    "latitude": 49.031780,
+    "longitude": 1.939726,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Villette.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Emmanuel_de_Grouchy,_marquis_de_Grouchy",
     "createDate": "2026-09-24"
   }
 ]

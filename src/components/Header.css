@@ -308,7 +308,7 @@
 .category-count-badge {
     margin-left: auto;
     font-size: 0.78rem;
-    color: #000;
+    color: inherit;
     font-weight: 500;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
