@@ -17668,5 +17668,53 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Burgwedel.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Charles,_Count_Alten",
     "createDate": "2026-09-24"
+  },
+  {
+    "id": "961",
+    "name": "August von Gneisenau's birthplace",
+    "category": "Birthplace",
+    "significance": 3,
+    "year": "1760",
+    "date": "1760-10-27",
+    "location": "Belgern-Schildau",
+    "country": "Germany",
+    "description": "Historically, the building functioned as the Gasthof Weintraube“ (The 'Wine Grape' Inn). Gneisenau was born there under unusual circumstances on October 27, 1760, because his mother was stopping at the inn overnight while following his father's artillery unit during the Seven Years' War. (Photo by Radler59).",
+    "latitude": 51.455723,
+    "longitude": 12.930892,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Schilda.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/August_Neidhardt_von_Gneisenau",
+    "createDate": "2026-09-24"
+  },
+  {
+    "id": "962",
+    "name": "Gneisenaumuseum",
+    "category": "Museum",
+    "significance": 3,
+    "year": "1988",
+    "date": "1988-09-11",
+    "location": "Belgern-Schildau",
+    "country": "Germany",
+    "description": "Dedicated entirely to the life of August von Gneisenau, his career, and military reforms of Field Marshal August Neidhardt von Gneisenau. It displays historical uniforms, period artifacts, and tactical military dioramas that recreate major battles from the Napoleonic Wars (such as the Battle of Lindenau and Möckern from October 1813).",
+    "latitude": 51.456302,
+    "longitude": 12.929058,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_museum.webp",
+    "more_info_link": "https://www.belgernschildau.de/seite/277700/schildb%C3%83%C2%BCrger-und-gneisenaumuseum.html",
+    "createDate": "2026-09-24"
+  },
+  {
+    "id": "963",
+    "name": "Gneisenaumuseum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "2010",
+    "date": "2010-10-27",
+    "location": "Sommersdorf-Sommerschenburg",
+    "country": "Germany",
+    "description": "Established on October 27, 2010, the Gneisenau Museum, located in the historic schoolhouse built in 1824 by Prussian Field Marshal August Neidhardt von Gneisenau, offers a dedicated look into the life and legacy of one of Prussia's most prominent military reformers.",
+    "latitude": 52.171100,
+    "longitude": 11.102961,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_museum2.webp",
+    "more_info_link": "https://www.gneisenau-gesellschaft-sommerschenburg.de/museum",
+    "createDate": "2026-09-24"
   }
 ]

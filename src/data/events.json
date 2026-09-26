@@ -4277,9 +4277,17 @@
         "siteId": "309",
         "title": "Siege of Wittenberg begins",
         "date": "1813-05-05",
-        "location": "Wittenberg",
-        "country": "Germany",
+        "location": "Wittenberg, Germany",
         "description": "By 1813, the fortress had become an important assembly point and supply depot for the French fighting in eastern Germany. On January 15th 1814, the fortress was surrendered to the allied forces.",
+        "wikipedia_link": "https://de.wikipedia.org/wiki/Belagerung_von_Wittenberg_(1813/14)"
+    },
+    {
+        "id": "498",
+        "siteId": "961",
+        "title": "August von Gneisenau's birth",
+        "date": "1760-10-27",
+        "location": "Belgern-Schildau, Germany",
+        "description": "Gneisenau was born there under unusual circumstances in an inn in Schilda (now part of Belgern-Schildau) on October 27, 1760, three days before the battle of Torgau, because his mother was stopping at the inn overnight while following his father's artillery unit during the Seven Years' War. (Photo by Radler59).",
         "wikipedia_link": "https://de.wikipedia.org/wiki/Belagerung_von_Wittenberg_(1813/14)"
     }
 ]
