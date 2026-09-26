@@ -17413,10 +17413,136 @@
     "location": "Western Approaches, Celtic Sea",
     "country": "Atlantic Ocean",
     "description": "The engagement took place on September 26. The HMS Calcutta, a 56-gun fourth-rate ship of the line under the command of Captain Daniel Woodriff, fought a fierce, close-range duel primarily against the 74-gun French ship Magnanime, commanded by Admiral Zacharie Allemand. After a heavy and relentless fight, the British commander was forced to surrender.",
-    "latitude": 47.956820,
-    "longitude": 7.299138,
+    "latitude": 49.5,
+    "longitude": -9,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Action_26_sep.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Allemand%27s_expedition_of_1805",
+    "victor": "France",
+    "defeated": "Great Britain",
+    "commanders": [
+      "Zacharie Allemand",
+      "Daniel Woodriff"
+    ],
+    "createDate": "2026-05-24"
+  },
+  {
+    "id": "953",
+    "relatedSites": [
+      {
+        "id": "955",
+        "title": "General Thomas Graham's grave"
+      },
+      {
+        "id": "956",
+        "title": "General Thomas Graham's death place"
+      }
+    ],
+    "name": "General Thomas Graham's birthplace",
+    "category": "Birthplace",
+    "significance": 2,
+    "year": "1748",
+    "date": "1748-10-17",
+    "location": "Balgowan House, Perthshire",
+    "country": "Scotland",
+    "description": "He was born on October 17th 1748 at his family's historic ancestral estate. While the original country house was largely remodeled in the 19th century and parts were later demolished. You can see a 1806 sketch of this house in the link below.",
+    "latitude": 56.39472,
+    "longitude": -3.64205,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Balgowan.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Thomas_Graham,_1st_Baron_Lynedoch",
+    "more_info_link": "https://www.trove.scot/image/1076842",
     "createDate": "2026-09-24"
+  },
+  {
+    "id": "954",
+    "name": "British HQ in Malta",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1748",
+    "date": "1748-10-17",
+    "location": "Gudja",
+    "country": "Malta",
+    "description": "The palace served as the headquarters for the British forces, under General Graham, during the French blockade (1798–1800)",
+    "latitude": 35.850631,
+    "longitude": 14.507025,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Palazzo_Dorell",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palazzo_Dorel.webp",
+    "createDate": "2026-09-27"
+  },
+  {
+    "id": "955",
+    "relatedSites": [
+      {
+        "id": "953",
+        "title": "General Graham's birthplace"
+      },
+      {
+        "id": "956",
+        "title": "General Thomas Graham's death place"
+      }
+    ],
+    "name": "General Thomas Graham's grave",
+    "category": "Grave site",
+    "significance": 2,
+    "year": "1843",
+    "date": "1843-12-18",
+    "location": "Methven Parish Churchyard, Methven, Perth",
+    "country": "Scotland",
+    "description": "General Graham died age 95 on December 18th 1843. He was one of the oldest surviving generals of the Peninsular War. He was buried near his family home in a large and specially commissioned stone vault in Methven churchyard.",
+    "latitude": 35.850631,
+    "longitude": 14.507025,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Palazzo_Dorell",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palazzo_Dorel.webp",
+    "createDate": "2026-09-27"
+  },
+  {
+    "id": "956",
+    "relatedSites": [
+      {
+        "id": "953",
+        "title": "General Graham's grave"
+      }
+    ],
+    "name": "General Thomas Graham's death place",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1843",
+    "date": "1843-12-18",
+    "location": "London",
+    "country": "England",
+    "description": "General Graham died age 95 on December 18th 1843 at his house in London He was buried near his family home in a large and specially commissioned stone vault in Methven churchyard.",
+    "latitude": 51.508081,
+    "longitude": -0.143419,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Thomas_Graham,_1st_Baron_Lynedoch",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Stratton_st.webp",
+    "createDate": "2026-09-27"
+  },
+  {
+    "id": "957",
+    "name": "Senpere Memorial",
+    "category": "Grave site",
+    "significance": 1,
+    "year": "1908",
+    "location": "Senpere, Gipuzkoa",
+    "country": "Spain",
+    "description": "On June 23, 1813, as Napoleon's forces were retreating, they were overtaken and defeated at this site by Allied troops under the command of General Graham. The remains of several of those soldiers were discovered here in 1908.",
+    "latitude": 43.044637,
+    "longitude": -2.191570,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Senpere.webp",
+    "createDate": "2026-09-27"
+  },
+  {
+    "id": "958",
+    "name": "Clash at Senpere",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1813-06-23",
+    "year": "1813",
+    "location": "Senpere, Lazkao, Gipuzkoa",
+    "country": "Spain",
+    "description": "On June 23, 1813, Thomas Graham caught up with and defeated the rearguard of the Napoleonic army in the hamlet of Senpere on June 23, 1813.",
+    "latitude": 43.042936,
+    "longitude": -2.18681,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Senpere_map.webp",
+    "createDate": "2026-09-27"
   }
 ]

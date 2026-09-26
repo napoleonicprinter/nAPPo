@@ -140,7 +140,7 @@ const Header = () => {
                 <div className="header-brand-left" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <img src="/assets/NT_logo.png" alt="Logo" className="header-logo" />
                     <div className="sites-count-badge glass-panel">
-                        <span className="count-number" style={{ color: isFiltered ? 'var(--accent-danger)' : 'var(--accent-primary)' }}>{sites.length}</span>
+                        <span className="count-number" style={{ color: isFiltered ? 'var(--accent-danger, #ff4444)' : 'var(--accent-primary)' }}>{sites.length}</span>
                         <span className="count-label">sites</span>
                     </div>
                 </div>

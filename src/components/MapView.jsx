@@ -850,7 +850,7 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
 
 const createClusterIcon = (count) => {
     const sizeClass = count < 10 ? 'small' : count < 50 ? 'medium' : 'large';
-    const size = count < 10 ? 36 : count < 50 ? 44 : 52;
+    const size = count < 10 ? 30 : count < 50 ? 36 : 42;
     return L.divIcon({
         html: `<div><span>${count}</span></div>`,
         className: `marker-cluster marker-cluster-${sizeClass}`,
