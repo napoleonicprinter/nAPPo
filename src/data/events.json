@@ -4271,5 +4271,15 @@
         "location": "Burgwedel, Hanover, Germany",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Charles,_Count_Alten",
         "description": "Charles, Count Alten (born Carl August von Alten) was born on October 21, 1764, in Burgwedel (modern-day Lower Saxony, Germany). He was born into an ancient and noble Hanoverian family, the son of Baron August Eberhard von Alten."
+    },
+    {
+        "id": "497",
+        "siteId": "309",
+        "title": "Siege of Wittenberg begins",
+        "date": "1813-05-05",
+        "location": "Wittenberg",
+        "country": "Germany",
+        "description": "By 1813, the fortress had become an important assembly point and supply depot for the French fighting in eastern Germany. On January 15th 1814, the fortress was surrendered to the allied forces.",
+        "wikipedia_link": "https://de.wikipedia.org/wiki/Belagerung_von_Wittenberg_(1813/14)"
     }
 ]
