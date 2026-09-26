@@ -144,7 +144,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             {isOpen && createPortal(
                 <div 
                     ref={menuRef}
-                    className="custom-select-menu animate-fade-in"
+                    className="custom-select-menu category-select-menu animate-fade-in"
                     style={menuStyle}
                 >
                     <button

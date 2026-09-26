@@ -9044,7 +9044,7 @@
       "Italian Campaign"
     ],
     "commanders": [
-      "Charles-Pierre Augereau",
+      "Pierre Augereau",
       "Napoleon",
       "Johann Beaulieu",
       "Michael von Melas"
@@ -17543,6 +17543,42 @@
     "latitude": 43.042936,
     "longitude": -2.18681,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Senpere_map.webp",
+    "Special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "defeated": "France",
+    "victor": "Allied",
+    "commanders": [
+      "Thomas Graham"
+    ],
+    "createDate": "2026-09-27"
+  },
+  {
+    "id": "959",
+    "name": "Battlefield of Maçon",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1814-03-11",
+    "year": "1814",
+    "Special": [
+      "Campaign of France",
+      "6"
+    ],
+    "victor": "Austria",
+    "defeated": "France",
+    "commanders": [
+      "Frederick Bianchi",
+      "Louis Musnier"
+    ],
+    "location": "Macon",
+    "country": "France",
+    "description": "The Battle of Macon (11 March 1814) saw an Imperial French division under Louis François Félix Musnier attack an Austrian corps led by Frederick Bianchi. The French enjoyed initial success, but their numerical inferiority led to their defeat in this War of the Sixth Coalition engagement.",
+    "latitude": 46.277907,
+    "longitude": 4.795085,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_M%C3%A2con_(1814)",
+    "online_reading": "https://gallica.bnf.fr/ark:/12148/bpt6k6541319z.r=Les%20combats%20de%20M%C3%A2con%20en%201814%20et%201815",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Macon.webp",
     "createDate": "2026-09-27"
   }
 ]

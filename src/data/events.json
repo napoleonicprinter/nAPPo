@@ -4253,5 +4253,14 @@
         "location": "Château de Villette, Condécourt, France",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Emmanuel_de_Grouchy,_marquis_de_Grouchy",
         "description": "Grouchy was born on October 23rd 1766 into a highly prominent, aristocratic Norman family belonging to the noblesse d’épée (nobility of the sword). He was the son of François-Jacques de Grouchy, the 1st Marquis de Grouchy, and Gilberte Fréteau de Pény."
+    },
+    {
+        "id": "495",
+        "title": "Battle of Mâcon",
+        "siteId": 959,
+        "date": "1814-03-11",
+        "location": "Macon, France",
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_M%C3%A2con_(1814)",
+        "description": "The Battle of Macon (11 March 1814) saw an Imperial French division under Louis François Félix Musnier attack an Austrian corps led by Frederick Bianchi. The French enjoyed initial success, but their numerical inferiority led to their defeat in this War of the Sixth Coalition engagement."
     }
 ]

@@ -214,8 +214,14 @@
     border: 1px solid var(--accent-primary);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(88, 166, 255, 0.2);
     border-radius: var(--border-radius-sm);
-    overflow: hidden;
-    /* Prevent menu overflow, scrolling handled by list */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (min-width: 1025px) {
+    .category-select-menu {
+        max-height: min(620px, calc(100vh - 100px)) !important;
+    }
 }
 
 .location-dropdown-menu {
