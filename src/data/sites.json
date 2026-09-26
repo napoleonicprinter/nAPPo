@@ -434,7 +434,7 @@
     "description": "Bonaparte's encampment before the Battle of Mount Tabor.",
     "latitude": 32.7769712,
     "longitude": 35.2771614,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/La_Bataille_du_mont_Tabor%2C_en_Syrie%2C_le_27_germinal_an_VI_by_Louis_Fran%C3%A7ois_Lejeune_Salon_de_1804.jpg/1280px-La_Bataille_du_mont_Tabor%2C_en_Syrie%2C_le_27_germinal_an_VI_by_Louis_Fran%C3%A7ois_Lejeune_Salon_de_1804.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tabor_camp.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mount_Tabor_(1799)",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false
