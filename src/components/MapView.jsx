@@ -147,7 +147,7 @@ const PopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigat
         let cancelled = false;
         let retryTimer = null;
         let pollAttempts = 0;
-        const maxPollAttempts = 25;
+        const maxPollAttempts = 40;
 
         const executeOpen = () => {
             if (cancelled) return;
@@ -863,6 +863,7 @@ const ClusteredSiteMarkers = ({
     clusterRadius,
     markerRefs,
     activePopupSiteIdRef,
+    isNavigatingRef,
     setSelectedSite,
     setCallerSite,
     isMobileLike,
@@ -873,29 +874,23 @@ const ClusteredSiteMarkers = ({
 }) => {
     const map = useMap();
     const [currentZoom, setCurrentZoom] = useState(map.getZoom());
-    const [expandedKeys, setExpandedKeys] = useState(() => new Set());
+    const [expandedSiteIds, setExpandedSiteIds] = useState(() => new Set());
 
     useMapEvents({
-        zoomend: () => setCurrentZoom(map.getZoom()),
+        zoomend: () => {
+            setCurrentZoom(map.getZoom());
+            if (!isNavigatingRef?.current && !activePopupSiteIdRef?.current) {
+                setExpandedSiteIds(new Set());
+            }
+        },
         moveend: () => setCurrentZoom(map.getZoom()),
         resize: () => setCurrentZoom(map.getZoom()),
         click: () => {
             setSelectedSite(null);
             if (setCallerSite) setCallerSite(null);
+            setExpandedSiteIds(new Set());
         }
     });
-
-    // Automatically expand group if a site inside it is targeted for popup opening
-    useEffect(() => {
-        if (siteToOpenPopup && typeof siteToOpenPopup.latitude === 'number' && typeof siteToOpenPopup.longitude === 'number') {
-            const key = `${siteToOpenPopup.latitude.toFixed(6)},${siteToOpenPopup.longitude.toFixed(6)}`;
-            setExpandedKeys(prev => {
-                const next = new Set(prev);
-                next.add(key);
-                return next;
-            });
-        }
-    }, [siteToOpenPopup]);
 
     const effectiveRadius = (!clusterRadius || Number(clusterRadius) <= 0 || hasActiveOverlays || isTodaysBattleActive)
         ? 0
@@ -910,10 +905,10 @@ const ClusteredSiteMarkers = ({
             // Group solely by identical coordinates
             const groups = new Map();
             valid.forEach(site => {
-                const key = `${site.latitude.toFixed(6)},${site.longitude.toFixed(6)}`;
-                if (!groups.has(key)) {
-                    groups.set(key, {
-                        key,
+                const coordKey = `${site.latitude.toFixed(6)},${site.longitude.toFixed(6)}`;
+                if (!groups.has(coordKey)) {
+                    groups.set(coordKey, {
+                        coordKey,
                         sites: [],
                         lat: site.latitude,
                         lng: site.longitude,
@@ -922,34 +917,44 @@ const ClusteredSiteMarkers = ({
                         isSingleCoord: true
                     });
                 }
-                groups.get(key).sites.push(site);
+                groups.get(coordKey).sites.push(site);
             });
-            return Array.from(groups.values());
+            return Array.from(groups.values()).map(g => ({
+                ...g,
+                key: g.sites.map(s => String(s.id).trim()).sort().join('_')
+            }));
         }
 
-        // Distance clustering in screen pixel space at current zoom
-        const cellSize = effectiveRadius;
-        const grid = new Map();
+        // Project all valid sites to current zoom screen pixel space
+        const projectedSites = valid.map(site => ({
+            site,
+            pt: map.project([site.latitude, site.longitude], currentZoom)
+        }));
+
         const clusters = [];
+        const maxDistSq = effectiveRadius * effectiveRadius;
 
-        valid.forEach(site => {
-            const pt = map.project([site.latitude, site.longitude], currentZoom);
-            const cellX = Math.floor(pt.x / cellSize);
-            const cellY = Math.floor(pt.y / cellSize);
-
+        projectedSites.forEach(({ site, pt }) => {
             let matchedCluster = null;
-            let minDistSq = effectiveRadius * effectiveRadius;
+            let minDistSq = maxDistSq;
 
-            for (let dx = -1; dx <= 1; dx++) {
-                for (let dy = -1; dy <= 1; dy++) {
-                    const cellKey = `${cellX + dx},${cellY + dy}`;
-                    const clusterIdx = grid.get(cellKey);
-                    if (clusterIdx !== undefined) {
-                        const c = clusters[clusterIdx];
-                        const distSq = (pt.x - c.pt.x) * (pt.x - c.pt.x) + (pt.y - c.pt.y) * (pt.y - c.pt.y);
-                        if (distSq <= minDistSq) {
-                            minDistSq = distSq;
+            for (let i = 0; i < clusters.length; i++) {
+                const c = clusters[i];
+                const dx = pt.x - c.pt.x;
+                const dy = pt.y - c.pt.y;
+                const distToCenterSq = dx * dx + dy * dy;
+                if (distToCenterSq <= minDistSq) {
+                    minDistSq = distToCenterSq;
+                    matchedCluster = c;
+                } else {
+                    for (let j = 0; j < c.pts.length; j++) {
+                        const sx = pt.x - c.pts[j].x;
+                        const sy = pt.y - c.pts[j].y;
+                        const sDistSq = sx * sx + sy * sy;
+                        if (sDistSq <= maxDistSq && sDistSq < minDistSq) {
+                            minDistSq = sDistSq;
                             matchedCluster = c;
+                            break;
                         }
                     }
                 }
@@ -957,6 +962,7 @@ const ClusteredSiteMarkers = ({
 
             if (matchedCluster) {
                 matchedCluster.sites.push(site);
+                matchedCluster.pts.push(pt);
                 if (matchedCluster.isSingleCoord &&
                     (Math.abs(matchedCluster.firstLat - site.latitude) > 0.00001 ||
                      Math.abs(matchedCluster.firstLng - site.longitude) > 0.00001)) {
@@ -967,25 +973,32 @@ const ClusteredSiteMarkers = ({
                 matchedCluster.lng = (matchedCluster.lng * (n - 1) + site.longitude) / n;
                 matchedCluster.pt = map.project([matchedCluster.lat, matchedCluster.lng], currentZoom);
             } else {
-                const key = `${site.latitude.toFixed(6)},${site.longitude.toFixed(6)}`;
-                const newCluster = {
-                    key,
+                clusters.push({
                     firstLat: site.latitude,
                     firstLng: site.longitude,
                     lat: site.latitude,
                     lng: site.longitude,
                     pt,
+                    pts: [pt],
                     sites: [site],
                     isSingleCoord: true
-                };
-                const idx = clusters.length;
-                clusters.push(newCluster);
-                grid.set(`${cellX},${cellY}`, idx);
+                });
             }
         });
 
-        return clusters;
+        return clusters.map(c => ({
+            ...c,
+            key: c.sites.map(s => String(s.id).trim()).sort().join('_')
+        }));
     }, [sites, effectiveRadius, currentZoom, map]);
+
+    // Automatically expand cluster if a site inside it is targeted for popup opening
+    useEffect(() => {
+        if (siteToOpenPopup) {
+            const targetIdStr = String(siteToOpenPopup.id).trim();
+            setExpandedSiteIds(new Set([targetIdStr]));
+        }
+    }, [siteToOpenPopup]);
 
     const renderSiteMarker = (site, position, isSpiderfied = false) => {
         const rate = Number(site.significance) || 1;
@@ -1071,7 +1084,7 @@ const ClusteredSiteMarkers = ({
 
                 const centerLat = group.lat;
                 const centerLng = group.lng;
-                const isExpanded = expandedKeys.has(groupKey);
+                const isExpanded = groupSites.some(s => expandedSiteIds.has(String(s.id).trim()));
 
                 // If not expanded, render cluster badge
                 if (!isExpanded) {
@@ -1089,11 +1102,7 @@ const ClusteredSiteMarkers = ({
 
                                     if (group.isSingleCoord || currentZoom >= 18) {
                                         // Expand as spiderfy
-                                        setExpandedKeys(prev => {
-                                            const next = new Set(prev);
-                                            next.add(groupKey);
-                                            return next;
-                                        });
+                                        setExpandedSiteIds(new Set(groupSites.map(s => String(s.id).trim())));
                                     } else {
                                         // Zoom in to cluster bounds
                                         const bounds = L.latLngBounds(groupSites.map(s => [s.latitude, s.longitude]));
@@ -1142,11 +1151,7 @@ const ClusteredSiteMarkers = ({
                             eventHandlers={{
                                 click: (e) => {
                                     if (e.originalEvent) e.originalEvent.stopPropagation();
-                                    setExpandedKeys(prev => {
-                                        const next = new Set(prev);
-                                        next.delete(groupKey);
-                                        return next;
-                                    });
+                                    setExpandedSiteIds(new Set());
                                 }
                             }}
                         />
@@ -1366,6 +1371,7 @@ const MapView = () => {
                     clusterRadius={clusterRadius}
                     markerRefs={markerRefs}
                     activePopupSiteIdRef={activePopupSiteIdRef}
+                    isNavigatingRef={isNavigatingRef}
                     setSelectedSite={setSelectedSite}
                     setCallerSite={setCallerSite}
                     isMobileLike={isMobileLike}

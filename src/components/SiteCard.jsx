@@ -123,6 +123,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         setFilterSearch,
         clearAllFilters,
         geolocationEnabled,
+        view,
         setView,
         setSiteToOpenPopup,
         allSites,
@@ -389,14 +390,20 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         overflowY: 'auto',
                         overflowX: 'hidden'
                     }}>
-                    {callerSite && callerSite.id !== site.id && (
+                    {callerSite && (callerSite.id !== site.id || callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list') && (
                         <div style={{ marginBottom: '8px' }}>
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     const prev = callerSite;
                                     setCallerSite(null);
-                                    handleNavigateToSite(prev);
+                                    if (prev.fromListMode || prev.fromView === 'card' || prev.fromView === 'list') {
+                                        setSelectedSite(null);
+                                        setSiteToOpenPopup(null);
+                                        setView('card');
+                                    } else {
+                                        handleNavigateToSite(prev);
+                                    }
                                 }}
                                 style={{
                                     border: 'none',
@@ -412,7 +419,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     gap: '4px'
                                 }}
                             >
-                                &larr; Back to {callerSite.name}
+                                {callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list'
+                                    ? '← Return to List'
+                                    : `← Back to ${callerSite.name}`}
                             </button>
                         </div>
                     )}
@@ -450,6 +459,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     <button
                                         onClick={(e) => {
                                             e.stopPropagation();
+                                            if (view === 'card' || view === 'list') {
+                                                setCallerSite({ ...site, fromView: view, fromListMode: true });
+                                            }
                                             setSelectedSite(null);
                                             setSiteToOpenPopup(null);
                                             setTimeout(() => {
@@ -494,6 +506,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             if (map.id) toggleMapOverlay(map.id);
+                                            if (view === 'card' || view === 'list') {
+                                                setCallerSite({ ...site, fromView: view, fromListMode: true });
+                                            }
                                             setSelectedSite(null);
                                             setSiteToOpenPopup(null);
                                             setTimeout(() => {
@@ -612,6 +627,9 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             if (map.id) toggleMapOverlay(map.id);
+                                                            if (view === 'card' || view === 'list') {
+                                                                setCallerSite({ ...site, fromView: view, fromListMode: true });
+                                                            }
                                                             setSelectedSite(null);
                                                             setSiteToOpenPopup(null);
                                                             setTimeout(() => {
@@ -670,7 +688,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                 const battleSite = (allSites || []).find(s => String(s.id).trim() === targetId);
 
                                                 if (battleSite) {
-                                                    setCallerSite(site);
+                                                    setCallerSite({ ...site, fromView: view, fromListMode: view === 'card' || view === 'list' });
                                                     handleNavigateToSite(battleSite);
                                                 } else {
                                                     console.warn("Battle site record not found for ID:", targetId);
@@ -710,7 +728,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                     const targetId = String(site.artwork_ids[0]).trim();
                                                     const artSite = (allSites || []).find(s => String(s.id).trim() === targetId);
                                                     if (artSite) {
-                                                        setCallerSite(site);
+                                                        setCallerSite({ ...site, fromView: view, fromListMode: view === 'card' || view === 'list' });
                                                         handleNavigateToSite(artSite);
                                                     }
                                                 }}
@@ -730,7 +748,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                                 const targetId = String(id).trim();
                                                                 const artSite = (allSites || []).find(s => String(s.id).trim() === targetId);
                                                                 if (artSite) {
-                                                                    setCallerSite(site);
+                                                                    setCallerSite({ ...site, fromView: view, fromListMode: view === 'card' || view === 'list' });
                                                                     handleNavigateToSite(artSite);
                                                                 }
                                                             }}
@@ -789,7 +807,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                             onClick={(e) => {
                                                                 e.stopPropagation();
                                                                 if (targetSite) {
-                                                                    setCallerSite(site);
+                                                                    setCallerSite({ ...site, fromView: view, fromListMode: view === 'card' || view === 'list' });
                                                                     handleNavigateToSite(targetSite);
                                                                 } else {
                                                                     console.warn("Related site record not found for ID:", targetId);

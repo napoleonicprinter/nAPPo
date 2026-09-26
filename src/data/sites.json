@@ -482,7 +482,7 @@
     "description": "The day of the battle, at dawn, the French column reached the bridge over the Rumblar river which they crossed pushing back a Spanish detachment.",
     "latitude": 38.08552,
     "longitude": -3.837341,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Battle_Baylen_1.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bailen_rumblar.webp",
     "site_link": "",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false
@@ -498,7 +498,7 @@
     "description": "This hill was where the Swiss regiments of both sides clashed. Upon recognizing each other, and because their contracts prevented them from engaging other Swiss regiments, those enlisted in the French army joined the Spanish.",
     "latitude": 38.084018,
     "longitude": -3.791983,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Haza_Walona_Milestone.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Walona_hill.webp",
     "youtube_link": "https://www.youtube.com/watch?v=r02SAmbbfr4",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false
@@ -514,7 +514,7 @@
     "description": "The French right wing extended up to this hill at the initial moves of the battle.",
     "latitude": 38.08168,
     "longitude": -3.796536,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Batalla_de_Bailen.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bailen_map.webp",
     "createDate": "2025-02-26T10:00:00Z",
     "special": false
   },
@@ -5200,10 +5200,10 @@
     "year": 1809,
     "location": "Graz",
     "country": "Austria",
-    "description": "took place on June 24th to 26th 1809 between an Austrian corps commanded by Ignaz Gyulai and a French division led by Jean-Baptiste Broussier who was later reinforced by a corps under Auguste Marmont.",
+    "description": "Took place on June 24th to 26th 1809 between an Austrian corps commanded by Ignaz Gyulai and a French division led by Jean-Baptiste Broussier who was later reinforced by a corps under Auguste Marmont.",
     "latitude": 47.07,
     "longitude": 15.46,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Austerlitz1805_Alombert1.jpg",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gratz.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Graz",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
@@ -17580,5 +17580,21 @@
     "online_reading": "https://gallica.bnf.fr/ark:/12148/bpt6k6541319z.r=Les%20combats%20de%20M%C3%A2con%20en%201814%20et%201815",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Macon.webp",
     "createDate": "2026-09-27"
+  },
+  {
+    "id": "960",
+    "name": "Charles, Count Alten's birthplace",
+    "category": "Birthplace",
+    "significance": 2,
+    "year": "1764",
+    "date": "1764-10-21",
+    "location": "Burgwedel, Hanover",
+    "country": "Germany",
+    "description": "Charles, Count Alten (born Carl August von Alten) was born on October 21, 1764, in Burgwedel (modern-day Lower Saxony, Germany). He was born into an ancient and noble Hanoverian family, the son of Baron August Eberhard von Alten.",
+    "latitude": 52.501154,
+    "longitude": 9.897402,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Burgwedel.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Charles,_Count_Alten",
+    "createDate": "2026-09-24"
   }
 ]
