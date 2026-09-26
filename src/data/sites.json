@@ -17402,5 +17402,21 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Villette.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Emmanuel_de_Grouchy,_marquis_de_Grouchy",
     "createDate": "2026-09-24"
+  },
+  {
+    "id": "952",
+    "name": "Action of 26 September 1805",
+    "category": "Naval battle",
+    "significance": 2,
+    "year": "1805",
+    "date": "1805-09-26",
+    "location": "Western Approaches, Celtic Sea",
+    "country": "Atlantic Ocean",
+    "description": "The engagement took place on September 26. The HMS Calcutta, a 56-gun fourth-rate ship of the line under the command of Captain Daniel Woodriff, fought a fierce, close-range duel primarily against the 74-gun French ship Magnanime, commanded by Admiral Zacharie Allemand. After a heavy and relentless fight, the British commander was forced to surrender.",
+    "latitude": 47.956820,
+    "longitude": 7.299138,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Action_26_sep.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Allemand%27s_expedition_of_1805",
+    "createDate": "2026-09-24"
   }
 ]
