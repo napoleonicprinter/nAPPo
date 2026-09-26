@@ -546,7 +546,7 @@
     "description": "The Battle of Alcolea Bridge was a minor battle that took place on June 7th 1808, during the Peninsular War, at Alcolea, a small village 10 km from Córdoba, the city that would be invaded by French troops later that same afternoon",
     "latitude": 37.935139,
     "longitude": -4.653456,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Alcolea_map_1808.png/500px-Alcolea_map_1808.png",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alcolea.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alcolea_Bridge",
     "createDate": "2025-02-26T10:00:00Z",
     "special": "Guerra de Independencia",

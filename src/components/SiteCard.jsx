@@ -512,7 +512,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                             setSelectedSite(null);
                                             setSiteToOpenPopup(null);
                                             setTimeout(() => {
-                                                setSiteToOpenPopup(site);
+                                                setSiteToOpenPopup(!isActive && map.bounds ? { ...site, targetMapBounds: map.bounds } : site);
                                                 setView('map');
                                             }, 10);
                                         }}
@@ -633,7 +633,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                                             setSelectedSite(null);
                                                             setSiteToOpenPopup(null);
                                                             setTimeout(() => {
-                                                                setSiteToOpenPopup(site);
+                                                                setSiteToOpenPopup(!isActive && map.bounds ? { ...site, targetMapBounds: map.bounds } : site);
                                                                 setView('map');
                                                             }, 10);
                                                         }}

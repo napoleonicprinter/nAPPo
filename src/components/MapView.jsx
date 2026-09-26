@@ -118,7 +118,7 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
 
 const PopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigatingRef }) => {
     const map = useMap();
-    const { siteToOpenPopup, setSiteToOpenPopup, selectedSite, setSelectedSite } = useAppContext();
+    const { siteToOpenPopup, setSiteToOpenPopup, selectedSite, setSelectedSite, activeMapOverlays } = useAppContext();
 
     useEffect(() => {
         if (!siteToOpenPopup) return;
@@ -164,27 +164,55 @@ const PopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigat
                 return;
             }
 
-            const targetLatLng = marker.getLatLng ? marker.getLatLng() : L.latLng(targetSite.latitude, targetSite.longitude);
-            const currentZoom = map.getZoom();
-            const targetZoom = currentZoom;
-            const yOffset = isMobileLike ? 150 : 120;
-            const targetPoint = map.project(targetLatLng, targetZoom);
-            targetPoint.y -= yOffset;
-            const centerLatLng = map.unproject(targetPoint, targetZoom);
+            const siteMaps = getAvailableSiteMaps(targetSite);
+            const activeMap = (siteMaps || []).find(m => activeMapOverlays?.includes(m.id));
+            const rawBounds = targetSite.targetMapBounds || (activeMap && activeMap.bounds ? activeMap.bounds : null);
 
-            map.flyTo(centerLatLng, targetZoom, { duration: 0.4 });
+            if (rawBounds && Array.isArray(rawBounds) && rawBounds.length === 2) {
+                const mapBounds = L.latLngBounds(rawBounds);
+                const padding = isMobileLike ? [25, 25] : [50, 50];
+                const calculatedZoom = map.getBoundsZoom(mapBounds, false, padding);
+                const minZoom = map.getMinZoom() ?? 2.5;
+                const maxZoom = map.getMaxZoom() ?? 18;
+                const targetZoom = Math.min(maxZoom, Math.max(minZoom, calculatedZoom));
+                const centerLatLng = mapBounds.getCenter();
 
-            setTimeout(() => {
-                if (cancelled) return;
-                const m = markerRefs.current.get(targetIdStr);
-                if (m) {
-                    try {
-                        m.openPopup();
-                    } catch (e) { }
-                }
-                isNavigatingRef.current = false;
-                setSiteToOpenPopup(null);
-            }, 300);
+                map.flyTo(centerLatLng, targetZoom, { duration: 0.8 });
+
+                setTimeout(() => {
+                    if (cancelled) return;
+                    const m = markerRefs.current.get(targetIdStr);
+                    if (m) {
+                        try {
+                            m.openPopup();
+                        } catch (e) { }
+                    }
+                    isNavigatingRef.current = false;
+                    setSiteToOpenPopup(null);
+                }, 500);
+            } else {
+                const targetLatLng = marker.getLatLng ? marker.getLatLng() : L.latLng(targetSite.latitude, targetSite.longitude);
+                const currentZoom = map.getZoom();
+                const targetZoom = currentZoom;
+                const yOffset = isMobileLike ? 150 : 120;
+                const targetPoint = map.project(targetLatLng, targetZoom);
+                targetPoint.y -= yOffset;
+                const centerLatLng = map.unproject(targetPoint, targetZoom);
+
+                map.flyTo(centerLatLng, targetZoom, { duration: 0.4 });
+
+                setTimeout(() => {
+                    if (cancelled) return;
+                    const m = markerRefs.current.get(targetIdStr);
+                    if (m) {
+                        try {
+                            m.openPopup();
+                        } catch (e) { }
+                    }
+                    isNavigatingRef.current = false;
+                    setSiteToOpenPopup(null);
+                }, 300);
+            }
         };
 
         // Start opening process
@@ -195,7 +223,7 @@ const PopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigat
             if (retryTimer) clearTimeout(retryTimer);
             isNavigatingRef.current = false;
         };
-    }, [siteToOpenPopup, map, markerRefs, isMobileLike, setSiteToOpenPopup, setSelectedSite, selectedSite, activePopupSiteIdRef, isNavigatingRef]);
+    }, [siteToOpenPopup, map, markerRefs, isMobileLike, setSiteToOpenPopup, setSelectedSite, selectedSite, activePopupSiteIdRef, isNavigatingRef, activeMapOverlays]);
 
     return null;
 };
