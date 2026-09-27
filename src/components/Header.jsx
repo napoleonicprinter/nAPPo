@@ -696,10 +696,38 @@ const Header = () => {
                                                 ?
                                             </button>
                                         </div>
-                                        <button onClick={toggleTheme} className="glass-panel" style={{ width: '100%', padding: '6px 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                                            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                                            {theme === 'dark' ? 'Day Mode' : 'Night Mode'}
-                                        </button>
+                                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '6px' }}>
+                                            {[
+                                                { key: 'dark', label: 'Night Mode', icon: '🌙' },
+                                                { key: 'light', label: 'Day Mode', icon: '☀️' }
+                                            ].map((t) => (
+                                                <button
+                                                    key={t.key}
+                                                    onClick={() => {
+                                                        if (theme !== t.key) toggleTheme();
+                                                    }}
+                                                    className={`glass-panel ${theme === t.key ? 'active' : ''}`}
+                                                    style={{
+                                                        padding: '6px 4px',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        gap: '6px',
+                                                        border: theme === t.key ? '1.5px solid var(--accent-primary)' : '1px solid var(--border-color)',
+                                                        background: theme === t.key ? 'rgba(88, 166, 255, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                                                        color: 'var(--text-primary)',
+                                                        fontWeight: theme === t.key ? 'bold' : 'normal',
+                                                        fontSize: '0.82rem',
+                                                        cursor: 'pointer',
+                                                        borderRadius: '8px',
+                                                        transition: 'all 0.2s'
+                                                    }}
+                                                >
+                                                    <span>{t.icon}</span>
+                                                    <span>{t.label}</span>
+                                                </button>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
