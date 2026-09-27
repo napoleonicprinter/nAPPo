@@ -314,34 +314,30 @@ export const AppProvider = ({ children, storeUrl }) => {
         try {
             const t = Date.now();
             const nonce = Math.random().toString(36).substring(2, 9);
-            const fetchOpts = {
-                cache: 'no-store',
-                headers: {
-                    'Accept': 'application/json',
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
+            const keys = ['sites', 'shows', 'shopping', 'events', 'news', 'messages', 'deals'];
+
+            const fetchFile = async (key) => {
+                const filename = `${key}.json`;
+                const primaryUrl = `${GITHUB_RAW_BASE_URL}/${filename}?t=${t}&r=${nonce}`;
+                const fallbackUrl = `https://cdn.jsdelivr.net/gh/napoleonicprinter/nAPPo@main/src/data/${filename}?t=${t}&r=${nonce}`;
+
+                try {
+                    const res = await fetch(primaryUrl);
+                    if (res.ok) {
+                        const data = await res.json();
+                        return { key, data };
+                    }
+                } catch (e) {
+                    console.warn(`Primary fetch failed for ${key}, trying jsdelivr fallback:`, e);
                 }
+
+                const fbRes = await fetch(fallbackUrl);
+                if (!fbRes.ok) throw new Error(`HTTP ${fbRes.status}`);
+                const data = await fbRes.json();
+                return { key, data };
             };
 
-            const endpoints = [
-                { key: 'sites', url: `${GITHUB_RAW_BASE_URL}/sites.json?t=${t}&r=${nonce}` },
-                { key: 'shows', url: `${GITHUB_RAW_BASE_URL}/shows.json?t=${t}&r=${nonce}` },
-                { key: 'shopping', url: `${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}&r=${nonce}` },
-                { key: 'events', url: `${GITHUB_RAW_BASE_URL}/events.json?t=${t}&r=${nonce}` },
-                { key: 'news', url: `${GITHUB_RAW_BASE_URL}/news.json?t=${t}&r=${nonce}` },
-                { key: 'messages', url: `${GITHUB_RAW_BASE_URL}/messages.json?t=${t}&r=${nonce}` },
-                { key: 'deals', url: `${GITHUB_RAW_BASE_URL}/deals.json?t=${t}&r=${nonce}` }
-            ];
-
-            const results = await Promise.allSettled(
-                endpoints.map(async (ep) => {
-                    const res = await fetch(ep.url, fetchOpts);
-                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                    const data = await res.json();
-                    return { key: ep.key, data };
-                })
-            );
+            const results = await Promise.allSettled(keys.map(k => fetchFile(k)));
 
             let sitesResult = null;
             let newSitesCount = 0;
@@ -383,7 +379,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             });
 
             if (!sitesResult) {
-                const sitesPromiseRes = results.find((r, i) => endpoints[i].key === 'sites');
+                const sitesPromiseRes = results.find((r, i) => keys[i] === 'sites');
                 const errMsg = sitesPromiseRes?.reason?.message || 'Could not download sites database';
                 console.warn("Sites sync warning:", errMsg);
                 setSyncStatus('error');
@@ -824,6 +820,7 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     // 1. Master Filter: Controls if the "Clear All" button appears and if site counter is RED
     const isFiltered = useMemo(() => {
+        const hasLocationFilter = Boolean(locationMode && locationMode !== 'none');
         const hasRadiusFilter = Boolean(locationMode && locationMode !== 'none' && userCoords && filterRadius && filterRadius !== 'all');
         const hasCategoryFilter = Array.isArray(filterCategory) && filterCategory.length > 0;
         const hasSignificanceFilter = Boolean(filterSignificance !== '' && filterSignificance !== null && filterSignificance !== undefined);
@@ -838,8 +835,10 @@ export const AppProvider = ({ children, storeUrl }) => {
         const hasVisitedFilter = Boolean(filterVisited && filterVisited !== 'all');
         const hasNewFilter = Boolean(showOnlyNew);
         const hasMapsFilter = Boolean(filterWithMaps);
+        const hasSiteCountReduction = Boolean(derivedSites && derivedSites.length > 0 && filteredSites && filteredSites.length < derivedSites.length);
 
-        return hasRadiusFilter ||
+        return hasLocationFilter ||
+            hasRadiusFilter ||
             hasCategoryFilter ||
             hasSignificanceFilter ||
             hasSearchFilter ||
@@ -852,7 +851,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             hasCampaignFilter ||
             hasVisitedFilter ||
             hasNewFilter ||
-            hasMapsFilter;
+            hasMapsFilter ||
+            hasSiteCountReduction;
     }, [
         locationMode,
         userCoords,
@@ -869,7 +869,9 @@ export const AppProvider = ({ children, storeUrl }) => {
         filterCampaign,
         filterVisited,
         showOnlyNew,
-        filterWithMaps
+        filterWithMaps,
+        derivedSites,
+        filteredSites
     ]);
 
     // 2. Modal Filter: Specifically turns the "Filters" button RED
@@ -967,7 +969,13 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     useEffect(() => {
         localStorage.setItem('appTheme', theme);
-        document.body.className = theme === 'light' ? 'light-mode' : '';
+        if (theme === 'light') {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+        } else {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+        }
     }, [theme]);
 
     const [showAuth, setShowAuth] = useState(false);
@@ -1291,6 +1299,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             setLocationMode('none');
             setFilterRadius('all');
         } else if (mode === 'geo') {
+            setUserCoords(null);
             setLocationMode('geo');
         } else if (mode === 'manual') {
             setLocationMode('manual');

@@ -85,6 +85,10 @@
     line-height: 1;
 }
 
+.count-number.is-filtered {
+    color: var(--accent-danger, #ff4444) !important;
+}
+
 .count-label {
     font-size: 0.75rem;
     text-transform: uppercase;

@@ -401,10 +401,8 @@ const LocationCenteringHandler = () => {
             return;
         }
 
-        // Include filterRadius in the key so changing Area triggers centering & zoom adjustment
-        const currentKey = locationMode === 'geo'
-            ? `${locationMode}-${filterRadius || 'all'}`
-            : `${locationMode}-${userCoords.lat}-${userCoords.lon}-${filterRadius || 'all'}`;
+        // Include locationMode, coords, and filterRadius in the key so changing location or area triggers centering
+        const currentKey = `${locationMode}-${userCoords.lat}-${userCoords.lon}-${filterRadius || 'all'}`;
 
         const hasOverlays = Array.isArray(activeMapOverlays) && activeMapOverlays.length > 0;
 
@@ -436,10 +434,20 @@ const LocationCenteringHandler = () => {
                     map.flyTo([userCoords.lat, userCoords.lon], 10, { duration: 1.2 });
                 }
             } else {
-                // 'all' areas selected
-                const minZoom = map.getMinZoom() ?? 2.5;
-                const targetZoom = minZoom + 7.5; // default 10
-                map.flyTo([userCoords.lat, userCoords.lon], targetZoom, { duration: 1.2 });
+                // 'all' areas selected: zoom out to 500km bounds, but keep current zoom if already zoomed out further
+                try {
+                    const bounds500 = L.latLng(userCoords.lat, userCoords.lon).toBounds(500 * 2000);
+                    const padding = isMobileLike ? [40, 40] : [60, 60];
+                    const zoom500 = map.getBoundsZoom(bounds500, false, padding);
+                    const minZoom = map.getMinZoom() ?? 2.5;
+                    const maxZoom = 16;
+                    const clampedZoom500 = Math.max(minZoom, Math.min(zoom500, maxZoom));
+                    const finalZoom = Math.min(map.getZoom(), clampedZoom500);
+                    map.flyTo([userCoords.lat, userCoords.lon], finalZoom, { duration: 1.2 });
+                } catch (err) {
+                    console.error('Error calculating 500km zoom for All Areas:', err);
+                    map.flyTo([userCoords.lat, userCoords.lon], Math.min(map.getZoom(), 6), { duration: 1.2 });
+                }
             }
         }
     }, [locationMode, filterRadius, userCoords?.lat, userCoords?.lon, map, siteToOpenPopup, activeMapOverlays, isMobileLike]);
