@@ -17779,5 +17779,21 @@
       }
     ],
     "createDate": "2026-09-24"
+  },
+  {
+    "id": "966",
+    "name": "Convento de Santa Cruz do Buçaco ",
+    "category": "Landmark",
+    "significance": 3,
+    "year": "1810",
+    "date": "1810-09-27",
+    "location": "Mealhada",
+    "country": "Portugal",
+    "description": "Arthur Wellesley spent the night after the battle at the convent. The convent closed in 1834 and a luxury hotel stand in its grounds but the historic convent chapel still stands attached directly to the modern hotel structure.",
+    "latitude": 40.375942,
+    "longitude": -8.365386,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Carmelitas_Convent.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Convento_de_Santa_Cruz_do_Bu%C3%A7aco",
+    "createDate": "2026-09-24"
   }
 ]
