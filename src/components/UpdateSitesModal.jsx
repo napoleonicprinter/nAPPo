@@ -5,7 +5,7 @@ import { useAppContext, useBackHandler } from '../context/AppContext';
 import './UpdateSitesModal.css';
 
 const UpdateSitesModal = ({ isOpen, onClose }) => {
-    const { getPortalContainer, checkForDataUpdates, lastSyncTime, sites } = useAppContext();
+    const { getPortalContainer, checkForDataUpdates, lastSyncTime, allSites } = useAppContext();
     const [isUpdating, setIsUpdating] = useState(false);
     const [updateResult, setUpdateResult] = useState(null);
 
@@ -80,7 +80,7 @@ const UpdateSitesModal = ({ isOpen, onClose }) => {
                                             <p className="result-msg">
                                                 You already have all the latest sites and data.
                                             </p>
-                                            <span className="result-sub">Total sites: {updateResult.totalSites || sites.length}</span>
+                                            <span className="result-sub">Total sites: {updateResult.totalSites || allSites.length}</span>
                                         </div>
                                     </>
                                 )
@@ -141,7 +141,7 @@ const UpdateSitesModal = ({ isOpen, onClose }) => {
 
                     {/* Timestamp info */}
                     <div className="update-footer-info">
-                        <span>Current sites: <strong>{sites.length}</strong></span>
+                        <span>Current sites: <strong>{allSites.length}</strong></span>
                         {lastSyncTime && (
                             <span className="update-last-time">Last sync: {lastSyncTime}</span>
                         )}

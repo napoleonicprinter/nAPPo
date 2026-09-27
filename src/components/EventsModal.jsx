@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Calendar as CalendarIcon, MapPin, ExternalLink, BookOpen, CalendarDays, Megaphone, ChevronRight, Map, ChevronUp } from 'lucide-react';
 import { useAppContext, useBackHandler } from '../context/AppContext';
@@ -47,6 +47,7 @@ const EventsModal = ({ onClose }) => {
         setShowOnlyNew,
         filterSearch,
         setFilterSearch,
+        setHistoryNavState,
         historyNavState
     } = useAppContext();
 
@@ -55,10 +56,12 @@ const EventsModal = ({ onClose }) => {
     const [showTopBtn, setShowTopBtn] = useState(false);
     const [navErrorModal, setNavErrorModal] = useState(null);
     const containerRef = useRef(null);
+    const hasRestoredHistoryRef = useRef(false);
 
-    // Auto-open calendar if user was navigated back from History Calendar
+    // Auto-open calendar if user was navigated back from History Calendar (one-time restoration)
     useEffect(() => {
-        if (historyNavState?.fromView === 'historyCalendar') {
+        if (!hasRestoredHistoryRef.current && historyNavState?.fromView === 'historyCalendar') {
+            hasRestoredHistoryRef.current = true;
             setIsCalendarOpen(true);
         }
     }, [historyNavState]);
@@ -81,6 +84,11 @@ const EventsModal = ({ onClose }) => {
         }
     }, [historyNavState]);
 
+    const handleCloseModal = () => {
+        if (setHistoryNavState) setHistoryNavState(null);
+        if (onClose) onClose();
+    };
+
     const handleScroll = () => {
         if (containerRef.current) {
             setShowTopBtn(containerRef.current.scrollTop > 180);
@@ -96,6 +104,7 @@ const EventsModal = ({ onClose }) => {
     useBackHandler('eventsNavError', !!navErrorModal, () => setNavErrorModal(null), 50);
     useBackHandler('eventsHistoryCalendar', isCalendarOpen, () => setIsCalendarOpen(false), 35);
     useBackHandler('eventsAnnouncement', !!showAnnouncement, () => setShowAnnouncement(null), 35);
+    useBackHandler('eventsModalSelf', !navErrorModal && !isCalendarOpen && !showAnnouncement && !!onClose, handleCloseModal, 30);
 
     const filterContext = {
         locationMode,
@@ -212,7 +221,7 @@ const EventsModal = ({ onClose }) => {
     const todayString = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
     return createPortal(
-        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
+        <div className="view-modal-overlay animate-fade-in" onClick={handleCloseModal}>
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
                 {/* Header */}
                 <div className="calendar-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
@@ -253,7 +262,7 @@ const EventsModal = ({ onClose }) => {
                             </div>
                         </div>
 
-                        <button className="modal-close-btn" style={{ marginLeft: 'auto' }} onClick={onClose} title="Close">
+                        <button className="modal-close-btn" style={{ marginLeft: 'auto' }} onClick={handleCloseModal} title="Close">
                             <X size={18} strokeWidth={2.5} color="white" />
                         </button>
                     </div>
@@ -376,7 +385,7 @@ const EventsModal = ({ onClose }) => {
                 <HistoryCalendarModal
                     eventsData={eventsData}
                     onClose={() => setIsCalendarOpen(false)}
-                    onCloseParent={onClose}
+                    onCloseParent={handleCloseModal}
                 />
             )}
             {showAnnouncement && (

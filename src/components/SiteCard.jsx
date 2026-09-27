@@ -410,6 +410,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     const prev = callerSite;
                                     setCallerSite(null);
                                     if (prev.fromView === 'todayInHistory' || prev.fromView === 'historyCalendar') {
+                                        setSelectedSite(null);
                                         if (onClose) onClose();
                                         setSiteToOpenPopup(null);
                                         if (setHistoryNavState) setHistoryNavState(prev);

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, MapPin, BookOpen, ExternalLink, ChevronDown, Calendar as CalendarIcon, Map } from 'lucide-react';
 import { useAppContext, useBackHandler } from '../context/AppContext';
@@ -23,6 +23,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         setSelectedSite,
         setCallerSite,
         setSiteToOpenPopup,
+        setHistoryNavState,
         userCoords,
         locationMode,
         filterRadius,
@@ -60,6 +61,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
     const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
     const [navErrorModal, setNavErrorModal] = useState(null);
+    const hasRestoredDayPopupRef = useRef(false);
 
     useBackHandler('historyNavError', !!navErrorModal, () => setNavErrorModal(null), 50);
     useBackHandler('historyYearDropdown', isYearDropdownOpen, () => setIsYearDropdownOpen(false), 45);
@@ -133,15 +135,16 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         return monthEvents;
     }, [month, selectedYear]);
 
-    // Restore day events popup if navigating back from a day in history
+    // Restore day events popup if navigating back from a day in history (one-time restoration)
     useEffect(() => {
-        if (calState?.day && currentYearEvents[calState.day] && !selectedDateEvents) {
+        if (!hasRestoredDayPopupRef.current && calState?.day && currentYearEvents[calState.day]) {
+            hasRestoredDayPopupRef.current = true;
             setSelectedDateEvents({
                 day: calState.day,
                 events: currentYearEvents[calState.day]
             });
         }
-    }, [calState, currentYearEvents, selectedDateEvents]);
+    }, [calState, currentYearEvents]);
 
     // Auto-scroll and highlight target event in day events popup
     useEffect(() => {

@@ -142,6 +142,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < sitesData.length) {
+                        localStorage.setItem('sitesData', JSON.stringify(sitesData));
+                        return sitesData;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -156,6 +160,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < showsData.length) {
+                        localStorage.setItem('showsData', JSON.stringify(showsData));
+                        return showsData;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -170,6 +178,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < shoppingData.length) {
+                        localStorage.setItem('shoppingData', JSON.stringify(shoppingData));
+                        return shoppingData;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -199,6 +211,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < eventsDataFallback.length) {
+                        localStorage.setItem('eventsData', JSON.stringify(eventsDataFallback));
+                        return eventsDataFallback;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -213,6 +229,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < newsDataFallback.length) {
+                        localStorage.setItem('newsData', JSON.stringify(newsDataFallback));
+                        return newsDataFallback;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -240,6 +260,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < messagesDataFallback.length) {
+                        localStorage.setItem('messagesData', JSON.stringify(messagesDataFallback));
+                        return messagesDataFallback;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -254,6 +278,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
+                    if (parsed.length < dealsDataFallback.length) {
+                        localStorage.setItem('dealsData', JSON.stringify(dealsDataFallback));
+                        return dealsDataFallback;
+                    }
                     return parsed;
                 }
             } catch (e) { }
@@ -285,22 +313,25 @@ export const AppProvider = ({ children, storeUrl }) => {
         setSyncStatus('syncing');
         try {
             const t = Date.now();
+            const nonce = Math.random().toString(36).substring(2, 9);
             const fetchOpts = {
                 cache: 'no-store',
                 headers: {
+                    'Accept': 'application/json',
                     'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache'
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
                 }
             };
 
             const endpoints = [
-                { key: 'sites', url: `${GITHUB_RAW_BASE_URL}/sites.json?t=${t}` },
-                { key: 'shows', url: `${GITHUB_RAW_BASE_URL}/shows.json?t=${t}` },
-                { key: 'shopping', url: `${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}` },
-                { key: 'events', url: `${GITHUB_RAW_BASE_URL}/events.json?t=${t}` },
-                { key: 'news', url: `${GITHUB_RAW_BASE_URL}/news.json?t=${t}` },
-                { key: 'messages', url: `${GITHUB_RAW_BASE_URL}/messages.json?t=${t}` },
-                { key: 'deals', url: `${GITHUB_RAW_BASE_URL}/deals.json?t=${t}` }
+                { key: 'sites', url: `${GITHUB_RAW_BASE_URL}/sites.json?t=${t}&r=${nonce}` },
+                { key: 'shows', url: `${GITHUB_RAW_BASE_URL}/shows.json?t=${t}&r=${nonce}` },
+                { key: 'shopping', url: `${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}&r=${nonce}` },
+                { key: 'events', url: `${GITHUB_RAW_BASE_URL}/events.json?t=${t}&r=${nonce}` },
+                { key: 'news', url: `${GITHUB_RAW_BASE_URL}/news.json?t=${t}&r=${nonce}` },
+                { key: 'messages', url: `${GITHUB_RAW_BASE_URL}/messages.json?t=${t}&r=${nonce}` },
+                { key: 'deals', url: `${GITHUB_RAW_BASE_URL}/deals.json?t=${t}&r=${nonce}` }
             ];
 
             const results = await Promise.allSettled(
@@ -312,6 +343,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 })
             );
 
+            let sitesResult = null;
             let newSitesCount = 0;
             let totalSites = (sitesBaseData || []).length;
             let sitesUpdated = false;
@@ -320,6 +352,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (res.status === 'fulfilled') {
                     const { key, data } = res.value;
                     if (key === 'sites' && Array.isArray(data) && data.length > 0) {
+                        sitesResult = data;
                         const currentIds = new Set((sitesBaseData || []).map(s => String(s.id).trim()));
                         const newSites = data.filter(s => !currentIds.has(String(s.id).trim()));
                         newSitesCount = newSites.length;
@@ -348,6 +381,17 @@ export const AppProvider = ({ children, storeUrl }) => {
                     }
                 }
             });
+
+            if (!sitesResult) {
+                const sitesPromiseRes = results.find((r, i) => endpoints[i].key === 'sites');
+                const errMsg = sitesPromiseRes?.reason?.message || 'Could not download sites database';
+                console.warn("Sites sync warning:", errMsg);
+                setSyncStatus('error');
+                return {
+                    success: false,
+                    error: errMsg
+                };
+            }
 
             const now = new Date().toLocaleString();
             setLastSyncTime(now);
