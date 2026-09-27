@@ -27,7 +27,7 @@ const UpdateSitesModal = ({ isOpen, onClose }) => {
     };
 
     return createPortal(
-        <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
+        <div className="view-modal-overlay update-sites-modal-overlay animate-fade-in" onClick={onClose}>
             <div
                 className="view-modal-content glass-panel update-sites-modal-content"
                 onClick={(e) => e.stopPropagation()}
