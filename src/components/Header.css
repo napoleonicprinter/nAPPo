@@ -81,12 +81,24 @@
 .count-number {
     font-size: 1.8rem;
     font-weight: 800;
-    color: var(--accent-primary, #58a6ff);
     line-height: 1;
 }
 
-.count-number.is-filtered,
-.sites-count-badge .count-number.is-filtered {
+/* Night Mode (Default) Counter Color - Blue */
+.sites-count-badge .count-number,
+.count-number {
+    color: #58a6ff !important;
+}
+
+/* Day Mode Counter Color - Blue */
+body.light-mode .sites-count-badge .count-number,
+body.light-mode .count-number {
+    color: #0969da !important;
+}
+
+/* Filtered Counter Color - Always Red in both Day and Night Modes */
+.sites-count-badge .count-number.is-filtered,
+.count-number.is-filtered {
     color: #ff4444 !important;
 }
 

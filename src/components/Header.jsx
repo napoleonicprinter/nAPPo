@@ -182,24 +182,12 @@ const Header = () => {
         }
     };
 
-    const hasActiveFilter = Boolean(
+    const totalSitesCount = allSites?.length || 0;
+    const isSitesFiltered = Boolean(
+        (totalSitesCount > 0 && sites && sites.length < totalSitesCount) ||
+        (Array.isArray(filterCategory) && filterCategory.length > 0) ||
         isFiltered ||
-        isModalFiltered ||
-        (Array.isArray(filterCategory) ? filterCategory.length > 0 : Boolean(filterCategory)) ||
-        (filterSignificance !== '' && filterSignificance !== null && filterSignificance !== undefined) ||
-        (filterSearch && filterSearch.trim() !== '') ||
-        (filterYear && filterYear !== 'all') ||
-        (filterMonth && filterMonth !== 'all') ||
-        (filterCommander && filterCommander !== 'all') ||
-        Boolean(showArcOnly) ||
-        (filterCountry && filterCountry !== 'all') ||
-        (filterCoalition && filterCoalition !== 'all') ||
-        (filterCampaign && filterCampaign !== 'all') ||
-        (filterVisited && filterVisited !== 'all') ||
-        Boolean(showOnlyNew) ||
-        Boolean(filterWithMaps) ||
-        (locationMode && locationMode !== 'none') ||
-        (allSites && sites && sites.length < allSites.length)
+        isModalFiltered
     );
 
     return (
@@ -209,8 +197,8 @@ const Header = () => {
                     <img src="/assets/NT_logo.png" alt="Logo" className="header-logo" />
                     <div className="sites-count-badge glass-panel">
                         <span
-                            className={`count-number ${hasActiveFilter ? 'is-filtered' : ''}`}
-                            style={{ color: hasActiveFilter ? '#ff4444' : (theme === 'light' ? '#0969da' : '#58a6ff') }}
+                            className={`count-number ${isSitesFiltered ? 'is-filtered' : ''}`}
+                            style={{ color: isSitesFiltered ? '#ff4444' : (theme === 'light' ? '#0969da' : '#58a6ff') }}
                         >
                             {sites.length}
                         </span>
