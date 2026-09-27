@@ -14,11 +14,24 @@ const ExitConfirmModal = lazy(() => import('./components/ExitConfirmModal'));
 const GpsDeniedModal = lazy(() => import('./components/GpsDeniedModal'));
 const ManualLocationModal = lazy(() => import('./components/ManualLocationModal'));
 const BackupExportModal = lazy(() => import('./components/BackupExportModal'));
+const UpdateSitesModal = lazy(() => import('./components/UpdateSitesModal'));
 
 const MainApp = () => {
   const { view, messagesData,
-      isMobileLike, isFiltered, clearAllFilters } = useAppContext();
+      isMobileLike, isFiltered, clearAllFilters,
+      showUpdateSitesModal, setShowUpdateSitesModal } = useAppContext();
   const [announcementMessage, setAnnouncementMessage] = useState(null);
+
+  // Daily auto-prompt for updating sites
+  useEffect(() => {
+    const todayStr = new Date().toISOString().split('T')[0];
+    const lastPopupDate = localStorage.getItem('nappo_last_update_popup_date');
+    if (lastPopupDate !== todayStr) {
+      localStorage.setItem('nappo_last_update_popup_date', todayStr);
+      const timer = setTimeout(() => setShowUpdateSitesModal(true), 1200);
+      return () => clearTimeout(timer);
+    }
+  }, [setShowUpdateSitesModal]);
 
   useEffect(() => {
     if (!messagesData || messagesData.length === 0) return;
@@ -94,6 +107,10 @@ const MainApp = () => {
         <GpsDeniedModal />
         <ManualLocationModal />
         <BackupExportModal />
+        <UpdateSitesModal
+          isOpen={showUpdateSitesModal}
+          onClose={() => setShowUpdateSitesModal(false)}
+        />
       </Suspense>
     </div>
   );

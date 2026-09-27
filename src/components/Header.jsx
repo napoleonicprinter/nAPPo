@@ -4,7 +4,7 @@ import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
     Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket,
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
-    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload, Layers
+    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload, Layers, CloudDownload
 } from 'lucide-react';
 import { useAppContext, useBackHandler, EUROPEAN_CAPITALS } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
@@ -54,7 +54,8 @@ const Header = () => {
         showAuth, setShowAuth, setAuthMessage,
         setSelectedHelpItem,
         filterYear, filterCommander,
-        exportUserData, importUserData
+        exportUserData, importUserData,
+        setShowUpdateSitesModal
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
@@ -596,6 +597,30 @@ const Header = () => {
                                                 {importStatus}
                                             </div>
                                         )}
+                                    </div>
+
+                                    <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>
+                                        <h3 style={{ marginBottom: '4px' }}>Sites Database</h3>
+                                        <button
+                                            onClick={() => {
+                                                setShowSettings(false);
+                                                setShowUpdateSitesModal(true);
+                                            }}
+                                            className="glass-panel"
+                                            style={{
+                                                width: '100%',
+                                                padding: '6px 8px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '8px',
+                                                cursor: 'pointer',
+                                                fontSize: '0.85rem'
+                                            }}
+                                        >
+                                            <CloudDownload size={16} />
+                                            <span>Check for New Sites</span>
+                                        </button>
                                     </div>
 
                                     <div className="settings-section" style={{ marginBottom: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.4rem' }}>

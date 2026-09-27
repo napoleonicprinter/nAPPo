@@ -1,0 +1,237 @@
+.update-sites-modal-content {
+    max-width: 440px;
+    width: 90%;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    background: var(--bg-surface, rgba(26, 32, 44, 0.95));
+    border: 1px solid var(--border-color);
+}
+
+.update-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.update-modal-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.update-modal-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.update-modal-title-info h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.update-modal-title-info p {
+    margin: 2px 0 0 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.update-modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.update-intro-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.update-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(88, 166, 255, 0.15);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-primary, #58a6ff);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.update-description {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+}
+
+.update-result-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.update-result-card.success-new {
+    background: rgba(46, 160, 67, 0.15);
+    border: 1px solid rgba(46, 160, 67, 0.4);
+}
+
+.update-result-card.success-current {
+    background: rgba(56, 139, 253, 0.12);
+    border: 1px solid rgba(56, 139, 253, 0.35);
+}
+
+.update-result-card.error {
+    background: rgba(248, 81, 73, 0.15);
+    border: 1px solid rgba(248, 81, 73, 0.4);
+}
+
+.result-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.result-icon-success {
+    color: #3fb950;
+}
+
+.result-icon-info {
+    color: #58a6ff;
+}
+
+.result-icon-error {
+    color: #f85149;
+}
+
+.result-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.result-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.result-msg {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    color: var(--text-primary);
+}
+
+.result-sub {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.update-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.update-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--accent-primary, #58a6ff);
+    color: #000;
+    border: none;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.update-btn:hover:not(:disabled) {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.update-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.update-post-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.update-recheck-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 14px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.update-recheck-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.update-footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
+}
+
+.update-last-time {
+    opacity: 0.85;
+}

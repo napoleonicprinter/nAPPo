@@ -279,73 +279,100 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [lastSyncTime, setLastSyncTime] = useState(() => {
         return localStorage.getItem('lastSyncTime') || null;
     });
+    const [showUpdateSitesModal, setShowUpdateSitesModal] = useState(false);
 
-    // Update check from GitHub
+    const checkForDataUpdates = useCallback(async () => {
+        setSyncStatus('syncing');
+        try {
+            const t = Date.now();
+            const fetchOpts = {
+                cache: 'no-store',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache'
+                }
+            };
+
+            const endpoints = [
+                { key: 'sites', url: `${GITHUB_RAW_BASE_URL}/sites.json?t=${t}` },
+                { key: 'shows', url: `${GITHUB_RAW_BASE_URL}/shows.json?t=${t}` },
+                { key: 'shopping', url: `${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}` },
+                { key: 'events', url: `${GITHUB_RAW_BASE_URL}/events.json?t=${t}` },
+                { key: 'news', url: `${GITHUB_RAW_BASE_URL}/news.json?t=${t}` },
+                { key: 'messages', url: `${GITHUB_RAW_BASE_URL}/messages.json?t=${t}` },
+                { key: 'deals', url: `${GITHUB_RAW_BASE_URL}/deals.json?t=${t}` }
+            ];
+
+            const results = await Promise.allSettled(
+                endpoints.map(async (ep) => {
+                    const res = await fetch(ep.url, fetchOpts);
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    const data = await res.json();
+                    return { key: ep.key, data };
+                })
+            );
+
+            let newSitesCount = 0;
+            let totalSites = (sitesBaseData || []).length;
+            let sitesUpdated = false;
+
+            results.forEach((res) => {
+                if (res.status === 'fulfilled') {
+                    const { key, data } = res.value;
+                    if (key === 'sites' && Array.isArray(data) && data.length > 0) {
+                        const currentIds = new Set((sitesBaseData || []).map(s => String(s.id).trim()));
+                        const newSites = data.filter(s => !currentIds.has(String(s.id).trim()));
+                        newSitesCount = newSites.length;
+                        totalSites = data.length;
+                        setSitesBaseData(data);
+                        localStorage.setItem('sitesData', JSON.stringify(data));
+                        sitesUpdated = true;
+                    } else if (key === 'shows' && Array.isArray(data)) {
+                        setShowsBaseData(data);
+                        localStorage.setItem('showsData', JSON.stringify(data));
+                    } else if (key === 'shopping' && Array.isArray(data)) {
+                        setShoppingBaseData(data);
+                        localStorage.setItem('shoppingData', JSON.stringify(data));
+                    } else if (key === 'events' && Array.isArray(data)) {
+                        setEventsBaseData(data);
+                        localStorage.setItem('eventsData', JSON.stringify(data));
+                    } else if (key === 'news' && Array.isArray(data)) {
+                        setNewsBaseData(data);
+                        localStorage.setItem('newsData', JSON.stringify(data));
+                    } else if (key === 'messages' && Array.isArray(data)) {
+                        setMessagesBaseData(data);
+                        localStorage.setItem('messagesData', JSON.stringify(data));
+                    } else if (key === 'deals' && Array.isArray(data)) {
+                        setDealsBaseData(data);
+                        localStorage.setItem('dealsData', JSON.stringify(data));
+                    }
+                }
+            });
+
+            const now = new Date().toLocaleString();
+            setLastSyncTime(now);
+            localStorage.setItem('lastSyncTime', now);
+            setSyncStatus('success');
+
+            return {
+                success: true,
+                newSitesCount,
+                totalSites,
+                sitesUpdated
+            };
+        } catch (error) {
+            console.warn("Failed to sync data with GitHub:", error);
+            setSyncStatus('error');
+            return {
+                success: false,
+                error: error.message || 'Sync failed'
+            };
+        }
+    }, [sitesBaseData]);
+
+    // Initial background silent sync
     useEffect(() => {
-        const syncData = async () => {
-            setSyncStatus('syncing');
-            try {
-                const t = new Date().getTime();
-                const fetchRequests = [
-                    fetch(`${GITHUB_RAW_BASE_URL}/sites.json?t=${t}`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shows.json?t=${t}`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/shopping.json?t=${t}`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/events.json?t=${t}`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/news.json?t=${t}`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/messages.json?t=${t}`),
-                    fetch(`${GITHUB_RAW_BASE_URL}/deals.json?t=${t}`)
-                ];
-
-                const fetchRes = await Promise.all(fetchRequests);
-                const [resSites, resShows, resShopping, resEvents, resNews, resMessages, resDeals] = fetchRes;
-
-                if (resSites.ok) {
-                    const data = await resSites.json();
-                    if (!isDevelopment) setSitesBaseData(data);
-                    localStorage.setItem('sitesData', JSON.stringify(data));
-                }
-                if (resShows.ok) {
-                    const data = await resShows.json();
-                    if (!isDevelopment) setShowsBaseData(data);
-                    localStorage.setItem('showsData', JSON.stringify(data));
-                }
-                if (resShopping.ok) {
-                    const data = await resShopping.json();
-                    if (!isDevelopment) setShoppingBaseData(data);
-                    localStorage.setItem('shoppingData', JSON.stringify(data));
-                }
-                if (resEvents.ok) {
-                    const data = await resEvents.json();
-                    if (!isDevelopment) setEventsBaseData(data);
-                    localStorage.setItem('eventsData', JSON.stringify(data));
-                }
-                if (resNews && resNews.ok) {
-                    const data = await resNews.json();
-                    if (!isDevelopment) setNewsBaseData(data);
-                    localStorage.setItem('newsData', JSON.stringify(data));
-                }
-                if (resMessages && resMessages.ok) {
-                    const data = await resMessages.json();
-                    if (!isDevelopment) setMessagesBaseData(data);
-                    localStorage.setItem('messagesData', JSON.stringify(data));
-                }
-                if (resDeals && resDeals.ok) {
-                    const data = await resDeals.json();
-                    if (!isDevelopment) setDealsBaseData(data);
-                    localStorage.setItem('dealsData', JSON.stringify(data));
-                }
-
-                const now = new Date().toLocaleString();
-                setLastSyncTime(now);
-                localStorage.setItem('lastSyncTime', now);
-                setSyncStatus('success');
-            } catch (error) {
-                console.warn("Failed to sync data with GitHub. Using local/cached version.", error);
-                setSyncStatus('error');
-            }
-        };
-
-        syncData();
+        checkForDataUpdates();
     }, []);
 
     const [view, setView] = useState(() => {
@@ -1543,6 +1570,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             coalitionCounts,
             visitedCounts,
             syncStatus, lastSyncTime,
+            showUpdateSitesModal, setShowUpdateSitesModal,
+            checkForDataUpdates,
             mapBounds, setMapBounds,
             showsToCome: showsBaseData,
             shoppingItems: activeShoppingItems,
