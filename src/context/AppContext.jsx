@@ -142,7 +142,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < sitesData.length) {
+                    if (parsed.length <= sitesData.length) {
                         localStorage.setItem('sitesData', JSON.stringify(sitesData));
                         return sitesData;
                     }
@@ -160,7 +160,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < showsData.length) {
+                    if (parsed.length <= showsData.length) {
                         localStorage.setItem('showsData', JSON.stringify(showsData));
                         return showsData;
                     }
@@ -178,7 +178,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < shoppingData.length) {
+                    if (parsed.length <= shoppingData.length) {
                         localStorage.setItem('shoppingData', JSON.stringify(shoppingData));
                         return shoppingData;
                     }
@@ -211,7 +211,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < eventsDataFallback.length) {
+                    if (parsed.length <= eventsDataFallback.length) {
                         localStorage.setItem('eventsData', JSON.stringify(eventsDataFallback));
                         return eventsDataFallback;
                     }
@@ -229,7 +229,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < newsDataFallback.length) {
+                    if (parsed.length <= newsDataFallback.length) {
                         localStorage.setItem('newsData', JSON.stringify(newsDataFallback));
                         return newsDataFallback;
                     }
@@ -260,7 +260,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < messagesDataFallback.length) {
+                    if (parsed.length <= messagesDataFallback.length) {
                         localStorage.setItem('messagesData', JSON.stringify(messagesDataFallback));
                         return messagesDataFallback;
                     }
@@ -278,7 +278,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length < dealsDataFallback.length) {
+                    if (parsed.length <= dealsDataFallback.length) {
                         localStorage.setItem('dealsData', JSON.stringify(dealsDataFallback));
                         return dealsDataFallback;
                     }
