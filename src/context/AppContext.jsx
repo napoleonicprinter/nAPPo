@@ -456,7 +456,11 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
-        return saved !== null && saved !== undefined ? parseInt(saved, 10) : 30;
+        if (saved !== null && saved !== undefined && saved !== '60') {
+            const parsed = parseInt(saved, 10);
+            if (!isNaN(parsed) && parsed <= 30) return parsed;
+        }
+        return 30;
     });
 
     const [clusterRadius, setClusterRadius] = useState(() => {
@@ -469,12 +473,21 @@ export const AppProvider = ({ children, storeUrl }) => {
     const derivedSites = useMemo(() => {
         return (sitesBaseData || []).map(site => {
             const isNew = (() => {
-                if (!site.createDate || !newSitesDays) return false;
-                const createDate = new Date(site.createDate);
+                if (!site.createDate || newSitesDays === null || newSitesDays === undefined) return false;
                 const today = new Date();
-                const diffTime = Math.abs(today - createDate);
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                return diffDays <= newSitesDays;
+                const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+                
+                const parts = String(site.createDate).trim().split('-');
+                if (parts.length < 3) return false;
+                const siteDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+                
+                const diffTime = todayMidnight.getTime() - siteDate.getTime();
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                
+                if (newSitesDays === 0) {
+                    return diffDays === 0;
+                }
+                return diffDays >= 0 && diffDays <= newSitesDays;
             })();
 
             const rawSpecial = site.special || site.Special;

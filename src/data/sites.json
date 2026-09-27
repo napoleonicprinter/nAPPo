@@ -17804,12 +17804,27 @@
     "year": "2012",
     "date": "2012-04-01",
     "location": "Tarbes",
-    "country": "France",
+    "country": "Germany",
     "description": "The International Hussars Museum: A unique, world-renowned collection that chronicles 400 years of the history of this light cavalry. It features over 15,000 artifacts, including around 150 mannequins in full historic uniforms, weapons, and military equipment.",
     "latitude": 43.239113,
     "longitude": 0.075233,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Massey.webp",
     "site_link": "https://www.musees-tarbes.fr/les-musees/musee-massey/",
     "createDate": "2026-09-24"
+  },
+  {
+    "id": "968",
+    "name": "Gneisenau Monument (Berlin)",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1855",
+    "location": "Bebelplatz, Berlin",
+    "country": "France",
+    "description": "Created between 1840 and 1855 by Christian Daniel Rauch in the Realist style , it is one of the works of the Berlin School of Sculpture . Until 1950, it stood at the front of the grand boulevard Unter den Linden , with which it formed an ensemble , and since 1963 it has stood at the rear of the green space of Bebelplatz.",
+    "latitude": 52.516587,
+    "longitude": 13.395586,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_berlin.webp",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Gneisenau-Denkmal_(Berlin)",
+    "createDate": "2026-09-27"
   }
 ]
