@@ -558,7 +558,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [theme, setTheme] = useState(() => {
         const saved = localStorage.getItem('appTheme');
         if (saved) return saved;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return 'light';
     });
 
     const toggleTheme = () => {
@@ -818,10 +818,9 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const filteredSites = useMemo(() => sitesForCategoryCounts.filter(site => passCat(site)), [sitesForCategoryCounts, passCat]);
 
-    // 1. Master Filter: Controls if the "Clear All" button appears and if site counter is RED
+    // 1. Master Filter: Controls if the "Clear All" button appears
     const isFiltered = useMemo(() => {
-        const hasLocationFilter = Boolean(locationMode && locationMode !== 'none');
-        const hasRadiusFilter = Boolean(locationMode && locationMode !== 'none' && userCoords && filterRadius && filterRadius !== 'all');
+        const hasRadiusFilter = Boolean(filterRadius && filterRadius !== 'all');
         const hasCategoryFilter = Array.isArray(filterCategory) && filterCategory.length > 0;
         const hasSignificanceFilter = Boolean(filterSignificance !== '' && filterSignificance !== null && filterSignificance !== undefined);
         const hasSearchFilter = Boolean(filterSearch && filterSearch.trim() !== '');
@@ -835,10 +834,8 @@ export const AppProvider = ({ children, storeUrl }) => {
         const hasVisitedFilter = Boolean(filterVisited && filterVisited !== 'all');
         const hasNewFilter = Boolean(showOnlyNew);
         const hasMapsFilter = Boolean(filterWithMaps);
-        const hasSiteCountReduction = Boolean(derivedSites && derivedSites.length > 0 && filteredSites && filteredSites.length < derivedSites.length);
 
-        return hasLocationFilter ||
-            hasRadiusFilter ||
+        return hasRadiusFilter ||
             hasCategoryFilter ||
             hasSignificanceFilter ||
             hasSearchFilter ||
@@ -851,11 +848,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             hasCampaignFilter ||
             hasVisitedFilter ||
             hasNewFilter ||
-            hasMapsFilter ||
-            hasSiteCountReduction;
+            hasMapsFilter;
     }, [
-        locationMode,
-        userCoords,
         filterRadius,
         filterCategory,
         filterSignificance,
@@ -869,9 +863,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         filterCampaign,
         filterVisited,
         showOnlyNew,
-        filterWithMaps,
-        derivedSites,
-        filteredSites
+        filterWithMaps
     ]);
 
     // 2. Modal Filter: Specifically turns the "Filters" button RED
@@ -972,9 +964,11 @@ export const AppProvider = ({ children, storeUrl }) => {
         if (theme === 'light') {
             document.body.classList.add('light-mode');
             document.body.classList.remove('dark-mode');
+            document.documentElement.setAttribute('data-theme', 'light');
         } else {
             document.body.classList.remove('light-mode');
             document.body.classList.add('dark-mode');
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     }, [theme]);
 
@@ -1618,7 +1612,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             previewDevice, setPreviewDevice,
             portalContainerRef, getPortalContainer,
             mapStyle, setMapStyle,
-            theme, toggleTheme,
+            theme, setTheme, toggleTheme,
             categoryCounts,
             countryCounts,
             campaignCounts,

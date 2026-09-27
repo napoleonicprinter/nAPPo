@@ -78,27 +78,36 @@
     }
 }
 
-.count-number {
+/* Default Counter Colors (Unfiltered - Day Mode Default) */
+.count-number,
+.sites-count-badge .count-number {
     font-size: 1.8rem;
     font-weight: 800;
     line-height: 1;
-}
-
-/* Night Mode (Default) Counter Color - Blue */
-.sites-count-badge .count-number,
-.count-number {
-    color: #58a6ff !important;
+    color: #0969da;
 }
 
 /* Day Mode Counter Color - Blue */
 body.light-mode .sites-count-badge .count-number,
 body.light-mode .count-number {
-    color: #0969da !important;
+    color: #0969da;
+}
+
+/* Night Mode Counter Color - Sky Blue */
+body.dark-mode .sites-count-badge .count-number,
+body.dark-mode .count-number,
+body:not(.light-mode) .sites-count-badge .count-number {
+    color: #58a6ff;
 }
 
 /* Filtered Counter Color - Always Red in both Day and Night Modes */
+.count-number.is-filtered,
 .sites-count-badge .count-number.is-filtered,
-.count-number.is-filtered {
+.sites-count-badge .is-filtered,
+body .sites-count-badge .count-number.is-filtered,
+body.light-mode .sites-count-badge .count-number.is-filtered,
+body.dark-mode .sites-count-badge .count-number.is-filtered,
+body:not(.light-mode) .sites-count-badge .count-number.is-filtered {
     color: #ff4444 !important;
 }
 

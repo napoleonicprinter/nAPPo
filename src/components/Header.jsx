@@ -42,7 +42,7 @@ const Header = () => {
         filterWithMaps,
         developerMode, setDeveloperMode,
         allSites, sites,
-        theme, toggleTheme,
+        theme, setTheme, toggleTheme,
         mapStyle, setMapStyle,
         categoryCounts,
         isFiltered, isModalFiltered, clearAllFilters,
@@ -711,7 +711,8 @@ const Header = () => {
                                                 <button
                                                     key={t.key}
                                                     onClick={() => {
-                                                        if (theme !== t.key) toggleTheme();
+                                                        if (setTheme) setTheme(t.key);
+                                                        else if (theme !== t.key) toggleTheme();
                                                     }}
                                                     className={`glass-panel ${theme === t.key ? 'active' : ''}`}
                                                     style={{
