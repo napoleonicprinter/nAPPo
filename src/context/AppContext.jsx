@@ -136,17 +136,14 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
-        if (isDevelopment) return sitesData;
         const saved = localStorage.getItem('sitesData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= sitesData.length) {
-                        localStorage.setItem('sitesData', JSON.stringify(sitesData));
-                        return sitesData;
+                    if (parsed.length >= sitesData.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
@@ -154,17 +151,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [showsBaseData, setShowsBaseData] = useState(() => {
-        if (isDevelopment) return showsData;
         const saved = localStorage.getItem('showsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= showsData.length) {
-                        localStorage.setItem('showsData', JSON.stringify(showsData));
-                        return showsData;
+                    if (parsed.length >= showsData.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
@@ -172,17 +166,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [shoppingBaseData, setShoppingBaseData] = useState(() => {
-        if (isDevelopment) return shoppingData;
         const saved = localStorage.getItem('shoppingData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= shoppingData.length) {
-                        localStorage.setItem('shoppingData', JSON.stringify(shoppingData));
-                        return shoppingData;
+                    if (parsed.length >= shoppingData.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
@@ -205,17 +196,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [shoppingBaseData]);
 
     const [eventsBaseData, setEventsBaseData] = useState(() => {
-        if (isDevelopment) return eventsDataFallback;
         const saved = localStorage.getItem('eventsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= eventsDataFallback.length) {
-                        localStorage.setItem('eventsData', JSON.stringify(eventsDataFallback));
-                        return eventsDataFallback;
+                    if (parsed.length >= eventsDataFallback.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
@@ -223,17 +211,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
-        if (isDevelopment) return newsDataFallback;
         const saved = localStorage.getItem('newsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= newsDataFallback.length) {
-                        localStorage.setItem('newsData', JSON.stringify(newsDataFallback));
-                        return newsDataFallback;
+                    if (parsed.length >= newsDataFallback.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
@@ -254,17 +239,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     const clearMapOverlays = () => setActiveMapOverlays([]);
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
-        if (isDevelopment) return messagesDataFallback;
         const saved = localStorage.getItem('messagesData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= messagesDataFallback.length) {
-                        localStorage.setItem('messagesData', JSON.stringify(messagesDataFallback));
-                        return messagesDataFallback;
+                    if (parsed.length >= messagesDataFallback.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
@@ -272,17 +254,14 @@ export const AppProvider = ({ children, storeUrl }) => {
     });
 
     const [dealsBaseData, setDealsBaseData] = useState(() => {
-        if (isDevelopment) return dealsDataFallback;
         const saved = localStorage.getItem('dealsData');
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length <= dealsDataFallback.length) {
-                        localStorage.setItem('dealsData', JSON.stringify(dealsDataFallback));
-                        return dealsDataFallback;
+                    if (parsed.length >= dealsDataFallback.length) {
+                        return parsed;
                     }
-                    return parsed;
                 }
             } catch (e) { }
         }
