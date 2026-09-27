@@ -81,12 +81,13 @@
 .count-number {
     font-size: 1.8rem;
     font-weight: 800;
-    color: var(--accent-primary);
+    color: var(--accent-primary, #58a6ff);
     line-height: 1;
 }
 
-.count-number.is-filtered {
-    color: var(--accent-danger, #ff4444) !important;
+.count-number.is-filtered,
+.sites-count-badge .count-number.is-filtered {
+    color: #ff4444 !important;
 }
 
 .count-label {

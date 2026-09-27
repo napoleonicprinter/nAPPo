@@ -56,7 +56,8 @@ const Header = () => {
         filterYear, filterCommander,
         exportUserData, importUserData,
         setShowUpdateSitesModal,
-        showEvents, setShowEvents, setHistoryNavState
+        showEvents, setShowEvents, setHistoryNavState,
+        filterSignificance, filterMonth, showArcOnly
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
@@ -181,7 +182,25 @@ const Header = () => {
         }
     };
 
-    const hasActiveFilter = Boolean(isFiltered || isModalFiltered || (allSites && sites && sites.length < allSites.length));
+    const hasActiveFilter = Boolean(
+        isFiltered ||
+        isModalFiltered ||
+        (Array.isArray(filterCategory) ? filterCategory.length > 0 : Boolean(filterCategory)) ||
+        (filterSignificance !== '' && filterSignificance !== null && filterSignificance !== undefined) ||
+        (filterSearch && filterSearch.trim() !== '') ||
+        (filterYear && filterYear !== 'all') ||
+        (filterMonth && filterMonth !== 'all') ||
+        (filterCommander && filterCommander !== 'all') ||
+        Boolean(showArcOnly) ||
+        (filterCountry && filterCountry !== 'all') ||
+        (filterCoalition && filterCoalition !== 'all') ||
+        (filterCampaign && filterCampaign !== 'all') ||
+        (filterVisited && filterVisited !== 'all') ||
+        Boolean(showOnlyNew) ||
+        Boolean(filterWithMaps) ||
+        (locationMode && locationMode !== 'none') ||
+        (allSites && sites && sites.length < allSites.length)
+    );
 
     return (
         <header className="app-header glass-header">
@@ -191,7 +210,7 @@ const Header = () => {
                     <div className="sites-count-badge glass-panel">
                         <span
                             className={`count-number ${hasActiveFilter ? 'is-filtered' : ''}`}
-                            style={{ color: hasActiveFilter ? '#ff4444' : 'var(--accent-primary)' }}
+                            style={{ color: hasActiveFilter ? '#ff4444' : (theme === 'light' ? '#0969da' : '#58a6ff') }}
                         >
                             {sites.length}
                         </span>
