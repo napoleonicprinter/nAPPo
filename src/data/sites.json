@@ -17727,14 +17727,32 @@
     "location": "Cieplice Śląskie-Zdrój, Jelenia Góra",
     "country": "Poland",
     "description": "He was born on October 31st 1762 in Warmbrunn (Lower Silesia), which was then part of the Kingdom of Prussia. Today, this historic spa town is known as Cieplice Śląskie-Zdrój, a district within the city of Jelenia Góra in southwestern Poland.",
-    "latitude": 50.86847,
-    "longitude": 15.690011,
+    "latitude": 50.86518,
+    "longitude": 15.686708,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Warmbrunn.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Heinrich_Wilhelm_von_Horn",
     "relatedSites": [
       {
         "id": "965",
         "title": "von Horn's grave"
+      }
+    ],
+    "maps": [
+      {
+        "id": "warmbrunn_1800",
+        "name": "Warmbrunn in 1806",
+        "url": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps/Warmbrunn_town_1800.svg",
+        "bounds": [
+          [
+            50.861124,
+            15.656800
+          ],
+          [
+            50.872305,
+            15.694204
+          ]
+        ],
+        "free": true
       }
     ],
     "createDate": "2026-09-24"
