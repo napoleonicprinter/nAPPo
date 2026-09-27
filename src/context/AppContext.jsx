@@ -1266,6 +1266,8 @@ export const AppProvider = ({ children, storeUrl }) => {
     };
     // Dentro de AppContext.jsx
     const [callerSite, setCallerSite] = useState(null);
+    const [showEvents, setShowEvents] = useState(false);
+    const [historyNavState, setHistoryNavState] = useState(null);
     const [showBackupExportModal, setShowBackupExportModal] = useState(false);
     const [backupExportInfo, setBackupExportInfo] = useState(null);
 
@@ -1584,6 +1586,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             clearMapOverlays,
             callerSite,
             setCallerSite,
+            showEvents,
+            setShowEvents,
+            historyNavState,
+            setHistoryNavState,
             selectedHelpItem,
             setSelectedHelpItem,
             showExitConfirm,

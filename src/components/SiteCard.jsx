@@ -5,7 +5,7 @@ import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
     Palette, Swords, Link2, X, Layers, Map as MapIcon,
-    Landmark, AlertTriangle
+    Landmark, AlertTriangle, Flower2
 } from 'lucide-react';
 import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
@@ -130,10 +130,15 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
         setSelectedSite,
         callerSite,
         setCallerSite,
+        showEvents,
+        setShowEvents,
+        setHistoryNavState,
         activeMapOverlays,
         toggleMapOverlay,
         getPortalContainer
     } = useAppContext();
+
+    const flowerLink = site?.flower_link || site?.flower_url || site?.leave_a_flower || site?.leave_flower || site?.leave_a_flower_link || site?.leave_flower_link || site?.flower;
 
     const [navErrorModal, setNavErrorModal] = useState(null);
 
@@ -390,14 +395,26 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         overflowY: 'auto',
                         overflowX: 'hidden'
                     }}>
-                    {callerSite && (callerSite.id !== site.id || callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list') && (
+                    {callerSite && (
+                        callerSite.id !== site.id ||
+                        callerSite.fromListMode ||
+                        callerSite.fromView === 'card' ||
+                        callerSite.fromView === 'list' ||
+                        callerSite.fromView === 'todayInHistory' ||
+                        callerSite.fromView === 'historyCalendar'
+                    ) && (
                         <div style={{ marginBottom: '8px' }}>
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     const prev = callerSite;
                                     setCallerSite(null);
-                                    if (prev.fromListMode || prev.fromView === 'card' || prev.fromView === 'list') {
+                                    if (prev.fromView === 'todayInHistory' || prev.fromView === 'historyCalendar') {
+                                        if (onClose) onClose();
+                                        setSiteToOpenPopup(null);
+                                        if (setHistoryNavState) setHistoryNavState(prev);
+                                        if (setShowEvents) setShowEvents(true);
+                                    } else if (prev.fromListMode || prev.fromView === 'card' || prev.fromView === 'list') {
                                         setSelectedSite(null);
                                         setSiteToOpenPopup(null);
                                         setView('card');
@@ -419,9 +436,11 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     gap: '4px'
                                 }}
                             >
-                                {callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list'
-                                    ? '← Return to List'
-                                    : `← Back to ${callerSite.name}`}
+                                {(callerSite.fromView === 'todayInHistory' || callerSite.fromView === 'historyCalendar')
+                                    ? '← Back to Today in History'
+                                    : (callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list'
+                                        ? '← Return to List'
+                                        : `← Back to ${callerSite.name}`)}
                             </button>
                         </div>
                     )}
@@ -487,6 +506,37 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
                         <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}
                     </div>
+
+                    {isCompact && flowerLink && flowerLink.trim() !== '' && (
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            fontSize: '0.8rem',
+                            marginTop: '-2px',
+                            marginBottom: '6px'
+                        }}>
+                            <Flower2 size={15} style={{ color: '#e91e63', flexShrink: 0 }} />
+                            <a
+                                href={flowerLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                style={{
+                                    color: 'var(--accent-primary, #58a6ff)',
+                                    fontWeight: 'bold',
+                                    textDecoration: 'underline',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '3px'
+                                }}
+                                title="Leave a flower"
+                            >
+                                Leave a flower
+                                <ExternalLink size={11} style={{ opacity: 0.7 }} />
+                            </a>
+                        </div>
+                    )}
 
                     {isCompact && availableMaps && availableMaps.length > 0 && (
                         <div style={{
@@ -597,6 +647,36 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         </a>
                                     )}
                                 </div>
+
+                                {/* --- LEAVE A FLOWER LINK --- */}
+                                {flowerLink && flowerLink.trim() !== '' && (
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '8px',
+                                        fontSize: '0.85rem',
+                                        marginTop: '4px'
+                                    }}>
+                                        <Flower2 size={18} style={{ color: '#e91e63', flexShrink: 0 }} />
+                                        <a
+                                            href={flowerLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            style={{
+                                                color: 'var(--accent-primary, #58a6ff)',
+                                                fontWeight: 'bold',
+                                                textDecoration: 'underline',
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '4px'
+                                            }}
+                                            title="Leave a flower"
+                                        >
+                                            Leave a flower
+                                            <ExternalLink size={12} style={{ opacity: 0.7 }} />
+                                        </a>
+                                    </div>
+                                )}
 
                                 {/* --- BATTLE MAP OVERLAYS SECTION --- */}
                                 {availableMaps && availableMaps.length > 0 && (

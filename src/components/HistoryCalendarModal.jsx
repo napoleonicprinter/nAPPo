@@ -50,11 +50,13 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         showOnlyNew,
         setShowOnlyNew,
         filterSearch,
-        setFilterSearch
+        setFilterSearch,
+        historyNavState
     } = useAppContext();
 
-    const [month, setMonth] = useState(new Date().getMonth());
-    const [selectedYear, setSelectedYear] = useState('All years');
+    const calState = historyNavState?.calendarState;
+    const [month, setMonth] = useState(() => (calState?.month !== undefined ? calState.month : new Date().getMonth()));
+    const [selectedYear, setSelectedYear] = useState(() => (calState?.selectedYear !== undefined ? calState.selectedYear : 'All years'));
     const [selectedDateEvents, setSelectedDateEvents] = useState(null);
     const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
     const [navErrorModal, setNavErrorModal] = useState(null);
@@ -131,6 +133,34 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         return monthEvents;
     }, [month, selectedYear]);
 
+    // Restore day events popup if navigating back from a day in history
+    useEffect(() => {
+        if (calState?.day && currentYearEvents[calState.day] && !selectedDateEvents) {
+            setSelectedDateEvents({
+                day: calState.day,
+                events: currentYearEvents[calState.day]
+            });
+        }
+    }, [calState, currentYearEvents, selectedDateEvents]);
+
+    // Auto-scroll and highlight target event in day events popup
+    useEffect(() => {
+        if (selectedDateEvents && (calState?.eventId || calState?.targetSiteId)) {
+            const targetId = calState.eventId
+                ? `cal-event-${calState.eventId}`
+                : `cal-site-${calState.targetSiteId}`;
+            const timer = setTimeout(() => {
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('highlight-history-item');
+                    setTimeout(() => el.classList.remove('highlight-history-item'), 3000);
+                }
+            }, 250);
+            return () => clearTimeout(timer);
+        }
+    }, [selectedDateEvents, calState]);
+
     const prevMonth = () => {
         setMonth(prev => {
             if (prev === 0) {
@@ -166,8 +196,8 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         }
     };
 
-    const handleOpenOnMap = (siteId) => {
-        const site = allSites.find(s => String(s.id) === String(siteId));
+    const handleOpenOnMap = (targetSiteId, event) => {
+        const site = allSites.find(s => String(s.id) === String(targetSiteId));
         if (site) {
             const validation = validateSiteFilters(site, filterContext);
             if (!validation.passed) {
@@ -177,7 +207,24 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
 
             // Close any existing full-screen detailed card
             setSelectedSite(null);
-            if (setCallerSite) setCallerSite(null);
+
+            // Set callerSite for "Back to Today in History"
+            if (setCallerSite) {
+                setCallerSite({
+                    ...site,
+                    fromView: 'historyCalendar',
+                    targetSiteId: String(site.id),
+                    eventId: event ? event.id : null,
+                    name: 'Today in History',
+                    calendarState: {
+                        month,
+                        selectedYear,
+                        day: selectedDateEvents ? selectedDateEvents.day : null,
+                        eventId: event ? event.id : null,
+                        targetSiteId: String(site.id)
+                    }
+                });
+            }
 
             // Clear current popup state first to ensure the MapView logic re-centers
             // and re-opens the popup even if clicking the same event again.
@@ -316,7 +363,13 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                                     const targetSiteId = event.siteId || event.siteid;
 
                                     return (
-                                        <div key={event.id} className="history-event-item">
+                                        <div
+                                            key={event.id}
+                                            id={`cal-event-${event.id}`}
+                                            data-site-id={targetSiteId}
+                                            className="history-event-item"
+                                            style={{ transition: 'all 0.3s ease' }}
+                                        >
                                             <span className="year">{eventYear}</span>
                                             <h4>{event.title}</h4>
                                             
@@ -331,7 +384,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                                             <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
                                                 {targetSiteId && (
                                                     <button
-                                                        onClick={() => handleOpenOnMap(targetSiteId)}
+                                                        onClick={() => handleOpenOnMap(targetSiteId, event)}
                                                         style={{
                                                             display: 'flex',
                                                             alignItems: 'center',

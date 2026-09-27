@@ -46,7 +46,8 @@ const EventsModal = ({ onClose }) => {
         showOnlyNew,
         setShowOnlyNew,
         filterSearch,
-        setFilterSearch
+        setFilterSearch,
+        historyNavState
     } = useAppContext();
 
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -54,6 +55,31 @@ const EventsModal = ({ onClose }) => {
     const [showTopBtn, setShowTopBtn] = useState(false);
     const [navErrorModal, setNavErrorModal] = useState(null);
     const containerRef = useRef(null);
+
+    // Auto-open calendar if user was navigated back from History Calendar
+    useEffect(() => {
+        if (historyNavState?.fromView === 'historyCalendar') {
+            setIsCalendarOpen(true);
+        }
+    }, [historyNavState]);
+
+    // Auto-scroll and highlight the specific event / site if navigated back to Today in History
+    useEffect(() => {
+        if (historyNavState?.fromView === 'todayInHistory' && (historyNavState.eventId || historyNavState.targetSiteId)) {
+            const targetId = historyNavState.eventId
+                ? `today-event-${historyNavState.eventId}`
+                : `today-site-${historyNavState.targetSiteId}`;
+            const timer = setTimeout(() => {
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('highlight-history-item');
+                    setTimeout(() => el.classList.remove('highlight-history-item'), 3000);
+                }
+            }, 300);
+            return () => clearTimeout(timer);
+        }
+    }, [historyNavState]);
 
     const handleScroll = () => {
         if (containerRef.current) {
@@ -135,8 +161,8 @@ const EventsModal = ({ onClose }) => {
         });
     }, [eventsData]);
 
-    const handleOpenOnMap = (siteId) => {
-        const site = allSites.find(s => String(s.id) === String(siteId));
+    const handleOpenOnMap = (targetSiteId, event) => {
+        const site = allSites.find(s => String(s.id) === String(targetSiteId));
         if (site) {
             const validation = validateSiteFilters(site, filterContext);
             if (!validation.passed) {
@@ -146,13 +172,23 @@ const EventsModal = ({ onClose }) => {
 
             // 1. Close any existing full-screen detailed card
             setSelectedSite(null);
-            if (setCallerSite) setCallerSite(null);
 
-            // 2. Clear current popup state first to ensure the MapView logic re-centers
+            // 2. Set caller site so SiteCard knows we came from "Today in History"
+            if (setCallerSite) {
+                setCallerSite({
+                    ...site,
+                    fromView: 'todayInHistory',
+                    targetSiteId: String(site.id),
+                    eventId: event ? event.id : null,
+                    name: 'Today in History'
+                });
+            }
+
+            // 3. Clear current popup state first to ensure the MapView logic re-centers
             // and re-opens the popup even if clicking the same event again.
             setSiteToOpenPopup(null);
 
-            // 3. Set the new site and navigate with a slight delay to allow state cleanup
+            // 4. Set the new site and navigate with a slight delay to allow state cleanup
             setTimeout(() => {
                 setSiteToOpenPopup(site);
                 setView('map');
@@ -255,12 +291,18 @@ const EventsModal = ({ onClose }) => {
                                 const targetSiteId = event.siteId || event.siteid;
 
                                 return (
-                                    <div key={event.id} style={{
-                                        padding: '1rem',
-                                        borderRadius: '8px',
-                                        backgroundColor: 'rgba(255,255,255,0.05)',
-                                        borderLeft: '4px solid var(--accent-primary)'
-                                    }}>
+                                    <div
+                                        key={event.id}
+                                        id={`today-event-${event.id}`}
+                                        data-site-id={targetSiteId}
+                                        style={{
+                                            padding: '1rem',
+                                            borderRadius: '8px',
+                                            backgroundColor: 'rgba(255,255,255,0.05)',
+                                            borderLeft: '4px solid var(--accent-primary)',
+                                            transition: 'all 0.3s ease'
+                                        }}
+                                    >
                                         <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '8px' }}>
                                             <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'var(--accent-primary)' }}>
                                                 {year}
@@ -275,13 +317,13 @@ const EventsModal = ({ onClose }) => {
                                         </div>
 
                                         <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-primary)' }}>
-                                            {event.description}
+                                             {event.description}
                                         </p>
 
                                         <div style={{ display: 'flex', gap: '12px' }}>
                                             {targetSiteId && (
                                                 <button
-                                                    onClick={() => handleOpenOnMap(targetSiteId)}
+                                                    onClick={() => handleOpenOnMap(targetSiteId, event)}
                                                     style={{
                                                         display: 'flex',
                                                         alignItems: 'center',

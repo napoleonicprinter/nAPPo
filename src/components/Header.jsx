@@ -55,12 +55,12 @@ const Header = () => {
         setSelectedHelpItem,
         filterYear, filterCommander,
         exportUserData, importUserData,
-        setShowUpdateSitesModal
+        setShowUpdateSitesModal,
+        showEvents, setShowEvents, setHistoryNavState
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
     const [showSettings, setShowSettings] = useState(false);
-    const [showEvents, setShowEvents] = useState(false);
     const [showNews, setShowNews] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,7 +92,7 @@ const Header = () => {
 
     // Mobile back/undo button handlers
     useBackHandler('headerSettings', showSettings, () => setShowSettings(false), 30);
-    useBackHandler('headerEvents', showEvents, () => setShowEvents(false), 30);
+    useBackHandler('headerEvents', showEvents, () => { setShowEvents(false); if (setHistoryNavState) setHistoryNavState(null); }, 30);
     useBackHandler('headerNews', showNews, () => setShowNews(false), 30);
     useBackHandler('headerFilters', showFilters, () => setShowFilters(false), 30);
     useBackHandler('headerShopping', showShoppingView, () => setShowShoppingView(false), 30);
@@ -855,7 +855,7 @@ const Header = () => {
 
             <Suspense fallback={null}>
                 {showAuth && <AuthModal onClose={() => { setShowAuth(false); setAuthMessage(null); }} />}
-                {showEvents && <EventsModal onClose={() => setShowEvents(false)} />}
+                {showEvents && <EventsModal onClose={() => { setShowEvents(false); if (setHistoryNavState) setHistoryNavState(null); }} />}
                 {showNews && <NewsModal onClose={() => setShowNews(false)} />}
                 {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
                 {showShoppingView && <ShoppingView onClose={() => setShowShoppingView(false)} />}

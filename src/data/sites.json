@@ -17716,5 +17716,50 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_museum2.webp",
     "more_info_link": "https://www.gneisenau-gesellschaft-sommerschenburg.de/museum",
     "createDate": "2026-09-24"
+  },
+  {
+    "id": "964",
+    "name": "Heinrich Wilhelm von Horn's birthplace",
+    "category": "Birthplace",
+    "significance": 3,
+    "year": "1762",
+    "date": "1762-10-31",
+    "location": "Cieplice Śląskie-Zdrój, Jelenia Góra",
+    "country": "Poland",
+    "description": "He was born on October 31st 1762 in Warmbrunn (Lower Silesia), which was then part of the Kingdom of Prussia. Today, this historic spa town is known as Cieplice Śląskie-Zdrój, a district within the city of Jelenia Góra in southwestern Poland.",
+    "latitude": 50.86847,
+    "longitude": 15.690011,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Warmbrunn.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Heinrich_Wilhelm_von_Horn",
+    "relatedSites": [
+      {
+        "id": "965",
+        "title": "von Horn's grave"
+      }
+    ],
+    "createDate": "2026-09-24"
+  },
+  {
+    "id": "965",
+    "name": "Heinrich Wilhelm von Horn's grave",
+    "category": "Grave site",
+    "significance": 3,
+    "year": "1829",
+    "date": "1829-10-31",
+    "location": "Alter Überwasserfriedhof, Münster",
+    "country": "Germany",
+    "description": "He was born on October 31st 1762 in Warmbrunn (Lower Silesia), which was then part of the Kingdom of Prussia. Today, this historic spa town is known as Cieplice Śląskie-Zdrój, a district within the city of Jelenia Góra in southwestern Poland.",
+    "latitude": 51.967166,
+    "longitude": 7.611390,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/vonHorn_grave.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Heinrich_Wilhelm_von_Horn",
+    "flower_link": "https://www.findagrave.com/memorial/147159477/heinrich_wilhelm-von_horn/flower",
+    "relatedSites": [
+      {
+        "id": "964",
+        "title": "von Horn's Birthplace"
+      }
+    ],
+    "createDate": "2026-09-24"
   }
 ]
