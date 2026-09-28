@@ -2,7 +2,6 @@ import React, { createContext, useContext, useState, useEffect, useMemo, useRef,
 import sitesData from '../data/sites.json';
 import showsData from '../data/shows.json';
 import shoppingData from '../data/shopping.json';
-import eventsDataFallback from '../data/events.json';
 import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
 import dealsDataFallback from '../data/deals.json';
@@ -219,14 +218,23 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length >= eventsDataFallback.length) {
-                        return parsed;
-                    }
+                    return parsed;
                 }
             } catch (e) { }
         }
-        return eventsDataFallback;
+        return [];
     });
+
+    useEffect(() => {
+        if (!eventsBaseData || eventsBaseData.length === 0) {
+            import('../data/events.json').then(mod => {
+                const data = mod.default || mod;
+                if (Array.isArray(data) && data.length > 0) {
+                    setEventsBaseData(data);
+                }
+            }).catch(err => console.warn("Failed to load events fallback dynamically:", err));
+        }
+    }, [eventsBaseData]);
 
     const [newsBaseData, setNewsBaseData] = useState(() => {
         const saved = localStorage.getItem('newsData');

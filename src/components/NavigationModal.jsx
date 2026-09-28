@@ -98,6 +98,7 @@ const NavigationModal = ({ userCoords, site, onClose }) => {
 
                 <div style={{ height: '400px', width: '100%' }}>
                     <MapContainer
+                        preferCanvas={true}
                         center={[userCoords.lat, userCoords.lon]}
                         zoom={13}
                         style={{ height: '100%', width: '100%' }}

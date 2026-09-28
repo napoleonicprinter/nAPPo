@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Filter, Navigation } from 'lucide-react';
 import { useAppContext, EUROPEAN_CAPITALS } from '../context/AppContext';
@@ -34,12 +34,28 @@ const FiltersModal = ({ onClose }) => {
     } = useAppContext();
     const { getPortalContainer } = useAppContext();
 
+    const [localSearch, setLocalSearch] = useState(filterSearch || '');
+
+    useEffect(() => {
+        setLocalSearch(filterSearch || '');
+    }, [filterSearch]);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (localSearch !== (filterSearch || '')) {
+                setFilterSearch(localSearch);
+            }
+        }, 150);
+        return () => clearTimeout(timer);
+    }, [localSearch, filterSearch, setFilterSearch]);
+
     // Derive unique categories and significances from allSites
     const categories = Array.from(new Set(allSites.map(s => s.category)));
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
     const countries = Array.from(new Set(allSites.map(s => s.country))).filter(Boolean).sort();
 
     const clearModalFilters = () => {
+        setLocalSearch('');
         setFilterSearch('');
         setFilterCountry('all');
         setFilterCoalition('all');
@@ -140,27 +156,28 @@ const FiltersModal = ({ onClose }) => {
                         <div className="mobile-search-wrapper" style={{ position: 'relative' }}>
                             <input
                                 type="text"
-                                className={`mobile-search-input ${filterSearch ? 'filters-active-red' : ''}`}
+                                className={`mobile-search-input ${localSearch ? 'filters-active-red' : ''}`}
                                 placeholder="Search sites..."
-                                value={filterSearch || ''}
-                                onChange={(e) => setFilterSearch(e.target.value)}
+                                value={localSearch || ''}
+                                onChange={(e) => setLocalSearch(e.target.value)}
                                 style={{
                                     width: '100%',
                                     padding: '10px 36px 10px 16px',
                                     borderRadius: '12px',
-                                    border: filterSearch ? '1.5px solid #ff4444' : '1px solid var(--border-color)',
-                                    background: filterSearch ? 'rgba(255, 68, 68, 0.1)' : 'var(--bg-color)',
-                                    color: filterSearch ? '#ff4444' : 'var(--text-primary)',
+                                    border: localSearch ? '1.5px solid #ff4444' : '1px solid var(--border-color)',
+                                    background: localSearch ? 'rgba(255, 68, 68, 0.1)' : 'var(--bg-color)',
+                                    color: localSearch ? '#ff4444' : 'var(--text-primary)',
                                     fontSize: '1rem',
                                     outline: 'none',
-                                    fontWeight: filterSearch ? 'bold' : 'normal'
+                                    fontWeight: localSearch ? 'bold' : 'normal'
                                 }}
                             />
-                            {filterSearch ? (
+                            {localSearch ? (
                                 <button
                                     className="mobile-search-clear"
                                     onClick={(e) => {
                                         e.stopPropagation();
+                                        setLocalSearch('');
                                         setFilterSearch('');
                                     }}
                                     style={{

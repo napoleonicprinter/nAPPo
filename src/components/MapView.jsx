@@ -1364,6 +1364,7 @@ const MapView = () => {
     return (
         <div style={{ height: '100%', width: '100%', position: 'relative' }} className={`animate-fade-in ${selectedSite ? 'detail-view-active' : ''}`}>
             <MapContainer
+                preferCanvas={true}
                 center={defaultCenter}
                 zoom={5}
                 minZoom={2.5}
