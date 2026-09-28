@@ -4,6 +4,7 @@ import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays } from 'luci
 import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
 import CustomSimpleSelect from './CustomSimpleSelect';
+import { getBelligerentStatus } from '../utils/filterValidation';
 import './CardView.css';
 
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -29,6 +30,7 @@ const BATCH_SIZE = 30;
 const CardView = () => {
     const {
         sites,
+        allSites,
         selectedSite,
         setSelectedSite,
         setCallerSite,
@@ -39,15 +41,34 @@ const CardView = () => {
         availableMonths,
         filterCommander,
         filterCommanderRole,
-        setFilterCommanderRole
+        setFilterCommanderRole,
+        filterBelligerent,
+        setFilterBelligerent,
+        availableOutcomeCounts
     } = useAppContext();
 
-    const commanderRoleOptions = useMemo(() => [
-        { value: 'all', label: 'All Battles' },
-        { value: 'victor', label: 'Victories' },
-        { value: 'loss', label: 'Defeats' },
-        { value: 'tie', label: 'Inconclusive' }
-    ], []);
+    const outcomeOptions = useMemo(() => {
+        const hasCommander = filterCommander && filterCommander !== 'all';
+        const hasBelligerent = filterBelligerent && filterBelligerent !== 'all';
+
+        if (!hasCommander && !hasBelligerent) {
+            return [
+                { value: 'all', label: 'All battles' },
+                { value: 'victor', label: 'Victories' },
+                { value: 'loss', label: 'Defeats' },
+                { value: 'tie', label: 'Inconclusive' }
+            ];
+        }
+
+        const counts = availableOutcomeCounts || { total: 0, victor: 0, loss: 0, tie: 0 };
+
+        return [
+            { value: 'all', label: `All battles (${counts.total})` },
+            { value: 'victor', label: `Victories (${counts.victor})` },
+            { value: 'loss', label: `Defeats (${counts.loss})` },
+            { value: 'tie', label: `Inconclusive (${counts.tie})` }
+        ];
+    }, [filterCommander, filterBelligerent, availableOutcomeCounts]);
 
     const isMonthFilterVisible = useMemo(() => {
         const allowed = ['Battle site', 'Naval battle', 'Birthplace', 'Grave site'];
@@ -58,7 +79,7 @@ const CardView = () => {
 
     const monthOptions = useMemo(() => [
         { value: 'all', label: 'All Months' },
-        ...(availableMonths || [])
+        ...(availableMonths || []).filter(m => (m.count || 0) > 0)
     ], [availableMonths]);
 
     const [sortField, setSortField] = useState(() => {
@@ -180,7 +201,7 @@ const CardView = () => {
     // Reset visible count when sites or sorting/filtering change
     useEffect(() => {
         setVisibleCount(BATCH_SIZE);
-    }, [sites, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, userCoords]);
+    }, [sites, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, filterBelligerent, userCoords]);
 
     // Sentinel observer for progressive infinite loading
     useEffect(() => {
@@ -225,11 +246,11 @@ const CardView = () => {
                             <Calendar size={14} style={{ marginRight: '4px' }} />
                             Date
                         </button>
-                        {filterCommander && filterCommander !== 'all' && (
+                        {((filterCommander && filterCommander !== 'all') || (filterBelligerent && filterBelligerent !== 'all')) && (
                             <div className="sort-commander-role-wrapper">
                                 <CustomSimpleSelect
                                     className={`sort-commander-role-select ${filterCommanderRole !== 'all' ? 'filters-active-red' : ''}`}
-                                    options={commanderRoleOptions}
+                                    options={outcomeOptions}
                                     value={filterCommanderRole || 'all'}
                                     onChange={setFilterCommanderRole}
                                     placeholder="Outcome"

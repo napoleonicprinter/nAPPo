@@ -303,6 +303,88 @@ body:not(.light-mode) .sort-commander-role-wrapper .custom-select-trigger.filter
     box-shadow: 0 2px 8px rgba(255, 94, 126, 0.4);
 }
 
+/* --- LIST VIEW BELLIGERENT FILTER DROPDOWN --- */
+.sort-belligerent-filter-wrapper {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.sort-belligerent-filter-wrapper .custom-select-container {
+    min-width: 135px;
+    border-radius: 20px;
+}
+
+.sort-belligerent-filter-wrapper .custom-select-trigger {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 6px 14px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    color: var(--text-primary, #222) !important;
+    font-size: 0.83rem !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.sort-belligerent-filter-wrapper .custom-select-value {
+    font-size: 0.83rem !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sort-belligerent-filter-wrapper svg {
+    margin-left: 6px !important;
+}
+
+.sort-belligerent-filter-wrapper .custom-select-trigger:hover {
+    background: rgba(0, 0, 0, 0.06) !important;
+    transform: translateY(-1px);
+}
+
+.sort-belligerent-filter-wrapper .custom-select-trigger.filters-active-red {
+    background: var(--accent-primary, #ef5350) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-primary, #ef5350) !important;
+    box-shadow: 0 2px 8px rgba(239, 83, 80, 0.35);
+}
+
+.sort-belligerent-filter-wrapper .custom-select-trigger.filters-active-red .custom-select-value,
+.sort-belligerent-filter-wrapper .custom-select-trigger.filters-active-red svg {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+body:not(.light-mode) .sort-belligerent-filter-wrapper .custom-select-trigger {
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #e6edf3 !important;
+}
+
+body:not(.light-mode) .sort-belligerent-filter-wrapper .custom-select-trigger:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+body:not(.light-mode) .sort-belligerent-filter-wrapper .custom-select-trigger.filters-active-red {
+    background: #ff5e7e !important;
+    color: #ffffff !important;
+    border-color: #ff5e7e !important;
+    box-shadow: 0 2px 8px rgba(255, 94, 126, 0.4);
+}
+
 
 /* --- FLOATING SCROLL TO TOP BUTTON --- */
 .scroll-to-top-btn {

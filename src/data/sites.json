@@ -26,11 +26,6 @@
       "Russia",
       "Austria"
     ],
-    "commanders": [
-      "Napoleon",
-      "Alexander I",
-      "Francis II"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -68,12 +63,6 @@
     ],
     "defeated": [
       "France"
-    ],
-    "commanders": [
-      "Napoleon",
-      "Arthur Wellesley",
-      "Gebhard von Blücher",
-      "Prince of Orange"
     ],
     "maps": [
       {
@@ -167,10 +156,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Napoleon",
-      "Michael von Melas"
-    ],
     "maps": [
       {
         "id": "marengo-phase1",
@@ -235,10 +220,6 @@
     ],
     "victor": "France",
     "defeated": "Russia",
-    "commanders": [
-      "Napoleon",
-      "Kutuzov"
-    ],
     "relatedSites": [
       {
         "id": "721",
@@ -335,10 +316,6 @@
     "special": "5",
     "victor": "Poland",
     "defeated": "Austria",
-    "commanders": [
-      "Józef Poniatowski",
-      "Archduke Ferdinand Karl Joseph"
-    ],
     "relatedSites": [
       {
         "id": "14",
@@ -455,11 +432,6 @@
     ],
     "victor": "France",
     "defeated": "Ottoman Empire",
-    "commanders": [
-      "Napoleon",
-      "Jean-Baptiste Kléber",
-      "Abdullah Pasha al-Azm"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Jean-Baptiste Kléber"
@@ -598,10 +570,6 @@
     "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Pedro Agustín de Echávarri",
-      "Pierre Dupont"
-    ],
     "commander_Victor": [
       "Pierre Dupont"
     ],
@@ -779,10 +747,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Marshal Victor",
-      "Francisco Xavier Venegas"
-    ],
     "commander_Victor": [
       "Marshal Victor"
     ],
@@ -809,10 +773,6 @@
     "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Józef Chlopicki",
-      "Pedro Villacampa"
-    ],
     "commander_Victor": [
       "Józef Chlopicki"
     ],
@@ -839,7 +799,6 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": "Marcelino Villa",
     "commander_Victor": [
       "Marcelino Villa"
     ],
@@ -864,10 +823,6 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": [
-      "Joaquín Blake",
-      "Louis Gabriel Suchet"
-    ],
     "commander_Victor": [
       "Joaquín Blake"
     ],
@@ -930,10 +885,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Diego de Cañas y Portocarrero",
-      "François Étienne de Kellermann"
-    ],
     "commander_Victor": [
       "François Étienne de Kellermann"
     ],
@@ -980,10 +931,6 @@
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Arthur Wellesley"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -1014,10 +961,6 @@
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Arthur Wellesley",
-      "Auguste de Marmont"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -1061,10 +1004,6 @@
     "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Jean-Andoche Junot",
-      "Santocildes"
-    ],
     "commander_Victor": [
       "Jean-Andoche Junot"
     ],
@@ -1141,10 +1080,6 @@
     ],
     "victor": "France",
     "defeated": "Anglo-luso-portuguese",
-    "commanders": [
-      "William Bentinck",
-      "Louis Gabriel Suchet"
-    ],
     "commander_Victor": [
       "Louis Gabriel Suchet"
     ],
@@ -1238,10 +1173,6 @@
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Victor de Fay de Latour-Maubourg",
-      "William Lumley"
-    ],
     "commander_Victor": [
       "William Lumley"
     ],
@@ -1286,10 +1217,6 @@
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Arthur Wellesley"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -1335,10 +1262,6 @@
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Juan de la Cruz Mourgeon"
-    ],
     "commander_Victor": [
       "Juan de la Cruz Mourgeon"
     ],
@@ -1381,10 +1304,6 @@
     "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Gregorio García de la Cuesta",
-      "Bessières"
-    ],
     "commander_Victor": [
       "Bessières"
     ],
@@ -1411,10 +1330,6 @@
     "special": [
       "Peninsular War",
       "Guerra de Independencia"
-    ],
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Victor"
     ],
     "commander_Victor": [],
     "commander_Loss": [
@@ -1518,10 +1433,6 @@
     "special": "4",
     "victor": "France",
     "defeated": "Prussia",
-    "commanders": [
-      "Bogislav von Tauentzien",
-      "Jean-Baptiste Bernadotte"
-    ],
     "commander_Victor": [],
     "commander_Loss": [
       "Bogislav von Tauentzien",
@@ -1550,10 +1461,6 @@
     ],
     "victor": "France",
     "defeated": "Prussia",
-    "commanders": [
-      "Prince Louis Ferdinand",
-      "Jean Lannes"
-    ],
     "commander_Victor": [
       "Jean Lannes"
     ],
@@ -1580,10 +1487,6 @@
     "special": "4",
     "victor": "France",
     "defeated": "Prussia",
-    "commanders": [
-      "Joachim Murat",
-      "Prince of Orange"
-    ],
     "commander_Victor": [
       "Joachim Murat"
     ],
@@ -1614,10 +1517,6 @@
     ],
     "victor": "Anglo-luso-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Jean-Baptiste Girard",
-      "Rowland Hill"
-    ],
     "commander_Victor": [
       "Rowland Hill"
     ],
@@ -1720,11 +1619,6 @@
     "createDate": "2026-03-15T10:00:00Z",
     "special": "Russian Campaign",
     "victor": "inconclusive",
-    "commanders": [
-      "Napoleon",
-      "Field Marshal Wittgenstein",
-      "Pavel Chichagov"
-    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -1865,10 +1759,6 @@
     "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Juan Contreras",
-      "Louis Gabriel Suchet"
-    ],
     "commander_Victor": [
       "Louis Gabriel Suchet"
     ],
@@ -1895,12 +1785,6 @@
     "special": [
       "Peninsular War",
       "Guerra de Independencia"
-    ],
-    "commanders": [
-      "Nicolas Soult",
-      "Jean-Baptiste Girard",
-      "William Beresford",
-      "Joaquín Blake"
     ],
     "relatedSites": [
       {
@@ -1939,11 +1823,6 @@
     ],
     "victor": "Anglo-luso-spanish",
     "defeated": "France",
-    "commanders": [
-      "Marshal Victor",
-      "Sir Thomas Graham",
-      "General Manuel Lapeña"
-    ],
     "commander_Victor": [
       "Sir Thomas Graham",
       "General Manuel Lapeña"
@@ -1974,10 +1853,6 @@
     ],
     "victor": "Anglo-portuguese",
     "defeated": "France",
-    "commanders": [
-      "General Jean Léonard Barrié",
-      "Arthur Wellesley"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -2007,10 +1882,6 @@
     ],
     "victor": "Anglo-portuguese",
     "defeated": "France",
-    "commanders": [
-      "Arthur Wellesley",
-      "Armand Philippon"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -2040,13 +1911,6 @@
     ],
     "victor": "Anglo-luso-spanish",
     "defeated": "France",
-    "commanders": [
-      "Arthur Wellesley",
-      "Jean-Baptiste Jourdan",
-      "Joseph Bonaparte",
-      "Francisco de Longa",
-      "Pablo Morillo"
-    ],
     "commander_Victor": [
       "Arthur Wellesley",
       "Francisco de Longa",
@@ -2076,10 +1940,6 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": [
-      "Manuel Freire de Andrade",
-      "Jean-de-Dieu Soult"
-    ],
     "commander_Victor": [
       "Manuel Freire de Andrade"
     ],
@@ -2109,10 +1969,6 @@
     ],
     "victor": "Anglo-luso-spanish",
     "defeated": "France",
-    "commanders": [
-      "Jean-de-Dieu Soult",
-      "Arthur Wellesley"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -2139,12 +1995,6 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": [
-      " Antoni Franch i Estalella",
-      "Joan Baiget",
-      "François de Schwarz",
-      "Joseph Chabran"
-    ],
     "commander_Victor": [
       " Antoni Franch i Estalella",
       "Joan Baiget"
@@ -2170,8 +2020,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/6-de-junio-1808.jpg",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Resistencia_de_Valdepe%C3%B1as",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Guerra de Independencia",
-    "commanders": []
+    "special": "Guerra de Independencia"
   },
   {
     "id": "94",
@@ -2266,10 +2115,6 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": [
-      "Francisco Castaños",
-      "Pierre Dupont de l'Étang"
-    ],
     "relatedSites": [
       {
         "id": "159",
@@ -2305,11 +2150,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Claude Victor",
-      "Joaquín Blake",
-      " Pedro Caro, Marquis of la Romana"
-    ],
     "relatedSites": [
       {
         "id": "908",
@@ -2350,10 +2190,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Jean Lannes",
-      "Castaños"
-    ],
     "commander_Victor": [
       "Jean Lannes"
     ],
@@ -2385,10 +2221,6 @@
       "arc",
       "Guerra de Independencia",
       "Peninsular War"
-    ],
-    "commanders": [
-      "Napoleon",
-      "Benito de San Juan"
     ],
     "relatedSites": [
       {
@@ -2422,11 +2254,6 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": [
-      "Charles Lefebvre-Desnouettes",
-      "José de Palafox",
-      "Jean-Antoine Verdier"
-    ],
     "commander_Victor": [
       "José de Palafox"
     ],
@@ -2457,13 +2284,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Jean Lannes",
-      "Jeannot de Moncey",
-      "Louis Gabriel Suchet",
-      "Édouard Mortier",
-      "José de Palafox"
-    ],
     "commander_Victor": [
       "Jean Lannes",
       "Jeannot de Moncey",
@@ -2496,10 +2316,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Gregorio García de la Cuesta",
-      "Claude Perrin Victor"
-    ],
     "commander_Victor": [
       "Claude Perrin Victor"
     ],
@@ -2529,13 +2345,6 @@
     ],
     "victor": "Anglo-luso-spanish",
     "defeated": "France",
-    "commanders": [
-      "Arthur Wellesley",
-      "Gregorio García de la Cuesta",
-      "Claude-Victor Perrin",
-      "Joseph Bonaparte",
-      "Jean-Baptiste Jourdan"
-    ],
     "maps": [
       {
         "id": "talavera-phase1",
@@ -2586,10 +2395,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Horace Sebastiani",
-      "Francisco Javier Venegas"
-    ],
     "commander_Victor": [
       "Horace Sebastiani"
     ],
@@ -2616,10 +2421,6 @@
     "special": [
       "arc",
       "Guerra de Independencia"
-    ],
-    "commanders": [
-      "Jean-de-Dieu Soult",
-      "Juan Carlos Aréizaga"
     ],
     "victor": "France",
     "defeated": "Spain",
@@ -2650,11 +2451,6 @@
       "arc",
       "Guerra de Independencia"
     ],
-    "commanders": [
-      "Gregorio García de la Cuesta",
-      "Joaquín Blake",
-      "Jean-Baptiste Bessières"
-    ],
     "victor": "France",
     "defeated": "Spain",
     "commander_Victor": [
@@ -2683,8 +2479,7 @@
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Guerra de Independencia",
     "defeated": "France",
-    "victor": "Spain",
-    "commanders": []
+    "victor": "Spain"
   },
   {
     "id": "111",
@@ -2705,7 +2500,6 @@
     "special": "Guerra de Independencia",
     "defeated": "Spain",
     "victor": "France",
-    "commanders": "General Franceschi",
     "commander_Victor": [
       "General Franceschi"
     ],
@@ -2805,10 +2599,6 @@
     "special": "Peninsular War",
     "victor": "Anglo Portuguese",
     "defeated": "France",
-    "commanders": [
-      "Arthur Wellesley",
-      "André Masséna"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -2833,10 +2623,6 @@
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Batalla_de_Roli%C3%A7a",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Henri François Delaborde",
-      "Arthur Wellesley"
-    ],
     "victor": "Anglo Portuguese",
     "defeated": "France",
     "commander_Victor": [
@@ -2863,10 +2649,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Arthur Wellesley",
-      "Jean-Andoche Junot"
-    ],
     "victor": "Anglo Portuguese",
     "defeated": "France",
     "commander_Victor": [
@@ -2912,10 +2694,6 @@
     "special": "Peninsular War",
     "victor": "Anglo Portuguese",
     "defeated": "France",
-    "commanders": [
-      "Arthur Wellesley",
-      "Jean de Dieu Soult"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -2942,10 +2720,6 @@
     "special": "Peninsular War",
     "victor": "Anglo Portuguese",
     "defeated": "France",
-    "commanders": [
-      "Eberhardt von Bock",
-      "Maximilien Sébastien Foy"
-    ],
     "commander_Victor": [
       "Eberhardt von Bock"
     ],
@@ -3067,12 +2841,6 @@
       "6",
       "German Campaign"
     ],
-    "commanders": [
-      "Friedrich von Bülow",
-      "Jean Reynier",
-      "Nicolas Oudinot",
-      "Charles John of Sweden"
-    ],
     "commander_Victor": [
       "Friedrich von Bülow",
       "Charles John of Sweden"
@@ -3143,11 +2911,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Majadahonda",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Anne-François-Charles Trelliard",
-      "George Bock",
-      "Benjamin d'Urban"
-    ],
     "victor": "inconclusive",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -3335,10 +3098,6 @@
     "special": "5",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Auguste de Marmont",
-      "Matthias Freiherr Rebrovic von Razboj"
-    ],
     "commander_Victor": [
       "Auguste de Marmont"
     ],
@@ -3428,10 +3187,6 @@
     "special": "5",
     "victor": "Austria",
     "defeated": "France",
-    "commanders": [
-      "Napoleon",
-      "Archduke Charles"
-    ],
     "commander_Victor": [
       "Archduke Charles"
     ],
@@ -3461,10 +3216,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Napoleon",
-      "Archduke Charles"
-    ],
     "maps": [
       {
         "id": "wagram-phase1",
@@ -3587,11 +3338,6 @@
     "special": "Guerra de Independencia",
     "defeated": "France",
     "victor": "Spain",
-    "commanders": [
-      "Maximilien Foy",
-      "José María Santocildes",
-      "Francisco Castaños"
-    ],
     "commander_Victor": [
       "José María Santocildes",
       "Francisco Castaños"
@@ -3623,17 +3369,6 @@
     ],
     "victor": "Coalition",
     "defeated": "France",
-    "commanders": [
-      "Karl von Schwarzenberg",
-      "Gebhard Leberecht von Blücher",
-      "Francis I of Austria",
-      "Alexander I of Russia",
-      "Jean-Baptiste Bernadotte",
-      "Napoleon",
-      "Józef Poniatowski",
-      "Joachim Murat",
-      "Frederick William III"
-    ],
     "commander_Victor": [
       "Gebhard Leberecht von Blücher",
       "Francis I of Austria",
@@ -3684,10 +3419,6 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Pyotr Bagration",
-      "Marc Antoine de Beaumont"
-    ],
     "commander_Victor": [
       "Marc Antoine de Beaumont"
     ],
@@ -3714,11 +3445,6 @@
     "special": "3",
     "victor": "Russia",
     "defeated": "France",
-    "commanders": [
-      "Pyotr Bagration",
-      "Antoine Charles Louis de Lasalle",
-      "Frédéric Henri Walther"
-    ],
     "commander_Victor": [
       "Pyotr Bagration"
     ],
@@ -3781,12 +3507,6 @@
     "createDate": "2025-03-15T10:00:00Z",
     "special": "100 Days",
     "victor": "inconclusive",
-    "commanders": [
-      "William of Orange",
-      "Duke of Wellington",
-      "Marshal Michel Ney",
-      "Jérôme Bonaparte"
-    ],
     "maps": [
       {
         "id": "quatre-phase1",
@@ -3902,10 +3622,6 @@
     ],
     "victor": "France",
     "defeated": "Britain",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Sir John Moore"
-    ],
     "commander_Victor": [
       "Jean de Dieu Soult"
     ],
@@ -3987,11 +3703,6 @@
     ],
     "victor": "France",
     "defeated": "Mamluks",
-    "commanders": [
-      "Napoleon",
-      "Murad Bey",
-      "Ibrahim Bey"
-    ],
     "maps": [
       {
         "id": "pyramids-phase1",
@@ -4152,10 +3863,6 @@
     ],
     "defeated": "Prussia",
     "victor": "France",
-    "commanders": [
-      "Napoleon",
-      "Prince of Hohenlohe"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -4239,13 +3946,6 @@
     ],
     "victor": "Coalition",
     "defeated": "France",
-    "commanders": [
-      "Napoleon",
-      "Alexander I",
-      "Karl von Schwarzenberg",
-      "Karl Philipp von Wrede",
-      "Crown Prince William"
-    ],
     "commander_Victor": [
       "Alexander I",
       "Karl Philipp von Wrede",
@@ -4294,11 +3994,6 @@
     ],
     "victor": "France",
     "defeated": "Coalition",
-    "commanders": [
-      "Napoleon",
-      "Alexander I",
-      "Gebhard Leberecht von Blücher"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -4326,10 +4021,6 @@
     "special": "4",
     "victor": "France",
     "defeated": "Prussia",
-    "commanders": [
-      "Louis Nicolas Davout",
-      "Charles William Ferdinand"
-    ],
     "commander_Victor": [
       "Louis Nicolas Davout"
     ],
@@ -4358,10 +4049,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Friedland.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Friedland",
     "createDate": "2025-03-15T10:00:00Z",
-    "commanders": [
-      " Levin August von Bennigsen",
-      "Napoleon"
-    ],
     "victor": "France",
     "defeated": "Russia",
     "relatedSites": [
@@ -4419,10 +4106,6 @@
     "createDate": "2025-03-15T10:00:00Z",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Napoleon",
-      "Karl Mack von Leiberich"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -4470,11 +4153,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Eylau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eylau",
     "createDate": "2025-03-15T10:00:00Z",
-    "commanders": [
-      "Levin August von Bennigsen",
-      "Napoleon",
-      "Anton Wilhelm von L'Estocq"
-    ],
     "victor": "Inconclusive",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -4502,10 +4180,6 @@
     "special": [
       "arc",
       "100 Days"
-    ],
-    "commanders": [
-      "Gebhard von Blücher",
-      "Napoleon"
     ],
     "defeated": "Prussia",
     "victor": "France",
@@ -4536,10 +4210,6 @@
       "arc",
       "4"
     ],
-    "commanders": [
-      "Jean Lannes",
-      "Levin von Benningsen"
-    ],
     "victor": "France",
     "defeated": "Russia",
     "commander_Victor": [
@@ -4564,12 +4234,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Golymin",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "4",
-    "commanders": [
-      "Dmitry Golitsyn",
-      "Joachim Murat",
-      "Pierre Augereau",
-      "Louis Nicolas Davout"
-    ],
     "victor": "France",
     "defeated": "Russia",
     "commander_Victor": [
@@ -4601,10 +4265,6 @@
       "arc",
       "4"
     ],
-    "commanders": [
-      "Leonty Bennigsen",
-      "Napoleon"
-    ],
     "victor": "France",
     "defeated": "Russia",
     "commander_Victor": [
@@ -4633,12 +4293,6 @@
     "special": [
       "arc",
       "4"
-    ],
-    "commanders": [
-      "François Joseph Lefebvre",
-      "Friedrich von Kalckreuth",
-      "Jan Henryk Dąbrowski",
-      "Nikolay Kamensky"
     ],
     "victor": "France",
     "defeated": "Russia",
@@ -4673,10 +4327,6 @@
     ],
     "defeated": "Russia",
     "victor": "France",
-    "commanders": [
-      "Anne Jean Marie René Savary",
-      "Ivan Essen"
-    ],
     "commander_Victor": [
       "Anne Jean Marie René Savary"
     ],
@@ -4702,11 +4352,6 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": "5",
     "victor": "inconclusive",
-    "commanders": [
-      "Napoleon",
-      "Archduke Charles",
-      "Auguste de Marmont"
-    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -4731,13 +4376,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "5",
-    "commanders": [
-      "Jean-Baptiste Bernadotte",
-      "Jean-Baptiste Bessières",
-      "Jean-Baptiste Dumonceau",
-      "Lord Chatham",
-      "Sir Richard Strachan"
-    ],
     "defeated": "Britain",
     "victor": "France",
     "commander_Victor": [
@@ -4791,10 +4429,6 @@
       "1",
       "Italian Campaign"
     ],
-    "commanders": [
-      "József Alvinczi",
-      "Napoleon"
-    ],
     "defeated": "Austria",
     "victor": "France",
     "commander_Victor": [
@@ -4823,10 +4457,6 @@
     "special": [
       "arc",
       "5"
-    ],
-    "commanders": [
-      "Johann von Hiller",
-      "André Masséna"
     ],
     "defeated": "Austria",
     "victor": "France",
@@ -4869,11 +4499,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a",
     "createDate": "2025-03-21T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Michel Ney",
-      "Robert Craufurd",
-      "Louis H. Loison"
-    ],
     "defeated": "Britain",
     "victor": "France",
     "commander_Victor": [
@@ -4948,10 +4573,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B8ge",
     "createDate": "2025-03-21T10:00:00Z",
     "special": "Gunboat War",
-    "commanders": [
-      "Joachim Castenschiold",
-      "Arthur Wellesley"
-    ],
     "defeated": "Denmark",
     "victor": "Britain",
     "commander_Victor": [
@@ -4977,9 +4598,6 @@
     "wikipedia_link": "https://www.classens-have.dk/",
     "createDate": "2025-03-21T10:00:00Z",
     "special": "Gunboat War",
-    "commanders": [
-      "Steen Andersen Bille"
-    ],
     "defeated": "Denmark",
     "victor": "Britain",
     "commander_Victor": [
@@ -5004,14 +4622,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Guttstadt-Deppen",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "4",
-    "commanders": [
-      "Levin Bennigsen",
-      "Levin Bennigsen",
-      "Michel Ney",
-      "Nicolas Soult",
-      "Jean-Baptiste Bernadotte",
-      "Claude-Victor Perrin"
-    ],
     "victor": "inconclusive",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -5081,10 +4691,6 @@
     "latitude": 55.49,
     "longitude": 28.79,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polotsk_1812.webp",
-    "commanders": [
-      "Laurent Gouvion Saint-Cyr",
-      "Peter Wittgenstein"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Russian Campaign",
     "commander_Victor": [
@@ -5108,10 +4714,6 @@
     "latitude": 50.942,
     "longitude": 1.588,
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Het_treffen_tussen_de_Hollandse_en_de_Britse_vloot_tijdens_de_tocht_van_de_Hollandse_flottielje_naar_Boulogne%2C_1804%2C_Martinus_Schouman%2C_1806.jpg",
-    "commanders": [
-      "Carel Hendrik Ver Huell",
-      "Lord Keith"
-    ],
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blanc-Nez_and_Gris-Nez",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "3",
@@ -5154,11 +4756,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Finisterre.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Finisterre_(1805)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Robert Calder",
-      "Pierre-Charles Villeneuve",
-      "Federico Gravina"
-    ],
     "special": [
       "3",
       "Trafalgar Campaign"
@@ -5187,11 +4784,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Donauworth.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Donauw%C3%B6rth",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Joachim Murat",
-      "Nicolas Soult",
-      "Kienmayer"
-    ],
     "special": [
       "3",
       "Ulm Campaign"
@@ -5220,11 +4812,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wertingen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wertingen",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Joachim Murat",
-      "Jean Lannes",
-      "Franz von Auffenberg"
-    ],
     "special": [
       "3",
       "arc",
@@ -5254,11 +4841,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gunzburg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_G%C3%BCnzburg",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Jean-Pierre Firmin Malher",
-      "Michel Ney",
-      "Karl Mack von Lieberich"
-    ],
     "special": [
       "3",
       "arc",
@@ -5288,10 +4870,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Haslach.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haslach-Jungingen",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Pierre Dupont",
-      "Karl Mack von Lieberich"
-    ],
     "special": [
       "3",
       "Ulm Campaign"
@@ -5319,10 +4897,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Memmingen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Memmingen",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Karl Spangen"
-    ],
     "special": [
       "3",
       "Ulm Campaign"
@@ -5350,10 +4924,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Elchingen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Elchingen",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Michel Ney",
-      "Johann Sigismund Riesch"
-    ],
     "special": [
       "3",
       "arc",
@@ -5382,10 +4952,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Verona.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Verona_(1805)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "André Masséna",
-      "Archduke Charles"
-    ],
     "special": [
       "3",
       "arc"
@@ -5432,10 +4998,6 @@
       "3",
       "arc"
     ],
-    "commanders": [
-      "André Masséna",
-      "Archduke Charles"
-    ],
     "commander_Victor": [
       "Archduke Charles"
     ],
@@ -5475,11 +5037,6 @@
     "longitude": 30.24,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mohilew.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saltanovka",
-    "commanders": [
-      "Louis Nicolas Davout",
-      "Pyotr Bagration",
-      "Nikolay Raevsky"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "Russian Campaign",
@@ -5508,11 +5065,6 @@
     "longitude": 28.55,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Klyastitsy.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Klyastitsy",
-    "commanders": [
-      "Nicolas Oudinot",
-      "Peter Wittgenstein",
-      "Yakov Kulnev"
-    ],
     "special": "Russian Campaign",
     "relatedSites": [
       {
@@ -5544,15 +5096,13 @@
     "longitude": 30.05,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Aboukir.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abukir_(1799)",
-    "commanders": [
-      "Napoleon",
-      "Mustafa Pasha"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "Egyptian Campaign",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Ottoman Empire",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -5575,10 +5125,6 @@
     "longitude": 11.9,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Abensberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abensberg",
-    "commanders": [
-      "Napoleon",
-      "Archduke Charles"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "5",
@@ -5606,15 +5152,13 @@
     "longitude": 12.18,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Echmul.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eckm%C3%BChl",
-    "commanders": [
-      "Napoleon",
-      "Archduke Charles"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "5",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -5637,15 +5181,13 @@
     "longitude": 12.139,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Landshut.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Landshut_(1809)",
-    "commanders": [
-      "Napoleon",
-      "Johann von Hiller"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "5",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -5668,15 +5210,13 @@
     "longitude": 12.01,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ratisbon.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ratisbon",
-    "commanders": [
-      "Napoleon",
-      "Archduke Charles"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "5",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -5699,10 +5239,6 @@
     "longitude": 12.535,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Neumarkt.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Neumarkt-Sankt_Veit",
-    "commanders": [
-      "Jean Bessières",
-      "Johann von Hiller"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": "5",
     "commander_Victor": [
@@ -5727,10 +5263,6 @@
     "longitude": 21.157,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Radzymin.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Radzymin_(1809)",
-    "commanders": [
-      "Józef Poniatowski",
-      "Johann Friedrich von Mohr"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "5",
@@ -5758,10 +5290,6 @@
     "longitude": 12.29,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Piave.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Piave_River_(1809)",
-    "commanders": [
-      "Eugéne de Beauharnais",
-      "Archduke John of Austria"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "4",
@@ -5789,10 +5317,6 @@
     "longitude": 12.05,
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Battle_of_Worgl_1809.JPG",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_W%C3%B6rgl",
-    "commanders": [
-      "François Joseph Lefebvre",
-      "Johann Gabriel Chasteler de Courcelles"
-    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": "5",
     "commander_Victor": [
@@ -5833,10 +5357,6 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Battle_of_Tarvis_1809_Map.JPG",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tarvis_(1809)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Eugène de Beauharnais",
-      "Albert Gyulai"
-    ],
     "special": "5",
     "commander_Victor": [
       "Eugène de Beauharnais"
@@ -5919,11 +5439,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_campaign.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Linz-Urfahr",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Johann Kollowrat",
-      "Jean Bernadotte",
-      "Dominique Vandamme"
-    ],
     "special": "5",
     "commander_Victor": [
       "Dominique Vandamme"
@@ -5964,10 +5479,6 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Battle_of_Sankt_Michael_1809_Map.JPG",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sankt_Michael",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Paul Grenier",
-      "Franz Jellacic"
-    ],
     "special": "5",
     "commander_Victor": [
       "Paul Grenier"
@@ -5993,11 +5504,6 @@
     "createDate": "2025-03-22T10:00:00Z",
     "victor": "Britain",
     "defeated": "France",
-    "commanders": [
-      "James Gambier",
-      "Thomas Cochrane",
-      "Zacharie Allemand"
-    ],
     "special": "5",
     "commander_Victor": [
       "James Gambier",
@@ -6023,11 +5529,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Raab.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Raab_(1809)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Eugène de Beauharnais",
-      "Archduke John of Austria",
-      "Archduke Joseph of Austria"
-    ],
     "special": [
       "arc",
       "5"
@@ -6056,11 +5557,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gratz.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Graz",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Ignaz Gyulai",
-      "Auguste de Marmont",
-      "Jean Broussier"
-    ],
     "special": [
       "arc",
       "5"
@@ -6104,10 +5600,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austria_Campaign.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_Korneuburg",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Johann von Klenau",
-      "Claude Legrand"
-    ],
     "special": "5",
     "commander_Victor": [
       "Claude Legrand"
@@ -6188,13 +5680,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gefrees.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gefrees",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Michael von Kienmayer",
-      "Frederick William",
-      "Jean-Andoche Junot",
-      "Jérôme Bonaparte",
-      "Johann von Thielmann"
-    ],
     "special": "5",
     "commander_Victor": [
       "Michael von Kienmayer",
@@ -6236,10 +5721,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_campaign.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hollabrunn_(1809)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Johann von Klenau",
-      "André Masséna"
-    ],
     "special": "5",
     "commander_Victor": [
       "André Masséna"
@@ -6264,10 +5745,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dannigkov.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_M%C3%B6ckern",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Peter Wittgenstein",
-      "Eugène de Beauharnais"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6295,10 +5772,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Luneburg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCneburg",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Peter Wittgenstein",
-      "Eugène de Beauharnais"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6326,10 +5799,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Luckau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Luckau",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Friedrich Wilhelm von Bülow",
-      "Nicolas Oudinot"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6357,16 +5826,15 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lutzen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCtzen_(1813)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Peter Wittgenstein",
-      "Alexander I",
-      "Gebhard von Blücher"
-    ],
     "special": [
       "6",
       "German Campaign",
       "arc"
+    ],
+    "victor": "France",
+    "defeated": [
+      "Russia",
+      "Prussia"
     ],
     "commander_Victor": [
       "Napoleon"
@@ -6393,14 +5861,15 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hanau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hanau",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Karl Philipp von Wrede"
-    ],
     "special": [
       "6",
       "German Campaign",
       "arc"
+    ],
+    "victor": "France",
+    "defeated": [
+      "Austria",
+      "Bavaria"
     ],
     "commander_Victor": [
       "Napoleon"
@@ -6425,10 +5894,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Haynau.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Haynau",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Gebhard von Blücher",
-      "Nicolas Joseph Maison"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6497,13 +5962,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Katzbach.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Katzbach",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Gebhard von Blücher",
-      "Osten-Sacken",
-      "Jacques MacDonald",
-      "Jacques Lauriston",
-      "François Bastien Sébastiani"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6534,13 +5992,18 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dresden.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dresden",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Karl von Schwarzenberg"
-    ],
     "special": [
       "6",
       "German Campaign"
+    ],
+    "victor": [
+      "France",
+      "Saxony"
+    ],
+    "defeated": [
+      "Austria",
+      "Russia",
+      "Prussia"
     ],
     "commander_Victor": [
       "Napoleon",
@@ -6565,11 +6028,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hagelberg",
     "youtube_link": "https://www.youtube.com/watch?v=GhY6ZAXCbLw",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Jean-Baptiste Girard",
-      "Alexander Chernyshyov",
-      "Karl Friedrich von Hirschfeld"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6611,14 +6069,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kulm.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Kulm",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Dominique Vandamme",
-      "Alexander Osterman-Tolstoy",
-      "Alexey Yermolov",
-      "Mikhail Barclay de Tolly",
-      "Hieronymus von Colloredo-Mansfeld",
-      "Friedrich von Kleist"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6678,12 +6128,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dennewitz.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dennewitz",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Michel Ney",
-      "Charles John of Sweden",
-      "Friedrich Wilhelm von Bülow",
-      "Bogislav von Tauentzien"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6713,11 +6157,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wartenburg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wartenburg",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Gebhard von Blücher",
-      "Ludwig von Yorck",
-      "Henri Gatien Bertrand"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -6776,11 +6215,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cadiz.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_la_Poza_de_Santa_Isabel",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Juan Ruiz de Apodaca",
-      "Tomás de Morla",
-      "François Rosily"
-    ],
     "commander_Victor": [
       "Juan Ruiz de Apodaca",
       "Tomás de Morla"
@@ -6804,9 +6238,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cadiz_2.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_4_April_1808",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Murray Maxwell"
-    ],
     "commander_Victor": [
       "Murray Maxwell"
     ],
@@ -6827,11 +6258,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/RiodelaPlata.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_2_June_1807",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "G. Douglas",
-      "Francisco de Castro",
-      "Francisco Pareja"
-    ],
     "commander_Victor": [
       "G. Douglas",
       "Francisco de Castro",
@@ -6919,11 +6345,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Habana.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_23_August_1806",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Charles Lydiard",
-      "Charles Brisbane",
-      "Pedro Pablo de Sanguineto y Basso"
-    ],
     "commander_Victor": [
       "Charles Lydiard",
       "Charles Brisbane",
@@ -6946,10 +6367,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ortegal.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Ortegal",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Richard Strachan",
-      "Pierre Dumanoir le Pelley"
-    ],
     "commander_Victor": [
       "Richard Strachan"
     ],
@@ -6973,10 +6390,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alvoen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alv%C3%B8en",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "George Bettesworth",
-      "Bielke"
-    ],
     "commander_Victor": [
       "George Bettesworth"
     ],
@@ -7012,10 +6425,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Anholt.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Anholt",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "James Wilkes Maurice",
-      "Jørgen Conrad de Falsen"
-    ],
     "commander_Victor": [
       "James Wilkes Maurice",
       "Jørgen Conrad de Falsen"
@@ -7038,11 +6447,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Copenagen_1807.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1807)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "James Gambier",
-      "Lord Cathcart",
-      "Ernst Peymann"
-    ],
     "commander_Victor": [
       "James Gambier",
       "Lord Cathcart",
@@ -7066,12 +6470,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Copenagen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1801)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Horatio Nelson",
-      "Hyde Parker",
-      "Steen Andersen Bille",
-      "Olfert Fischer"
-    ],
     "commander_Victor": [
       "Horatio Nelson",
       "Hyde Parker",
@@ -7096,11 +6494,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/GrandPort.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grand_Port",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Guy-Victor Duperré",
-      "Jacques Hamelin",
-      "Samuel Pym"
-    ],
     "special": "arc",
     "relatedSites": [
       {
@@ -7152,11 +6545,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CombatGrandPort.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Isle_Bonaparte",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Josias Rowley",
-      "Chrysostôme de Sainte-Suzanne",
-      "Henry Sheehy Keating"
-    ],
     "commander_Victor": [
       "Josias Rowley",
       "Henry Sheehy Keating"
@@ -7187,10 +6575,6 @@
       }
     ],
     "createDate": "2026-08-27",
-    "commanders": [
-      "Jean Regnier",
-      "John Stuart"
-    ],
     "victor": "Britain",
     "defeated": "France",
     "special": [
@@ -7237,12 +6621,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jobourg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Jobourg",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Sir Michael Seymour",
-      "Edmund Palmer",
-      "Pierre-Henri Philibert",
-      "Abel Aubert du Petit-Thouars"
-    ],
     "commander_Victor": [
       "Sir Michael Seymour",
       "Edmund Palmer"
@@ -7267,10 +6645,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lissa.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lissa_(1811)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Bernard Dubourdieu",
-      "William Hoste"
-    ],
     "commander_Victor": [
       "William Hoste"
     ],
@@ -7293,10 +6667,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zealand.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Zealand_Point",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "George Parker",
-      "Carl Wilhelm Jessen"
-    ],
     "commander_Victor": [
       "George Parker",
       "Carl Wilhelm Jessen"
@@ -7318,10 +6688,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tamatave.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tamatave",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Charles Schomberg",
-      "Dominique Roquebert"
-    ],
     "commander_Victor": [
       "Charles Schomberg"
     ],
@@ -7357,10 +6723,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Les_Sables.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Les_Sables-d%27Olonne",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Robert Stopford",
-      "Pierre Jurien"
-    ],
     "commander_Victor": [
       "Robert Stopford"
     ],
@@ -7384,10 +6746,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Les_Sables.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nile",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Horatio Nelson",
-      "Brueys d'Aigalliers"
-    ],
     "special": [
       "2",
       "Egyptian Campaign"
@@ -7429,25 +6787,24 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Brienne.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Brienne",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Gebhard von Blücher",
-      "Zakhar Olsufiev",
-      "Fabian Osten-Sacken"
+    "tie": [
+      "France",
+      "Prussia",
+      "Russia"
     ],
     "special": [
       "6",
       "Campaign of France"
     ],
-    "commander_Victor": [
-      "Napoleon"
-    ],
-    "commander_Loss": [
+    "commander_Tie": [
+      "Napoleon",
+      "Michel Ney",
+      "Claude-Victor Perrin",
+      "Auguste de Marmont",
       "Gebhard von Blücher",
       "Zakhar Olsufiev",
       "Fabian Osten-Sacken"
-    ],
-    "commander_Tie": []
+    ]
   },
   {
     "id": "305",
@@ -7492,15 +6849,13 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castiglione.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castiglione",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Dagobert-Sigismond von Wurmser"
-    ],
     "special": [
       "1",
       "arc",
       "Italian Campaign"
     ],
+    "defeated": "Habsburg monarchy",
+    "victor": "France",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -7538,13 +6893,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wittensberg.webp",
     "wikipedia_link": "https://de.wikipedia.org/wiki/Belagerung_von_Wittenberg_(1813/14)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Jean François Cornu de Lapoype",
-      "Peter Wittgenstein",
-      "Bogislav Friedrich Emanuel von Tauentzien",
-      "Leopold Wilhelm von Dobschütz",
-      "Friedrich Wilhelm Bülow von Dennewitz"
-    ],
     "special": "6",
     "commander_Victor": [
       "Peter Wittgenstein",
@@ -7572,10 +6920,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hoyeswerda.webp",
     "link": "https://www.historyofwar.org/articles/combat_hoyerswerda.html",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Nicolas Oudinot",
-      "Friedrich Wilhelm Bülow von Dennewitz"
-    ],
     "special": "6",
     "commander_Victor": [
       "Nicolas Oudinot"
@@ -7604,10 +6948,8 @@
       "arc",
       "1"
     ],
-    "commanders": [
-      "Napoleon",
-      "Kingdom of Sardinia Michelangelo Colli-Marchi"
-    ],
+    "victor": "France",
+    "defeated": "Sardinia",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -7635,15 +6977,19 @@
       "arc",
       "1"
     ],
-    "commanders": [
-      "Napoleon",
-      "Eugène Argenteau"
+    "victor": "France",
+    "defeated": [
+      "Sardinia",
+      "Habsburg monarchy"
     ],
     "commander_Victor": [
-      "Napoleon"
+      "Napoleon",
+      "Jean Lannes",
+      "André Masséna"
     ],
     "commander_Loss": [
-      "Eugène Argenteau"
+      "Eugène Argenteau",
+      "Josef Vukassovich"
     ],
     "commander_Tie": []
   },
@@ -7665,10 +7011,6 @@
     "special": [
       "arc",
       "4"
-    ],
-    "commanders": [
-      "Jean-Baptiste Bernadotte",
-      "Eugene Frederick Henry, Duke of Württemberg"
     ],
     "commander_Victor": [],
     "commander_Loss": [
@@ -7692,10 +7034,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Halle_1813.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halle_(1813)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Donatien de Rochambeau",
-      "Friedrich Wilhelm v. Bülow"
-    ],
     "special": [
       "6",
       "German Campaign"
@@ -7737,13 +7075,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wavre.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wavre",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Emmanuel de Grouchy",
-      "Étienne Maurice Gérard",
-      "Dominique Vandamme",
-      "Friedrich Wilhelm v. Bülow",
-      "Johann Adolf von Thielmann"
-    ],
     "special": "Waterloo Campaign",
     "commander_Victor": [
       "Emmanuel de Grouchy",
@@ -7826,10 +7157,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Genappe.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Quatre_Bras_to_Waterloo#Action_at_Genappe",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "William Ponsonby",
-      "Lord Somerset"
-    ],
     "special": "Waterloo Campaign",
     "commander_Victor": [],
     "commander_Loss": [
@@ -7853,7 +7180,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Genappe2.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Genappe",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": "Marshal Lobau",
     "special": "Waterloo Campaign",
     "commander_Victor": [],
     "commander_Loss": [
@@ -7876,7 +7202,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Namur.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Namur",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": "Colonel Zastrow",
     "special": "Waterloo Campaign",
     "commander_Victor": [],
     "commander_Loss": [
@@ -7899,11 +7224,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Thouars.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_de_Thouars_(1815)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Henri-Pierre Delaage",
-      "Auguste de La Rochejaquelein",
-      "Simon Canuel"
-    ],
     "special": "War in the Vendée",
     "commander_Victor": [
       "Henri-Pierre Delaage"
@@ -7929,11 +7249,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Villers_Cotterets.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(25_June_%E2%80%93_1_July)#Battle_of_Villers-Cotter%C3%AAts",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Henri-Pierre Delaage",
-      "Auguste de La Rochejaquelein",
-      "Simon Canuel"
-    ],
     "special": "100 Days",
     "commander_Victor": [
       "Auguste de La Rochejaquelein",
@@ -7977,10 +7292,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Olper.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%96lper_(1809)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Frederick William",
-      "Jean-Jacques Reubell"
-    ],
     "commander_Victor": [
       "Jean-Jacques Reubell"
     ],
@@ -8040,12 +7351,8 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Vitebsk.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vitebsk_(1812)",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Mikhail Barclay de Tolly",
-      "Peter von der Pahlen",
-      "Pyotr Konovnitsyn",
-      "Napoleon"
-    ],
+    "victor": "France",
+    "defeated": "Russia",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -8072,11 +7379,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ostrovno.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ostrovno",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "A. Ostermann-Tolstoy",
-      "Étienne de Nansouty",
-      "Joachim Murat"
-    ],
     "commander_Victor": [
       "Étienne de Nansouty",
       "Joachim Murat"
@@ -8102,13 +7404,19 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Shevardino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shevardino",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Andrei Gorchakov",
-      "Pyotr Bagration"
+    "victor": [
+      "France",
+      "Italy",
+      "Naples",
+      "Duchy of Warsaw"
     ],
+    "defeated": "Russia",
     "commander_Victor": [
-      "Napoleon"
+      "Napoleon",
+      "Louis Nicolas Davout",
+      "Eugène de Beauharnais",
+      "Joachim Murat",
+      "Józef Poniatowski"
     ],
     "commander_Loss": [
       "Andrei Gorchakov",
@@ -8132,10 +7440,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Napoleon",
-      "Mikhail Kutuzov"
-    ],
     "commander_Victor": [
       "Mikhail Kutuzov"
     ],
@@ -8160,16 +7464,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Viasma.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vyazma",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Matvei Platov",
-      "Ivan Paskevich",
-      "Mikhail Miloradovich",
-      "Louis Nicolas Davout",
-      "Eugéne de Beauharnais",
-      "Michel Ney",
-      "Józef Poniatowski",
-      "Józef Zajączek"
-    ],
     "commander_Victor": [
       "Matvei Platov",
       "Ivan Paskevich",
@@ -8200,11 +7494,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gorodechno.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Gorodechno",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Alexander Tormasov",
-      "Karl von Schwarzenberg",
-      "Jean Reynier"
-    ],
     "commander_Victor": [
       "Karl von Schwarzenberg",
       "Jean Reynier"
@@ -8230,10 +7519,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valutino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valutino",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Michel Ney",
-      "Barclay de Tolly"
-    ],
     "commander_Victor": [
       "Michel Ney"
     ],
@@ -8258,11 +7543,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Dahlenkirchen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Dahlenkirchen",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Jacques MacDonald",
-      "Magnus Gustav von Essen",
-      "Julius von Grawert"
-    ],
     "commander_Victor": [
       "Jacques MacDonald"
     ],
@@ -8288,10 +7568,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mesoten.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mesoten",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Fabian Steinheil",
-      "Ludwig von Yorck"
-    ],
     "commander_Victor": [],
     "commander_Loss": [
       "Fabian Steinheil",
@@ -8315,12 +7591,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tarutino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tarutino",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Joachim Murat",
-      "Mikhail Kutuzov",
-      "Leonty Bennigsen",
-      "Józef Poniatowski"
-    ],
     "commander_Victor": [
       "Mikhail Kutuzov",
       "Leonty Bennigsen"
@@ -8347,11 +7617,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/Chashniki.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Chashniki",
     "createDate": "2025-03-22T10:00:00Z",
-    "commanders": [
-      "Peter Wittgenstein",
-      "Lev Yashvil",
-      "Claude Victor"
-    ],
     "commander_Victor": [
       "Peter Wittgenstein",
       "Lev Yashvil"
@@ -8377,10 +7642,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "6",
-    "commanders": [
-      "Napoleon",
-      "Gebhard von Blücher"
-    ],
     "commander_Victor": [
       "Gebhard von Blücher"
     ],
@@ -8405,11 +7666,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lesmont",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "6",
-    "commanders": [
-      "Joseph Lagrange",
-      "Karl Philipp von Wrede",
-      "Eugen of Württemberg"
-    ],
     "commander_Victor": [
       "Joseph Lagrange"
     ],
@@ -8438,11 +7694,6 @@
       "Six Days' Campaign",
       "6"
     ],
-    "commanders": [
-      "Zakhar Olsufiev",
-      "Napoleon",
-      "Auguste de Marmont"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Auguste de Marmont"
@@ -8470,15 +7721,6 @@
     "special": [
       "Six Days' Campaign",
       "6"
-    ],
-    "commanders": [
-      "Zakhar Olsufiev",
-      "Napoleon",
-      "Auguste de Marmont",
-      "Emmanuel de Grouchy",
-      "Gebhard von Blücher",
-      "Friedrich von Kleist",
-      "Peter Kaptzevich"
     ],
     "commander_Victor": [
       "Napoleon",
@@ -8545,11 +7787,6 @@
       "Six Days' Campaign",
       "6"
     ],
-    "commanders": [
-      "Fabian Osten-Sacken",
-      "Napoleon",
-      "Ludwig von Yorck"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -8577,11 +7814,6 @@
     "special": [
       "Campaign of France",
       "6"
-    ],
-    "commanders": [
-      "Karl von Schwarzenberg",
-      "Napoleon",
-      "Prince of Württemberg"
     ],
     "commander_Victor": [
       "Karl von Schwarzenberg",
@@ -8611,10 +7843,6 @@
       "Adriatic campaign",
       "6"
     ],
-    "commanders": [
-      "Gillot Rougier",
-      "Laval Nugent von Westmeath"
-    ],
     "commander_Victor": [
       "Gillot Rougier"
     ],
@@ -8643,10 +7871,6 @@
     "special": [
       "German Campaign",
       "6"
-    ],
-    "commanders": [
-      "Henri Charpentier",
-      "Friedrich Wilhelm von Bülow"
     ],
     "commander_Victor": [
       "Friedrich Wilhelm von Bülow"
@@ -8681,12 +7905,6 @@
       "Campaign of France",
       "6"
     ],
-    "commanders": [
-      "Napoleon",
-      "Karl von Schwarzenberg",
-      "Peter de Lamotte",
-      "Peter Wittgenstein"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Karl von Schwarzenberg"
@@ -8715,13 +7933,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bayonne",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Pierre Thouvenot",
-      "Louis Abbé",
-      "John Hope",
-      "Andrew Hay",
-      "Henry de Hinuber"
-    ],
     "commander_Victor": [
       "John Hope",
       "Andrew Hay",
@@ -8751,11 +7962,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nive",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Arthur Wellesley",
-      "Luís do Rego"
-    ],
     "commander_Victor": [
       "Arthur Wellesley",
       "Luís do Rego"
@@ -8787,13 +7993,6 @@
     "link": "https://historiapomiechowka.pl/wojny/do-i-wojny-swiatowej/",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "4",
-    "commanders": [
-      "Napoleon",
-      "Mikhail Kamensky",
-      "Alexander Ostermann-Tolstoy",
-      "Karl La Roche-Aymon",
-      "Anton von L'Estocq"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -8828,11 +8027,6 @@
     "special": [
       "Campaign of France",
       "6"
-    ],
-    "commanders": [
-      "Napoleon",
-      "Gebhard von Blücher",
-      "Ferdinand von Wintzingerode"
     ],
     "commander_Victor": [
       "Gebhard von Blücher",
@@ -8884,15 +8078,6 @@
       "Campaign of France",
       "6"
     ],
-    "commanders": [
-      "Auguste de Marmont",
-      "Édouard Mortier",
-      "Michel Pacthod",
-      "Alexander I",
-      "Frederick William III",
-      "Karl von Schwarzenberg",
-      "Crown Prince William"
-    ],
     "commander_Victor": [
       "Alexander I",
       "Frederick William III",
@@ -8930,11 +8115,6 @@
       "Campaign of France",
       "6"
     ],
-    "commanders": [
-      "Napoleon",
-      "Gebhard von Blücher",
-      "Ferdinand Fyodorovich Wintzingerode"
-    ],
     "commander_Victor": [
       "Napoleon"
     ],
@@ -8967,12 +8147,6 @@
     "special": [
       "Campaign of France",
       "6"
-    ],
-    "commanders": [
-      "Édouard Mortier",
-      "Louis-Michel Letort de Lorville",
-      "Ignácz Gyulay",
-      "Frédéric-Guillaume de Wurtemberg"
     ],
     "commander_Victor": [
       "Ignácz Gyulay"
@@ -9007,14 +8181,6 @@
     "special": [
       "Campaign of France",
       "6"
-    ],
-    "commanders": [
-      "Karl von Schwarzenberg",
-      "Karl Philipp von Wrede",
-      "Peter Wittgenstein",
-      "Jacques MacDonald",
-      "Nicolas Oudinot",
-      "Étienne Maurice Gérard"
     ],
     "commander_Victor": [
       "Karl von Schwarzenberg",
@@ -9060,10 +8226,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nivelle",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Arthur Wellesley"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -9090,10 +8252,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tolentino",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Neapolitan War",
-    "commanders": [
-      "Joachim Murat",
-      "Frederick Bianchi"
-    ],
     "commander_Victor": [
       "Frederick Bianchi"
     ],
@@ -9135,10 +8293,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Mincio_River_(1814)",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "6",
-    "commanders": [
-      "Eugène de Beauharnais",
-      "Heinrich von Bellegarde"
-    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -9170,12 +8324,6 @@
       "6",
       "Campaign of France"
     ],
-    "commanders": [
-      "Peter Wittgenstein",
-      "Nicolas Oudinot",
-      "Claude Victor",
-      "Karl von Wrede"
-    ],
     "commander_Victor": [
       "Peter Wittgenstein",
       "Karl von Wrede"
@@ -9204,10 +8352,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_start_of_hostilities#Action_at_Gilly",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "100 Days",
-    "commanders": [
-      "Georg Dubislav Ludwig von Pirch",
-      "Louis-Michel Letort de Lorville"
-    ],
     "commander_Victor": [
       "Louis-Michel Letort de Lorville"
     ],
@@ -9325,10 +8469,6 @@
       "2",
       "Egyptian Campaign"
     ],
-    "commanders": [
-      "Jean-Baptiste Kléber",
-      "Nassif Pasha"
-    ],
     "commander_Victor": [
       "Jean-Baptiste Kléber"
     ],
@@ -9357,10 +8497,6 @@
     "special": [
       "2",
       "Egyptian Campaign"
-    ],
-    "commanders": [
-      "Jacques-François Menou",
-      "Ralph Abercromby"
     ],
     "relatedSites": [
       {
@@ -9401,10 +8537,6 @@
       "2",
       "Egyptian Campaign"
     ],
-    "commanders": [
-      "Jacques-François Menou",
-      "Ralph Abercromby"
-    ],
     "commander_Victor": [
       "Ralph Abercromby"
     ],
@@ -9433,10 +8565,6 @@
     "special": [
       "2",
       "Egyptian Campaign"
-    ],
-    "commanders": [
-      "Jacques-François Menou",
-      "Ralph Abercromby"
     ],
     "commander_Victor": [
       "Ralph Abercromby"
@@ -9481,10 +8609,6 @@
       "2",
       "Egyptian Campaign"
     ],
-    "commanders": [
-      "Jazzar Pasha",
-      "Napoleon"
-    ],
     "commander_Victor": [
       "Jazzar Pasha"
     ],
@@ -9514,12 +8638,6 @@
       "4",
       "arc",
       "Franco Swedish War"
-    ],
-    "commanders": [
-      "Jean-Baptiste Bernadotte",
-      "Joachim Murat",
-      "Johann Ewald",
-      "Jean de Dieu Soult"
     ],
     "commander_Victor": [
       "Joachim Murat",
@@ -9567,11 +8685,6 @@
       "2",
       "Egyptian Campaign"
     ],
-    "commanders": [
-      "Napoleon",
-      "Jean-Baptiste Kléber",
-      "Mohammed El-Koraïm"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Jean-Baptiste Kléber"
@@ -9602,11 +8715,6 @@
       "arc",
       "2",
       "Egyptian Campaign"
-    ],
-    "commanders": [
-      "Napoleon",
-      "Jean-Baptiste Perrée",
-      "Murad Bey"
     ],
     "commander_Victor": [
       "Napoleon",
@@ -9639,10 +8747,6 @@
       "2",
       "Egyptian Campaign"
     ],
-    "commanders": [
-      "Louis Desaix",
-      "Murad Bey"
-    ],
     "commander_Victor": [
       "Louis Desaix"
     ],
@@ -9672,12 +8776,6 @@
       "arc",
       "2",
       "Egyptian Campaign"
-    ],
-    "commanders": [
-      "Ahmed al-Jazzar",
-      "Napoleon",
-      "Jean-Baptiste Kléber",
-      "Abdallah Bey"
     ],
     "commander_Victor": [
       "Napoleon",
@@ -9710,11 +8808,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mohrungen",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "4",
-    "commanders": [
-      "Jean-Baptiste Bernadotte",
-      "Yevgeni Ivanovich Markov",
-      "Anton von L'Estocq"
-    ],
     "commander_Victor": [],
     "commander_Loss": [
       "Jean-Baptiste Bernadotte",
@@ -9741,13 +8834,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Allenstein",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "4",
-    "commanders": [
-      "Napoleon",
-      "Joachim Murat",
-      "Jean de Dieu Soult",
-      "Levin Bennigsen",
-      "Nikolay Kamensky"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Joachim Murat",
@@ -9868,15 +8954,6 @@
       "3",
       "arc"
     ],
-    "commanders": [
-      "Édouard Mortier",
-      "Théodore Gazan",
-      "Mikhail Kutuzov",
-      "Pierre de l'Étang",
-      "Johann Heinrich von Schmitt",
-      "Dmitry Dokhturov",
-      "Mikhail Miloradovich"
-    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -9920,10 +8997,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Arthur Wellesley",
-      "André Masséna"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -9976,13 +9049,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bussaco",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Arthur Wellesley",
-      "André Masséna",
-      "Michel Ney",
-      "Luís do Rego",
-      "Abdullah Pasha al-Azm"
-    ],
     "commander_Victor": [
       "Arthur Wellesley",
       "Luís do Rego",
@@ -10122,14 +9188,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/French_invasion_of_Malta",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Meiterranean 1798 of 1798",
-    "commanders": [
-      "Napoleon",
-      "Louis Desaix",
-      "Claude-Henri Belgrand de Vaubois",
-      "Louis Baraguey d'Hilliers",
-      "Ferdinand von Hompesch ",
-      "Jean Reynier"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Louis Desaix",
@@ -10210,10 +9268,6 @@
     "latitude": 36.725764,
     "longitude": -7.921993,
     "special": "3",
-    "commanders": [
-      "Graham Moore",
-      "José de Bustamante"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cabo_Sta_Maria.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804",
     "createDate": "2025-03-15T10:00:00Z",
@@ -10239,13 +9293,6 @@
     "special": "Finish War",
     "victor": "Russia",
     "defeated": "Sweeden",
-    "commanders": [
-      "Lodewijk van Heiden",
-      "Pyotr Dodt",
-      "Klas Hjelmstjerna",
-      "Önnert Jönsson",
-      "Sölfverarm"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sandostrom.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sand%C3%B6str%C3%B6m",
     "createDate": "2025-03-15T10:00:00Z",
@@ -10275,10 +9322,6 @@
     "special": "Finish War",
     "victor": "Russia",
     "defeated": "Sweeden",
-    "commanders": [
-      "Salomon von Rajalin",
-      "Aleksey Yefimovich Myasoyedov"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palva_sound.webp",
     "createDate": "2025-03-15T10:00:00Z",
     "commander_Victor": [
@@ -10307,10 +9350,6 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Conde de Belvedere",
-      "Jean de Dieu Soult"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gamonal.webp",
     "createDate": "2025-03-15T10:00:00Z",
     "commander_Victor": [
@@ -10430,10 +9469,6 @@
     "special": "3",
     "victor": "Britain",
     "defeated": "France",
-    "commanders": [
-      "Samuel Hood",
-      "Éléonore Soleil"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/25_Sep_1806.webp",
     "createDate": "2025-03-15T10:00:00Z",
     "commander_Victor": [
@@ -10649,10 +9684,6 @@
     "createDate": "2025-03-15T10:00:00Z",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Napoleon",
-      "Karl Sebottendorf"
-    ],
     "special": [
       "arc",
       "Italian Campaign",
@@ -10742,12 +9773,6 @@
     "special": [
       "1",
       "Italian Campaign"
-    ],
-    "commanders": [
-      "Pierre Augereau",
-      "Napoleon",
-      "Johann Beaulieu",
-      "Michael von Melas"
     ],
     "commander_Victor": [
       "Pierre Augereau",
@@ -10967,12 +9992,6 @@
     "description": "A small French squadron comprising the French frigates Ariane and Andromaque, and the brig Mameluck returning from a commerce raiding campaign in the Atlantic, met the 74-gun HMS Northumberland while trying the slip to Lorient through the British blockade.",
     "latitude": 47.6829,
     "longitude": -4.480624,
-    "commanders": [
-      "Henry Hotham",
-      "John Weeks",
-      "Jean Féretier",
-      "Nicolas Morice"
-    ],
     "victor": "Great Britain",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Action_of_22_May_1812.webp",
@@ -11000,10 +10019,6 @@
     "description": "Fought on 6 July 1812 between the British and Dano-Norwegian navies as part of the Gunboat War.",
     "latitude": 58.633539,
     "longitude": 9.128159,
-    "commanders": [
-      "James Stewart",
-      "Hans Peter Holm"
-    ],
     "special": "Gunboat War",
     "victor": "Great Britain",
     "defeated": [
@@ -11032,10 +10047,6 @@
     "description": "Fought on July 11th 1811 between the Russian cutter Opyt and the British frigate HMS Salsette took place near the northern coast of Estonia by the island of Naissaar (Nargö) in the Baltic Sea, and ended in a British victory.",
     "latitude": 59.574029,
     "longitude": 24.6356,
-    "commanders": [
-      "Walter Bathurst",
-      "Gabriel Nevelsky"
-    ],
     "special": "Anglo-Russian War",
     "victor": "Great Britain",
     "defeated": "Russia",
@@ -11061,11 +10072,6 @@
     "description": "Also known as the Battle of Cape Town, it was a successful British amphibious operation during the War of the Third Coalition which lasted from 8 to 18 January 1806 and resulted in the capture of the Dutch Cape Colony. ",
     "latitude": -33.72748,
     "longitude": 18.4467,
-    "commanders": [
-      "David Baird",
-      "Home Riggs Popham",
-      "Jan Willem Janssens"
-    ],
     "special": "3",
     "victor": "Great Britain",
     "defeated": "Batavia",
@@ -11386,10 +10392,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grij%C3%B3",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Arthur Wellesley",
-      "Jean de Dieu Soult"
-    ],
     "commander_Victor": [
       "Arthur Wellesley"
     ],
@@ -11416,10 +10418,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Braga_(1809)",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Baron Eben",
-      "Jean de Dieu Soult"
-    ],
     "commander_Victor": [
       "Jean de Dieu Soult"
     ],
@@ -11449,11 +10447,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_%C3%89vora_(1808)",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Louis Henri Loison",
-      "Francisco de Paula Leite",
-      "Colonel Moretti"
-    ],
     "commander_Victor": [
       "Louis Henri Loison"
     ],
@@ -11619,10 +10612,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Redinha",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
-    "commanders": [
-      "Michel Ney",
-      "Arthur Wellesley"
-    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -11656,12 +10645,8 @@
     "latitude": 40.49014,
     "longitude": -6.604093,
     "special": "Peninsular War",
-    "victor": "French",
+    "victor": "France",
     "defeated": "Anglo-Portuguese",
-    "commanders": [
-      "Louis-Pierre Montbrun",
-      "Arthur Wellesley"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bodon.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_El_Bod%C3%B3n",
     "createDate": "2025-03-15T10:00:00Z",
@@ -12004,12 +10989,8 @@
     "latitude": 54.9953,
     "longitude": 36.467793,
     "special": "Russian Campaign",
-    "victor": "French",
+    "victor": "France",
     "defeated": "Russia",
-    "commanders": [
-      "Napoleon",
-      "Mikhail Kutuzov"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maloyaroslavetz.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maloyaroslavets",
     "createDate": "2025-03-15T10:00:00Z",
@@ -12036,11 +11017,6 @@
     "special": "Russian Campaign",
     "victor": "Russia",
     "defeated": "France",
-    "commanders": [
-      "Joachim Murat",
-      "Mikhail Kutuzov",
-      "Józef Poniatowski"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Polotsk_1812_1st.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Polotsk",
     "relatedSites": [
@@ -12074,10 +11050,6 @@
     "special": "Russian Campaign",
     "victor": "Austria",
     "defeated": "Russia",
-    "commanders": [
-      "Osten-Sacken",
-      "Karl von Schwarzenberg"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wolkowisk.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wolkowisk",
     "createDate": "2025-03-15T10:00:00Z",
@@ -12118,12 +11090,8 @@
     "special": "Russian Campaign",
     "victor": "Russia",
     "defeated": [
-      "Duchy Warsaw",
+      "Duchy of Warsaw",
       "France"
-    ],
-    "commanders": [
-      "Jan Henryk Dąbrowski",
-      "Charles de Lambert"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borizov.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov",
@@ -12150,10 +11118,6 @@
     "longitude": 28.086317,
     "special": "Russian Campaign",
     "victor": "inconclusive",
-    "commanders": [
-      "Fyodor d'Auvray",
-      "Nicolas Oudinot"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Swolna.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Swolna",
     "createDate": "2025-03-15T10:00:00Z",
@@ -12179,10 +11143,6 @@
     "special": "Russian Campaign",
     "victor": "Russia",
     "defeated": "Duchy of Warsaw",
-    "commanders": [
-      "Aleksander Rożniecki",
-      "Matvei Platov"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mir.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mir_(1812)",
     "createDate": "2025-03-15T10:00:00Z",
@@ -12447,10 +11407,6 @@
     "special": "Guerra de Independencia",
     "victor": "France",
     "defeated": "Spain",
-    "commanders": [
-      "Nicolas Soult",
-      "Nicolas Mahy"
-    ],
     "commander_Victor": [
       "Nicolas Soult"
     ],
@@ -12817,10 +11773,6 @@
       "Peninsular War",
       "Guerra de Independencia"
     ],
-    "commanders": [
-      "Duque del Parque",
-      "Jean Marchand"
-    ],
     "commander_Victor": [
       "Duque del Parque"
     ],
@@ -12850,10 +11802,6 @@
       "Guerra de Independencia",
       "arc"
     ],
-    "commanders": [
-      "Joaquín Blake",
-      "Louis Gabriel Suchet"
-    ],
     "commander_Victor": [
       "Louis Gabriel Suchet"
     ],
@@ -12881,10 +11829,6 @@
     "special": [
       "Peninsular War",
       "Guerra de Independencia"
-    ],
-    "commanders": [
-      "Joaquín Blake",
-      "Louis Gabriel Suchet"
     ],
     "commander_Victor": [
       "Louis Gabriel Suchet"
@@ -12914,10 +11858,6 @@
       "Peninsular War",
       "Guerra de Independencia"
     ],
-    "commanders": [
-      "Theodor von Reding",
-      "Laurent Gouvion Saint-Cyr"
-    ],
     "commander_Victor": [
       "Laurent Gouvion Saint-Cyr"
     ],
@@ -12943,10 +11883,6 @@
     "defeated": "Austria",
     "victor": "France",
     "special": "3",
-    "commanders": [
-      "Joachim Murat",
-      "Franz von Werneck"
-    ],
     "commander_Victor": [
       "Joachim Murat"
     ],
@@ -12972,10 +11908,6 @@
     "defeated": "Austria",
     "victor": "France",
     "special": "5",
-    "commanders": [
-      "Louis Nicolas Davout",
-      "Friedrich Hohenzollern"
-    ],
     "commander_Victor": [
       "Louis Nicolas Davout"
     ],
@@ -13001,11 +11933,6 @@
     "defeated": "France",
     "victor": "Russia",
     "special": "Russian Campaign",
-    "commanders": [
-      "Peter Wittgenstein",
-      "Claude Victor",
-      "Nicolas Oudinot"
-    ],
     "commander_Victor": [
       "Peter Wittgenstein"
     ],
@@ -13035,10 +11962,6 @@
       "Campaign of France",
       "6"
     ],
-    "commanders": [
-      "Friedrich Hohenzollern",
-      "Jean-Baptiste Rousseau"
-    ],
     "commander_Victor": [
       "Jean-Baptiste Rousseau"
     ],
@@ -13067,10 +11990,6 @@
       "German Campaign",
       "Dano-Swedish War",
       "6"
-    ],
-    "commanders": [
-      "Ludwig von Wallmoden-Gimborn",
-      "Prince Frederik of Hesse"
     ],
     "commander_Victor": [],
     "commander_Loss": [],
@@ -13208,10 +12127,6 @@
       "2",
       "Algeciras Campaign"
     ],
-    "commanders": [
-      "Sir James Saumarez",
-      "Charles-Alexandre Léon Durand"
-    ],
     "victor": "France",
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras.webp",
@@ -13237,11 +12152,6 @@
       "2",
       "Algeciras Campaign"
     ],
-    "commanders": [
-      "Juan de Mondragón",
-      "Sir James Saumarez",
-      "Charles-Alexandre Léon Durand"
-    ],
     "victor": "France",
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras2.webp",
@@ -13264,10 +12174,6 @@
     "latitude": 39.56073,
     "longitude": -1.235954,
     "special": "Guerra de Independencia",
-    "commanders": [
-      "Pedro Villacampa",
-      "Louis-Joseph Maupoint"
-    ],
     "victor": "Spain",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tollo.webp",
@@ -13426,10 +12332,6 @@
     "longitude": 9.086681,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Montebello.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Montebello_(1800)",
-    "commanders": [
-      "Jean Lannes",
-      "Peter Karl Ott"
-    ],
     "victor": "France",
     "defeated": "Austria",
     "special": [
@@ -13998,10 +12900,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zornoza.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Zornoza",
     "special": "Guerra de Independencia",
-    "commanders": [
-      "François Joseph Lefebvre",
-      "Joaquín Blake"
-    ],
     "victor": "France",
     "defeated": "Spain",
     "createDate": "2026-07-21",
@@ -14028,10 +12926,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Balmaseda.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valmaseda",
     "special": "Guerra de Independencia",
-    "commanders": [
-      "Eugene-Casimir Villatte",
-      "Joaquín Blake"
-    ],
     "victor": "Spain",
     "defeated": "France",
     "createDate": "2026-07-21",
@@ -14058,10 +12952,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Castalla_1.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castalla_%281812%29",
     "special": "Guerra de Independencia",
-    "commanders": [
-      "Jean Harispe",
-      "Joseph O'Donnell"
-    ],
     "victor": "France",
     "defeated": "Spain",
     "createDate": "2026-07-23",
@@ -14090,10 +12980,6 @@
     "special": [
       "Peninsular War",
       "Guerra de Independencia"
-    ],
-    "commanders": [
-      "Louis Gabriel Suchet",
-      "John Murray"
     ],
     "victor": "Anglo-Spanish",
     "defeated": "France",
@@ -14149,12 +13035,6 @@
       "Peninsular War",
       "Guerra de Independencia"
     ],
-    "commanders": [
-      "Galbraith Lowry Cole",
-      "John Byng",
-      "Honoré Charles Reille",
-      "Bertrand Clauzel"
-    ],
     "victor": "France",
     "defeated": "Anglo-Portuguese-Spanish",
     "createDate": "2026-07-25",
@@ -14182,11 +13062,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suffel.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Suffel",
     "special": "100 Days",
-    "commanders": [
-      "Jean Rapp",
-      "Henri Rottembourg",
-      "William I of Württemberg"
-    ],
     "victor": "France",
     "defeated": [
       " Austria",
@@ -14217,10 +13092,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Loriol.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Combat_de_Loriol",
     "special": "100 Days",
-    "commanders": [
-      "César Alexandre Debelle",
-      "Louis of France "
-    ],
     "victor": "Royalists",
     "defeated": "Bonapartists",
     "createDate": "2026-07-25",
@@ -14243,10 +13114,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kalisz.webp",
     "more_info_link": "https://weltseele.miraheze.org/wiki/Battle_of_Kalisz_(1813)",
     "special": "6",
-    "commanders": [
-      "Jean Reynier",
-      " Ferdinand von Wintzingerode"
-    ],
     "victor": "Russia",
     "defeated": "France",
     "createDate": "2026-07-25",
@@ -14313,7 +13180,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Altenzaun.webp",
     "more_info_link": "https://warfare.ueuo.com/19C/NapoleonicSkirmishingInPracticeByPeterHofschroer.htm",
     "special": "4",
-    "commanders": "Ludwig von Yorck",
     "victor": "Prussia",
     "defeated": "France",
     "createDate": "2026-07-28",
@@ -14343,11 +13209,6 @@
     "longitude": 13.388721,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Zehdenick.webp",
     "special": "4",
-    "commanders": [
-      "Christian Ludwig Schimmelpfennig",
-      "Antoine Charles Louis de Lasalle",
-      "Emmanuel de Grouchy"
-    ],
     "victor": "France",
     "defeated": "Prussia",
     "createDate": "2026-07-28",
@@ -14373,12 +13234,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Amstetten.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Amstetten",
     "special": "3",
-    "commanders": [
-      "Michael Kienmayer",
-      "Pyotr Bagration",
-      "Jean Lannes",
-      "Joachim Murat"
-    ],
     "victor": "France",
     "defeated": "Russia",
     "createDate": "2026-07-28",
@@ -14424,10 +13279,6 @@
       "3",
       "Austro-Polish War"
     ],
-    "commanders": [
-      "Józef Poniatowski",
-      "Archduke Ferdinand Karl Joseph"
-    ],
     "victor": "Austria",
     "defeated": "Poland",
     "createDate": "2026-07-28",
@@ -14454,11 +13305,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Hoof.webp",
     "more_info_link": "https://www.historyofwar.org/articles/combat_hof.html",
     "special": "4",
-    "commanders": [
-      "Joachim Murat",
-      "Jean de Dieu Soult",
-      "Barclay de Tolly"
-    ],
     "victor": "France",
     "defeated": "Russia",
     "createDate": "2026-07-29",
@@ -14503,12 +13349,6 @@
       "1",
       "Italian Campaign"
     ],
-    "commanders": [
-      "Paul Davidovich",
-      "Napoleon",
-      "André Masséna",
-      "Claude-Victor Perrin"
-    ],
     "victor": "France",
     "defeated": "Austria",
     "createDate": "2026-07-29",
@@ -14539,10 +13379,6 @@
     "special": [
       "1",
       "Italian Campaign"
-    ],
-    "commanders": [
-      "Anton Lipthay",
-      "André Masséna"
     ],
     "victor": "France",
     "defeated": "Austria",
@@ -14598,10 +13434,6 @@
     "more_info_link": "https://www.historyofwar.org/articles/combat_pfaffenhoffen.html",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Pfaffenhoffen.webp",
     "special": "5",
-    "commanders": [
-      "Karl von Scheibler",
-      "Louis Jacques Coëhorn"
-    ],
     "victor": "France",
     "defeated": "Austria",
     "createDate": "2026-07-31",
@@ -14629,11 +13461,6 @@
     "special": "Peninsular War",
     "victor": "France",
     "defeated": "Portugal",
-    "commanders": [
-      "William Cox",
-      "Michel Ney",
-      "André Masséna"
-    ],
     "commander_Victor": [
       "Michel Ney",
       "André Masséna"
@@ -14661,12 +13488,6 @@
     "special": "Peninsular War",
     "victor": "Anglo Portuguese",
     "defeated": "France",
-    "commanders": [
-      "Antoine Brenier",
-      "William Erskine",
-      "Napoleon",
-      "André Masséna"
-    ],
     "commander_Victor": [
       "William Erskine"
     ],
@@ -14697,12 +13518,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Eugène Argenteau",
-      "Mathias Rukavina",
-      "Napoleon",
-      "André Masséna"
-    ],
     "commander_Victor": [
       "Napoleon",
       "André Masséna"
@@ -14730,10 +13545,6 @@
     "special": "Neapolitan War",
     "victor": "Naples",
     "defeated": "Austria",
-    "commanders": [
-      "Frederick Bianchi",
-      "Joachim Murat"
-    ],
     "commander_Victor": [
       "Frederick Bianchi"
     ],
@@ -14763,13 +13574,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Giovanni di Provera",
-      "Napoleon",
-      "Auguste de Marmont",
-      "Louis Gabriel Suchet",
-      "Pierre Augereau"
-    ],
     "commander_Victor": [
       "Napoleon",
       "Auguste de Marmont",
@@ -15034,10 +13838,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Jaques Tilly",
-      "Friedrich von Hohenzollern"
-    ],
     "commander_Victor": [
       "Jaques Tilly"
     ],
@@ -15121,10 +13921,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Joachim Murat",
-      "Graf Zinzebdorf"
-    ],
     "commander_Victor": [
       "Joachim Murat"
     ],
@@ -15180,10 +13976,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Joachim Murat",
-      "Karl von Schwarzenberg"
-    ],
     "commander_Victor": [
       "Joachim Murat",
       "Karl von Schwarzenberg"
@@ -15242,12 +14034,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Louis Nicolas Davout",
-      "Marc Antoine de Beaumont",
-      "Emanuel Schustekh",
-      "Pyotr Bagration"
-    ],
     "commander_Victor": [
       "Louis Nicolas Davout",
       "Marc Antoine de Beaumont"
@@ -15275,10 +14061,6 @@
     "special": "3",
     "victor": "Austria",
     "defeated": "Bavaria",
-    "commanders": [
-      "Bernhard Erasmus von Deroy",
-      "Franz Xaver Saint-Julien"
-    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": []
@@ -15315,10 +14097,6 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Marie-François Caffarelli",
-      "Maximilian Graf von Merveldt"
-    ],
     "commander_Victor": [],
     "commander_Loss": [
       "Maximilian Graf von Merveldt"
@@ -15347,7 +14125,6 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": "Michel Ney",
     "commander_Victor": [
       "Michel Ney"
     ],
@@ -15372,7 +14149,6 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": "Michel Ney",
     "commander_Victor": [
       "Michel Ney"
     ],
@@ -15411,10 +14187,6 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Gabriel Jean Joseph Molitor",
-      "Johann Maria Philipp Frimont"
-    ],
     "commander_Victor": [
       "Gabriel Jean Joseph Molitor"
     ],
@@ -15453,10 +14225,6 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Auguste de Marmont",
-      "Maximilian Graf von Merveldt"
-    ],
     "commander_Victor": [
       "Auguste de Marmont"
     ],
@@ -15523,10 +14291,6 @@
     "victor": "France",
     "defeated": "Austria",
     "special": "3",
-    "commanders": [
-      "Étienne Heudelet",
-      "Maximilian Graf von Merveldt"
-    ],
     "createDate": "2026-08-09",
     "commander_Victor": [],
     "commander_Loss": [
@@ -15551,10 +14315,6 @@
     "victor": "France",
     "defeated": "Austria",
     "special": "3",
-    "commanders": [
-      "Archduke Charles",
-      "Jean Louis Espagne"
-    ],
     "createDate": "2026-08-09",
     "commander_Victor": [],
     "commander_Loss": [
@@ -15597,13 +14357,6 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "commanders": [
-      "Pyotr Bagration",
-      "Joachim Murat",
-      "Jean Lannes",
-      "Louis Gabriel Suchet",
-      "Nicolas Oudinot"
-    ],
     "createDate": "2026-08-10",
     "commander_Victor": [
       "Joachim Murat",
@@ -15661,10 +14414,6 @@
     "victor": "Austria",
     "defeated": "France",
     "special": "3",
-    "commanders": [
-      "Karl von Vincent",
-      "Gabriel Jean Joseph Molitor"
-    ],
     "createDate": "2026-08-10",
     "commander_Victor": [],
     "commander_Loss": [
@@ -16457,10 +15206,6 @@
     "special": "3",
     "victor": "Austria",
     "defeated": "France",
-    "commanders": [
-      "Siegenthal",
-      "Lacour"
-    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bovec.webp",
     "createDate": "2026-08-20",
     "commander_Victor": [],
@@ -16880,10 +15625,6 @@
       "arc",
       "3"
     ],
-    "commanders": [
-      "Laurent Gouvion Saint-Cyr",
-      "Louis Victor de Rohan"
-    ],
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castelfranco_Veneto",
     "createDate": "2026-08-21",
     "commander_Victor": [
@@ -16938,10 +15679,6 @@
     "special": "3",
     "victor": "Austria",
     "defeated": "Bavaria",
-    "commanders": [
-      "Karl von Schwarzenberg",
-      "Carl Philipp von Wrede"
-    ],
     "createDate": "2026-08-21",
     "commander_Victor": [
       "Carl Philipp von Wrede"
@@ -16967,10 +15704,6 @@
     "special": "3",
     "victor": "Austria",
     "defeated": "Bavaria",
-    "commanders": [
-      "Karl von Schwarzenberg",
-      "Carl Philipp von Wrede"
-    ],
     "createDate": "2026-08-21",
     "commander_Victor": [
       "Carl Philipp von Wrede"
@@ -17036,10 +15769,6 @@
     ],
     "victor": "France",
     "defeated": "Prussia",
-    "commanders": [
-      "Joachim Murat",
-      "Prince of Hohenlohe"
-    ],
     "createDate": "2026-08-21",
     "commander_Victor": [
       "Joachim Murat"
@@ -17134,12 +15863,6 @@
     ],
     "victor": "France",
     "defeated": "Prussia",
-    "commanders": [
-      "Dominique Vandamme",
-      "Jérôme Bonaparte",
-      "Friedrich Gideon von Thiele",
-      "Príncipe de Anhalt-Ples"
-    ],
     "createDate": "2026-08-22",
     "commander_Victor": [
       "Dominique Vandamme",
@@ -17168,11 +15891,6 @@
     ],
     "victor": "France",
     "defeated": "Kingdom of Naples",
-    "commanders": [
-      "Louis von Hesse-Philippsthal",
-      "André Masséna",
-      "Nicolas de Lacour"
-    ],
     "createDate": "2026-08-22",
     "commander_Victor": [
       "André Masséna"
@@ -17200,11 +15918,6 @@
     ],
     "victor": "France",
     "defeated": "Russia",
-    "commanders": [
-      "Dmitry Senyavin",
-      "Auguste de Marmont",
-      "Jacques Lauriston"
-    ],
     "createDate": "2026-08-22",
     "commander_Victor": [
       "Auguste de Marmont",
@@ -17294,10 +16007,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri.webp",
     "victor": "Naples",
     "defeated": "Britain",
-    "commanders": [
-      "Jean Maximilien Lamarque",
-      "Hudson Lowe"
-    ],
     "createDate": "2026-08-22",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -17964,7 +16673,6 @@
     "longitude": 33.976459,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Osma_river.webp",
     "createDate": "2026-08-27",
-    "commanders": "Joaquim Murat",
     "victor": "France",
     "defeated": "Russia",
     "special": "Russian Campaign",
@@ -17989,10 +16697,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Griesse.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie",
     "createDate": "2025-08-27",
-    "commanders": [
-      "Edward Pellew",
-      "William Cowell"
-    ],
     "victor": "Britain",
     "defeated": "Holland",
     "special": "Java Campaign",
@@ -18016,10 +16720,6 @@
     "longitude": -9.162814,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Obidos.webp",
     "createDate": "2026-08-27",
-    "commanders": [
-      "Henri-François Delaborde",
-      "Sir Brent Spencer"
-    ],
     "special": "Peninsular War",
     "commander_Victor": [
       "Sir Brent Spencer"
@@ -18470,10 +17170,6 @@
     ],
     "Victor": "France",
     "defeated": "Kingdom of Naples",
-    "commanders": [
-      "Jean Reynier",
-      "Roger de Damas"
-    ],
     "createDate": "2026-09-10",
     "commander_Victor": [
       "Jean Reynier"
@@ -18541,10 +17237,6 @@
     "longitude": 15.714622,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scylla_Br.webp",
-    "commanders": [
-      "John Oswald",
-      "Colonel Michel"
-    ],
     "victor": "Britain",
     "defeated": "France",
     "special": [
@@ -18570,10 +17262,6 @@
     "longitude": 15.714622,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scylla_Fr.webp",
-    "commanders": [
-      "Jean Régnier",
-      "Sidney Smith"
-    ],
     "victor": "France",
     "defeated": "Britain",
     "special": "Naples Invasion",
@@ -18761,10 +17449,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Kassel.webp",
     "victor": "Russia",
     "defeated": "France",
-    "commanders": [
-      "Alexandre Chernyshev",
-      "Jacques Alexandre Allix"
-    ],
     "createDate": "2026-09-16",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -18789,10 +17473,6 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Braunschweig.webp",
     "victor": "Prussia",
     "defeated": "Westphalia",
-    "commanders": [
-      "Karl von Klösterlein)",
-      "Friedrich von der Marwitz"
-    ],
     "createDate": "2026-09-16",
     "commander_Victor": [
       "Friedrich von der Marwitz"
@@ -19080,10 +17760,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Naples_(1806)",
     "victor": "Britain",
     "defeated": "France",
-    "commanders": [
-      "Macleod",
-      "Hoste"
-    ],
     "createDate": "2026-09-19",
     "commander_Victor": [
       "Hoste"
@@ -19414,11 +18090,6 @@
     "special": "4",
     "defeated": "Prussia",
     "victor": "France",
-    "commanders": [
-      "Jean de Dieu Soult",
-      "Gebhard Leberecht von Blücher",
-      "Prince August of Prussia"
-    ],
     "createDate": "2026-09-21",
     "commander_Victor": [
       "Jean de Dieu Soult"
@@ -19460,10 +18131,6 @@
     "special": "100 Days",
     "victor": "Prussia",
     "defeated": "France",
-    "commanders": [
-      "Jean-Raymond Bourke",
-      "Prince August of Prussia"
-    ],
     "createDate": "2026-09-21",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -19658,10 +18325,6 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Allemand%27s_expedition_of_1805",
     "victor": "France",
     "defeated": "Great Britain",
-    "commanders": [
-      "Zacharie Allemand",
-      "Daniel Woodriff"
-    ],
     "createDate": "2026-05-24",
     "commander_Victor": [
       "Zacharie Allemand"
@@ -19793,9 +18456,6 @@
     ],
     "defeated": "France",
     "victor": "Allied",
-    "commanders": [
-      "Thomas Graham"
-    ],
     "createDate": "2026-09-27",
     "commander_Victor": [
       "Thomas Graham"
@@ -19816,10 +18476,6 @@
     ],
     "victor": "Austria",
     "defeated": "France",
-    "commanders": [
-      "Frederick Bianchi",
-      "Louis Musnier"
-    ],
     "location": "Macon",
     "country": "France",
     "description": "The Battle of Macon (11 March 1814) saw an Imperial French division under Louis François Félix Musnier attack an Austrian corps led by Frederick Bianchi. The French enjoyed initial success, but their numerical inferiority led to their defeat in this War of the Sixth Coalition engagement.",

@@ -18,6 +18,76 @@ export const calculateDistance = (lat1, lon1, lat2, lon2) => {
     return R * c;
 };
 
+export const getBelligerentStatus = (site, belligerent) => {
+    if (!site || !belligerent || belligerent === 'all') return null;
+    const target = String(belligerent).trim().toLowerCase();
+
+    const getList = (val) => {
+        if (!val) return [];
+        return (Array.isArray(val) ? val : [val]).map(v => String(v).trim().toLowerCase());
+    };
+
+    const vList = getList(site.victor);
+    const dList = getList(site.defeated);
+    const tList = getList(site.tie);
+
+    // 1. Explicit tie field
+    if (tList.includes(target)) {
+        return 'tie';
+    }
+
+    // 2. Explicit victor field (not inconclusive placeholder)
+    if (vList.includes(target) && !vList.includes('inconclusive') && !vList.includes('tie') && !vList.includes('draw')) {
+        return 'victor';
+    }
+
+    // 3. Explicit defeated field
+    if (dList.includes(target)) {
+        return 'loss';
+    }
+
+    // 4. Inconclusive battle fallback (for sites without explicit site.tie populated yet)
+    const isTieSite = vList.includes('inconclusive') || vList.includes('tie') || vList.includes('draw') ||
+        ((site.commander_Tie || []).length > 0 && vList.length === 0 && dList.length === 0);
+
+    if (isTieSite) {
+        const fullText = (
+            (site.name || '') + ' ' +
+            (site.description || '') + ' ' +
+            (site.country || '') + ' ' +
+            (site.commander_Tie || []).join(' ')
+        ).toLowerCase();
+
+        const frenchCmds = ['napoleon', 'ney', 'soult', 'mortier', 'oudinot', 'marmont', 'girard', 'trelliard', 'beauharnais', 'jerome'];
+        const russianCmds = ['bennigsen', 'chichagov', 'wittgenstein', 'kutuzov', 'dokhturov', 'miloradovich', 'auvray'];
+        const austrianCmds = ['archduke charles', 'bellegarde', 'schmitt'];
+        const britishCmds = ['wellington', 'beresford', 'bock', 'd\'urban', 'orange', 'wellesley'];
+        const spanishCmds = ['blake'];
+        const prussianCmds = ['estocq', 'blucher'];
+
+        let involved = false;
+        if (target === 'france' || target === 'french') {
+            involved = true;
+        } else if (target === 'russia') {
+            involved = russianCmds.some(c => fullText.includes(c)) || fullText.includes('russia');
+        } else if (target === 'austria' || target === ' austria') {
+            involved = austrianCmds.some(c => fullText.includes(c)) || fullText.includes('austria');
+        } else if (target === 'britain' || target === 'great britain' || target === 'uk') {
+            involved = britishCmds.some(c => fullText.includes(c)) || fullText.includes('britain') || fullText.includes('british') || fullText.includes('uk');
+        } else if (target === 'spain') {
+            involved = spanishCmds.some(c => fullText.includes(c)) || fullText.includes('spain') || fullText.includes('spanish');
+        } else if (target === 'prussia' || target === 'prusia') {
+            involved = prussianCmds.some(c => fullText.includes(c)) || fullText.includes('prussia');
+        } else {
+            involved = fullText.includes(target);
+        }
+
+        if (involved) return 'tie';
+    }
+
+    return null;
+};
+
 export const isSiteCategorySelected = (targetSite, filterCategory) => {
     if (!filterCategory || !Array.isArray(filterCategory) || filterCategory.length === 0) return true;
     const hasTodaysBattle = filterCategory.includes("Today's Battle");
@@ -54,6 +124,10 @@ export const validateSiteFilters = (targetSite, context) => {
         setFilterMonth,
         filterCommander,
         setFilterCommander,
+        filterCommanderRole,
+        setFilterCommanderRole,
+        filterBelligerent,
+        setFilterBelligerent,
         filterCountry,
         setFilterCountry,
         filterCoalition,
@@ -144,7 +218,9 @@ export const validateSiteFilters = (targetSite, context) => {
     // 4. Commander Filter
     if (filterCommander && filterCommander !== 'all') {
         const cmds = Array.isArray(targetSite.commanders) ? targetSite.commanders : [targetSite.commander].filter(Boolean);
-        if (!cmds.includes(filterCommander)) {
+        const targetCmd = String(filterCommander).trim().toLowerCase();
+        const cmdMatch = cmds.some(c => String(c).trim().toLowerCase() === targetCmd);
+        if (!cmdMatch) {
             failedFilters.push({
                 type: 'commander',
                 label: 'Commander',
@@ -157,20 +233,20 @@ export const validateSiteFilters = (targetSite, context) => {
         } else if (filterCommanderRole && filterCommanderRole !== 'all') {
             const normalizeList = (val) => {
                 if (!val) return [];
-                if (Array.isArray(val)) return val;
-                return [val];
+                if (Array.isArray(val)) return val.map(v => String(v).trim().toLowerCase());
+                return [String(val).trim().toLowerCase()];
             };
-            const victors = normalizeList(targetSite.commander_Victor || targetSite.commanders_victor);
-            const losses = normalizeList(targetSite.commander_Loss || targetSite.commanders_defeated);
-            const ties = normalizeList(targetSite.commander_Tie || targetSite.commander_tie || targetSite.commander_Inconclusive);
+            const victors = normalizeList(targetSite.commander_Victor || targetSite.commanders_victor || targetSite.commander_victor || targetSite.commander_win);
+            const losses = normalizeList(targetSite.commander_Loss || targetSite.commanders_defeated || targetSite.commander_loss || targetSite.commander_defeated);
+            const ties = normalizeList(targetSite.commander_Tie || targetSite.commander_tie || targetSite.commander_Inconclusive || targetSite.commander_inconclusive || targetSite.commander_draw);
 
             let roleMatched = true;
             if (filterCommanderRole === 'victor') {
-                roleMatched = victors.includes(filterCommander);
+                roleMatched = victors.includes(targetCmd);
             } else if (filterCommanderRole === 'loss' || filterCommanderRole === 'defeated') {
-                roleMatched = losses.includes(filterCommander);
+                roleMatched = losses.includes(targetCmd);
             } else if (filterCommanderRole === 'tie' || filterCommanderRole === 'inconclusive') {
-                roleMatched = ties.includes(filterCommander);
+                roleMatched = ties.includes(targetCmd);
             }
 
             if (!roleMatched) {
@@ -179,6 +255,41 @@ export const validateSiteFilters = (targetSite, context) => {
                     type: 'commanderRole',
                     label: 'Commander Battle Outcome',
                     message: `commander "${filterCommander}" outcome does not match "${roleLabels[filterCommanderRole] || filterCommanderRole}"`,
+                    reset: () => setFilterCommanderRole && setFilterCommanderRole('all')
+                });
+            }
+        }
+    }
+
+    // Belligerents Filter
+    if (filterBelligerent && filterBelligerent !== 'all') {
+        const status = getBelligerentStatus(targetSite, filterBelligerent);
+        if (!status) {
+            failedFilters.push({
+                type: 'belligerent',
+                label: 'Belligerents',
+                message: `belligerent "${filterBelligerent}" is not involved in this battle`,
+                reset: () => {
+                    if (setFilterBelligerent) setFilterBelligerent('all');
+                    if (setFilterCommanderRole && (!filterCommander || filterCommander === 'all')) setFilterCommanderRole('all');
+                }
+            });
+        } else if (filterCommanderRole && filterCommanderRole !== 'all' && (!filterCommander || filterCommander === 'all')) {
+            let roleMatched = true;
+            if (filterCommanderRole === 'victor') {
+                roleMatched = status === 'victor';
+            } else if (filterCommanderRole === 'loss' || filterCommanderRole === 'defeated') {
+                roleMatched = status === 'loss';
+            } else if (filterCommanderRole === 'tie' || filterCommanderRole === 'inconclusive') {
+                roleMatched = status === 'tie';
+            }
+
+            if (!roleMatched) {
+                const roleLabels = { victor: 'Victories', loss: 'Defeats', defeated: 'Defeats', tie: 'Inconclusive', inconclusive: 'Inconclusive' };
+                failedFilters.push({
+                    type: 'commanderRole',
+                    label: 'Battle Outcome',
+                    message: `belligerent "${filterBelligerent}" outcome does not match "${roleLabels[filterCommanderRole] || filterCommanderRole}"`,
                     reset: () => setFilterCommanderRole && setFilterCommanderRole('all')
                 });
             }
@@ -324,6 +435,10 @@ export const validateSiteFilters = (targetSite, context) => {
                 title = 'Site Out of Selected Commander';
                 message = `Site is out of the selected commander, commander "${filterCommander}" is not selected`;
                 resetButtonText = 'Reset Commander & View';
+            } else if (single.type === 'belligerent') {
+                title = 'Site Out of Selected Belligerent';
+                message = `Site is out of the selected belligerent, "${filterBelligerent}" was not involved in this battle`;
+                resetButtonText = 'Reset Belligerent & View';
             } else if (single.type === 'country') {
                 title = 'Site Out of Selected Country';
                 message = `Site is out of the selected country, country "${targetSite.country || 'N/A'}" is not selected`;

@@ -13,6 +13,7 @@ import CustomSimpleSelect from './CustomSimpleSelect';
 import SignificanceFilter from './SignificanceFilter';
 import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
+import BelligerentFilter from './BelligerentFilter';
 import ArcFilter from './ArcFilter';
 import FloatingViewToggle from './FloatingViewToggle';
 import './Header.css';
@@ -53,7 +54,7 @@ const Header = () => {
         activeMapOverlays, clearMapOverlays,
         showAuth, setShowAuth, setAuthMessage,
         setSelectedHelpItem,
-        filterYear, filterCommander,
+        filterYear, filterCommander, filterBelligerent,
         exportUserData, importUserData,
         setShowUpdateSitesModal,
         showEvents, setShowEvents, setHistoryNavState,
@@ -302,6 +303,7 @@ const Header = () => {
                             <>
                                 <YearFilter className={`desktop-year-filter ${filterYear !== 'all' ? 'filters-active-red' : ''}`} />
                                 <CommanderFilter className={`desktop-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`} />
+                                <BelligerentFilter className={`desktop-belligerent-filter ${filterBelligerent !== 'all' ? 'filters-active-red' : ''}`} />
                                 <ArcFilter className="desktop-arc-filter" />
                             </>
                         )}
@@ -406,6 +408,9 @@ const Header = () => {
                             />
                             <CommanderFilter
                                 className={`mobile-tag-filter mobile-commander-filter ${filterCommander !== 'all' ? 'filters-active-red' : ''}`}
+                            />
+                            <BelligerentFilter
+                                className={`mobile-tag-filter mobile-belligerent-filter ${filterBelligerent !== 'all' ? 'filters-active-red' : ''}`}
                             />
                             <ArcFilter
                                 className="mobile-tag-filter mobile-arc-filter"
