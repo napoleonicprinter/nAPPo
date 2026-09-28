@@ -18674,5 +18674,21 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_berlin.webp",
     "wikipedia_link": "https://de.wikipedia.org/wiki/Gneisenau-Denkmal_(Berlin)",
     "createDate": "2026-09-26"
+  },
+  {
+    "id": "969",
+    "name": "Dimitri Golitsyn birthplace",
+    "category": "Birthplace",
+    "significance": 2,
+    "year": "1771",
+    "date": "1771-11-10",
+    "location": "Yaropolets, Moscu Óblast",
+    "country": "Russia",
+    "description": "He was born on October 29, 1771 (November 10 New Style) in Yaropolets, son of Prince Vladimir Borisovich Golitsyn.As a young man, he traveled to Paris with his family, where he attended the École Militaire—the same military academy Napoleon Bonaparte had graduated from just a year prior in 1785.",
+    "latitude": 56.137755,
+    "longitude": 35.833432,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Golitsyn_birth.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Dmitry_Golitsyn",
+    "createDate": "2026-09-26"
   }
 ]
