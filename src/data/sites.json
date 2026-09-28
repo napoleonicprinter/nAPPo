@@ -27,11 +27,19 @@
       "Austria"
     ],
     "commander_Victor": [
-      "Napoleon"
+      "Napoleon",
+      "Jean de Dieu Soult",
+      "Louis Nicolas Davout",
+      "Jean Lannes",
+      "Joachim Murat"
     ],
     "commander_Loss": [
       "Alexander I",
-      "Francis II"
+      "Francis I",
+      "Pyotr Bagration",
+      "Kutuzov",
+      "Von Weyrother",
+      "Friedrich von Buxhoeveden"
     ],
     "commander_Tie": []
   },
@@ -751,7 +759,7 @@
       "Marshal Victor"
     ],
     "commander_Loss": [
-      "Francisco Xavier Venegas"
+      "Francisco Javier Venegas"
     ],
     "commander_Tie": []
   },
@@ -1305,7 +1313,7 @@
     "victor": "France",
     "defeated": "Spain",
     "commander_Victor": [
-      "Bessières"
+      "Jean-Baptiste Bessières"
     ],
     "commander_Loss": [
       "Gregorio García de la Cuesta"
@@ -1334,7 +1342,7 @@
     "commander_Victor": [],
     "commander_Loss": [
       "Jean de Dieu Soult",
-      "Victor"
+      "Claude Victor Perrin"
     ],
     "commander_Tie": []
   },
@@ -1623,7 +1631,7 @@
     "commander_Loss": [],
     "commander_Tie": [
       "Napoleon",
-      "Field Marshal Wittgenstein",
+      "Peter Wittgenstein",
       "Pavel Chichagov"
     ]
   },
@@ -2161,7 +2169,7 @@
       }
     ],
     "commander_Victor": [
-      "Claude Victor"
+      "Claude Victor Perrin"
     ],
     "commander_Loss": [
       "Joaquín Blake",
@@ -2317,7 +2325,7 @@
     "victor": "France",
     "defeated": "Spain",
     "commander_Victor": [
-      "Claude Perrin Victor"
+      "Claude Victor Perrin"
     ],
     "commander_Loss": [
       "Gregorio García de la Cuesta"
@@ -2368,7 +2376,7 @@
       "Gregorio García de la Cuesta"
     ],
     "commander_Loss": [
-      "Claude-Victor Perrin",
+      "Claude Victor Perrin",
       "Joseph Bonaparte",
       "Jean-Baptiste Jourdan"
     ],
@@ -3370,9 +3378,9 @@
     "victor": "Coalition",
     "defeated": "France",
     "commander_Victor": [
-      "Gebhard Leberecht von Blücher",
+      "Gebhard von Blücher",
       "Francis I of Austria",
-      "Alexander I of Russia",
+      "Alexander I",
       "Jean-Baptiste Bernadotte",
       "Frederick William III"
     ],
@@ -3449,7 +3457,7 @@
       "Pyotr Bagration"
     ],
     "commander_Loss": [
-      "Antoine Charles Louis de Lasalle",
+      "Antoine Louis de Lasalle",
       "Frédéric Henri Walther"
     ],
     "commander_Tie": []
@@ -3535,7 +3543,7 @@
     "commander_Loss": [],
     "commander_Tie": [
       "William of Orange",
-      "Duke of Wellington",
+      "Arthur Wellesley",
       "Marshal Michel Ney",
       "Jérôme Bonaparte"
     ]
@@ -3999,7 +4007,7 @@
     ],
     "commander_Loss": [
       "Alexander I",
-      "Gebhard Leberecht von Blücher"
+      "Gebhard von Blücher"
     ],
     "commander_Tie": []
   },
@@ -4635,7 +4643,7 @@
       "Michel Ney",
       "Nicolas Soult",
       "Jean-Baptiste Bernadotte",
-      "Claude-Victor Perrin"
+      "Claude Victor Perrin"
     ]
   },
   {
@@ -5304,7 +5312,7 @@
       "arc"
     ],
     "commander_Victor": [
-      "Eugéne de Beauharnais"
+      "Eugène de Beauharnais"
     ],
     "commander_Loss": [
       "Archduke John of Austria"
@@ -6082,7 +6090,7 @@
       "German Campaign"
     ],
     "commander_Victor": [
-      "Alexander Osterman-Tolstoy",
+      "Alexander Ostermann-Tolstoy",
       "Alexey Yermolov",
       "Mikhail Barclay de Tolly",
       "Hieronymus von Colloredo-Mansfeld",
@@ -6807,7 +6815,7 @@
     "commander_Tie": [
       "Napoleon",
       "Michel Ney",
-      "Claude-Victor Perrin",
+      "Claude Victor Perrin",
       "Auguste de Marmont",
       "Gebhard von Blücher",
       "Zakhar Olsufiev",
@@ -7023,7 +7031,7 @@
     "commander_Victor": [],
     "commander_Loss": [
       "Jean-Baptiste Bernadotte",
-      "Eugene Frederick Henry, Duke of Württemberg"
+      "Eugene Frederick Henry"
     ],
     "commander_Tie": []
   },
@@ -7481,7 +7489,7 @@
     ],
     "commander_Loss": [
       "Louis Nicolas Davout",
-      "Eugéne de Beauharnais",
+      "Eugène de Beauharnais",
       "Michel Ney",
       "Józef Poniatowski",
       "Józef Zajączek"
@@ -7632,7 +7640,7 @@
       "Lev Yashvil"
     ],
     "commander_Loss": [
-      "Claude Victor"
+      "Claude Victor Perrin"
     ],
     "commander_Tie": []
   },
@@ -7689,7 +7697,7 @@
     ],
     "commander_Loss": [
       "Karl Philipp von Wrede",
-      "Eugen of Württemberg"
+      "Eugene Frederick Henry"
     ],
     "commander_Tie": []
   },
@@ -8355,7 +8363,7 @@
     ],
     "commander_Loss": [
       "Nicolas Oudinot",
-      "Claude Victor"
+      "Claude Victor Perrin"
     ],
     "commander_Tie": []
   },
@@ -11967,7 +11975,7 @@
       "Peter Wittgenstein"
     ],
     "commander_Loss": [
-      "Claude Victor",
+      "Claude Victor Perrin",
       "Nicolas Oudinot"
     ],
     "commander_Tie": []
@@ -13253,7 +13261,7 @@
     "defeated": "Prussia",
     "createDate": "2026-07-28",
     "commander_Victor": [
-      "Antoine Charles Louis de Lasalle",
+      "Antoine Louis de Lasalle",
       "Emmanuel de Grouchy"
     ],
     "commander_Loss": [],
@@ -13395,7 +13403,7 @@
     "commander_Victor": [
       "Napoleon",
       "André Masséna",
-      "Claude-Victor Perrin"
+      "Claude Victor Perrin"
     ],
     "commander_Loss": [
       "Paul Davidovich"
@@ -16717,7 +16725,7 @@
     "defeated": "Russia",
     "special": "Russian Campaign",
     "commander_Victor": [
-      "Joaquim Murat"
+      "Joachim Murat"
     ],
     "commander_Loss": [],
     "commander_Tie": []
@@ -18135,7 +18143,7 @@
       "Jean de Dieu Soult"
     ],
     "commander_Loss": [
-      "Gebhard Leberecht von Blücher"
+      "Gebhard von Blücher"
     ],
     "commander_Tie": []
   },
