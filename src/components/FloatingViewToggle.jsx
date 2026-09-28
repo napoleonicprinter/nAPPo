@@ -44,6 +44,7 @@ const FloatingViewToggle = ({ className = '', iconSize = 20 }) => {
                 </button>
             )}*/}
 
+
             {/* The existing View Toggle Button */}
             <button
                 className={`view-toggle-tag glass-panel ${className}`}

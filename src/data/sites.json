@@ -4998,11 +4998,14 @@
       "3",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
-      "Archduke Charles"
+      "André Masséna"
     ],
     "commander_Loss": [
-      "André Masséna"
+      "Archduke Charles",
+      "Karl Hillinger"
     ],
     "commander_Tie": []
   },
