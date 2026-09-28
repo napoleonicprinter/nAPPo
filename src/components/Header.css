@@ -334,7 +334,22 @@ body:not(.light-mode) .sites-count-badge .count-number.is-filtered {
 
 .custom-select-option.selected {
     background: var(--accent-primary);
-    color: #000;
+    color: #ffffff;
+}
+
+.custom-select-option.selected span,
+.custom-select-option.selected .category-count-badge {
+    color: #ffffff;
+}
+
+.custom-select-option.selected:hover {
+    background: var(--accent-primary);
+    color: #ffffff;
+}
+
+.custom-select-option.selected:hover span,
+.custom-select-option.selected:hover .category-count-badge {
+    color: #ffffff;
 }
 
 .category-count-badge {

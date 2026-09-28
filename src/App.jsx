@@ -22,17 +22,6 @@ const MainApp = () => {
       showUpdateSitesModal, setShowUpdateSitesModal } = useAppContext();
   const [announcementMessage, setAnnouncementMessage] = useState(null);
 
-  // Daily auto-prompt for updating sites
-  useEffect(() => {
-    const todayStr = new Date().toISOString().split('T')[0];
-    const lastPopupDate = localStorage.getItem('nappo_last_update_popup_date');
-    if (lastPopupDate !== todayStr) {
-      localStorage.setItem('nappo_last_update_popup_date', todayStr);
-      const timer = setTimeout(() => setShowUpdateSitesModal(true), 1200);
-      return () => clearTimeout(timer);
-    }
-  }, [setShowUpdateSitesModal]);
-
   useEffect(() => {
     if (!messagesData || messagesData.length === 0) return;
 

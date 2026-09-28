@@ -54,8 +54,8 @@
     "createDate": "2025-02-15T10:00:00Z",
     "special": "100 Days",
     "victor": [
-      "UK",
-      "Prusia",
+      "United Kingdom",
+      "Prussia",
       "Brunswick",
       "Nasseau",
       "Hannover",
@@ -929,7 +929,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-portuguese",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -959,7 +959,7 @@
       "Peninsular War",
       "Guerra de Independencia"
     ],
-    "victor": "Anglo-luso-portuguese",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -1079,7 +1079,7 @@
       "Peninsular War"
     ],
     "victor": "France",
-    "defeated": "Anglo-luso-portuguese",
+    "defeated": "Anglo-Spanish",
     "commander_Victor": [
       "Louis Gabriel Suchet"
     ],
@@ -1171,7 +1171,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-portuguese",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "William Lumley"
@@ -1215,7 +1215,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-portuguese",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -1260,7 +1260,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-portuguese",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Juan de la Cruz Mourgeon"
@@ -1515,7 +1515,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-portuguese",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Rowland Hill"
@@ -1821,7 +1821,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-spanish",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Sir Thomas Graham",
@@ -1851,7 +1851,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -1880,7 +1880,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -1909,7 +1909,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-spanish",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley",
@@ -1967,7 +1967,7 @@
       "Guerra de Independencia",
       "Peninsular War"
     ],
-    "victor": "Anglo-luso-spanish",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -2343,7 +2343,7 @@
       "Peninsular War",
       "Guerra de Independencia"
     ],
-    "victor": "Anglo-luso-spanish",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "maps": [
       {
@@ -2572,7 +2572,7 @@
     "category": "Grave site",
     "significance": 1,
     "location": "Alresford",
-    "country": "UK",
+    "country": "United Kingdom",
     "description": "The graves of five Napoleonic prisoners of war can be found in St John's Churchyard.",
     "latitude": 51.090096,
     "longitude": -1.161277,
@@ -2597,7 +2597,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -2623,7 +2623,7 @@
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Batalla_de_Roli%C3%A7a",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -2649,7 +2649,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -2692,7 +2692,7 @@
     "wikipedia_link": "https://ca.wikipedia.org/wiki/Segona_Batalla_de_Porto",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Arthur Wellesley"
@@ -2718,7 +2718,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Garc%C3%ADa_Hern%C3%A1ndez",
     "createDate": "2025-03-15T10:00:00Z",
     "special": "Peninsular War",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "Eberhardt von Bock"
@@ -3621,7 +3621,7 @@
       "Guerra de Independencia"
     ],
     "victor": "France",
-    "defeated": "Britain",
+    "defeated": "United Kingdom",
     "commander_Victor": [
       "Jean de Dieu Soult"
     ],
@@ -4131,6 +4131,11 @@
       "3",
       "Trafalgar Campaign"
     ],
+    "defeated": [
+      "France",
+      "Spain"
+    ],
+    "victor": "United Kingdom",
     "createDate": "2025-03-15T10:00:00Z"
   },
   {
@@ -4376,7 +4381,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "5",
-    "defeated": "Britain",
+    "defeated": "United Kingdom",
     "victor": "France",
     "commander_Victor": [
       "Jean-Baptiste Bessières",
@@ -4405,7 +4410,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "4",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France"
   },
   {
@@ -4499,7 +4504,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_the_C%C3%B4a",
     "createDate": "2025-03-21T10:00:00Z",
     "special": "Peninsular War",
-    "defeated": "Britain",
+    "defeated": "Anglo-Portuguese",
     "victor": "France",
     "commander_Victor": [
       "Michel Ney",
@@ -4574,7 +4579,7 @@
     "createDate": "2025-03-21T10:00:00Z",
     "special": "Gunboat War",
     "defeated": "Denmark",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "commander_Victor": [
       "Joachim Castenschiold",
       "Arthur Wellesley"
@@ -4599,7 +4604,7 @@
     "createDate": "2025-03-21T10:00:00Z",
     "special": "Gunboat War",
     "defeated": "Denmark",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "commander_Victor": [
       "Steen Andersen Bille"
     ],
@@ -5505,7 +5510,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/BasqueRoad.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Basque_Roads#Gambier's_blockade",
     "createDate": "2025-03-22T10:00:00Z",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "special": "5",
     "commander_Victor": [
@@ -6578,7 +6583,7 @@
       }
     ],
     "createDate": "2026-08-27",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "special": [
       "3",
@@ -7410,7 +7415,7 @@
     "victor": [
       "France",
       "Italy",
-      "Naples",
+      "Kingdom os Naples",
       "Duchy of Warsaw"
     ],
     "defeated": "Russia",
@@ -7443,6 +7448,8 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi",
     "createDate": "2025-03-22T10:00:00Z",
+    "victor": "Russia",
+    "defeated": "France",
     "commander_Victor": [
       "Mikhail Kutuzov"
     ],
@@ -7645,6 +7652,14 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re",
     "createDate": "2025-03-22T10:00:00Z",
     "special": "6",
+    "defeated": "France",
+    "victor": [
+      "Austria",
+      "Bavaria",
+      "Prussia",
+      "Russia",
+      "Württemberg"
+    ],
     "commander_Victor": [
       "Gebhard von Blücher"
     ],
@@ -7697,6 +7712,8 @@
       "Six Days' Campaign",
       "6"
     ],
+    "victor": "France",
+    "defeated": "Russia",
     "commander_Victor": [
       "Napoleon",
       "Auguste de Marmont"
@@ -7789,6 +7806,11 @@
     "special": [
       "Six Days' Campaign",
       "6"
+    ],
+    "victor": "France",
+    "defeated": [
+      "Prussia",
+      "Russia"
     ],
     "commander_Victor": [
       "Napoleon"
@@ -7930,7 +7952,7 @@
     "latitude": 43.49338,
     "longitude": -1.475739,
     "date": "1814-04-14",
-    "victor": "Peninsular War Allies",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bayona.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bayonne",
@@ -7959,7 +7981,7 @@
     "latitude": 43.438876,
     "longitude": -1.517865,
     "date": "1813-12-09",
-    "victor": "Peninsular War Allies",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nive.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Nive",
@@ -8223,7 +8245,7 @@
     "latitude": 43.3451,
     "longitude": -1.631322,
     "date": "1813-11-10",
-    "victor": "Peninsular War Allies",
+    "victor": "Anglo-Luso-Spanish",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nivelle.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Nivelle",
@@ -8492,7 +8514,7 @@
     "latitude": 31.210301,
     "longitude": 29.970161,
     "date": "1801-03-21",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Alexandria.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Alexandria_(1801)",
@@ -8531,7 +8553,7 @@
     "latitude": 31.1217,
     "longitude": 33.798253,
     "date": "1801-02-08",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/El_Arish.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_El_Arish",
@@ -8560,7 +8582,7 @@
     "latitude": 31.2086,
     "longitude": 29.987,
     "date": "1801-03-13",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mandora.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mandora",
@@ -8994,7 +9016,7 @@
     "latitude": 40.3266,
     "longitude": -7.070474,
     "date": "1811-04-03",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sabugal.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sabugal",
@@ -9046,7 +9068,7 @@
     "latitude": 40.363031,
     "longitude": -8.351537,
     "date": "1810-09-27",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bussaco",
@@ -9470,7 +9492,7 @@
     "latitude": 46.3031,
     "longitude": -1.689863,
     "special": "3",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/25_Sep_1806.webp",
     "createDate": "2025-03-15T10:00:00Z",
@@ -10032,10 +10054,11 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lyng%C3%B8r",
     "createDate": "2025-03-15T10:00:00Z",
     "commander_Victor": [
-      "James Stewart",
+      "James Stewart"
+    ],
+    "commander_Loss": [
       "Hans Peter Holm"
     ],
-    "commander_Loss": [],
     "commander_Tie": []
   },
   {
@@ -10057,10 +10080,11 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Narg%C3%B6",
     "createDate": "2025-03-15T10:00:00Z",
     "commander_Victor": [
-      "Walter Bathurst",
+      "Walter Bathurst"
+    ],
+    "commander_Loss": [
       "Gabriel Nevelsky"
     ],
-    "commander_Loss": [],
     "commander_Tie": []
   },
   {
@@ -10077,7 +10101,10 @@
     "longitude": 18.4467,
     "special": "3",
     "victor": "Great Britain",
-    "defeated": "Batavia",
+    "defeated": [
+      "Batavia",
+      "France"
+    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blaauwberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg",
     "createDate": "2025-03-15T10:00:00Z",
@@ -10389,7 +10416,7 @@
     "latitude": 41.03044,
     "longitude": -8.57777,
     "date": "1809-05-10",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Grijo.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Grij%C3%B3",
@@ -11987,15 +12014,25 @@
     "longitude": 9.84,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sehested.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sehested",
-    "defeated": "Coalition",
+    "defeated": [
+      "Russia",
+      "Hannover",
+      "United Kingdom",
+      "Anhalt-Dessau",
+      "Mecklenburg-Schwerin"
+    ],
     "victor": "Denmark-Norway",
     "special": [
       "German Campaign",
       "Dano-Swedish War",
       "6"
     ],
-    "commander_Victor": [],
-    "commander_Loss": [],
+    "commander_Victor": [
+      "Prince Frederik of Hesse"
+    ],
+    "commander_Loss": [
+      "Ludwig von Wallmoden-Gimborn"
+    ],
     "commander_Tie": []
   },
   {
@@ -12131,7 +12168,7 @@
       "Algeciras Campaign"
     ],
     "victor": "France",
-    "defeated": "Britain",
+    "defeated": "United Kingdom",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Algeciras#Battle",
     "createDate": "2026-07-14",
@@ -12156,7 +12193,7 @@
       "Algeciras Campaign"
     ],
     "victor": "France",
-    "defeated": "Britain",
+    "defeated": "United Kingdom",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras2.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras",
     "createDate": "2026-07-14",
@@ -13039,7 +13076,7 @@
       "Guerra de Independencia"
     ],
     "victor": "France",
-    "defeated": "Anglo-Portuguese-Spanish",
+    "defeated": "Anglo-Luso-Spanish",
     "createDate": "2026-07-25",
     "commander_Victor": [
       "Honoré Charles Reille",
@@ -13067,8 +13104,8 @@
     "special": "100 Days",
     "victor": "France",
     "defeated": [
-      " Austria",
-      "Wurttemberg"
+      "Austria",
+      "Württemberg"
     ],
     "createDate": "2026-07-25",
     "commander_Victor": [
@@ -13489,7 +13526,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Almeida_1811.webp",
     "createDate": "2026-07-31",
     "special": "Peninsular War",
-    "victor": "Anglo Portuguese",
+    "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
       "William Erskine"
@@ -13546,7 +13583,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Panaro.webp",
     "createDate": "2026-08-01",
     "special": "Neapolitan War",
-    "victor": "Naples",
+    "victor": "Kingdom os Naples",
     "defeated": "Austria",
     "commander_Victor": [
       "Frederick Bianchi"
@@ -16008,8 +16045,8 @@
     "latitude": 40.5532,
     "longitude": 14.222,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri.webp",
-    "victor": "Naples",
-    "defeated": "Britain",
+    "victor": "Kingdom os Naples",
+    "defeated": "United Kingdom",
     "createDate": "2026-08-22",
     "commander_Victor": [],
     "commander_Loss": [],
@@ -16700,7 +16737,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Griesse.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Raid_on_Griessie",
     "createDate": "2025-08-27",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "Holland",
     "special": "Java Campaign",
     "commander_Victor": [
@@ -17240,7 +17277,7 @@
     "longitude": 15.714622,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scylla_Br.webp",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "special": [
       "3",
@@ -17266,7 +17303,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Scylla",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Scylla_Fr.webp",
     "victor": "France",
-    "defeated": "Britain",
+    "defeated": "United Kingdom",
     "special": "Naples Invasion",
     "createDate": "2026-09-11",
     "commander_Victor": [
@@ -17761,7 +17798,7 @@
     "longitude": 17.127163,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cotrone.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Naples_(1806)",
-    "victor": "Britain",
+    "victor": "United Kingdom",
     "defeated": "France",
     "createDate": "2026-09-19",
     "commander_Victor": [
@@ -18458,7 +18495,7 @@
       "Guerra de Independencia"
     ],
     "defeated": "France",
-    "victor": "Allied",
+    "victor": "Anglo-Luso-Spanish",
     "createDate": "2026-09-27",
     "commander_Victor": [
       "Thomas Graham"

@@ -840,15 +840,15 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const availableBelligerents = useMemo(() => {
         const relevantSites = sitesFilteredBase.filter(site => passYear(site) && passCat(site) && passMonth(site) && passCmd(site));
-        const counts = {};
-        relevantSites.forEach(s => {
+        const allBelligerentsSet = new Set();
+        (derivedSites || []).forEach(s => {
             const add = (val) => {
                 if (!val) return;
                 const items = Array.isArray(val) ? val : [val];
                 items.forEach(item => {
                     const name = String(item).trim();
                     if (!name || name.toLowerCase() === 'inconclusive' || name.toLowerCase() === 'tie' || name.toLowerCase() === 'draw') return;
-                    counts[name] = (counts[name] || 0) + 1;
+                    allBelligerentsSet.add(name);
                 });
             };
             add(s.victor);
@@ -856,15 +856,19 @@ export const AppProvider = ({ children, storeUrl }) => {
             add(s.tie);
         });
 
-        return Object.entries(counts)
-            .map(([name, count]) => ({
-                value: name,
-                name: name,
-                count: count,
-                label: name
-            }))
+        return Array.from(allBelligerentsSet)
+            .map(name => {
+                const count = relevantSites.filter(site => getBelligerentStatus(site, name) !== null).length;
+                return {
+                    value: name,
+                    name: name,
+                    count: count,
+                    label: name
+                };
+            })
+            .filter(b => b.count > 0)
             .sort((a, b) => a.value.localeCompare(b.value));
-    }, [sitesFilteredBase, filterYear, filterCategory, filterMonth, filterCommander, filterCommanderRole, showArcOnly]);
+    }, [sitesFilteredBase, derivedSites, filterYear, filterCategory, filterMonth, filterCommander, filterCommanderRole, showArcOnly]);
 
     const availableOutcomeCounts = useMemo(() => {
         const hasCommander = filterCommander && filterCommander !== 'all';
