@@ -141,9 +141,26 @@ export const AppProvider = ({ children, storeUrl }) => {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    if (parsed.length >= sitesData.length) {
-                        return parsed;
-                    }
+                    const bundledMap = new Map((sitesData || []).map(s => [String(s.id).trim(), s]));
+                    return parsed.map(site => {
+                        const bundled = bundledMap.get(String(site.id).trim());
+                        if (!bundled) return site;
+                        return {
+                            ...bundled,
+                            ...site,
+                            commander_Victor: (site.commander_Victor !== undefined && site.commander_Victor !== null)
+                                ? site.commander_Victor
+                                : (bundled.commander_Victor || []),
+                            commander_Loss: (site.commander_Loss !== undefined && site.commander_Loss !== null)
+                                ? site.commander_Loss
+                                : (bundled.commander_Loss || []),
+                            commander_Tie: (site.commander_Tie !== undefined && site.commander_Tie !== null)
+                                ? site.commander_Tie
+                                : (site.commander_Inconclusive !== undefined && site.commander_Inconclusive !== null)
+                                    ? site.commander_Inconclusive
+                                    : (bundled.commander_Tie || bundled.commander_Inconclusive || [])
+                        };
+                    });
                 }
             } catch (e) { }
         }
@@ -434,6 +451,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [filterYear, setFilterYear] = useState(() => localStorage.getItem('filterYear') || 'all');
     const [filterMonth, setFilterMonth] = useState(() => localStorage.getItem('filterMonth') || 'all');
     const [filterCommander, setFilterCommander] = useState(() => localStorage.getItem('filterCommander') || 'all');
+    const [filterCommanderRole, setFilterCommanderRole] = useState(() => localStorage.getItem('filterCommanderRole') || 'all');
     const [filterCountry, setFilterCountry] = useState(() => localStorage.getItem('filterCountry') || 'all');
     const [filterCoalition, setFilterCoalition] = useState(() => localStorage.getItem('filterCoalition') || 'all');
     const [filterCampaign, setFilterCampaign] = useState(() => localStorage.getItem('filterCampaign') || 'all');
@@ -456,11 +474,7 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const [newSitesDays, setNewSitesDays] = useState(() => {
         const saved = localStorage.getItem('newSitesDays');
-        if (saved !== null && saved !== undefined && saved !== '60') {
-            const parsed = parseInt(saved, 10);
-            if (!isNaN(parsed) && parsed <= 30) return parsed;
-        }
-        return 30;
+        return saved !== null && saved !== undefined ? parseInt(saved, 10) : 30;
     });
 
     const [clusterRadius, setClusterRadius] = useState(() => {
@@ -473,21 +487,12 @@ export const AppProvider = ({ children, storeUrl }) => {
     const derivedSites = useMemo(() => {
         return (sitesBaseData || []).map(site => {
             const isNew = (() => {
-                if (!site.createDate || newSitesDays === null || newSitesDays === undefined) return false;
+                if (!site.createDate || !newSitesDays) return false;
+                const createDate = new Date(site.createDate);
                 const today = new Date();
-                const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-                
-                const parts = String(site.createDate).trim().split('-');
-                if (parts.length < 3) return false;
-                const siteDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
-                
-                const diffTime = todayMidnight.getTime() - siteDate.getTime();
-                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-                
-                if (newSitesDays === 0) {
-                    return diffDays === 0;
-                }
-                return diffDays >= 0 && diffDays <= newSitesDays;
+                const diffTime = Math.abs(today - createDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return diffDays <= newSitesDays;
             })();
 
             const rawSpecial = site.special || site.Special;
@@ -495,7 +500,10 @@ export const AppProvider = ({ children, storeUrl }) => {
                 ...site,
                 visited: visitedSet.has(String(site.id)),
                 isNew,
-                special: rawSpecial ? (Array.isArray(rawSpecial) ? rawSpecial : [String(rawSpecial)]) : []
+                special: rawSpecial ? (Array.isArray(rawSpecial) ? rawSpecial : [String(rawSpecial)]) : [],
+                commander_Victor: site.commander_Victor || site.commanders_victor || [],
+                commander_Loss: site.commander_Loss || site.commanders_defeated || [],
+                commander_Tie: site.commander_Tie || site.commander_tie || site.commander_Inconclusive || []
             };
         });
     }, [sitesBaseData, visitedSet, newSitesDays]);
@@ -603,8 +611,35 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [filterMonth]);
 
     const passCmd = useCallback((site) => {
-        return filterCommander === 'all' || (site.commanders && site.commanders.includes(filterCommander));
-    }, [filterCommander]);
+        if (filterCommander === 'all') return true;
+        const cmds = Array.isArray(site.commanders) ? site.commanders : [site.commander].filter(Boolean);
+        const targetCmd = String(filterCommander).trim().toLowerCase();
+        const cmdMatch = cmds.some(c => String(c).trim().toLowerCase() === targetCmd);
+        if (!cmdMatch) return false;
+
+        if (filterCommanderRole === 'all') return true;
+
+        const normalizeList = (val) => {
+            if (!val) return [];
+            if (Array.isArray(val)) return val.map(v => String(v).trim().toLowerCase());
+            return [String(val).trim().toLowerCase()];
+        };
+
+        const victors = normalizeList(site.commander_Victor || site.commanders_victor || site.commander_victor || site.commander_win);
+        const losses = normalizeList(site.commander_Loss || site.commanders_defeated || site.commander_defeated || site.commander_loss);
+        const ties = normalizeList(site.commander_Tie || site.commander_tie || site.commander_Inconclusive || site.commander_inconclusive || site.commander_draw);
+
+        if (filterCommanderRole === 'victor') {
+            return victors.includes(targetCmd);
+        }
+        if (filterCommanderRole === 'loss' || filterCommanderRole === 'defeated') {
+            return losses.includes(targetCmd);
+        }
+        if (filterCommanderRole === 'tie' || filterCommanderRole === 'inconclusive') {
+            return ties.includes(targetCmd);
+        }
+        return true;
+    }, [filterCommander, filterCommanderRole]);
 
     const passCat = useCallback((site) => {
         if (filterCategory.length === 0) return true;
@@ -679,7 +714,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                 label: year // Fallback
             }))
             .sort((a, b) => a.value - b.value);
-    }, [sitesFilteredBase, filterCommander, filterCategory, filterMonth, showArcOnly]);
+    }, [sitesFilteredBase, filterCommander, filterCommanderRole, filterCategory, filterMonth, showArcOnly]);
 
     const MONTH_NAMES = [
         { value: '1', label: 'January' },
@@ -714,7 +749,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             count: counts[m.value] || 0,
             label: m.label
         }));
-    }, [sitesFilteredBase, filterCommander, filterCategory, filterYear, showArcOnly]);
+    }, [sitesFilteredBase, filterCommander, filterCommanderRole, filterCategory, filterYear, showArcOnly]);
 
     const availableCommanders = useMemo(() => {
         const relevantSites = sitesFilteredBase.filter(site => passYear(site) && passCat(site) && passMonth(site));
@@ -763,7 +798,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander, filterCommanderRole]);
 
     const campaignCounts = useMemo(() => {
         const counts = {};
@@ -778,7 +813,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander, filterCommanderRole]);
 
     const coalitionCounts = useMemo(() => {
         const counts = {};
@@ -793,7 +828,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander, filterCommanderRole]);
 
     const visitedCounts = useMemo(() => {
         const counts = { visited: 0, unvisited: 0 };
@@ -804,7 +839,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander, filterCommanderRole]);
 
 
 
@@ -818,7 +853,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         const hasSearchFilter = Boolean(filterSearch && filterSearch.trim() !== '');
         const hasYearFilter = Boolean(filterYear && filterYear !== 'all');
         const hasMonthFilter = Boolean(filterMonth && filterMonth !== 'all');
-        const hasCommanderFilter = Boolean(filterCommander && filterCommander !== 'all');
+        const hasCommanderFilter = Boolean((filterCommander && filterCommander !== 'all') || (filterCommanderRole && filterCommanderRole !== 'all'));
         const hasArcFilter = Boolean(showArcOnly);
         const hasCountryFilter = Boolean(filterCountry && filterCountry !== 'all');
         const hasCoalitionFilter = Boolean(filterCoalition && filterCoalition !== 'all');
@@ -849,6 +884,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         filterYear,
         filterMonth,
         filterCommander,
+        filterCommanderRole,
         showArcOnly,
         filterCountry,
         filterCoalition,
@@ -880,6 +916,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setFilterYear('all');
         setFilterMonth('all');
         setFilterCommander('all');
+        setFilterCommanderRole('all');
         setFilterCountry('all');
         setFilterCoalition('all');
         setFilterCampaign('all');
@@ -893,6 +930,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         const showFilter = filterCategory.length > 0 && filterCategory.every(c => allowedCategories.includes(c));
         if (!showFilter) {
             setFilterCommander('all');
+            setFilterCommanderRole('all');
             setFilterYear('all');
             setShowArcOnly(false);
         }
@@ -945,6 +983,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     useEffect(() => { localStorage.setItem('filterYear', filterYear || 'all'); }, [filterYear]);
     useEffect(() => { localStorage.setItem('filterMonth', filterMonth || 'all'); }, [filterMonth]);
     useEffect(() => { localStorage.setItem('filterCommander', filterCommander || 'all'); }, [filterCommander]);
+    useEffect(() => { localStorage.setItem('filterCommanderRole', filterCommanderRole || 'all'); }, [filterCommanderRole]);
     useEffect(() => { localStorage.setItem('filterCountry', filterCountry || 'all'); }, [filterCountry]);
     useEffect(() => { localStorage.setItem('filterCoalition', filterCoalition || 'all'); }, [filterCoalition]);
     useEffect(() => { localStorage.setItem('filterCampaign', filterCampaign || 'all'); }, [filterCampaign]);
@@ -1356,6 +1395,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setFilterYear(target.filterYear || 'all');
         setFilterMonth(target.filterMonth || 'all');
         setFilterCommander(target.filterCommander || 'all');
+        setFilterCommanderRole(target.filterCommanderRole || 'all');
         setFilterCountry(target.filterCountry || 'all');
         setFilterCoalition(target.filterCoalition || 'all');
         setFilterCampaign(target.filterCampaign || 'all');
@@ -1387,6 +1427,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterYear: filterYear || 'all',
             filterMonth: filterMonth || 'all',
             filterCommander: filterCommander || 'all',
+            filterCommanderRole: filterCommanderRole || 'all',
             filterCountry: filterCountry || 'all',
             filterCoalition: filterCoalition || 'all',
             filterCampaign: filterCampaign || 'all',
@@ -1418,6 +1459,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             last.filterYear === snapshot.filterYear &&
             last.filterMonth === snapshot.filterMonth &&
             last.filterCommander === snapshot.filterCommander &&
+            last.filterCommanderRole === snapshot.filterCommanderRole &&
             last.filterCountry === snapshot.filterCountry &&
             last.filterCoalition === snapshot.filterCoalition &&
             last.filterCampaign === snapshot.filterCampaign &&
@@ -1437,6 +1479,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [
         selectedSite, selectedHelpItem, filterCategory, filterSignificance,
         filterVisited, filterRadius, filterSearch, filterYear, filterMonth, filterCommander,
+        filterCommanderRole,
         filterCountry, filterCoalition, filterCampaign, showArcOnly, filterWithMaps,
         showOnlyNew, locationMode, userCoords, activeMapOverlays, view, previewDevice
     ]);
@@ -1589,7 +1632,9 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterRadius, setFilterRadius,
             filterYear, setFilterYear, availableYears,
             filterMonth, setFilterMonth, availableMonths,
-            filterCommander, setFilterCommander, availableCommanders,
+            filterCommander, setFilterCommander,
+            filterCommanderRole, setFilterCommanderRole,
+            availableCommanders,
             showArcOnly, setShowArcOnly,
             isMobileLike,// <--- Add this
             filterWithMaps, setFilterWithMaps,

@@ -118,11 +118,11 @@ const FiltersModal = ({ onClose }) => {
 
                         <CustomSimpleSelect
                             options={[
-                                { value: '0', label: 'Today' },
                                 { value: '1', label: 'Last 1 day' },
                                 { value: '7', label: 'Last 7 days' },
                                 { value: '15', label: 'Last 15 days' },
                                 { value: '30', label: 'Last 30 days' },
+                                { value: '60', label: 'Last 60 days' },
                             ]}
                             value={showOnlyNew ? String(newSitesDays) : 'all'}
                             onChange={(val) => {

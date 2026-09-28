@@ -326,7 +326,7 @@ const EventsModal = ({ onClose }) => {
                                         </div>
 
                                         <p style={{ margin: '0 0 12px 0', fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-primary)' }}>
-                                             {event.description}
+                                            {event.description}
                                         </p>
 
                                         <div style={{ display: 'flex', gap: '12px' }}>

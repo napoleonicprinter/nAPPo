@@ -11,7 +11,7 @@ const MONTHS = [
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const YEARS = ['All years', ...Array.from({length: 1815 - 1793 + 1}, (_, i) => 1793 + i)];
+const YEARS = ['All years', ...Array.from({ length: 1815 - 1793 + 1 }, (_, i) => 1793 + i)];
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -113,7 +113,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                 const eventYear = parseInt(parts[0], 10);
                 const eventMonth = parseInt(parts[1], 10) - 1; // 0-indexed
                 const eventDay = parseInt(parts[2], 10);
-                
+
                 if (eventMonth === month && (selectedYear === 'All years' || eventYear === selectedYear)) {
                     if (!monthEvents[eventDay]) {
                         monthEvents[eventDay] = [];
@@ -122,7 +122,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                 }
             }
         });
-        
+
         // Sort events in each day by year
         Object.keys(monthEvents).forEach(day => {
             monthEvents[day].sort((a, b) => {
@@ -259,7 +259,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     // Calculate calendar grid
     const daysInMonth = new Date(gridYear, month + 1, 0).getDate();
     const firstDayOfMonth = new Date(gridYear, month, 1).getDay();
-    
+
     const today = new Date();
     const isCurrentMonthIndicator = (selectedYear === 'All years' || selectedYear === today.getFullYear()) && today.getMonth() === month;
 
@@ -267,14 +267,14 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     for (let i = 0; i < firstDayOfMonth; i++) {
         days.push(<div key={`empty-${i}`} className="calendar-day empty"></div>);
     }
-    
+
     for (let day = 1; day <= daysInMonth; day++) {
         const hasEvents = !!currentYearEvents[day];
         const isToday = isCurrentMonthIndicator && today.getDate() === day;
-        
+
         days.push(
-            <div 
-                key={`day-${day}`} 
+            <div
+                key={`day-${day}`}
                 className={`calendar-day ${hasEvents ? 'has-events' : ''} ${isToday ? 'today' : ''}`}
                 onClick={() => handleDayClick(day)}
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
@@ -289,8 +289,8 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
 
     return createPortal(
         <div className="view-modal-overlay animate-fade-in" onClick={onClose}>
-            <div 
-                className="view-modal-content glass-panel" 
+            <div
+                className="view-modal-content glass-panel"
                 onClick={(e) => e.stopPropagation()}
                 style={{ maxWidth: '800px' }}
             >
@@ -375,7 +375,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                                         >
                                             <span className="year">{eventYear}</span>
                                             <h4>{event.title}</h4>
-                                            
+
                                             {event.location && (
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '8px' }}>
                                                     <MapPin size={14} /> {event.location}
@@ -383,7 +383,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
                                             )}
 
                                             <p>{event.description}</p>
-                                            
+
                                             <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
                                                 {targetSiteId && (
                                                     <button

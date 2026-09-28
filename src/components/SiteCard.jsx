@@ -403,48 +403,48 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                         callerSite.fromView === 'todayInHistory' ||
                         callerSite.fromView === 'historyCalendar'
                     ) && (
-                        <div style={{ marginBottom: '8px' }}>
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    const prev = callerSite;
-                                    setCallerSite(null);
-                                    if (prev.fromView === 'todayInHistory' || prev.fromView === 'historyCalendar') {
-                                        setSelectedSite(null);
-                                        if (onClose) onClose();
-                                        setSiteToOpenPopup(null);
-                                        if (setHistoryNavState) setHistoryNavState(prev);
-                                        if (setShowEvents) setShowEvents(true);
-                                    } else if (prev.fromListMode || prev.fromView === 'card' || prev.fromView === 'list') {
-                                        setSelectedSite(null);
-                                        setSiteToOpenPopup(null);
-                                        setView('card');
-                                    } else {
-                                        handleNavigateToSite(prev);
-                                    }
-                                }}
-                                style={{
-                                    border: 'none',
-                                    background: 'rgba(88, 166, 255, 0.15)',
-                                    color: 'var(--accent-primary, #58a6ff)',
-                                    padding: '4px 8px',
-                                    borderRadius: '4px',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 'bold',
-                                    cursor: 'pointer',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '4px'
-                                }}
-                            >
-                                {(callerSite.fromView === 'todayInHistory' || callerSite.fromView === 'historyCalendar')
-                                    ? '← Back to Today in History'
-                                    : (callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list'
-                                        ? '← Return to List'
-                                        : `← Back to ${callerSite.name}`)}
-                            </button>
-                        </div>
-                    )}
+                            <div style={{ marginBottom: '8px' }}>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        const prev = callerSite;
+                                        setCallerSite(null);
+                                        if (prev.fromView === 'todayInHistory' || prev.fromView === 'historyCalendar') {
+                                            setSelectedSite(null);
+                                            if (onClose) onClose();
+                                            setSiteToOpenPopup(null);
+                                            if (setHistoryNavState) setHistoryNavState(prev);
+                                            if (setShowEvents) setShowEvents(true);
+                                        } else if (prev.fromListMode || prev.fromView === 'card' || prev.fromView === 'list') {
+                                            setSelectedSite(null);
+                                            setSiteToOpenPopup(null);
+                                            setView('card');
+                                        } else {
+                                            handleNavigateToSite(prev);
+                                        }
+                                    }}
+                                    style={{
+                                        border: 'none',
+                                        background: 'rgba(88, 166, 255, 0.15)',
+                                        color: 'var(--accent-primary, #58a6ff)',
+                                        padding: '4px 8px',
+                                        borderRadius: '4px',
+                                        fontSize: '0.75rem',
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '4px'
+                                    }}
+                                >
+                                    {(callerSite.fromView === 'todayInHistory' || callerSite.fromView === 'historyCalendar')
+                                        ? '← Back to Today in History'
+                                        : (callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list'
+                                            ? '← Return to List'
+                                            : `← Back to ${callerSite.name}`)}
+                                </button>
+                            </div>
+                        )}
                     <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0' }}>{site.name}</h2>
 
                     {/* --- STARS / DATE / DETAILS ROW --- */}

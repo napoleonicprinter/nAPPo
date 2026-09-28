@@ -494,6 +494,7 @@ body:not(.light-mode) .sites-count-badge .count-number.is-filtered {
 
 /* Mobile & Tablet Mode: Solid white background when tags in horizontal scroll menu are selected & turn red */
 @media (max-width: 1024px) {
+
     .mobile-overlay-filters .filters-active-red,
     .mobile-overlay-filters .filters-active-red.active,
     .mobile-overlay-filters .custom-select-trigger.filters-active-red,

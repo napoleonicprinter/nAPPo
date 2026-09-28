@@ -149,8 +149,39 @@ export const validateSiteFilters = (targetSite, context) => {
                 type: 'commander',
                 label: 'Commander',
                 message: `commander "${filterCommander}" is not selected`,
-                reset: () => setFilterCommander && setFilterCommander('all')
+                reset: () => {
+                    if (setFilterCommander) setFilterCommander('all');
+                    if (setFilterCommanderRole) setFilterCommanderRole('all');
+                }
             });
+        } else if (filterCommanderRole && filterCommanderRole !== 'all') {
+            const normalizeList = (val) => {
+                if (!val) return [];
+                if (Array.isArray(val)) return val;
+                return [val];
+            };
+            const victors = normalizeList(targetSite.commander_Victor || targetSite.commanders_victor);
+            const losses = normalizeList(targetSite.commander_Loss || targetSite.commanders_defeated);
+            const ties = normalizeList(targetSite.commander_Tie || targetSite.commander_tie || targetSite.commander_Inconclusive);
+
+            let roleMatched = true;
+            if (filterCommanderRole === 'victor') {
+                roleMatched = victors.includes(filterCommander);
+            } else if (filterCommanderRole === 'loss' || filterCommanderRole === 'defeated') {
+                roleMatched = losses.includes(filterCommander);
+            } else if (filterCommanderRole === 'tie' || filterCommanderRole === 'inconclusive') {
+                roleMatched = ties.includes(filterCommander);
+            }
+
+            if (!roleMatched) {
+                const roleLabels = { victor: 'Victories', loss: 'Defeats', defeated: 'Defeats', tie: 'Inconclusive', inconclusive: 'Inconclusive' };
+                failedFilters.push({
+                    type: 'commanderRole',
+                    label: 'Commander Battle Outcome',
+                    message: `commander "${filterCommander}" outcome does not match "${roleLabels[filterCommanderRole] || filterCommanderRole}"`,
+                    reset: () => setFilterCommanderRole && setFilterCommanderRole('all')
+                });
+            }
         }
     }
 
@@ -361,3 +392,4 @@ export const validateSiteFilters = (targetSite, context) => {
 
     return { passed: true };
 };
+

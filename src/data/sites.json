@@ -30,7 +30,15 @@
       "Napoleon",
       "Alexander I",
       "Francis II"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Alexander I",
+      "Francis II"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "2",
@@ -94,7 +102,16 @@
         "id": "839",
         "title": "Lady Butler's Dawn of Waterloo canvas"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Gebhard von Blücher",
+      "Prince of Orange"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "3",
@@ -171,7 +188,14 @@
         ],
         "free": true
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Michael von Melas"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "6",
@@ -220,7 +244,14 @@
         "id": "721",
         "title": "Albrecht Adam canvas"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Kutuzov"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "8",
@@ -317,7 +348,14 @@
         "id": "13",
         "title": "Death of Godebski at Raszyn canvas"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Józef Poniatowski"
+    ],
+    "commander_Loss": [
+      "Archduke Ferdinand Karl Joseph"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "13",
@@ -421,7 +459,15 @@
       "Napoleon",
       "Jean-Baptiste Kléber",
       "Abdullah Pasha al-Azm"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Jean-Baptiste Kléber"
+    ],
+    "commander_Loss": [
+      "Abdullah Pasha al-Azm"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "17",
@@ -555,7 +601,14 @@
     "commanders": [
       "Pedro Agustín de Echávarri",
       "Pierre Dupont"
-    ]
+    ],
+    "commander_Victor": [
+      "Pierre Dupont"
+    ],
+    "commander_Loss": [
+      "Pedro Agustín de Echávarri"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "25",
@@ -729,7 +782,14 @@
     "commanders": [
       "Marshal Victor",
       "Francisco Xavier Venegas"
-    ]
+    ],
+    "commander_Victor": [
+      "Marshal Victor"
+    ],
+    "commander_Loss": [
+      "Francisco Xavier Venegas"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "35",
@@ -752,7 +812,14 @@
     "commanders": [
       "Józef Chlopicki",
       "Pedro Villacampa"
-    ]
+    ],
+    "commander_Victor": [
+      "Józef Chlopicki"
+    ],
+    "commander_Loss": [
+      "Pedro Villacampa"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "36",
@@ -772,7 +839,12 @@
     "special": "Guerra de Independencia",
     "victor": "Spain",
     "defeated": "France",
-    "commanders": "Marcelino Villa"
+    "commanders": "Marcelino Villa",
+    "commander_Victor": [
+      "Marcelino Villa"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "37",
@@ -795,7 +867,14 @@
     "commanders": [
       "Joaquín Blake",
       "Louis Gabriel Suchet"
-    ]
+    ],
+    "commander_Victor": [
+      "Joaquín Blake"
+    ],
+    "commander_Loss": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "38",
@@ -854,7 +933,14 @@
     "commanders": [
       "Diego de Cañas y Portocarrero",
       "François Étienne de Kellermann"
-    ]
+    ],
+    "commander_Victor": [
+      "François Étienne de Kellermann"
+    ],
+    "commander_Loss": [
+      "Diego de Cañas y Portocarrero"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "41",
@@ -897,7 +983,14 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Arthur Wellesley"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "43",
@@ -924,7 +1017,14 @@
     "commanders": [
       "Arthur Wellesley",
       "Auguste de Marmont"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Auguste de Marmont"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "44",
@@ -964,7 +1064,14 @@
     "commanders": [
       "Jean-Andoche Junot",
       "Santocildes"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean-Andoche Junot"
+    ],
+    "commander_Loss": [
+      "Santocildes"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "46",
@@ -1037,7 +1144,14 @@
     "commanders": [
       "William Bentinck",
       "Louis Gabriel Suchet"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Loss": [
+      "William Bentinck"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "50",
@@ -1127,7 +1241,14 @@
     "commanders": [
       "Victor de Fay de Latour-Maubourg",
       "William Lumley"
-    ]
+    ],
+    "commander_Victor": [
+      "William Lumley"
+    ],
+    "commander_Loss": [
+      "Victor de Fay de Latour-Maubourg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "55",
@@ -1168,7 +1289,14 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Arthur Wellesley"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "57",
@@ -1210,7 +1338,14 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Juan de la Cruz Mourgeon"
-    ]
+    ],
+    "commander_Victor": [
+      "Juan de la Cruz Mourgeon"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "59",
@@ -1249,7 +1384,14 @@
     "commanders": [
       "Gregorio García de la Cuesta",
       "Bessières"
-    ]
+    ],
+    "commander_Victor": [
+      "Bessières"
+    ],
+    "commander_Loss": [
+      "Gregorio García de la Cuesta"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "61",
@@ -1273,7 +1415,13 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Victor"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Jean de Dieu Soult",
+      "Victor"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "62",
@@ -1373,7 +1521,13 @@
     "commanders": [
       "Bogislav von Tauentzien",
       "Jean-Baptiste Bernadotte"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Bogislav von Tauentzien",
+      "Jean-Baptiste Bernadotte"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "68",
@@ -1399,7 +1553,14 @@
     "commanders": [
       "Prince Louis Ferdinand",
       "Jean Lannes"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean Lannes"
+    ],
+    "commander_Loss": [
+      "Prince Louis Ferdinand"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "69",
@@ -1422,7 +1583,14 @@
     "commanders": [
       "Joachim Murat",
       "Prince of Orange"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat"
+    ],
+    "commander_Loss": [
+      "Prince of Orange"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "70",
@@ -1449,7 +1617,14 @@
     "commanders": [
       "Jean-Baptiste Girard",
       "Rowland Hill"
-    ]
+    ],
+    "commander_Victor": [
+      "Rowland Hill"
+    ],
+    "commander_Loss": [
+      "Jean-Baptiste Girard"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "71",
@@ -1546,6 +1721,13 @@
     "special": "Russian Campaign",
     "victor": "inconclusive",
     "commanders": [
+      "Napoleon",
+      "Field Marshal Wittgenstein",
+      "Pavel Chichagov"
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
       "Napoleon",
       "Field Marshal Wittgenstein",
       "Pavel Chichagov"
@@ -1686,7 +1868,14 @@
     "commanders": [
       "Juan Contreras",
       "Louis Gabriel Suchet"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Loss": [
+      "Juan Contreras"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "85",
@@ -1718,6 +1907,14 @@
         "id": "837",
         "title": "Canvas by William Wollen"
       }
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Nicolas Soult",
+      "Jean-Baptiste Girard",
+      "William Beresford",
+      "Joaquín Blake"
     ]
   },
   {
@@ -1746,7 +1943,15 @@
       "Marshal Victor",
       "Sir Thomas Graham",
       "General Manuel Lapeña"
-    ]
+    ],
+    "commander_Victor": [
+      "Sir Thomas Graham",
+      "General Manuel Lapeña"
+    ],
+    "commander_Loss": [
+      "Marshal Victor"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "87",
@@ -1772,7 +1977,14 @@
     "commanders": [
       "General Jean Léonard Barrié",
       "Arthur Wellesley"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "General Jean Léonard Barrié"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "88",
@@ -1798,7 +2010,14 @@
     "commanders": [
       "Arthur Wellesley",
       "Armand Philippon"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Armand Philippon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "89",
@@ -1827,7 +2046,17 @@
       "Joseph Bonaparte",
       "Francisco de Longa",
       "Pablo Morillo"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Francisco de Longa",
+      "Pablo Morillo"
+    ],
+    "commander_Loss": [
+      "Jean-Baptiste Jourdan",
+      "Joseph Bonaparte"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "90",
@@ -1850,7 +2079,14 @@
     "commanders": [
       "Manuel Freire de Andrade",
       "Jean-de-Dieu Soult"
-    ]
+    ],
+    "commander_Victor": [
+      "Manuel Freire de Andrade"
+    ],
+    "commander_Loss": [
+      "Jean-de-Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "91",
@@ -1876,7 +2112,14 @@
     "commanders": [
       "Jean-de-Dieu Soult",
       "Arthur Wellesley"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean-de-Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "92",
@@ -1901,7 +2144,16 @@
       "Joan Baiget",
       "François de Schwarz",
       "Joseph Chabran"
-    ]
+    ],
+    "commander_Victor": [
+      " Antoni Franch i Estalella",
+      "Joan Baiget"
+    ],
+    "commander_Loss": [
+      "François de Schwarz",
+      "Joseph Chabran"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "93",
@@ -2023,7 +2275,14 @@
         "id": "159",
         "title": "Bailén surrender canvas"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Francisco Castaños"
+    ],
+    "commander_Loss": [
+      "Pierre Dupont de l'Étang"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "100",
@@ -2060,7 +2319,15 @@
         "id": "77",
         "title": "Artwork"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Claude Victor"
+    ],
+    "commander_Loss": [
+      "Joaquín Blake",
+      " Pedro Caro, Marquis of la Romana"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "101",
@@ -2086,7 +2353,14 @@
     "commanders": [
       "Jean Lannes",
       "Castaños"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean Lannes"
+    ],
+    "commander_Loss": [
+      "Castaños"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "102",
@@ -2121,7 +2395,14 @@
         "id": "15",
         "title": "Suchodolski's canvas"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Benito de San Juan"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "103",
@@ -2145,7 +2426,15 @@
       "Charles Lefebvre-Desnouettes",
       "José de Palafox",
       "Jean-Antoine Verdier"
-    ]
+    ],
+    "commander_Victor": [
+      "José de Palafox"
+    ],
+    "commander_Loss": [
+      "Charles Lefebvre-Desnouettes",
+      "Jean-Antoine Verdier"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "104",
@@ -2174,7 +2463,17 @@
       "Louis Gabriel Suchet",
       "Édouard Mortier",
       "José de Palafox"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean Lannes",
+      "Jeannot de Moncey",
+      "Louis Gabriel Suchet",
+      "Édouard Mortier"
+    ],
+    "commander_Loss": [
+      "José de Palafox"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "105",
@@ -2200,7 +2499,14 @@
     "commanders": [
       "Gregorio García de la Cuesta",
       "Claude Perrin Victor"
-    ]
+    ],
+    "commander_Victor": [
+      "Claude Perrin Victor"
+    ],
+    "commander_Loss": [
+      "Gregorio García de la Cuesta"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "106",
@@ -2247,7 +2553,17 @@
         ],
         "free": false
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Gregorio García de la Cuesta"
+    ],
+    "commander_Loss": [
+      "Claude-Victor Perrin",
+      "Joseph Bonaparte",
+      "Jean-Baptiste Jourdan"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "107",
@@ -2273,7 +2589,14 @@
     "commanders": [
       "Horace Sebastiani",
       "Francisco Javier Venegas"
-    ]
+    ],
+    "commander_Victor": [
+      "Horace Sebastiani"
+    ],
+    "commander_Loss": [
+      "Francisco Javier Venegas"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "108",
@@ -2299,7 +2622,14 @@
       "Juan Carlos Aréizaga"
     ],
     "victor": "France",
-    "defeated": "Spain"
+    "defeated": "Spain",
+    "commander_Victor": [
+      "Jean-de-Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Juan Carlos Aréizaga"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "109",
@@ -2326,7 +2656,15 @@
       "Jean-Baptiste Bessières"
     ],
     "victor": "France",
-    "defeated": "Spain"
+    "defeated": "Spain",
+    "commander_Victor": [
+      "Jean-Baptiste Bessières"
+    ],
+    "commander_Loss": [
+      "Gregorio García de la Cuesta",
+      "Joaquín Blake"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "110",
@@ -2367,7 +2705,12 @@
     "special": "Guerra de Independencia",
     "defeated": "Spain",
     "victor": "France",
-    "commanders": "General Franceschi"
+    "commanders": "General Franceschi",
+    "commander_Victor": [
+      "General Franceschi"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "112",
@@ -2465,7 +2808,14 @@
     "commanders": [
       "Arthur Wellesley",
       "André Masséna"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "André Masséna"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "118",
@@ -2488,7 +2838,14 @@
       "Arthur Wellesley"
     ],
     "victor": "Anglo Portuguese",
-    "defeated": "France"
+    "defeated": "France",
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Henri François Delaborde"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "119",
@@ -2511,7 +2868,14 @@
       "Jean-Andoche Junot"
     ],
     "victor": "Anglo Portuguese",
-    "defeated": "France"
+    "defeated": "France",
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean-Andoche Junot"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "120",
@@ -2551,7 +2915,14 @@
     "commanders": [
       "Arthur Wellesley",
       "Jean de Dieu Soult"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "122",
@@ -2574,7 +2945,14 @@
     "commanders": [
       "Eberhardt von Bock",
       "Maximilien Sébastien Foy"
-    ]
+    ],
+    "commander_Victor": [
+      "Eberhardt von Bock"
+    ],
+    "commander_Loss": [
+      "Maximilien Sébastien Foy"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "123",
@@ -2694,7 +3072,16 @@
       "Jean Reynier",
       "Nicolas Oudinot",
       "Charles John of Sweden"
-    ]
+    ],
+    "commander_Victor": [
+      "Friedrich von Bülow",
+      "Charles John of Sweden"
+    ],
+    "commander_Loss": [
+      "Jean Reynier",
+      "Nicolas Oudinot"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "130",
@@ -2761,7 +3148,14 @@
       "George Bock",
       "Benjamin d'Urban"
     ],
-    "victor": "inconclusive"
+    "victor": "inconclusive",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Anne-François-Charles Trelliard",
+      "George Bock",
+      "Benjamin d'Urban"
+    ]
   },
   {
     "id": "134",
@@ -2803,7 +3197,7 @@
     "country": "Spain",
     "description": "Monumento a los héroes del levantamiento del 2 de mayo de 1808 en Madrid.",
     "latitude": 40.426969,
-    "longitude": -3.704050,
+    "longitude": -3.70405,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Daoiz_Velarde_Madrid.webp",
     "more_info_link": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextoid=6528091d1b9c4510091d1b9c45102e085a0aRCRD&vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD",
     "createDate": "2025-03-15T10:00:00Z",
@@ -2944,7 +3338,14 @@
     "commanders": [
       "Auguste de Marmont",
       "Matthias Freiherr Rebrovic von Razboj"
-    ]
+    ],
+    "commander_Victor": [
+      "Auguste de Marmont"
+    ],
+    "commander_Loss": [
+      "Matthias Freiherr Rebrovic von Razboj"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "145",
@@ -3030,7 +3431,14 @@
     "commanders": [
       "Napoleon",
       "Archduke Charles"
-    ]
+    ],
+    "commander_Victor": [
+      "Archduke Charles"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "150",
@@ -3104,7 +3512,14 @@
           ]
         ]
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Archduke Charles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "151",
@@ -3176,7 +3591,15 @@
       "Maximilien Foy",
       "José María Santocildes",
       "Francisco Castaños"
-    ]
+    ],
+    "commander_Victor": [
+      "José María Santocildes",
+      "Francisco Castaños"
+    ],
+    "commander_Loss": [
+      "Maximilien Foy"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "155",
@@ -3210,7 +3633,21 @@
       "Józef Poniatowski",
       "Joachim Murat",
       "Frederick William III"
-    ]
+    ],
+    "commander_Victor": [
+      "Gebhard Leberecht von Blücher",
+      "Francis I of Austria",
+      "Alexander I of Russia",
+      "Jean-Baptiste Bernadotte",
+      "Frederick William III"
+    ],
+    "commander_Loss": [
+      "Karl von Schwarzenberg",
+      "Napoleon",
+      "Józef Poniatowski",
+      "Joachim Murat"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "156",
@@ -3250,7 +3687,14 @@
     "commanders": [
       "Pyotr Bagration",
       "Marc Antoine de Beaumont"
-    ]
+    ],
+    "commander_Victor": [
+      "Marc Antoine de Beaumont"
+    ],
+    "commander_Loss": [
+      "Pyotr Bagration"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "158",
@@ -3274,7 +3718,15 @@
       "Pyotr Bagration",
       "Antoine Charles Louis de Lasalle",
       "Frédéric Henri Walther"
-    ]
+    ],
+    "commander_Victor": [
+      "Pyotr Bagration"
+    ],
+    "commander_Loss": [
+      "Antoine Charles Louis de Lasalle",
+      "Frédéric Henri Walther"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "159",
@@ -3358,6 +3810,14 @@
         "id": "840",
         "title": "Lady Butler's canvas"
       }
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "William of Orange",
+      "Duke of Wellington",
+      "Marshal Michel Ney",
+      "Jérôme Bonaparte"
     ]
   },
   {
@@ -3445,7 +3905,14 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Sir John Moore"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Sir John Moore"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "167",
@@ -3542,7 +4009,15 @@
         ],
         "free": false
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Murad Bey",
+      "Ibrahim Bey"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "171",
@@ -3680,7 +4155,14 @@
     "commanders": [
       "Napoleon",
       "Prince of Hohenlohe"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Prince of Hohenlohe"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "179",
@@ -3763,7 +4245,17 @@
       "Karl von Schwarzenberg",
       "Karl Philipp von Wrede",
       "Crown Prince William"
-    ]
+    ],
+    "commander_Victor": [
+      "Alexander I",
+      "Karl Philipp von Wrede",
+      "Crown Prince William"
+    ],
+    "commander_Loss": [
+      "Napoleon",
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "183",
@@ -3806,7 +4298,15 @@
       "Napoleon",
       "Alexander I",
       "Gebhard Leberecht von Blücher"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Alexander I",
+      "Gebhard Leberecht von Blücher"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "185",
@@ -3829,7 +4329,14 @@
     "commanders": [
       "Louis Nicolas Davout",
       "Charles William Ferdinand"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Nicolas Davout"
+    ],
+    "commander_Loss": [
+      "Charles William Ferdinand"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "186",
@@ -3880,7 +4387,14 @@
         ],
         "free": false
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      " Levin August von Bennigsen"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "187",
@@ -3908,7 +4422,14 @@
     "commanders": [
       "Napoleon",
       "Karl Mack von Leiberich"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Karl Mack von Leiberich"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "188",
@@ -3954,7 +4475,14 @@
       "Napoleon",
       "Anton Wilhelm von L'Estocq"
     ],
-    "victor": "Inconclusive"
+    "victor": "Inconclusive",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Levin August von Bennigsen",
+      "Napoleon",
+      "Anton Wilhelm von L'Estocq"
+    ]
   },
   {
     "id": "190",
@@ -3980,7 +4508,14 @@
       "Napoleon"
     ],
     "defeated": "Prussia",
-    "victor": "France"
+    "victor": "France",
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Gebhard von Blücher"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "191",
@@ -4006,7 +4541,12 @@
       "Levin von Benningsen"
     ],
     "victor": "France",
-    "defeated": "Russia"
+    "defeated": "Russia",
+    "commander_Victor": [
+      "Jean Lannes"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "192",
@@ -4031,7 +4571,16 @@
       "Louis Nicolas Davout"
     ],
     "victor": "France",
-    "defeated": "Russia"
+    "defeated": "Russia",
+    "commander_Victor": [
+      "Joachim Murat",
+      "Pierre Augereau",
+      "Louis Nicolas Davout"
+    ],
+    "commander_Loss": [
+      "Dmitry Golitsyn"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "193",
@@ -4057,7 +4606,14 @@
       "Napoleon"
     ],
     "victor": "France",
-    "defeated": "Russia"
+    "defeated": "Russia",
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Leonty Bennigsen"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "194",
@@ -4085,7 +4641,16 @@
       "Nikolay Kamensky"
     ],
     "victor": "France",
-    "defeated": "Russia"
+    "defeated": "Russia",
+    "commander_Victor": [
+      "François Joseph Lefebvre",
+      "Jan Henryk Dąbrowski"
+    ],
+    "commander_Loss": [
+      "Friedrich von Kalckreuth",
+      "Nikolay Kamensky"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "195",
@@ -4111,7 +4676,14 @@
     "commanders": [
       "Anne Jean Marie René Savary",
       "Ivan Essen"
-    ]
+    ],
+    "commander_Victor": [
+      "Anne Jean Marie René Savary"
+    ],
+    "commander_Loss": [
+      "Ivan Essen"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "196",
@@ -4131,6 +4703,13 @@
     "special": "5",
     "victor": "inconclusive",
     "commanders": [
+      "Napoleon",
+      "Archduke Charles",
+      "Auguste de Marmont"
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
       "Napoleon",
       "Archduke Charles",
       "Auguste de Marmont"
@@ -4160,7 +4739,17 @@
       "Sir Richard Strachan"
     ],
     "defeated": "Britain",
-    "victor": "France"
+    "victor": "France",
+    "commander_Victor": [
+      "Jean-Baptiste Bessières",
+      "Jean-Baptiste Dumonceau"
+    ],
+    "commander_Loss": [
+      "Jean-Baptiste Bernadotte",
+      "Lord Chatham",
+      "Sir Richard Strachan"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "198",
@@ -4207,7 +4796,14 @@
       "Napoleon"
     ],
     "defeated": "Austria",
-    "victor": "France"
+    "victor": "France",
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "József Alvinczi"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "200",
@@ -4233,7 +4829,14 @@
       "André Masséna"
     ],
     "defeated": "Austria",
-    "victor": "France"
+    "victor": "France",
+    "commander_Victor": [
+      "André Masséna"
+    ],
+    "commander_Loss": [
+      "Johann von Hiller"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "201",
@@ -4272,7 +4875,15 @@
       "Louis H. Loison"
     ],
     "defeated": "Britain",
-    "victor": "France"
+    "victor": "France",
+    "commander_Victor": [
+      "Michel Ney",
+      "Louis H. Loison"
+    ],
+    "commander_Loss": [
+      "Robert Craufurd"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "203",
@@ -4342,7 +4953,13 @@
       "Arthur Wellesley"
     ],
     "defeated": "Denmark",
-    "victor": "Britain"
+    "victor": "Britain",
+    "commander_Victor": [
+      "Joachim Castenschiold",
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "207",
@@ -4364,7 +4981,12 @@
       "Steen Andersen Bille"
     ],
     "defeated": "Denmark",
-    "victor": "Britain"
+    "victor": "Britain",
+    "commander_Victor": [
+      "Steen Andersen Bille"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "208",
@@ -4390,7 +5012,16 @@
       "Jean-Baptiste Bernadotte",
       "Claude-Victor Perrin"
     ],
-    "victor": "inconclusive"
+    "victor": "inconclusive",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Levin Bennigsen",
+      "Michel Ney",
+      "Nicolas Soult",
+      "Jean-Baptiste Bernadotte",
+      "Claude-Victor Perrin"
+    ]
   },
   {
     "id": "209",
@@ -4455,7 +5086,14 @@
       "Peter Wittgenstein"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "Russian Campaign"
+    "special": "Russian Campaign",
+    "commander_Victor": [
+      "Peter Wittgenstein"
+    ],
+    "commander_Loss": [
+      "Laurent Gouvion Saint-Cyr"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "213",
@@ -4476,7 +5114,14 @@
     ],
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blanc-Nez_and_Gris-Nez",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "3"
+    "special": "3",
+    "commander_Victor": [
+      "Carel Hendrik Ver Huell"
+    ],
+    "commander_Loss": [
+      "Lord Keith"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "214",
@@ -4517,7 +5162,15 @@
     "special": [
       "3",
       "Trafalgar Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Robert Calder",
+      "Federico Gravina"
+    ],
+    "commander_Loss": [
+      "Pierre-Charles Villeneuve"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "216",
@@ -4542,7 +5195,15 @@
     "special": [
       "3",
       "Ulm Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat",
+      "Nicolas Soult"
+    ],
+    "commander_Loss": [
+      "Kienmayer"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "217",
@@ -4568,7 +5229,15 @@
       "3",
       "arc",
       "Ulm Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat",
+      "Jean Lannes"
+    ],
+    "commander_Loss": [
+      "Franz von Auffenberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "218",
@@ -4594,7 +5263,15 @@
       "3",
       "arc",
       "Ulm Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean-Pierre Firmin Malher",
+      "Michel Ney"
+    ],
+    "commander_Loss": [
+      "Karl Mack von Lieberich"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "219",
@@ -4618,7 +5295,14 @@
     "special": [
       "3",
       "Ulm Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Pierre Dupont"
+    ],
+    "commander_Loss": [
+      "Karl Mack von Lieberich"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "220",
@@ -4642,7 +5326,14 @@
     "special": [
       "3",
       "Ulm Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Karl Spangen"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "221",
@@ -4667,7 +5358,14 @@
       "3",
       "arc",
       "Ulm Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Michel Ney"
+    ],
+    "commander_Loss": [
+      "Johann Sigismund Riesch"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "222",
@@ -4691,7 +5389,14 @@
     "special": [
       "3",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "André Masséna"
+    ],
+    "commander_Loss": [
+      "Archduke Charles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "223",
@@ -4730,7 +5435,14 @@
     "commanders": [
       "André Masséna",
       "Archduke Charles"
-    ]
+    ],
+    "commander_Victor": [
+      "Archduke Charles"
+    ],
+    "commander_Loss": [
+      "André Masséna"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "225",
@@ -4772,7 +5484,15 @@
     "special": [
       "Russian Campaign",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Nicolas Davout"
+    ],
+    "commander_Loss": [
+      "Pyotr Bagration",
+      "Nikolay Raevsky"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "227",
@@ -4800,7 +5520,15 @@
         "title": "Peter von Hess canvas"
       }
     ],
-    "createDate": "2025-03-22T10:00:00Z"
+    "createDate": "2025-03-22T10:00:00Z",
+    "commander_Victor": [
+      "Peter Wittgenstein",
+      "Yakov Kulnev"
+    ],
+    "commander_Loss": [
+      "Nicolas Oudinot"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "228",
@@ -4824,7 +5552,14 @@
     "special": [
       "Egyptian Campaign",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Mustafa Pasha"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "229",
@@ -4848,7 +5583,14 @@
     "special": [
       "5",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Archduke Charles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "230",
@@ -4872,7 +5614,14 @@
     "special": [
       "5",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Archduke Charles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "231",
@@ -4896,7 +5645,14 @@
     "special": [
       "5",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Johann von Hiller"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "232",
@@ -4920,7 +5676,14 @@
     "special": [
       "5",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Archduke Charles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "233",
@@ -4941,7 +5704,14 @@
       "Johann von Hiller"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "Johann von Hiller"
+    ],
+    "commander_Loss": [
+      "Jean Bessières"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "234",
@@ -4965,7 +5735,14 @@
     "special": [
       "5",
       "Austro-Polish War"
-    ]
+    ],
+    "commander_Victor": [
+      "Józef Poniatowski"
+    ],
+    "commander_Loss": [
+      "Johann Friedrich von Mohr"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "235",
@@ -4989,7 +5766,14 @@
     "special": [
       "4",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Eugéne de Beauharnais"
+    ],
+    "commander_Loss": [
+      "Archduke John of Austria"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "236",
@@ -5010,7 +5794,14 @@
       "Johann Gabriel Chasteler de Courcelles"
     ],
     "createDate": "2025-03-22T10:00:00Z",
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "François Joseph Lefebvre"
+    ],
+    "commander_Loss": [
+      "Johann Gabriel Chasteler de Courcelles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "237",
@@ -5046,7 +5837,14 @@
       "Eugène de Beauharnais",
       "Albert Gyulai"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "Eugène de Beauharnais"
+    ],
+    "commander_Loss": [
+      "Albert Gyulai"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "239",
@@ -5126,7 +5924,15 @@
       "Jean Bernadotte",
       "Dominique Vandamme"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "Dominique Vandamme"
+    ],
+    "commander_Loss": [
+      "Johann Kollowrat",
+      "Jean Bernadotte"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "244",
@@ -5162,7 +5968,14 @@
       "Paul Grenier",
       "Franz Jellacic"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "Paul Grenier"
+    ],
+    "commander_Loss": [
+      "Franz Jellacic"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "246",
@@ -5185,7 +5998,15 @@
       "Thomas Cochrane",
       "Zacharie Allemand"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "James Gambier",
+      "Thomas Cochrane"
+    ],
+    "commander_Loss": [
+      "Zacharie Allemand"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "247",
@@ -5210,7 +6031,15 @@
     "special": [
       "arc",
       "5"
-    ]
+    ],
+    "commander_Victor": [
+      "Eugène de Beauharnais"
+    ],
+    "commander_Loss": [
+      "Archduke John of Austria",
+      "Archduke Joseph of Austria"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "248",
@@ -5235,7 +6064,15 @@
     "special": [
       "arc",
       "5"
-    ]
+    ],
+    "commander_Victor": [
+      "Auguste de Marmont",
+      "Jean Broussier"
+    ],
+    "commander_Loss": [
+      "Ignaz Gyulai"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "249",
@@ -5271,7 +6108,14 @@
       "Johann von Klenau",
       "Claude Legrand"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "Claude Legrand"
+    ],
+    "commander_Loss": [
+      "Johann von Klenau"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "251",
@@ -5351,7 +6195,17 @@
       "Jérôme Bonaparte",
       "Johann von Thielmann"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "Michael von Kienmayer",
+      "Frederick William",
+      "Johann von Thielmann"
+    ],
+    "commander_Loss": [
+      "Jean-Andoche Junot",
+      "Jérôme Bonaparte"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "256",
@@ -5386,7 +6240,14 @@
       "Johann von Klenau",
       "André Masséna"
     ],
-    "special": "5"
+    "special": "5",
+    "commander_Victor": [
+      "André Masséna"
+    ],
+    "commander_Loss": [
+      "Johann von Klenau"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "258",
@@ -5410,7 +6271,14 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Peter Wittgenstein"
+    ],
+    "commander_Loss": [
+      "Eugène de Beauharnais"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "259",
@@ -5434,7 +6302,14 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Peter Wittgenstein"
+    ],
+    "commander_Loss": [
+      "Eugène de Beauharnais"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "260",
@@ -5458,7 +6333,14 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Friedrich Wilhelm von Bülow"
+    ],
+    "commander_Loss": [
+      "Nicolas Oudinot"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "261",
@@ -5485,7 +6367,16 @@
       "6",
       "German Campaign",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Peter Wittgenstein",
+      "Alexander I",
+      "Gebhard von Blücher"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "262",
@@ -5510,7 +6401,14 @@
       "6",
       "German Campaign",
       "arc"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Karl Philipp von Wrede"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "263",
@@ -5534,7 +6432,14 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Gebhard von Blücher"
+    ],
+    "commander_Loss": [
+      "Nicolas Joseph Maison"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "264",
@@ -5602,7 +6507,17 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Gebhard von Blücher",
+      "Osten-Sacken"
+    ],
+    "commander_Loss": [
+      "Jacques MacDonald",
+      "Jacques Lauriston",
+      "François Bastien Sébastiani"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "268",
@@ -5626,7 +6541,13 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "269",
@@ -5652,7 +6573,15 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Alexander Chernyshyov",
+      "Karl Friedrich von Hirschfeld"
+    ],
+    "commander_Loss": [
+      "Jean-Baptiste Girard"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "270",
@@ -5693,7 +6622,18 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Alexander Osterman-Tolstoy",
+      "Alexey Yermolov",
+      "Mikhail Barclay de Tolly",
+      "Hieronymus von Colloredo-Mansfeld",
+      "Friedrich von Kleist"
+    ],
+    "commander_Loss": [
+      "Dominique Vandamme"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "272",
@@ -5747,7 +6687,16 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Charles John of Sweden",
+      "Friedrich Wilhelm von Bülow",
+      "Bogislav von Tauentzien"
+    ],
+    "commander_Loss": [
+      "Michel Ney"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "275",
@@ -5772,7 +6721,15 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Gebhard von Blücher",
+      "Ludwig von Yorck"
+    ],
+    "commander_Loss": [
+      "Henri Gatien Bertrand"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "276",
@@ -5823,7 +6780,15 @@
       "Juan Ruiz de Apodaca",
       "Tomás de Morla",
       "François Rosily"
-    ]
+    ],
+    "commander_Victor": [
+      "Juan Ruiz de Apodaca",
+      "Tomás de Morla"
+    ],
+    "commander_Loss": [
+      "François Rosily"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "279",
@@ -5841,7 +6806,12 @@
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": [
       "Murray Maxwell"
-    ]
+    ],
+    "commander_Victor": [
+      "Murray Maxwell"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "280",
@@ -5861,7 +6831,14 @@
       "G. Douglas",
       "Francisco de Castro",
       "Francisco Pareja"
-    ]
+    ],
+    "commander_Victor": [
+      "G. Douglas",
+      "Francisco de Castro",
+      "Francisco Pareja"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "281",
@@ -5946,7 +6923,14 @@
       "Charles Lydiard",
       "Charles Brisbane",
       "Pedro Pablo de Sanguineto y Basso"
-    ]
+    ],
+    "commander_Victor": [
+      "Charles Lydiard",
+      "Charles Brisbane",
+      "Pedro Pablo de Sanguineto y Basso"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "286",
@@ -5965,7 +6949,14 @@
     "commanders": [
       "Richard Strachan",
       "Pierre Dumanoir le Pelley"
-    ]
+    ],
+    "commander_Victor": [
+      "Richard Strachan"
+    ],
+    "commander_Loss": [
+      "Pierre Dumanoir le Pelley"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "287",
@@ -5985,7 +6976,12 @@
     "commanders": [
       "George Bettesworth",
       "Bielke"
-    ]
+    ],
+    "commander_Victor": [
+      "George Bettesworth"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "288",
@@ -6019,7 +7015,13 @@
     "commanders": [
       "James Wilkes Maurice",
       "Jørgen Conrad de Falsen"
-    ]
+    ],
+    "commander_Victor": [
+      "James Wilkes Maurice",
+      "Jørgen Conrad de Falsen"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "290",
@@ -6040,7 +7042,14 @@
       "James Gambier",
       "Lord Cathcart",
       "Ernst Peymann"
-    ]
+    ],
+    "commander_Victor": [
+      "James Gambier",
+      "Lord Cathcart",
+      "Ernst Peymann"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "291",
@@ -6062,7 +7071,15 @@
       "Hyde Parker",
       "Steen Andersen Bille",
       "Olfert Fischer"
-    ]
+    ],
+    "commander_Victor": [
+      "Horatio Nelson",
+      "Hyde Parker",
+      "Steen Andersen Bille",
+      "Olfert Fischer"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "292",
@@ -6090,7 +7107,15 @@
         "id": "293",
         "title": "Canvas by Pierre-Julien Gilbert"
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Guy-Victor Duperré",
+      "Jacques Hamelin"
+    ],
+    "commander_Loss": [
+      "Samuel Pym"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "293",
@@ -6131,7 +7156,15 @@
       "Josias Rowley",
       "Chrysostôme de Sainte-Suzanne",
       "Henry Sheehy Keating"
-    ]
+    ],
+    "commander_Victor": [
+      "Josias Rowley",
+      "Henry Sheehy Keating"
+    ],
+    "commander_Loss": [
+      "Chrysostôme de Sainte-Suzanne"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "295",
@@ -6176,12 +7209,19 @@
           ],
           [
             38.929549,
-            16.337270
+            16.33727
           ]
         ],
         "free": false
       }
-    ]
+    ],
+    "commander_Victor": [
+      "John Stuart"
+    ],
+    "commander_Loss": [
+      "Jean Regnier"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "296",
@@ -6202,7 +7242,16 @@
       "Edmund Palmer",
       "Pierre-Henri Philibert",
       "Abel Aubert du Petit-Thouars"
-    ]
+    ],
+    "commander_Victor": [
+      "Sir Michael Seymour",
+      "Edmund Palmer"
+    ],
+    "commander_Loss": [
+      "Pierre-Henri Philibert",
+      "Abel Aubert du Petit-Thouars"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "297",
@@ -6221,7 +7270,14 @@
     "commanders": [
       "Bernard Dubourdieu",
       "William Hoste"
-    ]
+    ],
+    "commander_Victor": [
+      "William Hoste"
+    ],
+    "commander_Loss": [
+      "Bernard Dubourdieu"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "298",
@@ -6240,7 +7296,13 @@
     "commanders": [
       "George Parker",
       "Carl Wilhelm Jessen"
-    ]
+    ],
+    "commander_Victor": [
+      "George Parker",
+      "Carl Wilhelm Jessen"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "299",
@@ -6259,7 +7321,14 @@
     "commanders": [
       "Charles Schomberg",
       "Dominique Roquebert"
-    ]
+    ],
+    "commander_Victor": [
+      "Charles Schomberg"
+    ],
+    "commander_Loss": [
+      "Dominique Roquebert"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "300",
@@ -6291,7 +7360,14 @@
     "commanders": [
       "Robert Stopford",
       "Pierre Jurien"
-    ]
+    ],
+    "commander_Victor": [
+      "Robert Stopford"
+    ],
+    "commander_Loss": [
+      "Pierre Jurien"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "302",
@@ -6315,7 +7391,14 @@
     "special": [
       "2",
       "Egyptian Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Horatio Nelson"
+    ],
+    "commander_Loss": [
+      "Brueys d'Aigalliers"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "303",
@@ -6355,7 +7438,16 @@
     "special": [
       "6",
       "Campaign of France"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Gebhard von Blücher",
+      "Zakhar Olsufiev",
+      "Fabian Osten-Sacken"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "305",
@@ -6408,7 +7500,14 @@
       "1",
       "arc",
       "Italian Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Dagobert-Sigismond von Wurmser"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "308",
@@ -6446,7 +7545,17 @@
       "Leopold Wilhelm von Dobschütz",
       "Friedrich Wilhelm Bülow von Dennewitz"
     ],
-    "special": "6"
+    "special": "6",
+    "commander_Victor": [
+      "Peter Wittgenstein",
+      "Bogislav Friedrich Emanuel von Tauentzien",
+      "Leopold Wilhelm von Dobschütz",
+      "Friedrich Wilhelm Bülow von Dennewitz"
+    ],
+    "commander_Loss": [
+      "Jean François Cornu de Lapoype"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "310",
@@ -6467,7 +7576,14 @@
       "Nicolas Oudinot",
       "Friedrich Wilhelm Bülow von Dennewitz"
     ],
-    "special": "6"
+    "special": "6",
+    "commander_Victor": [
+      "Nicolas Oudinot"
+    ],
+    "commander_Loss": [
+      "Friedrich Wilhelm Bülow von Dennewitz"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "311",
@@ -6491,7 +7607,14 @@
     "commanders": [
       "Napoleon",
       "Kingdom of Sardinia Michelangelo Colli-Marchi"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Kingdom of Sardinia Michelangelo Colli-Marchi"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "312",
@@ -6515,7 +7638,14 @@
     "commanders": [
       "Napoleon",
       "Eugène Argenteau"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Eugène Argenteau"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "313",
@@ -6539,7 +7669,13 @@
     "commanders": [
       "Jean-Baptiste Bernadotte",
       "Eugene Frederick Henry, Duke of Württemberg"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Jean-Baptiste Bernadotte",
+      "Eugene Frederick Henry, Duke of Württemberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "314",
@@ -6563,7 +7699,14 @@
     "special": [
       "6",
       "German Campaign"
-    ]
+    ],
+    "commander_Victor": [
+      "Friedrich Wilhelm v. Bülow"
+    ],
+    "commander_Loss": [
+      "Donatien de Rochambeau"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "315",
@@ -6601,7 +7744,17 @@
       "Friedrich Wilhelm v. Bülow",
       "Johann Adolf von Thielmann"
     ],
-    "special": "Waterloo Campaign"
+    "special": "Waterloo Campaign",
+    "commander_Victor": [
+      "Emmanuel de Grouchy",
+      "Étienne Maurice Gérard",
+      "Dominique Vandamme"
+    ],
+    "commander_Loss": [
+      "Friedrich Wilhelm v. Bülow",
+      "Johann Adolf von Thielmann"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "317",
@@ -6677,7 +7830,13 @@
       "William Ponsonby",
       "Lord Somerset"
     ],
-    "special": "Waterloo Campaign"
+    "special": "Waterloo Campaign",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "William Ponsonby",
+      "Lord Somerset"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "322",
@@ -6695,7 +7854,12 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Genappe",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": "Marshal Lobau",
-    "special": "Waterloo Campaign"
+    "special": "Waterloo Campaign",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Marshal Lobau"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "323",
@@ -6713,7 +7877,12 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(18%E2%80%9324_June)#Action_at_Namur",
     "createDate": "2025-03-22T10:00:00Z",
     "commanders": "Colonel Zastrow",
-    "special": "Waterloo Campaign"
+    "special": "Waterloo Campaign",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Colonel Zastrow"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "324",
@@ -6735,7 +7904,15 @@
       "Auguste de La Rochejaquelein",
       "Simon Canuel"
     ],
-    "special": "War in the Vendée"
+    "special": "War in the Vendée",
+    "commander_Victor": [
+      "Henri-Pierre Delaage"
+    ],
+    "commander_Loss": [
+      "Auguste de La Rochejaquelein",
+      "Simon Canuel"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "325",
@@ -6757,7 +7934,15 @@
       "Auguste de La Rochejaquelein",
       "Simon Canuel"
     ],
-    "special": "100 Days"
+    "special": "100 Days",
+    "commander_Victor": [
+      "Auguste de La Rochejaquelein",
+      "Simon Canuel"
+    ],
+    "commander_Loss": [
+      "Henri-Pierre Delaage"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "326",
@@ -6795,7 +7980,14 @@
     "commanders": [
       "Frederick William",
       "Jean-Jacques Reubell"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean-Jacques Reubell"
+    ],
+    "commander_Loss": [
+      "Frederick William"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "328",
@@ -6853,7 +8045,16 @@
       "Peter von der Pahlen",
       "Pyotr Konovnitsyn",
       "Napoleon"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Mikhail Barclay de Tolly",
+      "Peter von der Pahlen",
+      "Pyotr Konovnitsyn"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "331",
@@ -6875,7 +8076,15 @@
       "A. Ostermann-Tolstoy",
       "Étienne de Nansouty",
       "Joachim Murat"
-    ]
+    ],
+    "commander_Victor": [
+      "Étienne de Nansouty",
+      "Joachim Murat"
+    ],
+    "commander_Loss": [
+      "A. Ostermann-Tolstoy"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "332",
@@ -6897,7 +8106,15 @@
       "Napoleon",
       "Andrei Gorchakov",
       "Pyotr Bagration"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Andrei Gorchakov",
+      "Pyotr Bagration"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "333",
@@ -6918,7 +8135,14 @@
     "commanders": [
       "Napoleon",
       "Mikhail Kutuzov"
-    ]
+    ],
+    "commander_Victor": [
+      "Mikhail Kutuzov"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "334",
@@ -6945,7 +8169,20 @@
       "Michel Ney",
       "Józef Poniatowski",
       "Józef Zajączek"
-    ]
+    ],
+    "commander_Victor": [
+      "Matvei Platov",
+      "Ivan Paskevich",
+      "Mikhail Miloradovich"
+    ],
+    "commander_Loss": [
+      "Louis Nicolas Davout",
+      "Eugéne de Beauharnais",
+      "Michel Ney",
+      "Józef Poniatowski",
+      "Józef Zajączek"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "335",
@@ -6967,7 +8204,15 @@
       "Alexander Tormasov",
       "Karl von Schwarzenberg",
       "Jean Reynier"
-    ]
+    ],
+    "commander_Victor": [
+      "Karl von Schwarzenberg",
+      "Jean Reynier"
+    ],
+    "commander_Loss": [
+      "Alexander Tormasov"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "336",
@@ -6988,7 +8233,14 @@
     "commanders": [
       "Michel Ney",
       "Barclay de Tolly"
-    ]
+    ],
+    "commander_Victor": [
+      "Michel Ney"
+    ],
+    "commander_Loss": [
+      "Barclay de Tolly"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "337",
@@ -7010,7 +8262,15 @@
       "Jacques MacDonald",
       "Magnus Gustav von Essen",
       "Julius von Grawert"
-    ]
+    ],
+    "commander_Victor": [
+      "Jacques MacDonald"
+    ],
+    "commander_Loss": [
+      "Magnus Gustav von Essen",
+      "Julius von Grawert"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "338",
@@ -7031,7 +8291,13 @@
     "commanders": [
       "Fabian Steinheil",
       "Ludwig von Yorck"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Fabian Steinheil",
+      "Ludwig von Yorck"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "339",
@@ -7054,7 +8320,16 @@
       "Mikhail Kutuzov",
       "Leonty Bennigsen",
       "Józef Poniatowski"
-    ]
+    ],
+    "commander_Victor": [
+      "Mikhail Kutuzov",
+      "Leonty Bennigsen"
+    ],
+    "commander_Loss": [
+      "Joachim Murat",
+      "Józef Poniatowski"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "340",
@@ -7076,7 +8351,15 @@
       "Peter Wittgenstein",
       "Lev Yashvil",
       "Claude Victor"
-    ]
+    ],
+    "commander_Victor": [
+      "Peter Wittgenstein",
+      "Lev Yashvil"
+    ],
+    "commander_Loss": [
+      "Claude Victor"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "341",
@@ -7097,7 +8380,14 @@
     "commanders": [
       "Napoleon",
       "Gebhard von Blücher"
-    ]
+    ],
+    "commander_Victor": [
+      "Gebhard von Blücher"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "342",
@@ -7119,7 +8409,15 @@
       "Joseph Lagrange",
       "Karl Philipp von Wrede",
       "Eugen of Württemberg"
-    ]
+    ],
+    "commander_Victor": [
+      "Joseph Lagrange"
+    ],
+    "commander_Loss": [
+      "Karl Philipp von Wrede",
+      "Eugen of Württemberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "343",
@@ -7144,7 +8442,15 @@
       "Zakhar Olsufiev",
       "Napoleon",
       "Auguste de Marmont"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Auguste de Marmont"
+    ],
+    "commander_Loss": [
+      "Zakhar Olsufiev"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "344",
@@ -7173,7 +8479,19 @@
       "Gebhard von Blücher",
       "Friedrich von Kleist",
       "Peter Kaptzevich"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Auguste de Marmont",
+      "Emmanuel de Grouchy"
+    ],
+    "commander_Loss": [
+      "Zakhar Olsufiev",
+      "Gebhard von Blücher",
+      "Friedrich von Kleist",
+      "Peter Kaptzevich"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "345",
@@ -7231,7 +8549,15 @@
       "Fabian Osten-Sacken",
       "Napoleon",
       "Ludwig von Yorck"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Fabian Osten-Sacken",
+      "Ludwig von Yorck"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "348",
@@ -7256,7 +8582,15 @@
       "Karl von Schwarzenberg",
       "Napoleon",
       "Prince of Württemberg"
-    ]
+    ],
+    "commander_Victor": [
+      "Karl von Schwarzenberg",
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Prince of Württemberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "349",
@@ -7280,7 +8614,14 @@
     "commanders": [
       "Gillot Rougier",
       "Laval Nugent von Westmeath"
-    ]
+    ],
+    "commander_Victor": [
+      "Gillot Rougier"
+    ],
+    "commander_Loss": [
+      "Laval Nugent von Westmeath"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "350",
@@ -7306,7 +8647,14 @@
     "commanders": [
       "Henri Charpentier",
       "Friedrich Wilhelm von Bülow"
-    ]
+    ],
+    "commander_Victor": [
+      "Friedrich Wilhelm von Bülow"
+    ],
+    "commander_Loss": [
+      "Henri Charpentier"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "351",
@@ -7338,7 +8686,16 @@
       "Karl von Schwarzenberg",
       "Peter de Lamotte",
       "Peter Wittgenstein"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Loss": [
+      "Peter de Lamotte",
+      "Peter Wittgenstein"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "352",
@@ -7364,7 +8721,17 @@
       "John Hope",
       "Andrew Hay",
       "Henry de Hinuber"
-    ]
+    ],
+    "commander_Victor": [
+      "John Hope",
+      "Andrew Hay",
+      "Henry de Hinuber"
+    ],
+    "commander_Loss": [
+      "Pierre Thouvenot",
+      "Louis Abbé"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "353",
@@ -7388,7 +8755,15 @@
       "Jean de Dieu Soult",
       "Arthur Wellesley",
       "Luís do Rego"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Luís do Rego"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "354",
@@ -7418,7 +8793,17 @@
       "Alexander Ostermann-Tolstoy",
       "Karl La Roche-Aymon",
       "Anton von L'Estocq"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Mikhail Kamensky",
+      "Alexander Ostermann-Tolstoy",
+      "Karl La Roche-Aymon",
+      "Anton von L'Estocq"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "355",
@@ -7448,7 +8833,15 @@
       "Napoleon",
       "Gebhard von Blücher",
       "Ferdinand von Wintzingerode"
-    ]
+    ],
+    "commander_Victor": [
+      "Gebhard von Blücher",
+      "Ferdinand von Wintzingerode"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "356",
@@ -7499,7 +8892,19 @@
       "Frederick William III",
       "Karl von Schwarzenberg",
       "Crown Prince William"
-    ]
+    ],
+    "commander_Victor": [
+      "Alexander I",
+      "Frederick William III",
+      "Crown Prince William"
+    ],
+    "commander_Loss": [
+      "Auguste de Marmont",
+      "Édouard Mortier",
+      "Michel Pacthod",
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "358",
@@ -7529,7 +8934,15 @@
       "Napoleon",
       "Gebhard von Blücher",
       "Ferdinand Fyodorovich Wintzingerode"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Gebhard von Blücher",
+      "Ferdinand Fyodorovich Wintzingerode"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "359",
@@ -7560,7 +8973,15 @@
       "Louis-Michel Letort de Lorville",
       "Ignácz Gyulay",
       "Frédéric-Guillaume de Wurtemberg"
-    ]
+    ],
+    "commander_Victor": [
+      "Ignácz Gyulay"
+    ],
+    "commander_Loss": [
+      "Édouard Mortier",
+      "Louis-Michel Letort de Lorville"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "360",
@@ -7594,7 +9015,18 @@
       "Jacques MacDonald",
       "Nicolas Oudinot",
       "Étienne Maurice Gérard"
-    ]
+    ],
+    "commander_Victor": [
+      "Karl von Schwarzenberg",
+      "Jacques MacDonald",
+      "Nicolas Oudinot",
+      "Étienne Maurice Gérard"
+    ],
+    "commander_Loss": [
+      "Karl Philipp von Wrede",
+      "Peter Wittgenstein"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "361",
@@ -7631,7 +9063,14 @@
     "commanders": [
       "Jean de Dieu Soult",
       "Arthur Wellesley"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "363",
@@ -7654,7 +9093,14 @@
     "commanders": [
       "Joachim Murat",
       "Frederick Bianchi"
-    ]
+    ],
+    "commander_Victor": [
+      "Frederick Bianchi"
+    ],
+    "commander_Loss": [
+      "Joachim Murat"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "364",
@@ -7692,6 +9138,12 @@
     "commanders": [
       "Eugène de Beauharnais",
       "Heinrich von Bellegarde"
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Eugène de Beauharnais",
+      "Heinrich von Bellegarde"
     ]
   },
   {
@@ -7723,7 +9175,16 @@
       "Nicolas Oudinot",
       "Claude Victor",
       "Karl von Wrede"
-    ]
+    ],
+    "commander_Victor": [
+      "Peter Wittgenstein",
+      "Karl von Wrede"
+    ],
+    "commander_Loss": [
+      "Nicolas Oudinot",
+      "Claude Victor"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "367",
@@ -7746,7 +9207,14 @@
     "commanders": [
       "Georg Dubislav Ludwig von Pirch",
       "Louis-Michel Letort de Lorville"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis-Michel Letort de Lorville"
+    ],
+    "commander_Loss": [
+      "Georg Dubislav Ludwig von Pirch"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "368",
@@ -7860,7 +9328,14 @@
     "commanders": [
       "Jean-Baptiste Kléber",
       "Nassif Pasha"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean-Baptiste Kléber"
+    ],
+    "commander_Loss": [
+      "Nassif Pasha"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "375",
@@ -7896,7 +9371,14 @@
         "id": "835",
         "title": "Canvas by P. Loutherbourg "
       }
-    ]
+    ],
+    "commander_Victor": [
+      "Ralph Abercromby"
+    ],
+    "commander_Loss": [
+      "Jacques-François Menou"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "376",
@@ -7922,7 +9404,14 @@
     "commanders": [
       "Jacques-François Menou",
       "Ralph Abercromby"
-    ]
+    ],
+    "commander_Victor": [
+      "Ralph Abercromby"
+    ],
+    "commander_Loss": [
+      "Jacques-François Menou"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "377",
@@ -7948,7 +9437,14 @@
     "commanders": [
       "Jacques-François Menou",
       "Ralph Abercromby"
-    ]
+    ],
+    "commander_Victor": [
+      "Ralph Abercromby"
+    ],
+    "commander_Loss": [
+      "Jacques-François Menou"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "378",
@@ -7988,7 +9484,14 @@
     "commanders": [
       "Jazzar Pasha",
       "Napoleon"
-    ]
+    ],
+    "commander_Victor": [
+      "Jazzar Pasha"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "380",
@@ -8017,7 +9520,16 @@
       "Joachim Murat",
       "Johann Ewald",
       "Jean de Dieu Soult"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat",
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Jean-Baptiste Bernadotte",
+      "Johann Ewald"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "381",
@@ -8059,7 +9571,15 @@
       "Napoleon",
       "Jean-Baptiste Kléber",
       "Mohammed El-Koraïm"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Jean-Baptiste Kléber"
+    ],
+    "commander_Loss": [
+      "Mohammed El-Koraïm"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "383",
@@ -8087,7 +9607,15 @@
       "Napoleon",
       "Jean-Baptiste Perrée",
       "Murad Bey"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Jean-Baptiste Perrée"
+    ],
+    "commander_Loss": [
+      "Murad Bey"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "384",
@@ -8114,7 +9642,14 @@
     "commanders": [
       "Louis Desaix",
       "Murad Bey"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Desaix"
+    ],
+    "commander_Loss": [
+      "Murad Bey"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "385",
@@ -8143,7 +9678,16 @@
       "Napoleon",
       "Jean-Baptiste Kléber",
       "Abdallah Bey"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Jean-Baptiste Kléber"
+    ],
+    "commander_Loss": [
+      "Ahmed al-Jazzar",
+      "Abdallah Bey"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "386",
@@ -8170,7 +9714,14 @@
       "Jean-Baptiste Bernadotte",
       "Yevgeni Ivanovich Markov",
       "Anton von L'Estocq"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Jean-Baptiste Bernadotte",
+      "Yevgeni Ivanovich Markov",
+      "Anton von L'Estocq"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "387",
@@ -8196,7 +9747,17 @@
       "Jean de Dieu Soult",
       "Levin Bennigsen",
       "Nikolay Kamensky"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Joachim Murat",
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Levin Bennigsen",
+      "Nikolay Kamensky"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "388",
@@ -8315,6 +9876,17 @@
       "Johann Heinrich von Schmitt",
       "Dmitry Dokhturov",
       "Mikhail Miloradovich"
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Édouard Mortier",
+      "Théodore Gazan",
+      "Mikhail Kutuzov",
+      "Pierre de l'Étang",
+      "Johann Heinrich von Schmitt",
+      "Dmitry Dokhturov",
+      "Mikhail Miloradovich"
     ]
   },
   {
@@ -8351,7 +9923,14 @@
     "commanders": [
       "Arthur Wellesley",
       "André Masséna"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "André Masséna"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "397",
@@ -8403,7 +9982,17 @@
       "Michel Ney",
       "Luís do Rego",
       "Abdullah Pasha al-Azm"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Luís do Rego",
+      "Abdullah Pasha al-Azm"
+    ],
+    "commander_Loss": [
+      "André Masséna",
+      "Michel Ney"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "400",
@@ -8540,7 +10129,18 @@
       "Louis Baraguey d'Hilliers",
       "Ferdinand von Hompesch ",
       "Jean Reynier"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Louis Desaix",
+      "Claude-Henri Belgrand de Vaubois",
+      "Louis Baraguey d'Hilliers",
+      "Jean Reynier"
+    ],
+    "commander_Loss": [
+      "Ferdinand von Hompesch "
+    ],
+    "commander_Tie": []
   },
   {
     "id": "409",
@@ -8616,7 +10216,13 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cabo_Sta_Maria.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Graham Moore",
+      "José de Bustamante"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "414",
@@ -8642,7 +10248,16 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sandostrom.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sand%C3%B6str%C3%B6m",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Lodewijk van Heiden",
+      "Pyotr Dodt",
+      "Klas Hjelmstjerna",
+      "Önnert Jönsson",
+      "Sölfverarm"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "415",
@@ -8665,7 +10280,13 @@
       "Aleksey Yefimovich Myasoyedov"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palva_sound.webp",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Salomon von Rajalin",
+      "Aleksey Yefimovich Myasoyedov"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "416",
@@ -8691,7 +10312,14 @@
       "Jean de Dieu Soult"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gamonal.webp",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Conde de Belvedere"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "417",
@@ -8807,7 +10435,14 @@
       "Éléonore Soleil"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/25_Sep_1806.webp",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Samuel Hood"
+    ],
+    "commander_Loss": [
+      "Éléonore Soleil"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "425",
@@ -9022,7 +10657,14 @@
       "arc",
       "Italian Campaign",
       "1"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Karl Sebottendorf"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "439",
@@ -9106,7 +10748,16 @@
       "Napoleon",
       "Johann Beaulieu",
       "Michael von Melas"
-    ]
+    ],
+    "commander_Victor": [
+      "Pierre Augereau",
+      "Napoleon"
+    ],
+    "commander_Loss": [
+      "Johann Beaulieu",
+      "Michael von Melas"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "444",
@@ -9326,7 +10977,16 @@
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Action_of_22_May_1812.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_22_May_1812",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Henry Hotham",
+      "John Weeks"
+    ],
+    "commander_Loss": [
+      "Jean Féretier",
+      "Nicolas Morice"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "459",
@@ -9352,7 +11012,13 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lyngor.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lyng%C3%B8r",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "James Stewart",
+      "Hans Peter Holm"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "460",
@@ -9375,7 +11041,13 @@
     "defeated": "Russia",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Nargo.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_the_Narg%C3%B6",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Walter Bathurst",
+      "Gabriel Nevelsky"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "461",
@@ -9399,7 +11071,15 @@
     "defeated": "Batavia",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blaauwberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "David Baird",
+      "Home Riggs Popham"
+    ],
+    "commander_Loss": [
+      "Jan Willem Janssens"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "462",
@@ -9709,7 +11389,14 @@
     "commanders": [
       "Arthur Wellesley",
       "Jean de Dieu Soult"
-    ]
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "483",
@@ -9732,7 +11419,14 @@
     "commanders": [
       "Baron Eben",
       "Jean de Dieu Soult"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Baron Eben"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "484",
@@ -9759,7 +11453,15 @@
       "Louis Henri Loison",
       "Francisco de Paula Leite",
       "Colonel Moretti"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Henri Loison"
+    ],
+    "commander_Loss": [
+      "Francisco de Paula Leite",
+      "Colonel Moretti"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "485",
@@ -9920,6 +11622,12 @@
     "commanders": [
       "Michel Ney",
       "Arthur Wellesley"
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Michel Ney",
+      "Arthur Wellesley"
     ]
   },
   {
@@ -9956,7 +11664,14 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bodon.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_El_Bod%C3%B3n",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "commander_Loss": [
+      "Louis-Pierre Montbrun"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "498",
@@ -10297,7 +12012,14 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maloyaroslavetz.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maloyaroslavets",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Mikhail Kutuzov"
+    ],
+    "commander_Loss": [
+      "Napoleon"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "522",
@@ -10327,7 +12049,15 @@
         "title": "Canvas by Wilhelm von Kobell"
       }
     ],
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Mikhail Kutuzov"
+    ],
+    "commander_Loss": [
+      "Joachim Murat",
+      "Józef Poniatowski"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "523",
@@ -10350,7 +12080,14 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wolkowisk.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wolkowisk",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Osten-Sacken"
+    ],
+    "commander_Loss": [
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "524",
@@ -10390,7 +12127,14 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Borizov.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Charles de Lambert"
+    ],
+    "commander_Loss": [
+      "Jan Henryk Dąbrowski"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "526",
@@ -10412,7 +12156,13 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Swolna.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Swolna",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Fyodor d'Auvray",
+      "Nicolas Oudinot"
+    ]
   },
   {
     "id": "527",
@@ -10435,7 +12185,13 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mir.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Mir_(1812)",
-    "createDate": "2025-03-15T10:00:00Z"
+    "createDate": "2025-03-15T10:00:00Z",
+    "commander_Victor": [
+      "Aleksander Rożniecki",
+      "Matvei Platov"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "528",
@@ -10694,7 +12450,14 @@
     "commanders": [
       "Nicolas Soult",
       "Nicolas Mahy"
-    ]
+    ],
+    "commander_Victor": [
+      "Nicolas Soult"
+    ],
+    "commander_Loss": [
+      "Nicolas Mahy"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "546",
@@ -11057,7 +12820,14 @@
     "commanders": [
       "Duque del Parque",
       "Jean Marchand"
-    ]
+    ],
+    "commander_Victor": [
+      "Duque del Parque"
+    ],
+    "commander_Loss": [
+      "Jean Marchand"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "573",
@@ -11083,7 +12853,14 @@
     "commanders": [
       "Joaquín Blake",
       "Louis Gabriel Suchet"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Loss": [
+      "Joaquín Blake"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "574",
@@ -11108,7 +12885,14 @@
     "commanders": [
       "Joaquín Blake",
       "Louis Gabriel Suchet"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Loss": [
+      "Joaquín Blake"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "575",
@@ -11133,7 +12917,14 @@
     "commanders": [
       "Theodor von Reding",
       "Laurent Gouvion Saint-Cyr"
-    ]
+    ],
+    "commander_Victor": [
+      "Laurent Gouvion Saint-Cyr"
+    ],
+    "commander_Loss": [
+      "Theodor von Reding"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "576",
@@ -11155,7 +12946,14 @@
     "commanders": [
       "Joachim Murat",
       "Franz von Werneck"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat"
+    ],
+    "commander_Loss": [
+      "Franz von Werneck"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "577",
@@ -11177,7 +12975,14 @@
     "commanders": [
       "Louis Nicolas Davout",
       "Friedrich Hohenzollern"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Nicolas Davout"
+    ],
+    "commander_Loss": [
+      "Friedrich Hohenzollern"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "578",
@@ -11200,7 +13005,15 @@
       "Peter Wittgenstein",
       "Claude Victor",
       "Nicolas Oudinot"
-    ]
+    ],
+    "commander_Victor": [
+      "Peter Wittgenstein"
+    ],
+    "commander_Loss": [
+      "Claude Victor",
+      "Nicolas Oudinot"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "579",
@@ -11225,7 +13038,14 @@
     "commanders": [
       "Friedrich Hohenzollern",
       "Jean-Baptiste Rousseau"
-    ]
+    ],
+    "commander_Victor": [
+      "Jean-Baptiste Rousseau"
+    ],
+    "commander_Loss": [
+      "Friedrich Hohenzollern"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "580",
@@ -11251,7 +13071,10 @@
     "commanders": [
       "Ludwig von Wallmoden-Gimborn",
       "Prince Frederik of Hesse"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "581",
@@ -11393,7 +13216,10 @@
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Algeciras#Battle",
-    "createDate": "2026-07-14"
+    "createDate": "2026-07-14",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "590",
@@ -11420,7 +13246,10 @@
     "defeated": "Britain",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Algeciras2.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Second_Battle_of_Algeciras",
-    "createDate": "2026-07-14"
+    "createDate": "2026-07-14",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "591",
@@ -11443,7 +13272,12 @@
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Tollo.webp",
     "more_info_link": "https://www.guerra-historia-publica.es/recursos/490",
-    "createDate": "2026-07-14"
+    "createDate": "2026-07-14",
+    "commander_Victor": [
+      "Pedro Villacampa"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "592",
@@ -11603,7 +13437,14 @@
       "2",
       "Marengo Campaign"
     ],
-    "createDate": "2026-07-15"
+    "createDate": "2026-07-15",
+    "commander_Victor": [
+      "Jean Lannes"
+    ],
+    "commander_Loss": [
+      "Peter Karl Ott"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "602",
@@ -12163,7 +14004,14 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "createDate": "2026-07-21"
+    "createDate": "2026-07-21",
+    "commander_Victor": [
+      "François Joseph Lefebvre"
+    ],
+    "commander_Loss": [
+      "Joaquín Blake"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "643",
@@ -12186,7 +14034,14 @@
     ],
     "victor": "Spain",
     "defeated": "France",
-    "createDate": "2026-07-21"
+    "createDate": "2026-07-21",
+    "commander_Victor": [
+      "Joaquín Blake"
+    ],
+    "commander_Loss": [
+      "Eugene-Casimir Villatte"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "644",
@@ -12209,7 +14064,14 @@
     ],
     "victor": "France",
     "defeated": "Spain",
-    "createDate": "2026-07-23"
+    "createDate": "2026-07-23",
+    "commander_Victor": [
+      "Jean Harispe"
+    ],
+    "commander_Loss": [
+      "Joseph O'Donnell"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "645",
@@ -12235,7 +14097,12 @@
     ],
     "victor": "Anglo-Spanish",
     "defeated": "France",
-    "createDate": "2026-07-23"
+    "createDate": "2026-07-23",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "646",
@@ -12290,7 +14157,15 @@
     ],
     "victor": "France",
     "defeated": "Anglo-Portuguese-Spanish",
-    "createDate": "2026-07-25"
+    "createDate": "2026-07-25",
+    "commander_Victor": [
+      "Honoré Charles Reille",
+      "Bertrand Clauzel"
+    ],
+    "commander_Loss": [
+      "Galbraith Lowry Cole"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "649",
@@ -12317,7 +14192,15 @@
       " Austria",
       "Wurttemberg"
     ],
-    "createDate": "2026-07-25"
+    "createDate": "2026-07-25",
+    "commander_Victor": [
+      "Jean Rapp"
+    ],
+    "commander_Loss": [
+      "Henri Rottembourg",
+      "William I of Württemberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "650",
@@ -12340,7 +14223,10 @@
     ],
     "victor": "Royalists",
     "defeated": "Bonapartists",
-    "createDate": "2026-07-25"
+    "createDate": "2026-07-25",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "651",
@@ -12363,7 +14249,14 @@
     ],
     "victor": "Russia",
     "defeated": "France",
-    "createDate": "2026-07-25"
+    "createDate": "2026-07-25",
+    "commander_Victor": [
+      " Ferdinand von Wintzingerode"
+    ],
+    "commander_Loss": [
+      "Jean Reynier"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "652",
@@ -12423,7 +14316,12 @@
     "commanders": "Ludwig von Yorck",
     "victor": "Prussia",
     "defeated": "France",
-    "createDate": "2026-07-28"
+    "createDate": "2026-07-28",
+    "commander_Victor": [
+      "Ludwig von Yorck"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "656",
@@ -12452,7 +14350,13 @@
     ],
     "victor": "France",
     "defeated": "Prussia",
-    "createDate": "2026-07-28"
+    "createDate": "2026-07-28",
+    "commander_Victor": [
+      "Antoine Charles Louis de Lasalle",
+      "Emmanuel de Grouchy"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "657",
@@ -12477,7 +14381,16 @@
     ],
     "victor": "France",
     "defeated": "Russia",
-    "createDate": "2026-07-28"
+    "createDate": "2026-07-28",
+    "commander_Victor": [
+      "Jean Lannes",
+      "Joachim Murat"
+    ],
+    "commander_Loss": [
+      "Michael Kienmayer",
+      "Pyotr Bagration"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "658",
@@ -12517,7 +14430,14 @@
     ],
     "victor": "Austria",
     "defeated": "Poland",
-    "createDate": "2026-07-28"
+    "createDate": "2026-07-28",
+    "commander_Victor": [
+      "Archduke Ferdinand Karl Joseph"
+    ],
+    "commander_Loss": [
+      "Józef Poniatowski"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "660",
@@ -12541,7 +14461,15 @@
     ],
     "victor": "France",
     "defeated": "Russia",
-    "createDate": "2026-07-29"
+    "createDate": "2026-07-29",
+    "commander_Victor": [
+      "Joachim Murat",
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Barclay de Tolly"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "661",
@@ -12583,7 +14511,16 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "createDate": "2026-07-29"
+    "createDate": "2026-07-29",
+    "commander_Victor": [
+      "Napoleon",
+      "André Masséna",
+      "Claude-Victor Perrin"
+    ],
+    "commander_Loss": [
+      "Paul Davidovich"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "663",
@@ -12609,7 +14546,14 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "createDate": "2026-07-29"
+    "createDate": "2026-07-29",
+    "commander_Victor": [
+      "André Masséna"
+    ],
+    "commander_Loss": [
+      "Anton Lipthay"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "664",
@@ -12660,7 +14604,12 @@
     ],
     "victor": "France",
     "defeated": "Austria",
-    "createDate": "2026-07-31"
+    "createDate": "2026-07-31",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Louis Jacques Coëhorn"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "667",
@@ -12684,7 +14633,15 @@
       "William Cox",
       "Michel Ney",
       "André Masséna"
-    ]
+    ],
+    "commander_Victor": [
+      "Michel Ney",
+      "André Masséna"
+    ],
+    "commander_Loss": [
+      "William Cox"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "668",
@@ -12709,7 +14666,15 @@
       "William Erskine",
       "Napoleon",
       "André Masséna"
-    ]
+    ],
+    "commander_Victor": [
+      "William Erskine"
+    ],
+    "commander_Loss": [
+      "Napoleon",
+      "André Masséna"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "669",
@@ -12737,7 +14702,15 @@
       "Mathias Rukavina",
       "Napoleon",
       "André Masséna"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "André Masséna"
+    ],
+    "commander_Loss": [
+      "Eugène Argenteau"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "670",
@@ -12760,7 +14733,14 @@
     "commanders": [
       "Frederick Bianchi",
       "Joachim Murat"
-    ]
+    ],
+    "commander_Victor": [
+      "Frederick Bianchi"
+    ],
+    "commander_Loss": [
+      "Joachim Murat"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "671",
@@ -12789,7 +14769,15 @@
       "Auguste de Marmont",
       "Louis Gabriel Suchet",
       "Pierre Augereau"
-    ]
+    ],
+    "commander_Victor": [
+      "Napoleon",
+      "Auguste de Marmont",
+      "Louis Gabriel Suchet",
+      "Pierre Augereau"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "672",
@@ -13049,7 +15037,14 @@
     "commanders": [
       "Jaques Tilly",
       "Friedrich von Hohenzollern"
-    ]
+    ],
+    "commander_Victor": [
+      "Jaques Tilly"
+    ],
+    "commander_Loss": [
+      "Friedrich von Hohenzollern"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "690",
@@ -13129,7 +15124,12 @@
     "commanders": [
       "Joachim Murat",
       "Graf Zinzebdorf"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "695",
@@ -13183,7 +15183,13 @@
     "commanders": [
       "Joachim Murat",
       "Karl von Schwarzenberg"
-    ]
+    ],
+    "commander_Victor": [
+      "Joachim Murat",
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "698",
@@ -13241,7 +15247,15 @@
       "Marc Antoine de Beaumont",
       "Emanuel Schustekh",
       "Pyotr Bagration"
-    ]
+    ],
+    "commander_Victor": [
+      "Louis Nicolas Davout",
+      "Marc Antoine de Beaumont"
+    ],
+    "commander_Loss": [
+      "Pyotr Bagration"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "701",
@@ -13264,7 +15278,10 @@
     "commanders": [
       "Bernhard Erasmus von Deroy",
       "Franz Xaver Saint-Julien"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "702",
@@ -13301,7 +15318,12 @@
     "commanders": [
       "Marie-François Caffarelli",
       "Maximilian Graf von Merveldt"
-    ]
+    ],
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Maximilian Graf von Merveldt"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "704",
@@ -13325,7 +15347,12 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": "Michel Ney"
+    "commanders": "Michel Ney",
+    "commander_Victor": [
+      "Michel Ney"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "705",
@@ -13345,7 +15372,12 @@
     "special": "3",
     "victor": "France",
     "defeated": "Austria",
-    "commanders": "Michel Ney"
+    "commanders": "Michel Ney",
+    "commander_Victor": [
+      "Michel Ney"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "706",
@@ -13382,7 +15414,12 @@
     "commanders": [
       "Gabriel Jean Joseph Molitor",
       "Johann Maria Philipp Frimont"
-    ]
+    ],
+    "commander_Victor": [
+      "Gabriel Jean Joseph Molitor"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "708",
@@ -13419,7 +15456,14 @@
     "commanders": [
       "Auguste de Marmont",
       "Maximilian Graf von Merveldt"
-    ]
+    ],
+    "commander_Victor": [
+      "Auguste de Marmont"
+    ],
+    "commander_Loss": [
+      "Maximilian Graf von Merveldt"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "710",
@@ -13483,7 +15527,12 @@
       "Étienne Heudelet",
       "Maximilian Graf von Merveldt"
     ],
-    "createDate": "2026-08-09"
+    "createDate": "2026-08-09",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Maximilian Graf von Merveldt"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "714",
@@ -13506,7 +15555,12 @@
       "Archduke Charles",
       "Jean Louis Espagne"
     ],
-    "createDate": "2026-08-09"
+    "createDate": "2026-08-09",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Archduke Charles"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "715",
@@ -13550,7 +15604,17 @@
       "Louis Gabriel Suchet",
       "Nicolas Oudinot"
     ],
-    "createDate": "2026-08-10"
+    "createDate": "2026-08-10",
+    "commander_Victor": [
+      "Joachim Murat",
+      "Jean Lannes",
+      "Louis Gabriel Suchet",
+      "Nicolas Oudinot"
+    ],
+    "commander_Loss": [
+      "Pyotr Bagration"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "717",
@@ -13601,7 +15665,12 @@
       "Karl von Vincent",
       "Gabriel Jean Joseph Molitor"
     ],
-    "createDate": "2026-08-10"
+    "createDate": "2026-08-10",
+    "commander_Victor": [],
+    "commander_Loss": [
+      "Gabriel Jean Joseph Molitor"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "720",
@@ -14215,7 +16284,7 @@
     "country": "France",
     "description": "He rapidly rose through the cavalry ranks, becoming  brigade commander in the 11th Hussars in 1793. After fighting in the Italian campaign, he went on to serve as colonel of the 29th Dragoons before ultimately achieving the rank of brigadier general in command of the 6th Lancers.",
     "latitude": 48.859042,
-    "longitude": 2.39680,
+    "longitude": 2.3968,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Avice_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/avice-jacques-philippe-baron-1759-1835/",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Jacques_Philippe_Avice",
@@ -14231,7 +16300,7 @@
     "country": "France",
     "description": "He was born on August 16th 1776 and joined the army in 1799. Veteran of all the campaigns he rose to the rank of Captain of the Imperial Guard.",
     "latitude": 47.547492,
-    "longitude": 3.420320,
+    "longitude": 3.42032,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Coignet_birth.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Jean-Roch_Coignet#top",
     "createDate": "2026-08-19"
@@ -14244,7 +16313,7 @@
     "location": "Auxerre,",
     "country": "France",
     "description": "Captain Jean-Roch Coignet died on December 10th 1865, after a long military career in the Imperial Guard during the Napoleonic Wars and later becoming famous for his memoirs.",
-    "latitude": 47.790210,
+    "latitude": 47.79021,
     "longitude": 3.56266,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Coignet_tomb.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Jean-Roch_Coignet#top",
@@ -14341,7 +16410,7 @@
     "location": "Ypres",
     "country": "Belgium",
     "description": "Born on October 25, 1793, in Bouvignes-sur-Meuse. He began a military career, fought in the battles of Lutzen, Bautzen, and Wurschen, and was wounded and taken prisoner in 1813. Died in 1850 at the age of 57 as a retired lieutenant colonel",
-    "latitude": 50.852650,
+    "latitude": 50.85265,
     "longitude": 2.896894,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Coenens_tomb.webp",
     "createDate": "2026-08-19"
@@ -14393,7 +16462,10 @@
       "Lacour"
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bovec.webp",
-    "createDate": "2026-08-20"
+    "createDate": "2026-08-20",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "772",
@@ -14681,7 +16753,7 @@
     "location": "Huningue",
     "country": "France",
     "description": "The French garrison was besieged in 1814 and 1815.General Joseph Barbanègre, commanding the Huningue garrison, resisted for two months with a few hundred men to a large Austrian force of Archduke John.",
-    "latitude": 47.586260,
+    "latitude": 47.58626,
     "longitude": 7.583247,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Huningue.webp",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Si%C3%A8ges_de_Huningue_pendant_les_guerres_de_la_R%C3%A9volution_fran%C3%A7aise_et_du_Premier_Empire",
@@ -14813,7 +16885,13 @@
       "Louis Victor de Rohan"
     ],
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Castelfranco_Veneto",
-    "createDate": "2026-08-21"
+    "createDate": "2026-08-21",
+    "commander_Victor": [
+      "Laurent Gouvion Saint-Cyr",
+      "Louis Victor de Rohan"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "800",
@@ -14823,7 +16901,7 @@
     "location": "Père Lachaise Cemetery (Division 24, chemin de la Citerne, 1ère ligne), Paris",
     "country": "France",
     "description": "He joined an infantry regiment at the age of 14. In 1807 he became the commanding officer of the 1st Cuirassier Regiment. In 1809 he led his cavalrymen at Eckmühl, Ratisbon, Aspern-Essling and Wagram. He died at Paris on December 28th 1819.",
-    "latitude": 48.86100,
+    "latitude": 48.861,
     "longitude": 2.394258,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Berckheim_tomb.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sigismond_Fr%C3%A9d%C3%A9ric_de_Berckheim",
@@ -14864,7 +16942,14 @@
       "Karl von Schwarzenberg",
       "Carl Philipp von Wrede"
     ],
-    "createDate": "2026-08-21"
+    "createDate": "2026-08-21",
+    "commander_Victor": [
+      "Carl Philipp von Wrede"
+    ],
+    "commander_Loss": [
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "803",
@@ -14886,7 +16971,14 @@
       "Karl von Schwarzenberg",
       "Carl Philipp von Wrede"
     ],
-    "createDate": "2026-08-21"
+    "createDate": "2026-08-21",
+    "commander_Victor": [
+      "Carl Philipp von Wrede"
+    ],
+    "commander_Loss": [
+      "Karl von Schwarzenberg"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "804",
@@ -14948,7 +17040,14 @@
       "Joachim Murat",
       "Prince of Hohenlohe"
     ],
-    "createDate": "2026-08-21"
+    "createDate": "2026-08-21",
+    "commander_Victor": [
+      "Joachim Murat"
+    ],
+    "commander_Loss": [
+      "Prince of Hohenlohe"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "807",
@@ -15041,7 +17140,13 @@
       "Friedrich Gideon von Thiele",
       "Príncipe de Anhalt-Ples"
     ],
-    "createDate": "2026-08-22"
+    "createDate": "2026-08-22",
+    "commander_Victor": [
+      "Dominique Vandamme",
+      "Jérôme Bonaparte"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "813",
@@ -15068,7 +17173,12 @@
       "André Masséna",
       "Nicolas de Lacour"
     ],
-    "createDate": "2026-08-22"
+    "createDate": "2026-08-22",
+    "commander_Victor": [
+      "André Masséna"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "814",
@@ -15095,7 +17205,13 @@
       "Auguste de Marmont",
       "Jacques Lauriston"
     ],
-    "createDate": "2026-08-22"
+    "createDate": "2026-08-22",
+    "commander_Victor": [
+      "Auguste de Marmont",
+      "Jacques Lauriston"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "815",
@@ -15131,7 +17247,7 @@
     "country": "France",
     "description": "Sculpted by Henri Alfred Jacquemart in 1868.",
     "latitude": 47.219534,
-    "longitude": -1.547490,
+    "longitude": -1.54749,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ney_statue_nantes.webp",
     "relatedSites": [
       {
@@ -15173,7 +17289,7 @@
     "country": "Italy",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
     "description": "The invasion of Capri was the successful recapture of the Italian island of Capri from Britain by the Kingdom of Naples on 4–18 October 1808.",
-    "latitude": 40.55320,
+    "latitude": 40.5532,
     "longitude": 14.222,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Capri.webp",
     "victor": "Naples",
@@ -15182,7 +17298,10 @@
       "Jean Maximilien Lamarque",
       "Hudson Lowe"
     ],
-    "createDate": "2026-08-22"
+    "createDate": "2026-08-22",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "819",
@@ -15449,7 +17568,7 @@
     "location": "Cairo",
     "country": "Egypt",
     "description": "Napoleon captured Cairo on July 22nd 1798, following his decisive victory over the Mamluk army at the Battle of the Pyramids on July 21st.",
-    "latitude": 30.044420,
+    "latitude": 30.04442,
     "longitude": 31.235712,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cairo.webp",
     "createDate": "2026-08-23",
@@ -15589,7 +17708,7 @@
     "location": "Père Lachaise Cemetery (Division 53, chemin du Bastion, 6ème ligne, M=U-13), Paris",
     "country": "France",
     "description": "Brother of Louis-Alexandre Berthier the Empire maréchal, the division general Victor Léopold Berthier, and maréchal de camp Joseph-Alexandre Berthier, 1st Viscount Berthier (1821).",
-    "latitude": 48.86190,
+    "latitude": 48.8619,
     "longitude": 2.392702,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cesar_Berthier_tomb.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/C%C3%A9sar_Berthier",
@@ -15636,7 +17755,7 @@
     "location": "Bacharach",
     "country": "Germany",
     "description": "The memorial stone, unveiled on November 1853, commemorates the Prussian Field Marshal Blücher for his spectacular crossing of the Rhine on New Year's Eve 1813/1814.",
-    "latitude": 50.08120,
+    "latitude": 50.0812,
     "longitude": 7.764239,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blucher_stone.webp",
     "site_link": "https://www.romantischer-rhein.de/en/a-bluecher-gedenkstein",
@@ -15676,7 +17795,7 @@
     "location": "Krasny, Smolensk",
     "country": "Russia",
     "description": "This memorial was erected on November 6th 1912 to honor the Regiment of Uhlans who distinguished themselves in the battles of 1812.",
-    "latitude": 54.565160,
+    "latitude": 54.56516,
     "longitude": 31.434217,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasny_ulhans.webp",
     "createDate": "2026-08-26"
@@ -15767,7 +17886,7 @@
     "location": "Valladolid",
     "country": "Spain",
     "description": "Site where the house stood in which General Joaquín Blake died on April 27, 1827 at the age of 67.",
-    "latitude": 41.650280,
+    "latitude": 41.65028,
     "longitude": -4.723819,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Blake_death.webp",
     "createDate": "2026-08-26"
@@ -15782,7 +17901,7 @@
     "country": "France",
     "description": "The museum haouses more than 150 objects in the intimacy of count Baudoin de Witt's collection unknown to the public until 1999.",
     "latitude": 44.974739,
-    "longitude": 0.836930,
+    "longitude": 0.83693,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Musee_napoleon.webp",
     "site_link": "https://www.musee-napoleon.fr/",
     "createDate": "2026-08-26"
@@ -15848,7 +17967,12 @@
     "commanders": "Joaquim Murat",
     "victor": "France",
     "defeated": "Russia",
-    "special": "Russian Campaign"
+    "special": "Russian Campaign",
+    "commander_Victor": [
+      "Joaquim Murat"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "857",
@@ -15871,7 +17995,12 @@
     ],
     "victor": "Britain",
     "defeated": "Holland",
-    "special": "Java Campaign"
+    "special": "Java Campaign",
+    "commander_Victor": [
+      "William Cowell"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "858",
@@ -15891,7 +18020,14 @@
       "Henri-François Delaborde",
       "Sir Brent Spencer"
     ],
-    "special": "Peninsular War"
+    "special": "Peninsular War",
+    "commander_Victor": [
+      "Sir Brent Spencer"
+    ],
+    "commander_Loss": [
+      "Henri-François Delaborde"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "859",
@@ -15951,7 +18087,7 @@
     "country": "Italy",
     "description": "On the night of June 30th 1806 Stuart's army arrived at Santa Eufemia bay. At daybreak, Lieutenant-Colonel Oswald commanded a forward group to protect the beachhead. Regnier anticipated a landing at the Bay of Saint Euphemia, where a minor contingent of Polish soldiers occupied the beach during the British arrival. Nowadyas the cost line have moved aproximately 500 meters west, that is why the landing point is now within the town of Gizzeria Lido.",
     "latitude": 38.92976,
-    "longitude": 16.217790,
+    "longitude": 16.21779,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida_landing.webp",
     "createDate": "2026-08-29"
   },
@@ -15982,7 +18118,7 @@
     "country": "Italy",
     "description": "The small Polish detachment, commanded by Colonel Grabinski, was stationed at the Bastione di Malta, a square, squat fortified tower situated just behind the beach. When the British initiated their landing under the cover of Captain Fellowes' ships, these Polish troops quickly withdrew into the interior instead of mounting an attack, allowing General Stuart's forces to come ashore unopposed.",
     "latitude": 38.91757,
-    "longitude": 16.23450,
+    "longitude": 16.2345,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maida_british_camp.webp",
     "createDate": "2026-08-29"
   },
@@ -16040,7 +18176,7 @@
     "location": "Waterloo",
     "country": "Belgium",
     "description": "The Prussian Monument at Waterloo is a neo-Gothic memorial located in the village of Plancenoit, commemorating the decisive role of Field Marshal Blücher's troops in defeating Napoleon. Designed by the famous architect Karl Friedrich Schinkel and erected in 1819, the monument features a distinctive black iron spire topped with an Iron Cross. It honors the fallen soldiers who secured the village after brutal, house-to-house combat on the French right flank.",
-    "latitude": 50.663760,
+    "latitude": 50.66376,
     "longitude": 4.428147,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Prussians_waterloo.webp",
     "site_link": "https://waterloo-tourisme.be/en/monument-to-the-prussians/",
@@ -16089,7 +18225,7 @@
     "country": "France",
     "description": "Armand Blanquet du Chayla died on April 29tn 1826. Prominent French naval officer who fought in the American Revolutionary War and distinguished himself during Napoleon's Egyptian campaign by leading the capture of Malta. Despite surviving severe facial disfigurement at the Battle of the Nile, his fierce public criticism of fleet leadership led to political disgrace, ending his active military career under Bonaparte before he was later named an honorary vice-admiral by Louis XVIII.",
     "latitude": 48.813474,
-    "longitude": 2.130740,
+    "longitude": 2.13074,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Chayla_tomb.webp",
     "wikipedia_link": "http://en.wikipedia.org/wiki/Armand_Blanquet_du_Chayla",
     "createDate": "2026-09-01"
@@ -16120,7 +18256,7 @@
     "country": "Belgium",
     "description": "The Independence Monument is partly a tribute to the Boussart brothers. Designed by the architect Dufour and the sculptor De Beule in 1931, it pays homage to the revolutionaries of 1789, the volunteers of 1830, as well as the soldiers and deportees of the First World War. The figure representing the 1789 revolution wears a uniform that could be compared to the one André-Joseph Boussart would have worn at the time.",
     "latitude": 50.409206,
-    "longitude": 4.172350,
+    "longitude": 4.17235,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/1789_Binche.webp",
     "createDate": "2026-09-01"
   },
@@ -16209,7 +18345,7 @@
     "location": "Odense",
     "country": "Denmark",
     "description": "In July 1808, a young Danish lieutenant named Bloch accidentally shot and killed his friend, a Spanish officer named Don Augustin Mollon, After a dinner, Bloch made a joke about easily killing him if he were an enemy, Then, believing his musket was unloaded aimed him and pulled the trigger, unaware that a fatal charge remained inside. A few days later the Spanish officer was buried in the evening with great solemnity.",
-    "latitude": 55.399490,
+    "latitude": 55.39949,
     "longitude": 10.387328,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Molion_grave.webp",
     "more_info_link": "https://museumodense.dk/udgivelser/da-spanierne-var-her/",
@@ -16230,7 +18366,7 @@
     "location": "Odense",
     "country": "Denmark",
     "description": "Site where stood the inn where, in July 1808, Spaniard Ensign Agustín Mollon was accidentally killed by Danish lieutenant Bloch. After a dinner, Bloch made a joke about easily killing him if he were an enemy, Then, believing his musket was unloaded aimed him and pulled the trigger, unaware that a fatal charge remained inside. A few days later the Spanish officer was buried in the evening with great solemnity.",
-    "latitude": 55.395860,
+    "latitude": 55.39586,
     "longitude": 10.390516,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mortensen_inn.webp",
     "more_info_link": "https://museumodense.dk/udgivelser/da-spanierne-var-her/",
@@ -16266,7 +18402,7 @@
     "location": "Odense",
     "country": "Denmark",
     "description": "This expansive open square was heavily utilized as a military staging and muster ground during the troop deployments of 1808. The Spanish division under the Marquis de la Romana used central squares like this to gather, organize provisions, and interact extensively with the local Danish population, who viewed the 'exotic' soldiers with immense curiosity.",
-    "latitude": 55.39850,
+    "latitude": 55.3985,
     "longitude": 10.392522,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Sortebrodre.webp",
     "createDate": "2026-09-10"
@@ -16338,7 +18474,12 @@
       "Jean Reynier",
       "Roger de Damas"
     ],
-    "createDate": "2026-09-10"
+    "createDate": "2026-09-10",
+    "commander_Victor": [
+      "Jean Reynier"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "887",
@@ -16351,7 +18492,7 @@
     "country": "Italy",
     "description": "Following the Allied victory at the Battle of Maida on July 4, 1806, British forces commanded by General John Stuart advanced rapidly through the Calabria region. On July 6, 1806, Stuart successfully captured half a battalion of Polish troops fighting under French command in Monteleone.",
     "latitude": 38.67555,
-    "longitude": 16.099470,
+    "longitude": 16.09947,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Monteleone.webp",
     "createDate": "2026-09-10"
   },
@@ -16410,7 +18551,10 @@
       "3",
       "Naples Invasion"
     ],
-    "createDate": "2026-09-11"
+    "createDate": "2026-09-11",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "891",
@@ -16433,7 +18577,12 @@
     "victor": "France",
     "defeated": "Britain",
     "special": "Naples Invasion",
-    "createDate": "2026-09-11"
+    "createDate": "2026-09-11",
+    "commander_Victor": [
+      "Sidney Smith"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "892",
@@ -16460,7 +18609,7 @@
     "country": "Czech Republic",
     "description": "Inaugurated on May 6th 2026, it provides a modern, immersive look at the Battle of Austerlitz (December 2, 1805)—widely considered Napoleon Bonaparte's greatest military masterpiece—and its profound geopolitical impact on Europe.",
     "latitude": 49.154731,
-    "longitude": 16.875960,
+    "longitude": 16.87596,
     "site_link": "https://www.zamek-slavkov.cz/en/the-austerlitz-1805-exhibition/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Austerlitz_Exhibition.webp",
     "createDate": "2026-09-14"
@@ -16507,7 +18656,7 @@
     "country": "Spain",
     "description": "This understated, presented on May 11th 2013, honors the heroic resistance of Castro's citizens and commemorates the more than 300 residents, including men, women, and children, who perished at the hands of the Napoleonic forces led by General Maximilien Foy.",
     "latitude": 43.381651,
-    "longitude": -3.217360,
+    "longitude": -3.21736,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/CastroUrdiales.webp",
     "createDate": "2026-09-06"
   },
@@ -16616,7 +18765,10 @@
       "Alexandre Chernyshev",
       "Jacques Alexandre Allix"
     ],
-    "createDate": "2026-09-16"
+    "createDate": "2026-09-16",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "902",
@@ -16641,7 +18793,12 @@
       "Karl von Klösterlein)",
       "Friedrich von der Marwitz"
     ],
-    "createDate": "2026-09-16"
+    "createDate": "2026-09-16",
+    "commander_Victor": [
+      "Friedrich von der Marwitz"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "903",
@@ -16711,7 +18868,7 @@
     "location": "Douglas",
     "country": "Isle of Man",
     "description": "The Manx Museum houses a rare collection of military uniforms, worn by local people during Napoleonic times. Captain Quilliam's naval uniform wore aboard HMS Victory at Trafalgar in 1805 and the light cavalry uniform worn on the battlefield at Waterloo by Caesar Bacon art part of its collection.",
-    "latitude": 54.154540,
+    "latitude": 54.15454,
     "longitude": -4.481883,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Manx_Museum",
     "site_link": "https://manxnationalheritage.im/our-sites/manx-museum/",
@@ -16728,7 +18885,7 @@
     "location": " Fuengirola, Málaga",
     "country": "Spain",
     "description": "During the Battle of Fuengirola (October 14 - 15, 1810), Sohail Castle served as the strategic epicenter and defensive anchor for a small, heavily outnumbered Polish garrison fighting under the French Napoleonic Empire against a much larger British-Spanish expeditionary force.",
-    "latitude": 36.525340,
+    "latitude": 36.52534,
     "longitude": -4.628957,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sohail_Castle",
     "site_link": "https://www.castillosohail.es/historia.html",
@@ -16823,7 +18980,7 @@
     "country": "Italy",
     "description": "The Museo del Risorgimento in Milan houses some of the most prestigious treasures from May 26, 1805, when Napoleon Bonaparte was crowned King of Italy inside the Milan Cathedral. The collection features his striking green and gold embroidered coronation mantle, the royal insignia, and his official crown.",
     "latitude": 45.472255,
-    "longitude": 9.189800,
+    "longitude": 9.1898,
     "site_link": "https://www2.comune.milano.it/web/civiche-raccolte-storiche",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_Ris_Milano.webp",
     "createDate": "2026-09-18"
@@ -16927,7 +19084,12 @@
       "Macleod",
       "Hoste"
     ],
-    "createDate": "2026-09-19"
+    "createDate": "2026-09-19",
+    "commander_Victor": [
+      "Hoste"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "919",
@@ -16940,7 +19102,7 @@
     "country": "Germany",
     "description": "On October 25 1806, while the Prussian commander was negotiating the surrender of the dilapidated fortress, French troops charged the gate guards and broke inside. Major Benekendorf was subsequently court-martialed in 1808 and sentenced to death by firing squad, though the King later commuted his sentence to life in prison.",
     "latitude": 52.540853,
-    "longitude": 13.212800,
+    "longitude": 13.2128,
     "site_link": "https://www.zitadelle-berlin.de/en/",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Spandau_Citadel",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Spandau.webp",
@@ -17032,7 +19194,7 @@
     "country": "Germany",
     "description": "Erected in 1841, this 4.50-meter-high red granite cross commemorates a key and painful event in Prussian military history: the so-called 'Capitulation of Prenzlau' (or the Schmach von Prenzlau, the infamy of Prenzlau) which occurred on October 28, 1806-",
     "latitude": 53.356166,
-    "longitude": 13.836130,
+    "longitude": 13.83613,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Patriotenkreuz.webp",
     "createDate": "2026-09-20"
   },
@@ -17103,7 +19265,7 @@
     "country": "Germany",
     "description": "The monument marks the defensive position held by Oswald's Fusilier Brigade (alongside the Sachsen-Weimar Sharpshooter Battalion) during the famous Battle of Auerstedt:",
     "latitude": 51.097695,
-    "longitude": 11.620770,
+    "longitude": 11.62077,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Oswald_stelee.webp",
     "createDate": "2026-09-20"
   },
@@ -17116,7 +19278,7 @@
     "location": "Jena",
     "country": "Germany",
     "description": "Originally, it was a boundary stone between Jena and Cospeda, on which Napoleon ordered an 'N' to be engraved after the 1806 victory. The stone was replaced twice during the 19th century, the last time featuring an imperial crown. After World War II, the area served as a military training ground, and the stone disappeared in the 1960s. In 1992, it was reconstructed by local associations and the municipal administration of Cospeda.",
-    "latitude": 50.945120,
+    "latitude": 50.94512,
     "longitude": 11.571442,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Jena_Napoleonstein.webp",
     "createDate": "2026-09-20"
@@ -17257,7 +19419,14 @@
       "Gebhard Leberecht von Blücher",
       "Prince August of Prussia"
     ],
-    "createDate": "2026-09-21"
+    "createDate": "2026-09-21",
+    "commander_Victor": [
+      "Jean de Dieu Soult"
+    ],
+    "commander_Loss": [
+      "Gebhard Leberecht von Blücher"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "940",
@@ -17295,7 +19464,10 @@
       "Jean-Raymond Bourke",
       "Prince August of Prussia"
     ],
-    "createDate": "2026-09-21"
+    "createDate": "2026-09-21",
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "942",
@@ -17442,7 +19614,7 @@
     "location": "Rouffach, Alsace",
     "country": "France",
     "description": "François Joseph Lefebvre was born in Rouffach, Alsace, on October 25, 1755. After losing his parents at age eight, he was raised by his uncle, a priest who hoped he would also join the seminary. However, the young Lefebvre wanted a military career instead. With his uncle's permission, he enlisted in the French Guards as a soldier in 1773.",
-    "latitude": 47.956820,
+    "latitude": 47.95682,
     "longitude": 7.299138,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Lefebre_birth.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Lefebvre",
@@ -17464,7 +19636,7 @@
     "location": "Château de Villette, Condécourt",
     "country": "France",
     "description": "Grouchy was born on October 23rd 1766 into a highly prominent, aristocratic Norman family belonging to the noblesse d’épée (nobility of the sword). He was the son of François-Jacques de Grouchy, the 1st Marquis de Grouchy, and Gilberte Fréteau de Pény.",
-    "latitude": 49.031780,
+    "latitude": 49.03178,
     "longitude": 1.939726,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Villette.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Emmanuel_de_Grouchy,_marquis_de_Grouchy",
@@ -17490,7 +19662,12 @@
       "Zacharie Allemand",
       "Daniel Woodriff"
     ],
-    "createDate": "2026-05-24"
+    "createDate": "2026-05-24",
+    "commander_Victor": [
+      "Zacharie Allemand"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "953",
@@ -17558,7 +19735,7 @@
     "latitude": 35.850631,
     "longitude": 14.507025,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Palazzo_Dorell",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Palazzo_Dorel.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Graham_grave.webp",
     "createDate": "2026-09-27"
   },
   {
@@ -17593,7 +19770,7 @@
     "country": "Spain",
     "description": "On June 23, 1813, as Napoleon's forces were retreating, they were overtaken and defeated at this site by Allied troops under the command of General Graham. The remains of several of those soldiers were discovered here in 1908.",
     "latitude": 43.044637,
-    "longitude": -2.191570,
+    "longitude": -2.19157,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Senpere.webp",
     "createDate": "2026-09-27"
   },
@@ -17619,7 +19796,12 @@
     "commanders": [
       "Thomas Graham"
     ],
-    "createDate": "2026-09-27"
+    "createDate": "2026-09-27",
+    "commander_Victor": [
+      "Thomas Graham"
+    ],
+    "commander_Loss": [],
+    "commander_Tie": []
   },
   {
     "id": "959",
@@ -17651,7 +19833,14 @@
       }
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Macon.webp",
-    "createDate": "2026-09-27"
+    "createDate": "2026-09-27",
+    "commander_Victor": [
+      "Frederick Bianchi"
+    ],
+    "commander_Loss": [
+      "Louis Musnier"
+    ],
+    "commander_Tie": []
   },
   {
     "id": "960",
@@ -17711,7 +19900,7 @@
     "location": "Sommersdorf-Sommerschenburg",
     "country": "Germany",
     "description": "Established on October 27, 2010, the Gneisenau Museum, located in the historic schoolhouse built in 1824 by Prussian Field Marshal August Neidhardt von Gneisenau, offers a dedicated look into the life and legacy of one of Prussia's most prominent military reformers.",
-    "latitude": 52.171100,
+    "latitude": 52.1711,
     "longitude": 11.102961,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_museum2.webp",
     "more_info_link": "https://www.gneisenau-gesellschaft-sommerschenburg.de/museum",
@@ -17745,7 +19934,7 @@
         "bounds": [
           [
             50.861124,
-            15.656800
+            15.6568
           ],
           [
             50.872305,
@@ -17768,7 +19957,7 @@
     "country": "Germany",
     "description": "He was born on October 31st 1762 in Warmbrunn (Lower Silesia), which was then part of the Kingdom of Prussia. Today, this historic spa town is known as Cieplice Śląskie-Zdrój, a district within the city of Jelenia Góra in southwestern Poland.",
     "latitude": 51.967166,
-    "longitude": 7.611390,
+    "longitude": 7.61139,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/vonHorn_grave.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Heinrich_Wilhelm_von_Horn",
     "flower_link": "https://www.findagrave.com/memorial/147159477/heinrich_wilhelm-von_horn/flower",
@@ -17825,6 +20014,6 @@
     "longitude": 13.395586,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Gneisenau_berlin.webp",
     "wikipedia_link": "https://de.wikipedia.org/wiki/Gneisenau-Denkmal_(Berlin)",
-    "createDate": "2026-09-27"
+    "createDate": "2026-09-26"
   }
 ]

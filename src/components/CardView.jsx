@@ -36,8 +36,18 @@ const CardView = () => {
         filterCategory,
         filterMonth,
         setFilterMonth,
-        availableMonths
+        availableMonths,
+        filterCommander,
+        filterCommanderRole,
+        setFilterCommanderRole
     } = useAppContext();
+
+    const commanderRoleOptions = useMemo(() => [
+        { value: 'all', label: 'All Battles' },
+        { value: 'victor', label: 'Victories' },
+        { value: 'loss', label: 'Defeats' },
+        { value: 'tie', label: 'Inconclusive' }
+    ], []);
 
     const isMonthFilterVisible = useMemo(() => {
         const allowed = ['Battle site', 'Naval battle', 'Birthplace', 'Grave site'];
@@ -170,7 +180,7 @@ const CardView = () => {
     // Reset visible count when sites or sorting/filtering change
     useEffect(() => {
         setVisibleCount(BATCH_SIZE);
-    }, [sites, sortField, sortOrder, filterMonth, userCoords]);
+    }, [sites, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, userCoords]);
 
     // Sentinel observer for progressive infinite loading
     useEffect(() => {
@@ -215,6 +225,17 @@ const CardView = () => {
                             <Calendar size={14} style={{ marginRight: '4px' }} />
                             Date
                         </button>
+                        {filterCommander && filterCommander !== 'all' && (
+                            <div className="sort-commander-role-wrapper">
+                                <CustomSimpleSelect
+                                    className={`sort-commander-role-select ${filterCommanderRole !== 'all' ? 'filters-active-red' : ''}`}
+                                    options={commanderRoleOptions}
+                                    value={filterCommanderRole || 'all'}
+                                    onChange={setFilterCommanderRole}
+                                    placeholder="Outcome"
+                                />
+                            </div>
+                        )}
                         {isMonthFilterVisible && (
                             <div className="sort-month-filter-wrapper">
                                 <CustomSimpleSelect
