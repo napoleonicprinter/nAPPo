@@ -23,7 +23,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             case 'Monument': return '#26a69a';
             case 'Birthplace': return '#ffb300';
             case 'Grave site': return '#607d8b';
-            case 'Building': return '#f59e0b';
+            case 'Hotel': return '#bb7b0caf';
             case 'Landmark': return '#ccff00';
             case 'Event site': return '#4caf50';
             case 'Restaurant': return '#795548';
@@ -54,18 +54,18 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                 const rect = triggerRef.current.getBoundingClientRect();
                 const container = getPortalContainer();
                 const containerRect = container.getBoundingClientRect();
-                
+
                 const scale = rect.width / triggerRef.current.offsetWidth || 1;
-                
+
                 const isCloseToRightEdge = rect.left + 200 > containerRect.right;
-                
+
                 const style = {
                     position: 'absolute',
                     top: (rect.bottom - containerRect.top) / scale + 5,
                     minWidth: triggerRef.current.offsetWidth,
                     zIndex: 10005
                 };
-                
+
                 if (isCloseToRightEdge) {
                     style.right = (containerRect.right - rect.right) / scale;
                     style.left = 'auto';
@@ -73,13 +73,13 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
                     style.left = (rect.left - containerRect.left) / scale;
                     style.right = 'auto';
                 }
-                
+
                 setMenuStyle(style);
             };
-            
+
             updatePosition();
             window.addEventListener('resize', updatePosition);
-            
+
             const scrollContainer = triggerRef.current.closest('.mobile-overlay-filters');
             if (scrollContainer) {
                 scrollContainer.addEventListener('scroll', updatePosition);
@@ -142,7 +142,7 @@ const CustomCategorySelect = ({ categories, value, onChange, categoryCounts = {}
             </button>
 
             {isOpen && createPortal(
-                <div 
+                <div
                     ref={menuRef}
                     className="custom-select-menu category-select-menu animate-fade-in"
                     style={menuStyle}

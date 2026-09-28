@@ -55,7 +55,7 @@ export const getCategoryColor = (category) => {
         'Monument': '#26a69a',
         'Birthplace': '#ffb300',
         'Grave site': '#607d8b',
-        'Building': '#f59e0b',
+        'Hotel': '#bb7b0caf',
         'Landmark': '#ccff00',
         'Event site': '#4caf50',
         'Restaurant': '#795548',

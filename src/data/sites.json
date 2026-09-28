@@ -18727,5 +18727,35 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Golitsyn_birth.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Dmitry_Golitsyn",
     "createDate": "2026-09-26"
+  },
+  {
+    "id": "970",
+    "name": "Münster Palace - Blücher residence",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1787",
+    "location": "Münster",
+    "country": "Germany",
+    "description": "It was built between 1767 and 1787 in baroque style. Gebhard von Blücher used the Schloss Münster as his official military headquarters and private residence from December 1803 to September 1806",
+    "latitude": 51.963641,
+    "longitude": 7.613071,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Munster_palace.webp",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Schloss_M%C3%BCnster",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "971",
+    "name": "Hôtel du déjeuner de Napoléon",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1800",
+    "location": "Bourg-Saint-Pierre",
+    "country": "Switzerland",
+    "description": "Originally named A la colonne milliaire, the inn hosted First Consul Napoleon Bonaparte for lunch on May 20, 1800, during his Italian campaign before he crossed the Great St Bernard Pass.",
+    "latitude": 45.949323,
+    "longitude": 7.208229,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bourg_Saint.webp",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Schloss_M%C3%BCnster",
+    "createDate": "2026-09-26"
   }
 ]
