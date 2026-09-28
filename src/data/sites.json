@@ -18836,5 +18836,21 @@
     "site_link": "https://www.napoleon-museum.de/",
     "wikipedia_link": "https://de.wikipedia.org/wiki/Napoleon-Museum_Bad_Harzburg",
     "createDate": "2026-09-26"
+  },
+  {
+    "id": "975",
+    "name": "Napoleonic Museum ",
+    "category": "Museum",
+    "significance": 3,
+    "year": "2022",
+    "date": "2022-10-05",
+    "location": "Witaszyce",
+    "country": "Poland",
+    "description": "Located in the Witaszyce Palace it is the only museum in Poland dedicated to Napoleon and his times. The collection offers a glimpse into the era through great battles, soldiers, uniforms, weapons, and original memorabilia.",
+    "latitude": 51.94248,
+    "longitude": 17.561876,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Witaszyce_Palace.webp",
+    "site_link": "https://palac-witaszyce.pl/muzea/",
+    "createDate": "2026-09-26"
   }
 ]
