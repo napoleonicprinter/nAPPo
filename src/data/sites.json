@@ -18765,5 +18765,76 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bourg_Saint.webp",
     "wikipedia_link": "http://en.wikipedia.org/wiki/Schloss_M%C3%BCnster",
     "createDate": "2026-09-26"
+  },
+  {
+    "id": "972",
+    "relatedSites": [
+      {
+        "id": "973",
+        "title": "Cosaks' grave"
+      }
+    ],
+    "name": "Battlefield on the Burchardianger",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1813",
+    "date": "1813-05-31",
+    "location": "Halberstadt",
+    "country": "Germany",
+    "description": "The more accurately known historically as the Skirmish at Halberstadt took place on May 31, 1813. The Burchardianger is a meadow area located just outside the historic monastery of St. Burchardi. A column of the Russian Imperial Army, primarily composed of Cossacks under the command of General Alexander Chernyshov (Czernitscheff), launched a surprise raid against a Westphalian-French division commanded by General Jakob von Ochs. The Russians completely surprised the French-allied forces, routing them, taking over 1,000 prisoners, and capturing important military supplies.",
+    "latitude": 51.901597,
+    "longitude": 11.039993,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Burchardianger.webp",
+    "special": "6",
+    "victor": "Russia",
+    "defeated": [
+      "France",
+      "Westphalia"
+    ],
+    "commander_Victor": [
+      "Alexander Chernyshov"
+    ],
+    "commander_Loss": [
+      "Jakob von Ochs"
+    ],
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "973",
+    "relatedSites": [
+      {
+        "id": "972",
+        "title": "Battlefield on the Burchardianger"
+      }
+    ],
+    "name": "Cosaks' grave ",
+    "category": "Grave site",
+    "significance": 1,
+    "year": "1813",
+    "location": "Halberstadt",
+    "country": "Germany",
+    "description": "Serving as a memorial to the Battle of Halberstadt during the Wars of Liberation, this grave contains the remains of two Cossacks from Czernitscheff's Corps. Both lost their lives on May 31, 1813, in the fighting at Burchardianger. (Photo by Lutz Lange)",
+    "latitude": 51.90935,
+    "longitude": 11.007316,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cossak_grave.webp",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Kosakengrab",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "974",
+    "name": "Napoleon Museum ",
+    "category": "Museum",
+    "significance": 2,
+    "year": "2022",
+    "date": "2022-10-05",
+    "location": "Bad Harzburg",
+    "country": "Germany",
+    "description": "The museum opened on October 5th 2022. Its main focus is the Grande Armée , the Prussian Army , the French Emperor , and the Wars of Liberation . A highlight of the exhibition is over 40 soldiers in original uniforms , including Duke Frederick William of Brunswick and a French cuirassier on horseback.",
+    "latitude": 51.879727,
+    "longitude": 10.561209,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Napoleon_Museum.webp",
+    "site_link": "https://www.napoleon-museum.de/",
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Napoleon-Museum_Bad_Harzburg",
+    "createDate": "2026-09-26"
   }
 ]

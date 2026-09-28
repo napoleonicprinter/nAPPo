@@ -4313,5 +4313,13 @@
         "location": "Yaropolets, Moscu Óblast, Russia",
         "description": "He was born on October 29, 1771 (November 10 New Style) in Yaropolets, son of Prince Vladimir Borisovich Golitsyn.As a young man, he traveled to Paris with his family, where he attended the École Militaire—the same military academy Napoleon Bonaparte had graduated from just a year prior in 1785.",
         "wikipedia_link": "https://en.wikipedia.org/wiki/Dmitry_Golitsyn"
+    },
+    {
+        "id": "502",
+        "title": "Battle on the Burchardianger",
+        "siteId": 972,
+        "date": "1813-05-31",
+        "location": "Halberstadt, Germany",
+        "description": "The more accurately known historically as the Skirmish at Halberstadt took place on May 31, 1813. The Burchardianger is a meadow area located just outside the historic monastery of St. Burchardi. A column of the Russian Imperial Army, primarily composed of Cossacks under the command of General Alexander Chernyshov (Czernitscheff), launched a surprise raid against a Westphalian-French division commanded by General Jakob von Ochs. The Russians completely surprised the French-allied forces, routing them, taking over 1,000 prisoners, and capturing important military supplies."
     }
 ]
