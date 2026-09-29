@@ -36,7 +36,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 6px 4px;
@@ -52,7 +53,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-left: auto;
+    margin-left: 4px;
     flex-shrink: 0;
 }
 
@@ -74,6 +75,8 @@
     font-size: 0.83rem;
     font-weight: 600;
     cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: all 0.2s ease;
 }
 
@@ -91,6 +94,7 @@
     font-size: 0.75rem;
     font-weight: bold;
     cursor: pointer;
+    flex-shrink: 0;
     transition: all 0.2s ease;
 }
 
@@ -110,6 +114,7 @@
 
 .image-mode-toggle-btn {
     min-width: 32px;
+    height: 28px;
 }
 
 .image-mode-toggle-btn.no-images-active {
@@ -120,6 +125,68 @@
 body:not(.light-mode) .image-mode-toggle-btn.no-images-active {
     background: rgba(239, 68, 68, 0.22);
     border-color: rgba(239, 68, 68, 0.6);
+}
+
+/* Mobile & Tablet Responsive Optimizations */
+@media (max-width: 768px) {
+    .card-view-header {
+        padding: 6px 10px;
+        gap: 6px;
+        border-radius: 24px;
+        min-height: 48px;
+    }
+
+    .sort-tag-btn {
+        padding: 5px 11px;
+        font-size: 0.78rem;
+    }
+
+    .sort-order-btn {
+        min-width: 30px;
+        height: 30px;
+    }
+
+    .image-mode-toggle-btn {
+        min-width: 32px;
+        height: 30px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+.device-mobile .card-view-header {
+    padding: 6px 10px;
+    gap: 6px;
+    border-radius: 24px;
+    min-height: 48px;
+}
+
+.device-mobile .sort-tag-btn {
+    padding: 5px 11px;
+    font-size: 0.78rem;
+}
+
+.device-mobile .sort-order-btn {
+    min-width: 30px;
+    height: 30px;
+}
+
+.device-mobile .image-mode-toggle-btn {
+    min-width: 32px;
+    height: 30px;
+}
+
+.device-mobile .cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+}
+
+.device-tablet .card-view-header {
+    padding: 7px 12px;
+    gap: 8px;
 }
 
 /* Dark mode styling for header and sort buttons */
