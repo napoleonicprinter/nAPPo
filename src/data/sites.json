@@ -17298,7 +17298,7 @@
       "3",
       "Naples Invasion"
     ],
-    "Victor": "France",
+    "victor": "France",
     "defeated": "Kingdom of Naples",
     "createDate": "2026-09-10",
     "commander_Victor": [
@@ -18933,6 +18933,21 @@
     "longitude": 17.561876,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Witaszyce_Palace.webp",
     "site_link": "https://palac-witaszyce.pl/muzea/",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "976",
+    "name": "Crauford Rocks",
+    "category": "Battle landmark",
+    "significance": 2,
+    "year": "1810",
+    "date": "1810-09-27",
+    "location": "Sula",
+    "country": "Portugal",
+    "description": "Craufurd supposedly crouched behind a prominent boulder at this site to watch Loison's French division laboriously climb the steep. Once the French reached the crest, breathless and disorganized, Craufurd ordered his hidden men to rise. They delivered a devastating point-blank musket volley and launched a decisive bayonet charge that sent the French reeling back down the mountain.",
+    "latitude": 40.377863,
+    "longitude": -8.354044,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Crauford_rocks.webp",
     "createDate": "2026-09-26"
   }
 ]

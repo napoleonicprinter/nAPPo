@@ -108,6 +108,20 @@
     box-shadow: 0 2px 8px rgba(239, 83, 80, 0.35);
 }
 
+.image-mode-toggle-btn {
+    min-width: 32px;
+}
+
+.image-mode-toggle-btn.no-images-active {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+body:not(.light-mode) .image-mode-toggle-btn.no-images-active {
+    background: rgba(239, 68, 68, 0.22);
+    border-color: rgba(239, 68, 68, 0.6);
+}
+
 /* Dark mode styling for header and sort buttons */
 body:not(.light-mode) .card-view-header {
     background: rgba(22, 27, 34, 0.85);

@@ -89,7 +89,7 @@ const formatDistanceTag = (dist) => {
     return `${Math.round(d)} km`;
 };
 
-const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => {
+const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showImage = true }) => {
     const {
         theme,
         toggleVisited,
@@ -255,138 +255,242 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                     </button>
                 )}
 
-                <div className="card-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
-                    <img
-                        src={site.image}
-                        alt={site.name}
-                        className="card-image"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ width: '100%', height: 'auto', display: 'block' }}
-                        onError={(e) => handleImageFallback(e, site.image)}
-                    />
-
-                    {/* NEW TAG (Upper Left) */}
-                    {site.isNew && (
+                {showImage ? (
+                    <div className="card-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
                         <img
-                            src="/assets/new-tag.png"
-                            alt="New Site"
-                            className="new-site-badge"
-                            style={{
-                                position: 'absolute',
-                                top: '5px',
-                                left: '5px',
-                                width: '70px',
-                                height: 'auto',
-                                zIndex: 20,
-                                pointerEvents: 'none'
-                            }}
+                            src={site.image}
+                            alt={site.name}
+                            className="card-image"
+                            loading="lazy"
+                            decoding="async"
+                            style={{ width: '100%', height: 'auto', display: 'block' }}
+                            onError={(e) => handleImageFallback(e, site.image)}
                         />
-                    )}
 
-                    {/* --- MARK AS VISITED & NAVIGATION (Lower Left of Image) --- */}
-                    <div style={{
-                        position: 'absolute',
-                        bottom: '10px',
-                        left: '10px',
-                        zIndex: 25,
+                        {/* NEW TAG (Upper Left) */}
+                        {site.isNew && (
+                            <img
+                                src="/assets/new-tag.png"
+                                alt="New Site"
+                                className="new-site-badge"
+                                style={{
+                                    position: 'absolute',
+                                    top: '5px',
+                                    left: '5px',
+                                    width: '70px',
+                                    height: 'auto',
+                                    zIndex: 20,
+                                    pointerEvents: 'none'
+                                }}
+                            />
+                        )}
+
+                        {/* --- MARK AS VISITED & NAVIGATION (Lower Left of Image) --- */}
+                        <div style={{
+                            position: 'absolute',
+                            bottom: '10px',
+                            left: '10px',
+                            zIndex: 25,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px'
+                        }}>
+                            <button
+                                className={`btn-visited ${site.visited ? 'active' : ''}`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleVisited(site.id);
+                                }}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '5px',
+                                    padding: '6px 10px',
+                                    borderRadius: '6px',
+                                    fontSize: '11px',
+                                    fontWeight: 'bold',
+                                    cursor: 'pointer',
+                                    border: '1px solid rgba(255,255,255,0.4)',
+                                    color: 'white',
+                                    backgroundColor: site.visited ? '#4caf50' : 'rgba(0,0,0,0.6)',
+                                    backdropFilter: 'blur(4px)'
+                                }}
+                            >
+                                <CheckCircle size={14} />
+                                {site.visited ? 'Visited' : 'Mark as Visited'}
+                            </button>
+
+                        </div>
+                        {/* DISTANCE TAG & NAVIGATION BUTTON (Above Category Badge) */}
+                        {userCoords && (site.distance !== undefined || (site.latitude && site.longitude)) && (() => {
+                            const distVal = site.distance !== undefined
+                                ? site.distance
+                                : calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude);
+                            const formattedDist = formatDistanceTag(distVal);
+                            if (!formattedDist) return null;
+
+                            return (
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: '38px',
+                                    right: '10px',
+                                    zIndex: 15,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '4px'
+                                }}>
+                                    <span style={{
+                                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                                        backdropFilter: 'blur(4px)',
+                                        color: '#ffffff',
+                                        padding: '3px 7px',
+                                        borderRadius: '4px',
+                                        fontSize: '0.7rem',
+                                        fontWeight: 'bold',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                                        whiteSpace: 'nowrap'
+                                    }}>
+                                        {formattedDist}
+                                    </span>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            e.preventDefault();
+                                            const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                            window.open(url, '_blank');
+                                        }}
+                                        title="Navigate with Google Maps"
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            background: 'var(--accent-primary, #ef5350)',
+                                            color: '#ffffff',
+                                            border: 'none',
+                                            width: '22px',
+                                            height: '22px',
+                                            borderRadius: '4px',
+                                            cursor: 'pointer',
+                                            boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                                            padding: 0
+                                        }}
+                                    >
+                                        <Navigation size={12} />
+                                    </button>
+                                </div>
+                            );
+                        })()}
+
+                        {/* CATEGORY BADGE (Lower Right) */}
+                        <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
+                            <span className="badge" style={{ backgroundColor: getCategoryColor(site.category), color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>
+                                {site.category}
+                            </span>
+                        </div>
+                    </div>
+                ) : (
+                    /* COMPACT NO-IMAGE TOP BAR */
+                    <div className="card-no-image-header" style={{
                         display: 'flex',
                         alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '10px 12px 6px 12px',
+                        position: 'relative',
                         gap: '8px'
                     }}>
-                        <button
-                            className={`btn-visited ${site.visited ? 'active' : ''}`}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                toggleVisited(site.id);
-                            }}
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '5px',
-                                padding: '6px 10px',
-                                borderRadius: '6px',
-                                fontSize: '11px',
-                                fontWeight: 'bold',
-                                cursor: 'pointer',
-                                border: '1px solid rgba(255,255,255,0.4)',
-                                color: 'white',
-                                backgroundColor: site.visited ? '#4caf50' : 'rgba(0,0,0,0.6)',
-                                backdropFilter: 'blur(4px)'
-                            }}
-                        >
-                            <CheckCircle size={14} />
-                            {site.visited ? 'Visited' : 'Mark as Visited'}
-                        </button>
-
-                    </div>
-                    {/* DISTANCE TAG & NAVIGATION BUTTON (Above Category Badge) */}
-                    {userCoords && (site.distance !== undefined || (site.latitude && site.longitude)) && (() => {
-                        const distVal = site.distance !== undefined
-                            ? site.distance
-                            : calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude);
-                        const formattedDist = formatDistanceTag(distVal);
-                        if (!formattedDist) return null;
-
-                        return (
-                            <div style={{
-                                position: 'absolute',
-                                bottom: '38px',
-                                right: '10px',
-                                zIndex: 15,
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '4px'
-                            }}>
-                                <span style={{
-                                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-                                    backdropFilter: 'blur(4px)',
-                                    color: '#ffffff',
-                                    padding: '3px 7px',
-                                    borderRadius: '4px',
-                                    fontSize: '0.7rem',
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <button
+                                className={`btn-visited ${site.visited ? 'active' : ''}`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleVisited(site.id);
+                                }}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '5px',
+                                    padding: '4px 8px',
+                                    borderRadius: '6px',
+                                    fontSize: '11px',
                                     fontWeight: 'bold',
-                                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                                    whiteSpace: 'nowrap'
-                                }}>
-                                    {formattedDist}
-                                </span>
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        e.preventDefault();
-                                        const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
-                                        window.open(url, '_blank');
-                                    }}
-                                    title="Navigate with Google Maps"
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        background: 'var(--accent-primary, #ef5350)',
-                                        color: '#ffffff',
-                                        border: 'none',
-                                        width: '22px',
-                                        height: '22px',
-                                        borderRadius: '4px',
-                                        cursor: 'pointer',
-                                        boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                                        padding: 0
-                                    }}
-                                >
-                                    <Navigation size={12} />
-                                </button>
-                            </div>
-                        );
-                    })()}
+                                    cursor: 'pointer',
+                                    border: '1px solid var(--border-color, rgba(128,128,128,0.3))',
+                                    color: site.visited ? 'white' : 'var(--text-primary)',
+                                    backgroundColor: site.visited ? '#4caf50' : 'rgba(128,128,128,0.15)'
+                                }}
+                            >
+                                <CheckCircle size={13} />
+                                {site.visited ? 'Visited' : 'Mark as Visited'}
+                            </button>
 
-                    {/* CATEGORY BADGE (Lower Right) */}
-                    <div style={{ position: 'absolute', bottom: '10px', right: '10px', zIndex: 15 }}>
-                        <span className="badge" style={{ backgroundColor: getCategoryColor(site.category), color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>
-                            {site.category}
-                        </span>
+                            {site.isNew && (
+                                <img
+                                    src="/assets/new-tag.png"
+                                    alt="New Site"
+                                    style={{
+                                        width: '45px',
+                                        height: 'auto',
+                                        pointerEvents: 'none'
+                                    }}
+                                />
+                            )}
+                        </div>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            {userCoords && (site.distance !== undefined || (site.latitude && site.longitude)) && (() => {
+                                const distVal = site.distance !== undefined
+                                    ? site.distance
+                                    : calculateDistance(userCoords.lat, userCoords.lon, site.latitude, site.longitude);
+                                const formattedDist = formatDistanceTag(distVal);
+                                if (!formattedDist) return null;
+
+                                return (
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                        <span style={{
+                                            backgroundColor: 'rgba(128, 128, 128, 0.18)',
+                                            color: 'var(--text-primary)',
+                                            padding: '2px 6px',
+                                            borderRadius: '4px',
+                                            fontSize: '0.7rem',
+                                            fontWeight: 'bold',
+                                            whiteSpace: 'nowrap'
+                                        }}>
+                                            {formattedDist}
+                                        </span>
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                e.preventDefault();
+                                                const url = `https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lon}&destination=${site.latitude},${site.longitude}`;
+                                                window.open(url, '_blank');
+                                            }}
+                                            title="Navigate with Google Maps"
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                background: 'var(--accent-primary, #ef5350)',
+                                                color: '#ffffff',
+                                                border: 'none',
+                                                width: '20px',
+                                                height: '20px',
+                                                borderRadius: '4px',
+                                                cursor: 'pointer',
+                                                padding: 0
+                                            }}
+                                        >
+                                            <Navigation size={11} />
+                                        </button>
+                                    </div>
+                                );
+                            })()}
+
+                            <span className="badge" style={{ backgroundColor: getCategoryColor(site.category), color: 'white', padding: '3px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>
+                                {site.category}
+                            </span>
+                        </div>
                     </div>
-                </div>
+                )}
 
                 <div className="card-content"
                     style={{
@@ -417,6 +521,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                             if (setShowEvents) setShowEvents(true);
                                         } else if (prev.fromListMode || prev.fromView === 'card' || prev.fromView === 'list') {
                                             setSelectedSite(null);
+                                            if (onClose) onClose();
                                             setSiteToOpenPopup(null);
                                             setView('card');
                                         } else {
@@ -424,12 +529,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         }
                                     }}
                                     style={{
-                                        border: 'none',
+                                        border: '1px solid var(--accent-primary, #58a6ff)',
                                         background: 'rgba(88, 166, 255, 0.15)',
                                         color: 'var(--accent-primary, #58a6ff)',
-                                        padding: '4px 8px',
-                                        borderRadius: '4px',
-                                        fontSize: '0.75rem',
+                                        padding: '4px 10px',
+                                        borderRadius: '6px',
+                                        fontSize: '0.78rem',
                                         fontWeight: 'bold',
                                         cursor: 'pointer',
                                         display: 'inline-flex',
@@ -440,7 +545,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     {(callerSite.fromView === 'todayInHistory' || callerSite.fromView === 'historyCalendar')
                                         ? '← Back to Today in History'
                                         : (callerSite.fromListMode || callerSite.fromView === 'card' || callerSite.fromView === 'list'
-                                            ? '← Return to List'
+                                            ? '← Back to List'
                                             : `← Back to ${callerSite.name}`)}
                                 </button>
                             </div>
@@ -479,9 +584,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                     <button
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            if (view === 'card' || view === 'list') {
-                                                setCallerSite({ ...site, fromView: view, fromListMode: true });
-                                            }
+                                            setCallerSite({ ...site, fromView: view || 'card', fromListMode: true });
                                             setSelectedSite(null);
                                             setSiteToOpenPopup(null);
                                             setTimeout(() => {
@@ -557,9 +660,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false }) => 
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             if (map.id) toggleMapOverlay(map.id);
-                                            if (view === 'card' || view === 'list') {
-                                                setCallerSite({ ...site, fromView: view, fromListMode: true });
-                                            }
+                                            setCallerSite({ ...site, fromView: view || 'card', fromListMode: true });
                                             setSelectedSite(null);
                                             setSiteToOpenPopup(null);
                                             setTimeout(() => {

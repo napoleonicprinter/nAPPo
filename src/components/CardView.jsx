@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays } from 'lucide-react';
+import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays, Camera } from 'lucide-react';
 import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
 import CustomSimpleSelect from './CustomSimpleSelect';
@@ -88,6 +88,10 @@ const CardView = () => {
         return userCoords ? 'distance' : 'date';
     });
     const [sortOrder, setSortOrder] = useState(() => localStorage.getItem('listSortOrder') || 'asc');
+    const [showImages, setShowImages] = useState(() => {
+        const saved = localStorage.getItem('cardViewShowImages');
+        return saved !== 'false';
+    });
     const [showTopBtn, setShowTopBtn] = useState(false);
     const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
 
@@ -117,6 +121,10 @@ const CardView = () => {
     useEffect(() => {
         localStorage.setItem('listSortOrder', sortOrder);
     }, [sortOrder]);
+
+    useEffect(() => {
+        localStorage.setItem('cardViewShowImages', String(showImages));
+    }, [showImages]);
 
     const handleScroll = () => {
         if (containerRef.current) {
@@ -298,6 +306,30 @@ const CardView = () => {
                         <div className="sort-arrows-group">
                             <button
                                 type="button"
+                                className={`sort-order-btn image-mode-toggle-btn ${!showImages ? 'no-images-active' : ''}`}
+                                onClick={() => setShowImages(prev => !prev)}
+                                title={showImages ? "Images ON (Click to hide images)" : "No-Image Mode (Click to show images)"}
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    padding: '4px 6px',
+                                    marginRight: '2px'
+                                }}
+                            >
+                                {showImages ? (
+                                    <Camera size={16} />
+                                ) : (
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+                                        <path d="M19 19H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l1.5-2.5h5L16 7h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
+                                        <circle cx="12" cy="13" r="3.2" stroke="currentColor" strokeWidth="1.6" opacity="0.8" />
+                                        <circle cx="12" cy="12" r="10" stroke="#ef4444" strokeWidth="2.2" fill="none" />
+                                        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="#ef4444" strokeWidth="2.2" strokeLinecap="round" />
+                                    </svg>
+                                )}
+                            </button>
+                            <button
+                                type="button"
                                 className={`sort-order-btn ${sortOrder === 'asc' ? 'active' : ''}`}
                                 onClick={() => setSortOrder('asc')}
                                 title="Ascending Order"
@@ -318,7 +350,7 @@ const CardView = () => {
 
                 <div className="cards-grid">
                     {visibleSites.map(site => (
-                        <SiteCard key={site.id} site={site} isCompact={true} />
+                        <SiteCard key={site.id} site={site} isCompact={true} showImage={showImages} />
                     ))}
                 </div>
 
