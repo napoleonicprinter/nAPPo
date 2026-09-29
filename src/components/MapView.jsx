@@ -434,19 +434,18 @@ const LocationCenteringHandler = () => {
                     map.flyTo([userCoords.lat, userCoords.lon], 10, { duration: 1.2 });
                 }
             } else {
-                // 'all' areas selected: zoom out to 500km bounds, but keep current zoom if already zoomed out further
+                // When area filter has no selection ('all'), center and zoom to the 50 km area level without modifying filterRadius
                 try {
-                    const bounds500 = L.latLng(userCoords.lat, userCoords.lon).toBounds(500 * 2000);
+                    const bounds50 = L.latLng(userCoords.lat, userCoords.lon).toBounds(50 * 2000);
                     const padding = isMobileLike ? [40, 40] : [60, 60];
-                    const zoom500 = map.getBoundsZoom(bounds500, false, padding);
+                    const calculatedZoom = map.getBoundsZoom(bounds50, false, padding);
                     const minZoom = map.getMinZoom() ?? 2.5;
                     const maxZoom = 16;
-                    const clampedZoom500 = Math.max(minZoom, Math.min(zoom500, maxZoom));
-                    const finalZoom = Math.min(map.getZoom(), clampedZoom500);
+                    const finalZoom = Math.max(minZoom, Math.min(calculatedZoom, maxZoom));
                     map.flyTo([userCoords.lat, userCoords.lon], finalZoom, { duration: 1.2 });
                 } catch (err) {
-                    console.error('Error calculating 500km zoom for All Areas:', err);
-                    map.flyTo([userCoords.lat, userCoords.lon], Math.min(map.getZoom(), 6), { duration: 1.2 });
+                    console.error('Error calculating 50km zoom for location without area filter:', err);
+                    map.flyTo([userCoords.lat, userCoords.lon], 10, { duration: 1.2 });
                 }
             }
         }

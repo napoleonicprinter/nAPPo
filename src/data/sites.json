@@ -12956,7 +12956,7 @@
   },
   {
     "id": "638",
-    "name": "Battle of Jena Remembrance Stone - Marshal Lannes Corp.",
+    "name": "Vierzehnheiligen war memorial ",
     "category": "Monument",
     "significance": 2,
     "location": "Vierzehnheiligen",
@@ -14195,7 +14195,7 @@
   },
   {
     "id": "702",
-    "name": "Veste Oberhaus",
+    "name": "Strub Pass",
     "category": "Landmark",
     "significance": 2,
     "location": "Strub, Waidring",
@@ -15377,16 +15377,15 @@
   },
   {
     "id": "774",
-    "name": "General Tuckov's stand at Valutin hill",
-    "category": "Battle landmark",
-    "year": 1812,
-    "date": "1812-08-19",
-    "significance": 2,
-    "location": "Kozino, Óblast de Smolensk",
-    "country": "Russia",
-    "description": "General-major Pyotr Tuckov held this crucial position from morning until late afternoon. Despite being surrounded and repeatedly wounded, he and his men never retreated, preventing a breakthrough that could have led to the envelopment of the entire Russian army.",
-    "latitude": 54.806362,
-    "longitude": 32.250906,
+    "name": "Duke Frederick William of Brunswick monument",
+    "category": "Monument",
+    "year": 1909,
+    "significance": 1,
+    "location": "Osterwieck",
+    "country": "Germany",
+    "description": "The monument stands exactly where the historic border between the Kingdom of Prussia and the Duchy of Brunswick once met at the Großer Graben canal. It commemorates the Duke's daring 1809 military march across Germany with his volunteer corps (Schwarze Schar) to fight Napoleon's occupying. • The original monument was erected in 1909 to mark the centenary of the march. After the original relief was lost following World War II, a new commemorative plaque was installed in 1991.",
+    "latitude": 52.018033,
+    "longitude": 10.785736,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valutin_sign.webp",
     "createDate": "2026-08-20"
   },
@@ -15401,7 +15400,7 @@
     "description": "A wooden cross and a tomb to the unknown soldier was placed at this place of the battlefield of Valutnio.",
     "latitude": 54.806362,
     "longitude": 32.250906,
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valutino_memorial.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/BlackDuke_memorial.webp",
     "createDate": "2026-08-20"
   },
   {
@@ -18948,6 +18947,36 @@
     "latitude": 40.377863,
     "longitude": -8.354044,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Crauford_rocks.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "977",
+    "name": "Battle of the Nations at Cosa memorial",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1913",
+    "location": "Südliches Anhalt",
+    "country": "Germany",
+    "description": "Craufurd supposedly crouched behind a prominent boulder at this site to watch Loison's French division laboriously climb the steep. Once the French reached the crest, breathless and disorganized, Craufurd ordered his hidden men to rise. They delivered a devastating point-blank musket volley and launched a decisive bayonet charge that sent the French reeling back down the mountain.",
+    "latitude": 51.695583,
+    "longitude": 12.076338,
+    "wikipedia_link": "https://de.wikipedia.org/wiki/V%C3%B6lkerschlachtdenkmal_%28Cosa%29",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cosa_memorial.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "978",
+    "name": "Ilsestein memorial",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1814",
+    "location": "Ilsenburg",
+    "country": "Germany",
+    "description": "On October 18, 1814—exactly one year after the Battle of Möckern during the opening day of the Battle of Leipzig—Count Anton of Stolberg-Wernigerode (1785–1854) put up an iron cross on the summit. Serving as an adjutant to Prince Wilhelm of Prussia, the count dedicated the monument to his fallen comrades from the German campaign of the Napoleonic Wars. A century later, on October 18, 1913, a commemorative plaque was unveiled at the site in the presence of Prince Christian Ernest of Stolberg-Wernigerode (1864–1940) to explain the history behind the 1814 iron cross.",
+    "latitude": 51.847083,
+    "longitude": 10.661389,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ilsestein",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ilsestein.webp",
     "createDate": "2026-09-26"
   }
 ]
