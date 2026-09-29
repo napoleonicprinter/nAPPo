@@ -1009,7 +1009,10 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Astorga_1.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Astorga",
     "createDate": "2025-02-26T10:00:00Z",
-    "special": "Guerra de Independencia",
+    "special": [
+      "arc",
+      "Guerra de Independencia"
+    ],
     "victor": "France",
     "defeated": "Spain",
     "commander_Victor": [
@@ -2598,13 +2601,16 @@
     "date": "1811-05-03",
     "location": "Fuentes de Oñoro, Salamanca",
     "country": "Spain",
-    "description": "Between May 3rd and May 5th 1811, the British-Portuguese army clashed with the French army to relieve the pressure of the siege of the city of Almeida.",
+    "description": "Between May 3rd and May 5th 1811, the British-Portuguese army clashed with the French army to relieve the pressure of the siege of the city of Almeida. The French Claim to Victory: While the battle is historically considered a strategic British-Portuguese victory because Lord Wellington stopped the French from lifting the siege of Almeida.",
     "latitude": 40.571142,
     "longitude": -6.808742,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Onoro.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "Peninsular War",
+    "special": [
+      "arc",
+      "Peninsular War"
+    ],
     "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
@@ -3126,8 +3132,7 @@
     "latitude": 45.36,
     "longitude": 11.2312,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Map_of_the_Battle_of_Arcole%2C_November_1796.jpg/960px-Map_of_the_Battle_of_Arcole%2C_November_1796.jpg?20250516152645",
-    "createDate": "2025-03-15T10:00:00Z",
-    "special": false
+    "createDate": "2025-03-15T10:00:00Z"
   },
   {
     "id": "146",
@@ -3192,7 +3197,10 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Aspern-Essling",
     "youtube_link": "https://www.youtube.com/watch?v=2qMYCpyy1LU",
     "createDate": "2025-03-15T10:00:00Z",
-    "special": "5",
+    "special": [
+      "5",
+      "arc"
+    ],
     "victor": "Austria",
     "defeated": "France",
     "commander_Victor": [
@@ -4467,10 +4475,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ebelsberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Ebelsberg",
     "createDate": "2025-03-21T10:00:00Z",
-    "special": [
-      "arc",
-      "5"
-    ],
+    "special": "5",
     "defeated": "Austria",
     "victor": "France",
     "commander_Victor": [
@@ -5142,10 +5147,7 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Abensberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Abensberg",
     "createDate": "2025-03-22T10:00:00Z",
-    "special": [
-      "5",
-      "arc"
-    ],
+    "special": "5",
     "commander_Victor": [
       "Napoleon"
     ],
@@ -6010,7 +6012,8 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "6",
-      "German Campaign"
+      "German Campaign",
+      "arc"
     ],
     "victor": [
       "France",
@@ -7452,7 +7455,10 @@
     "description": "It unfolded from November 15th to the 18th 1812 marking a critical episode in Napoleon's arduous retreat from Moscow.",
     "latitude": 53.71667,
     "longitude": 31.81667,
-    "special": "Russian Campaign",
+    "special": [
+      "Russian Campaign",
+      "arc"
+    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Krasnoi.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi",
     "createDate": "2025-03-22T10:00:00Z",
@@ -7533,17 +7539,23 @@
     "description": "Also called the battle of Lubino, took place on August 19th 1812 near Valutino and Lubino, between a corps of French and allied troops led by Marshal Ney, about 35,000 strong, and a strong rear-guard of General Barclay de Tolly's Russian army of about 25,000.",
     "latitude": 54.8012,
     "longitude": 32.182583,
-    "special": "Russian Campaign",
+    "special": [
+      "Russian Campaign",
+      "arc"
+    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valutino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valutino",
     "createDate": "2025-03-22T10:00:00Z",
-    "commander_Victor": [
-      "Michel Ney"
+    "tie": [
+      "France",
+      "Russia"
     ],
-    "commander_Loss": [
+    "commander_Victor": [],
+    "commander_Loss": [],
+    "commander_Tie": [
+      "Michel Ney",
       "Barclay de Tolly"
-    ],
-    "commander_Tie": []
+    ]
   },
   {
     "id": "337",
@@ -7718,7 +7730,8 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "Six Days' Campaign",
-      "6"
+      "6",
+      "arc"
     ],
     "victor": "France",
     "defeated": "Russia",
@@ -7813,6 +7826,7 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "Six Days' Campaign",
+      "arc",
       "6"
     ],
     "victor": "France",
@@ -7846,6 +7860,7 @@
     "createDate": "2025-03-22T10:00:00Z",
     "special": [
       "Campaign of France",
+      "arc",
       "6"
     ],
     "commander_Victor": [
@@ -9379,7 +9394,8 @@
     "longitude": -3.646871,
     "special": [
       "Guerra de Independencia",
-      "Peninsular War"
+      "Peninsular War",
+      "arc"
     ],
     "victor": "France",
     "defeated": "Spain",
@@ -11026,17 +11042,20 @@
     "description": "Took place on October 24th 1812. Russian and French armies were evenly matched in the battle and suffered similar casualties, with a marginal edge going to the Franco-Italian army.",
     "latitude": 54.9953,
     "longitude": 36.467793,
-    "special": "Russian Campaign",
+    "special": [
+      "Russian Campaign",
+      "arc"
+    ],
     "victor": "France",
     "defeated": "Russia",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Maloyaroslavetz.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maloyaroslavets",
     "createDate": "2025-03-15T10:00:00Z",
     "commander_Victor": [
-      "Mikhail Kutuzov"
+      "Napoleon"
     ],
     "commander_Loss": [
-      "Napoleon"
+      "Mikhail Kutuzov"
     ],
     "commander_Tie": []
   },
@@ -11866,7 +11885,8 @@
     "victor": "France",
     "special": [
       "Peninsular War",
-      "Guerra de Independencia"
+      "Guerra de Independencia",
+      "arc"
     ],
     "commander_Victor": [
       "Louis Gabriel Suchet"
@@ -11894,7 +11914,8 @@
     "victor": "France",
     "special": [
       "Peninsular War",
-      "Guerra de Independencia"
+      "Guerra de Independencia",
+      "arc"
     ],
     "commander_Victor": [
       "Laurent Gouvion Saint-Cyr"
@@ -13395,6 +13416,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Rovereto",
     "special": [
       "1",
+      "arc",
       "Italian Campaign"
     ],
     "victor": "France",
@@ -13506,7 +13528,10 @@
     "longitude": -6.90732,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Almeida_1810.webp",
     "createDate": "2026-07-31",
-    "special": "Peninsular War",
+    "special": [
+      "arc",
+      "Peninsular War"
+    ],
     "victor": "France",
     "defeated": "Portugal",
     "commander_Victor": [
@@ -13562,6 +13587,7 @@
     "createDate": "2026-07-31",
     "special": [
       "1",
+      "arc",
       "Italian Campaign"
     ],
     "victor": "France",
@@ -13618,6 +13644,7 @@
     "createDate": "2026-08-01",
     "special": [
       "2",
+      "arc",
       "Italian Campaign"
     ],
     "victor": "France",
@@ -16046,6 +16073,7 @@
     "name": "Invasion of Capri",
     "category": "Battle site",
     "significance": 1,
+    "special": "arc",
     "location": "Capri",
     "country": "Italy",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Invasion_of_Capri",
