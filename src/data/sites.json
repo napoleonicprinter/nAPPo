@@ -4175,6 +4175,11 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Eylau",
     "createDate": "2025-03-15T10:00:00Z",
     "victor": "Inconclusive",
+    "tie": [
+      "France",
+      "Prussia",
+      "Russia"
+    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -4830,6 +4835,8 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Wertingen.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Wertingen",
     "createDate": "2025-03-22T10:00:00Z",
+    "victor": "France",
+    "defeated": "Austria",
     "special": [
       "3",
       "arc",
@@ -4864,6 +4871,8 @@
       "arc",
       "Ulm Campaign"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "Jean-Pierre Firmin Malher",
       "Michel Ney"
@@ -4947,6 +4956,8 @@
       "arc",
       "Ulm Campaign"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "Michel Ney"
     ],
@@ -4974,6 +4985,8 @@
       "3",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "André Masséna"
     ],
@@ -5059,6 +5072,8 @@
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Mohilew.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Saltanovka",
     "createDate": "2025-03-22T10:00:00Z",
+    "victor": "France",
+    "defeated": "Russia",
     "special": [
       "Russian Campaign",
       "arc"
@@ -5313,6 +5328,11 @@
       "4",
       "arc"
     ],
+    "defeated": "Austria",
+    "victor": [
+      "France",
+      "Italy"
+    ],
     "commander_Victor": [
       "Eugène de Beauharnais"
     ],
@@ -5551,6 +5571,14 @@
       "arc",
       "5"
     ],
+    "defeated": [
+      "Austria",
+      "Kingdom of Hungary"
+    ],
+    "victor": [
+      "France",
+      "Italy"
+    ],
     "commander_Victor": [
       "Eugène de Beauharnais"
     ],
@@ -5579,6 +5607,8 @@
       "arc",
       "5"
     ],
+    "victor": "France",
+    "defeated": "Austria",
     "commander_Victor": [
       "Auguste de Marmont",
       "Jean Broussier"
@@ -7031,6 +7061,8 @@
       "arc",
       "4"
     ],
+    "victor": "France",
+    "defeated": "Prussia",
     "commander_Victor": [],
     "commander_Loss": [
       "Jean-Baptiste Bernadotte",
@@ -7463,7 +7495,10 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi",
     "createDate": "2025-03-22T10:00:00Z",
     "victor": "Russia",
-    "defeated": "France",
+    "defeated": [
+      "France",
+      "Duchy of Warsaw"
+    ],
     "commander_Victor": [
       "Mikhail Kutuzov"
     ],
@@ -7543,6 +7578,8 @@
       "Russian Campaign",
       "arc"
     ],
+    "victor": "France",
+    "defeated": "Russia",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Valutino.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Valutino",
     "createDate": "2025-03-22T10:00:00Z",
@@ -7862,6 +7899,11 @@
       "Campaign of France",
       "arc",
       "6"
+    ],
+    "victor": "France",
+    "defeated": [
+      "Austria",
+      "Württemberg"
     ],
     "commander_Victor": [
       "Karl von Schwarzenberg",
@@ -9002,6 +9044,11 @@
       "3",
       "arc"
     ],
+    "tie": [
+      "France",
+      "Russia",
+      "Austria"
+    ],
     "commander_Victor": [],
     "commander_Loss": [],
     "commander_Tie": [
@@ -9095,6 +9142,12 @@
     "defeated": "France",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Bussaco.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Bussaco",
+    "online_reading": [
+      {
+        "title": "Bussaco, by Chambers, G. L - London : Swan Sonnenschein, 1910",
+        "link": "https://archive.org/details/bussaco00cham"
+      }
+    ],
     "createDate": "2025-03-22T10:00:00Z",
     "special": "Peninsular War",
     "commander_Victor": [
@@ -16357,7 +16410,8 @@
     "longitude": 31.235712,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Cairo.webp",
     "createDate": "2026-08-23",
-    "Victor": "France",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
     "special": [
       "arc",
       "2",
