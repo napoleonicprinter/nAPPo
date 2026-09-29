@@ -232,7 +232,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                 />
             )}
 
-            <div className={`site-card ${site.visited ? 'visited' : ''}`} style={{ position: 'relative' }}>
+            <div className={`site-card ${site.visited ? 'visited' : ''} ${!showImage ? 'no-image-card' : ''}`} style={{ position: 'relative' }}>
 
                 {/* --- RED CIRCLE CLOSE BUTTON WITH WHITE CROSS --- */}
                 {onClose && (
@@ -394,7 +394,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '10px 12px 6px 12px',
+                        padding: '6px 12px 0px 12px',
                         position: 'relative',
                         gap: '8px'
                     }}>
@@ -409,7 +409,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '5px',
-                                    padding: '4px 8px',
+                                    padding: '3px 8px',
                                     borderRadius: '6px',
                                     fontSize: '11px',
                                     fontWeight: 'bold',
@@ -428,7 +428,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                                     src="/assets/new-tag.png"
                                     alt="New Site"
                                     style={{
-                                        width: '45px',
+                                        width: '40px',
                                         height: 'auto',
                                         pointerEvents: 'none'
                                     }}
@@ -494,7 +494,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
 
                 <div className="card-content"
                     style={{
-                        padding: '12px',
+                        padding: !showImage ? '3px 12px 8px 12px' : '12px',
                         maxHeight: '300px',
                         overflowY: 'auto',
                         overflowX: 'hidden'
@@ -507,7 +507,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                         callerSite.fromView === 'todayInHistory' ||
                         callerSite.fromView === 'historyCalendar'
                     ) && (
-                            <div style={{ marginBottom: '8px' }}>
+                            <div style={{ marginBottom: !showImage ? '4px' : '8px' }}>
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -532,7 +532,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                                         border: '1px solid var(--accent-primary, #58a6ff)',
                                         background: 'rgba(88, 166, 255, 0.15)',
                                         color: 'var(--accent-primary, #58a6ff)',
-                                        padding: '4px 10px',
+                                        padding: '3px 8px',
                                         borderRadius: '6px',
                                         fontSize: '0.78rem',
                                         fontWeight: 'bold',
@@ -550,10 +550,10 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                                 </button>
                             </div>
                         )}
-                    <h2 style={{ fontSize: '1.1rem', margin: '0 0 8px 0' }}>{site.name}</h2>
+                    <h2 style={{ fontSize: '1.05rem', margin: !showImage ? '0 0 3px 0' : '0 0 8px 0', lineHeight: 1.25 }}>{site.name}</h2>
 
                     {/* --- STARS / DATE / DETAILS ROW --- */}
-                    <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <div className="card-badges" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: !showImage ? '4px' : '8px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                             {isArc && (
                                 <img
@@ -607,7 +607,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                         )}
                     </div>
 
-                    <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                    <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: !showImage ? '2px' : '8px', display: 'flex', alignItems: 'center' }}>
                         <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}
                     </div>
 

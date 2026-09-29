@@ -350,7 +350,7 @@ const CardView = () => {
                     </div>
                 </div>
 
-                <div className="cards-grid">
+                <div className={`cards-grid ${!showImages ? 'no-images-grid' : ''}`}>
                     {visibleSites.map(site => (
                         <SiteCard key={site.id} site={site} isCompact={true} showImage={showImages} />
                     ))}
