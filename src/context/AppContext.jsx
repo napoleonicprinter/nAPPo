@@ -485,6 +485,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [filterCountry, setFilterCountry] = useState(() => localStorage.getItem('filterCountry') || 'all');
     const [filterCoalition, setFilterCoalition] = useState(() => localStorage.getItem('filterCoalition') || 'all');
     const [filterCampaign, setFilterCampaign] = useState(() => localStorage.getItem('filterCampaign') || 'all');
+    const [filterContributor, setFilterContributor] = useState(() => localStorage.getItem('filterContributor') || 'all');
     const [showArcOnly, setShowArcOnly] = useState(() => localStorage.getItem('showArcOnly') === 'true');
     const [filterWithMaps, setFilterWithMaps] = useState(() => localStorage.getItem('filterWithMaps') === 'true');
     const [selectedHelpItem, setSelectedHelpItem] = useState(null);
@@ -560,7 +561,8 @@ export const AppProvider = ({ children, storeUrl }) => {
                 commander_Victor,
                 commander_Loss,
                 commander_Tie,
-                tie: site.tie || bundled.tie || undefined
+                tie: site.tie || bundled.tie || undefined,
+                contributor: site.contributor || site.Contributor || bundled.contributor || bundled.Contributor || undefined
             };
         });
     }, [sitesBaseData, visitedSet, newSitesDays]);
@@ -644,6 +646,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             if (filterCountry !== 'all' && site.country !== filterCountry) return false;
             if (filterCoalition !== 'all' && !site.special.includes(String(filterCoalition))) return false;
             if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
+            if (filterContributor !== 'all') {
+                const siteContrib = site.contributor || site.Contributor;
+                if (!siteContrib || String(siteContrib).trim().toLowerCase() !== String(filterContributor).trim().toLowerCase()) return false;
+            }
             if (showArcOnly && !site.special.includes('arc')) return false;
             if (filterWithMaps && getAvailableSiteMaps(site).length === 0) return false;
 
@@ -652,7 +658,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
             return true;
         });
-    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, showArcOnly, filterRadius, filterWithMaps]);
+    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, filterContributor, showArcOnly, filterRadius, filterWithMaps]);
 
     const passYear = useCallback((site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
@@ -757,6 +763,12 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
         if (excludeFacet !== 'campaign') {
             if (filterCampaign !== 'all' && !site.special.includes(filterCampaign)) return false;
+        }
+        if (excludeFacet !== 'contributor') {
+            if (filterContributor !== 'all') {
+                const siteContrib = site.contributor || site.Contributor;
+                if (!siteContrib || String(siteContrib).trim().toLowerCase() !== String(filterContributor).trim().toLowerCase()) return false;
+            }
         }
         if (excludeFacet !== 'category' && !passCat(site)) return false;
         if (excludeFacet !== 'year' && !passYear(site)) return false;
@@ -959,7 +971,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCoalition, filterCampaign, filterContributor, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
 
     const campaignCounts = useMemo(() => {
         const counts = {};
@@ -974,7 +986,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCoalition, filterContributor, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
 
     const coalitionCounts = useMemo(() => {
         const counts = {};
@@ -989,7 +1001,21 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterContributor, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
+
+    const contributorCounts = useMemo(() => {
+        const counts = {};
+        derivedSites.forEach(site => {
+            if (passesAllFiltersExcept(site, 'contributor')) {
+                const siteContrib = site.contributor || site.Contributor;
+                if (siteContrib && typeof siteContrib === 'string' && siteContrib.trim()) {
+                    const cName = siteContrib.trim();
+                    counts[cName] = (counts[cName] || 0) + 1;
+                }
+            }
+        });
+        return counts;
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterVisited, filterCountry, filterCampaign, filterCoalition, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
 
     const visitedCounts = useMemo(() => {
         const counts = { visited: 0, unvisited: 0 };
@@ -1000,7 +1026,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
         });
         return counts;
-    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
+    }, [derivedSites, showOnlyNew, filterSignificance, filterSearch, showArcOnly, filterWithMaps, userCoords, filterRadius, filterCountry, filterCoalition, filterCampaign, filterContributor, filterCategory, filterYear, filterCommander, filterCommanderRole, filterBelligerent]);
 
 
 
@@ -1020,6 +1046,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         const hasCountryFilter = Boolean(filterCountry && filterCountry !== 'all');
         const hasCoalitionFilter = Boolean(filterCoalition && filterCoalition !== 'all');
         const hasCampaignFilter = Boolean(filterCampaign && filterCampaign !== 'all');
+        const hasContributorFilter = Boolean(filterContributor && filterContributor !== 'all');
         const hasVisitedFilter = Boolean(filterVisited && filterVisited !== 'all');
         const hasNewFilter = Boolean(showOnlyNew);
         const hasMapsFilter = Boolean(filterWithMaps);
@@ -1036,6 +1063,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             hasCountryFilter ||
             hasCoalitionFilter ||
             hasCampaignFilter ||
+            hasContributorFilter ||
             hasVisitedFilter ||
             hasNewFilter ||
             hasMapsFilter;
@@ -1053,6 +1081,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         filterCountry,
         filterCoalition,
         filterCampaign,
+        filterContributor,
         filterVisited,
         showOnlyNew,
         filterWithMaps
@@ -1064,10 +1093,11 @@ export const AppProvider = ({ children, storeUrl }) => {
             (filterCountry && filterCountry !== 'all') ||
             (filterCoalition && filterCoalition !== 'all') ||
             (filterCampaign && filterCampaign !== 'all') ||
+            (filterContributor && filterContributor !== 'all') ||
             (filterVisited && filterVisited !== 'all') ||
             showOnlyNew ||
             filterWithMaps);
-    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterVisited, showOnlyNew, filterWithMaps]);
+    }, [filterSearch, filterCountry, filterCoalition, filterCampaign, filterContributor, filterVisited, showOnlyNew, filterWithMaps]);
 
     // 3. Clear Function: Resets all active filters to default inactive states
 
@@ -1085,6 +1115,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setFilterCountry('all');
         setFilterCoalition('all');
         setFilterCampaign('all');
+        setFilterContributor('all');
         setShowArcOnly(false);
         setShowOnlyNew(false);
         setFilterWithMaps(false);
@@ -1154,6 +1185,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     useEffect(() => { localStorage.setItem('filterCountry', filterCountry || 'all'); }, [filterCountry]);
     useEffect(() => { localStorage.setItem('filterCoalition', filterCoalition || 'all'); }, [filterCoalition]);
     useEffect(() => { localStorage.setItem('filterCampaign', filterCampaign || 'all'); }, [filterCampaign]);
+    useEffect(() => { localStorage.setItem('filterContributor', filterContributor || 'all'); }, [filterContributor]);
     useEffect(() => { localStorage.setItem('showArcOnly', showArcOnly.toString()); }, [showArcOnly]);
     useEffect(() => { localStorage.setItem('filterWithMaps', filterWithMaps.toString()); }, [filterWithMaps]);
 
@@ -1567,6 +1599,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setFilterCountry(target.filterCountry || 'all');
         setFilterCoalition(target.filterCoalition || 'all');
         setFilterCampaign(target.filterCampaign || 'all');
+        setFilterContributor(target.filterContributor || 'all');
         setShowArcOnly(target.showArcOnly || false);
         setFilterWithMaps(target.filterWithMaps || false);
         setShowOnlyNew(target.showOnlyNew || false);
@@ -1600,6 +1633,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterCountry: filterCountry || 'all',
             filterCoalition: filterCoalition || 'all',
             filterCampaign: filterCampaign || 'all',
+            filterContributor: filterContributor || 'all',
             showArcOnly: !!showArcOnly,
             filterWithMaps: !!filterWithMaps,
             showOnlyNew: !!showOnlyNew,
@@ -1633,6 +1667,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             last.filterCountry === snapshot.filterCountry &&
             last.filterCoalition === snapshot.filterCoalition &&
             last.filterCampaign === snapshot.filterCampaign &&
+            last.filterContributor === snapshot.filterContributor &&
             last.showArcOnly === snapshot.showArcOnly &&
             last.filterWithMaps === snapshot.filterWithMaps &&
             last.showOnlyNew === snapshot.showOnlyNew &&
@@ -1650,7 +1685,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         selectedSite, selectedHelpItem, filterCategory, filterSignificance,
         filterVisited, filterRadius, filterSearch, filterYear, filterMonth, filterCommander,
         filterCommanderRole, filterBelligerent,
-        filterCountry, filterCoalition, filterCampaign, showArcOnly, filterWithMaps,
+        filterCountry, filterCoalition, filterCampaign, filterContributor, showArcOnly, filterWithMaps,
         showOnlyNew, locationMode, userCoords, activeMapOverlays, view, previewDevice
     ]);
 
@@ -1794,6 +1829,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             filterCountry, setFilterCountry,
             filterCoalition, setFilterCoalition,
             filterCampaign, setFilterCampaign,
+            filterContributor, setFilterContributor,
             isFiltered,
             isModalFiltered,
             clearAllFilters,
@@ -1827,6 +1863,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             countryCounts,
             campaignCounts,
             coalitionCounts,
+            contributorCounts,
             visitedCounts,
             syncStatus, lastSyncTime,
             showUpdateSitesModal, setShowUpdateSitesModal,

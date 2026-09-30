@@ -134,6 +134,8 @@ export const validateSiteFilters = (targetSite, context) => {
         setFilterCoalition,
         filterCampaign,
         setFilterCampaign,
+        filterContributor,
+        setFilterContributor,
         showArcOnly,
         setShowArcOnly,
         filterSignificance,
@@ -334,6 +336,19 @@ export const validateSiteFilters = (targetSite, context) => {
         }
     }
 
+    // Contributor Filter
+    if (filterContributor && filterContributor !== 'all') {
+        const siteContrib = targetSite.contributor || targetSite.Contributor;
+        if (!siteContrib || String(siteContrib).trim().toLowerCase() !== String(filterContributor).trim().toLowerCase()) {
+            failedFilters.push({
+                type: 'contributor',
+                label: 'Contributor',
+                message: `contributor "${filterContributor}" is active`,
+                reset: () => setFilterContributor && setFilterContributor('all')
+            });
+        }
+    }
+
     // 8. Arc de Triomphe Filter
     if (showArcOnly) {
         const specList = targetSite.special ? (Array.isArray(targetSite.special) ? targetSite.special : [String(targetSite.special)]) : [];
@@ -451,6 +466,10 @@ export const validateSiteFilters = (targetSite, context) => {
                 title = 'Site Out of Selected Campaign';
                 message = `Site is out of the selected campaign ("${filterCampaign}")`;
                 resetButtonText = 'Reset Campaign & View';
+            } else if (single.type === 'contributor') {
+                title = 'Site Out of Selected Contributor';
+                message = `Site was not contributed by "${filterContributor}"`;
+                resetButtonText = 'Reset Contributor & View';
             } else if (single.type === 'arc') {
                 title = 'Site Not at Arc de Triomphe';
                 message = `Site is not listed at the Arc de Triomphe`;

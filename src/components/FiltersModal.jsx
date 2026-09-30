@@ -26,10 +26,11 @@ const FiltersModal = ({ onClose }) => {
         allSites,
         filterCoalition, setFilterCoalition,
         filterCampaign, setFilterCampaign,
+        filterContributor, setFilterContributor,
         filterSearch, setFilterSearch,
         showOnlyNew, setShowOnlyNew,
         newSitesDays, setNewSitesDays,
-        countryCounts, coalitionCounts, visitedCounts,
+        countryCounts, coalitionCounts, contributorCounts, visitedCounts,
         filterWithMaps, setFilterWithMaps
     } = useAppContext();
     const { getPortalContainer } = useAppContext();
@@ -53,6 +54,7 @@ const FiltersModal = ({ onClose }) => {
     const categories = Array.from(new Set(allSites.map(s => s.category)));
     const significances = Array.from(new Set(allSites.map(s => s.significance)));
     const countries = Array.from(new Set(allSites.map(s => s.country))).filter(Boolean).sort();
+    const contributors = Array.from(new Set(allSites.map(s => s.contributor || s.Contributor))).filter(Boolean).sort();
 
     const clearModalFilters = () => {
         setLocalSearch('');
@@ -60,6 +62,7 @@ const FiltersModal = ({ onClose }) => {
         setFilterCountry('all');
         setFilterCoalition('all');
         setFilterCampaign('all');
+        setFilterContributor('all');
         setFilterVisited('all');
         setShowOnlyNew(false);
         setFilterWithMaps(false);
@@ -272,6 +275,23 @@ const FiltersModal = ({ onClose }) => {
                             value={filterVisited}
                             onChange={setFilterVisited}
                             title="Filter by Visit Status"
+                        />
+                    </div>
+
+                    <div className="filter-group">
+                        <h3 style={{ margin: '0 0 0px 0', lineHeight: '1', fontSize: '1.17em', fontWeight: 'bold', color: 'var(--text-primary)' }}>Contributor</h3>
+                        <CustomSimpleSelect
+                            options={[
+                                { value: 'all', label: 'All' },
+                                ...contributors
+                                    .filter(c => (contributorCounts?.[c] || 0) > 0)
+                                    .map(c => ({ value: c, label: `${c} (${contributorCounts[c]})` }))
+                            ]}
+                            value={filterContributor}
+                            onChange={setFilterContributor}
+                            searchable={true}
+                            title="Filter by Contributor"
+                            placeholder="Select Contributor..."
                         />
                     </div>
 

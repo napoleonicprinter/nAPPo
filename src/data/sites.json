@@ -16897,7 +16897,7 @@
     "year": "1961-12-01",
     "location": "La Habana",
     "country": "Cuba",
-    "description": "The Napoleon Museum in Havana, Cuba, houses one of the most important collections from the 18th and 19th centuries preserved in the Western hemisphere.",
+    "description": "The Napoleonic Museum in Havana, Cuba, houses one of the most important collections from the 18th and 19th centuries preserved in the Western hemisphere.",
     "latitude": 23.13612,
     "longitude": -82.380704,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Museo_habana.webp",
@@ -18903,9 +18903,9 @@
   },
   {
     "id": "974",
-    "name": "Napoleon Museum ",
+    "name": "Napoleon Museum",
     "category": "Museum",
-    "significance": 2,
+    "significance": 1,
     "year": "2022",
     "date": "2022-10-05",
     "location": "Bad Harzburg",
@@ -18977,6 +18977,23 @@
     "longitude": 10.661389,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Ilsestein",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Ilsestein.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "979",
+    "name": "Battlefield of Karakó",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1809",
+    "date": "1809-06-08",
+    "location": "Karakó",
+    "country": "Hungary",
+    "description": "The combats at Karakó occurred on June 8 to 10, 1809. Hungarian defenders under Colonel Gosztonyi initially repelled three French cavalry attacks. However, a reinforced French assault the next day forced the Hungarians to retreat with 300 casualties.",
+    "latitude": 47.114828,
+    "longitude": 17.200601,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ilsestein",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Karakoi.webp",
+    "contributor": "Mészáros, Ádám",
     "createDate": "2026-09-26"
   }
 ]

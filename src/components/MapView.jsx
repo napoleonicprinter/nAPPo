@@ -777,13 +777,14 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
         filterCountry,
         filterCampaign,
         filterCoalition,
+        filterContributor,
         filterVisited,
         showOnlyNew,
         newSitesDays,
         filterWithMaps
     } = useAppContext();
 
-    const drawerFiltersKey = `${(filterSearch || '').trim()}|${filterCountry || 'all'}|${filterCampaign || 'all'}|${filterCoalition || 'all'}|${filterVisited || 'all'}|${showOnlyNew ? String(newSitesDays) : 'false'}|${Boolean(filterWithMaps)}`;
+    const drawerFiltersKey = `${(filterSearch || '').trim()}|${filterCountry || 'all'}|${filterCampaign || 'all'}|${filterCoalition || 'all'}|${filterContributor || 'all'}|${filterVisited || 'all'}|${showOnlyNew ? String(newSitesDays) : 'false'}|${Boolean(filterWithMaps)}`;
 
     const lastDrawerFiltersKeyRef = useRef(drawerFiltersKey);
     const lastSitesRef = useRef("");
@@ -799,6 +800,7 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
             (filterCountry && filterCountry !== 'all') ||
             (filterCampaign && filterCampaign !== 'all') ||
             (filterCoalition && filterCoalition !== 'all') ||
+            (filterContributor && filterContributor !== 'all') ||
             (filterVisited && filterVisited !== 'all') ||
             showOnlyNew ||
             filterWithMaps
@@ -877,7 +879,7 @@ const FitFilteredSites = ({ sites, isFiltered, selectedSite, siteToOpenPopup, ac
         }
     }, [
         sites, isFiltered, map, selectedSite, siteToOpenPopup, activeMapOverlays, activePopupSiteIdRef,
-        drawerFiltersKey, filterSearch, filterCountry, filterCampaign, filterCoalition, filterVisited, showOnlyNew, newSitesDays, filterWithMaps
+        drawerFiltersKey, filterSearch, filterCountry, filterCampaign, filterCoalition, filterContributor, filterVisited, showOnlyNew, newSitesDays, filterWithMaps
     ]);
 
     return null;

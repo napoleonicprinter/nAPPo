@@ -5,7 +5,7 @@ import {
     MapPin, Calendar, Navigation, CheckCircle,
     BookOpen, Globe, Youtube, ExternalLink, Star,
     Palette, Swords, Link2, X, Layers, Map as MapIcon,
-    Landmark, AlertTriangle, Flower2
+    Landmark, AlertTriangle, Flower2, User
 } from 'lucide-react';
 import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
@@ -109,6 +109,8 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
         setFilterCoalition,
         filterCampaign,
         setFilterCampaign,
+        filterContributor,
+        setFilterContributor,
         filterSignificance,
         setFilterSignificance,
         filterVisited,
@@ -159,6 +161,8 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
         setFilterCoalition,
         filterCampaign,
         setFilterCampaign,
+        filterContributor,
+        setFilterContributor,
         showArcOnly,
         setShowArcOnly,
         filterSignificance,
@@ -610,6 +614,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                     <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: !showImage ? '2px' : '8px', display: 'flex', alignItems: 'center' }}>
                         <MapPin size={13} style={{ marginRight: '4px' }} /> {site.location}, {site.country}
                     </div>
+
+                    {(site.contributor || site.Contributor) && (
+                        <div style={{ fontSize: '0.8rem', color: 'gray', marginBottom: !showImage ? '2px' : '8px', display: 'flex', alignItems: 'center' }}>
+                            <User size={13} style={{ marginRight: '4px' }} /> Contributor: {site.contributor || site.Contributor}
+                        </div>
+                    )}
 
                     {isCompact && flowerLink && flowerLink.trim() !== '' && (
                         <div style={{
