@@ -53,14 +53,34 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
     return Math.round(d);
 };
 
+const GITHUB_SITES_IMAGE_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites';
+const GITHUB_MAPS_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps';
+
+export const resolveSiteImage = (img) => {
+    if (!img) return '';
+    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('/') || img.startsWith('data:')) {
+        return img;
+    }
+    return `${GITHUB_SITES_IMAGE_BASE}/${img}`;
+};
+
+export const resolveMapUrl = (url) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/') || url.startsWith('data:')) {
+        return url;
+    }
+    return `${GITHUB_MAPS_BASE}/${url}`;
+};
+
 export const isPaidVersion = import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true';
 
 export const getAvailableSiteMaps = (site) => {
     if (!site || !Array.isArray(site.maps) || site.maps.length === 0) return [];
+    const maps = site.maps.map(map => map ? ({ ...map, url: resolveMapUrl(map.url) }) : map);
     if (isPaidVersion) {
-        return site.maps;
+        return maps;
     }
-    return site.maps.filter(map => map && (map.free === true || map.isFree === true || map.free === 'true' || map.is_free === true));
+    return maps.filter(map => map && (map.free === true || map.isFree === true || map.free === 'true' || map.is_free === true));
 };
 
 export const EUROPEAN_CAPITALS = [
@@ -551,9 +571,21 @@ export const AppProvider = ({ children, storeUrl }) => {
                     ? derivedCommanders
                     : (site.commander ? [site.commander] : (bundled.commanders || (bundled.commander ? [bundled.commander] : []))));
 
+            const rawImage = site.image || bundled.image;
+            const image = resolveSiteImage(rawImage);
+            const description = site.description || site.desciption || bundled.description || bundled.desciption || '';
+            const rawWiki = site.wikipedia_link || bundled.wikipedia_link;
+            const wikipedia_link = typeof rawWiki === 'string' && rawWiki.startsWith('hhttps://') ? rawWiki.replace('hhttps://', 'https://') : rawWiki;
+            const rawMaps = site.maps || bundled.maps;
+            const maps = Array.isArray(rawMaps) ? rawMaps.map(m => m ? ({ ...m, url: resolveMapUrl(m.url) }) : m) : undefined;
+
             return {
                 ...bundled,
                 ...site,
+                image,
+                description,
+                wikipedia_link,
+                maps,
                 visited: visitedSet.has(String(site.id)),
                 isNew,
                 commanders,

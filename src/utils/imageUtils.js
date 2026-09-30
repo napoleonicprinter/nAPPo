@@ -1,4 +1,16 @@
 const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/public';
+const GITHUB_SITES_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites';
+
+/**
+ * Resolves site image filename or full URL to an absolute URL
+ */
+export const resolveSiteImageUrl = (imagePath) => {
+    if (!imagePath) return '';
+    if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/') || imagePath.startsWith('data:')) {
+        return imagePath;
+    }
+    return `${GITHUB_SITES_BASE}/${imagePath}`;
+};
 
 /**
  * Intelligent multi-tier image error handler:

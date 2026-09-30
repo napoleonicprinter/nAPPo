@@ -13,6 +13,7 @@
     "build:battle": "vite build --mode battle",
     "build:all": "node scripts/build-all.js",
     "sync:android": "node scripts/sync-flavors.js",
+    "optimize:data": "node scripts/optimize-json.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
