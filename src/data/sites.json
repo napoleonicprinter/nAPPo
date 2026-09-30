@@ -5556,7 +5556,7 @@
     "id": "247",
     "name": "Battlefield of Raab/Győr",
     "category": "Battle site",
-    "significance": 2,
+    "significance": 3,
     "year": 1809,
     "date": "1809-06-14",
     "location": "Győr",
@@ -18982,7 +18982,7 @@
   {
     "id": "979",
     "name": "Battlefield of Karakó",
-    "category": "Monument",
+    "category": "Battle site",
     "significance": 1,
     "year": "1809",
     "date": "1809-06-08",
@@ -18991,7 +18991,22 @@
     "description": "The combats at Karakó occurred on June 8 to 10, 1809. Hungarian defenders under Colonel Gosztonyi initially repelled three French cavalry attacks. However, a reinforced French assault the next day forced the Hungarians to retreat with 300 casualties.",
     "latitude": 47.114828,
     "longitude": 17.200601,
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Ilsestein",
+    "special": "5",
+    "victor": [
+      "France",
+      "Italy"
+    ],
+    "defeated": [
+      "Austria",
+      "Kingdom of Hungary"
+    ],
+    "commander_Victor": [
+      "Eugène de Beauharnais",
+      "Teodoro Lechi"
+    ],
+    "commander_Loss": [
+      "Johann Gosztonyi"
+    ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Karakoi.webp",
     "contributor": "Mészáros, Ádám",
     "createDate": "2026-09-26"
