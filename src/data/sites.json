@@ -11745,15 +11745,15 @@
   },
   {
     "id": "563",
-    "name": "Marshal Suchet Birthplace",
+    "name": "Marshal Suchet's Birthplace",
     "date": "1770-03-02",
     "category": "Birthplace",
     "significance": 2,
     "location": "Lyon",
     "country": "France",
     "description": "Historians debate his exact physical birthplace between two specific family properties in Lyon. Some accounts claim he was directly born inside this countryside house, others state it was his family's secondary vacation estate where he spent a significant portion of his childhood.",
-    "latitude": 45.797617,
-    "longitude": 4.826719,
+    "latitude": 45.766762,
+    "longitude": 4.834644,
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Suchet_birth_1.webp"
   },
   {
@@ -19009,6 +19009,50 @@
     ],
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Karakoi.webp",
     "contributor": "Mészáros, Ádám",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "980",
+    "name": "General Moore's lodge in Astorga",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1808",
+    "location": "Astorga",
+    "country": "Spain",
+    "description": "During his brief stay in Astorga in late December 1808, General Sir John Moore lodged and established his temporary headquarters in a house located at Calle de Leopoldo Panero, No. 3. The property originally belonged to the cathedral's ruling body (el Cabildo).",
+    "latitude": 42.456953,
+    "longitude": -6.058661,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moore_Astorga.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "981",
+    "name": "General Moore plaque",
+    "category": "Monument",
+    "significance": 2,
+    "year": "2018",
+    "date": "2018-10-13",
+    "location": "Astorga",
+    "country": "Spain",
+    "description": "On October 13th 2018 a commemorative plaque was mounted on the facade of the house where General Moore stayed to honor his memory and the British regiments that marched through the city during the grueling retreat to Corunna.",
+    "latitude": 42.456926,
+    "longitude": -6.058688,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Moore_Astorga.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "982",
+    "name": "Napoleon's stay in Astorga",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1809",
+    "date": "1809-01-01",
+    "location": "Astorga",
+    "country": "Spain",
+    "description": "Napoleon stayed in Astorga, in what was the old Episcopal Palace, originally dating back to 1120, during January 1 and 2, 1809. However, the building that Napoleon Bonaparte stayed in during his January 1809 stay no longer exists. On December 23, 1886, a catastrophic fire completely destroyed the original palace. On that same property now stands the spectacular Gaudí Palace, built between 1889 and 1913.",
+    "latitude": 42.457826,
+    "longitude": -6.055941,
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites/Astorga_plano.webp",
     "createDate": "2026-09-26"
   }
 ]
