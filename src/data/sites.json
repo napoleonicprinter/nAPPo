@@ -18045,8 +18045,8 @@
     "location": "Methven Parish Churchyard, Methven, Perth",
     "country": "Scotland",
     "description": "General Graham died age 95 on December 18th 1843. He was one of the oldest surviving generals of the Peninsular War. He was buried near his family home in a large and specially commissioned stone vault in Methven churchyard.",
-    "latitude": 35.85063,
-    "longitude": 14.50703,
+    "latitude": 56.416331,
+    "longitude": -3.580849,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Palazzo_Dorell",
     "image": "Graham_grave.webp",
     "createDate": "2026-09-27"
@@ -18661,7 +18661,7 @@
     "country": "Portugal",
     "description": "The Duke of Wellington bust was erected in 1967 in front of the British Hospital. It was sculpted by artist David Norris and presented as a gift by the British Historical Society of Portugal.",
     "latitude": 38.716527,
-    "longitude":  -9.161557,
+    "longitude": -9.161557,
     "image": "Wellington_Lisbon.webp",
     "createDate": "2026-10-01"
   }
