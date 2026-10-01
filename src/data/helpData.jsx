@@ -27,7 +27,7 @@ export const HELP_ITEMS = [
         title: 'Sites with Maps',
         imagePc: '/assets/images/Help_Map.webp',// Large horizontal image
         imageMobile: '/assets/images/Help_Map_M.webp', // Tall vertical image
-        content: 'Certain sites may have a map which is overlayed on the screen when you click the buttom. Maps can stay opened and you can use the "Close Maps" button to close them all. You can also select only these sites by flaging the "Only sites with maps" option in the "Filters" section.'
+        content: 'Certain sites may have a map which is overlayed on the screen when you click the buttom. Maps can stay open. Use the "Close Maps" button to close them all. You can also select only these sites by flaging the "Only sites with maps" option in the "Filters" section.'
     },
     {
         id: 'related',
