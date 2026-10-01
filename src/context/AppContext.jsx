@@ -97,7 +97,6 @@ export const EUROPEAN_CAPITALS = [
     { name: "Tallinn", lat: 59.4370, lon: 24.7536 },
     { name: "Vaduz", lat: 47.1410, lon: 9.5209 },
     { name: "Valletta", lat: 35.8989, lon: 14.5146 },
-    { name: "Vatican City", lat: 41.9029, lon: 12.4534 },
     { name: "Vienna", lat: 48.2082, lon: 16.3738 },
     { name: "Vilnius", lat: 54.6872, lon: 25.2797 },
     { name: "Warsaw", lat: 52.2297, lon: 21.0122 },
