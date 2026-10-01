@@ -10,6 +10,7 @@ import { App } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import { HELP_ITEMS } from '../data/helpData';
 import { getBelligerentStatus } from '../utils/filterValidation';
+import { resolveSiteImageUrl, resolveMapUrl, handleImageFallback } from '../utils/imageUtils';
 
 // Constants for remote data
 const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/src/data';
@@ -51,25 +52,6 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const d = R * c; // Distance in km
     return Math.round(d);
-};
-
-const GITHUB_SITES_IMAGE_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites';
-const GITHUB_MAPS_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Maps';
-
-export const resolveSiteImage = (img) => {
-    if (!img) return '';
-    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('/') || img.startsWith('data:')) {
-        return img;
-    }
-    return `${GITHUB_SITES_IMAGE_BASE}/${img}`;
-};
-
-export const resolveMapUrl = (url) => {
-    if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/') || url.startsWith('data:')) {
-        return url;
-    }
-    return `${GITHUB_MAPS_BASE}/${url}`;
 };
 
 export const isPaidVersion = import.meta.env.VITE_ENABLE_BATTLE_MAPS === 'true';
@@ -572,7 +554,7 @@ export const AppProvider = ({ children, storeUrl }) => {
                     : (site.commander ? [site.commander] : (bundled.commanders || (bundled.commander ? [bundled.commander] : []))));
 
             const rawImage = site.image || bundled.image;
-            const image = resolveSiteImage(rawImage);
+            const image = resolveSiteImageUrl(rawImage);
             const description = site.description || site.desciption || bundled.description || bundled.desciption || '';
             const rawWiki = site.wikipedia_link || bundled.wikipedia_link;
             const wikipedia_link = typeof rawWiki === 'string' && rawWiki.startsWith('hhttps://') ? rawWiki.replace('hhttps://', 'https://') : rawWiki;

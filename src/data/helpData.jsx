@@ -205,6 +205,13 @@ export const HELP_ITEMS = [
         content: 'Switch to a card-based searchable list of all sites or for the ones you filtered. To go back to "map mode", press the "Map" tag wich replaced the "list mode" tag.'
     },
     {
+        id: 'imageswitch',
+        title: 'Image Switch',
+        imagePc: '/assets/images/Help_ImageSwitch.webp',
+        imageMobile: '/assets/images/Help_ImageSwitch_M.webp',
+        content: 'The "Image Switch" allows you to hide the images on the site cards for a more readable list which is particularly useful when Battle sites are filtered.'
+    },
+    {
         id: 'visitedsites',
         title: 'Visited Sites',
         imagePc: '/assets/images/Help_Visit.webp',

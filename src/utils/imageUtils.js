@@ -1,22 +1,50 @@
 const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/public';
-const GITHUB_SITES_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Sites';
+const GITHUB_RAW_REFS_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public';
 
 /**
- * Resolves site image filename or full URL to an absolute URL
+ * Resolves site image filename or URL to a local bundled asset path first,
+ * or preserves external URLs (Wikimedia, museums, etc.)
  */
 export const resolveSiteImageUrl = (imagePath) => {
     if (!imagePath) return '';
-    if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/') || imagePath.startsWith('data:')) {
+    if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+        // If it's a GitHub raw URL to our repo, use local bundled asset for instant offline loading
+        if (imagePath.includes('githubusercontent.com') && imagePath.includes('/napoleonicprinter/nAPPo/')) {
+            const filename = imagePath.split('/').pop().split('?')[0];
+            return `/assets/images/Sites/${filename}`;
+        }
         return imagePath;
     }
-    return `${GITHUB_SITES_BASE}/${imagePath}`;
+    if (imagePath.startsWith('/')) {
+        return imagePath;
+    }
+    return `/assets/images/Sites/${imagePath}`;
+};
+
+/**
+ * Resolves battle map SVG filename or URL to a local bundled asset path first
+ */
+export const resolveMapUrl = (mapPath) => {
+    if (!mapPath) return '';
+    if (mapPath.startsWith('http://') || mapPath.startsWith('https://')) {
+        if (mapPath.includes('githubusercontent.com') && mapPath.includes('/napoleonicprinter/nAPPo/')) {
+            const filename = mapPath.split('/').pop().split('?')[0];
+            return `/assets/images/Maps/${filename}`;
+        }
+        return mapPath;
+    }
+    if (mapPath.startsWith('/')) {
+        return mapPath;
+    }
+    return `/assets/images/Maps/${mapPath}`;
 };
 
 /**
  * Intelligent multi-tier image error handler:
- * 1. Checks if a GitHub raw URL is missing the `/images/Sites/` subfolder and fixes it.
- * 2. Falls back between local bundled assets (`/assets/images/Sites/...`) and GitHub raw remote URLs.
- * 3. Gracefully stops after trying candidate paths to avoid infinite loops.
+ * 1. If local asset fails (e.g. newly synced site), try GitHub raw remote URL.
+ * 2. Try secondary GitHub raw URL with refs/heads/.
+ * 3. Try local root assets folder.
+ * 4. Gracefully stops after trying candidate paths to avoid infinite loops.
  */
 export const handleImageFallback = (e, imagePath) => {
     if (!e || !e.currentTarget || !imagePath) return;
@@ -28,15 +56,16 @@ export const handleImageFallback = (e, imagePath) => {
     // Candidate URLs to try in order
     const candidates = [];
 
-    // 1. If original path is a GitHub URL missing '/images/Sites/', candidate is fixed GitHub URL
-    if (imagePath.includes('githubusercontent.com') && !imagePath.includes('/images/Sites/')) {
-        candidates.push(`${GITHUB_RAW_BASE}/assets/images/Sites/${filename}`);
+    // 1. Candidate: standard GitHub raw URL with /images/Sites/
+    const standardRemote = `${GITHUB_RAW_BASE}/assets/images/Sites/${filename}`;
+    if (img.src !== standardRemote) {
+        candidates.push(standardRemote);
     }
 
-    // 2. Candidate: standard GitHub raw URL with /images/Sites/
-    const standardRemote = `${GITHUB_RAW_BASE}/assets/images/Sites/${filename}`;
-    if (!candidates.includes(standardRemote) && imagePath !== standardRemote) {
-        candidates.push(standardRemote);
+    // 2. Candidate: refs/heads GitHub raw URL
+    const refsRemote = `${GITHUB_RAW_REFS_BASE}/assets/images/Sites/${filename}`;
+    if (!candidates.includes(refsRemote) && img.src !== refsRemote) {
+        candidates.push(refsRemote);
     }
 
     // 3. Candidate: local bundled asset path
@@ -57,3 +86,4 @@ export const handleImageFallback = (e, imagePath) => {
         img.src = nextUrl;
     }
 };
+

@@ -174,7 +174,7 @@
             8.78625
           ]
         ],
-        "free": true
+        "free": false
       }
     ],
     "commander_Victor": [
@@ -3972,6 +3972,12 @@
   {
     "id": "189",
     "name": "Battlefield of Eylau",
+    "relatedSites": [
+      {
+        "id": 986,
+        "title": "Canvas by Antoine Gros"
+      }
+    ],
     "special": [
       "arc",
       "4"
@@ -8325,6 +8331,12 @@
   },
   {
     "id": "378",
+    "relatedSites": [
+      {
+        "id": 987,
+        "title": "Antoine-Jean Gros canvas"
+      }
+    ],
     "name": "Napoleon's monument",
     "category": "Monument",
     "significance": 1,
@@ -13311,6 +13323,12 @@
   },
   {
     "id": "674",
+    "relatedSites": [
+      {
+        "id": 985,
+        "title": "Painting by Paul Delaroche"
+      }
+    ],
     "name": "Napoleon crossing the Alps",
     "category": "Monument",
     "significance": 1,
@@ -18553,6 +18571,84 @@
     "latitude": 42.45783,
     "longitude": -6.05594,
     "image": "Astorga_plano.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "983",
+    "name": "Officier de chasseurs à cheval de la garde",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1812",
+    "location": "Museé du Louvre, Denon, Salle 700 - Salle Mollien, Paris",
+    "country": "France",
+    "description": "Painted around 1812 by France's Théodore Géricault, the oil-on-canvas masterpiece 'Officer of the Imperial Horse Guards Charging' captures a dramatic moment as a Mounted Chasseur officer of the Imperial Guard readies his attack. This striking piece, earned spots in both the 1812 and 1814 Salon exhibitions.",
+    "site_link": "https://collections.louvre.fr/ark:/53355/cl010059198",
+    "latitude": 48.86051,
+    "longitude": 2.334964,
+    "image": "Louvre_Chasseur.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "985",
+    "relatedSites": [
+      {
+        "id": 674,
+        "title": "Sculpture in the Alps"
+      }
+    ],
+    "name": "Bonaparte franchissant les Alpes",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1848",
+    "location": "Museé du Louvre, Denon, Salle 701 - Salle Denon, Paris",
+    "country": "France",
+    "description": "Painted around 1812 by France's Théodore Géricault, the oil-on-canvas masterpiece 'Officer of the Imperial Horse Guards Charging' captures a dramatic moment as a Mounted Chasseur officer of the Imperial Guard readies his attack. This striking piece, earned spots in both the 1812 and 1814 Salon exhibitions.",
+    "site_link": "https://collections.louvre.fr/en/ark:/53355/cl010062901",
+    "latitude": 48.860445,
+    "longitude": 2.335531,
+    "image": "Louvre_Alps.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "986",
+    "relatedSites": [
+      {
+        "id": 189,
+        "title": "Battlefield of Eylau"
+      }
+    ],
+    "name": "Napoléon sur le champ de Bataille d'Eylau",
+    "category": "Artwork",
+    "significance": 3,
+    "year": "1808",
+    "location": "Museé du Louvre, Denon, Salle 700 - Salle Mollien, Paris",
+    "country": "France",
+    "description": "Painted  by Antoine-Jean Gros between 1807 and 1808. The monumental canvas captures the immediate, freezing aftermath of the bloody Battle of Eylau, where French forces clashed with a combined Russian and Prussian army in a brutal winter storm.",
+    "site_link": "https://collections.louvre.fr/en/ark:/53355/cl010066486",
+    "latitude": 48.86051,
+    "longitude": 2.334964,
+    "image": "Louvre_Eylau.webp",
+    "createDate": "2026-09-26"
+  },
+  {
+    "id": "987",
+    "relatedSites": [
+      {
+        "id": 378,
+        "title": "Stella Maris Monastery on Mount Carmel"
+      }
+    ],
+    "name": "Bonaparte visitant les pestiférés de Jaffa",
+    "category": "Artwork",
+    "significance": 3,
+    "year": "1804",
+    "location": "Museé du Louvre, Denon, Salle 700 - Salle Mollien, Paris",
+    "country": "France",
+    "description": "Completed by Antoine-Jean Gros  in 1804, timed strategically with Napoleon crowning himself Emperor, the painting blends early French Romanticism with Orientalist architecture to mythologize Napoleon as a quasi-divine, fearless savior while masking the grim realities of his military campaign.",
+    "site_link": "https://collections.louvre.fr/en/ark:/53355/cl010062570",
+    "latitude": 48.86051,
+    "longitude": 2.334964,
+    "image": "Louvre_Jaffa.webp",
     "createDate": "2026-09-26"
   }
 ]
