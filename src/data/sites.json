@@ -18665,5 +18665,35 @@
     "longitude": -9.161557,
     "image": "Wellington_Lisbon.webp",
     "createDate": "2026-10-01"
+  },
+  {
+    "id": "988",
+    "name": "Wellington bust in Porto",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1992",
+    "date": "1992-10-07",
+    "location": "Lisbon",
+    "country": "Portugal",
+    "description": "The Duke of Wellington bust was erected on October 7th 1992 in front of the British Hospital. It was sculpted by artist David Norris in 1967 and presented as a gift by the British Historical Society of Portugal.",
+    "latitude": 38.716527,
+    "longitude": -9.161557,
+    "image": "Wellington_Porto.webp",
+    "createDate": "2026-10-02"
+  },
+  {
+    "id": "989",
+    "name": "Carrancas Palace",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1808",
+    "location": "Porto",
+    "country": "Portugal",
+    "description": "During the course of the Peninsular Wars, in 1808, the building became the official residence of the Corregedor-mor Tamboreau and General Marquez de Valladares, and in the following year (1809) the residences of General Soult and, later, headquarters of General Wellesley.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Carrancas_Palace",
+    "latitude": 41.147738,
+    "longitude": -8.621550,
+    "image": "Carrancas_Palace.webp",
+    "createDate": "2026-10-01"
   }
 ]
