@@ -209,7 +209,7 @@ export const HELP_ITEMS = [
         title: 'Image Switch',
         imagePc: '/assets/images/Help_ImageSwitch.webp',
         imageMobile: '/assets/images/Help_ImageSwitch_M.webp',
-        content: 'The "Image Switch" allows you to hide the images on the site cards for a more readable list which is particularly useful when Battle sites are filtered.'
+        content: 'The "Image Switch" in the list mode window allows you to hide the images on the site cards to present a compact list which is particularly useful when Battle sites are filtered.'
     },
     {
         id: 'visitedsites',

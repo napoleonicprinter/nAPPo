@@ -54,12 +54,10 @@ const UpdateSitesModal = ({ isOpen, onClose }) => {
                 className="view-modal-content glass-panel update-sites-modal-content"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Header with Larger Logo and Red Close Button */}
+                {/* Header with Logo as is and Red Close Button */}
                 <div className="update-modal-header">
                     <div className="update-modal-title-row">
-                        <div className="update-logo-wrapper">
-                            <img src="/assets/NT_logo.png" alt="nAPPo Trails" className="update-modal-logo-large" />
-                        </div>
+                        <img src="/assets/NT_logo.png" alt="nAPPo Trails" className="update-modal-logo-large" />
                         <div className="update-modal-title-info">
                             <div className="update-header-tag">
                                 <Sparkles size={12} className="tag-sparkle" />
