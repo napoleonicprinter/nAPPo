@@ -18589,7 +18589,7 @@
     "createDate": "2026-09-26"
   },
   {
-    "id": "985",
+    "id": "984",
     "relatedSites": [
       {
         "id": 674,
@@ -18610,7 +18610,7 @@
     "createDate": "2026-09-26"
   },
   {
-    "id": "986",
+    "id": "985",
     "relatedSites": [
       {
         "id": 189,
@@ -18631,7 +18631,7 @@
     "createDate": "2026-09-26"
   },
   {
-    "id": "987",
+    "id": "986",
     "relatedSites": [
       {
         "id": 378,
@@ -18650,5 +18650,19 @@
     "longitude": 2.334964,
     "image": "Louvre_Jaffa.webp",
     "createDate": "2026-09-26"
+  },
+  {
+    "id": "987",
+    "name": "Wellington bust in Lisbon",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1967",
+    "location": "Lisbon",
+    "country": "Portugal",
+    "description": "The Duke of Wellington bust was erected in 1967 in front of the British Hospital. It was sculpted by artist David Norris and presented as a gift by the British Historical Society of Portugal.",
+    "latitude": 38.716527,
+    "longitude":  -9.161557,
+    "image": "Wellington_Lisbon.webp",
+    "createDate": "2026-10-01"
   }
 ]

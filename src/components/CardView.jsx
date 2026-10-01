@@ -44,7 +44,8 @@ const CardView = () => {
         setFilterCommanderRole,
         filterBelligerent,
         setFilterBelligerent,
-        availableOutcomeCounts
+        availableOutcomeCounts,
+        showOnlyNew
     } = useAppContext();
 
     const outcomeOptions = useMemo(() => {
@@ -164,8 +165,19 @@ const CardView = () => {
         return 999;
     };
 
-    // Sort sites by selected field and order
+    // Sort sites by selected field and order (or by createDate descending if only new sites filter is active)
     const sortedSites = useMemo(() => {
+        if (showOnlyNew) {
+            return [...sites].sort((a, b) => {
+                const dateA = a.createDate ? new Date(a.createDate).getTime() : 0;
+                const dateB = b.createDate ? new Date(b.createDate).getTime() : 0;
+                if (dateB !== dateA) {
+                    return dateB - dateA;
+                }
+                return (a.name || '').localeCompare(b.name || '');
+            });
+        }
+
         return [...sites].sort((a, b) => {
             let result = 0;
             if (sortField === 'day') {
@@ -204,12 +216,12 @@ const CardView = () => {
             }
             return sortOrder === 'desc' ? -result : result;
         });
-    }, [sites, sortField, sortOrder, userCoords]);
+    }, [sites, sortField, sortOrder, userCoords, showOnlyNew]);
 
     // Reset visible count when sites or sorting/filtering change
     useEffect(() => {
         setVisibleCount(BATCH_SIZE);
-    }, [sites, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, filterBelligerent, userCoords]);
+    }, [sites, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, filterBelligerent, userCoords, showOnlyNew]);
 
     // Sentinel observer for progressive infinite loading
     useEffect(() => {
