@@ -104,7 +104,12 @@
       "Prince of Orange"
     ],
     "commander_Loss": [
-      "Napoleon"
+      "Napoleon",
+      "Michel Ney",
+      "Jean de Dieu Soult",
+      "Jean Baptiste Drouet",
+      "Honoré Charles Reille",
+      "François Kellermann"
     ]
   },
   {
@@ -178,7 +183,11 @@
       }
     ],
     "commander_Victor": [
-      "Napoleon"
+      "Napoleon",
+      "Louis Berthier",
+      "Jean Lannes",
+      "Claude Victor Perrin",
+      "François Kellermann"
     ],
     "commander_Loss": [
       "Michael von Melas"
@@ -5028,7 +5037,9 @@
     "victor": "France",
     "defeated": "Austria",
     "commander_Victor": [
-      "Napoleon"
+      "Napoleon",
+      "Jean Lannes",
+      "Louis Nicolas Davout"
     ],
     "commander_Loss": [
       "Archduke Charles"
@@ -5496,7 +5507,7 @@
     "special": "5",
     "commander_Victor": [
       "Michael von Kienmayer",
-      "Frederick William",
+      "Duke of Brunswick",
       "Johann von Thielmann"
     ],
     "commander_Loss": [
@@ -7053,7 +7064,7 @@
       "Jean-Jacques Reubell"
     ],
     "commander_Loss": [
-      "Frederick William"
+      "Duke of Brunswick"
     ]
   },
   {
@@ -14231,6 +14242,7 @@
     "latitude": 48.8588,
     "longitude": 2.39634,
     "image": "Ney_tomb.webp",
+    "flower_link": "https://es.findagrave.com/memorial/1650/michel-ney/flower",
     "site_link": "https://www.appl-lachaise.net/ney-michel-duc-delchingen-1769-1815/",
     "relatedSites": [
       {
@@ -14245,6 +14257,7 @@
     "name": "Joachim Murat's memorial",
     "category": "Grave site",
     "significance": 3,
+    "date": "1815-10-13",
     "location": "Père Lachaise Cemetery (Division 39), Paris",
     "country": "France",
     "description": "Murat's family grave is a memorial to the Marshal. Murat is not actually buried at Pere-Lachaise and the location of his body is unknown after his execution.",
@@ -14252,6 +14265,7 @@
     "longitude": 2.39673,
     "image": "Murat_tomb.webp",
     "site_link": "https://www.appl-lachaise.net/murat-joachim-roi-de-naples-1767-1815/",
+    "flower_link": "https://es.findagrave.com/memorial/7827/joachim-murat/flower",
     "createDate": "2025-08-18"
   },
   {
@@ -14429,6 +14443,7 @@
     "latitude": 48.85919,
     "longitude": 2.3957,
     "image": "Foy_tomb.webp",
+    "flower_link": "https://es.findagrave.com/memorial/7800/maximilien-foy/flower",
     "site_link": "https://www.appl-lachaise.net/foy-maximilien-sebastien-comte-1775-1825/",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Maximilien_S%C3%A9bastien_Foy#Service_in_Spain",
     "createDate": "2025-08-18"
@@ -16317,6 +16332,7 @@
     "latitude": 51.28285,
     "longitude": -0.08419,
     "image": "Gibson_tomb.webp",
+    "flower_link": "https://es.findagrave.com/memorial/46423294/samuel-gibson/flower",
     "createDate": "2025-08-27"
   },
   {
@@ -18048,6 +18064,7 @@
     "longitude": -3.580849,
     "wikipedia_link": "https://en.wikipedia.org/wiki/Palazzo_Dorell",
     "image": "Graham_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/176300066/thomas-graham/flower",
     "createDate": "2025-09-27"
   },
   {
@@ -18755,6 +18772,27 @@
     "longitude": -1.486737,
     "image": "Deakin_grave.webp",
     "flower_link": "https://es.findagrave.com/memorial/220614964/john-deakin/flower",
+    "createDate": "2025-09-26"
+  },
+  {
+    "id": "994",
+    "name": "Battlefield of Halberstadt",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1809",
+    "date": "1809-07-29",
+    "location": "Halberstadt",
+    "country": "Germany",
+    "description": "The fight took place between 29 and 30 July 1809 when a Westphalian infantry force attempted to halt the Black Brunswickers under Frederick William, Duke of Brunswick-Wolfenbüttel who were heading for the North Sea coast. However, the Brunswickers surprised the Westphalians with a rapid advance and defeated them inside the town.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halberstadt",
+    "latitude": 51.906070,
+    "longitude": 11.017752,
+    "image": "Halberstadt.webp",
+    "special": "5",
+    "victor": "Brunswick",
+    "defeated": "Westphalia",
+    "commander_Victor": "Duke of Brunswick",
+    "commander_Loss": "Pierre-Sylvain Mayronnet",
     "createDate": "2025-09-26"
   }
 ]

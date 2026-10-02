@@ -4280,5 +4280,14 @@
     "date": "1813-05-31",
     "location": "Halberstadt, Germany",
     "description": "The more accurately known historically as the Skirmish at Halberstadt took place on May 31, 1813. The Burchardianger is a meadow area located just outside the historic monastery of St. Burchardi. A column of the Russian Imperial Army, primarily composed of Cossacks under the command of General Alexander Chernyshov (Czernitscheff), launched a surprise raid against a Westphalian-French division commanded by General Jakob von Ochs. The Russians completely surprised the French-allied forces, routing them, taking over 1,000 prisoners, and capturing important military supplies."
+  },
+  {
+    "id": "503",
+    "title": "Battle of Halberstadt",
+    "siteId": 974,
+    "date": "1809-07-29",
+    "location": "Halberstadt, Germany",
+    "description": "The fight took place between 29 and 30 July 1809 when a Westphalian infantry force attempted to halt the Black Brunswickers under Frederick William, Duke of Brunswick-Wolfenbüttel who were heading for the North Sea coast. However, the Brunswickers surprised the Westphalians with a rapid advance and defeated them inside the town.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halberstadt"
   }
 ]
