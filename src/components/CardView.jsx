@@ -84,11 +84,15 @@ const CardView = () => {
     ], [availableMonths]);
 
     const [sortField, setSortField] = useState(() => {
+        if (userCoords) return 'distance';
         const saved = localStorage.getItem('listSortField');
-        if (saved) return saved;
-        return userCoords ? 'distance' : 'date';
+        if (saved && saved !== 'distance') return saved;
+        return 'date';
     });
-    const [sortOrder, setSortOrder] = useState(() => localStorage.getItem('listSortOrder') || 'asc');
+    const [sortOrder, setSortOrder] = useState(() => {
+        if (userCoords) return 'asc';
+        return localStorage.getItem('listSortOrder') || 'asc';
+    });
     const [showImages, setShowImages] = useState(() => {
         const saved = localStorage.getItem('cardViewShowImages');
         return saved !== 'false';
@@ -98,22 +102,23 @@ const CardView = () => {
 
     const containerRef = useRef(null);
     const sentinelRef = useRef(null);
-    const prevUserCoordsRef = useRef(userCoords);
 
     useBackHandler('detailViewCardView', !!selectedSite, () => setSelectedSite(null), 35);
 
     useEffect(() => {
-        if (userCoords && !prevUserCoordsRef.current) {
+        if (userCoords) {
             setSortField('distance');
+            setSortOrder('asc');
+        } else {
+            setSortField(prev => (prev === 'distance' ? 'date' : prev));
         }
-        prevUserCoordsRef.current = userCoords;
     }, [userCoords]);
 
     useEffect(() => {
         if (sortField === 'day' && (!isMonthFilterVisible || filterMonth === 'all')) {
-            setSortField('date');
+            setSortField(userCoords ? 'distance' : 'date');
         }
-    }, [isMonthFilterVisible, filterMonth, sortField]);
+    }, [isMonthFilterVisible, filterMonth, sortField, userCoords]);
 
     useEffect(() => {
         localStorage.setItem('listSortField', sortField);
@@ -266,6 +271,16 @@ const CardView = () => {
                             <Calendar size={14} style={{ marginRight: '4px' }} />
                             Date
                         </button>
+                        {userCoords && (
+                            <button
+                                type="button"
+                                className={`sort-tag-btn ${sortField === 'distance' ? 'active' : ''}`}
+                                onClick={() => setSortField('distance')}
+                            >
+                                <Navigation size={14} style={{ marginRight: '4px' }} />
+                                Distance
+                            </button>
+                        )}
                         {((filterCommander && filterCommander !== 'all') || (filterBelligerent && filterBelligerent !== 'all')) && (
                             <div className="sort-commander-role-wrapper">
                                 <CustomSimpleSelect
@@ -303,16 +318,6 @@ const CardView = () => {
                             >
                                 <CalendarDays size={14} style={{ marginRight: '4px' }} />
                                 Day
-                            </button>
-                        )}
-                        {userCoords && (
-                            <button
-                                type="button"
-                                className={`sort-tag-btn ${sortField === 'distance' ? 'active' : ''}`}
-                                onClick={() => setSortField('distance')}
-                            >
-                                <Navigation size={14} style={{ marginRight: '4px' }} />
-                                Distance
                             </button>
                         )}
                     </div>
