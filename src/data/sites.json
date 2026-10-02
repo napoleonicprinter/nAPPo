@@ -3974,7 +3974,7 @@
     "name": "Battlefield of Eylau",
     "relatedSites": [
       {
-        "id": 986,
+        "id": 985,
         "title": "Canvas by Antoine Gros"
       }
     ],
@@ -8333,7 +8333,7 @@
     "id": "378",
     "relatedSites": [
       {
-        "id": 987,
+        "id": 986,
         "title": "Antoine-Jean Gros canvas"
       }
     ],
@@ -12154,7 +12154,7 @@
     "latitude": 52.9813,
     "longitude": 13.33463,
     "image": "Zehdenick_bridge.webp",
-    "createDate": "2026-9-20"
+    "createDate": "2025-09-20"
   },
   {
     "id": "607",
@@ -13325,7 +13325,7 @@
     "id": "674",
     "relatedSites": [
       {
-        "id": 985,
+        "id": 984,
         "title": "Painting by Paul Delaroche"
       }
     ],
@@ -18711,5 +18711,51 @@
     "longitude": -6.930584,
     "image": "Coa_memorial.webp",
     "createDate": "2026-10-01"
+  },
+  {
+    "id": "991",
+    "name": "Le Couronnement de l'empereur Napoléon",
+    "category": "Artwork",
+    "significance": 3,
+    "year": "1807",
+    "location": "Museé du Louvre, Denon, Salle 702 - Salle Daru, Paris",
+    "country": "France",
+    "description": "The Coronation of Napoleon (Le Sacre de Napoléon), an iconic, large-scale masterpiece painted between 1805 and 1807 by the leading French Neoclassical painter Jacques-Louis David.",
+    "site_link": "https://collections.louvre.fr/ark:/53355/cl010065720",
+    "latitude": 48.860270,
+    "longitude": 2.336054,
+    "image": "Cornacion.webp",
+    "createDate": "2025-09-26"
+  },
+  {
+    "id": "992",
+    "name": "Sgt Thomas Sands' grave",
+    "category": "Grave site",
+    "significance": 1,
+    "date": "1850-03-29",
+    "location": "Sheffield General Cemetery, Sheffield, South Yorkshire",
+    "country": "England",
+    "description": "The headstone of Thomas Sands, a Waterloo veteran, which was moved to the left of the Montague Street entrance in 1980. He passed away on March 29, 1850, at the age of 67. During his life, he served for more than 22 years as a Sergeant in the Sheffield Squadron of the West Yorks Yeomanry Cavalry. Before that, he spent 24 years with the 1st (King's) Dragoon Guards, highly distinguishing himself at the historic Battle of Waterloo.",
+    "latitude": 53.37011,
+    "longitude": -1.484590,
+    "image": "Sands_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/101512201/thomas-sands/flower",
+    "createDate": "2025-09-26"
+  },
+  {
+    "id": "993",
+    "name": "Trumpeter John Deakin's grave",
+    "category": "Grave site",
+    "significance": 1,
+    "year": "1856",
+    "location": "Sheffield General Cemetery, plot E2 131, Sheffield, South Yorkshire",
+    "country": "England",
+    "description": "John Deakin (1792-1856) served for upward of thirty years in the 2nd Cavalry Brigade, Inniskilling Dragoons. Enlisted in 1803 at just 11 years old, earning a promotion to trumpeter while still a teenager. He received a lance wound at Waterloo and, after he was discharged in his 40s. He was buried in plot E2 131, Anglican section, but his headstone is now lost.",
+    "site_link": "https://gencem.org/stories/john-deakin-1790-1856/",
+    "latitude": 53.369465,
+    "longitude": -1.486737,
+    "image": "Deakin_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/220614964/john-deakin/flower",
+    "createDate": "2025-09-26"
   }
 ]
