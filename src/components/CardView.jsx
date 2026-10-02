@@ -250,9 +250,31 @@ const CardView = () => {
         return sortedSites.slice(0, visibleCount);
     }, [sortedSites, visibleCount]);
 
+    const sortButtonsCount = useMemo(() => {
+        let count = 2; // Alphabetic, Date
+        if (userCoords) count += 1; // Distance
+        if ((filterCommander && filterCommander !== 'all') || (filterBelligerent && filterBelligerent !== 'all')) count += 1; // Outcome
+        if (isMonthFilterVisible) count += 1; // Month
+        if (isMonthFilterVisible && filterMonth !== 'all') count += 1; // Day
+        return count;
+    }, [userCoords, filterCommander, filterBelligerent, isMonthFilterVisible, filterMonth]);
+
+    const showScrollHint = sortButtonsCount > 2;
+
     return (
         <div className="card-view-wrapper animate-fade-in" style={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
             <div className="card-view-container" ref={containerRef} onScroll={handleScroll}>
+                {showScrollHint && (
+                    <div className="card-view-scroll-hint" aria-hidden="true">
+                        <svg className="scroll-hint-arrow" width="28" height="14" viewBox="0 0 28 14" fill="currentColor">
+                            <path d="M10 0 L0 7 L10 14 L10 9 L28 9 L28 5 L10 5 Z" />
+                        </svg>
+                        <span className="scroll-hint-text">MENU</span>
+                        <svg className="scroll-hint-arrow" width="28" height="14" viewBox="0 0 28 14" fill="currentColor">
+                            <path d="M18 0 L28 7 L18 14 L18 9 L0 9 L0 5 L18 5 Z" />
+                        </svg>
+                    </div>
+                )}
                 <div className="card-view-header glass-panel">
                     <div className="sort-buttons-row">
                         <button
