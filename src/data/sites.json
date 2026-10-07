@@ -613,7 +613,7 @@
     "description": "The French troops advanced up to this point where they were driven back by the Spanish vanguard.",
     "latitude": 38.09234,
     "longitude": -3.79166,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Cruz_Blanca_Bailen.png",
+    "image": "Cruz_blanca.webp",
     "createDate": "2025-02-26"
   },
   {
@@ -681,7 +681,7 @@
     "description": "Monument created in 1987 by the architect Vicente Sánchez and the sculptor Antonio Rivas.",
     "latitude": 38.09205,
     "longitude": -3.78031,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Bail%C3%A9n%2C_Monument_to_the_Victory_of_1808.JPG",
+    "image": "Bailen_monumento.webp",
     "createDate": "2025-02-26"
   },
   {
@@ -695,7 +695,7 @@
     "description": "Site of a French fortification built in 1808 as ordered Napoleon after the Battle of Somosierra.",
     "latitude": 41.13631,
     "longitude": -3.57862,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Somosierra%2C_dehesa_1990_01.jpg",
+    "image": "Somosierra_fuerte.webp",
     "more_info_link": "https://www.batalladetrafalgar.com/2009/05/el-fuerte-frances-de-somosierra.html",
     "createDate": "2025-02-26"
   },
@@ -825,7 +825,7 @@
     "description": "En el cerro Perdiguera se sitúa el extremo del flanco izquierdo del ejército español con las tropas al mando del general don Pedro Roca con 2000 hombres de ellos 1400 soldados de infantería que defienden la posición y tres cañones con sus artilleros.",
     "latitude": 41.0499,
     "longitude": -0.14642,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vista_desde_el_Castillo_de_Alca%C3%B1iz.jpg/500px-Vista_desde_el_Castillo_de_Alca%C3%B1iz.jpg",
+    "image": "Cerro_perdiguera.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alca%C3%B1iz",
     "createDate": "2025-02-26"
   },
@@ -840,7 +840,7 @@
     "description": "En este cerro,ante la ermita de la Virgen de los Pueyos bloqueando la entrada a Alcañiz, se sitúa el ala derecha española con una brigada de 2000 hombres y un cañón al mando del brigadier don Carlos de Areizaga.",
     "latitude": 41.06722,
     "longitude": -0.14926,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/ErmitaPueyos.JPG",
+    "image": "Ermita_Pueyos.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alca%C3%B1iz",
     "createDate": "2025-02-26"
   },
@@ -883,7 +883,7 @@
     "description": "Exposición que se encuentra en Alba de Tormes en el torreón de los Duques de Alba, en la  que se habla de la Batalla librada el 28 de noviembre de 1809, en la que General Gabriel de Mendizábal Iraeta formó con las tropas bajo su mando varios cuadros de Infantería contra los que se estrellarán hasta tres cargas de la Caballería francesa al mando de Kellermann.",
     "latitude": 40.82399,
     "longitude": -5.51325,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Torre_del_homenaje_Alba_de_Tormes.JPG",
+    "image": "Castillo_Tormes.webp",
     "site_link": "https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1284809828040/Institucion/1284809941836/DirectorioPadre",
     "youtube_link": "https://www.youtube.com/watch?v=ZHoAH8GnsL4",
     "more_info_link": "https://www.youtube.com/watch?v=BmNu7wgYdC0",
@@ -996,12 +996,12 @@
     "category": "Battle landmark",
     "significance": 3,
     "year": 1810,
-    "location": "Astorga,León",
+    "location": "Astorga, León",
     "country": "Spain",
     "description": "Zona de la murall por donde los franceses abrieron brecha en 1810.",
     "latitude": 42.45837,
     "longitude": -6.05639,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Brecha_en_la_muralla.jpg",
+    "image": "Astorga_muro.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Astorga",
     "createDate": "2025-02-26"
   },
@@ -1016,7 +1016,7 @@
     "description": "Esta fuente fue tomada por los franceces el 1 de abril de 1810, cortando el suministro de agua a la ciudad. Luego, en este sitio,el 22 de abril, la guarnición entregó sus armas tras rendir la plaza.",
     "latitude": 42.44947,
     "longitude": -6.06455,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Fuente_Encalada.jpg",
+    "image": "Fuente_encalada.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Astorga",
     "createDate": "2025-02-26"
   },
@@ -1030,7 +1030,7 @@
     "description": "Monumento en honor a los defensores de la ciudad durante los sitios de Astorga. Obra del escultor Enrique Marín Higuero. Se erigió en 1910, con motivo del centenario del primer sitio de Astorga",
     "latitude": 42.45521,
     "longitude": -6.05289,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Monumento_de_los_Sitios.jpg",
+    "image": "Astorga_monumento.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Sitios_de_Astorga",
     "createDate": "2025-02-26"
   },
@@ -1073,7 +1073,7 @@
     "description": "Puente de 32 metros de altura y 192 de largo mandado construir en 1761 por orden del Rey Carlos III y finalizado en 1803. Las tropas del Mariscal Suchet cruzaron este puente la noche previa a la batalla de Ordal.",
     "latitude": 41.39002,
     "longitude": 1.89493,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Viaducte_lledoner_1.jpg",
+    "image": "Lledoner.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Viaducto_del_Lladoner",
     "createDate": "2025-03-15"
   },
@@ -1102,7 +1102,7 @@
     "description": "Puente cruzado por las tropas del General Moore en 1809 durante su retirada hacia A Coruña.",
     "latitude": 42.82194,
     "longitude": -7.13989,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ponte_de_Cruzul_%28ca._1867%3F%29.jpg",
+    "image": "Cruzul.webp",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Puente_de_Cruzul",
     "createDate": "2025-03-15"
   },
@@ -1362,7 +1362,7 @@
     "name": "Joseph Bonaparte, roi de Naples",
     "category": "Artwork",
     "significance": 3,
-    "location": "Versailles",
+    "location": "Château de Versailles, Versailles",
     "country": "France",
     "description": "Château de Versailles. Artist: Jean-Baptiste Wicar",
     "latitude": 48.80489,
@@ -2681,7 +2681,7 @@
     "name": "Les Défenseurs de Saragosse",
     "category": "Artwork",
     "significance": 1,
-    "location": "Cherbourg-en-Cotentin",
+    "location": "Thomas Henry Museum, Cherbourg-en-Cotentin",
     "country": "France",
     "description": "Thomas Henry Museum. This work was painted in 1893 by the French artist Maurice Orange and depicts the moment when the defenders of the city surrendered their weapons to the French troops on February 20th 1809.",
     "latitude": 49.63738,
@@ -2695,7 +2695,7 @@
     "name": "José de Palafox",
     "category": "Artwork",
     "significance": 2,
-    "location": "Madrid, Madrid",
+    "location": "Museo del Prado, Madrid",
     "country": "Spain",
     "description": "Museo del Prado. Obra de Francisco de Goya. Posiblemente este lienzo fue un encargo del general Palafox a Goya. En una carta del pintor al general escrita el 4 de enero de 1815, Goya dice haber terminado satisfactoriamente el retrato.",
     "latitude": 40.41481,
@@ -2709,7 +2709,7 @@
     "name": "Agustina de Aragón",
     "category": "Artwork",
     "significance": 2,
-    "location": "Madrid, Madrid",
+    "location": "Museo Lázaro Galdiano, Madrid",
     "country": "Spain",
     "description": "Museo Lázaro Galdiano.  La obra representa a la heroína española Agustina de Aragón (1786-1857).",
     "latitude": 40.43691,
@@ -2753,7 +2753,7 @@
     "name": "El Pilar no se rinde",
     "category": "Artwork",
     "significance": 1,
-    "location": "Zaragoza, Aragón",
+    "location": "Museo de Zaragoza, Zaragoza, Aragón",
     "country": "Spain",
     "description": "Museo de Zaragoza. El lienzo muestra un Episodio de la defensa de Zaragoza frente a los franceses. Obra de Episodio de la defensa de Zaragoza frente a los franceses. Federico Jiménez Nicanor.",
     "latitude": 41.64831,
@@ -2766,7 +2766,7 @@
     "name": "El Dos de Mayo",
     "category": "Artwork",
     "significance": 3,
-    "location": "Madrid, Madrid",
+    "location": "Museo del Prado, Madrid, Madrid",
     "country": "Spain",
     "description": "Museo del Prado. Obra de Francisco de Goya. Representa la revuelta popular del 2 de mayo de 1808 en Madrid contra la ocupación francesa.",
     "latitude": 40.41481,
@@ -2780,7 +2780,7 @@
     "name": "El Tres de Mayo",
     "category": "Artwork",
     "significance": 3,
-    "location": "Madrid, Madrid",
+    "location": "Museo del Prado, Madrid, Madrid",
     "country": "Spain",
     "description": "Museo del Prado. Obra de Francisco de Goya. Representa la ejecución de los madrileños que se habían sublevado contra los franceses el día anterior.",
     "latitude": 40.41481,
@@ -2818,7 +2818,7 @@
     "category": "Artwork",
     "year": "1835",
     "significance": 2,
-    "location": "Madrid, Madrid",
+    "location": "Museo Nacional del Romanticismo, Madrid",
     "country": "Spain",
     "description": "Museo Nacional del Romanticismo.  Obra de  Alenza y Nieto, Leonardo. Escena de batalla, desarrollada durante la Guerra de la Independencia. Representa los hechos acaecidos durante el 2 de Mayo de 1808, en el Parque de Artillería de Monteleón.",
     "latitude": 40.42589,
@@ -2874,7 +2874,7 @@
     "name": "Muerte de Velarde el Dos de Mayo de 1808",
     "category": "Artwork",
     "significance": 2,
-    "location": "Madrid, Madrid",
+    "location": "Museo de Historia de Madrid, Madrid",
     "country": "Spain",
     "description": "Museo de Historia de Madrid. Obra de Manuel Castellano.",
     "latitude": 40.42574,
@@ -2907,7 +2907,7 @@
     "name": "El juramento de las tropas del Marqués de la Romana",
     "category": "Artwork",
     "significance": 3,
-    "location": "Toledo,",
+    "location": "Museo del Ejército, Toledo,",
     "country": "Spain",
     "description": "Museo del Ejército. Obra de Manuel Castellano. El lienzo representa el momento en que las tropas españolas a las órdenes del marqués de la Romana, Pedro Caro y Sureda, prestaron juramento antes de embarcar hacia Dinamarca para proteger a Dinamarca, que era aliada de Napoleón.",
     "latitude": 39.858,
@@ -2935,7 +2935,7 @@
     "name": "Malasaña y su hija se baten contra los franceses",
     "category": "Artwork",
     "significance": 2,
-    "location": "Zaragoza, Aragón",
+    "location": "Museo de Zaragoza, Zaragoza, Aragón",
     "country": "Spain",
     "description": "Museo de Zaragoza. Obra de Eugenio Álvarez Dumont. El lienzo forma parte de la colección de pintura del siglo XIX del museo. Esta obra narra la lucha y muerte de Juan Malasaña y su hija Manuela durante los levantamientos del 2 de mayo de 1808 en Madrid.",
     "latitude": 41.6468,
@@ -3009,7 +3009,7 @@
     "category": "Artwork",
     "significance": 2,
     "year": 1801,
-    "location": "Moscow, Russia",
+    "location": "State Russian Museum, Moscow, Russia",
     "country": "Russia",
     "description": "The coronation of Emperor Alexander I and Elizabeth Alexeyevna took place on 15 September 1801 in the Dormition Cathedral of the Moscow Kremlin.",
     "latitude": 55.75222,
@@ -4596,7 +4596,7 @@
     "id": "216",
     "name": "Battle of Donauwörth",
     "category": "Battle site",
-    "significance": 1,
+    "significance": 2,
     "year": 1805,
     "date": "1805-10-07",
     "location": "Donauwörth",
@@ -6091,7 +6091,7 @@
     "name": "Embarque del Marqués de La Romana y sus tropas",
     "category": "Artwork",
     "significance": 2,
-    "location": "Madrid",
+    "location": "Museo Nacional del Romanticismo, Madrid",
     "country": "Spain",
     "description": "Museo Nacional del Romanticismo. Obra de Juan Rodríguez Jiménez que escenifica el momento en el que el marqués de la Romana, en el centro de la escena, arenga a las tropas, preparadas para embarcar en los navíos ingleses.",
     "latitude": 40.42589,
@@ -6105,7 +6105,7 @@
     "name": "Battle of Nazareth",
     "category": "Artwork",
     "significance": 3,
-    "location": "Nantes",
+    "location": "Musée d'Arts de Nantes, Nantes",
     "country": "France",
     "description": "Musée d'Arts de Nantes. Canvas by Antoine-Jean Gros depicting the Battle of Nazareth.",
     "latitude": 47.2193,
@@ -6201,7 +6201,7 @@
     "name": "The Naval Battle of Alvøen",
     "category": "Artwork",
     "significance": 1,
-    "location": "Bergen",
+    "location": "Kode Bergen Art Museum, Bergen",
     "country": "Norway",
     "description": "The Kode Bergen Art Museum houeses this canvas by Johan Christian Claussen Dahl painted in 1808",
     "latitude": 60.3892,
@@ -6308,7 +6308,7 @@
     "name": "Combat du Grand Port, 23 août 1810",
     "category": "Artwork",
     "significance": 1,
-    "location": "Paris",
+    "location": "Musée national de la Marine de Paris, Paris",
     "country": "France",
     "description": "The Musée national de la Marine de Paris houses this canvas by Pierre-Julien Gilbert, where the HMS Magicienne and the HMS Sirius being scuttled by fire",
     "latitude": 48.8621,
@@ -7013,8 +7013,8 @@
     "location": "Villers-Coterêts",
     "country": "France",
     "description": "Prussian surprise night attack by General Pirch II on June 28th 1815.",
-    "latitude": 49.25306,
-    "longitude": 3.09033,
+    "latitude": 49.253709,
+    "longitude": 3.10466,
     "image": "Villers_Cotterets.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Waterloo_campaign:_Waterloo_to_Paris_(25_June_%E2%80%93_1_July)#Battle_of_Villers-Cotter%C3%AAts",
     "createDate": "2025-03-22",
@@ -7031,10 +7031,12 @@
     "id": "326",
     "name": "Sous-lieutenant Marie Étienne Maximin's grave",
     "category": "Grave site",
+    "year": 1815,
+    "date": "1815-06-28",
     "significance": 1,
     "location": "Villers-Coterêts",
     "country": "France",
-    "description": "Second Lieutenant Marie Étienne Maximin died on June 28th 1815 in the Retz forest.",
+    "description": "Second Lieutenant Marie Étienne Maximin, who served in the 50th Line Infantry Regiment, died on June 28th 1815 in the Retz forest. He had served in the campaigns from 1810 to 1812 in Spain and Portugal, the one from 1813 to 1814 in the Grande Armée, and that of 1815 (France). Marie belonged to the 50th Line Regiment when he was killed. This regiment had become the 46th in 1814 and again the 50th in 1815. (source: Société historique de Villers-Cotterêts)",
     "latitude": 49.25817,
     "longitude": 3.10963,
     "image": "grave_Marie.webp",
@@ -8273,8 +8275,16 @@
         "title": "Canvas by Robert Porter"
       },
       {
-        "id": "835",
-        "title": "Canvas by P. Loutherbourg "
+        "id": "995",
+        "title": "Canvas by P. Loutherbourg - 1802"
+      },
+      {
+        "id": 836,
+        "title": "Canvas by P. Loutherbourg - 1805"
+      },
+      {
+        "id": "997",
+        "title": "Canvas by Thomas Stothard"
       }
     ],
     "commander_Victor": [
@@ -8504,7 +8514,7 @@
     "description": "Also known as Battle of El Lahun, took place on October 7th 1798. French troops under General Louis Desaix defeated the Mamluk forces led by Murad Bey, securing control over Upper Egypt.",
     "latitude": 29.1693,
     "longitude": 30.88518,
-    "date": "1798-07-02",
+    "date": "1798-10-07",
     "victor": "France",
     "defeated": "Ottoman Empire",
     "image": "Sediman.webp",
@@ -9398,7 +9408,7 @@
     "name": "Battle of Friedland",
     "category": "Artwork",
     "significance": 2,
-    "location": "Versailles",
+    "location": "Chateau de Versailles, Versailles",
     "country": "France",
     "description": "This artwork by Horace Vernet, represents Napoleon at the Battle of Friedland giving instructions to general Nicolas Oudinot. It is exhibited in the Hall of Battles in the Palace of Versailles.",
     "latitude": 48.80489,
@@ -13907,7 +13917,7 @@
     "name": "Burning of English Merchandise",
     "category": "Artwork",
     "significance": 1,
-    "location": "Frankfurt",
+    "location": "Historical Museum of Frankfurt, Frankfurt",
     "country": "Germany",
     "description": "Painted in 1810 by Johann Carl Wilck, 'Burning of English Merchandise on the Fischerfeld near Frankfurt am Main' is on display at the Historical Museum of Frankfurt. The artwork depicts the public burning of smuggled goods, which served as a dramatic demonstration to enforce compliance with Napoleon's Continental Blockade and the Berlin Decree.",
     "latitude": 50.10948,
@@ -15646,7 +15656,7 @@
     "name": "Marshal Ney, December 7, 1815",
     "category": "Artwork",
     "significance": 2,
-    "location": "musée d'Arts de Nantes, Nantes",
+    "location": "Musée d'Arts de Nantes, Nantes",
     "country": "France",
     "description": "Sculpted by Henri Alfred Jacquemart in 1868.",
     "latitude": 47.21953,
@@ -16016,6 +16026,10 @@
       {
         "id": "375",
         "title": "Battlefield"
+      },
+      {
+        "id": "995",
+        "title": "Canvas by P. Loutherbourg - 1802"
       }
     ]
   },
@@ -18680,7 +18694,7 @@
     "latitude": 38.716527,
     "longitude": -9.161557,
     "image": "Wellington_Lisbon.webp",
-    "createDate": "2026-10-01"
+    "createDate": "2025-10--01"
   },
   {
     "id": "988",
@@ -18695,7 +18709,7 @@
     "latitude": 41.147602,
     "longitude": -8.620408,
     "image": "Wellington_Porto.webp",
-    "createDate": "2026-10-02"
+    "createDate": "2025-10--02"
   },
   {
     "id": "989",
@@ -18710,7 +18724,7 @@
     "latitude": 41.147738,
     "longitude": -8.621550,
     "image": "Carrancas_Palace.webp",
-    "createDate": "2026-10-01"
+    "createDate": "2025-10--01"
   },
   {
     "id": "990",
@@ -18726,7 +18740,7 @@
     "latitude": 40.703512,
     "longitude": -6.930584,
     "image": "Coa_memorial.webp",
-    "createDate": "2026-10-01"
+    "createDate": "2025-10--01"
   },
   {
     "id": "991",
@@ -18793,6 +18807,127 @@
     "defeated": "Westphalia",
     "commander_Victor": "Duke of Brunswick",
     "commander_Loss": "Pierre-Sylvain Mayronnet",
-    "createDate": "2025-09-26"
+    "createDate": "2025-10-02"
+  },
+  {
+    "id": "995",
+    "relatedSites": [
+      {
+        "id": "375",
+        "title": "Battlefield of Alexandria"
+      },
+      {
+        "id": 836,
+        "title": "Canvas by P. Loutherbourg - 1805"
+      }
+    ],
+    "name": "The Battle of Alexandria, 1801",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1802",
+    "location": "National Galleries of Scotland, Edinburgh",
+    "country": "Scotland",
+    "description": "Philip James de Loutherbourg 1802 artwork captures the exact moment of Abercromby's mortally wounded, embedding a profound personal tragedy into a historic national victory.",
+    "site_link": "https://www.nationalgalleries.org/art-and-artists/59764/battle-alexandria-1801",
+    "latitude": 55.950902,
+    "longitude": -3.19568,
+    "image": "Alexandria_canvas3.webp",
+    "createDate": "2026-10-05"
+  },
+  {
+    "id": "996",
+    "name": "The landing of British troops at Aboukir, 1801",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1802",
+    "location": "National Galleries of Scotland, Edinburgh",
+    "country": "Scotland",
+    "description": "This 1802 painting by Philip James de Loutherbourg commemorates a turning point in the Napoleonic Wars: General Abercromby's successful amphibious landing at Aboukir Bay and the subsequent defeat of French forces in Alexandria, which protected British India. Although the artist was not present, he used detailed eye-witness accounts to ensure accuracy and included recognizable portraits of senior officers like Sir Sidney Smith and Major-General Coote, though Abercromby himself is not depicted.",
+    "site_link": "https://www.nationalgalleries.org/art-and-artists/8223/landing-british-troops-aboukir-8-march-1801-1802",
+    "latitude": 55.950902,
+    "longitude": -3.19568,
+    "image": "Aboukir_landing.webp",
+    "createDate": "2026-10-05"
+  },
+  {
+    "id": "997",
+    "relatedSites": [
+      {
+        "id": "375",
+        "title": "Battlefield of Alexandria"
+      },
+      {
+        "id": "995",
+        "title": "Canvas by P. Loutherbourg - 1802"
+      }
+    ],
+    "name": "Sir Ralph Abercromby at the Battle of Alexandria",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1805",
+    "location": "Buckingham Palace - Corridor, London",
+    "country": "England",
+    "description": "Painted by Thomas Stothard between 1802 and 1805. This painting depicts the collapse of Sir Ralph Abercrombie at the moment of victory, likely commissioned by an officer present at the scene, Sir James Kempt. The artwork features Abercrombie on the ground surrounded by military officers in scarlet and Highland uniforms, with the battle of Alexandris raging in the background. ",
+    "site_link": "https://www.rct.uk/collection/406155/sir-ralph-abercromby-1734-1801-at-the-battle-of-alexandria",
+    "latitude": 51.501335,
+    "longitude": -0.141931,
+    "image": "Abercromby_artwork.webp",
+    "createDate": "2026-10-05"
+  },
+  {
+    "id": "998",
+    "name": "Battlefield of Rosslau",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1813",
+    "date": "1813-09-29",
+    "location": "Dessau-Roßlau",
+    "country": "Germany",
+    "description": "The combat of Rosslau took place on 29 September 1813, near Rosslau, Germany. Marshal Michel Ney attacked the Swedish bridgehead at the Elbe, to stop the Army of the North from crossing the river.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_Rosslau",
+    "latitude": 51.884049,
+    "longitude": 12.218399,
+    "image": "Rosslau.webp",
+    "special": [
+      "6",
+      "German Campaign"
+    ],
+    "victor": "Sweden",
+    "defeated": "France",
+    "commander_Victor": "Johan August Sandels",
+    "commander_Loss": "Michel Ney",
+    "createDate": "2026-10-05"
+  },
+  {
+    "id": "999",
+    "name": "Trooper George Arnold's grave",
+    "category": "Grave site",
+    "significance": 1,
+    "year": "1869",
+    "date": "1869-02-08",
+    "location": "Saint Mary the Virgin Churchyard, Pirton, Hertfordshire,",
+    "country": " England",
+    "description": "This veteran of the Peninsular War and Waterloo died on February 8th 1869, aged 90. The original headstone contained a historical error, incorrectly attributing his service to the 17th Lancers instead of his actual regiment, the 16th Light Dragoons. In June 2015, coinciding with the bicentenary of the Battle of Waterloo, a new headstone was installed and rededicated to correct this historical fact.",
+    "youtube_link": "https://www.youtube.com/watch?v=waSx8asjtR4",
+    "flower_link": "https://es.findagrave.com/memorial/137191859/george-arnold/flower",
+    "latitude": 51.97168,
+    "longitude": -0.331326,
+    "image": "G_Arnold_grave.webp",
+    "createDate": "2026-10-05"
+  },
+  {
+    "id": "1000",
+    "name": "Battle of Arroyomolinos memorials",
+    "category": "Monument",
+    "significance": 1,
+    "year": "2011",
+    "date": "2011-10-30",
+    "location": "Arroyomolinos, Cáceres",
+    "country": "Spain",
+    "description": "The commemorative monoliths in Arroyomolinos were primarily erected starting in October 2011, officially coinciding with the events marking the Bicentenary of the Battle of Arroyomolinos",
+    "latitude": 39.178048,
+    "longitude": -6.153916,
+    "image": "Arroyomolinos_milestones.webp",
+    "createDate": "2026-10-05"
   }
 ]

@@ -891,6 +891,7 @@
   },
   {
     "id": 104,
+    "siteId": 216,
     "title": "Battle of Donauwörth",
     "date": "1805-10-07",
     "location": "Donauwörth, Germany",
@@ -1881,6 +1882,7 @@
   },
   {
     "id": 219,
+    "siteId": 384,
     "title": "Battle of Sediman",
     "date": "1798-10-07",
     "location": "Sidmant al-Jabal",
@@ -1964,12 +1966,11 @@
   },
   {
     "id": 228,
-    "title": "Naval Action of 5 October 1804",
-    "date": "1804-10-05",
-    "location": "Cabo de Santa María, Portugal",
-    "country": "Atlantic Ocean",
-    "description": "a British squadron under the command of Commodore Graham Moore attacked and defeated a Spanish squadron led by Brigadier Don José de Bustamante.",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_5_October_1804"
+    "title": "Napoleon's First Commission",
+    "date": "1785-11-01",
+    "location": "Paris, France",
+    "country": "France",
+    "description": " A young, 16-year-old Napoleon Bonaparte was officially commissioned as a second lieutenant in the La Fère artillery regiment of the French Royal Artillery. This marked the formal launch of his military career, just a year after entering the École Militaire in Paris."
   },
   {
     "id": "229",
@@ -4289,5 +4290,54 @@
     "location": "Halberstadt, Germany",
     "description": "The fight took place between 29 and 30 July 1809 when a Westphalian infantry force attempted to halt the Black Brunswickers under Frederick William, Duke of Brunswick-Wolfenbüttel who were heading for the North Sea coast. However, the Brunswickers surprised the Westphalians with a rapid advance and defeated them inside the town.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Halberstadt"
+  },
+  {
+    "id": "504",
+    "title": "Combat of Rosslau",
+    "siteId": 998,
+    "date": "1813-09-29",
+    "location": "Dessau-Roßlau, Germany",
+    "description": "The combat of Rosslau took place on 29 September 1813, near Rosslau, Germany. Marshal Michel Ney attacked the Swedish bridgehead at the Elbe, to stop the Army of the North from crossing the river.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Combat_of_Rosslau"
+  },
+  {
+    "id": "505",
+    "title": "The Coup of 18 Brumaire",
+    "date": "1799-11-09",
+    "location": "Paris, France",
+    "description": "On this day, the plot to overthrow the French government was set into motion. Under the pretext of a fabricated Jacobin conspiracy, the legislative assemblies (the Council of Ancients and the Council of Five Hundred) were persuaded to relocate from central Paris to the safety of the Château de Saint-Cloud. Simultaneously, three of the five Directors resigned or were neutralized, effectively collapsing the Directory government. This highly calculated, bloodless first phase cleared the path for Napoleon to be appointed First Consul the following day, officially ending the French Revolution and initiating the Napoleonic Era.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Coup_of_18_Brumaire"
+  },
+  {
+    "id": "506",
+    "siteId": 199,
+    "title": "The Climax of the Battle of Arcole",
+    "date": "1796-11-17",
+    "location": "Arcole, Italy",
+    "description": "Following three days of grueling and fierce combat against the Austrian army, Napoleon secured a brilliant tactical victory at Arcole. This battle is immortalized in Napoleonic lore due to the iconic moment when a young General Bonaparte personally seized a flag and charged across the heavily defended Arcole bridge to rally his pinned-down troops. The triumph forced the Austrians to retreat, ensuring the continuation of the French siege of Mantua.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Arcole"
+  },
+  {
+    "id": "507",
+    "siteId": 333,
+    "title": "End of the Battle of Krasnoi",
+    "date": "1812-11-18",
+    "location": "Krasnoi, Russia",
+    "description": "Following days of brutal fighting during the retreat from Moscow, the Battle of Krasnoi concluded. While it was a strategic French defeat due to catastrophic losses in equipment and stragglers, November 18 became legendary for the heroic leadership of Marshal Michel Ney. Commanding the French rearguard, Ney refused to surrender despite being completely cut off by vast Russian forces, successfully fighting through the lines to rejoin Napoleon and earning the immortal title of 'the bravest of the brave'.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Krasnoi"
+  },
+  {
+    "id": "508",
+    "title": "Introduction of the Imperial Pages",
+    "date": "1804-11-18",
+    "location": "Paris, France",
+    "description": " As Napoleon meticulously transitioned France from a republic to an empire ahead of his December coronation, the Imperial Pages made their first official appearance on this day. These positions, filled by the teenage sons of prominent generals and senior officials, reintroduced old royal court etiquettes to solidify the prestige of the new Bonaparte dynasty."
+  },
+  {
+    "id": "509",
+    "title": "Sweden Declares War on Britain",
+    "date": "1810-11-18",
+    "location": "Stockholm, Sweden",
+    "description": "Under immense diplomatic pressure from Napoleon following the Treaty of Paris, Sweden officially declared war on Great Britain. This move was forced upon the Swedes to integrate them into Napoleon's Continental System—a continent-wide trade blockade designed to economically ruin the British Empire. Despite the formal declaration, both nations maintained a secret, friendly understanding, avoiding active military action."
   }
 ]
