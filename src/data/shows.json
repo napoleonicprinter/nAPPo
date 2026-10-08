@@ -63,5 +63,18 @@
     "moreInfo": "https://allevents.in/montbeliard/200029684428834",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Belfort_2026.webp",
     "category": "Reenactment"
+  },
+  {
+    "id": 27,
+    "name": "Batalha da Roliça",
+    "date": "2026-10-11",
+    "month": "October",
+    "country": "Portugal",
+    "venue": "Columbeira, Portugal",
+    "organizer": "Caçadores Roliça",
+    "description": "10-11 October 2026",
+    "moreInfo": "https://www.facebook.com/ARHBRolica",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Rolica_2026.webp.webp",
+    "category": "Reenactment"
   }
 ]
