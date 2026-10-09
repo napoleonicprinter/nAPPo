@@ -21,7 +21,7 @@
     "venue": "Austerlitz, Czech Rep.",
     "organizer": "Team Austerlitz",
     "description": "27-29 November 2026",
-    "moreInfo": "https://www.austerlitz.org/en/austerlitz-2026-the-commemorative-event-of-the-221st-anniversary-of-the-battle-of-the-three-emperors-will-take-place-on-27-29-november/",
+    "moreInfo": "https://www.tenkratveslavkove.cz/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Austerlitz_2026.webp",
     "category": "Reenactment"
   },
@@ -74,7 +74,20 @@
     "organizer": "Caçadores Roliça",
     "description": "10-11 October 2026",
     "moreInfo": "https://www.facebook.com/ARHBRolica",
-    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Rolica_2026.webp",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Rolica_2026  .webp",
     "category": "Reenactment"
+  },
+  {
+    "id": 28,
+    "name": "Liebertwolkwitz – A Village in the Year 1813",
+    "date": "2026-10-23",
+    "month": "October",
+    "country": "Germany",
+    "venue": "Liebertwolkwitzer Markt 4, 04288 Leipzig, Deutschland",
+    "organizer": "Liebertwolkwitz-1813",
+    "description": "From October 23 to 25, 2026, Liebertwolkwitz will once again become the stage for a unique historical experience. This living history event offers a firsthand look at what life was like in a Saxon village in the early 19th century.",
+    "moreInfo": "https://liebertwolkwitz-1813.com",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/1813_Oct2026.webp",
+    "category": "Living history"
   }
 ]
