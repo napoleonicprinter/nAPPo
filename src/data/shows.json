@@ -163,9 +163,22 @@
     "country": "France",
     "venue": "Espace Gourgaud, 7 rue Geoffroy Saint-Hilaire, Paris",
     "organizer": "Fondation Napoléon",
-    "description": "Un débat proposé et animé par Arthur Chevallier, éditeur, historien, chroniqueur..",
+    "description": "Un débat proposé et animé par Arthur Chevallier, éditeur, historien, chroniqueur.",
     "moreInfo": "https://fondationnapoleon.org/wp-content/uploads/2026/07/programme-conferences-sept-dec-2026-v2.pdf",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Fund_Napo.webp",
     "category": "Lecture"
+  },
+  {
+    "id": 35,
+    "name": "I Congreso de Recreación Napoleónica en España",
+    "date": "2026-11-20",
+    "month": "November",
+    "country": "Spain",
+    "venue": "Centro Joaquín Roncal de la Fundación CAI, Zaragoza",
+    "organizer": "Asociación Napoleónica Española (ANE)",
+    "description": "El congreso se organizará en torno a cuatro sesiones temáticas en las que habrá una conferencia de un especialista, seguida de una ronda de presentación de comunicaciones, finalizando con un debate. Además, se plantearán actividades extra relacionadas con la Guerra de la Independencia.",
+    "moreInfo": "https://www.asocne.com/single-post/i-congreso-de-recreaci%C3%B3n-napole%C3%B3nica-en-espa%C3%B1a-2%C2%AA-circular",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/ANE.webp",
+    "category": "Congress"
   }
 ]

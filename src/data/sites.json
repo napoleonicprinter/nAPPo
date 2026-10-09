@@ -10781,8 +10781,10 @@
     "latitude": 55.5382,
     "longitude": 28.77913,
     "special": "Russian Campaign",
-    "victor": "Russia",
-    "defeated": "France",
+    "tie": [
+      "Russia",
+      "France"
+    ],
     "image": "Polotsk_1812_1st.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/First_Battle_of_Polotsk",
     "relatedSites": [
@@ -10792,12 +10794,10 @@
       }
     ],
     "createDate": "2025-03-15",
-    "commander_Victor": [
-      "Mikhail Kutuzov"
-    ],
-    "commander_Loss": [
-      "Joachim Murat",
-      "Józef Poniatowski"
+    "commander_Tie": [
+      "Laurent Gouvion Saint-Cyr",
+      "Nicolas Oudinot",
+      "Peter Wittgenstein"
     ]
   },
   {
@@ -19082,13 +19082,28 @@
     "category": "Museum",
     "significance": 3,
     "year": "2014",
-    "location": "Menstrie",
+    "location": "Edinburgh Castle, Edinburgh",
     "country": "Scotland",
     "description": "The Museum of The Royal Regiment of Scotland was officially opened on May 29, 2014. Among its valuable Napoleonic era collection there are a French eagle and standard that the Scots Greys seized them from the 45th French infantry in 1815, during an epic charge at the Battle of Waterloo.",
     "latitude": 55.948321,
     "longitude": -3.20053,
     "site_link": "https://www.edinburghcastle.scot/see-and-do/highlights/regimental-museums/",
     "image": "Scots_museum.webp",
+    "createDate": "2026-10-09"
+  },
+  {
+    "id": "1010",
+    "name": "National War Museum",
+    "category": "Museum",
+    "significance": 3,
+    "year": "1933",
+    "location": "Edinburgh Castle, Edinburgh",
+    "country": "Scotland",
+    "description": "Opened on May 23rd 1933, the museum's permanent exhibits trace 400 years of Scottish military history, heavily featuring artifacts from the Napoleonic era and the Peninsular War.",
+    "latitude": 55.948702,
+    "longitude": -3.20168,
+    "site_link": "https://www.edinburghcastle.scot/see-and-do/highlights/national-war-museum/",
+    "image": "National_War_Museum.webp",
     "createDate": "2026-10-09"
   }
 ]
