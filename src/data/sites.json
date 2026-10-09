@@ -18805,8 +18805,12 @@
     "special": "5",
     "victor": "Brunswick",
     "defeated": "Westphalia",
-    "commander_Victor": "Duke of Brunswick",
-    "commander_Loss": "Pierre-Sylvain Mayronnet",
+    "commander_Victor": [
+      "Duke of Brunswick"
+    ],
+    "commander_Loss": [
+      "Pierre-Sylvain Mayronnet"
+    ],
     "createDate": "2025-10-02"
   },
   {
@@ -18898,8 +18902,12 @@
     ],
     "victor": "Sweden",
     "defeated": "France",
-    "commander_Victor": "Johan August Sandels",
-    "commander_Loss": "Michel Ney",
+    "commander_Victor": [
+      "Johan August Sandels"
+    ],
+    "commander_Loss": [
+      "Michel Ney"
+    ],
     "createDate": "2026-10-05"
   },
   {

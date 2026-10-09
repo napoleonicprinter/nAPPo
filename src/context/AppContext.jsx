@@ -530,15 +530,28 @@ export const AppProvider = ({ children, storeUrl }) => {
             })();
 
             const rawSpecial = site.special || site.Special || bundled.special || bundled.Special;
-            const commander_Victor = (Array.isArray(site.commander_Victor) && site.commander_Victor.length > 0)
-                ? site.commander_Victor
-                : (bundled.commander_Victor || site.commanders_victor || []);
-            const commander_Loss = (Array.isArray(site.commander_Loss) && site.commander_Loss.length > 0)
-                ? site.commander_Loss
-                : (bundled.commander_Loss || site.commanders_defeated || []);
-            const commander_Tie = (Array.isArray(site.commander_Tie) && site.commander_Tie.length > 0)
-                ? site.commander_Tie
-                : (bundled.commander_Tie || bundled.commander_Inconclusive || site.commander_tie || site.commander_Inconclusive || []);
+            const toArray = (val) => {
+                if (!val) return [];
+                if (Array.isArray(val)) return val.map(v => typeof v === 'string' ? v.trim() : String(v || '').trim()).filter(Boolean);
+                if (typeof val === 'string' && val.trim().length > 0) return [val.trim()];
+                return [];
+            };
+
+            const commander_Victor = toArray(
+                (Array.isArray(site.commander_Victor) && site.commander_Victor.length > 0)
+                    ? site.commander_Victor
+                    : (site.commander_Victor || bundled.commander_Victor || site.commanders_victor)
+            );
+            const commander_Loss = toArray(
+                (Array.isArray(site.commander_Loss) && site.commander_Loss.length > 0)
+                    ? site.commander_Loss
+                    : (site.commander_Loss || bundled.commander_Loss || site.commanders_defeated)
+            );
+            const commander_Tie = toArray(
+                (Array.isArray(site.commander_Tie) && site.commander_Tie.length > 0)
+                    ? site.commander_Tie
+                    : (site.commander_Tie || bundled.commander_Tie || bundled.commander_Inconclusive || site.commander_tie || site.commander_Inconclusive)
+            );
 
             const derivedCommanders = Array.from(new Set([
                 ...commander_Victor,
@@ -547,10 +560,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             ]));
 
             const commanders = (Array.isArray(site.commanders) && site.commanders.length > 0)
-                ? site.commanders
+                ? toArray(site.commanders)
                 : (derivedCommanders.length > 0
                     ? derivedCommanders
-                    : (site.commander ? [site.commander] : (bundled.commanders || (bundled.commander ? [bundled.commander] : []))));
+                    : toArray(site.commander || bundled.commanders || bundled.commander));
 
             const rawImage = site.image || bundled.image;
             const image = resolveSiteImageUrl(rawImage);
@@ -857,7 +870,10 @@ export const AppProvider = ({ children, storeUrl }) => {
         relevantSites.forEach(s => {
             const cmds = Array.isArray(s.commanders) ? s.commanders : [s.commander].filter(Boolean);
             cmds.forEach(c => {
-                counts[c] = (counts[c] || 0) + 1;
+                const name = typeof c === 'string' ? c.trim() : String(c || '').trim();
+                if (name && name !== '-') {
+                    counts[name] = (counts[name] || 0) + 1;
+                }
             });
         });
 
