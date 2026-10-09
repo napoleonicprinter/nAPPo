@@ -19077,19 +19077,18 @@
     "createDate": "2026-10-08"
   },
   {
-    "id": "1008",
-    "name": "Sir Ralph Abercromby's birthplace",
-    "category": "Birthplace",
-    "significance": 2,
-    "year": "1734",
-    "date": "1734-10-07",
+    "id": "1009",
+    "name": "The Royal Scots Museum",
+    "category": "Museum",
+    "significance": 3,
+    "year": "2014",
     "location": "Menstrie",
     "country": "Scotland",
-    "description": "Ralph Abercromby was born on 7 October 1734 at Menstrie Castle, Clackmannanshire. He was the second (but eldest surviving) son of George Abercromby (1705–1800), a lawyer and descendant of the Abercromby family of Birkenbog.",
-    "latitude": 56.150532,
-    "longitude": -3.853653,
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Menstrie_Castle",
-    "image": "Menstrie_Castle.webp",
-    "createDate": "2026-10-08"
+    "description": "The Museum of The Royal Regiment of Scotland was officially opened on May 29, 2014. Among its valuable Napoleonic era collection there are a French eagle and standard that the Scots Greys seized them from the 45th French infantry in 1815, during an epic charge at the Battle of Waterloo.",
+    "latitude": 55.948321,
+    "longitude": -3.20053,
+    "site_link": "https://www.edinburghcastle.scot/see-and-do/highlights/regimental-museums/",
+    "image": "Scots_museum.webp",
+    "createDate": "2026-10-09"
   }
 ]
