@@ -6,7 +6,7 @@ import ShowsCalendarModal from './ShowsCalendarModal';
 import { handleImageFallback } from '../utils/imageUtils';
 import './CalendarView.css';
 
-const SHOW_CATEGORIES = ['Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release'];
+const SHOW_CATEGORIES = ['Reenactment', 'Ball', 'Lecture', 'Exhibition', 'Book release', 'Living history'];
 const SHOW_MONTHS = ['Months', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -17,6 +17,7 @@ const getEventCategoryColor = (category) => {
         case 'Lecture': return '#58a6ff';
         case 'Exhibition': return '#a371f7';
         case 'Book release': return '#d29922';
+        case 'Living history': return '#2ea043';
         default: return '#8b949e';
     }
 };

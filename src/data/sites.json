@@ -18859,6 +18859,10 @@
       {
         "id": "995",
         "title": "Canvas by P. Loutherbourg - 1802"
+      },
+      {
+        "id": 1007,
+        "title": "Sir Abercromby's grave"
       }
     ],
     "name": "Sir Ralph Abercromby at the Battle of Alexandria",
@@ -18972,5 +18976,120 @@
     "image": "Estandarte_canvas.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/The_Fight_for_the_Standard",
     "createDate": "2026-10-05"
+  },
+  {
+    "id": "1004",
+    "name": "Palazzo Parisio",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1798",
+    "date": "1798-06-13",
+    "location": "Valleta",
+    "country": "Malta",
+    "description": "On 13th June 1798 Napoleon Bonaparte landed in Malta and took residence at the Palazzo. During his seven eventful days’ stay at the Palazzo, prior to embarking for his Egyptian campaign.",
+    "latitude": 35.896310,
+    "longitude": 14.511532,
+    "image": "Parisio.webp",
+    "more_info_link": "https://foreign.gov.mt/ministry/palazzo-parisio/",
+    "createDate": "2026-10-08"
+  },
+  {
+    "id": "1005",
+    "relatedSites": [
+      {
+        "id": 1006,
+        "title": "Sir Abercromby's 1871 grave"
+      }
+    ],
+    "name": "Monument to Lt. Gen. Sir Ralph Abercromby",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1798",
+    "date": "1798-06-13",
+    "location": "Cathedral Church of St Paul, London",
+    "country": "England",
+    "description": "On 13th June 1  798 Napoleon Bonaparte landed in Malta and took residence at the Palazzo. During his seven eventful days’ stay at the Palazzo, prior to embarking for his Egyptian campaign.",
+    "latitude": 51.513551,
+    "longitude": -0.09844,
+    "image": "Abercromby_monument.webp",
+    "more_info_link": "http://pantheons-st-pauls.york.ac.uk/monument/lieutenant-general-ralph-abercromby/",
+    "createDate": "2026-10-08"
+  },
+  {
+    "id": "1005",
+    "relatedSites": [
+      {
+        "id": 1006,
+        "title": "St Paul Cathedral Monument"
+      }
+    ],
+    "name": "Sir Ralph Abercromby's 1871 grave",
+    "category": "Grave site",
+    "significance": 2,
+    "year": "1871",
+    "location": "Abercrombie's Bastion, Fort St Elmo, Valletta",
+    "country": "Malta",
+    "description": "In 1871, while the Royal Engineers were modifying a bastion for heavier weapons, they discovered the vault containing General Abercromby’s remains. Although his outer wooden coffin had rotted away, the inner lead coffin and his nameplate were still mostly intact. Excavators also uncovered the cask of spirits used to preserve his body during transit to Malta, mirroring the preservation method used for Lord Nelson. Before being reburied in a new vault behind the original site, the historic event was captured in a photograph by Richard Ellis.",
+    "latitude": 35.902730,
+    "longitude": 14.519533,
+    "image": "Abercromby_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/181167295/ralph-abercromby/flower",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ralph_Abercromby",
+    "createDate": "2026-10-08"
+  },
+  {
+    "id": "1007",
+    "relatedSites": [
+      {
+        "id": 997,
+        "title": "Thomas Stothard canvas"
+      }
+    ],
+    "name": "Sir Ralph Abercromby's 1801 grave",
+    "category": "Grave site",
+    "significance": 2,
+    "year": "1801",
+    "date": "1801-04-29",
+    "location": "Abercrombie's Bastion, Fort St Elmo, Valletta",
+    "country": "Malta",
+    "description": "Sir Ralph Abercromby died on 28 March 1801, seven days after being wounded at the Battle of Alexandria. His body was brought to Malta, where he was honored with a State funeral and buried in a vault looking out to sea within the St. John Bastion at Fort St. Elmo.",
+    "latitude": 35.902809,
+    "longitude": 14.520198,
+    "flower_link": "https://es.findagrave.com/memorial/181167295/ralph-abercromby/flower",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ralph_Abercromby",
+    "image": "Abercromby_grave1.webp",
+    "createDate": "2026-10-08"
+  },
+  {
+    "id": "1008",
+    "name": "Sir Ralph Abercromby's birthplace",
+    "category": "Birthplace",
+    "significance": 2,
+    "year": "1734",
+    "date": "1734-10-07",
+    "location": "Menstrie",
+    "country": "Scotland",
+    "description": "Ralph Abercromby was born on 7 October 1734 at Menstrie Castle, Clackmannanshire. He was the second (but eldest surviving) son of George Abercromby (1705–1800), a lawyer and descendant of the Abercromby family of Birkenbog.",
+    "latitude": 56.150532,
+    "longitude": -3.853653,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Menstrie_Castle",
+    "image": "Menstrie_Castle.webp",
+    "createDate": "2026-10-08"
+  },
+  {
+    "id": "1008",
+    "name": "Sir Ralph Abercromby's birthplace",
+    "category": "Birthplace",
+    "significance": 2,
+    "year": "1734",
+    "date": "1734-10-07",
+    "location": "Menstrie",
+    "country": "Scotland",
+    "description": "Ralph Abercromby was born on 7 October 1734 at Menstrie Castle, Clackmannanshire. He was the second (but eldest surviving) son of George Abercromby (1705–1800), a lawyer and descendant of the Abercromby family of Birkenbog.",
+    "latitude": 56.150532,
+    "longitude": -3.853653,
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Menstrie_Castle",
+    "image": "Menstrie_Castle.webp",
+    "createDate": "2026-10-08"
   }
 ]
