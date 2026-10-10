@@ -1345,7 +1345,13 @@
   },
   {
     "id": "65",
-    "name": "Russian attack near Poplavi",
+    "relatedSites": [
+      {
+        "id": 1011,
+        "title": "Battle site"
+      }
+    ],
+    "name": "Russian attack near Poplawi",
     "category": "Artwork",
     "significance": 1,
     "location": "Alte Pinakothek, Munich",
@@ -19113,5 +19119,36 @@
     "site_link": "https://www.edinburghcastle.scot/see-and-do/highlights/national-war-museum/",
     "image": "National_War_Museum.webp",
     "createDate": "2026-10-09"
+  },
+  {
+    "id": "1011",
+    "relatedSites": [
+      {
+        "id": 65,
+        "title": "Canvas by von Kobell"
+      }
+    ],
+    "name": "Battle of Poplawi",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1807",
+    "date": "1807-05-16",
+    "location": "Pułtusk",
+    "country": "Poland",
+    "description": "The Battle of Poplawi, fought on May 16, 1807, during the War of the Fourth Coalition, was a localized engagement where Bavarian troops allied with the French Empire faced the Russian army. Commanded by Crown Prince Louis of Bavaria and General Carl Philipp von Wrede, the allied forces achieved a tactical victory that significantly boosted Bavarian military prestige.",
+    "latitude": 52.689755,
+    "longitude": 21.107089,
+    "image": "Poplawi.webp",
+    "special": "4",
+    "commander_Victor": [
+      "Crown Prince Louis of Bavaria",
+      "Carl Philipp von Wrede"
+    ],
+    "commander_Loss": [
+      "Nikolai Tuchkov"
+    ],
+    "victor": "Bavaria",
+    "defeated": "Russia",
+    "createDate": "2026-10-10"
   }
 ]
