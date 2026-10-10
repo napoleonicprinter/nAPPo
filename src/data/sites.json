@@ -19128,7 +19128,7 @@
         "title": "Canvas by von Kobell"
       }
     ],
-    "name": "Battle of Poplawi",
+    "name": "Battlefield of Poplawi",
     "category": "Battle site",
     "significance": 2,
     "year": "1807",
@@ -19148,6 +19148,76 @@
       "Nikolai Tuchkov"
     ],
     "victor": "Bavaria",
+    "defeated": "Russia",
+    "createDate": "2026-10-10"
+  },
+  {
+    "id": "1012",
+    "name": "Battlefield of Düben",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1813",
+    "date": "1813-10-09",
+    "location": "Bad Düben",
+    "country": "Germany",
+    "description": "On October 9-10, 1813 the Battle of Düben (or Düben Affaire) took place as a critical prelude to the Battle of Leipzig. General Jean Reynier forces clashed with General Alexandre Andrault de Langeron (Russian general of French origin) who commanded the Russian forces holding the Mulde River line. A desperate rearguard action by General Dmitry Kapzevich allowed the Allied forces and their heavy artillery to narrowly escape.  Napoleon entered Bad Düben on October 10, claiming a minor victory. However Blücher successfully evaded a major catastrophic confrontation.",
+    "latitude": 51.59441,
+    "longitude": 12.582661,
+    "image": "Duben.webp",
+    "special": [
+      "6",
+      "German Campaign"
+    ],
+    "commander_Victor": [
+      "Jean Reynier"
+    ],
+    "commander_Loss": [
+      "Alexandre de Langeron",
+      "Dmitry Kapzevich"
+    ],
+    "victor": "France",
+    "defeated": "Russia",
+    "createDate": "2026-10-10"
+  },
+  {
+    "id": "1013",
+    "name": "Bad Düben Castle",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1813-10-10",
+    "location": "Bad Düben",
+    "country": "Germany",
+    "description": "Napoleon established his headquarters at Düben Castle from October 10 to 14, 1813. By his own account, the absolute military and political uncertainty he faced there made this the most horrific period of his life. It was during this tense, brief window at the castle that Napoleon received the crushing news that Bavaria had defected to the Allied Coalition on October 8. This critical geopolitical shift directly threatened his supply lines back to France and forced the Emperor to realize that his broader imperial campaign in Germany was rapidly collapsing.",
+    "latitude": 51.592194,
+    "longitude": 12.580541,
+    "wikipedia_link": "https://de.wikipedia.org/wiki/Burg_D%C3%BCben",
+    "image": "Duben_castel.webp",
+    "createDate": "2026-10-09"
+  },
+  {
+    "id": "1014",
+    "name": "Battlefield of Görlitz",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1813",
+    "date": "1813-05-23",
+    "location": "Zgorzelec",
+    "country": "Poland",
+    "description": "The Combat of Görlitz took place on 23 May 1813. French General Jean Reynier, commanding the Saxon VII Corps, pursued the retreating Allied forces led by Russian General Ferdinand von Wintzingerode after the Battle of Bautzen. Reynier's forces arrived at the River Neisse at 9:00 AM, where his initial cavalry vanguard was quickly outnumbered and driven back across the river by the Allied rearguard. In response, Reynier brought forward his artillery to bombard the enemy while rapidly constructing a boat bridge. Once the bridge was completed, a coordinated assault by Saxon light cavalry, heavy cavalry, and French infantry forced the Allied rearguard to abandon their positions and retreat further into Silesia.",
+    "latitude": 51.158301,
+    "longitude": 14.997763,
+    "image": "Gorlitz.webp",
+    "special": [
+      "6",
+      "German Campaign"
+    ],
+    "commander_Victor": [
+      "Jean Reynier"
+    ],
+    "commander_Loss": [
+      "Ferdinand von Wintzingerode "
+    ],
+    "victor": "France",
     "defeated": "Russia",
     "createDate": "2026-10-10"
   }

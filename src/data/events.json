@@ -4363,5 +4363,44 @@
     "date": "1807-05-16",
     "location": "Pułtusk, Poland",
     "description": "The Battle of Poplawi, fought on May 16, 1807, during the War of the Fourth Coalition, was a localized engagement where Bavarian troops allied with the French Empire faced the Russian army. Commanded by Crown Prince Louis of Bavaria and General Carl Philipp von Wrede, the allied forces achieved a tactical victory that significantly boosted Bavarian military prestige."
+  },
+  {
+    "id": "513",
+    "siteId": 1012,
+    "title": "Battle of Düben",
+    "date": "1813-10-09",
+    "location": "Düben, Germany",
+    "description": "On October 9-10, 1813, the Battle of Düben saw French forces under General Jean Reynier clash with Russian troops led by General Alexandre de Langeron at the Mulde River. A vital rearguard action by General Dmitry Kapzevich allowed the Allies to save their heavy artillery and escape. Napoleon captured the town claiming a minor victory."
+  },
+  {
+    "id": "513",
+    "siteId": 1012,
+    "title": "Battle of Düben",
+    "date": "1813-10-09",
+    "location": "Düben, Germany",
+    "description": "On October 9-10, 1813, the Battle of Düben saw French forces under General Jean Reynier clash with Russian troops led by General Alexandre de Langeron at the Mulde River. A vital rearguard action by General Dmitry Kapzevich allowed the Allies to save their heavy artillery and escape. Napoleon captured the town claiming a minor victory."
+  },
+  {
+    "id": "514",
+    "title": "Prince Poniatowski promoted to Marshal",
+    "date": "1813-10-15",
+    "location": "Dolitz, Germany",
+    "description": "On October 15, 1813 (or October 16, depending on the source), Polish Prince Józef Antoni Poniatowski was awarded his baton and promoted to Marshal of the Empire.This historic promotion made him the only foreigner to ever receive the rank of Marshal during the Napoleonic Wars. Tragically, his time as marshal was incredibly short-lived. Just four days later, on October 19, he died at the battle of Leipzig."
+  },
+  {
+    "id": "515",
+    "siteId": 897,
+    "title": "Death of Prince Poniatowski",
+    "date": "1813-10-19",
+    "location": "Leipzig, Germany",
+    "description": "on October 19, 1813, while bravely commanding the rearguard to cover the French retreat at the Battle of Leipzig, Marshal Poniatowski was wounded multiple times and drowned trying to cross the Elster River on horseback."
+  },
+  {
+    "id": "516",
+    "siteId": 1014,
+    "title": "Battle of Görlitz",
+    "date": "1813-05-23",
+    "location": "Zgorzelec, Poland",
+    "description": "On 23 May 1813, following the Battle of Bautzen, French General Jean Reynier's Saxon VII Corps forced a crossing of the River Neisse at Görlitz against an Allied rearguard under Russian General Ferdinand von Wintzingerode. After Reynier's initial cavalry vanguard was driven back by outnumbered enemy forces at 9:00 AM, he deployed artillery and built a boat bridge to launch a coordinated assault of cavalry and infantry, successfully forcing the Allies to retreat into Silesia."
   }
 ]
