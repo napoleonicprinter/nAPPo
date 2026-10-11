@@ -19246,6 +19246,16 @@
   {
     "id": "1015",
     "name": "Castelo di Pizzo - Murat's execution site",
+    "relatedSites": [
+      {
+        "id": "728",
+        "title": "Murat's memorial at Père Lachaise Cemetery"
+      },
+      {
+        "id": "1017",
+        "title": "Murat's burial site"
+      }
+    ],
     "category": "Landmark",
     "significance": 2,
     "date": "1815-10-13",
@@ -19283,7 +19293,7 @@
         "title": "Murat's memorial at Père Lachaise Cemetery"
       },
       {
-        "id": "1016",
+        "id": "1015",
         "title": "Murat's death site"
       }
     ],
