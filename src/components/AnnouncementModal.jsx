@@ -55,6 +55,11 @@ const AnnouncementModal = ({ message, onClose }) => {
 
                 {/* Body */}
                 <div className="announcement-body">
+                    {!message.image && (
+                        <div className="announcement-header-icon">
+                            <Megaphone size={24} />
+                        </div>
+                    )}
                     <h2 className="announcement-title">{message.title}</h2>
                     <p className="announcement-description">{message.description}</p>
 
