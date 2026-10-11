@@ -4373,14 +4373,6 @@
     "description": "On October 9-10, 1813, the Battle of Düben saw French forces under General Jean Reynier clash with Russian troops led by General Alexandre de Langeron at the Mulde River. A vital rearguard action by General Dmitry Kapzevich allowed the Allies to save their heavy artillery and escape. Napoleon captured the town claiming a minor victory."
   },
   {
-    "id": "513",
-    "siteId": 1012,
-    "title": "Battle of Düben",
-    "date": "1813-10-09",
-    "location": "Düben, Germany",
-    "description": "On October 9-10, 1813, the Battle of Düben saw French forces under General Jean Reynier clash with Russian troops led by General Alexandre de Langeron at the Mulde River. A vital rearguard action by General Dmitry Kapzevich allowed the Allies to save their heavy artillery and escape. Napoleon captured the town claiming a minor victory."
-  },
-  {
     "id": "514",
     "title": "Prince Poniatowski promoted to Marshal",
     "date": "1813-10-15",
@@ -4402,5 +4394,20 @@
     "date": "1813-05-23",
     "location": "Zgorzelec, Poland",
     "description": "On 23 May 1813, following the Battle of Bautzen, French General Jean Reynier's Saxon VII Corps forced a crossing of the River Neisse at Görlitz against an Allied rearguard under Russian General Ferdinand von Wintzingerode. After Reynier's initial cavalry vanguard was driven back by outnumbered enemy forces at 9:00 AM, he deployed artillery and built a boat bridge to launch a coordinated assault of cavalry and infantry, successfully forcing the Allies to retreat into Silesia."
+  },
+  {
+    "id": "517",
+    "siteId": 1015,
+    "title": "Death of Joachim Murat",
+    "date": "1815-10-13",
+    "location": "Pizzo, Italy",
+    "description": "In late September 1815, Murat sailed with a small army to reclaim his kingdom, but a storm scattered his fleet, forcing him to land at Pizzo Calabro with only a few men. The hostile local populace quickly captured him, and after a swift military trial, he was sentenced to death an was executed by firing squad on October 13th. Refusing a blindfold, he famously commanded his firing squad: 'Save my face, aim at my heart'."
+  },
+  {
+    "id": "518",
+    "title": "Capture of Joachim Murat",
+    "date": "1815-10-08",
+    "location": "Pizzo, Italy",
+    "description": "Joachim Murat was captured on October 8, 1815, after landing with a small force at Pizzo in Calabria, Italy, in a failed attempt to reclaim the Kingdom of Naples."
   }
 ]

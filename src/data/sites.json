@@ -14276,13 +14276,23 @@
   },
   {
     "id": "728",
+    "relatedSites": [
+      {
+        "id": "1017",
+        "title": "Murat's burial site in Italy"
+      },
+      {
+        "id": "1016",
+        "title": "Murat's death site"
+      }
+    ],
     "name": "Joachim Murat's memorial",
     "category": "Grave site",
     "significance": 3,
     "date": "1815-10-13",
     "location": "Père Lachaise Cemetery (Division 39), Paris",
     "country": "France",
-    "description": "Murat's family grave is a memorial to the Marshal. Murat is not actually buried at Pere-Lachaise and the location of his body is unknown after his execution.",
+    "description": "Murat's family grave is a memorial to the Marshal. Murat is not actually buried at Pere-Lachaise but at Pizzo, Italy, in a common grave at Church of St. George. Because he was placed in a common vault alongside many others, his exact remains have never been fully separated or individually identified.",
     "latitude": 48.85905,
     "longitude": 2.39673,
     "image": "Murat_tomb.webp",
@@ -19226,5 +19236,62 @@
     "victor": "France",
     "defeated": "Russia",
     "createDate": "2026-10-10"
+  },
+  {
+    "id": "1015",
+    "name": "Castelo di Pizzo - Murat's execution site",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1815-10-13",
+    "location": "Pizzo, Vibo Valentia",
+    "country": "Italy",
+    "description": "In late September 1815, Murat sailed with a small army to reclaim his kingdom, but a storm scattered his fleet, forcing him to land at Pizzo Calabro with only a few men. The hostile local populace quickly captured him, and after a swift military trial, he was sentenced to death an was executed by firing squad on October 13th. Refusing a blindfold, he famously commanded his firing squad: 'Save my face, aim at my heart'.",
+    "latitude": 38.735545,
+    "longitude": 16.160229,
+    "wikipedia_link": "https://it.wikipedia.org/wiki/Castello_di_Pizzo",
+    "more_info_link": "https://en.wikipedia.org/wiki/Joachim_Murat",
+    "site_link": "https://cultura.gov.it/luogo/museo-provinciale-murattiano",
+    "image": "Murat_firing.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1016",
+    "name": "Castelo Murat Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "2003",
+    "location": "Pizzo, Vibo Valentia",
+    "country": "Italy",
+    "description": "The Murat Museum, opened in May 2003, (known locally as the Museo Murattiano) is housed inside the Castello Murat, a 15th-century Aragonese military fortress perched on a rocky cliff in Pizzo Calabro, Italy. The museum is entirely dedicated to chronicling the tragic final days of Joachim Murat, Napoleon Bonaparte's brother-in-law and the former King of Naples, who was imprisoned, tried, and executed by a firing squad at this exact site in October 1815.",
+    "latitude": 38.73544,
+    "longitude": 16.160364,
+    "site_link": "https://cultura.gov.it/luogo/museo-provinciale-murattiano",
+    "image": "Murat_firing.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1017",
+    "relatedSites": [
+      {
+        "id": "728",
+        "title": "Murat's memorial at Père Lachaise Cemetery"
+      },
+      {
+        "id": "1016",
+        "title": "Murat's death site"
+      }
+    ],
+    "name": "Murat's gravestone",
+    "category": "Grave site",
+    "significance": 2,
+    "date": "1815-10-13",
+    "location": "Pizzo, Vibo Valentia",
+    "country": "Italy",
+    "description": "Following his trial and execution by firing squad at the nearby Aragonese castle on October 13, 1815,October 13, 1815, the former King of Naples and brother-in-law to Napoleon Bonaparte was buried unceremoniously in the Church of St. George's (San Giorgio Martire) crypt in a mass/common grave. Because he was placed in a common vault alongside many others, his exact remains have never been fully separated or individually identified.",
+    "latitude": 38.736189,
+    "longitude": 16.161382,
+    "image": "Murat_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/7827/joachim-murat/flower",
+    "createDate": "2026-10-12"
   }
 ]
