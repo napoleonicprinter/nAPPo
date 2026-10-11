@@ -2002,15 +2002,21 @@
   },
   {
     "id": "97",
+    "relatedSites": [
+      {
+        "id": "1018",
+        "title": "Grave site in Ciudad Rodrigo"
+      }
+    ],
     "name": "Sepulcro de don Julián Sánchez, “El Charro”",
     "category": "Grave site",
     "date": "1832-10-18",
     "significance": 2,
     "location": "Etreros, Segovia",
     "country": "Spain",
-    "description": "Encontrándose confinado en Etreros (Segovia) fallece ei 18 de octubre de 1832.",
-    "latitude": 40.9429,
-    "longitude": -4.43,
+    "description": "Encontrándose confinado en Etreros (Segovia) fallece ei 18 de octubre de 1832. Sus restos fueron exhumados y transladados a Ciudad Rodrigo en enero de 1985.",
+    "latitude": 40.942944,
+    "longitude": -4.430440,
     "image": "ElCharro_grave.webp",
     "more_info_link": "https://www.batalladetrafalgar.com/2016/10/el-entierro-de-don-julian-sanchez-el.html",
     "createDate": "2025-03-15"
@@ -19292,6 +19298,26 @@
     "longitude": 16.161382,
     "image": "Murat_grave.webp",
     "flower_link": "https://es.findagrave.com/memorial/7827/joachim-murat/flower",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1018",
+    "relatedSites": [
+      {
+        "id": "97",
+        "title": "Burrial site in Etreros"
+      }
+    ],
+    "name": "Julian Sanchez's, 'E Charro' grave (1985)",
+    "category": "Grave site",
+    "significance": 2,
+    "date": "1985-01-19",
+    "location": "Plaza de Herrasti, Ciudad Rodrigo",
+    "country": "Spain",
+    "description": "In 1980, the exhumation of Don Julián's remains in Etreros, Segovia, was authorized. Investigators identified his body in front of the altar by his uniform, though only his jawbone remained of the skull. After a temporary transfer to Salamanca, his remains were permanently moved to Ciudad Rodrigo on January 19, 1985, where they rest today.",
+    "latitude": 40.599765,
+    "longitude": -6.536352,
+    "image": "Charro.webp",
     "createDate": "2026-10-12"
   }
 ]
