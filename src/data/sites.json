@@ -11685,7 +11685,7 @@
       "Louis Nicolas Davout"
     ],
     "commander_Loss": [
-      "Friedrich Hohenzollern"
+      "Friedrich von Hohenzollern"
     ]
   },
   {
@@ -11737,7 +11737,7 @@
       "Jean-Baptiste Rousseau"
     ],
     "commander_Loss": [
-      "Friedrich Hohenzollern"
+      "Friedrich von Hohenzollern"
     ]
   },
   {
@@ -19688,6 +19688,46 @@
     "special": "Rio de la Plata Campaign",
     "site_link": "https://cabildonacional.cultura.gob.ar/",
     "image": "Rendicion.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1037",
+    "name": "Battlefield of Boizenburg",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1806-10-27",
+    "location": "Boitzenburger Land",
+    "country": "Germany",
+    "description": "The Skirmish of Boitzenburg took place on October 27, 1806. French forces under Marshal Murat intercepted the retreating Prussian army commanded by Prince Friedrich zu Hohenlohe. The engagement resulted in a tactical Prussian breakthrough but an operational French victory; while Hohenlohe's main column successfully forced its way through the roadblock to continue toward Stettin, the French cut off and captured the Prussian rear guard. This defeat further demoralized the Prussians, leading directly to their total capitulation at Prenzlau the following day.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Pasewalk",
+    "latitude": 53.25984,
+    "longitude": 13.615001,
+    "special": "4",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Loss": [
+      "Prince of Hohenlohe"
+    ],
+    "commander_Victor": [
+      "Joachim Murat"
+    ],
+    "image": "Boizemburg.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1038",
+    "name": "Capitulation of Pasewalk",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-10-29",
+    "location": "Pasewalk",
+    "country": "Germany",
+    "description": "The Capitulation of Pasewalk occurred on October 29, 1806, resulting in the bloodless surrender of 4,200 Prussian soldiers to a significantly smaller, inferior force of only about 700 French light cavalrymen. Exhausted and retreating following the catastrophic Battle of Jena-Auerstedt, the Prussian forces under Colonel von Hagen allowed themselves to be surrounded in the German town of Pasewalk by the French brigades of Generals Milhaud and Lasalle.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Pasewalk",
+    "latitude": 53.504299,
+    "longitude": 13.997317,
+    "special": "4",
+    "image": "Pasewalk.webp",
     "createDate": "2026-10-12"
   }
 ]

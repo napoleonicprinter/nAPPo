@@ -4476,5 +4476,23 @@
     "date": "1806-08-11",
     "location": "Buenos Aires, Argentina",
     "description": "The final assault on Buenos Aires took place on August 11th and 12th 1806. It quickly turned into a brutal house-to-house battle. Liniers' forces pushed the invaders back to the Plaza Mayor (Plaza de Mayo). Trapped under intense artillery fire, General Beresford retreated into the fort and surrendered unconditionally at the Cabildo on August 12."
+  },
+  {
+    "id": "526",
+    "siteId": 1037,
+    "title": "Skirmish of Boitzenburg",
+    "date": "1806-10-27",
+    "location": "Boitzenburger Land, Germany",
+    "description": "The Skirmish of Boitzenburg took place on October 27, 1806. French forces under Marshal Murat intercepted the retreating Prussian army commanded by Prince Friedrich zu Hohenlohe. The engagement resulted in a tactical Prussian breakthrough but an operational French victory; while Hohenlohe's main column successfully forced its way through the roadblock to continue toward Stettin, the French cut off and captured the Prussian rear guard. This defeat further demoralized the Prussians, leading directly to their total capitulation at Prenzlau the following day.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Pasewalk"
+  },
+  {
+    "id": "527",
+    "siteId": 1038,
+    "title": "Capitulation of Pasewalk",
+    "date": "1806-10-29",
+    "location": "Pasewalk, Germany",
+    "description": "The Capitulation of Pasewalk occurred on October 29, 1806, resulting in the bloodless surrender of 4,200 Prussian soldiers to a significantly smaller, inferior force of only about 700 French light cavalrymen.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Pasewalk"
   }
 ]
