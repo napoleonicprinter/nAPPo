@@ -4409,5 +4409,72 @@
     "date": "1815-10-08",
     "location": "Pizzo, Italy",
     "description": "Joachim Murat was captured on October 8, 1815, after landing with a small force at Pizzo in Calabria, Italy, in a failed attempt to reclaim the Kingdom of Naples."
+  },
+  {
+    "id": "519",
+    "siteId": 1020,
+    "title": "Britsh foreces landed at Rio de la Plata",
+    "date": "1806-06-25",
+    "location": "Quilmes, Argentina",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "description": "On June 25, 1806, the first British invasion of the River Plate began when Brigadier General William Carr Beresford led a successful, unopposed landing on the shores of Quilmes."
+  },
+  {
+    "id": "520",
+    "siteId": 1021,
+    "title": "Combat of Quilmes",
+    "date": "1806-06-26",
+    "location": "Quilmes, Argentina",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "description": "On June 26, 1806, the Combate de Quilmes marked the first clash of the British invasions, pitting Brigadier General William Carr Beresford's British expeditionary forces against local Spanish and creole militia commanded by Colonel Pedro de Arce. The outcome was a decisive British victory."
+  },
+  {
+    "id": "521",
+    "siteId": 1022,
+    "title": "Combat of Puente de Galvez",
+    "date": "1806-06-27",
+    "location": "Buenos Aires, Argentina",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "description": "On June 27, 1806, the Combat of Puente de Gálvez marked the final defensive stand by local forces under Brigadier Miguel de Azcuénaga Although the strategic wooden bridge was burned to halt the invasion, Beresford's  troops successfully forced a crossing using rafts, boats, and shallow vados. The outcome was a decisive British victory that scattered the local defenders, allowing Beresford to march into the capital unopposed later that afternoon."
+  },
+  {
+    "id": "522",
+    "title": "Britsh forces captured Buenos Ayres",
+    "date": "1806-06-27",
+    "location": "Buenos Aires, Argentina",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "description": "Following his victories at Quilmes and the Riachuelo (Puente de Galvez), Brigadier General William Carr Beresford officially captured Buenos Aires on June 27, 1806, marking the climax of the first British invasion of the Río de la Plata."
+  },
+  {
+    "id": "523",
+    "title": "Combat of Perdriel",
+    "date": "1806-08-01",
+    "location": "Villa Ballester, Pcia. Buenos Aires, Argentina",
+    "description": "On August 1, 1806, the Combat of Perdriel occurred at the Perdriel ranch when a local resistance force led by Juan Martín de Pueyrredón clashed with a British detachment sent by General William Carr Beresford. The outcome was a tactical British victory, as their superior artillery successfully scattered the poorly equipped gaucho militia.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Combate_de_Perdriel"
+  },
+  {
+    "id": "524",
+    "siteId": 1029,
+    "title": "Liniers' landing at Las Conchas",
+    "date": "1806-08-04",
+    "location": "Tigre, Pcia. Buenos Aires, Argentina",
+    "description": "The commemorative monolith marking Santiago de Liniers' landing was officially unveiled on August 4, 1949, to commemorate the 143rd anniversary of the historic 1806 event."
+  },
+  {
+    "id": "524",
+    "siteId": 1029,
+    "title": "Beresford's Capitulation at Buenos Aires",
+    "date": "1806-08-12",
+    "location": "Buenos Aires, Argentina",
+    "description": "After two days of heavy, relentless street fighting that pushed the British troops back into the city's fort, Beresford realized his position was untenable against the vastly superior local forces. He officially signed the capitulation on August 12, 1806."
+  },
+  {
+    "id": "525",
+    "siteId": 1033,
+    "title": "Linier's attack on Buenos Aires",
+    "date": "1806-08-11",
+    "location": "Buenos Aires, Argentina",
+    "description": "The final assault on Buenos Aires took place on August 11th and 12th 1806. It quickly turned into a brutal house-to-house battle. Liniers' forces pushed the invaders back to the Plaza Mayor (Plaza de Mayo). Trapped under intense artillery fire, General Beresford retreated into the fort and surrendered unconditionally at the Cabildo on August 12."
   }
 ]

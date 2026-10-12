@@ -13240,11 +13240,12 @@
     "victor": "Anglo-Portuguese",
     "defeated": "France",
     "commander_Victor": [
-      "William Erskine"
+      "William Erskine",
+      "Alexander Campbell",
+      "Luís do Rego"
     ],
     "commander_Loss": [
-      "Napoleon",
-      "André Masséna"
+      "Antoine Brenier"
     ]
   },
   {
@@ -19303,7 +19304,7 @@
     "date": "1815-10-13",
     "location": "Pizzo, Vibo Valentia",
     "country": "Italy",
-    "description": "Following his trial and execution by firing squad at the nearby Aragonese castle on October 13, 1815,October 13, 1815, the former King of Naples and brother-in-law to Napoleon Bonaparte was buried unceremoniously in the Church of St. George's (San Giorgio Martire) crypt in a mass/common grave. Because he was placed in a common vault alongside many others, his exact remains have never been fully separated or individually identified.",
+    "description": "Following his trial and execution by firing squad at the nearby Aragonese castle on October 13, 1815, the former King of Naples and brother-in-law to Napoleon Bonaparte was buried unceremoniously in the Church of St. George's (San Giorgio Martire) crypt in a mass/common grave. Because he was placed in a common vault alongside many others, his exact remains have never been fully separated or individually identified.",
     "latitude": 38.736189,
     "longitude": 16.161382,
     "image": "Murat_grave.webp",
@@ -19328,6 +19329,364 @@
     "latitude": 40.599765,
     "longitude": -6.536352,
     "image": "Charro.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1019",
+    "name": "Battlefield of Pápa",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1809",
+    "date": "1809-06-12",
+    "location": "Pápa",
+    "country": "Hungary",
+    "description": "The Combat of Papa on June 12, 1809, resulted in a French victory. Prince Eugène de Beauharnais led the French forces in a successful attack against an Austrian rearguard commanded by FML Johann Maria Philipp Frimont, who was covering Archduke John's retreat. The French broke through the Austrian lines and captured the town, inflicting 600 casualties while suffering only 200 losses.",
+    "latitude": 47.323369,
+    "longitude": 17.466778,
+    "image": "Papa.webp",
+    "special": "5",
+    "commander_Victor": [
+      "Eugène de Beauharnais"
+    ],
+    "commander_Loss": [
+      "Johann Frimont"
+    ],
+    "victor": "France",
+    "defeated": "Austria",
+    "contributor": "Mészáros, Ádám",
+    "more_info_link": "https://www.historyofwar.org/articles/combat_papa.html",
+    "createDate": "2026-10-10"
+  },
+  {
+    "id": "1020",
+    "name": "Beresford's landing point",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-06-25",
+    "location": "Quilmes, Pcia Buenos Aires",
+    "country": "Argentina",
+    "description": "On June 25, 1806, the first British invasion of the River Plate began when Brigadier General William Carr Beresford led a successful, unopposed landing on the shores of Quilmes, located about 20 kilometers south of Buenos Aires. Commanding an expeditionary force of approximately 1,600 British soldiers—which prominently featured the 71st Regiment of Highlanders alongside royal marines and artillerymen.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "latitude": -34.706388,
+    "longitude": -58.230524,
+    "image": "Quilmes.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1021",
+    "name": "Battlefield of Quilmes",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-06-26",
+    "location": "Quilmes, Pcia Buenos Aires",
+    "country": "Argentina",
+    "description": "On June 26, 1806, the Combate de Quilmes marked the first clash of the British invasions, pitting Brigadier General William Carr Beresford's British expeditionary forces against local Spanish militia commanded by Colonel Pedro de Arce. Despite the defense's advantageous positioning on the high riverbanks, the outcome was a decisive British victory, as Beresford's disciplined infantry quickly routed the defenders, clearing the path to capture Buenos Aires the following day.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "latitude": -34.717012,
+    "longitude": -58.247700,
+    "special": "Rio de la Plata Campaign",
+    "victor": "Great Britain",
+    "defeated": "Spain",
+    "commander_Loss": [
+      "Pedro de Arce"
+    ],
+    "commander_Victor": [
+      "William Beresford"
+    ],
+    "image": "Quilmes_combate.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1022",
+    "relatedSites": [
+      {
+        "id": "1025",
+        "title": "The Glorious Conquest of Buenos Ayres"
+      }
+    ],
+    "name": "Battlefield of Puente de Galvez",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1806-06-26",
+    "location": "Buenos Aires",
+    "country": "Argentina",
+    "description": "On June 27, 1806, the Combat of Puente de Gálvez marked the final defensive stand by local forces under Brigadier Miguel de Azcuénaga along the Riachuelo river before the British captured Buenos Aires. Azcuénaga had burned the strategic wooden bridge to halt the invasion, but Beresford's  troops successfully forced a crossing using rafts, boats, and shallow vados. The outcome was a decisive British victory that scattered the local defenders, allowing Beresford to march into the capital unopposed later that afternoon.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "latitude": -34.656125,
+    "longitude": -58.374349,
+    "special": "Rio de la Plata Campaign",
+    "victor": "Great Britain",
+    "defeated": "Spain",
+    "commander_Loss": [
+      "Miguel de Azcuénaga"
+    ],
+    "commander_Victor": [
+      "William Beresford"
+    ],
+    "image": "PteGalvez.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1023",
+    "name": "British artillery position - Perdriel",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-08-01",
+    "location": "Villa Ballester, Buenos Aires",
+    "country": "Argentina",
+    "description": "The British artillery was positioned at the center of the line some 400 meters from the enemy line.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Combate_de_Perdriel",
+    "latitude": -34.566147,
+    "longitude": -58.565432,
+    "special": "Rio de la Plata Campaign",
+    "image": "Perdriel_art.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1024",
+    "name": "Battlefield of Perdriel",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-08-01",
+    "location": "Villa Ballester, Buenos Aires",
+    "country": "Argentina",
+    "description": "On August 1, 1806, the Combat of Perdriel occurred at the Perdriel ranch when a local resistance force led by Juan Martín de Pueyrredón clashed with a British detachment sent by General William Carr Beresford. The outcome was a tactical British victory, as their superior artillery successfully scattered the poorly equipped gaucho militia.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Combate_de_Perdriel",
+    "latitude": -34.564410,
+    "longitude": -58.568318,
+    "special": "Rio de la Plata Campaign",
+    "victor": "Great Britain",
+    "defeated": "Spain",
+    "commander_Loss": [
+      "Juan Martín de Pueyrredón"
+    ],
+    "commander_Victor": [
+      "William Beresford"
+    ],
+    "image": "Perdriel.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1025",
+    "relatedSites": [
+      {
+        "id": "1022",
+        "title": "Battle of Puente de Galvez"
+      }
+    ],
+    "name": "The Glorious Conquest of Buenos Ayres",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1806",
+    "location": "National Army Museum, Study Collection, London",
+    "country": "England",
+    "description": "Coloured woodcut, published by G Thompson, 1806.",
+    "site_link": "https://collection.nam.ac.uk/detail.php?acc=1971-02-33-88-1",
+    "latitude": 51.486405,
+    "longitude": -0.160441,
+    "special": "Rio de la Plata Campaign",
+    "image": "Buenos_Ayres_capture.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1026",
+    "name": "Chacra de Perdriel",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-08-01",
+    "location": "Villa Ballester, Buenos Aires",
+    "country": "Argentina",
+    "description": "At this rural estate, Juan Martín de Pueyrredón successfully assembled a clandestine militia of roughly 1,000 gauchos and volunteers to challenge the British occupation.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Chacra_Pueyrred%C3%B3n",
+    "latitude": -34.562105,
+    "longitude": -58.572006,
+    "special": "Rio de la Plata Campaign",
+    "image": "Perdriel_chacra.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1027",
+    "name": "Beresford Prison at Buenos Aires",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-08-20",
+    "location": "Luján, Buenos Aires",
+    "country": "Argentina",
+    "description": "Following the 1806 Reconquista of Buenos Aires, British General William Carr Beresford surrendered, after a 46-day occupation, with favorable terms and swearing an oath never to fight Spain again. While most British troops were sent as prisoners to the Argentine interior, Beresford and Colonel Denis Pack were detained at the Luján Cabildo until February 10, 1807, where they enjoyed an unusually lenient confinement that allowed them to stay with elite neighbors, hunt, and attend local social gatherings.",
+    "latitude": -34.562942,
+    "longitude": -59.121628,
+    "special": "Rio de la Plata Campaign",
+    "image": "Lujan.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1028",
+    "relatedSites": [
+      {
+        "id": "1030",
+        "title": "Emilio Biggeri watercolour"
+      }
+    ],
+    "name": "Liniers landing point al Las Conchas",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-08-04",
+    "location": "Tigre, Buenos Aires",
+    "country": "Argentina",
+    "description": "After the British captured Buenos Aires in June 1806, Santiago de Liniers, a French-born naval officer, assembled a rescue force in Montevideo. He used a severe storm and dense fog to slip past the British naval blockade in the Río de la Plata, crossing unseen with a fleet of small boats. Liniers chose Puerto de Las Conchas (now Tigre) for his landing because its shallow, twisting river channels kept his small fleet safe from the larger British warships, where he landed on August 4th 1806.",
+    "latitude": -34.416101,
+    "longitude": -58.589950,
+    "special": "Rio de la Plata Campaign",
+    "image": "LasConchas.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1029",
+    "name": "Liniers landing Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1949-08-04",
+    "location": "Tigre, Buenos Aires",
+    "country": "Argentina",
+    "description": "The commemorative monolith marking Santiago de Liniers' landing was officially unveiled on August 4, 1949, to commemorate the 143rd anniversary of the historic 1806 event.",
+    "latitude": -34.416619,
+    "longitude": -58.590112,
+    "special": "Rio de la Plata Campaign",
+    "image": "LujanLasConchas_memorial.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1030",
+    "relatedSites": [
+      {
+        "id": "1028",
+        "title": "Liniers' landing point"
+      }
+    ],
+    "name": "Liniers landing at Las Conchas River",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1973",
+    "location": "Museo de la Reconquista,Tigre",
+    "country": "Argentina",
+    "description": "The artwork 'Desembarco de Liniers en el río de Las Conchas' (The Landing of Liniers at the Las Conchas River) is a famous historical watercolor painted in 1973 by the renowned Argentine marine artist Emilio Biggeri.",
+    "latitude": -34.416426,
+    "longitude": -58.589564,
+    "special": "Rio de la Plata Campaign",
+    "image": "LasConchas_canvas.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1031",
+    "name": "Museum of the 'Reconquista'",
+    "category": "Museum",
+    "significance": 1,
+    "date": "1967-08-05",
+    "location": "Tigre, Pcia. Buenos Aires",
+    "country": "Argentina",
+    "description": "The Museo de la Reconquista is a landmark historical museum located in Tigre. Officially inaugurated on August 5, 1967, it showcases key artifacts detailing the British Invasions.",
+    "latitude": -34.416426,
+    "longitude": -58.589564,
+    "special": "Rio de la Plata Campaign",
+    "site_link": "https://museodelareconquista.blogspot.com/",
+    "image": "LasConchas_canvas.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1032",
+    "name": "Liniers' Headquartes",
+    "category": "Landmark",
+    "significance": 1,
+    "date": "1806-08-04",
+    "location": "Tigre, Pcia. Buenos Aires",
+    "country": "Argentina",
+    "description": "The property of Martín José Goyechea was used on the night of August 4, 1806, by Liniers' troops to camp before launching their march to liberate Buenos Aires from the British occupation. Today, the Museo de la Reconquista stands on that very land.",
+    "latitude": -34.416406,
+    "longitude": -58.58917,
+    "special": "Rio de la Plata Campaign",
+    "site_link": "https://museodelareconquista.blogspot.com/",
+    "image": "Goyechea.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1033",
+    "name": "Battlefield Buenos Ayres Reconquista",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1806-08-11",
+    "location": "Buenos Aires",
+    "country": "Argentina",
+    "description": "The final assault on Buenos Aires took place on August 11th and 12th 1806. It quickly turned into a brutal house-to-house battle. Liniers' forces pushed the invaders back to the Plaza Mayor (Plaza de Mayo). Trapped under intense artillery fire, General Beresford retreated into the fort and surrendered unconditionally at the Cabildo on August 12.",
+    "latitude": -34.598751,
+    "longitude": -58.374596,
+    "special": "Rio de la Plata Campaign",
+    "defeated": "Great Britain",
+    "victor": "Spain",
+    "commander_Loss": [
+      "William Beresford"
+    ],
+    "commander_Victor": [
+      "Santiago Liniers"
+    ],
+    "image": "BsAs1806.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1034",
+    "name": "Liniers' Headquartes at Buenos Aires",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-08-12",
+    "location": "Buenos Aires",
+    "country": "Argentina",
+    "description": "On August 12, 1806, during the Reconquest of Buenos Aires, Liniers set up his headquarters in the atrium of the Church of Mercy. From this strategic vantage point, capitalizing on its proximity to the Plaza Mayor (now Plaza de Mayo), he directed the final assault against the British troops led by William Carr Beresford, who eventually retreated to the Recova and surrendered at the Fort of Buenos Aires.",
+    "latitude": -34.605339,
+    "longitude": -58.372210,
+    "special": "Rio de la Plata Campaign",
+    "image": "MercedBsAs.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1035",
+    "relatedSites": [
+      {
+        "id": 1036,
+        "title": "Canvas by Charles Fouqueray"
+      }
+    ],
+    "name": "Beresford's troops last stand",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1806-08-12",
+    "location": "Buenos Aires",
+    "country": "Argentina",
+    "description": "On August 12, 1806, British Commander William Carr Beresford made his desperate last stand inside the Fort of Buenos Aires (the site of today's Casa Rosada) and the adjacent Recova building. Under relentless, heavy fire from the advancing Spanish forces and local militias led by Santiago de Liniers, Beresford's troops were hopelessly trapped and pinned down. Recognizing that his position was entirely untenable and to prevent a total massacre of his remaining men, Beresford formally surrendered the British forces.",
+    "latitude": -34.608330,
+    "longitude": -58.371392,
+    "special": "Rio de la Plata Campaign",
+    "image": "Recova.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1036",
+    "relatedSites": [
+      {
+        "id": 1035,
+        "title": "Beresford's last stand site"
+      }
+    ],
+    "name": "Beresford's capitulation",
+    "category": "Artwork",
+    "significance": 3,
+    "year": "1909",
+    "location": "Museo del Cabildo, Buenos Aires",
+    "country": "Argentina",
+    "description": "The canvas, titled La Reconquista de Buenos Aires (often referred to as La rendición de Beresford), was painted by the French artist Charles Fouqueray in 1909. Commissioned for the centenary celebrations of the May Revolution, this grand oil-on-canvas brilliantly captures the climate of the 1806 British invasions, portraying the precise moment General William Carr Beresford surrendered to Santiago de Liniers.",
+    "latitude": -34.608773,
+    "longitude": -58.373666,
+    "special": "Rio de la Plata Campaign",
+    "site_link": "https://cabildonacional.cultura.gob.ar/",
+    "image": "Rendicion.webp",
     "createDate": "2026-10-12"
   }
 ]
