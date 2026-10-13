@@ -19801,5 +19801,21 @@
     ],
     "image": "Criwitz.webp",
     "createDate": "2026-10-13"
+  },
+  {
+    "id": "1042",
+    "name": "Popham set sail to Buenos Ayres",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-05-02",
+    "location": "Jamestown",
+    "country": "Saint Helena",
+    "description": "On May 2, 1806, Commodore Sir Home Popham officially departed from the remote South Atlantic island of Saint Helena, setting sail for Buenos Aires. Driven by his own strategic ambitions and enticing intelligence about the vulnerability of the Spanish colonies, Popham had managed to convince the island's governor, Patton, to reinforce his fleet with a detachment of troops from the 71st Regiment of Foot under William Carr Beresford. This unauthorized departure marked the true beginning of the British invasions of the Río de la Plata.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "latitude": -15.923388,
+    "longitude": -5.718720,
+    "special": "Rio de la Plata Campaign",
+    "image": "StHelena.webp",
+    "createDate": "2026-10-13"
   }
 ]
