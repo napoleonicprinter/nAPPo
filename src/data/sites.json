@@ -19729,5 +19729,77 @@
     "special": "4",
     "image": "Pasewalk.webp",
     "createDate": "2026-10-12"
+  },
+  {
+    "id": "1039",
+    "name": "Battlefield of Waren-Nossentin",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1806-11-01",
+    "location": "Nossentin",
+    "country": "Germany",
+    "description": "The Battle of Waren-Nossentin took place on November 1, 1806, as French forces under Marshal Jean-Baptiste Bernadotte pursued retreating Prussians. Prussian commanders August Wilhelm von Pletz and Ludwig Yorck von Wartenburg successfully fought a defensive rearguard action that allowed their main army to escape intact. While the French won a tactical victory by forcing a Prussian withdrawal, it was a strategic Prussian success that prevented the destruction of their retreating forces.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Waren-Nossentin",
+    "latitude": 53.519710,
+    "longitude": 12.449824,
+    "special": "4",
+    "victor": "Prussia",
+    "defeated": "France",
+    "commander_Loss": [
+      "Jean-Baptiste Bernadotte",
+      "Claude-Étienne Guyot"
+    ],
+    "commander_Victor": [
+      "August von Pletz",
+      "Ludwig Yorck"
+    ],
+    "image": "Nossentin.webp",
+    "createDate": "2026-10-13"
+  },
+  {
+    "id": "1040",
+    "name": "Battlefield of Granzin",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-11-02",
+    "location": "Granzin",
+    "country": "Germany",
+    "description": "This rearguard skirmish took place on November 2nd 1806. As the Prussian army under General Gebhard Leberecht von Blücher continued its rapid retreat westward toward Lübeck, French forces under Marshal Jean Baptiste Bernadotte closely pursued them. The action at Granzin was a successful French attack led by General Drouet on an isolated Prussian battalion commanded by Colonel Georg Hennig von Puttkamer.",
+    "latitude": 53.412277,
+    "longitude": 12.903002,
+    "special": "4",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Loss": [
+      "Georg von Puttkamer"
+    ],
+    "commander_Victor": [
+      "Jean Baptiste Drouet"
+    ],
+    "image": "Granzin.webp",
+    "createDate": "2026-10-13"
+  },
+  {
+    "id": "1041",
+    "name": "Battlefield of Criwitz",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-11-03",
+    "location": "Criwitz",
+    "country": "Germany",
+    "description": "The clash, November 3rd 1806, featured fierce cavalry engagements. At one point, the French light cavalry wavered until Marshal Bernadotte personally took the lead to rally his men into a successful charge. On the opposing side, the Prussian Rudorff Hussars successfully charged three French cavalry regiments, only being forced to turn back when they struck steady French infantry formed into defensive squares. Though it was a fighting retreat that allowed Blücher to temporarily continue moving his main army, the engagement is traditionally marked as a minor Prussian rearguard victory for successfully checking the French momentum for the day. However, the delay was short-lived, as the French caught up to and decisively defeated Blücher just days later at the Battle of Lübeck.",
+    "latitude": 53.573840,
+    "longitude": 11.651407,
+    "special": "4",
+    "victor": "Prussia",
+    "defeated": "France",
+    "commander_Loss": [
+      "Jean-Baptiste Bernadotte"
+    ],
+    "commander_Victor": [
+      "Friedrich von Oswald"
+    ],
+    "image": "Criwitz.webp",
+    "createDate": "2026-10-13"
   }
 ]

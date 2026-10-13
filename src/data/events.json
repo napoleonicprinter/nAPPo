@@ -4494,5 +4494,30 @@
     "location": "Pasewalk, Germany",
     "description": "The Capitulation of Pasewalk occurred on October 29, 1806, resulting in the bloodless surrender of 4,200 Prussian soldiers to a significantly smaller, inferior force of only about 700 French light cavalrymen.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Pasewalk"
+  },
+  {
+    "id": "528",
+    "siteId": 1039,
+    "title": "Battle of Waren-Nossentin",
+    "date": "1806-11-01",
+    "location": "Nossentin, Germany",
+    "description": "The Battle of Waren-Nossentin took place on November 1, 1806, as French forces under Marshal Jean-Baptiste Bernadotte pursued retreating Prussians. Prussian commanders August Wilhelm von Pletz and Ludwig Yorck von Wartenburg successfully fought a defensive rearguard action that allowed their main army to escape intact. While the French won a tactical victory by forcing a Prussian withdrawal, it was a strategic Prussian success that prevented the destruction of their retreating forces.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Waren-Nossentin"
+  },
+  {
+    "id": "529",
+    "siteId": 1040,
+    "title": "Skirmish of Granzin",
+    "date": "1806-11-02",
+    "location": "Granzin, Germany",
+    "description": "This rearguard skirmish took place on November 2nd 1806. As the Prussian army under General Gebhard Leberecht von Blücher continued its rapid retreat westward toward Lübeck, French forces under Marshal Jean Baptiste Bernadotte closely pursued them. The action at Granzin was a successful French attack led by General Drouet on an isolated Prussian battalion commanded by Colonel Georg Hennig von Puttkamer."
+  },
+  {
+    "id": "530",
+    "siteId": 1041,
+    "title": "Clash of Criwitz",
+    "date": "1806-11-03",
+    "location": "Criwitz, Germany",
+    "description": "The clash, November 3rd 1806, featured fierce cavalry engagements. At one point, the French light cavalry wavered until Marshal Bernadotte personally took the lead to rally his men into a successful charge. On the opposing side, the Prussian Rudorff Hussars successfully charged three French cavalry regiments, only being forced to turn back when they struck steady French infantry formed into defensive squares. Though it was a fighting retreat that allowed Blücher to temporarily continue moving his main army, the engagement is traditionally marked as a minor Prussian rearguard victory for successfully checking the French momentum for the day. However, the delay was short-lived, as the French caught up to and decisively defeated Blücher just days later at the Battle of Lübeck."
   }
 ]
