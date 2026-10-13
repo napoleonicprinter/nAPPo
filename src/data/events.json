@@ -608,8 +608,8 @@
   },
   {
     "id": 68,
-    "title": "Battle of Auerstaedt",
-    "date": "1806-10-14",
+    "title": "",
+    "date": "",
     "location": "Hassenhausen, Germany",
     "description": "This battle pitted the first Prussian army under King Frederick William III of Prussia against part of the French army led by Louis Nicolas Davout on October 14, 1806, parallel to the Battle of Jena, which was fought on the same date.",
     "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_d%27Auerstaedt"
@@ -3000,7 +3000,8 @@
     "siteId": 185,
     "description": "In one of the most decisive military victories of the Napoleonic era, Napoleon executed a brilliant double-battle maneuver against the Prussian army. By attacking simultaneously at Jena and Auerstedt, French forces shattered the Prussian defenses in a single day, effectively ending Prussian resistance in the War of the Fourth Coalition and opening the path to Berlin.",
     "date": "1806-10-14",
-    "location": "Jena-Auerstedt",
+    "location": "Hassenhausen, Germany",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Bataille_d%27Auerstaedt",
     "country": "Prussia"
   },
   {
