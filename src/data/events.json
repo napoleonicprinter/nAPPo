@@ -2107,17 +2107,16 @@
     "title": "Battle of Lyngør",
     "description": "Fought between the British and Dano-Norwegian navies as part of the Gunboat War.",
     "date": "1812-05-22",
-    "location": "off Lyngør, Norway",
-    "country": "North Sea",
+    "location": "off Lyngør, Norway, North Sea",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Lyng%C3%B8r"
   },
   {
     "id": "245",
+    "siteId": 1050,
     "title": "Battle of Blaauwberg",
     "description": "Also known as the Battle of Cape Town, it was a successful British amphibious operation during the War of the Third Coalition which lasted from 8–18 January 1806 and resulted in the capture of the Dutch Cape Colony.",
     "date": "1806-01-08",
-    "location": "Melkbosstrand",
-    "country": "South Africa",
+    "location": "Bloubergsvlei, Cape Town, South Africa",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg"
   },
   {
@@ -4524,10 +4523,52 @@
   {
     "id": "531",
     "siteId": 1042,
-    "title": "Popham set sail to Buenos Ayres",
+    "title": "Popham reinforced at Saint Helena",
     "date": "1806-05-02",
     "location": "Jamestown, Saint Helena",
     "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
     "description": "On May 2, 1806, Commodore Sir Home Popham officially departed from the remote South Atlantic island of Saint Helena, setting sail for Buenos Aires. Driven by his own strategic ambitions and enticing intelligence about the vulnerability of the Spanish colonies, Popham had managed to convince the island's governor, Patton, to reinforce his fleet with a detachment of troops from the 71st Regiment of Foot under William Carr Beresford. This unauthorized departure marked the true beginning of the British invasions of the Río de la Plata."
+  },
+  {
+    "id": "532",
+    "siteId": 1043,
+    "title": "Battle of Soldau",
+    "date": "1806-12-25",
+    "location": "Działdowo, Poland",
+    "description": "On December 25, 1806, French forces led by Division General Jean Gabriel Marchand (under Marshal Ney's command) clashed with Prussian troops commanded by General Anton Wilhelm von L'Estocq in the action at Soldau. The engagement resulted in a French victory, as Marchand's troops successfully repelled a late Prussian counterattack, securing control of the town and forcing L'Estocq's forces into a retreat toward Königsberg that effectively cut them off from their Russian allies."
+  },
+  {
+    "id": "533",
+    "siteId": 1044,
+    "title": "Crossing of the Wkra river",
+    "date": "1806-12-23",
+    "location": "Czarnowo, Poland",
+    "description": "On the night of December 23-24, 1806, Napoleon personally directed a night assault across the Wkra River mouth to seize a bridgehead from Russian forces amid treacherous, wild wetlands. While French troops back then battled unpredictable, muddy swamps, the terrain is completely altered today. The next they the battle of Czarnowo took place. Modern engineering and damming along the Vistula system have permanently drained and regulated these original floodplains, transforming the historic battlefield into stable, controlled agricultural land."
+  },
+  {
+    "id": "534",
+    "siteId": 1045,
+    "title": "Action at Borkowo",
+    "date": "1806-12-24",
+    "location": "Borkowo, Poland",
+    "description": "On December 24, 1806, Russian commander Ivan Dorokhov fought a delaying action against French cavalry under Louis Klein and Antoine de Lasalle at the strategic Ukra River bridge in Borkowo."
+  },
+  {
+    "id": "535",
+    "siteId": 1046,
+    "title": "Popham set sail to from Buenos Ayres",
+    "date": "1806-04-14",
+    "location": "Cape Town, South Africa",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "description": "On April 14th 1806, Commodore Sir Home Popham made the unauthorized and highly controversial decision to depart Cape Town with a British fleet to launch an attack on Buenos Aires. Emboldened by his recent success in capturing the Cape of Good Hope from the Dutch, and fueled by reports of local discontent with Spanish rule and rumors of vast treasure in the Río de la Plata, Popham acted without official orders from the Admiralty. He stripped the Cape colony of a significant portion of its garrison, embarking the 71st Regiment of Foot under Brigadier General William Carr Beresford."
+  },
+  {
+    "id": "536",
+    "siteId": 461,
+    "title": "British landing at Cape Town",
+    "description": "On January 6 and 7, 1806, following delays from rough seas, Major-General Sir David Baird began landing two British infantry brigades at Melkbosstrand after Commodore Home Popham scuttled a merchant ship to act as a breakwater.",
+    "date": "1806-01-08",
+    "location": "Melkbosstrand, South Africa",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg"
   }
 ]

@@ -9847,32 +9847,20 @@
   },
   {
     "id": "461",
-    "name": "Battlefield of Blaauwberg",
-    "category": "Battle site",
-    "significance": 1,
+    "name": "British landing at Cape Town",
+    "category": "Landmark",
+    "significance": 2,
     "year": 1806,
-    "date": "1806-01-08",
+    "date": "1806-01-06",
     "location": "Melkbosstrand",
     "country": "South Africa",
-    "description": "Also known as the Battle of Cape Town, it was a successful British amphibious operation during the War of the Third Coalition which lasted from 8 to 18 January 1806 and resulted in the capture of the Dutch Cape Colony. ",
-    "latitude": -33.72748,
-    "longitude": 18.4467,
+    "description": "On January 6 and 7, 1806, following delays from rough seas, Major-General Sir David Baird began landing two British infantry brigades at Melkbosstrand after Commodore Home Popham scuttled a merchant ship to act as a breakwater.",
+    "latitude": -33.726456,
+    "longitude": 18.440095,
     "special": "3",
-    "victor": "Great Britain",
-    "defeated": [
-      "Batavia",
-      "France"
-    ],
-    "image": "Blaauwberg.webp",
+    "image": "Blaauwberg_landing.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg",
-    "createDate": "2025-03-15",
-    "commander_Victor": [
-      "David Baird",
-      "Home Riggs Popham"
-    ],
-    "commander_Loss": [
-      "Jan Willem Janssens"
-    ]
+    "createDate": "2025-03-15"
   },
   {
     "id": "462",
@@ -16493,7 +16481,7 @@
     "name": "Museo Napoleónico de La Habana",
     "category": "Museum",
     "significance": 2,
-    "year": "1961-12-01",
+    "date": "1961-12-01",
     "location": "La Habana",
     "country": "Cuba",
     "description": "The Napoleonic Museum in Havana, Cuba, houses one of the most important collections from the 18th and 19th centuries preserved in the Western hemisphere.",
@@ -19817,5 +19805,241 @@
     "special": "Rio de la Plata Campaign",
     "image": "StHelena.webp",
     "createDate": "2026-10-13"
+  },
+  {
+    "id": "1043",
+    "name": "Battlefield of Soldau",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-12-25",
+    "location": "Działdowo",
+    "country": "Poland",
+    "description": "On December 25, 1806, French forces led by Division General Jean Gabriel Marchand (under Marshal Ney's command) clashed with Prussian troops commanded by General Anton Wilhelm von L'Estocq in the action at Soldau. The engagement resulted in a French victory, as Marchand's troops successfully repelled a late Prussian counterattack, securing control of the town and forcing L'Estocq's forces into a retreat toward Königsberg that effectively cut them off from their Russian allies.",
+    "latitude": 53.233256,
+    "longitude": 20.184023,
+    "special": "4",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Loss": [
+      "Anton Wilhelm von L'Estocq"
+    ],
+    "commander_Victor": [
+      "Jean Gabriel Marchand"
+    ],
+    "image": "Soldau.webp",
+    "createDate": "2026-10-13"
+  },
+  {
+    "id": "1044",
+    "name": "Battlefield Wkra river crossing",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-12-23",
+    "location": "Czarnowo",
+    "country": "Poland",
+    "description": "On the night of December 23-24, 1806, Napoleon personally directed a night assault across the Wkra River mouth to seize a bridgehead from Russian forces amid treacherous, wild wetlands. While French troops back then battled unpredictable, muddy swamps, the terrain is completely altered today. The next they the battle of Czarnowo took place. Modern engineering and damming along the Vistula system have permanently drained and regulated these original floodplains, transforming the historic battlefield into stable, controlled agricultural land.",
+    "latitude": 53.099225,
+    "longitude": 18.221939,
+    "special": "4",
+    "victor": "France",
+    "defeated": "Russia",
+    "commander_Victor": [
+      "Napoleon",
+      "Louis Nicolas Davout"
+    ],
+    "commander_Loss": [
+      "Karl La Roche-Aymon"
+    ],
+    "image": "Wkra.webp",
+    "createDate": "2026-10-13"
+  },
+  {
+    "id": "1045",
+    "name": "Battlefield of Borkowo",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1806-12-24",
+    "location": "Borkowo",
+    "country": "Poland",
+    "description": "On December 24, 1806, Russian commander Ivan Dorokhov fought a delaying action against French cavalry under Louis Klein and Antoine de Lasalle at the strategic Ukra River bridge in Borkowo. Facing an imminent French crossing at a nearby ford and hearing heavy fighting nearby, Dorokhov successfully delayed the enemy before withdrawing his forces toward Cieksyn around 14:00. Although the Russians set fire to the bridge to cover their retreat, French forces managed to extinguish the flames, repair the structure, and cross the river an hour later.",
+    "latitude": 52.55939,
+    "longitude": 20.667569,
+    "special": "4",
+    "victor": "France",
+    "defeated": "Russia",
+    "commander_Victor": [
+      "Antoine Louis de Lasalle",
+      "Louis Klein"
+    ],
+    "commander_Loss": [
+      "Ivan Dorokhov"
+    ],
+    "image": "Borkowo.webp",
+    "createDate": "2026-10-13"
+  },
+  {
+    "id": "1046",
+    "name": "Popham begins Rio de la Plata campaign",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-04-14",
+    "location": "Cape Town",
+    "country": "South Africa",
+    "description": "On April 14th 1806, Commodore Sir Home Popham made the unauthorized and highly controversial decision to depart Cape Town with a British fleet to launch an attack on Buenos Aires. Emboldened by his recent success in capturing the Cape of Good Hope from the Dutch, and fueled by reports of local discontent with Spanish rule and rumors of vast treasure in the Río de la Plata, Popham acted without official orders from the Admiralty. He stripped the Cape colony of a significant portion of its garrison, embarking the 71st Regiment of Foot under Brigadier General William Carr Beresford.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_invasions_of_the_River_Plate",
+    "latitude": 52.559390,
+    "longitude": 20.667569,
+    "special": "Rio de la Plata Campaign",
+    "image": "Cape_Town.webp",
+    "createDate": "2026-10-14"
+  },
+  {
+    "id": "1047",
+    "relatedSites": [
+      {
+        "id": 1048,
+        "title": "Luján, place where Gold was seized"
+      }
+    ],
+    "name": "British seizing the Viceroyalty Treasury",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1896",
+    "location": " Museo Udaondo, Luján, Buenos Aires",
+    "country": "Argentina",
+    "description": "This oil on canvas, painted by Spanish-Argentine artist Francisco Fortuny in 1896, portrays a pivotal historical event from the First British Invasion of the Rio de la Plata. The painting captures the specific moment on July 2, 1806, when British occupation troops intercepted and seized the royal treasury (los caudales reales) outside the Cabildo building in the town of Luján.",
+    "latitude": -34.562649,
+    "longitude": -59.121628,
+    "special": "Rio de la Plata Campaign",
+    "image": "Lujan_Fortuny.webp",
+    "createDate": "2026-10-14"
+  },
+  {
+    "id": "1048",
+    "relatedSites": [
+      {
+        "id": 1047,
+        "title": "Canvas by Fortuny"
+      },
+      {
+        "id": 1050,
+        "title": "British satirical broadside "
+      }
+    ],
+    "name": "Popham seizes Treasury's Gold",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-07-02",
+    "location": "Luján, Buenos Aires",
+    "country": "Argentina",
+    "description": "During the British Invasion of 1806, British Commodore Sir Home Popham sought out the official state treasure (los caudales reales) of the Viceroyalty of the Río de la Plata. Sir Home Riggs Popham's primary motive for launching the 1806 British invasions of the Río de la Plata was personal financial gain through trade and war booty. For many historians, Popham acted driven by heavy debts and overwhelming ambition, Popham acted entirely on his own without British Crown authorization, redirecting his fleet from the Cape of Good Hope.",
+    "latitude": -34.562942,
+    "longitude": -59.121628,
+    "special": "Rio de la Plata Campaign",
+    "image": "Cabildo_lujan.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1049",
+    "relatedSites": [
+      {
+        "id": 1048,
+        "title": "Popham seizes Treasury's Gold"
+      }
+    ],
+    "name": "Dollars of Buenos Ayres",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1806",
+    "location": "Museo del Cabildo, Buenos Aires",
+    "country": "Argentina",
+    "description": "1806 British satirical broadside titled Dollars of Buenos Ayres, published in London by T. Evans. The publication was printed to celebrate the first British invasion of the Río de la Plata in June 1806, during which British forces temporarily captured Buenos Aires and seized the Spanish viceroyalty's royal treasury.",
+    "latitude": -34.608761,
+    "longitude": -58.373785,
+    "special": "Rio de la Plata Campaign",
+    "image": "Dollars_BsAs.webp",
+    "createDate": "2026-10-12"
+  },
+  {
+    "id": "1050",
+    "relatedSites": [
+      {
+        "id": 1051,
+        "title": "Canvas by unknown artist"
+      },
+      {
+        "id": 1052,
+        "title": "Museum - Battle exhibit"
+      }
+    ],
+    "name": "Battlefield of Blaauwberg",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1806-01-08",
+    "location": "Bloubergsvlei, Cape Town",
+    "country": "South Africa",
+    "description": "The Battle of Blaauwberg, also known as the Battle of Cape Town, took place on January 8, 1806. The British expeditionary force, commanded by Major-General Sir David Baird, successfully defeated the defending Dutch Batavian , which included Khoi soldiers and Malay artillerymen, led by Governor Jan Willem Janssens. This decisive British victory led to the surrender of the colony and established centuries of British rule in South Africa, securing a vital strategic outpost along the sea route to India.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg",
+    "online_reading": [
+      {
+        "title": "The 1806 Battle of Blaauwberg - an archaeological perspective by Willem Hutten",
+        "link": "https://marsethistoria.nl/onewebmedia/Publicaties/Hutten.pdf"
+      }
+    ],
+    "latitude": -33.766818,
+    "longitude": 18.497871,
+    "special": "3",
+    "victor": "Great Britain",
+    "defeated": "Batavia",
+    "commander_Victor": [
+      "Home Riggs Popham",
+      "David Baird"
+    ],
+    "commander_Loss": [
+      "Jan Willem Janssens"
+    ],
+    "image": "Borkowo.webp",
+    "createDate": "2026-10-13"
+  },
+  {
+    "id": "1051",
+    "relatedSites": [
+      {
+        "id": 1050,
+        "title": "Battlefield"
+      }
+    ],
+    "name": "Battle of Blaauwberg",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1806",
+    "location": "Library of Parliament, Cape Town",
+    "country": "South Africa",
+    "description": "An unknown artist captured the 1806 Battle of Blaauwberg in a typical European style, portraying a sweeping British advance with both armies spread across the landscape.Archaeology shows that the British did not advance in a broad line formation as depicted in the canvas, but instead stuck to easier pathways.",
+    "latitude": -33.925012,
+    "longitude": 18.421285,
+    "image": "Blaauwberg_canvas.webp",
+    "createDate": "2026-10-14"
+  },
+  {
+    "id": "1052",
+    "relatedSites": [
+      {
+        "id": 1050,
+        "title": "Battlefield"
+      }
+    ],
+    "name": "Castle Military Museum",
+    "category": "Museum",
+    "significance": 1,
+    "year": "1806",
+    "location": "Cape Town",
+    "country": "South Africa",
+    "description": "The Castle Military Museum inside the Castle of Good Hope in Cape Town features a dedicated display panel and historical exhibits covering the 1806 Battle of Blaauwberg.",
+    "site_link": "https://castleofgoodhope.co.za/",
+    "latitude": -33.926046,
+    "longitude": 18.428058,
+    "image": "Blaauwberg_canvas.webp",
+    "createDate": "2026-10-14"
   }
 ]

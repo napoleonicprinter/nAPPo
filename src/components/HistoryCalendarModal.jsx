@@ -11,8 +11,6 @@ const MONTHS = [
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const YEARS = ['All years', ...Array.from({ length: 1815 - 1793 + 1 }, (_, i) => 1793 + i)];
-
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
@@ -23,7 +21,6 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         setSelectedSite,
         setCallerSite,
         setSiteToOpenPopup,
-        setHistoryNavState,
         userCoords,
         locationMode,
         filterRadius,
@@ -103,6 +100,41 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
     const currentYear = new Date().getFullYear();
     const gridYear = selectedYear === 'All years' ? currentYear : selectedYear;
 
+    // Count events in the currently viewed month for each year
+    const monthYearCounts = useMemo(() => {
+        const counts = {};
+        let totalInMonth = 0;
+        (eventsData || []).forEach(event => {
+            if (!event.date) return;
+            const parts = event.date.split('-');
+            if (parts.length >= 3) {
+                const eventYear = parseInt(parts[0], 10);
+                const eventMonth = parseInt(parts[1], 10) - 1; // 0-indexed
+                if (eventMonth === month) {
+                    totalInMonth += 1;
+                    counts[eventYear] = (counts[eventYear] || 0) + 1;
+                }
+            }
+        });
+        return { counts, totalInMonth };
+    }, [eventsData, month]);
+
+    // Dynamic year list containing only years with events in the active month (excluding count = 0)
+    const yearOptions = useMemo(() => {
+        const yearsWithEvents = Object.keys(monthYearCounts.counts)
+            .map(y => parseInt(y, 10))
+            .filter(y => !isNaN(y) && monthYearCounts.counts[y] > 0)
+            .sort((a, b) => a - b);
+        return ['All years', ...yearsWithEvents];
+    }, [monthYearCounts]);
+
+    // Reset selectedYear to 'All years' if the currently selected year has no events in the active month
+    useEffect(() => {
+        if (selectedYear !== 'All years' && !monthYearCounts.counts[selectedYear]) {
+            setSelectedYear('All years');
+        }
+    }, [monthYearCounts, selectedYear]);
+
     const currentYearEvents = useMemo(() => {
         // Find all events for the currently viewed month
         const monthEvents = {};
@@ -133,7 +165,7 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
         });
 
         return monthEvents;
-    }, [month, selectedYear]);
+    }, [month, selectedYear, eventsData]);
 
     // Restore day events popup if navigating back from a day in history (one-time restoration)
     useEffect(() => {
@@ -309,18 +341,23 @@ const HistoryCalendarModal = ({ onClose, eventsData, onCloseParent }) => {
 
                             {isYearDropdownOpen && (
                                 <div className="dropdown-menu glass-panel animate-fade-in" style={{ maxHeight: '280px', overflowY: 'auto' }}>
-                                    {YEARS.map(y => (
-                                        <button
-                                            key={y}
-                                            className={`dropdown-option ${selectedYear === y ? 'selected' : ''}`}
-                                            onClick={() => {
-                                                setSelectedYear(y === 'All years' ? 'All years' : parseInt(y));
-                                                setIsYearDropdownOpen(false);
-                                            }}
-                                        >
-                                            {y}
-                                        </button>
-                                    ))}
+                                    {yearOptions.map(y => {
+                                        const isAll = y === 'All years';
+                                        const count = isAll ? monthYearCounts.totalInMonth : (monthYearCounts.counts[y] || 0);
+                                        return (
+                                            <button
+                                                key={y}
+                                                className={`dropdown-option ${selectedYear === y ? 'selected' : ''}`}
+                                                onClick={() => {
+                                                    setSelectedYear(y === 'All years' ? 'All years' : parseInt(y, 10));
+                                                    setIsYearDropdownOpen(false);
+                                                }}
+                                            >
+                                                <span>{y}</span>
+                                                <span className="category-count-badge">[{count}]</span>
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             )}
                         </div>

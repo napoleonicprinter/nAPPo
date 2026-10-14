@@ -31,7 +31,31 @@
 .history-year-dropdown .dropdown-menu {
     left: 50%;
     transform: translateX(-50%);
-    min-width: 145px;
+    min-width: 160px;
+}
+
+.history-year-dropdown .dropdown-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.history-year-dropdown .category-count-badge {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: inherit;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.8;
+    white-space: nowrap;
+    padding-left: 10px;
+    flex-shrink: 0;
+}
+
+.history-year-dropdown .dropdown-option.selected .category-count-badge {
+    color: #ffffff;
+    opacity: 1;
 }
 
 /* Row 2: Prev arrow | Month title | next arrow */
