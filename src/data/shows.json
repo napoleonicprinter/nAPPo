@@ -167,5 +167,18 @@
     "moreInfo": "https://www.asocne.com/single-post/i-congreso-de-recreaci%C3%B3n-napole%C3%B3nica-en-espa%C3%B1a-2%C2%AA-circular",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/ANE.webp",
     "category": "Congress"
+  },
+  {
+    "id": 36,
+    "name": "L’apogée de la France impériale",
+    "date": "2026-11-06",
+    "month": "November",
+    "country": "Monaco",
+    "venue": "Théâtre des Variétés à Monaco",
+    "organizer": "Le Souvenir napoléonien",
+    "description": "Nouveau spectacle historique et lyrique, entrée libre, avec Les Chœurs napoléoniens & Les Tambours de l'Odyssée",
+    "moreInfo": "https://www.lesouvenirnapoleonien.fr/event/spectacle-lapogee-de-la-france-imperiale/",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/ANE.webp",
+    "category": "Musical event"
   }
 ]
