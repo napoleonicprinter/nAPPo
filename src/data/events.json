@@ -4375,9 +4375,9 @@
   {
     "id": "514",
     "title": "Prince Poniatowski promoted to Marshal",
-    "date": "1813-10-15",
+    "date": "1813-10-16",
     "location": "Dolitz, Germany",
-    "description": "On October 15, 1813 (or October 16, depending on the source), Polish Prince Józef Antoni Poniatowski was awarded his baton and promoted to Marshal of the Empire.This historic promotion made him the only foreigner to ever receive the rank of Marshal during the Napoleonic Wars. Tragically, his time as marshal was incredibly short-lived. Just four days later, on October 19, he died at the battle of Leipzig."
+    "description": "On October 16, 1813, Polish Prince Józef Antoni Poniatowski was awarded his baton and promoted to Marshal of the Empire.This historic promotion made him the only foreigner to ever receive the rank of Marshal during the Napoleonic Wars. Tragically, his time as marshal was incredibly short-lived. Just three days later, on October 19, he died at the battle of Leipzig."
   },
   {
     "id": "515",
@@ -4570,5 +4570,31 @@
     "date": "1806-01-08",
     "location": "Melkbosstrand, South Africa",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Blaauwberg"
+  },
+  {
+    "id": "537",
+    "siteId": 1053,
+    "title": "Capitulation of Stettin",
+    "description": "The Capitulation of Stettin on October 29, 1806, was a stunning bloodless victory during the Napoleonic Wars. Following the Prussian defeat at Jena-Auerstedt, General Lasalle and just 800 French hussars used aggressive bluffs to terrify a massive fortress garrison of over 5,000 Prussian soldiers into surrendering without firing a single shot. By exploiting the deep demoralization of the aging Prussian commander, Lasalle successfully seized a vital stronghold using nothing but psychological warfare.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Stettin",
+    "date": "1806-10-29",
+    "location": "Szczecin, Poland"
+  },
+  {
+    "id": "538",
+    "siteId": 1054,
+    "title": "Capitulation of Boldeckow",
+    "description": "The Capitulation of Boldekow occurred on 30 October 1806 during the War of the Fourth Coalition, highlighting the total collapse of Prussian morale after Jena-Auerstedt. On this day, a retreating Prussian column under Major von Höpfner surrendered without a fight to the advanced elements of Marshal Lannes' French V Corps. The capitulation resulted in the French capture of 600 men, 800 horses, 25 artillery pieces, and 48 supply wagons, contributing to the swift French consolidation of power between the Elbe and Oder rivers.",
+    "date": "1806-10-30",
+    "location": "Boldekow, Germany"
+  },
+  {
+    "id": "539",
+    "siteId": 1055,
+    "title": "Battle of Fuengirola",
+    "description": "The Battle of Fuengirola took place on October 14-15, 1810, during the Peninsular War. A small Franco-Polish garrison of about 450 men, commanded by Polish Captain Franciszek Młokosiewicz, successfully defended Sohail Castle against a much larger Anglo-Spanish expeditionary force of over 2,500 troops led by British Major General Lord Andrew Blayney.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuengirola",
+    "date": "1810-10-14",
+    "location": "Fuengirola, Spain"
   }
 ]

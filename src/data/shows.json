@@ -180,5 +180,18 @@
     "moreInfo": "https://www.lesouvenirnapoleonien.fr/event/spectacle-lapogee-de-la-france-imperiale/",
     "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/Lapogee.webp",
     "category": "Musical event"
+  },
+  {
+    "id": 37,
+    "name": "All Souls' Day March / Lantern March",
+    "date": "2026-10-31",
+    "month": "October",
+    "country": "Czech Republic",
+    "venue": "Castle in Dřevohostice",
+    "organizer": "Klub vojenské historie francouzského císařství Bystřice pod Hostýnem",
+    "description": "This event is a traditional historical military march scheduled for October 31, 2026, held in commemoration of All Souls' Day (Dušičkový pochod).",
+    "moreInfo": "https://www.facebook.com/profile.php?id=61556287869403",
+    "image": "https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public/assets/images/Shows/pochod.webp",
+    "category": "Commemoration"
   }
 ]

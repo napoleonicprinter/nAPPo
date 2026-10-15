@@ -19998,7 +19998,7 @@
     "commander_Loss": [
       "Jan Willem Janssens"
     ],
-    "image": "Borkowo.webp",
+    "image": "Blaauwberg.webp",
     "createDate": "2026-10-13"
   },
   {
@@ -20039,7 +20039,208 @@
     "site_link": "https://castleofgoodhope.co.za/",
     "latitude": -33.926046,
     "longitude": 18.428058,
-    "image": "Blaauwberg_canvas.webp",
+    "image": "Castle_MM.webp",
     "createDate": "2026-10-14"
+  },
+  {
+    "id": "1053",
+    "name": "Capitulation of Stettin",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-10-29",
+    "year": "1806",
+    "location": "Szczecin",
+    "country": "Poland",
+    "description": "The Capitulation of Stettin on October 29, 1806, was a stunning bloodless victory during the Napoleonic Wars. Following the Prussian defeat at Jena-Auerstedt, General Lasalle and just 800 French hussars used aggressive bluffs to terrify a massive fortress garrison of over 5,000 Prussian soldiers into surrendering without firing a single shot. By exploiting the deep demoralization of the aging Prussian commander, Lasalle successfully seized a vital stronghold using nothing but psychological warfare.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Capitulation_of_Stettin",
+    "latitude": 53.428543,
+    "longitude": 14.552813,
+    "image": "Stettin.webp",
+    "relatedSites": [
+      {
+        "id": 1055,
+        "title": "Print at the National Museum"
+      }
+    ],
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1054",
+    "name": "Capitulation of Boldeckow",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1806-10-30",
+    "year": "1806",
+    "location": "Boldekow",
+    "country": "Germany",
+    "description": "The Capitulation of Boldekow occurred on 30 October 1806 during the War of the Fourth Coalition, highlighting the total collapse of Prussian morale after Jena-Auerstedt. On this day, a retreating Prussian column under Major von Höpfner surrendered without a fight to the advanced elements of Marshal Lannes' French V Corps. The capitulation resulted in the French capture of 600 men, 800 horses, 25 artillery pieces, and 48 supply wagons, contributing to the swift French consolidation of power between the Elbe and Oder rivers.",
+    "latitude": 53.725546,
+    "longitude": 14.552813,
+    "image": "Boldeckow.webp",
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1055",
+    "name": "Capitulation of Stettin print",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1806",
+    "location": "National Museum, Szczecin",
+    "country": "Poland",
+    "description": "The original print belongs to the collections of The National Museum in Szczecin. As a 19th-century graphic work on paper, it is not usually on permanent display due to its extreme sensitivity to light, which could degrade the pigments and paper. Instead, the museum preserves it in its archival storage and print rooms, showcasing it during temporary exhibitions focused on Pomeranian history or the Napoleonic Wars.",
+    "latitude": 53.430124,
+    "longitude": 14.564816,
+    "image": "Stettin_art.webp",
+    "relatedSites": [
+      {
+        "id": 1053,
+        "title": "City of Stettin"
+      }
+    ],
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1056",
+    "name": "Battlefield of Fuengirola",
+    "category": "Battle Site",
+    "significance": 1,
+    "date": "1810-10-14",
+    "year": "1810",
+    "location": "Fuengirola, Málaga",
+    "country": "Spain",
+    "description": "Fought on 14-15 October 1810 by a small Franco-Polish garrison of about 450 men, commanded by Polish Captain Franciszek Młokosiewicz, who successfully defended Sohail Castle against a much larger Anglo-Spanish expeditionary force of over 2,500 troops led by British Major General Lord Andrew Blayney. Through a series of brilliant counter-attacks, the heavily outnumbered defenders routed the assault and captured the British artillery batteries. The engagement ended in a decisive Franco-Polish victory, forcing an allied retreat and resulting in the humiliating capture of Lord Blayney.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuengirola",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "latitude": 36.524044,
+    "longitude": -4.629458,
+    "image": "Fuengirola.webp",
+    "commander_Loss": [
+      "Andrew Blayney"
+    ],
+    "commander_Victory": [
+      "Franciszek Młokosiewicz"
+    ],
+    "victor": "France",
+    "defeated": [
+      "Britain",
+      "Spain"
+    ],
+    "relatedSites": [
+      {
+        "id": 1057,
+        "title": "Canvas by January Suchodolski"
+      }
+    ],
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1057",
+    "name": "Battle of Fuengirola",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1843",
+    "location": "Polish Army Museum, Warsaw",
+    "country": "Poland",
+    "description": "'Battle of Fuengirola' is an oil-on-canvas painting by the renowned Polish painter and army officer January Suchodolski, completed in 1843. The artwork vividly depicts the battle fought on October 14–15, 1810, between a small Polish garrison of the Duchy of Warsaw and a much larger Anglo-Spanish expeditionary force near Málaga, Spain.",
+    "latitude": 52.26394,
+    "longitude": 21.00053,
+    "image": "Fuengirola_canvas.webp",
+    "relatedSites": [
+      {
+        "id": 1056,
+        "title": "Battle site"
+      }
+    ],
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1058",
+    "name": "Polish Army Museum - Duchy of Warsaw Army",
+    "category": "Museum",
+    "significance": 3,
+    "date": "1920-04-20",
+    "location": "Polish Army Museum, Warsaw",
+    "country": "Poland",
+    "description": "The Polish Army Museum houses a rich collection from the Napoleonic Wars. Polish Legions in Italy and the Army of the Duchy of Warsaw exhibition highlights the period when Polish soldiers fought alongside Napoleon Bonaparte, It includes original uniforms, weapons and personal belongings.",
+    "latitude": 52.263964,
+    "longitude": 20.999635,
+    "image": "Polish_Army_Museum.webp",
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1059",
+    "name": "Lord Blayney's landing site",
+    "category": "Battle landmark",
+    "significance": 1,
+    "date": "1810-10-14",
+    "year": "1810",
+    "location": "Cala del Moral, Málaga",
+    "country": "Spain",
+    "description": "On October 14, 1810, Blayney’s force landed at Cala del Moral, joined local Spanish guerrillas, and advanced northeast toward Fuengirola. By 2:00 PM, they reached Sohail Castle, where the Polish commander, Franciszek Młokosiewicz, rejected a British demand to surrender. In response, British warships immediately opened fire on the fortress.",
+    "latitude": 36.503006,
+    "longitude": -4.678814,
+    "image": "Cala_Moral.webp",
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1060",
+    "name": "French encamptment after the battle of Jena",
+    "category": "Landmark",
+    "significance": 1,
+    "date": "1806-10-14",
+    "year": "1806",
+    "location": "Jena",
+    "country": "Germany",
+    "description": "After the Battle of Jena, on October 14th 1806, French troops occupied the German city of Jena, transforming the area surrounding the Church of St. Michael (Stadtkirche St. Michael) into a military encampment.",
+    "latitude": 50.928871,
+    "longitude": 11.587901,
+    "image": "StMichael_Jena.webp",
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1061",
+    "name": "The town church, the evening of October 14, 1806, after 7 o’clock.",
+    "category": "Artwork",
+    "significance": 1,
+    "year": "1809",
+    "location": "City Museum and Art Collection, Jena",
+    "country": "Germany",
+    "description": "'Die Stadtkirche Abends nach 7 Uhr den 14 October. 1806' (translated as 'The Town Church in the Evening after 7 O'clock on October 14, 1806') is a historical hand-colored outline engraving (etching) created in 1809 by the German artist Jacob Wilhelm Christian Roux. Published as part of a series detailing the tumultuous events of the Napoleonic Wars, the print captures the immediate and somber aftermath of the decisive Battle of Jena-Auerstedt on the very day it occurred.",
+    "site_link": "http://www.museen.thueringen.de/Objekt/DE-MUS-873714/lido/dc00025487",
+    "latitude": 50.928530,
+    "longitude": 11.588282,
+    "image": "JenaStMitchel_engraving.webp",
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1062",
+    "name": "Fire caused by French troops after the battle of Jena.",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "location": "Eichplatz,Jena",
+    "country": "Germany",
+    "description": "During the chaotic French military encampment in Jena, a fire destroyed 19 homes in the area now known as Eichplatz. The resulting open space was called Brandplatz (Fire Square) for years. Despite subsequent compensation payments, only a handful of the properties were ever reconstructed. The blaze was documented in an 1809 engraving by Jakob Wilhelm Roux.",
+    "latitude": 50.928557,
+    "longitude": 11.58593,
+    "image": "Jena_city_fire.webp",
+    "createDate": "2026-10-15"
+  },
+  {
+    "id": "1063",
+    "name": "City Museum and Art Collection - Jena",
+    "category": "Museum",
+    "significance": 1,
+    "year": "1903",
+    "location": "Jena",
+    "country": "Germany",
+    "description": "While the city museum's diverse holdings span everything from university history and industrial technology to fine porcelain and folk art, its historical collection places a significant emphasis on military artifacts, particularly those from the Napoleonic era.",
+    "latitude": 50.928530,
+    "longitude": 11.588282,
+    "image": "City_museum_jena.webp",
+    "createDate": "2026-10-15"
   }
 ]
