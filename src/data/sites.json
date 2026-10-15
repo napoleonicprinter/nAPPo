@@ -3731,7 +3731,8 @@
       "Napoleon"
     ],
     "commander_Loss": [
-      "Prince of Hohenlohe"
+      "Prince of Hohenlohe",
+      "Gebhard von Blücher"
     ]
   },
   {
@@ -8438,10 +8439,11 @@
     ],
     "commander_Victor": [
       "Joachim Murat",
-      "Jean de Dieu Soult"
+      "Jean de Dieu Soult",
+      "Jean-Baptiste Bernadotte"
     ],
     "commander_Loss": [
-      "Jean-Baptiste Bernadotte",
+      "Gebhard von Blücher",
       "Johann Ewald"
     ]
   },
@@ -14282,7 +14284,7 @@
       }
     ],
     "name": "Joachim Murat's memorial",
-    "category": "Grave site",
+    "category": "Monument",
     "significance": 3,
     "date": "1815-10-13",
     "location": "Père Lachaise Cemetery (Division 39), Paris",
@@ -20221,6 +20223,7 @@
     "category": "Landmark",
     "significance": 1,
     "year": "1806",
+    "date": "1806-10-14",
     "location": "Eichplatz,Jena",
     "country": "Germany",
     "description": "During the chaotic French military encampment in Jena, a fire destroyed 19 homes in the area now known as Eichplatz. The resulting open space was called Brandplatz (Fire Square) for years. Despite subsequent compensation payments, only a handful of the properties were ever reconstructed. The blaze was documented in an 1809 engraving by Jakob Wilhelm Roux.",
