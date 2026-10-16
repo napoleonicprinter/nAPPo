@@ -4596,5 +4596,21 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Fuengirola",
     "date": "1810-10-14",
     "location": "Fuengirola, Spain"
+  },
+  {
+    "id": "540",
+    "siteId": 1065,
+    "title": "Siege of Chinchilla",
+    "description": "The Siege of Chinchilla (Albacete, Spain) lasted from October 3 to 9 and concluded when French forces under General Jean-Baptiste Drouet d'Erlon captured the Spanish stronghold following days of fierce resistance during the Peninsular War. Defended by a small garrison led by Lieutenant Colonel Juan Antonio Cearra, the castle had withstood artillery bombardment until a devastating thunderstorm struck the fortress, severely wounding Cearra and crippling the remaining defenders, which forced an honorable surrender the following day.",
+    "date": "1812-10-03",
+    "location": "Chinchilla, Albacete, Spain"
+  },
+  {
+    "id": "541",
+    "siteId": 1067,
+    "title": "Action of Ayerbe",
+    "description": "On October 16, 1811, the Action of Ayerbe in Huesca (Spain) resulted in a brilliant Spanish guerrilla victory during the Peninsular War. Spanish forces led by Francisco Espoz y Mina intercepted a 1,000-man Napoleonic relief column, shattering their defensive lines with a decisive bayonet charge that caused 200 enemy casualties and the capture of 640 prisoners, including the italian Colonel Ceccopieri.",
+    "date": "1811-10-16",
+    "location": "Ayerbe, Huesca, Spain"
   }
 ]

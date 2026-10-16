@@ -20245,5 +20245,79 @@
     "longitude": 11.588282,
     "image": "City_museum_jena.webp",
     "createDate": "2026-10-15"
+  },
+  {
+    "id": "1064",
+    "name": "Griesbach Garden",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-10-14",
+    "location": "Jena",
+    "country": "Germany",
+    "description": "During the Battle of Jena in 1806, the Griesbach Garden (today's Prinzessinnengarten in Jena) served as a poignant and dramatic refuge for the civilian population fleeing the advancing French troops. Located right below the Landgrafenberg hill—where Napoleon's army secretly hauled their artillery overnight—the garden became a chaotic staging ground for anxious citizens and refugees seeking shelter in the pitch-black, foggy morning hours of October 14.",
+    "latitude": 50.932347,
+    "longitude": 11.586502,
+    "image": "Griesbach.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1065",
+    "name": "Siege of Chinchilla",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1812",
+    "date": "1812-10-03",
+    "location": "Chinchilla, Albacete",
+    "country": "Spain",
+    "description": "The Siege of Chinchilla Castle lasted from October 3 to 9 and concluded when French forces under General Jean-Baptiste Drouet d'Erlon captured the Spanish stronghold following days of fierce resistance during the Peninsular War. Defended by a small garrison led by Lieutenant Colonel Juan Antonio Cearra, the castle had withstood artillery bombardment until a devastating thunderstorm struck the fortress, severely wounding Cearra and crippling the remaining defenders, which forced an honorable surrender the following day.",
+    "latitude": 38.918786,
+    "longitude": -1.728584,
+    "special": "Peninsular War",
+    "victor": "France",
+    "defeated": "Spain",
+    "commander_Loss": "Juan Antonio Cearra",
+    "commander_Victor": "Jean-Baptiste Drouet d'Erlon",
+    "image": "Chinchilla.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1066",
+    "name": "French Bivouac at Mühltal",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1806",
+    "date": "1806-10-12",
+    "location": "Mühltal, Jena, Germany",
+    "country": "Germany",
+    "description": "The French bivouac in the Mühltal valley took place between October 12 and 13, 1806, as Marshal Lannes's V Corps gathered along the Leutra stream just before the Battle of Jena. Recognizing their vulnerable position at the bottom of the steep ravine, Napoleon personally directed a daring overnight operation on October 13 to haul heavy artillery up the narrow cliffs of the Landgrafenberg. By the morning of October 14, the French had seized the high ground, executing a tactical surprise that led to a decisive victory over the Prussian army.",
+    "latitude": 50.936663,
+    "longitude": 11.557280,
+    "image": "Muhltal.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1067",
+    "name": "Action of Ayerbe ",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1811",
+    "date": "1811-10-16",
+    "location": "Ayerbe, Huesca",
+    "country": "Spain",
+    "description": "On October 16, 1811, the Action of Ayerbe in Huesca resulted in a brilliant Spanish guerrilla victory during the Peninsular War. Spanish forces led by Francisco Espoz y Mina intercepted a 1,000-man Napoleonic relief column, shattering their defensive lines with a decisive bayonet charge that caused 200 enemy casualties and the capture of 640 prisoners, including the italian Colonel Ceccopieri.",
+    "latitude": 42.274862,
+    "longitude": -0.687980,
+    "special": "Guerra de Independencia",
+    "image": "Ayerbe.webp",
+    "victor": "Spain",
+    "defeated": "France",
+    "commander_Victor": [
+      "Francisco Espoz y Mina"
+    ],
+    "commander_Loss": [
+      "Luigi Ceccopieri"
+    ],
+    "createDate": "2026-10-16"
   }
 ]
