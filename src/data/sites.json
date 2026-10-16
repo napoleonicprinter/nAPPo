@@ -20319,5 +20319,51 @@
       "Luigi Ceccopieri"
     ],
     "createDate": "2026-10-16"
+  },
+  {
+    "id": "1068",
+    "name": "Grave of Roustam Raza",
+    "category": "Grave site",
+    "significance": 2,
+    "year": "1845",
+    "date": "1845-12-07",
+    "location": "Cimetière communal, Dourdan",
+    "country": "France",
+    "description": "Roustam Raza died on 7 December 1845, age 64, at Douram. He was the loyal Mamluk bodyguard of Napoleon Bonaparte during his campaigns in Italy, Egypt, Syria, and France. Born in Georgia, he was captured by Ottoman Turks as a child and later purchased by Napoleon in Cairo in 1799, serving as his valet and personal guard until the emperor's first abdication in 1814. With him rests his wife, Alexandrine Douville († 1857), daughter of the first valet de chambre of Empress Joséphine. The Emperor had given his approval for this marriage and had even paid for the wedding. (Photo: Antoine Rex - Wikipedia)",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Rustam_Raza",
+    "flower_link": "https://es.findagrave.com/memorial/237132792/roustam-raza/flower",
+    "latitude": 48.53663,
+    "longitude": 2.016479,
+    "image": "Roustam_grave.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1069",
+    "name": "Roustam Raza Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "date": "2016-11 -26",
+    "location": "Dourdan",
+    "country": "France",
+    "description": "On November 26, 2016, a Khatchkar —a traditional Armenian cross-stone memorial—was unveiled at the entrance of the Dourdan cemetery to honor Roustam Raza. The monument was put up by the National Association of Armenian Veterans (ANACRA) alongside the town of Dourdan to commemorate Napoleon’s renowned Armenian Mamluk and bodyguard. Today, annual memorial services are still held at his gravesite to honor his legacy. (Photo: Antoine Rex - Wikipedia)",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Rustam_Raza",
+    "latitude": 48.535696,
+    "longitude": 2.016095,
+    "image": "Roustam_cross.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1070",
+    "name": "Roustam Raza's home",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1815",
+    "location": "Dourdan",
+    "country": "France",
+    "description": "The former residence of Roustam Raza, the Mamluk and bodyguard of Napoleon, who returned with the Emperor to France after the 1799 Egyptian campaign. Though his loyalty was famously inconsistent, Raza became a noted figure in Dourdan by marriage, ultimately establishing his home in this house for lack of finding a suitable apartment.",
+    "latitude": 48.528117,
+    "longitude": 2.012503,
+    "image": "Roustam_house.webp",
+    "createDate": "2026-10-16"
   }
 ]
