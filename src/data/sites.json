@@ -20325,6 +20325,24 @@
     "name": "Grave of Roustam Raza",
     "category": "Grave site",
     "significance": 2,
+    "relatedSites": [
+      {
+        "id": 1073,
+        "title": "Roustam Raza Birthplace"
+      },
+      {
+        "id": 1074,
+        "title": "Roustam Raza portrait"
+      },
+      {
+        "id": 1069,
+        "title": "Roustam Raza Memorial"
+      },
+      {
+        "id": 1070,
+        "title": "Roustam Raza's home"
+      }
+    ],
     "year": "1845",
     "date": "1845-12-07",
     "location": "Cimetière communal, Dourdan",
@@ -20349,6 +20367,24 @@
     "wikipedia_link": "https://es.wikipedia.org/wiki/Rustam_Raza",
     "latitude": 48.535696,
     "longitude": 2.016095,
+    "relatedSites": [
+      {
+        "id": 1073,
+        "title": "Roustam Raza Birthplace"
+      },
+      {
+        "id": 1074,
+        "title": "Roustam Raza portrait"
+      },
+      {
+        "id": 1070,
+        "title": "Roustam Raza's home"
+      },
+      {
+        "id": 1068,
+        "title": "Grave of Roustam Raza"
+      }
+    ],
     "image": "Roustam_cross.webp",
     "createDate": "2026-10-16"
   },
@@ -20363,7 +20399,130 @@
     "description": "The former residence of Roustam Raza, the Mamluk and bodyguard of Napoleon, who returned with the Emperor to France after the 1799 Egyptian campaign. Though his loyalty was famously inconsistent, Raza became a noted figure in Dourdan by marriage, ultimately establishing his home in this house for lack of finding a suitable apartment.",
     "latitude": 48.528117,
     "longitude": 2.012503,
+    "relatedSites": [
+      {
+        "id": 1074,
+        "title": "Roustam Raza portrait"
+      },
+      {
+        "id": 1073,
+        "title": "Roustam Raza Birthplace"
+      },
+      {
+        "id": 1069,
+        "title": "Roustam Raza Memorial"
+      },
+      {
+        "id": 1068,
+        "title": "Grave of Roustam Raza"
+      }
+    ],
     "image": "Roustam_house.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1071",
+    "name": "French Lake",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1807",
+    "location": "Warmia-Masuria",
+    "country": "Poland",
+    "description": "The name 'French Lake' stems from a dark historical legend dating back to the Napoleonic Wars. Local lore says that a group of villagers took violent revenge on a detachment of French soldiers who had mistreated a young local woman, ultimately drowning them in the lake's waters.",
+    "latitude": 48.528117,
+    "longitude": 2.012503,
+    "relatedSites": [
+      {
+        "id": 1072,
+        "title": "Village of Peterswalde"
+      }
+    ],
+    "image": "Franzosen.webp",
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1072",
+    "name": "Village of Peterswalde",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1807",
+    "location": "Pietrzwałd, Warmia-Masuria",
+    "country": "Poland",
+    "description": "In May 1807, the villagers of the Polish community of Pietrzwałd killed 17 French soldiers and one civilian woman with axes, sinking their stone-weighted bodies into the local lake (formerly Lake Sałk). This mass killing was a collective act of revenge triggered by the continuous abuse and rapes committed by Napoleon's troops against the local women. In retaliation, French General Louis Friant ordered the arrest of all adult residents and threatened to shoot the population and burn the village to the ground if the culprits were not surrendered. Following a tip-off from a local woman, the perpetrators were captured and executed; this ultimate sacrifice saved the village from destruction and forever renamed the body of water as 'French Lake'.",
+    "latitude": 53.572258,
+    "longitude": 19.921791,
+    "image": "Peterswalde.webp",
+    "relatedSites": [
+      {
+        "id": 1071,
+        "title": "French Lake"
+      }
+    ],
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1073",
+    "name": "Roustam Raza Birthplace",
+    "category": "Birthplace",
+    "significance": 1,
+    "year": "1783",
+    "location": "Tbilisi",
+    "country": "Georgia",
+    "description": "Roustam was an Armenian mameluke born in Tiflis, Kingdom of Kartli-Kakheti (present-day Tbilisi, Georgia) circa 1783, who was kidnapped at age thirteen and sold into slavery in Cairo. Renamed 'Idzhahia' by the Turks, he was ultimately presented as a gift to General Napoleon Bonaparte by the Sheikh of Cairo in 1798 during the French campaign in Egypt.",
+    "latitude": 41.693803,
+    "longitude": 44.801517,
+    "image": "Tiflis.webp",
+    "relatedSites": [
+      {
+        "id": 1069,
+        "title": "Roustam Raza Memorial"
+      },
+      {
+        "id": 1070,
+        "title": "Roustam Raza's home"
+      },
+      {
+        "id": 1068,
+        "title": "Grave of Roustam Raza"
+      },
+      {
+        "id": 1074,
+        "title": "Roustam Raza portrait"
+      }
+    ],
+    "createDate": "2026-10-16"
+  },
+  {
+    "id": "1074",
+    "name": "Roustam Raza",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1806",
+    "location": "Musée de l'Armée, Louis XIV-Napoleón, Paris",
+    "country": "France",
+    "description": "This oil on canvas painting, titled Le Mamelouk Roustam Raza, was painted by the French artist Jacques-Nicolas Paillot de Montabert in 1806. The portrait was commissioned to mark the circumstance of Roustam Raza's marriage to Alexandrine Douville, the daughter of the first valet to Empress Joséphine.",
+    "site_link": "https://basedescollections.musee-armee.fr/ark:/66008/3659/",
+    "latitude": 48.856262,
+    "longitude": 2.313219,
+    "image": "Roustam_canvas.webp",
+    "relatedSites": [
+      {
+        "id": 1069,
+        "title": "Roustam Raza Memorial"
+      },
+      {
+        "id": 1070,
+        "title": "Roustam Raza's home"
+      },
+      {
+        "id": 1068,
+        "title": "Grave of Roustam Raza"
+      },
+      {
+        "id": 1073,
+        "title": "Roustam Raza Birthplace"
+      }
+    ],
     "createDate": "2026-10-16"
   }
 ]
