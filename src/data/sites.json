@@ -20524,5 +20524,51 @@
       }
     ],
     "createDate": "2026-10-16"
+  },
+  {
+    "id": "1075",
+    "name": "National Maritime Museum",
+    "category": "Museum",
+    "significance": 3,
+    "date": "1937-04-27",
+    "location": "Greenwich, London",
+    "country": "England",
+    "description": "The National Maritime Museum in Greenwich, London, was officially opened to the public on April 27, 1937, by King George VI. The Napoleonic Wars era comes to life through its acclaimed permanent exhibition called the Nelson, Navy, Nation gallery, located on Level 2 of the museum.",
+    "site_link": "https://www.rmg.co.uk/national-maritime-museum",
+    "latitude": 51.480667,
+    "longitude": -0.005139,
+    "image": "Maritime_museum.webp",
+    "createDate": "2026-10-21"
+  },
+  {
+    "id": "1075",
+    "name": "Naval Museum",
+    "category": "Museum",
+    "significance": 2,
+    "date": "1792-09-28",
+    "location": "Madrid",
+    "country": "Spain",
+    "description": "The Naval Museum of Madrid preserves highly valuable individual pieces from the Napoleonic Era displayed throughout its 18th and 19th-century galleries. These objects come from naval conflicts involving Spain, France, and Great Britain, as well as direct diplomatic gifts from Bonaparte himself.",
+    "site_link": "https://armada.defensa.gob.es/ArmadaPortal/page/Portal/ArmadaEspannola/cienciaorgano/prefLang-es/01cienciamuseo",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Museo_Naval_%28Madrid%29",
+    "latitude": 40.417761,
+    "longitude": -3.692734,
+    "image": "museo_naval.webp",
+    "createDate": "2026-10-21"
+  },
+  {
+    "id": "1076",
+    "name": "Palais Vivienne",
+    "category": "Museum",
+    "significance": 3,
+    "date": "2015",
+    "location": "Paris",
+    "country": "France",
+    "description": "Palais Vivienne is an 18th-century private mansion located in the 2nd arrondissement of Paris, formerly known as the Hôtel de Montmorency-Luxembourg. Owned by collector Pierre-Jean Chalençon, it houses an impressive collection of art and historical artifacts dedicated to Napoleon I. It does not operate as a traditional public museum with a ticket counter. To visit, you must arrange a private tour by contacting the administration directly.",
+    "site_link": "https://www.facebook.com/palaisvivienne/",
+    "latitude": 48.87077,
+    "longitude": 2.341367,
+    "image": "Palais_Vivienne.webp",
+    "createDate": "2026-10-21"
   }
 ]
