@@ -20737,5 +20737,21 @@
       "Franz von Kleist"
     ],
     "createDate": "2026-10-22"
+  },
+  {
+    "id": "1088",
+    "name": "Capitulation of Boizenburg",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-11-12",
+    "location": "Boizenburg",
+    "country": "Germany",
+    "description": "The Capitulation of Boizenburg occurred on November 12, 1806, during the War of the Fourth Coalition. Following General Blücher’s surrender at Ratekau, an isolated Prussian detachment of 420 men under Major General Friedrich von Pelet was trapped by French forces along the Elbe River. Pursued by General Drouet d’Erlon, Pelet realized further resistance was futile and formally surrendered, wiping out one of the last remaining Prussian field units of the campaign.",
+    "latitude": 53.380272,
+    "longitude": 10.720677,
+    "special": "4",
+    "image": "Boizenburg.webp",
+    "createDate": "2026-10-22"
   }
 ]
