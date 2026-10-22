@@ -4462,14 +4462,6 @@
     "description": "The commemorative monolith marking Santiago de Liniers' landing was officially unveiled on August 4, 1949, to commemorate the 143rd anniversary of the historic 1806 event."
   },
   {
-    "id": "524",
-    "siteId": 1029,
-    "title": "Beresford's Capitulation at Buenos Aires",
-    "date": "1806-08-12",
-    "location": "Buenos Aires, Argentina",
-    "description": "After two days of heavy, relentless street fighting that pushed the British troops back into the city's fort, Beresford realized his position was untenable against the vastly superior local forces. He officially signed the capitulation on August 12, 1806."
-  },
-  {
     "id": "525",
     "siteId": 1033,
     "title": "Linier's attack on Buenos Aires",
@@ -4620,5 +4612,54 @@
     "description": "Roustam Raza died on 7 December 1845, age 64, at Douram. He was the loyal Mamluk bodyguard of Napoleon Bonaparte during his campaigns in Italy, Egypt, Syria, and France. Born in Georgia, he was captured by Ottoman Turks as a child and later purchased by Napoleon in Cairo in 1799, serving as his valet and personal guard until the emperor's first abdication in 1814.",
     "date": "1845-12-07",
     "location": "Dourdan, France"
+  },
+  {
+    "id": "543",
+    "siteId": 1084,
+    "title": "Clash at Schwartau",
+    "description": "The clash at Bad Schwartau on November 6, 1806, was a final, desperate rearguard action after the Battle of Lübeck when fleeing Prussian forces under General Blücher were fiercely pursued north to Bad Schwartau by French troops led by Marshals Bernadotte, Murat, and Soult. Cut off and exhausted, this engagement marked the final resistance",
+    "date": "1806-11-06",
+    "location": "Bad Schwartau, Germany"
+  },
+  {
+    "id": "544",
+    "siteId": 1085,
+    "title": "Capitulation at Ratkau",
+    "description": "The Capitulation at Ratekau on November 7, 1806, marked the final destruction of Prussia's last independent field army during the War of the Fourth Coalition. Prussian General Blücher was completely out of food and ammunition. He surrendered his remaining 9,000 men, famously adding a note to the document stating that he only did so because he had 'neither bread nor ammunition.'",
+    "date": "1806-11-07",
+    "location": "Ratekou, Germany"
+  },
+  {
+    "id": "545",
+    "siteId": 1029,
+    "title": "Beresford's Capitulation at Buenos Aires",
+    "date": "1806-08-12",
+    "location": "Buenos Aires, Argentina",
+    "description": "After two days of heavy, relentless street fighting that pushed the British troops back into the city's fort, Beresford realized his position was untenable against the vastly superior local forces. He officially signed the capitulation on August 12, 1806."
+  },
+  {
+    "id": "546",
+    "siteId": 1086,
+    "title": "Capitulation of Magdeburg",
+    "description": "The capitulation of Magdeburg on November 08, 1806, marked a major Prussian surrender during the War of the Fourth Coalition. Following Prussia's crushing defeats at Jena and Auerstedt, Marshal Michel Ney besieged the strategic fortress city. Despite commanding a massive garrison of 25,000 men, the demoralized Prussian general Franz Kasimir von Kleist surrendered after a brief French bombardment. On November 11th the garrison was evacuated.",
+    "date": "1806-11-08",
+    "location": "Magdeburgo, Germany"
+  },
+  {
+    "id": "547",
+    "siteId": 1086,
+    "title": "Evacuation of Magdeburg",
+    "description": "After capitulating on November 08, 1806, the garrison of 25,000 men, marched out into French captivity, cementing Napoleon’s total control over Prussia.",
+    "date": "1806-11-11",
+    "location": "Magdeburgo, Germany"
+  },
+  {
+    "id": "548",
+    "siteId": 1087,
+    "title": "Siege of Magdeburg",
+    "description": "The siege of Magdeburg lasted from October 25 to November 8, 1806. A French army corps, initially led by Marshal Joachim Murat and later by Marshal Michel Ney, besieged Prussia’s second-largest city. The operation ended when the Prussian forces, who had taken refuge in the fortress under the command of General Franz Kasimir von Kleist, officially surrendered to the French.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Magdeburg_(1806)",
+    "date": "1806-10-25",
+    "location": "Magdeburgo, Germany"
   }
 ]

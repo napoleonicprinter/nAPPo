@@ -20654,5 +20654,88 @@
     "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
     "image": "Apelstein50.webp",
     "createDate": "2025-03-15"
+  },
+  {
+    "id": "1084",
+    "name": "Battlefield of Schwartau",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-11-06",
+    "location": "Bad Schwartau",
+    "country": "Germany",
+    "description": "The clash at Bad Schwartau on November 6, 1806, was a final, desperate rearguard action after the Battle of Lübeck when fleeing Prussian forces under General Blücher were fiercely pursued north to Bad Schwartau by French troops led by Marshals Bernadotte, Murat, and Soult. Cut off and exhausted, this engagement marked the final resistance.",
+    "latitude": 53.927840,
+    "longitude": 10.689061,
+    "special": "4",
+    "image": "Schwartau.webp",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Victor": [
+      "Jean-Baptiste Bernadotte",
+      "Joachim Murat",
+      "Nicolas Soult"
+    ],
+    "commander_Loss": [
+      "Gebhard von Blücher"
+    ],
+    "createDate": "2026-10-22"
+  },
+  {
+    "id": "1085",
+    "name": "Capitulation at Ratkau",
+    "category": "Landmark",
+    "significance": 3,
+    "year": "1806",
+    "date": "1806-11-07",
+    "location": "Ratekau",
+    "country": "Germany",
+    "description": "The Capitulation at Ratekau on November 7, 1806, marked the final destruction of Prussia's last independent field army during the War of the Fourth Coalition. Prussian General Blücher was completely out of food and ammunition. He surrendered his remaining 9,000 men, famously adding a note to the document stating that he only did so because he had 'neither bread nor ammunition.'",
+    "latitude": 53.946219,
+    "longitude": 10.730694,
+    "special": "4",
+    "image": "Ratkau.webp",
+    "createDate": "2026-10-22"
+  },
+  {
+    "id": "1086",
+    "name": "Capitulation of Magdeburg",
+    "category": "Landmark",
+    "significance": 3,
+    "year": "1806",
+    "date": "1806-11-08",
+    "location": "Magdeburgo",
+    "country": "Germany",
+    "description": "The capitulation of Magdeburg on November 8, 1806, marked a major Prussian surrender during the War of the Fourth Coalition. Following Prussia's crushing defeats at Jena and Auerstedt, Marshal Michel Ney besieged the strategic fortress city. Despite commanding a massive garrison of 25,000 men, the demoralized Prussian general Franz Kasimir von Kleist surrendered after a brief French bombardment.",
+    "latitude": 52.113176,
+    "longitude": 11.608086,
+    "special": "4",
+    "image": "Magdeburg_cap.webp",
+    "createDate": "2026-10-22"
+  },
+  {
+    "id": "1087",
+    "name": "Siege of Magdeburg",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1806",
+    "date": "1806-10-25",
+    "location": "Magdeburgo",
+    "country": "Germany",
+    "description": "The siege of Magdeburg lasted from October 25 to November 8, 1806. A French army corps, initially led by Marshal Joachim Murat and later by Marshal Michel Ney, besieged Prussia’s second-largest city. The operation ended when the Prussian forces, who had taken refuge in the fortress under the command of General Franz Kasimir von Kleist, officially surrendered to the French.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Magdeburg_(1806)",
+    "latitude": 52.126618,
+    "longitude": 11.643790,
+    "special": "4",
+    "image": "Magdeburg.webp",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Victor": [
+      "Michel Ney"
+    ],
+    "commander_Loss": [
+      "Franz von Kleist"
+    ],
+    "createDate": "2026-10-22"
   }
 ]
