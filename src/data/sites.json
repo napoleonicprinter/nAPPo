@@ -20587,21 +20587,7 @@
   },
   {
     "id": "1079",
-    "name": "Apelstein Nr. 46 Blücher - Battle of Möckern",
-    "category": "Battle landmark",
-    "significance": 2,
-    "location": "Leipzig",
-    "country": "Germany",
-    "description": "Command Post, Battle of Möckern, October 16, 1813.General v. Blücher, Silesian Army, 60,000 men. Erected: 1938 by the Apel Foundation.",
-    "latitude": 51.392117,
-    "longitude": 12.341212,
-    "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
-    "image": "Apelstein46.webp",
-    "createDate": "2025-03-15"
-  },
-  {
-    "id": "1080",
-    "name": "Apelstein Nr. 47 Blücher - Battle of Möckern",
+    "name": "Apelstein Nr. 47 Weißenwolff - Battle of Möckern",
     "category": "Battle landmark",
     "significance": 2,
     "location": "Markkleeberg",
@@ -20614,8 +20600,8 @@
     "createDate": "2025-03-15"
   },
   {
-    "id": "1081",
-    "name": "Apelstein Nr. 47 Blücher - Original site",
+    "id": "1080",
+    "name": "Apelstein Nr. 47 Weißenwolff - Original site",
     "category": "Battle landmark",
     "significance": 2,
     "location": "Markkleeberg",
@@ -20628,7 +20614,7 @@
     "createDate": "2025-10-22"
   },
   {
-    "id": "1082",
+    "id": "1081",
     "name": "Apelstein Nr. 48 Reynier | Zeschau - Battle of Leipzig",
     "category": "Battle landmark",
     "significance": 2,
@@ -20642,7 +20628,7 @@
     "createDate": "2025-03-15"
   },
   {
-    "id": "1083",
+    "id": "1082",
     "name": "Apelstein Nr. 49 Kellermann - Battle of Wachau",
     "category": "Battle landmark",
     "significance": 2,
@@ -20656,7 +20642,7 @@
     "createDate": "2025-03-15"
   },
   {
-    "id": "1084",
+    "id": "1083",
     "name": "Apelstein Nr. 50 Kellermann - Battle of Volny | Kaunitz",
     "category": "Battle landmark",
     "significance": 2,
