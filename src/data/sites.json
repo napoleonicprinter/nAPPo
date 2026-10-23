@@ -20753,5 +20753,38 @@
     "special": "4",
     "image": "Boizenburg.webp",
     "createDate": "2026-10-22"
+  },
+  {
+    "id": "1089",
+    "name": "Briars Pavilion",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1815",
+    "location": "Jamestown",
+    "country": "Saint Helena",
+    "description": "In 1805, Arthur Wellesley, the Duke of Wellington, stayed at the property's garden pavilion while returning to Britain from India. In a remarkable twist of fate exactly ten years later, his defeated rival Napoleon Bonaparte lived in that very same pavilion for two months in 1815 at the start of his lifelong exile. Today, the preserved pavilion stands as a French historic property, forever linking the two legendary figures at a single peaceful crossroads.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Briars,_Saint_Helena",
+    "site_link": "https://www.uk-sthelenaheritagetrust.org/briars-pavilion",
+    "contributor": "Mészáros, Ádám",
+    "latitude": -15.943425,
+    "longitude": -5.709733,
+    "image": "Briars.webp",
+    "createDate": "2026-10-23"
+  },
+  {
+    "id": "1090",
+    "name": "Napoleon's Valley of the Tomb grave",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1815",
+    "location": "Jamestown",
+    "country": "Saint Helena",
+    "description": "The Valley of the Tomb (Vallée du Tombeau) is Napoleon’s original burial site on the South Atlantic island of Saint Helena, where he was laid to rest following his death on 5 May 1821. Originally known as the Sane Valley, the site was a favorite walking spot for the exiled emperor, who affectionately called it the Valley of the Geraniums. (Image: Kevstan)",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Valley_of_the_Tomb",
+    "contributor": "Mészáros, Ádám",
+    "latitude": -15.953889,
+    "longitude": -5.709722,
+    "image": "Valley_tomb.webp",
+    "createDate": "2026-10-23"
   }
 ]
