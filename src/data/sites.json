@@ -20786,5 +20786,19 @@
     "longitude": -5.709722,
     "image": "Valley_tomb.webp",
     "createDate": "2026-10-23"
+  },
+  {
+    "id": "1091",
+    "name": "Peace of Tilst Monument",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1992",
+    "location": "Sovetsk",
+    "country": "Russia",
+    "description": "The monument, erected in August 1992, commemorates the meeting of Napoleon and Tsar Alexander I in 1807, which resulted in the Treaty of Tilsit and reshaped the political map of Europe.",
+    "latitude": 55.081680,
+    "longitude": 21.903273,
+    "image": "Tilst_monument.webp",
+    "createDate": "2026-10-23"
   }
 ]
