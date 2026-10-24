@@ -20800,5 +20800,89 @@
     "longitude": 21.903273,
     "image": "Tilst_monument.webp",
     "createDate": "2026-10-23"
+  },
+  {
+    "id": "1092",
+    "name": "Fairwell after the Peace of Tilsit",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1810",
+    "location": "Château de Versailles, Aile Midi, salles Empire rez-de-jardin,Versailles",
+    "country": "France",
+    "description": "Farewell of Napoleon and Alexander after the Peace of Tilsit (French: Adieux de Napoléon et d'Alexandre après la paix de Tilsitt) is an 1810 oil-on-canvas history painting by Italian artist Gioacchino Giuseppe Serangeli. The artwork depicts Napoleon, Emperor of France, bidding farewell to the Russian ruler Alexander I on July 9, 1807, following the signing of the Peace of Tilsit.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Farewell_of_Napoleon_and_Alexander_after_the_Peace_of_Tilsit",
+    "latitude": 48.803805,
+    "longitude": 2.120986,
+    "image": "Fairwell_Tilsit.webp",
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1093",
+    "name": "Treaty of Tilsit signing",
+    "category": "Landmark",
+    "significance": 3,
+    "date": "1807-07-07",
+    "location": "Niemen river, Sovetsk",
+    "country": "Russia",
+    "description": "The first Treaty of Tilsit was signed on July 7, 1807, on a specially constructed pavilion raft in the middle of the Neman River between Emperor Napoleon I of France and Tsar Alexander I of Russia. Following France's decisive victory at the Battle of Friedland, this landmark agreement effectively divided Eastern Europe into French and Russian spheres of influence.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Treaties_of_Tilsit",
+    "latitude": 55.086822,
+    "longitude": 21.897555,
+    "image": "Tilsit.webp",
+    "relatedSites": [
+      {
+        "id": 1094,
+        "title": "Adolphe Roehn canvas"
+      }
+    ],
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1094",
+    "name": "The Meeting of Napoleon I and Tsar Alexander I at Tilsit",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1807",
+    "location": "Château de Versailles, Aile Midi, salles Empire rez-de-jardin,Versailles",
+    "country": "France",
+    "description": "'The Meeting of Napoleon I and Tsar Alexander I on the Raft at Tilsit' (original French title: Entrevue des deux empereurs sur le Niémen) is an 1807 history painting by French artist Adolphe Roehn that vividly captures the historic diplomatic summit of June 25, 1807. Displayed in the Palace of Versailles, the canvas depicts the highly dramatic moment the two young monarchs met on a specially constructed, decorated pavilion raft anchored in the middle of the Neman River.",
+    "relatedSites": [
+      {
+        "id": 1093,
+        "title": "Treaty of Tilsit signing site"
+      }
+    ],
+    "latitude": 48.803805,
+    "longitude": 2.120986,
+    "image": "Tilsit_canvas.webp",
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1095",
+    "name": "Tsar Alexander I’s Tilst Residence",
+    "category": "Landmark",
+    "significance": 3,
+    "date": "1807-07-07",
+    "location": "Sovetsk",
+    "country": "Russia",
+    "description": "During the 1807 negotiations, Tsar Alexander I’s residence was located at 3 Deutsche Straße, just 50 to 100 yards down the street from Napoleon’s headquarters. The Russian Emperor was housed in a neat, two-story mansion with a columned porch, signaling his status as Napoleon's temporary ally. Today, the original building on what is now Gagarina Street in Sovetsk, Russia, no longer stands after WWII damages.",
+    "latitude": 55.082905,
+    "longitude": 21.902454,
+    "image": "Tilsit_Alexander.webp",
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1096",
+    "name": "Museum of the History of the Town of Sovetsk",
+    "category": "Museum",
+    "significance": 2,
+    "date": "1987-04-06",
+    "location": "Sovetsk",
+    "country": "Russia",
+    "description": "The Museum of the History of the Town of Sovetsk, originally founded in 1987 and opened to the public in 1992, showcases the centuries-old history of the town. A central highlight of its exhibition is the historic conclusion of the Tilsit Peace Treaty.",
+    "latitude": 55.081478,
+    "longitude": 21.89994,
+    "image": "Tilsit_museum.webp",
+    "createDate": "2026-10-24"
   }
 ]

@@ -4669,5 +4669,14 @@
     "description": "The Capitulation of Boizenburg occurred on November 12, 1806, during the War of the Fourth Coalition. Following General Blücher’s surrender at Ratekau, an isolated Prussian detachment of 420 men under Major General Friedrich von Pelet was trapped by French forces along the Elbe River. Pursued by General Drouet d’Erlon, Pelet realized further resistance was futile and formally surrendered, wiping out one of the last remaining Prussian field units of the campaign.",
     "date": "1806-11-12",
     "location": "Boizenburg, Germany"
+  },
+  {
+    "id": "550",
+    "siteId": 1093,
+    "title": "Treaty of Tilsit signing",
+    "description": "The first Treaty of Tilsit was signed on July 7, 1807, on a specially constructed pavilion raft in the middle of the Neman River between Emperor Napoleon I of France and Tsar Alexander I of Russia. Following France's decisive victory at the Battle of Friedland, this landmark agreement effectively divided Eastern Europe into French and Russian spheres of influence.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Treaties_of_Tilsit",
+    "date": "1807-07-07",
+    "location": "Niemen river, Sovetsk, Russia"
   }
 ]
