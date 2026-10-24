@@ -20862,7 +20862,7 @@
     "name": "Tsar Alexander I’s Tilst Residence",
     "category": "Landmark",
     "significance": 3,
-    "date": "1807-07-07",
+    "date": "1807-07-06",
     "location": "Sovetsk",
     "country": "Russia",
     "description": "During the 1807 negotiations, Tsar Alexander I’s residence was located at 3 Deutsche Straße, just 50 to 100 yards down the street from Napoleon’s headquarters. The Russian Emperor was housed in a neat, two-story mansion with a columned porch, signaling his status as Napoleon's temporary ally. Today, the original building on what is now Gagarina Street in Sovetsk, Russia, no longer stands after WWII damages.",
@@ -20883,6 +20883,61 @@
     "latitude": 55.081478,
     "longitude": 21.89994,
     "image": "Tilsit_museum.webp",
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1097",
+    "name": "Miller’s House - King Frederick William III Residence",
+    "category": "Landmark",
+    "significance": 3,
+    "date": "1807-07-06",
+    "location": "Sovetsk",
+    "country": "Russia",
+    "description": "During the 1807 negotiations, King Frederick William III and Queen Louise of Prussia were relegated to a humble miller's house at 11 Schlossmühlenstraße. Located by a mill pond far from the luxury of Deutsche Straße, this tiny, uncomfortable property symbolized Prussia's defeat. Excluded from the primary river-raft negotiations, the Prussian king was forced to wait helplessly while the two emperors decided the fate of his kingdom.",
+    "latitude": 55.081576,
+    "longitude": 21.905035,
+    "image": "Federico_Tilsit.webp",
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1098",
+    "relatedSites": [
+      {
+        "id": "1099",
+        "title": "Napoleon's Residence in Tilsit"
+      }
+    ],
+    "name": "Napoleon Receiving the Queen of Prussia at Tilsit, July 6, 1807",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1837",
+    "location": "Chateau de Versailles, Aile du Midi-Salles du Consulat et de l'Empire, Versailles",
+    "country": "France",
+    "description": "Napoleon Receiving the Queen of Prussia at Tilsit, July 6, 1807 is an 1837 oil-on-canvas history painting by the French artist Nicolas Gosse. Commissioned by King Louis-Philippe for the historical museum galleries at the Palace of Versailles, the artwork vividly depicts the dramatic diplomatic meeting where Queen Louise of Prussia appealed directly to a defiant Napoleon Bonaparte to grant lenient peace terms to her defeated nation.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Napoleon_Receiving_the_Queen_of_Prussia_at_Tilsit",
+    "latitude": 48.80346,
+    "longitude": 2.12080,
+    "image": "QueenLouise_Tilsit.webp",
+    "createDate": "2026-10-24"
+  },
+  {
+    "id": "1099",
+    "relatedSites": [
+      {
+        "id": "1098",
+        "title": "Napoleon Receiving the Queen of Prussia at Tilsit, July 6, 1807"
+      }
+    ],
+    "name": "Napoleon's Residence in Tilsit",
+    "category": "Landmark",
+    "significance": 3,
+    "date": "1807-07-06",
+    "location": "Sovetsk",
+    "country": "Russia",
+    "description": "In July 1807, Napoleon established his headquarters at Deutsche Straße 24, commandeering one of the finest mansions on Tilsit’s grandest boulevard. The luxurious residence served as the diplomatic epicenter for the Treaties of Tilsit, and where the French Emperor hosted a gala dinner on July 6, 1807 with Queen Louise of Prussia Tsar Alexander I, King Frederick William III of Prussia, Prince Henry of Prussia, Grand Duke Constantine, King Joachim Murat, Crown Prince Ludwig of Bavaria, and Countess von Voss. Today, the original building on Gagarina Street in Sovetsk, Russia, was destroyed during WWII.",
+    "latitude": 55.084584,
+    "longitude": 21.894367,
+    "image": "Napoleon_Tilsit.webp",
     "createDate": "2026-10-24"
   }
 ]
