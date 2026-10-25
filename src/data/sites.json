@@ -21023,5 +21023,19 @@
     "longitude": 2.294691,
     "image": "Clemency_Napoleon_2.jpg",
     "createDate": "2026-10-25"
+  },
+  {
+    "id": "1104",
+    "name": "Haaseschen Haus",
+    "category": "Landmark",
+    "significance": 3,
+    "year": "1806",
+    "location": "Auma",
+    "country": "Germany",
+    "description": "The historic Haaseschen Haus no longer stands in its original form, but its exact location is at Markt 9 on the western side of the market square (Marktplatz) in Auma-Weidatal, Germany, where the Bürgerschule (Citizens' School) stands today. The original house dated back to 1650 and achieved historical fame when Napoleon Bonaparte stayed there overnight between October 11 and 12, 1806, during his Prussian campaign. In 1839, the city purchased and demolished the property along with an adjacent building to construct the grand schoolhouse that visitors see on the square today.",
+    "latitude": 50.699422,
+    "longitude": 11.899467,
+    "image": "Auma.jpg",
+    "createDate": "2026-10-26"
   }
 ]
