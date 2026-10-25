@@ -3277,7 +3277,7 @@
     "name": "Château de Malmaison",
     "category": "Museum",
     "significance": 2,
-    "location": "Rueil-Malmaison, France",
+    "location": "Rueil-Malmaison",
     "country": "France",
     "description": "The private residence of Napoleon and Joséphine de Beauharnais. Purchased in 1799, it served as the seat of the French government alongside the Tuileries Palace. The château now houses a museum dedicated to the couple.",
     "latitude": 48.8709,
@@ -18345,7 +18345,7 @@
     "year": "2012",
     "date": "2012-04-01",
     "location": "Tarbes",
-    "country": "Germany",
+    "country": "France",
     "description": "The International Hussars Museum: A unique, world-renowned collection that chronicles 400 years of the history of this light cavalry. It features over 15,000 artifacts, including around 150 mannequins in full historic uniforms, weapons, and military equipment.",
     "latitude": 43.23911,
     "longitude": 0.07523,
@@ -20939,5 +20939,89 @@
     "longitude": 21.894367,
     "image": "Napoleon_Tilsit.webp",
     "createDate": "2026-10-24"
+  },
+  {
+    "id": "1100",
+    "relatedSites": [
+      {
+        "id": "1101",
+        "title": "Charles Meynier canvas"
+      }
+    ],
+    "name": "Brandenburg Gate",
+    "category": "Landmark",
+    "significance": 3,
+    "date": "1806-10-27",
+    "location": "Berlin",
+    "country": "Germany",
+    "description": "Following his swift victory over the Prussian army, Napoleon Bonaparte made a triumphant triumphal entry into Berlin on October 27, 1806. Passing through the iconic Brandenburg Gate, Napoleon marched his troops into the heart of the Prussian capital just days after the decisive Battle of Jena-Auerstedt. This historic event marked a dramatic shift in the balance of European power, showcasing the sheer dominance of the French Empire and setting the stage for Napoleon to issue his famous Decree of Berlin just a few weeks later.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
+    "latitude": 52.516275,
+    "longitude": 13.377704,
+    "image": "Brandemburg_gate.jpg",
+    "createDate": "2026-10-25"
+  },
+  {
+    "id": "1101",
+    "relatedSites": [
+      {
+        "id": "1100",
+        "title": "Brandenburg Gate"
+      }
+    ],
+    "name": "Entry of Napoleon into Berlin",
+    "category": "Artwork",
+    "significance": 3,
+    "year": "1810",
+    "location": "Chateau de Versailles, Aile du Midi-Salles du Consulat et de l'Empire, Versailles",
+    "country": "France",
+    "description": "Entry of Napoleon into Berlin is a monumental neoclassical history painting created in 1810 by the French artist Charles Meynier. The massive oil-on-canvas masterpiece dramatically depicts the French Emperor leading his triumphant troops through the Brandenburg Gate on October 27, 1806, following his decisive victory over the Prussian army at the Battle of Jena-Auerstedt.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Entry_of_Napoleon_into_Berlin",
+    "latitude": 48.80346,
+    "longitude": 2.12080,
+    "image": "Meynier_Berlin.jpg",
+    "createDate": "2026-10-25"
+  },
+  {
+    "id": "1102",
+    "relatedSites": [
+      {
+        "id": "1103",
+        "title": "Charles Boulanger canvas"
+      }
+    ],
+    "name": "The Clemency of Napoleon",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1806",
+    "location": "Chateau of Malmaison - Salon de Musique, Rueil-Malmaison",
+    "country": "France",
+    "description": "Painted in 1806 by the celebrated French artist Marguerite Gérard, The Clemency of Napoleon depicts the Princess of Hatzfeldt pleading for her husband's life after his arrest for espionage in Berlin. Rendered with Gérard's signature delicate detail, the canvas captures the intimate moment Napoleon hands over the sole incriminating letter, allowing her to destroy it in the fireplace. The Emperor was so impressed by the piece that he personally purchased it in 1808, and it remains today in the permanent collection at the Château de Malmaison.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/The_Clemency_of_Napoleon",
+    "latitude": 48.871035,
+    "longitude": 2.166684,
+    "image": "Clemency_Napoleon.jpg",
+    "createDate": "2026-10-25"
+  },
+  {
+    "id": "1103",
+    "relatedSites": [
+      {
+        "id": "1102",
+        "title": "Marguerite Gérard canvas"
+      }
+    ],
+    "name": "Napoleon I Grants the Princess of Hatzfeld the Pardon of Her Husband",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1810",
+    "location": " Musée de Picardie, Amiens",
+    "country": "France",
+    "description": "Painted in 1810 by French neoclassicist Charles Boulanger de Boisfremont, Napoleon I Grants the Princess of Hatzfeld the Pardon of Her Husband depicts a dramatic act of imperial mercy following the 1806 Fall of Berlin. The canvas captures the pregnant princess kneeling in anguish before Napoleon, pleading for her husband's life after his arrest for espionage. In a theatrical display of chivalry, Napoleon hands her the sole piece of incriminating evidence—an intercepted letter—and gestures toward the fireplace, allowing her to burn it and destroy the case against the prince.",
+    "more_info_link": "https://collections.louvre.fr/en/ark:/53355/cl010052799",
+    "latitude": 49.890660,
+    "longitude": 2.294691,
+    "image": "Clemency_Napoleon_2.jpg",
+    "createDate": "2026-10-25"
   }
 ]

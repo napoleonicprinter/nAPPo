@@ -4678,5 +4678,29 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Treaties_of_Tilsit",
     "date": "1807-07-07",
     "location": "Niemen river, Sovetsk, Russia"
+  },
+  {
+    "id": "551",
+    "title": "Decree of Berlin",
+    "description": "Issued by Napoleon on November 21, 1806, the Decree of Berlin officially established the Continental System, a massive economic blockade against Great Britain. By banning all trade and correspondence with the British Isles across French-controlled Europe, Napoleon aimed to paralyze the British economy and force the nation to sue for peace during the Napoleonic Wars.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Berlin_Decree",
+    "date": "1806-11-21",
+    "location": "Berlin, Germany"
+  },
+  {
+    "id": "552",
+    "siteId": 1100,
+    "title": "Napoleon enters Berlin",
+    "description": "Following his swift victory over the Prussian army, Napoleon Bonaparte made a triumphant triumphal entry into Berlin on October 27, 1806. Passing through the iconic Brandenburg Gate, Napoleon marched his troops into the heart of the Prussian capital just days after the decisive Battle of Jena-Auerstedt. This historic event marked a dramatic shift in the balance of European power, showcasing the sheer dominance of the French Empire and setting the stage for Napoleon to issue his famous Decree of Berlin just a few weeks later.",
+    "date": "1806-10-27",
+    "location": "Berlin, Germany"
+  },
+  {
+    "id": "553",
+    "siteId": 1102,
+    "title": "Prince Hatzfeld pardon",
+    "description": "On the morning of October 28, 1806, Napoleon ordered the arrest and trial of Prince Hatzfeld for treason and espionage during his diplomatic mission the prior day. That afternoon, he met with the Prince's tearful, heavily pregnant wife and granted her husband a full pardon—a chivalrous act later depicted in several paintings.",
+    "date": "1806-10-28",
+    "location": "Berlin, Germany"
   }
 ]
