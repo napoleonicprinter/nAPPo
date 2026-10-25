@@ -4702,5 +4702,37 @@
     "description": "On the morning of October 28, 1806, Napoleon ordered the arrest and trial of Prince Hatzfeld for treason and espionage during his diplomatic mission the prior day. That afternoon, he met with the Prince's tearful, heavily pregnant wife and granted her husband a full pardon—a chivalrous act later depicted in several paintings.",
     "date": "1806-10-28",
     "location": "Berlin, Germany"
+  },
+  {
+    "id": "554",
+    "title": "Second Treaty of Paris",
+    "description": "The Treaty of Paris of 1815, also known as the Second Treaty of Paris, was signed on 20 November 1815, after the defeat and the second abdication of Napoleon Bonaparte.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Treaty_of_Paris_(1815)",
+    "date": "1815-11-20",
+    "location": "Paris, France"
+  },
+  {
+    "id": "555",
+    "siteId": 1105,
+    "title": "Napoleon at the Holy Protection Convent",
+    "description": "During his disastrous retreat from Moscow, Napoleon Bonaparte stayed at the Svyato-Pokrovsky Zhensky Monastyr (Holy Protection Convent) in Tolochin on November 22, 1812. Arriving with a shivering, depleted Grande Armée just days before the fateful crossing of the Berezina River, the French Emperor used the convent as his temporary headquarters.",
+    "date": "1812-11-22",
+    "location": "Talachyn, Belarus"
+  },
+  {
+    "id": "556",
+    "siteId": 1106,
+    "title": "Napoleon's headquarters at Zanivski",
+    "description": "On November 27, 1812, following the harrowing crossing of the Berezina River, Napoleon established his tactical headquarters in the hamlet of Zanivski, just south of Bryli. From this critical position, he coordinated the desperate rearguard defense against surrounding Russian forces, securing the escape route for the remnants of the Grande Armée before the bridges were destroyed.",
+    "date": "1812-11-27",
+    "location": "Leshchiny, Belarus"
+  },
+  {
+    "id": "557",
+    "siteId": 1109,
+    "title": "French Frigate Pomone Captured",
+    "description": "On November 29, 1811, the British frigates HMS Alceste and HMS Active captured the French frigate Pomone after a fierce naval battle in the Adriatic Sea. Despite taking heavy damage—including a shot that severed the leg of Active's captain—and facing initial resistance from the French ship Pauline, the British force battered the Pomone into submission and forced her to surrender after the rest of the French squadron fled.",
+    "date": "1811-11-29",
+    "location": "Adriatic Sea"
   }
 ]
