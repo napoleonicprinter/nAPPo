@@ -20958,7 +20958,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
     "latitude": 52.516275,
     "longitude": 13.377704,
-    "image": "Brandemburg_gate.jpg",
+    "image": "Brandemburg_gate.webp",
     "createDate": "2026-10-25"
   },
   {
@@ -20979,7 +20979,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Entry_of_Napoleon_into_Berlin",
     "latitude": 48.80346,
     "longitude": 2.12080,
-    "image": "Meynier_Berlin.jpg",
+    "image": "Meynier_Berlin.webp",
     "createDate": "2026-10-25"
   },
   {
@@ -21000,7 +21000,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/The_Clemency_of_Napoleon",
     "latitude": 48.871035,
     "longitude": 2.166684,
-    "image": "Clemency_Napoleon.jpg",
+    "image": "Clemency_Napoleon.webp",
     "createDate": "2026-10-25"
   },
   {
@@ -21021,7 +21021,7 @@
     "more_info_link": "https://collections.louvre.fr/en/ark:/53355/cl010052799",
     "latitude": 49.890660,
     "longitude": 2.294691,
-    "image": "Clemency_Napoleon_2.jpg",
+    "image": "Clemency_Napoleon_2.webp",
     "createDate": "2026-10-25"
   },
   {
@@ -21030,12 +21030,13 @@
     "category": "Landmark",
     "significance": 3,
     "year": "1806",
+    "date": "1806-10-11",
     "location": "Auma",
     "country": "Germany",
     "description": "The historic Haaseschen Haus no longer stands in its original form, but its exact location is at Markt 9 on the western side of the market square (Marktplatz) in Auma-Weidatal, Germany, where the Bürgerschule (Citizens' School) stands today. The original house dated back to 1650 and achieved historical fame when Napoleon Bonaparte stayed there overnight between October 11 and 12, 1806, during his Prussian campaign. In 1839, the city purchased and demolished the property along with an adjacent building to construct the grand schoolhouse that visitors see on the square today.",
     "latitude": 50.699422,
     "longitude": 11.899467,
-    "image": "Auma.jpg",
+    "image": "Auma.webp",
     "createDate": "2026-10-26"
   }
 ]
