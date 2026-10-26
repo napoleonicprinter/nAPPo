@@ -57,7 +57,7 @@ const UpdateSitesModal = ({ isOpen, onClose }) => {
                 {/* Header with Logo as is and Red Close Button */}
                 <div className="update-modal-header">
                     <div className="update-modal-title-row">
-                        <img src="/assets/NT_logo.png" alt="nAPPo Trails" className="update-modal-logo-large" />
+                        <img src="./assets/NT_logo.png" alt="nAPPo Trails" className="update-modal-logo-large" />
                         <div className="update-modal-title-info">
                             <div className="update-header-tag">
                                 <Sparkles size={12} className="tag-sparkle" />

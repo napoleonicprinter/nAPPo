@@ -168,7 +168,7 @@ const CalendarView = ({ onClose }) => {
             <div className="view-modal-content glass-panel" onClick={(e) => e.stopPropagation()} style={{ display: isShowsCalendarOpen ? 'none' : 'flex' }}>
                 <div className="calendar-modal-header">
                     <div className="modal-title-row">
-                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
+                        <img src="./assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info">
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                                 <h2>Upcoming Events</h2>

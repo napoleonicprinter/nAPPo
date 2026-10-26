@@ -1,42 +1,54 @@
+import { Capacitor } from '@capacitor/core';
+
 const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/main/public';
 const GITHUB_RAW_REFS_BASE = 'https://raw.githubusercontent.com/napoleonicprinter/nAPPo/refs/heads/main/public';
 
 /**
- * Resolves site image filename or URL to a local bundled asset path first,
- * or preserves external URLs (Wikimedia, museums, etc.)
+ * Resolves site image filename or URL.
+ * - On Native platforms (Android): uses local bundled assets for instant offline loading.
+ * - On Web (browsers): fetches directly from GitHub Raw CDN so you do not need to host images on your server.
+ * - Preserves external URLs (Wikimedia, museums, etc.)
  */
 export const resolveSiteImageUrl = (imagePath) => {
     if (!imagePath) return '';
-    if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
-        // If it's a GitHub raw URL to our repo, use local bundled asset for instant offline loading
-        if (imagePath.includes('githubusercontent.com') && imagePath.includes('/napoleonicprinter/nAPPo/')) {
-            const filename = imagePath.split('/').pop().split('?')[0];
-            return `/assets/images/Sites/${filename}`;
-        }
+    // Preserve external URLs (Wikimedia, museums, etc.) that are not pointing to our GitHub repo
+    if ((imagePath.startsWith('http://') || imagePath.startsWith('https://')) &&
+        !imagePath.includes('githubusercontent.com/napoleonicprinter/nAPPo/')) {
         return imagePath;
     }
-    if (imagePath.startsWith('/')) {
-        return imagePath;
+
+    const filename = imagePath.split('/').pop().split('?')[0];
+
+    // If native Capacitor app (Android APK), use bundled asset for offline access
+    if (Capacitor.isNativePlatform()) {
+        return `./assets/images/Sites/${filename}`;
     }
-    return `/assets/images/Sites/${imagePath}`;
+
+    // On Web: fetch directly from GitHub Raw
+    return `${GITHUB_RAW_BASE}/assets/images/Sites/${filename}`;
 };
 
 /**
- * Resolves battle map SVG filename or URL to a local bundled asset path first
+ * Resolves battle map SVG filename or URL.
+ * - On Native: uses local bundled maps.
+ * - On Web: fetches directly from GitHub Raw.
  */
 export const resolveMapUrl = (mapPath) => {
     if (!mapPath) return '';
-    if (mapPath.startsWith('http://') || mapPath.startsWith('https://')) {
-        if (mapPath.includes('githubusercontent.com') && mapPath.includes('/napoleonicprinter/nAPPo/')) {
-            const filename = mapPath.split('/').pop().split('?')[0];
-            return `/assets/images/Maps/${filename}`;
-        }
+    if ((mapPath.startsWith('http://') || mapPath.startsWith('https://')) &&
+        !mapPath.includes('githubusercontent.com/napoleonicprinter/nAPPo/')) {
         return mapPath;
     }
-    if (mapPath.startsWith('/')) {
-        return mapPath;
+
+    const filename = mapPath.split('/').pop().split('?')[0];
+
+    // If native Capacitor app (Android APK), use bundled asset for offline access
+    if (Capacitor.isNativePlatform()) {
+        return `./assets/images/Maps/${filename}`;
     }
-    return `/assets/images/Maps/${mapPath}`;
+
+    // On Web: fetch directly from GitHub Raw
+    return `${GITHUB_RAW_BASE}/assets/images/Maps/${filename}`;
 };
 
 /**
@@ -69,14 +81,14 @@ export const handleImageFallback = (e, imagePath) => {
     }
 
     // 3. Candidate: local bundled asset path
-    const localSitePath = `/assets/images/Sites/${filename}`;
-    if (img.src !== localSitePath && !img.src.endsWith(localSitePath)) {
+    const localSitePath = `./assets/images/Sites/${filename}`;
+    if (img.src !== localSitePath && !img.src.endsWith(localSitePath.slice(1))) {
         candidates.push(localSitePath);
     }
 
     // 4. Candidate: local root assets path
-    const localRootPath = `/assets/${filename}`;
-    if (img.src !== localRootPath && !img.src.endsWith(localRootPath)) {
+    const localRootPath = `./assets/${filename}`;
+    if (img.src !== localRootPath && !img.src.endsWith(localRootPath.slice(1))) {
         candidates.push(localRootPath);
     }
 

@@ -18,7 +18,7 @@ const NewsModal = ({ onClose }) => {
                 {/* Header */}
                 <div className="shopping-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
                     <div className="modal-title-row">
-                        <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
+                        <img src="./assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                         <div className="modal-title-info">
                             <h2>nAPPo Trails News</h2>
                             <p>Latest updates</p>

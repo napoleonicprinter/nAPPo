@@ -4734,5 +4734,13 @@
     "description": "On November 29, 1811, the British frigates HMS Alceste and HMS Active captured the French frigate Pomone after a fierce naval battle in the Adriatic Sea. Despite taking heavy damage—including a shot that severed the leg of Active's captain—and facing initial resistance from the French ship Pauline, the British force battered the Pomone into submission and forced her to surrender after the rest of the French squadron fled.",
     "date": "1811-11-29",
     "location": "Adriatic Sea"
+  },
+  {
+    "id": "558",
+    "siteId": 1110,
+    "title": "Death of Lieutenant Paul Sillard",
+    "description": "On January 10, 1858, Lieutenant Paul Sillard, a highly decorated veteran of the Napoleonic Wars, passed away at his home in Montereau-Fault-Yonne, France. He was 88 years old, having served with distinction in nearly every major campaign of the era, from Spain to Russia.",
+    "date": "1858-01-10",
+    "location": "Montereau-Fault-Yonne, France"
   }
 ]

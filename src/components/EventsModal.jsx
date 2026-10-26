@@ -227,7 +227,7 @@ const EventsModal = ({ onClose }) => {
                 <div className="calendar-modal-header" style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
                     <div className="modal-title-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '12px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: '0' }}>
-                            <img src="/assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
+                            <img src="./assets/NT_logo.png" alt="NT Logo" className="modal-logo" />
                             <div className="modal-title-info" style={{ display: 'flex', flexDirection: 'column', minWidth: '0' }}>
                                 <h2 style={{ letterSpacing: '-0.5px', lineHeight: '1.2' }}>
                                     Today in <span className="title-break">History</span>

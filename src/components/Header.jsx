@@ -195,7 +195,7 @@ const Header = () => {
         <header className="app-header glass-header">
             <div className="header-brand">
                 <div className="header-brand-left" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <img src="/assets/NT_logo.png" alt="Logo" className="header-logo" />
+                    <img src="./assets/NT_logo.png" alt="Logo" className="header-logo" />
                     <div className="sites-count-badge glass-panel">
                         <span
                             className={`count-number ${isSitesFiltered ? 'is-filtered' : ''}`}

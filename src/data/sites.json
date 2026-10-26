@@ -21124,5 +21124,21 @@
     ],
     "image": "Palagruza.webp",
     "createDate": "2026-10-26"
+  },
+  {
+    "id": "1110",
+    "name": "Lieutenant Paul Sillard's grave'",
+    "category": "Grave site",
+    "significance": 1,
+    "year": "1858",
+    "date": "1858-01-10",
+    "location": "Cimetière de Montereau-Fault-Yonne, Montereau-Fault-Yonne, Seine-et-Marne",
+    "country": "France",
+    "description": "Paul Sillard (October 24, 1769 - January 10, 1858) was a decorated French officer who fought in nearly every major Napoleonic campaign. Entering the elite Imperial Guard as a sergeant in 1808, he campaigned in Spain, Austria, and survived the 1812 invasion of Russia, earning the Légion d’honneur and the title of Chevalier de l’Empire. Promoted to lieutenant, Sillard was wounded during the defense of Paris in 1814 and again at the Battle of Waterloo in 1815 while fighting with the legendary Old Guard, after which he was retired.",
+    "latitude": 48.395031,
+    "longitude": 2.966764,
+    "image": "Sillard.webp",
+    "flower_link": "https://es.findagrave.com/memorial/324126799/paul-sillard/flower",
+    "createDate": "2026-10-26"
   }
 ]
