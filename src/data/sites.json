@@ -21127,7 +21127,7 @@
   },
   {
     "id": "1110",
-    "name": "Lieutenant Paul Sillard's grave'",
+    "name": "Lieutenant Paul Sillard's grave",
     "category": "Grave site",
     "significance": 1,
     "year": "1858",
@@ -21139,6 +21139,39 @@
     "longitude": 2.966764,
     "image": "Sillard.webp",
     "flower_link": "https://es.findagrave.com/memorial/324126799/paul-sillard/flower",
+    "createDate": "2026-10-26"
+  },
+  {
+    "id": "1111",
+    "name": "General Pierre Bonnemains's grave",
+    "category": "Grave site",
+    "significance": 1,
+    "year": "1850",
+    "date": "1850-11-09",
+    "location": "Sainte-Anne churchyard, Le Mesnil-Garnier, Manche, Basse-Normandie",
+    "country": "France",
+    "description": "Pierre Bonnemains (1773–1850) was a distinguished French military commander and politician whose career spanned the Revolution, the First Empire, and the Bourbon Restoration. Starting his cavalry service in 1792, he rapidly rose through the ranks, fighting in major Napoleonic conflicts including Jena, Friedland, and the Peninsular War, which earned him the titles of Baron of the Empire and Brigadier General. Despite his loyalty to Napoleon during the Hundred Days, he successfully reintegrated into the post-Empire military, achieving the rank of Lieutenant General and serving as the commander of Corsica. In 1830, he transitioned into politics, serving multiple terms in the Chamber of Deputies for the Manche department before King Louis-Philippe elevated him to a Peer of France in 1845. He retired following the establishment of the Second Republic and died in 1850 at the age of 77.",
+    "latitude": 48.864956,
+    "longitude": -1.309462,
+    "image": "Bonnemains_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/324181997/pierre-bonnemains/flower",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Pierre_Bonnemains",
+    "createDate": "2026-10-26"
+  },
+  {
+    "id": "1112",
+    "name": "Waterloo heroine Ann Keats Winzer's grave",
+    "category": "Grave site",
+    "significance": 2,
+    "year": "1873",
+    "date": "1873-11-28",
+    "location": "St Mary the Virgin Churchyard, Piddlehinton, West Dorset District, Dorset",
+    "country": "England",
+    "description": "Ann Winzer was a heroine of the Battle of Waterloo (1815), where she courageously cared for the sick and wounded soldiers. She endured severe hardships while following the British Army's march from Brussels to Paris. From Paris, she returned to England before being stationed at the Rock of Gibraltar for four years. In her later years, she resided in this parish, where Colonel Astell and several other officers successfully secured a military pension for her. This gravestone was erected by those same officers as a tribute of respect for her long life of true and faithful service.",
+    "latitude": 50.773590,
+    "longitude": -2.404254,
+    "image": "Ann_Winzer_grave.webp",
+    "flower_link": "https://es.findagrave.com/memorial/288316017/ann-winzer/flower",
     "createDate": "2026-10-26"
   }
 ]
