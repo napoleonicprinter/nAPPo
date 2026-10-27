@@ -2610,11 +2610,13 @@
   },
   {
     "id": "303",
-    "title": "Napoleon enters Berlin",
-    "description": "After defeating the Prussians at Jena-Auerstedt, Napoleon entered Berlin, the capital of Prussia, on October 27th 1806. This victory marked the end of the War of the Fourth Coalition and established French dominance over central Europe.",
-    "date": "",
-    "location": "Berlin",
-    "country": "Germany"
+    "siteId": 101,
+    "title": "Battle of Tudela",
+    "description": "November 23rd 1808 saw an Imperial French army led by Marshal Jean Lannes attack a Spanish army under General Castaños. The battle resulted in the complete victory of the Imperial forces.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Tudela",
+    "date": "1808-11-23",
+    "location": "Tudela",
+    "country": "Spain"
   },
   {
     "id": "304",
@@ -4742,5 +4744,21 @@
     "description": "On January 10, 1858, Lieutenant Paul Sillard, a highly decorated veteran of the Napoleonic Wars, passed away at his home in Montereau-Fault-Yonne, France. He was 88 years old, having served with distinction in nearly every major campaign of the era, from Spain to Russia.",
     "date": "1858-01-10",
     "location": "Montereau-Fault-Yonne, France"
+  },
+  {
+    "id": "559",
+    "siteId": 1113,
+    "title": "Marques de la Romana forces landed back in Spain",
+    "description": "In October 1808, the forces of the Division of the North—popularly known as the troops of the Marquis of La Romana—landed directly at the port of Santander in the heart of the city's bay. Following an epic escape and evacuation from Denmark aided by the British Royal Navy, the naval convoy crossed the Bay of Biscay. The bulk of the Spanish infantry from this division, consisting of around 9,000 men under the temporary command of the Count of San Román, stepped ashore at the city's docks between October 9 and 11, 1808, with the immediate goal of joining the resistance against Napoleonic forces on the northern front.",
+    "date": "1808-10-09",
+    "location": "Santander, Cantabria, Spain"
+  },
+  {
+    "id": "560",
+    "siteId": 1114,
+    "title": "Combat of Lerin",
+    "description": "The Battle of Lerín, fought from October 25 to 27, 1808, was a clash during the Peninsular War where a small Spanish vanguard was surrounded by Marshal Moncey's superior French forces in Navarra. Led by Colonel Juan de la Cruz Mourgeon, this Spanish detachment consisted of a total force of 42 chiefs and officers, 776 troops, and 84 horses, which included 734 personnel from the Tiradores de Cádiz and 84 men from two cavalry detachments. Despite defending the town with great bravery, the Spanish troops were abandoned without reinforcements due to command failures, leading to their eventual surrender and a major setback for the Spanish army on the Ebro front.",
+    "date": "1808-10-25",
+    "location": "Lerin, Navarra, Spain"
   }
 ]

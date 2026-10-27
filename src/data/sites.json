@@ -21173,5 +21173,44 @@
     "image": "Ann_Winzer_grave.webp",
     "flower_link": "https://es.findagrave.com/memorial/288316017/ann-winzer/flower",
     "createDate": "2026-10-26"
+  },
+  {
+    "id": "1113",
+    "name": "Marques de la Romana landing point",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1808",
+    "date": "1808-10-09",
+    "location": "Muelle de las Naos, Santander, Cantabria",
+    "country": "Spain",
+    "description": "In October 1808, the forces of the Division of the North—popularly known as the troops of the Marquis of La Romana—landed directly at the port of Santander in the heart of the city's bay. Following an epic escape and evacuation from Denmark aided by the British Royal Navy, the naval convoy crossed the Bay of Biscay. The bulk of the Spanish infantry from this division, consisting of around 9,000 men under the temporary command of the Count of San Román, stepped ashore at the city's docks between October 9 and 11, 1808, with the immediate goal of joining the resistance against Napoleonic forces on the northern front.",
+    "latitude": 43.460434,
+    "longitude": -3.805307,
+    "image": "Santander_muelles.webp",
+    "createDate": "2026-10-27"
+  },
+  {
+    "id": "1113",
+    "name": "Battlefield of Lerin",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1808",
+    "date": "1808-10-25",
+    "location": "Lerin, Navarra",
+    "country": "Spain",
+    "description": "The Battle of Lerín, fought from October 25 to 27, 1808, was a clash during the Peninsular War where a small Spanish vanguard was surrounded by Marshal Moncey's superior French forces in Navarra. Led by Colonel Juan de la Cruz Mourgeon, this Spanish detachment consisted of a total force of 42 chiefs and officers, 776 troops, and 84 horses, which included 734 personnel from the Tiradores de Cádiz and 84 men from two cavalry detachments. Despite defending the town with great bravery, the Spanish troops were abandoned without reinforcements due to command failures, leading to their eventual surrender and a major setback for the Spanish army on the Ebro front.",
+    "latitude": "42.484949",
+    "longitude": -1.970548,
+    "image": "Lerin.webp",
+    "victor": "France",
+    "defeated": "Spain",
+    "special": "Guerra de Independencia",
+    "commander_Loss": [
+      "Juan de la Cruz Mourgeon"
+    ],
+    "commander_Victor": [
+      "Jeannot de Moncey"
+    ],
+    "createDate": "2026-10-27"
   }
 ]
