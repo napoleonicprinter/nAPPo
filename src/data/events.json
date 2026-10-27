@@ -4768,5 +4768,14 @@
     "description": "Fought on 23 November 1809, the Battle of El Carpio took place near Medina del Campo, Valladolid. A Spanish force of 19,000 men under Lieutenant-General Diego de Cañas y Portocarrero, Duke del Parque, successfully defeated a French force of 10,000 regulars and 1,700 cavalry led by General François Étienne de Kellermann. Although the victory forced the French to retreat from the town, the Spanish side suffered the loss of two prominent leaders, Salvador de Molina and Colonel Juan Drimgold.",
     "date": "1809-11-23",
     "location": "Carpio, Valladolid, Spain"
+  },
+  {
+    "id": "562",
+    "siteId": 1116,
+    "title": "Action of 25 November 1804",
+    "description": "On November 25, 1804, a minor naval skirmish took place near Cádiz between British and Spanish forces during the early stages of the Napoleonic Wars. It ended when the British ship HMS Donegal captured the Spanish frigate Amfitrite.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_November_1804",
+    "date": "1804-11-25",
+    "location": "Atlantic Ocean, off Cadiz, Spain"
   }
 ]

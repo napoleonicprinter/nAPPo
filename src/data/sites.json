@@ -21238,5 +21238,27 @@
       "Carlos Tolrá"
     ],
     "createDate": "2026-10-27"
+  },
+  {
+    "id": "1116",
+    "name": "Action of 25 Novembre 1804",
+    "category": "Naval battle",
+    "significance": 1,
+    "year": "1804",
+    "date": "1804-11-25",
+    "location": "off Cadiz, Spain",
+    "country": "Atlantic Ocean",
+    "description": "On November 25, 1804, a minor naval skirmish took place near Cádiz between British and Spanish forces during the early stages of the Napoleonic Wars. It ended when the British ship HMS Donegal captured the Spanish frigate Amfitrite.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_November_1804",
+    "latitude": 36.477743,
+    "longitude": -6.477103,
+    "image": "Action_25_11.webp",
+    "victor": "Great Britain",
+    "defeated": "Spain",
+    "special": "",
+    "commander_Victor": [
+      "Richard Strachan"
+    ],
+    "createDate": "2026-10-27"
   }
 ]
