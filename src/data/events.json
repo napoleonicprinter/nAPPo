@@ -4760,5 +4760,13 @@
     "description": "The Battle of Lerín, fought from October 25 to 27, 1808, was a clash during the Peninsular War where a small Spanish vanguard was surrounded by Marshal Moncey's superior French forces in Navarra. Led by Colonel Juan de la Cruz Mourgeon, this Spanish detachment consisted of a total force of 42 chiefs and officers, 776 troops, and 84 horses, which included 734 personnel from the Tiradores de Cádiz and 84 men from two cavalry detachments. Despite defending the town with great bravery, the Spanish troops were abandoned without reinforcements due to command failures, leading to their eventual surrender and a major setback for the Spanish army on the Ebro front.",
     "date": "1808-10-25",
     "location": "Lerin, Navarra, Spain"
+  },
+  {
+    "id": "561",
+    "siteId": 1115,
+    "title": "Battle of Carpio",
+    "description": "Fought on 23 November 1809, the Battle of El Carpio took place near Medina del Campo, Valladolid. A Spanish force of 19,000 men under Lieutenant-General Diego de Cañas y Portocarrero, Duke del Parque, successfully defeated a French force of 10,000 regulars and 1,700 cavalry led by General François Étienne de Kellermann. Although the victory forced the French to retreat from the town, the Spanish side suffered the loss of two prominent leaders, Salvador de Molina and Colonel Juan Drimgold.",
+    "date": "1809-11-23",
+    "location": "Carpio, Valladolid, Spain"
   }
 ]

@@ -21190,7 +21190,7 @@
     "createDate": "2026-10-27"
   },
   {
-    "id": "1113",
+    "id": "1114",
     "name": "Battlefield of Lerin",
     "category": "Battle site",
     "significance": 1,
@@ -21210,6 +21210,32 @@
     ],
     "commander_Victor": [
       "Jeannot de Moncey"
+    ],
+    "createDate": "2026-10-27"
+  },
+  {
+    "id": "1115",
+    "name": "Battlefield of Carpio",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1809",
+    "date": "1809-11-23",
+    "location": "Carpio, Valladolid",
+    "country": "Spain",
+    "description": "Fought on 23 November 1809, the Battle of El Carpio took place near Medina del Campo, Valladolid. A Spanish force of 19,000 men under Lieutenant-General Diego de Cañas y Portocarrero, Duke del Parque, successfully defeated a French force of 10,000 regulars and 1,700 cavalry led by General François Étienne de Kellermann. Although the victory forced the French to retreat from the town, the Spanish side suffered the loss of two prominent leaders, Salvador de Molina and Colonel Juan Drimgold.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Carpio",
+    "latitude": "41.196492",
+    "longitude": -5.135073,
+    "image": "Carpio.webp",
+    "victor": "Spain",
+    "defeated": "France",
+    "special": "Guerra de Independencia",
+    "commander_Loss": [
+      "François Kellermann"
+    ],
+    "commander_Victor": [
+      "Vicente de Cañas y Portocarrero",
+      "Carlos Tolrá"
     ],
     "createDate": "2026-10-27"
   }
