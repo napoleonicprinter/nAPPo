@@ -21260,5 +21260,92 @@
       "Richard Strachan"
     ],
     "createDate": "2026-10-27"
+  },
+  {
+    "id": "1117",
+    "name": "Action of 25 Novembre 1804",
+    "category": "Naval battle",
+    "significance": 1,
+    "year": "1804",
+    "date": "1804-11-25",
+    "location": "off Cadiz, Spain",
+    "country": "Atlantic Ocean",
+    "description": "On November 25, 1804, a minor naval skirmish took place near Cádiz between British and Spanish forces during the early stages of the Napoleonic Wars. It ended when the British ship HMS Donegal captured the Spanish frigate Amfitrite.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_November_1804",
+    "latitude": 36.477743,
+    "longitude": -6.477103,
+    "image": "Hameln.webp",
+    "victor": "Great Britain",
+    "defeated": "Spain",
+    "special": "",
+    "commander_Victor": [
+      "Richard Strachan"
+    ],
+    "createDate": "2026-10-27"
+  },
+  {
+    "id": "1118",
+    "name": "Plassenburg Castle siege",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-10-11",
+    "location": "Kulmbach",
+    "country": "Germany",
+    "description": "On October 11, 1806, French and allied Bavarian forces under Jérôme Bonaparte invested the Plassenburg fortress near Hof. The siege began under General Mezzanelli with the 13th Bavarian Line Infantry Regiment, which was relieved by the 6th Line Infantry Regiment the day before the surrender. Cut off from support, Prussian Major General von Uttenhoven and his garrison of 629 fusiliers and unfit soldiers capitulated the formidable stronghold on November 25, 1806, without a single shot being fired.",
+    "site_link": "https://plassenburg.de",
+    "latitude": 50.108394,
+    "longitude": 11.464655,
+    "image": "Plassenburg.webp",
+    "special": "4",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Loss": [
+      "Johann von Uttenhoven"
+    ],
+    "commander_Victor": [
+      "Jérôme Bonaparte"
+    ],
+    "createDate": "2026-10-27"
+  },
+  {
+    "id": "1119",
+    "name": "German Tin Figure Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1929",
+    "location": "Kulmbach",
+    "country": "Germany",
+    "description": "The Deutsches Zinnfigurenmuseum (German Tin Figure Museum) boasts an impressive collection of detailed Napoleonic dioramas. As the world's largest tin soldier museum, it showcases more than 300,000 figures and devotes a major part of its exhibit space to the Napoleonic era. Visitors can explore four historic floors of displays, including an entire level centered on the Age of Napoleon and the reign of Frederick the Great.",
+    "site_link": "https://plassenburg.de/en/museums/deutsches-zinnfigurenmuseum",
+    "latitude": 50.107802,
+    "longitude": 11.463967,
+    "image": "Plassenburg_zin.webp",
+    "createDate": "2026-10-27"
+  },
+  {
+    "id": "1120",
+    "name": "Siege of Hameln",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-10-11",
+    "location": "Hamelin",
+    "country": "Germany",
+    "description": "The Siege of Hamelin lasted from November 7 to November 22, 1806, when  French troops under General Jean-Baptiste Dumonceau swiftly encircled the city, isolating roughly 10,000 garrisoned defenders. Despite holding formidable defenses and abundant provisions, the Prussian commander, Lieutenant General Karl Ludwig von Lecoq, officially surrendered the fortress on November 22, 1806, after panicking over false rumors of a widespread Prussian collapse.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Hamelin",
+    "latitude": 52.104626,
+    "longitude": 9.356479,
+    "image": "Hameln.webp",
+    "special": "4",
+    "victor": "France",
+    "defeated": "Prussia",
+    "commander_Loss": [
+      "Karl Ludwig von Lecoq"
+    ],
+    "commander_Victor": [
+      "Jean-Baptiste Dumonceau"
+    ],
+    "createDate": "2026-10-27"
   }
 ]

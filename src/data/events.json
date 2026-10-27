@@ -4777,5 +4777,39 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Action_of_25_November_1804",
     "date": "1804-11-25",
     "location": "Atlantic Ocean, off Cadiz, Spain"
+  },
+  {
+    "id": "563",
+    "siteId": 1117,
+    "title": "Siege of Plassenburg castle",
+    "description": "On October 11, 1806, French and allied Bavarian forces under Jérôme Bonaparte invested the Plassenburg fortress near Hof. The siege began under General Mezzanelli with the 13th Bavarian Line Infantry Regiment.",
+    "date": "1806-10-11",
+    "location": "Kulmbach, Germany"
+  },
+  {
+    "id": "564",
+    "siteId": 1117,
+    "title": "Capitulation of Plassenburg castle",
+    "description": "After 45 days under a siege initiated on October 11 by Jérôme Bonaparte's French and Bavarian forces of the 13th Bavarian Line Infantry, the Plassenburg fortress capitulated on November 25, 1806, without a shot being fired. The previous day, the Bavarians were relief by he 6th Line Infantry. Prussian Major General von Uttenhoven surrendered the stronghold along with 629 fusiliers and soldiers unfit for active duty.",
+    "date": "1806-11-25",
+    "location": "Kulmbach, Germany"
+  },
+  {
+    "id": "565",
+    "siteId": 1120,
+    "title": "Siege of Hameln",
+    "description": "The Siege of Hamelin began on November 7, 1806, when a smaller French force under General Jean-Baptiste Dumonceau completely isolated a key Prussian stronghold. Following the disasters at Jena and Auerstedt, French troops rapidly encircled the heavily fortified city, cutting off all communication and supply lines. Inside the walls, a massive Prussian garrison of roughly 10,000 troops remained trapped, holding strong defensive positions with abundant provisions but facing complete encirclement by the fast-moving French invaders.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Hamelin",
+    "date": "1806-11-07",
+    "location": "Hamelin, Germany"
+  },
+  {
+    "id": "566",
+    "siteId": 1120,
+    "title": "Capitulation of Hameln",
+    "description": "The 1806 Capitulation of Hamelin remains one of the most controversial surrenders of the Napoleonic Wars. On November 22, 1806, despite holding a massive garrison of 10,000 troops and abundant supplies within a heavily fortified stronghold, Prussian Lieutenant General Karl Ludwig von Lecoq panicked. Misinformed by rumors of total collapse, Lecoq surrendered the vital fortress to a far smaller French force without firing a single shot. For surrendering Hamelin, Lecoq was sentenced to life imprisonment in December 1809, though his punishment was later softened; he was allowed to spend most of his confinement in the city of Spandau rather than the fortress prison and was even permitted to visit his estate in 1812.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Hamelin",
+    "date": "1806-11-22",
+    "location": "Hamelin, Germany"
   }
 ]
