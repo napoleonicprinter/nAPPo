@@ -5852,7 +5852,7 @@
     "location": "Hagelberg",
     "country": "Germany",
     "description": "The Battle of Hagelberg took place on August 27th 1813, following the Battle of Grossbeeren and in the run-up to the Battle of Leipzig.",
-    "latitude": 51.1481,
+    "latitude": 52.1481,
     "longitude": 12.5216,
     "image": "Hagelberg.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hagelberg",
@@ -5874,7 +5874,8 @@
     "id": "270",
     "name": "Monument Battle of Hagelberg",
     "category": "Monument",
-    "significance": 1,
+    "year": "1849",
+    "significance": 3,
     "location": "Hagelberg",
     "country": "Germany",
     "description": "Monument dating from 1848/49.Battle of Hagelberg was erected in 1817 to commemorate the Battle of Hagelberg, which took place on August 27th 1813, following the Battle of Grossbeeren and in the run-up to the Battle of Leipzig.",
@@ -21325,5 +21326,19 @@
       "Jean-Baptiste Dumonceau"
     ],
     "createDate": "2026-10-27"
+  },
+  {
+    "id": "1120",
+    "name": "Modern Monument Battle of Hagelberg",
+    "category": "Monument",
+    "year": "1955",
+    "significance": 3,
+    "location": "Hagelberg",
+    "country": "Germany",
+    "description": " Built in 1955, this monument is situated directly at the summit of the Hagelberg hill itself (which is the highest point in the Fläming region at roughly 200 meters). It was erected to commemorate the German-Russian brotherhood-in-arms during the battle. A modern summit cross and summit book are also located near this spot. (image: Lienhard Schulz)",
+    "latitude": 52.137320,
+    "longitude": 12.519744,
+    "image": "Hagelberg_monument_new.webp",
+    "createDate": "2026-10-28"
   }
 ]
