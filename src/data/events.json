@@ -4812,5 +4812,21 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Hamelin",
     "date": "1806-11-22",
     "location": "Hamelin, Germany"
+  },
+  {
+    "id": "567",
+    "siteId": 1122,
+    "title": "Capitulation of Nienburg",
+    "description": "The Capitulation of Nienburg occurred on November 26, 1806, when a heavily fortified walled town on the River Weser surrendered to Napoleonic Allied forces without a single shot being fired. General de Division Saváry led an Allied force of approximately 6,000 men and 12 guns to victory, suffering zero casualties. The Prussian garrison of 2,911 men, commanded by Generalmajor Strachwitz, capitulated just two days after the enemy's arrival. Following the surrender, Prussian officers were released on parole, Westfalian-born soldiers and married men were sent home, and the few remaining troops were marched to France as prisoners of war.",
+    "date": "1806-11-26",
+    "location": "Nienburg, Germany"
+  },
+  {
+    "id": "568",
+    "siteId": 1123,
+    "title": "Capture of Puebla de Sanabria",
+    "description": "The Siege of Puebla de Sanabria, fought from 4 to 10 August 1810, was an engagement during the Peninsular War. A combined Spanish-Portuguese force, under the command of the Spanish General Francisco Taboada y Gil and the Portuguese Field Marshal Francisco da Silveira, besieged the town and fortress of Puebla de Sanabria. The garrison, composed of a Swiss battalion in French service under Major Jonathan von Graffenried, was forced to capitulate after six days of intense fighting. The siege resulted in a decisive victory for the Allies, who captured the fortress and secured the vital northern approaches to Portugal.",
+    "date": "1810-08-10",
+    "location": "Puebla de Sanabria, Zamora, Spain"
   }
 ]

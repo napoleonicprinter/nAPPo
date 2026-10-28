@@ -2729,6 +2729,12 @@
     "longitude": -3.68585,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/G%C3%A1lvez%2C_Juan_-_Agustina_de_Arag%C3%B3n_-_Google_Art_Project.jpg/500px-G%C3%A1lvez%2C_Juan_-_Agustina_de_Arag%C3%B3n_-_Google_Art_Project.jpg",
     "more_info_link": "http://mismuseos.net/comunidad/metamuseo/recurso/agustina-de-aragon/a4e0307f-cd1b-47f0-9dd9-86b921237407",
+    "relatedSites": [
+      {
+        "id": "1124",
+        "title": "Site of the scene in Zaragoza"
+      }
+    ],
     "createDate": "2025-03-15"
   },
   {
@@ -21335,10 +21341,151 @@
     "significance": 3,
     "location": "Hagelberg",
     "country": "Germany",
-    "description": " Built in 1955, this monument is situated directly at the summit of the Hagelberg hill itself (which is the highest point in the Fläming region at roughly 200 meters). It was erected to commemorate the German-Russian brotherhood-in-arms during the battle. A modern summit cross and summit book are also located near this spot. (image: Lienhard Schulz)",
+    "description": "Built in 1955, this monument is situated directly at the summit of the Hagelberg hill itself (which is the highest point in the Fläming region at roughly 200 meters). It was erected to commemorate the German-Russian brotherhood-in-arms during the battle. A modern summit cross and summit book are also located near this spot. (image: Lienhard Schulz)",
     "latitude": 52.137320,
     "longitude": 12.519744,
     "image": "Hagelberg_monument_new.webp",
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1121",
+    "name": "Cumbria's Museum of Military Life",
+    "category": "Museum",
+    "date": "1932-12-07",
+    "significance": 2,
+    "location": "Carlisle",
+    "country": "England",
+    "description": "The Peninsular War collection at Cumbria's Museum of Military Life highlights the 34th (Cumberland) Regiment of Foot, showcasing historic artifacts captured during the Napoleonic conflict. The centerpiece of the exhibition features the famous Arroyo Drums and a French Drum Major's Mace, which the British regiment seized directly from their French counterparts, the 34e Régiment de la Ligne, at the Battle of Arroyo dos Molinos on October 28, 1811.",
+    "latitude": 54.897617,
+    "longitude": -2.941844,
+    "image": "Cumbria_museum.webp",
+    "site_link": "https://www.cumbriasmuseumofmilitarylife.org/",
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1122",
+    "name": "Capitulation of Nienburg",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-11-26",
+    "location": "Nienburg",
+    "country": "Germany",
+    "description": "The Capitulation of Nienburg occurred on November 26, 1806, when a heavily fortified walled town on the River Weser surrendered to Napoleonic Allied forces without a single shot being fired. General de Division Saváry led an Allied force of approximately 6,000 men and 12 guns to victory, suffering zero casualties. The Prussian garrison of 2,911 men, commanded by Generalmajor Strachwitz, capitulated just two days after the enemy's arrival. Following the surrender, Prussian officers were released on parole, Westfalian-born soldiers and married men were sent home, and the few remaining troops were marched to France as prisoners of war.",
+    "latitude": 52.638092,
+    "longitude": 9.208415,
+    "image": "Nienburg.webp",
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1123",
+    "name": "Capture of Puebla de Sanabria",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1810",
+    "date": "1810-08-04",
+    "location": "Puebla de Sanabria, Zamora",
+    "country": "Spain",
+    "description": "From August 4 and August 10, 1810, allied forces led by Spanish General Francisco Taboada y Gil and Portuguese Field Marshal Francisco da Silveira successfully besieged Puebla de Sanabria. The fortress, defended by a Swiss battalion under French service commanded by Major J. de Graffenried, officially surrendered at 1:30 AM on August 10 after an intense week of skirmishes and artillery fire. The victory resulted in over 400 enemy casualties and prisoners, as well as the capture of the battalion's sacred Imperial Eagle trophy.",
+    "more_info_link": "https://photoxibeliuss.blogspot.com/2013/10/sanabria-1810-la-guerra-peninsular-en.html",
+    "latitude": 42.055196,
+    "longitude": -6.633916,
+    "image": "Puebla_Sanabria.webp",
+    "special": [
+      "Guerra de Independencia",
+      "Peninsular War"
+    ],
+    "victor": [
+      "Spain",
+      "Portugal"
+    ],
+    "defeated": [
+      "France"
+    ],
+    "commander_Victor": [
+      "Francisco Taboada y Gil",
+      "Francisco da Silveira"
+    ],
+    "commander_Loss": [
+      "Jonathan von Graffenried"
+    ],
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1124",
+    "name": "Agustina de Aragón - Puerta del Portillo",
+    "category": "Battle landmark",
+    "significance": 3,
+    "date": "1808-07-02",
+    "location": "Zaragoza, Aragón",
+    "country": "Spain",
+    "description": "On July 2, 1808, during the bloody French siege of Zaragoza at the Portillo gate, Agustina de Aragón did not fire the cannon alone as popular legend suggests, but rather as part of a coordinated five-person team. Eye-witness combatant Francisco Riera recounted that upon arriving at the silenced battery, he found only a lieutenant colonel, two civilians, and Agustina; the group immediately synchronized their efforts to load, aim, and Agustina fired the 24-pounder cannon, successfully halting the French assault in the moat. This collaborative reality is firmly corroborated by contemporary chronicler Faustino Casamayor, who noted in his diaries that Agustina, aided by a few others, stepped in to inflict terrible damage on the enemy.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Puerta_del_Portillo",
+    "latitude": 52.638092,
+    "longitude": 9.208415,
+    "image": "Zaragoza_Portillo.webp",
+    "relatedSites": [
+      {
+        "id": "1126",
+        "title": "Sir David Wilkie's canvas"
+      },
+      {
+        "id": "128",
+        "title": "Canvas by Juan Gálvez"
+      }
+    ],
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1125",
+    "name": "Agustina de Aragón monument",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1908-10-29",
+    "location": "Zaragoza, Aragón",
+    "country": "Spain",
+    "description": "The Monument to Agustina de Aragón in Zaragoza was designed by sculptor Mariano Benlliure and inaugurated on October 29, 1908, to mark the centennial of the Sieges of Zaragoza. This stone and bronze monument features an energetic bronze figure of the heroine standing atop a cannon. Below her, the design includes a baturro (Aragonese peasant) offering a laurel wreath, a lion conquering the Napoleonic eagle, and detailed reliefs honoring other brave local women from the conflict.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Monumento_a_Agustina_de_Arag%C3%B3n_(Zaragoza)",
+    "latitude": 41.655567,
+    "longitude": -0.892399,
+    "image": "Agustina_monument.webp",
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1126",
+    "name": "The Defence of Saragossa ",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1828",
+    "location": "Carnarvon Room, Buckingham Palace, London",
+    "country": "England",
+    "description": "The Defence of Saragossa was painted by British artist Sir David Wilkie in 1828. Commissioned or acquired almost immediately by King George IV, this dramatic masterpiece depicts the Spanish resistance against Napoleonic forces during the Peninsular War. Today, it hangs prominently in the State Dining Room at Buckingham Palace, serving as a historic backdrop in one of the palace's most important audience rooms for official state banquets.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/The_Defence_of_Saragossa",
+    "latitude": 51.500679,
+    "longitude": -0.142772,
+    "image": "Defense_zaragoza.webp",
+    "relatedSites": [
+      {
+        "id": "1124",
+        "title": "Site of the scene in Zaragoza"
+      }
+    ],
+    "createDate": "2026-10-28"
+  },
+  {
+    "id": "1127",
+    "name": "Pedro Villacampa's grave",
+    "category": "Grave site",
+    "significance": 2,
+    "date": "1854-12-27",
+    "location": "Cementerio San Justo, patio de Santa Gertrudis sección 4, Carabanchel, Madrid",
+    "country": "Spain",
+    "description": "Pedro Villacampa y Maza de Lizana (1776–1854) was a hero of the 'Guerra de Independencia' (Peninsular War) against Napoleonic forces. Known as the 'León de Aragón', he led successful guerrilla campaigns and later suffered exile for opposing the absolutist regime of Fernando VII. He died in Madrid in 1854, his exact resting place remained a mystery for generations. In March 2026, an investigation conducted by Miguel Ángel García García finally located his remains in the San Justo Cemetery in Madrid, where the war hero had been buried under the unnamed grave number 343.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Pedro_Villacampa_y_Maza_de_Lizana",
+    "more info": "https://www.batalladetrafalgar.com/2026/03/la-tumba-olvidada-de-d-pedro-villacampa.html",
+    "latitude": 40.401459,
+    "longitude": -3.729684,
+    "image": "San_justo.webp",
     "createDate": "2026-10-28"
   }
 ]
