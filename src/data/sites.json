@@ -13921,7 +13921,7 @@
     "description": "Archduke Charles retreated from the battlefield of Caldiero when the French forces commanded by General Molitor raached his rearguard commanded by General Frimont at San Pietro in Gu on November 4th. One battalion of the Kreutzer Grenz Infantry Regiment Nr. 5 was destroyed.",
     "latitude": 45.61552,
     "longitude": 11.66921,
-    "image": "Steyer.webp",
+    "image": "Pietro_gu.webp",
     "createDate": "2025-08-08",
     "special": "3",
     "victor": "France",
@@ -21560,6 +21560,21 @@
     "commander_Loss": [
       "Karl Mack von Leiberich"
     ],
+    "createDate": "2026-10-29"
+  },
+  {
+    "id": "1131",
+    "name": "Museum of Military History",
+    "category": "Museum",
+    "significance": 3,
+    "year": "1869",
+    "location": "Vienna",
+    "country": "Austria",
+    "description": "The Museum of Military History (known locally as the Heeresgeschichtliches Museum) is one of Europe's oldest and most significant military museums. Located within Vienna's historic Arsenal complex, the architecturally stunning building was inaugurated on May 8, 1856, and formally established in 1869. A major highlight of its sprawling five-century collection is the section dedicated to the French Wars and the Napoleonic era. This exhibition offers a fascinating deep dive into Austria's turbulent conflicts with Napoleon Bonaparte, showcasing a rich variety of authentic period uniforms, detailed military maps, historical weapons, and personal artifacts that vividly bring this pivotal era of European history to life.",
+    "site_link": "https://www.hgm.at/en/",
+    "latitude": 48.184272,
+    "longitude": 16.388936,
+    "image": "HGM.webp",
     "createDate": "2026-10-29"
   }
 ]
