@@ -21576,5 +21576,21 @@
     "longitude": 16.388936,
     "image": "HGM.webp",
     "createDate": "2026-10-29"
+  },
+  {
+    "id": "1132",
+    "name": "Musée militaire du Périgord",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1911",
+    "location": "Périgueux",
+    "country": "France",
+    "description": "The Musée Militaire du Périgord was officially inaugurated at the end of 1911, following its initial conception in 1909 by members of the Veterans Federation of Dordogne. Regarding its Napoleonic history, the museum houses a significant collection of artifacts and memorabilia from the soldiers of the Empire wars. This collection is further enriched by the military objects bequeathed by its benefactor, Napoléon Magne (1865–1933), a cavalry captain, politician, and godson of Emperor Napoleon III.",
+    "site_link": "https://www.museemilitaire-perigord.fr/",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Mus%C3%A9e_militaire_du_P%C3%A9rigord",
+    "latitude": 45.183205,
+    "longitude": 0.720923,
+    "image": "Perigord.webp",
+    "createDate": "2026-10-29"
   }
 ]
