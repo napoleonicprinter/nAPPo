@@ -4828,5 +4828,39 @@
     "description": "The Siege of Puebla de Sanabria, fought from 4 to 10 August 1810, was an engagement during the Peninsular War. A combined Spanish-Portuguese force, under the command of the Spanish General Francisco Taboada y Gil and the Portuguese Field Marshal Francisco da Silveira, besieged the town and fortress of Puebla de Sanabria. The garrison, composed of a Swiss battalion in French service under Major Jonathan von Graffenried, was forced to capitulate after six days of intense fighting. The siege resulted in a decisive victory for the Allies, who captured the fortress and secured the vital northern approaches to Portugal.",
     "date": "1810-08-10",
     "location": "Puebla de Sanabria, Zamora, Spain"
+  },
+  {
+    "id": "569",
+    "siteId": 1128,
+    "title": "Capitulation of Glogou",
+    "description": "The Capitulation of Glogau on December 3, 1806, saw the strategic Prussian fortress surrender to French-allied forces under General Dominique Vandamme during the War of the Fourth Coalition. Demoralized by major defeats at Jena and Auerstedt, the Prussian commanding officer, General von Reinhard, surrendered the well-provisioned garrison with minimal resistance. This swift capitulation secured a vital French stronghold along the Oder River, safeguarding their lines of communication and clearing the path for further advances into Silesia.",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Glogau_(1806)",
+    "date": "1806-12-03",
+    "location": "Glogow, Poland"
+  },
+  {
+    "id": "570",
+    "siteId": 1128,
+    "title": "Siege of Glogou",
+    "description": "The Siege of Glogau took place from November 7 to December 3, 1806, ending with the Prussian garrison surrendering the city to Bavarian and Württemberg forces.",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Glogau_(1806)",
+    "date": "1806-11-07",
+    "location": "Glogow, Poland"
+  },
+  {
+    "id": "571",
+    "siteId": 1129,
+    "title": "Combat of Bieżuń",
+    "description": "On December 23, 1806, the Combat of Bieżuń resulted in a swift French victory that severed the connection between the Prussian and Russian armies. French forces, commanded by Marshal Jean Bessières and General Emmanuel de Grouchy, successfully defended the strategic town on the Ukra River from a Prussian counterattack led by General Anton Wilhelm von L'Estocq's detachment. Before the Prussians could fully form their lines, Grouchy’s dragoon division launched a devastating cavalry charge that routed the enemy, forcing them into a retreat toward Soldau and capturing 500 prisoners, 5 guns, and two standards.",
+    "date": "1806-12-23",
+    "location": "Bieżuń, Poland"
+  },
+  {
+    "id": "572",
+    "siteId": 1130,
+    "title": "Battle of Michelsberg",
+    "description": "On October 16, 1805, French forces commanded by Marshal Michel Ney (with support from Marshal Jean Lannes) stormed the Michelberg and Frauenberg heights, decisively expelling the defending Austrian army led by General Karl Mack von Leiberich. This strategic action trapped the Austrians inside the fortified city of Ulm, destroying their last chance of escape and making General Mack's total surrender on October 20 almost inevitable.",
+    "date": "1805-10-16",
+    "location": "Michelberg, Ulm, Bavaria"
   }
 ]

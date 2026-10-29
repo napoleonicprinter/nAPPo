@@ -21487,5 +21487,79 @@
     "longitude": -3.729684,
     "image": "San_justo.webp",
     "createDate": "2026-10-28"
+  },
+  {
+    "id": "1128",
+    "name": "Capitulation of Glogou",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-12-03",
+    "location": "Glogow",
+    "country": "Poland",
+    "description": "The Capitulation of Glogau on December 3, 1806, saw the strategic Prussian fortress surrender to French-allied forces under General Dominique Vandamme during the War of the Fourth Coalition. Demoralized by major defeats at Jena and Auerstedt, the Prussian commanding officer, General von Reinhard, surrendered the well-provisioned garrison with minimal resistance. This swift capitulation secured a vital French stronghold along the Oder River, safeguarding their lines of communication and clearing the path for further advances into Silesia.",
+    "wikipedia_link": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Glogau_(1806)",
+    "latitude": 51.66620,
+    "longitude": 16.090056,
+    "image": "Glogou.webp",
+    "createDate": "2026-10-29"
+  },
+  {
+    "id": "1129",
+    "name": "Battlefield of Biezun",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1806",
+    "date": "1806-12-23",
+    "location": "Bieżuń",
+    "country": "Poland",
+    "description": "On December 23, 1806, the Combat of Bieżuń resulted in a swift French victory that severed the connection between the Prussian and Russian armies. French forces, commanded by Marshal Jean Bessières and General Emmanuel de Grouchy, successfully defended the strategic town on the Ukra River from a Prussian counterattack led by General Anton Wilhelm von L'Estocq's detachment. Before the Prussians could fully form their lines, Grouchy’s dragoon division launched a devastating cavalry charge that routed the enemy, forcing them into a retreat toward Soldau and capturing 500 prisoners, 5 guns, and two standards.",
+    "latitude": 52.962443,
+    "longitude": 19.892357,
+    "image": "Biezun.webp",
+    "special": "4",
+    "victor": [
+      "France"
+    ],
+    "defeated": [
+      "Prussia"
+    ],
+    "commander_Victor": [
+      "Jean-Baptiste Bessières",
+      "Jean-Baptiste Bernadotte"
+    ],
+    "commander_Loss": [
+      "Anton von L'Estocq"
+    ],
+    "createDate": "2026-10-29"
+  },
+  {
+    "id": "1130",
+    "name": "Battlefield of Michelberg",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1805",
+    "date": "1805-10-16",
+    "location": "Michelberg, Ulm, Bavaria",
+    "country": "Germany",
+    "description": "On October 16, 1805, French forces commanded by Marshal Michel Ney (with support from Marshal Jean Lannes) stormed the Michelberg and Frauenberg heights, decisively expelling the defending Austrian army led by General Karl Mack von Leiberich. This strategic action trapped the Austrians inside the fortified city of Ulm, destroying their last chance of escape and making General Mack's total surrender on October 20 almost inevitable.",
+    "latitude": 48.416502,
+    "longitude": 9.983415,
+    "image": "Michelberg.webp",
+    "special": "3",
+    "victor": [
+      "France"
+    ],
+    "defeated": [
+      "Austria"
+    ],
+    "commander_Victor": [
+      "Michel Ney",
+      "Jean Lannes"
+    ],
+    "commander_Loss": [
+      "Karl Mack von Leiberich"
+    ],
+    "createDate": "2026-10-29"
   }
 ]
