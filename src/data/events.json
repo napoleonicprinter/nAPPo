@@ -4862,5 +4862,13 @@
     "description": "On October 16, 1805, French forces commanded by Marshal Michel Ney (with support from Marshal Jean Lannes) stormed the Michelberg and Frauenberg heights, decisively expelling the defending Austrian army led by General Karl Mack von Leiberich. This strategic action trapped the Austrians inside the fortified city of Ulm, destroying their last chance of escape and making General Mack's total surrender on October 20 almost inevitable.",
     "date": "1805-10-16",
     "location": "Michelberg, Ulm, Bavaria"
+  },
+  {
+    "id": "573",
+    "siteId": 1133,
+    "title": "Combat of Santa Cruz de Mudela",
+    "description": "On Wednesday, October 16, 1811, during the Peninsular War, Spanish guerrilla forces led by Francisco Abad 'Chaleco' and 'Cura Cañizares' attacked the French-controlled fort in Santa Cruz de Mudela (Ciudad Real). When French Dragoon reinforcements dispatched from the nearby town of El Viso attempted to rescue the besieged garrison, 'Chaleco's' cavalry intercepted and defeated them, leaving 15 French Dragoons dead and 13 captured as prisoners. This successful ambush highlighted the effectiveness of La Mancha's guerrilla warfare in disrupting French supply lines and troop movements toward southern Spain.",
+    "date": "1811-10-16",
+    "location": "Santa Cruz de Mudela, Ciudad Real, Spain"
   }
 ]

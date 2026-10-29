@@ -21592,5 +21592,31 @@
     "longitude": 0.720923,
     "image": "Perigord.webp",
     "createDate": "2026-10-29"
+  },
+  {
+    "id": "1133",
+    "name": "Battlefield of Santa Cruz de Mudela",
+    "category": "Battle site",
+    "significance": 1,
+    "year": "1811",
+    "date": "1811-10-16",
+    "location": "Santa Cruz de Mudela, Ciudad Real",
+    "country": "Spain",
+    "description": "On Wednesday, October 16, 1811, during the Peninsular War, Spanish guerrilla forces led by Francisco Abad 'Chaleco' and 'Cura Cañizares' attacked the French-controlled fort in Santa Cruz de Mudela (Ciudad Real). When French Dragoon reinforcements dispatched from the nearby town of El Viso attempted to rescue the besieged garrison, 'Chaleco's' cavalry intercepted and defeated them, leaving 15 French Dragoons dead and 13 captured as prisoners. This successful ambush highlighted the effectiveness of La Mancha's guerrilla warfare in disrupting French supply lines and troop movements toward southern Spain.",
+    "latitude": 38.640911,
+    "longitude": -3.467499,
+    "image": "Mudela.webp",
+    "special": "Guerra de Independencia",
+    "victor": [
+      "Spain"
+    ],
+    "defeated": [
+      "France"
+    ],
+    "commander_Victor": [
+      "Francisco Abad 'Chaleco'",
+      "Cura Cañizares"
+    ],
+    "createDate": "2026-10-29"
   }
 ]
