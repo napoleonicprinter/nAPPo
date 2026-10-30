@@ -21739,6 +21739,7 @@
     "name": "Bankfield Museum",
     "category": "Museum",
     "significance": 2,
+    "date": "2008-11-11",
     "year": "2008",
     "location": "Halifax, West Yorkshire",
     "country": "England",
@@ -21749,6 +21750,23 @@
     "longitude": -1.863220,
     "image": "bankfield_museum.webp",
     "contributor": "Janine Van Gessel",
+    "createDate": "2026-10-30"
+  },
+  {
+    "id": "1140",
+    "name": "Royal Armouries Museum - Leeds",
+    "category": "Museum",
+    "significance": 2,
+    "date": "1996-03-30",
+    "year": "1996",
+    "location": "Leeds",
+    "country": "England",
+    "description": "Inaugurated on March 30, 1996, the Royal Armouries Museum in Leeds showcases its Napoleonic Wars collection within the War Gallery, featuring authentic combat gear, iconic Baker rifles, heavy cavalry cuirasses, and a life-sized Battle of Waterloo diorama.",
+    "site_link": "https://https://royalarmouries.org/leeds",
+    "latitude": 53.791789,
+    "longitude": -1.532233,
+    "image": "Leeds_museum.webp",
+    "contributor": "James Anthony",
     "createDate": "2026-10-30"
   }
 ]
