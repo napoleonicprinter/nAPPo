@@ -90,12 +90,16 @@
     ],
     "relatedSites": [
       {
+        "id": "1135",
+        "title": "1-The Waterloo canvas by Jan Willem Pieneman"
+      },
+      {
         "id": "179",
-        "title": "Lady Butler's Scot greys canvas"
+        "title": "2-Lady Butler's Scot greys canvas"
       },
       {
         "id": "839",
-        "title": "Lady Butler's Dawn of Waterloo canvas"
+        "title": "3-Lady Butler's Dawn of Waterloo canvas"
       }
     ],
     "commander_Victor": [
@@ -20927,6 +20931,10 @@
       {
         "id": "1099",
         "title": "Napoleon's Residence in Tilsit"
+      },
+      {
+        "id": "1136",
+        "title": "Canvas by Jean-Charles Tardieu"
       }
     ],
     "name": "Napoleon Receiving the Queen of Prussia at Tilsit, July 6, 1807",
@@ -20947,7 +20955,11 @@
     "relatedSites": [
       {
         "id": "1098",
-        "title": "Napoleon Receiving the Queen of Prussia at Tilsit, July 6, 1807"
+        "title": "Canvas by Nicolas Gosse"
+      },
+      {
+        "id": "1136",
+        "title": "Canvas by Jean-Charles Tardieu"
       }
     ],
     "name": "Napoleon's Residence in Tilsit",
@@ -21660,6 +21672,83 @@
     "latitude": 52.36014,
     "longitude": 4.884685,
     "image": "Waterloo_pienemann.webp",
+    "relatedSites": [
+      {
+        "id": "2",
+        "title": "Battlefield"
+      }
+    ],
+    "createDate": "2026-10-30"
+  },
+  {
+    "id": "1136",
+    "name": "Napoleon I Receiving Queen Louise of Prussia at Tilsit ",
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1808",
+    "location": "Musée de l'Histoire de France, Versailles Palace, Versailles",
+    "country": "France",
+    "description": "This painting, titled Napoleon I Receiving Queen Louise of Prussia at Tilsit on July 6, 1807 (painted in 1808 by the French painter Jean-Charles Tardieu), is housed at the Palace of Versailles (specifically in the Museum of the History of France).",
+    "latitude": 52.36014,
+    "longitude": 4.884685,
+    "image": "Napoleon_Queen _Louise.webp",
+    "relatedSites": [
+      {
+        "id": "1099",
+        "title": "Napoleon's Residence in Tilsit"
+      },
+      {
+        "id": "1098",
+        "title": "Canvas by Nicolas Gosse"
+      }
+    ],
+    "createDate": "2026-10-30"
+  },
+  {
+    "id": "1137",
+    "name": "The Fusilier Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1850",
+    "location": "Tower of London, London",
+    "country": "England",
+    "description": "The Napoleonic Era collection at The Fusilier Museum London features the captured French Eagle Standard of the 82nd Regiment, taken by the Royal Fusiliers during the 1809 Battle of Martinique. Displayed alongside authentic 19th-century uniforms, weapons, and campaign medals, this historic collection highlights the regiment's victories against Napoleon's imperial forces. The museum was originally inaugurated on November 9, 1962, inside the Tower of London, and later underwent a major modernization that opened to the public in April 2011.",
+    "site_link": "https://www.fusiliermuseumlondon.org/home",
+    "latitude": 51.508344,
+    "longitude": -0.075270,
+    "image": "Fusilier_museum.webp",
+    "createDate": "2026-10-30"
+  },
+  {
+    "id": "1138",
+    "name": "Royal Armouries, Tower of London",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1842",
+    "location": "Tower of London, White Tower, London",
+    "country": "England",
+    "description": "Managed by the Royal Armouries within the White Tower, the Waterloo Battery collection features historic bronze 6-pounder cannons captured at the Battle of Waterloo in 1815. Cast in The Hague in 1813 and brought to the Tower of London by the Duke of Wellington, these field pieces form the core of the fortress's Napoleonic Wars artifacts and were historically displayed outside the Waterloo Block.",
+    "site_link": "https://www.hrp.org.uk/tower-of-london/",
+    "latitude": 51.508095,
+    "longitude": -0.076043,
+    "image": "Tower_London.webp",
+    "createDate": "2026-10-30"
+  },
+  {
+    "id": "1139",
+    "name": "Bankfield Museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1842",
+    "location": "Halifax, West Yorkshire",
+    "country": "England",
+    "description": "The 1815 Waterloo collection at Bankfield Museum offers a rare, intimate look at the Duke of Wellington’s historic campaign against Napoleon. The display features remarkable personal artifacts used by the Duke during the definitive battle, including his original folding campaign bed and the unique "Waterloo Pan" used to prepare his breakfast on the morning of June 18, 1815. These items are showcased alongside authentic weapons, heavy cavalry armor, and the historic Waterloo Medals recovered directly from the battlefield.",
+    "site_link": "https://museums.calderdale.gov.uk/visit/duke-wellingtons-regiment-museum",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bankfield_Museum",
+    "latitude": 53.732633,
+    "longitude": -1.863220,
+    "image": "bankfield_museum.webp",
+    "contributor": "Janine Van Gessel",
     "createDate": "2026-10-30"
   }
 ]
