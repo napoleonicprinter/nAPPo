@@ -21768,5 +21768,39 @@
     "image": "Leeds_museum.webp",
     "contributor": "James Anthony",
     "createDate": "2026-10-30"
+  },
+  {
+    "id": "1141",
+    "name": "Museu Militar Forte de Santa Luzia",
+    "category": "Museum",
+    "significance": 3,
+    "date": "2001-11-18",
+    "year": "2001",
+    "location": "Elvas",
+    "country": "Portugal",
+    "description": "Inaugurated in 2001, its Peninsular War collection highlights the fort's vital role in defending Elvas against Napoleonic forces alongside British troops in 1811. The exhibition features detailed tactical maps, terrain models of the sieges, and an authentic collection of uniforms, equipment, and flintlock firearms used by the Anglo-Portuguese alliance on the Alentejo frontier.",
+    "site_link": "https://cm-elvas.pt/descobrir/cultura/museus/museu-militar-forte-de-santa-luzia/",
+    "latitude": 38.872988,
+    "longitude": -7.158420,
+    "image": "Santa_Luzia.webp",
+    "contributor": "Juan Carlos Arba",
+    "createDate": "2026-10-30"
+  },
+  {
+    "id": "1142",
+    "name": "Elvas Museu Militar",
+    "category": "Museum",
+    "significance": 3,
+    "date": "2006-10-27",
+    "location": "Elvas",
+    "country": "Portugal",
+    "description": "Inaugurated in 2006, the Museu Militar de Elvas features a specialized Peninsular War collection highlighting the city's role as the main Anglo-Portuguese logistics and medical base. The exhibition displays rare period weaponry, tactical medical equipment, and detailed campaign dioramas against Napoleonic forces.",
+    "site_link": "https://cm-elvas.pt/descobrir/cultura/museus/museu-militar/",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Museo_Militar_de_Elvas",
+    "latitude": 38.879139,
+    "longitude": -7.159516,
+    "image": "Elvas_museo.webp",
+    "contributor": "João Pedro",
+    "createDate": "2026-10-30"
   }
 ]
