@@ -3135,36 +3135,6 @@
             16.96529
           ]
         ]
-      },
-      {
-        "id": "wagram-phase2",
-        "name": "Phase 2 fake",
-        "url": "Wagram_1.svg",
-        "bounds": [
-          [
-            48.10211,
-            16.21273
-          ],
-          [
-            48.48397,
-            16.96529
-          ]
-        ]
-      },
-      {
-        "id": "wagram-phase3",
-        "name": "Phase 3 fake",
-        "url": "Wagram_1.svg",
-        "bounds": [
-          [
-            48.10211,
-            16.21273
-          ],
-          [
-            48.48397,
-            16.96529
-          ]
-        ]
       }
     ],
     "commander_Victor": [
