@@ -7254,6 +7254,29 @@
     "image": "Viasma.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Vyazma",
     "createDate": "2025-03-22",
+    "maps": [
+      {
+        "id": "Vyazma_1",
+        "name": "Phase 1: 10:00 (Edward Foord)",
+        "url": "Vyazma_1.svg",
+        "bounds": [
+          [
+            55.163715,
+            34.233733
+          ],
+          [
+            55.333799,
+            34.535642
+          ]
+        ]
+      }
+    ],
+    "relatedSites": [
+      {
+        "id": "1145",
+        "title": "Canvas by Peter von Hess"
+      }
+    ],
     "commander_Victor": [
       "Matvei Platov",
       "Ivan Paskevich",
@@ -21847,5 +21870,39 @@
     "commander_Loss": [
       "Manuel Carbón"
     ]
+  },
+  {
+    "id": "1145",
+    "name": "Battle of Vyazma on 22 October 1812",
+    "category": "Artwork",
+    "year": "1842",
+    "significance": 3,
+    "location": "Hermitage Museum, Saint Petersburg",
+    "country": "Russia",
+    "description": "Battle of Viazma on 22 October 1812 is a powerful historic painting created in 1842 by German artist Peter von Hess. The artwork depicts the chaotic retreat of Napoleon’s army as Russian forces launch a fierce assault against the French rear guard. Now housed in the State Hermitage Museum, the piece is renowned for its historical accuracy, dynamic composition, and vivid portrayal of the brutal conflict.",
+    "latitude": 59.93983,
+    "longitude": 30.31456,
+    "image": "Vyazma_canvas.webp",
+    "relatedSites": [
+      {
+        "id": "334",
+        "title": "Battlefield of Vyazma"
+      }
+    ],
+    "createDate": "2025-08-12"
+  },
+  {
+    "id": "1146",
+    "name": "Monument to the Heroes of the Patriotic War of 1812",
+    "category": "Monument",
+    "date": "1913-11-26",
+    "significance": 2,
+    "location": "Vyazma",
+    "country": "Russia",
+    "description": "The Monument to the Heroes of the Patriotic War of 1812 in Vyazma was inaugurated on November 26, 1913, to honor the soldiers who fought in the battles of 1812. Located near the Spasskaya Tower, this pyramid-shaped monument is topped by a bronze double-headed eagle and features local coats of arms and historic medals. Destroyed during the Russian Civil War, it was rebuilt from photographs in 1959 and beautifully restored in 2012.",
+    "latitude": 55.212055,
+    "longitude": 34.290569,
+    "image": "Vyazma_monument.webp",
+    "createDate": "2025-08-12"
   }
 ]
