@@ -5838,6 +5838,23 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Hagelberg",
     "youtube_link": "https://www.youtube.com/watch?v=GhY6ZAXCbLw",
     "createDate": "2025-03-22",
+    "maps": [
+      {
+        "id": "Hagelberg_1",
+        "name": "Phase 1",
+        "url": "Hagleberg_1.svg",
+        "bounds": [
+          [
+            52.12304,
+            12.493287
+          ],
+          [
+            52.167448,
+            12.594141
+          ]
+        ]
+      }
+    ],
     "special": [
       "6",
       "German Campaign"
