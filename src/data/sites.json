@@ -21772,5 +21772,63 @@
     "image": "Elvas_museo.webp",
     "contributor": "João Pedro",
     "createDate": "2026-10-30"
+  },
+  {
+    "id": "1143",
+    "name": "Siege of Pamplona",
+    "category": "Battle site",
+    "significance": 2,
+    "year": 1813,
+    "date": "1813-06-26",
+    "location": "Pamplona, Navarra",
+    "country": "Spain",
+    "description": "The Siege of Pamplona lasted from 26 June to 31 October 1813. Initially surrounded by British commander Arthur Wellesley, Marquess Wellington, the city was blockaded by Spanish forces under Captain General Henry O'Donnell and Lieutenant General Carlos de España. They successfully contained the French garrison commanded by General of Brigade Louis Pierre Jean Cassan. Despite a relief attempt by French Marshal Nicolas Soult in late July, the operation failed, forcing Cassan's starving troops to capitulate in October.",
+    "latitude": 42.812069,
+    "longitude": -1.649163,
+    "image": "Pamplona.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Pamplona_(1813)",
+    "createDate": "2026-11-01",
+    "special": [
+      "Guerra de Independencia"
+    ],
+    "victor": "Anglo-Spanish",
+    "defeated": "France",
+    "commander_Victor": [
+      "Henry O'Donnell",
+      "Carlos de España",
+      "Arthur Wellesley",
+      "Lord Dalhousie"
+    ],
+    "commander_Loss": [
+      "Louis Cassan"
+    ]
+  },
+  {
+    "id": "1144",
+    "name": "Siege of Mequinenza",
+    "category": "Battle site",
+    "significance": 2,
+    "year": 1810,
+    "date": "1810-05-15",
+    "location": "Mequinenza, Aragón",
+    "country": "Spain",
+    "description": "The Siege of Pamplona (June 26 – October 31, 1813) ended in a vital Allied victory when French General Louis Pierre d'Anizan surrendered the fortress after a grueling four-month blockade. Initially surrounded by the Duke of Wellington following the Battle of Vitoria, the city was starved into submission by Spanish forces under General Enrique José O'Donnell, securing the Allied rear for the invasion of France.",
+    "latitude": 41.365004,
+    "longitude": 0.296289,
+    "image": "Mequinenza.webp",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Mequinenza",
+    "createDate": "2026-11-01",
+    "special": [
+      "Guerra de Independencia",
+      "arc"
+    ],
+    "victor": "France",
+    "defeated": "Spain",
+    "commander_Victor": [
+      "Louis Gabriel Suchet"
+    ],
+    "commander_Loss": [
+      "Manuel Carbón"
+    ]
   }
 ]

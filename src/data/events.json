@@ -4870,5 +4870,38 @@
     "description": "On Wednesday, October 16, 1811, during the Peninsular War, Spanish guerrilla forces led by Francisco Abad 'Chaleco' and 'Cura Cañizares' attacked the French-controlled fort in Santa Cruz de Mudela (Ciudad Real). When French Dragoon reinforcements dispatched from the nearby town of El Viso attempted to rescue the besieged garrison, 'Chaleco's' cavalry intercepted and defeated them, leaving 15 French Dragoons dead and 13 captured as prisoners. This successful ambush highlighted the effectiveness of La Mancha's guerrilla warfare in disrupting French supply lines and troop movements toward southern Spain.",
     "date": "1811-10-16",
     "location": "Santa Cruz de Mudela, Ciudad Real, Spain"
+  },
+  {
+    "id": "574",
+    "siteId": 1143,
+    "title": "Siege of Pamplona",
+    "date": "1813-06-26",
+    "location": "Pamplona, Navarra, Spain",
+    "description": "The Siege of Pamplona began on June 26, 1813, shortly after the Allied victory at the Battle of Vitoria. Allied forces—initially under Arthur Wellesley, Marquess of Wellington, and soon blockaded by a Spanish army led by Captain General Enrique O'Donnell—surrounded the fortified city and its 3,800-strong French garrison commanded by General Louis Cassan. Rather than a direct assault, the Allies established a tight blockade to starve the defenders out, setting the stage for a four-month standoff that ended in an October surrender."
+  },
+  {
+    "id": "575",
+    "siteId": 1143,
+    "title": "Siege of Pamplona ended",
+    "date": "1813-10-31",
+    "location": "Pamplona, Navarra, Spain",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Pamplona_(1813)",
+    "description": "The Siege of Pamplona ended on October 31, 1813, when the starving French garrison officially surrendered to the Allied forces. After four months of a grueling blockade, General Louis Pierre d'Anizan's troops had completely run out of food, having been reduced to eating horses, dogs, and rats. The capitulation of this powerful fortress eliminated the last major French stronghold in northern Spain, successfully securing Wellington’s rear and clearing the way for the Allied invasion of southern France."
+  },
+  {
+    "id": "576",
+    "title": "Siege of Mequinenza",
+    "date": "1810-05-15",
+    "location": "Mequinenza, Aragón, Spain",
+    "description": "Following the fall of Lérida, the Siege of Mequinenza officially commenced on May 15, 1810, when Imperial French forces under General Louis Gabriel Suchet invested the strategically vital town. Situated at the key confluence of the Ebro and Segre rivers, this 'Key to the Ebro' was defended by a small Spanish garrison of roughly 1,200 men led by Colonel Manuel Carbón.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Mequinenza"
+  },
+  {
+    "id": "577",
+    "title": "Siege of Mequinenza ended",
+    "date": "1810-06-08",
+    "location": "Mequinenza, Aragón, Spain",
+    "description": "The Siege of Mequinenza officially ended on June 8, 1810, when the Spanish garrison under Colonel Manuel Carbón, facing overwhelming French artillery superiority, was compelled to surrender the fortress to the victorious forces of General Louis Gabriel Suchet. This strategic victory secured French control over the vital confluence of the Ebro and Segre rivers, effectively neutralizing one of the last significant Spanish strongholds blocking Suchet’s advance into Valencia and marking a critical turning point in the Peninsular War’s Aragonese campaign.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Mequinenza"
   }
 ]
