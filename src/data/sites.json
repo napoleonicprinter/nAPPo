@@ -22022,5 +22022,19 @@
     "longitude": 1.139800,
     "image": "Moore_memorial.webp",
     "createDate": "2026-11-02"
+  },
+  {
+    "id": "1155",
+    "name": "Battle of Roliça Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1909-11-13",
+    "location": "Roliça ",
+    "country": "Portugal",
+    "description": "The Monument to the Battle of Roliça, located in Largo D. Maria I in Roliça, Portugal, honors the first clash between British and Napoleonic forces during the Peninsular War on August 17, 1808. (Photo: Alta Falisa).",
+    "latitude": 39.312940,
+    "longitude": -9.183713,
+    "image": "Rolica_monument.webp",
+    "createDate": "2026-11-02"
   }
 ]
