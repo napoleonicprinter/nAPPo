@@ -2092,8 +2092,8 @@
     ],
     "maps": [
       {
-        "id": "Espinoa-dia 10",
-        "name": "10-11-1808 ",
+        "id": "Espinosa-dia 10",
+        "name": "10-11-1808 (Atlas Guerra de la Independencia)",
         "url": "Espinosa_10.svg",
         "bounds": [
           [
@@ -22052,6 +22052,20 @@
     "latitude": 39.312940,
     "longitude": -9.183713,
     "image": "Rolica_monument.webp",
+    "createDate": "2026-11-02"
+  },
+  {
+    "id": "1156",
+    "name": "Battle of Espinosa de los Monteros Memorial",
+    "category": "Monument",
+    "significance": 1,
+    "date": "2008-11-10",
+    "location": "Espinosa de los Monteros ",
+    "country": "Spain",
+    "description": "Inaugurated in November 2008 for the bicentennial of the 1808 Peninsular War battle, the monument honors the fallen Spanish and French soldiers.",
+    "latitude": 43.074700,
+    "longitude": -3.542789,
+    "image": "Espinosa_memorial.webp",
     "createDate": "2026-11-02"
   }
 ]
