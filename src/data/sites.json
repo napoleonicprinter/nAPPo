@@ -2093,8 +2093,23 @@
     "maps": [
       {
         "id": "Espinosa-dia 10",
-        "name": "10-11-1808 (Atlas Guerra de la Independencia)",
+        "name": "10-Nov-1808",
         "url": "Espinosa_10.svg",
+        "bounds": [
+          [
+            43.055659,
+            -3.578222
+          ],
+          [
+            43.10144,
+            -3.489107
+          ]
+        ]
+      },
+      {
+        "id": "Espinosa-dia 11",
+        "name": "11-Nov-1808",
+        "url": "Espinosa_11.svg",
         "bounds": [
           [
             43.055659,
@@ -22066,6 +22081,20 @@
     "latitude": 43.074700,
     "longitude": -3.542789,
     "image": "Espinosa_memorial.webp",
+    "createDate": "2026-11-02"
+  },
+  {
+    "id": "1157",
+    "name": "Loma del Ataque (Ridge of the attack)",
+    "category": "Battle landmark",
+    "significance": 3,
+    "date": "2008-11-10",
+    "location": "Espinosa de los Monteros, Burgos",
+    "country": "Spain",
+    "description": "During the Battle of Espinosa de los Monteros (November 10–11, 1808), the Loma del Ataque (Attack Hill) served as the epicenter of the fiercest fighting and the crucial defensive stronghold of the Spanish army's left wing, commanded by General Joaquín Blake.",
+    "latitude": 43.070323,
+    "longitude": -3.532377,
+    "image": "Loma_ataque.webp",
     "createDate": "2026-11-02"
   }
 ]
