@@ -2090,6 +2090,23 @@
       "arc",
       "Guerra de Independencia"
     ],
+    "maps": [
+      {
+        "id": "Espinoa-dia 10",
+        "name": "10-11-1808 ",
+        "url": "Espinosa_10.svg",
+        "bounds": [
+          [
+            43.055659,
+            -3.578222
+          ],
+          [
+            43.10144,
+            -3.489107
+          ]
+        ]
+      }
+    ],
     "victor": "France",
     "defeated": "Spain",
     "relatedSites": [
