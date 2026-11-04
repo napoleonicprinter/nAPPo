@@ -6208,6 +6208,7 @@
     "name": "Battle of Cape Ortegal",
     "category": "Naval battle",
     "significance": 1,
+    "date": "1805-11-04",
     "year": 1805,
     "location": "Cape Ortegal",
     "country": "Spain",
@@ -9199,7 +9200,8 @@
     "image": "Gamonal.webp",
     "createDate": "2025-03-15",
     "commander_Victor": [
-      "Jean de Dieu Soult"
+      "Jean-Baptiste Bessières",
+      "Jean-de-Dieu Soult"
     ],
     "commander_Loss": [
       "Conde de Belvedere"
