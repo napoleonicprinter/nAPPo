@@ -8082,6 +8082,23 @@
     ],
     "commander_Loss": [
       "Jean de Dieu Soult"
+    ],
+    "maps": [
+      {
+        "id": "nivelle-phase1",
+        "name": "Phase 1",
+        "url": "Nivelle.svg",
+        "bounds": [
+          [
+            43.262804,
+            -1.727544
+          ],
+          [
+            430420788,
+            -1.412165
+          ]
+        ]
+      }
     ]
   },
   {
@@ -22173,6 +22190,20 @@
     "latitude": 53.010357,
     "longitude": 18.603507,
     "image": "Hotel_Varsovie.webp",
+    "createDate": "2026-11-04"
+  },
+  {
+    "id": "1162",
+    "name": "Napoleonic Wars Memorial",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1919",
+    "location": "Paderborn",
+    "country": "Germany",
+    "description": "The Napoleonic Wars Memorial, located in the Waldfriedhof Cemetery at Paderborn-Schloß Neuhaus, honors the local soldiers who died during the Liberation Wars of 1812–1813. Originally erected elsewhere in Neuhaus during the 19th century following the conflicts, the weathered stone cross—inscribed with the years 1812 and 1813 was later relocated to the cemetery. When the Waldfriedhof Cemetery was created in 1919, regional master builder Franz Mündelein collected several scattered historic gravestones and monuments from across town, integrating them into a cohesive, serene woodland memorial site to preserve the memory of the fallen residents.",
+    "latitude": 51.749433,
+    "longitude": 8.723925,
+    "image": "War_memorial.webp",
     "createDate": "2026-11-04"
   }
 ]
