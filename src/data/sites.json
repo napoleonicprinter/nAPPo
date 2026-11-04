@@ -22114,5 +22114,51 @@
     "longitude": -3.532377,
     "image": "Loma_ataque.webp",
     "createDate": "2026-11-02"
+  },
+  {
+    "id": "1158",
+    "name": "Museo de Armería de Álava",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1963",
+    "location": "Vitoria-Gasteiz, Álava",
+    "country": "Spain",
+    "description": "The Museum of Armoury of Álava, inaugurated in 1963, houses a world-class Napoleonic collection deeply tied to the Spanish War of Independence (Peninsular War). The core of this exhibit centers on the historic Battle of Vitoria in 1813, which marked the definitive collapse of French imperial rule in Spain. Visitors can explore a remarkable array of original weapons, military uniforms, and historical artifacts from both sides of the conflict, highlighted by the personal belongings that King Joseph Bonaparte abandoned during his hasty retreat from the city.",
+    "site_link": "https://armamuseoa.eus/es/",
+    "wikipedia_link": "Museo_de_Armería_de_Álava",
+    "latitude": 42.841250,
+    "longitude": -2.678551,
+    "image": "Museo_alava.webp",
+    "createDate": "2026-11-03"
+  },
+  {
+    "id": "1159",
+    "name": "Napoleon's house at Vitoria",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1808",
+    "location": "Vitoria-Gasteiz, Álava",
+    "country": "Spain",
+    "description": "Napoleon stayed in this manor house between November 5 and 9, 1808, after rushing to the aid of his brother Joseph following the defeat at Bailén. Here, he and his military staff planned the strategy to regain control. A portrait of Napoleon hangs from a balcony, and the facade is marked with the inscription: 'Hic Napoleón I Imperator habitavit anno MDCCCVIII'.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Etxezarra",
+    "latitude": 42.841193,
+    "longitude": -2.687198,
+    "image": "Vitoria_casa.webp",
+    "createDate": "2026-11-03"
+  },
+  {
+    "id": "1160",
+    "name": "Battle of Vitoria monument",
+    "category": "Monument",
+    "significance": 2,
+    "da ": "1917-08-04",
+    "location": "Vitoria-Gasteiz, Álava",
+    "country": "Spain",
+    "description": "The Monument to the Battle of Vitoria, located in Virgen Blanca Square in Vitoria-Gasteiz, Spain, is an imposing sculpture by Gabriel Borrás that commemorates the historic 1813 defeat of Napoleonic forces. Featuring detailed depictions of soldiers, citizens, and the Duke of Wellington, this iconic symbol of the city's heritage was officially inaugurated on August 4, 1917.",
+    "wikipedia_link": "http://es.wikipedia.org/wiki/Monumento_a_la_Batalla_de_Vitoria",
+    "latitude": 42.846554,
+    "longitude": -2.673313,
+    "image": "Vitoria_monument.webp",
+    "createDate": "2026-11-03"
   }
 ]
