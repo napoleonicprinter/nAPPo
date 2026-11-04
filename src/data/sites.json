@@ -22144,14 +22144,14 @@
     "latitude": 42.841193,
     "longitude": -2.687198,
     "image": "Vitoria_casa.webp",
-    "createDate": "2026-11-03"
+    "createDate": "2026-11-04"
   },
   {
     "id": "1160",
     "name": "Battle of Vitoria monument",
     "category": "Monument",
     "significance": 2,
-    "da ": "1917-08-04",
+    "date": "1917-08-04",
     "location": "Vitoria-Gasteiz, Álava",
     "country": "Spain",
     "description": "The Monument to the Battle of Vitoria, located in Virgen Blanca Square in Vitoria-Gasteiz, Spain, is an imposing sculpture by Gabriel Borrás that commemorates the historic 1813 defeat of Napoleonic forces. Featuring detailed depictions of soldiers, citizens, and the Duke of Wellington, this iconic symbol of the city's heritage was officially inaugurated on August 4, 1917.",
@@ -22159,6 +22159,20 @@
     "latitude": 42.846554,
     "longitude": -2.673313,
     "image": "Vitoria_monument.webp",
-    "createDate": "2026-11-03"
+    "createDate": "2026-11-04"
+  },
+  {
+    "id": "1161",
+    "name": "Hôtel de Varsovie",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "2006",
+    "location": "Toruń",
+    "country": "Poland",
+    "description": "The Napoleon Bonaparte Memorial Plaque in Toruń, Poland, commemorates the historic stay of the French Emperor from June 2 to June 6, 1812. Located on the exterior brick wall of the Central Post Office building at Rynek Staromiejski 15, this granite memorial marks the exact site where the Hôtel de Varsovie (Hotel of Warsaw) once stood. During his brief stay, the hotel served as Napoleon's imperial headquarters as he gathered and prepared his Grande Armée for the monumental 1812 invasion of Russia. Installed by the city of Toruń in 2006, the plaque features text in both Polish and French accompanied by an artistic relief of the iconic leader, serving as a permanent tribute to Toruń's place in Napoleonic history.",
+    "latitude": 53.010357,
+    "longitude": 18.603507,
+    "image": "Hotel_Varsovie.webp",
+    "createDate": "2026-11-04"
   }
 ]
