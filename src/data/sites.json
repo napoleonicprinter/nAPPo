@@ -9195,6 +9195,23 @@
       "Peninsular War",
       "arc"
     ],
+    "maps": [
+      {
+        "id": "gamonal-phase1",
+        "name": "Phase 1: 08:00",
+        "url": "Gamonal.svg",
+        "bounds": [
+          [
+            42.338978,
+            -3.679707
+          ],
+          [
+            42.379189,
+            -3.594195
+          ]
+        ]
+      }
+    ],
     "victor": "France",
     "defeated": "Spain",
     "image": "Gamonal.webp",
