@@ -3549,6 +3549,7 @@
   {
     "id": "169",
     "name": "Battle of Arcole Museum",
+    "year": "1984",
     "category": "Museum",
     "significance": 1,
     "location": "Arcole, Verona",
@@ -3556,7 +3557,7 @@
     "description": "The 'G.A. Antonelli' Napoleonic Museum in Arcole recounts, through artifacts and period prints, the Napoleonic epic and key moments in Napoleon Bonaparte's life. It contains a rich collection of paintings, prints, copper and steel engravings, lithographs and aquatints, manifestos and proclamations, bulletins of the Grande Armée, and period documents.",
     "latitude": 45.35777,
     "longitude": 11.28167,
-    "image": "https://www.museodiarcole.it/img/sala.jpg",
+    "image": "Arcole_museum.webp",
     "more_info_link": "https://www.museodiarcole.it/",
     "createDate": "2025-03-15"
   },
@@ -10133,12 +10134,13 @@
   },
   {
     "id": "474",
-    "name": "Napoleon's command post - Battle of Leipzig",
+    "name": "Napoleon's command post - Battle of Wachau",
     "category": "Battle landmark",
+    "date": "1852-10-19",
     "significance": 3,
     "location": "Leipzig",
     "country": "Germany",
-    "description": "Count Lauriston V Corps 15,000 men. Erected in 1861 by Dr. Theodor Apel.",
+    "description": "The Galgenberg Monument in Wachau was erected in 1852 by the Leipzig historical association (Verein zur Feier des 19. October) to commemorate the Battle of the Nations. Standing on a prominent hill along Bornaer Straße, this stone structure marks the precise location of Emperor Napoleon I's command post during the fierce Battle of Wachau on October 16, 1813. Today, it serves as a lasting historical landmark honoring the events and lives lost during the Napoleonic Wars.",
     "latitude": 51.2804,
     "longitude": 12.44791,
     "image": "Leipziz_Napoleon_post.webp",
@@ -22290,6 +22292,20 @@
     "latitude": 48.295545,
     "longitude": 16.557623,
     "image": "Charles_HQ.webp",
+    "createDate": "2026-11-05"
+  },
+  {
+    "id": "1169",
+    "name": "Napoleon's Observation Point- Battle of Leipzig",
+    "category": "Battle landmark",
+    "significance": 3,
+    "date": "1813-10  -18",
+    "location": "Deutsch-Wagram",
+    "country": "Austria",
+    "description": "Napoleon watched the Battle of Leipzig (or Battle of the Nations) from this exact spot—now Wilhelm-Külz-Park—on October 18, 1813. While the historic battle spanned October 16–19, this specific date was its most pivotal moment.",
+    "latitude": 48.295545,
+    "longitude": 16.557623,
+    "image": "25_Sep_1806.webp",
     "createDate": "2026-11-05"
   }
 ]
