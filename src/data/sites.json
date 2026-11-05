@@ -22234,5 +22234,62 @@
     "longitude": 15.407721,
     "image": "Svetla.webp",
     "createDate": "2026-11-05"
+  },
+  {
+    "id": "1165",
+    "name": "Napoleonic Wars memorial",
+    "category": "Monument",
+    "significance": 1,
+    "year": "1963",
+    "location": "Bad Gottleuba, Sachsen",
+    "country": "Germany",
+    "description": "Erected as a tribute to the Napoleonic Wars of 1813—the so-called Wars of Liberation—this monument marks the site of several fierce clashes near Bad Gottleuba during that pivotal year. (Photo: Norbert Kaiser)",
+    "latitude": 50.8431881,
+    "longitude": 13.9565650,
+    "image": "Gottleuba.webp",
+    "createDate": "2026-11-05"
+  },
+  {
+    "id": "1166",
+    "name": "Monument to the Battle of Wagram",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1909-07-04",
+    "location": "Deutsch-Wagram",
+    "country": "Austria",
+    "description": "This historic war memorial designed by sculptor Franz Seifert to honor all soldiers who fell during the Napoleonic battle of 1809. The stone structure features sculptures of an Austrian grenadier holding a flag over a dying comrade and is topped by a large eagle. It was officially inaugurated on July 4, 1909, to mark the centenary of the historic conflict. (Photo by Peter Lauppert)",
+    "latitude": 48.296474,
+    "longitude": 16.555891,
+    "image": "Wagram_memorial.webp",
+    "createDate": "2026-11-05"
+  },
+  {
+    "id": "1167",
+    "name": "Museum of the Battle of Wagram",
+    "category": "Museum",
+    "significance": 3,
+    "date": "1958-09-18",
+    "location": "Deutsch-Wagram",
+    "country": "Austria",
+    "description": "The Museum of the Local History of Deutsch-Wagram and the Battle of Wagram was officially inaugurated following a local council resolution on September 18, 1958. Housed in the historic building used as headquarters by Archduke Charles during the epic 1809 conflict, the museum features an exceptional Napoleonic collection. Visitors can explore authentic battlefield artifacts, historic weapons, period maps, and intricate dioramas with thousands of miniature soldiers that vividly recreate Napoleon I’s monumental clash against the Austrian forces.",
+    "site_link": "https://www.wagram1809.at/eng.htm",
+    "latitude": 48.295592,
+    "longitude": 16.557849,
+    "image": "Wagram_museum.webp",
+    "createDate": "2026-11-05"
+  },
+  {
+    "id": "1168",
+    "name": "Archduke Charles headquarter",
+    "category": "Battle landmark",
+    "significance": 2,
+    "date": "1809-07-05",
+    "location": "Deutsch-Wagram",
+    "country": "Austria",
+    "description": "During the Battle of Wagram (July 5–6, 1809), Archduke Charles of Austria established his headquarters in a historic building in Deutsch-Wagram, today known as the Erzherzog-Carl-Haus. From this strategic command post, the Archduke directed the operations of the Imperial Austrian Army against Napoleon Bonaparte’s forces in one of the largest and bloodiest engagements of the Napoleonic Wars. Today, this very building houses the Napoleon- und Stadtmuseum, preserving the rooms where critical military decisions were made alongside a rich collection of period weapons, uniforms, and historical artifacts from the battle. (Photo by Eagyov)",
+    "latitude": 48.295545,
+    "longitude": 16.557623,
+    "image": "Charles_HQ.webp",
+    "createDate": "2026-11-05"
   }
 ]
