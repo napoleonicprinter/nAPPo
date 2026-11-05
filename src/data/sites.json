@@ -22205,5 +22205,34 @@
     "longitude": 8.723925,
     "image": "War_memorial.webp",
     "createDate": "2026-11-04"
+  },
+  {
+    "id": "1163",
+    "name": "Dolní Březinka memorial",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1841-07-25",
+    "location": "Světlá nad Sázavou",
+    "country": "Czech Republic",
+    "description": "The deceased soldiers of various nationalities (Austrian, French, Russian, and Prussian) were buried in mass graves at this site. The obelisk: It was commissioned on July 25, 1841, by Jan ze Salmu a Reifferscheidtu in memory of the combatants buried there. (Image by Honza Groh).",
+    "latitude": 49.661524,
+    "longitude": 15.386356,
+    "image": "Dolni_obelisk.webp",
+    "createDate": "2026-11-05"
+  },
+  {
+    "id": "1164",
+    "name": "Světlá nad Sázavou Chateau",
+    "category": "Landmark",
+    "significance": 2,
+    "year": "1809",
+    "location": "Světlá nad Sázavou",
+    "country": "Czech Republic",
+    "description": "During the Napoleonic Wars, the Světlá nad Sázavou Castle was tragically converted into a military field hospital (lazaret) between 1809 and 1813. The estate's grand halls were cleared to shelter hundreds of wounded soldiers, but overcrowding and poor sanitary conditions triggered a devastating typhus outbreak in 1813. Over 1,200 soldiers perished within the castle walls and were buried in a mass grave in the nearby village of Dolní Březinka, where a stone obelisk stands today as a memorial. (Image credit zameksvetla).",
+    "site_link": "https://www.zameksvetla.cz/",
+    "latitude": 49.667189,
+    "longitude": 15.407721,
+    "image": "Svetla.webp",
+    "createDate": "2026-11-05"
   }
 ]
