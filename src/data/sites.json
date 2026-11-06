@@ -22579,5 +22579,35 @@
     "image": "Martello_25.webp",
     "contributor": "Greg McCarthy",
     "createDate": "2026-11-05"
+  },
+  {
+    "id": "1187",
+    "name": "Monument to the Battle of the Nations",
+    "category": "Monument",
+    "significance": 3,
+    "date": "1913-10-18",
+    "location": "Leipzig, Saxony",
+    "country": "Germany",
+    "description": "The Monument to the Battle of the Nations (Völkerschlachtdenkmal) in Leipzig, Germany, stands as a colossal 91-meter-tall memorial commemorating the historic 1813 defeat of Napoleon Bonaparte. Officially inaugurated on October 18, 1913, to mark the exact centennial of the conflict, the massive stone structure features striking Art Nouveau and Wilhelmine architecture designed by Bruno Schmitz. Today, it serves as both a somber monument to the tens of thousands of fallen soldiers and a popular visitor destination, offering a museum and sweeping panoramic views from its peak.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Monument_to_the_Battle_of_the_Nations",
+    "latitude": 51.312297,
+    "longitude": 12.413295,
+    "image": "Leipzig_monument.webp",
+    "createDate": "2026-11-06"
+  },
+  {
+    "id": "1188",
+    "name": "Forum 1813",
+    "category": "Museum",
+    "significance": 3,
+    "year": "1999",
+    "location": "Leipzig, Saxony",
+    "country": "Germany",
+    "description": "Operating since 1999 as part of the Stadtgeschichtliches Museum Leipzig, this specialized exhibition provides a comprehensive, neutral overview of the historic 1813 Battle of Leipzig, which led to the decisive defeat and retreat of Napoleon's forces. The museum houses over 350 fascinating original artifacts, including authentic weapons, military uniforms, personal wartime memorabilia, and a massive 15-square-meter diorama featuring thousands of intricately detailed tin figures that vividly recreate the harsh reality of one of the 19th century’s bloodiest conflicts.",
+    "site_link": "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/staendige-ausstellungen/museum-forum-1813/",
+    "latitude": 51.31229,
+    "longitude": 12.412119,
+    "image": "Leipzig_museum.webp",
+    "createDate": "2026-11-06"
   }
 ]

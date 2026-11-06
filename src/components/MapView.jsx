@@ -51,7 +51,7 @@ const getSiteIcon = (site) => {
     });
 };
 
-const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattleActive }) => {
+const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattleActive, siteToOpenPopup, isNavigatingRef }) => {
     const map = useMap();
     const openedKeyRef = useRef("");
 
@@ -62,6 +62,12 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
         }
 
         const sitesKey = todaysBattleSites.map(s => String(s.id).trim()).sort().join(',');
+
+        if (siteToOpenPopup || isNavigatingRef?.current) {
+            openedKeyRef.current = sitesKey;
+            return;
+        }
+
         if (openedKeyRef.current === sitesKey) return;
 
         let attempts = 0;
@@ -69,6 +75,10 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
         let timer = null;
 
         const tryOpen = () => {
+            if (siteToOpenPopup || isNavigatingRef?.current) {
+                openedKeyRef.current = sitesKey;
+                return;
+            }
             attempts++;
             let allOpened = true;
 
@@ -111,7 +121,7 @@ const TodaysBattlePopupOpener = ({ todaysBattleSites, markerRefs, isTodaysBattle
         return () => {
             if (timer) clearTimeout(timer);
         };
-    }, [isTodaysBattleActive, todaysBattleSites, map, markerRefs]);
+    }, [isTodaysBattleActive, todaysBattleSites, map, markerRefs, siteToOpenPopup, isNavigatingRef]);
 
     return null;
 };
@@ -181,6 +191,13 @@ const PopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigat
 
                 setTimeout(() => {
                     if (cancelled) return;
+                    markerRefs.current.forEach((otherMarker, idStr) => {
+                        if (idStr !== targetIdStr) {
+                            try {
+                                otherMarker.closePopup();
+                            } catch (e) { }
+                        }
+                    });
                     const m = markerRefs.current.get(targetIdStr);
                     if (m) {
                         try {
@@ -203,6 +220,13 @@ const PopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigat
 
                 setTimeout(() => {
                     if (cancelled) return;
+                    markerRefs.current.forEach((otherMarker, idStr) => {
+                        if (idStr !== targetIdStr) {
+                            try {
+                                otherMarker.closePopup();
+                            } catch (e) { }
+                        }
+                    });
                     const m = markerRefs.current.get(targetIdStr);
                     if (m) {
                         try {
@@ -1402,6 +1426,8 @@ const MapView = () => {
                     todaysBattleSites={todaysBattleSites}
                     markerRefs={markerRefs}
                     isTodaysBattleActive={isTodaysBattleActive}
+                    siteToOpenPopup={siteToOpenPopup}
+                    isNavigatingRef={isNavigatingRef}
                 />
 
                 <ClusteredSiteMarkers
