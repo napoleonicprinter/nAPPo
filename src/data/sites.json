@@ -22609,5 +22609,19 @@
     "longitude": 12.412119,
     "image": "Leipzig_museum.webp",
     "createDate": "2026-11-06"
+  },
+  {
+    "id": "1189",
+    "name": "Battle of Wagram Memorial",
+    "category": "Monument",
+    "significance": 1,
+    "date": "1909-07-04",
+    "location": "Aderklaa",
+    "country": "Austria",
+    "description": "The Battle of Wagram monument, located in the village of Aderklaa, Austria, was officially inaugurated on 4 July 1909. This memorial commemorates the Austrians who were killed around Aderklaa in the Battle of Wagram, honoring their sacrifice during one of the most significant conflicts of the Napoleonic Wars.",
+    "latitude": 48.285903,
+    "longitude": 16.540082,
+    "image": "Wagram_memorial_2.webp",
+    "createDate": "2026-11-06"
   }
 ]
