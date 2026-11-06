@@ -22623,5 +22623,19 @@
     "longitude": 16.540082,
     "image": "Wagram_memorial_2.webp",
     "createDate": "2026-11-06"
+  },
+  {
+    "id": "1190",
+    "name": "Fort Imperial",
+    "category": "Landmark",
+    "significance": 1,
+    "year": "1812",
+    "location": "Srđ, Dubrovnik",
+    "country": "Croatia",
+    "description": "Fort Imperial in Dubrovnik was built by the French between 1806 and 1812 during the Napoleonic Wars, strategically positioned atop Mount Srđ to protect the city from land attacks. Named in honor of Emperor Napoleon Bonaparte, the monumental stone fortress was completed on his birthday, August 15, 1812.",
+    "latitude": 42.649923,
+    "longitude": 18.110533,
+    "image": "Fort_Imperial.webp",
+    "createDate": "2026-11-06"
   }
 ]
