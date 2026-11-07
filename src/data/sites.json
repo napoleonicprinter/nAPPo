@@ -22750,7 +22750,7 @@
     "date": "1814-04-10",
     "location": "Toulouse",
     "country": "France",
-    "description": "Defying orders, Picton launched a frontal assault led by the 74th Highlanders against the fortified bridges. Advancing across narrow, open ground, the troops were caught in a devastating crossfire of French musketry and canister shot. Unable to even reach the canal, the British were pinned down under relentless fire. Picton was soon forced to order a retreat, leaving behind over 350 casualties from the 3rd Division in a bloody and entirely futile effort.",
+    "description": "Defying orders, Picton launched a frontal assault led by the 74th Highlanders against the fortified bridges. Advancing across narrow, open ground, the troops were caught in a devastating crossfire of French musketry and canister shot. Unable to even reach the canal, the British were pinned down under relentless fire. Picton was soon forced to order a retreat, leaving behind over 350 casualties from the 3rd Division in a bloody and entirely futile effort. (Photo by C.Stadler/Bwag)",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Ponts-Jumeaux",
     "latitude": 43.611010,
     "longitude": 1.418693,
@@ -22817,16 +22817,31 @@
   },
   {
     "id": "1201",
-    "name": "Napoleonic War Memorial Wolfshagen",
+    "name": "Church of St. Martin at Markgrafneusiedl",
     "category": "Battle landmark",
     "significance": 3,
     "date": "1809-07-05",
     "location": "Markgrafneusiedl",
     "country": "Austria",
-    "description": "During the Battle of Wagram, the fortified church of Markgrafneusiedl served as a vital strategic stronghold anchoring the Austrian left flank. Though it originally served as Archduke Charles's headquarters earlier in the campaign, a fire forced him to relocate his central command post to Deutsch-Wagram before the main clash, leaving the church to serve as the critical tactical post for Field Marshal Prince Rosenberg's forces.",
+    "description": "During the Battle of Wagram, the fortified church of Markgrafneusiedl served as a vital strategic stronghold anchoring the Austrian left flank. Though it originally served as Archduke Charles's headquarters earlier in the campaign, a fire forced him to relocate his central command post to Deutsch-Wagram before the main clash, leaving the church to serve as the critical tactical post for Field Marshal Prince Rosenberg's forces. (Photo by C.Stadler/Bwag)",
     "latitude": 48.269092,
     "longitude": 16.633209,
     "image": "Kirchenruine.webp",
-    "createDate": "2026-11-07"
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1202",
+    "name": "Dutch Artillery Museum ",
+    "category": "Museum",
+    "significance": 2,
+    "year": "1961",
+    "location": "'t Harde",
+    "country": "Netherlands",
+    "description": "The museum officially inaugurated in 1961. Housed within the museum's historic 19th-century pavilions—specifically Pavilion 1, which covers artillery history prior to 1900—the Napoleonic collection offers a fascinating look into the late 18th and early 19th centuries. This era marked a crucial transformation for the Dutch military, spanning the Batavian Republic, the Kingdom of Holland under Louis Bonaparte, and the eventual liberation.",
+    "site_link": "https://nederlandsartilleriemuseum.nl/",
+    "latitude": 52.388572,
+    "longitude": 5.915187,
+    "image": "Dutch_Artillery_museum.webp",
+    "createDate": "2026-11-08"
   }
 ]
