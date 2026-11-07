@@ -22669,21 +22669,6 @@
   },
   {
     "id": "1193",
-    "name": "Leipzig Bridge blating Memorial",
-    "category": "Monument",
-    "significance": 2,
-    "date": "1863-10-19",
-    "location": "Merseburg",
-    "country": "Germany",
-    "description": "The Bridge Blasting Monument (Brückensprengungsdenkmal) in Leipzig commemorates a tragic turning point in the 1813 Battle of the Nations, when a panicked soldier prematurely detonated a retreat bridge and trapped thousands of French forces. Officially inaugurated on October 19, 1863, the sandstone memorial marks the exact 50th anniversary of the catastrophe. (Photo by Cmuelle8).",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Bridge_blasting_monument",
-    "latitude": 51.343000,
-    "longitude": 12.365021,
-    "image": "Leipzig_bridge-monument.webp",
-    "createDate": "2026-11-07"
-  },
-  {
-    "id": "1194",
     "name": "Leipzig Bridge blasting Memorial",
     "category": "Monument",
     "significance": 2,
@@ -22697,18 +22682,18 @@
     "image": "Leipzig_bridge-monument.webp",
     "relatedSites": [
       {
-        "id": "1195",
+        "id": "1194",
         "title": "1- Ernst Wilhelm Straßberger canvas"
       },
       {
-        "id": "1196",
+        "id": "1195",
         "title": "2- Bridge site"
       }
     ],
     "createDate": "2026-11-07"
   },
   {
-    "id": "1195",
+    "id": "1194",
     "name": "Blasting of the Elster Bridge on 19 October 1813",
     "category": "Artwork",
     "significance": 2,
@@ -22722,18 +22707,18 @@
     "image": "Leipzig_bridge-monument.webp",
     "relatedSites": [
       {
-        "id": "1194",
+        "id": "1193",
         "title": "1- Bridge blasting Monument"
       },
       {
-        "id": "1196",
+        "id": "1195",
         "title": "2- Bridge site"
       }
     ],
     "createDate": "2026-11-07"
   },
   {
-    "id": "1196",
+    "id": "1195",
     "name": "Site Leipzig Bridge blasted on 19 October 1813",
     "category": "Battle landmark",
     "significance": 2,
@@ -22747,11 +22732,11 @@
     "image": "Leipzig_bridge.webp",
     "relatedSites": [
       {
-        "id": "1194",
+        "id": "1193",
         "title": "1- Bridge blasting Monument"
       },
       {
-        "id": "1195",
+        "id": "1194",
         "title": "2- Ernst Wilhelm Straßberger canvas"
       }
     ],
