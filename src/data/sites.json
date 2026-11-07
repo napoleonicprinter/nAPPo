@@ -22783,22 +22783,36 @@
     "latitude": 55.199431,
     "longitude": 30.202723,
     "image": "Vitebsk_obelisk.webp",
-    "createDate": "2026-11-07",
-    {
-      "id": "1199",
-      "name": "Vitebsk Regional History Museum",
-      "category": "Museum",
-      "significance": 2,
-      "date": "1912-12-06",
-      "location": "Vitebsk",
-      "country": "Belarus",
-      "description": "The Vitebsk Regional History Museum, inaugurated on November 12, 1918, is housed in the city's historic Town Hall. A major highlight of its exhibits is the Patriotic War of 1812 collection, which chronicles the region's strategic role during Napoleon's invasion. This specialized display features period weapons, military artifacts, and historical documents that bring to life the fierce local clashes and the deep regional impact of the conflict.",
-      "wikipedia_link": "https://en.wikipedia.org/wiki/Vitebsk_Regional_History_Museum",
-      "site_link": "https://vokm.museum.by/en",
-      "latitude": 55.195601,
-      "longitude": 30.206215,
-      "image": "Vitebsk_obelisk.webp",
-      "createDate": "2026-11-07"
-    }
+    "createDate": "2026-11-07"
+  },
+  {
+    "id": "1199",
+    "name": "Vitebsk Regional History Museum",
+    "category": "Museum",
+    "significance": 2,
+    "date": "1918-11-12",
+    "location": "Vitebsk",
+    "country": "Belarus",
+    "description": "The Vitebsk Regional History Museum, inaugurated on November 12, 1918, is housed in the city's historic Town Hall. A major highlight of its exhibits is the Patriotic War of 1812 collection, which chronicles the region's strategic role during Napoleon's invasion. This specialized display features period weapons, military artifacts, and historical documents that bring to life the fierce local clashes and the deep regional impact of the conflict.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Vitebsk_Regional_History_Museum",
+    "site_link": "https://vokm.museum.by/en",
+    "latitude": 55.195601,
+    "longitude": 30.206215,
+    "image": "Vitebsk_obelisk.webp",
+    "createDate": "2026-11-07"
+  },
+  {
+    "id": "1200",
+    "name": "Napoleonic War Memorial Wolfshagen",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1828",
+    "location": "Wolfshagen, Brandenburg",
+    "country": "Germany",
+    "description": "The Napoleonic War Memorial in Wolfshagen, Brandenburg, honors the local soldiers who fought in the Liberation Wars against French rule. Commissioned by Count von Schwerin and heavily inspired by Karl Friedrich Schinkel's Neo-Gothic style, this historic stone monument was erected in 1828.",
+    "latitude": 53.443827,
+    "longitude": 13.658252,
+    "image": "Memorial_Wolfshagen.webp",
+    "createDate": "2026-11-07"
   }
 ]
