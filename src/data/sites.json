@@ -22741,5 +22741,20 @@
       }
     ],
     "createDate": "2026-11-07"
+  },
+  {
+    "id": "1196",
+    "name": "Ponts_Jumeaux",
+    "category": "Battle landmark",
+    "significance": 3,
+    "date": "1814-04-10",
+    "location": "Toulouse",
+    "country": "France",
+    "description": "Defying orders, Picton launched a frontal assault led by the 74th Highlanders against the fortified bridges. Advancing across narrow, open ground, the troops were caught in a devastating crossfire of French musketry and canister shot. Unable to even reach the canal, the British were pinned down under relentless fire. Picton was soon forced to order a retreat, leaving behind over 350 casualties from the 3rd Division in a bloody and entirely futile effort.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Ponts-Jumeaux",
+    "latitude": 43.611010,
+    "longitude": 1.418693,
+    "image": "Ponts_Jumeaux.webp",
+    "createDate": "2026-11-07"
   }
 ]
