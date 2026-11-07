@@ -1542,6 +1542,7 @@
   {
     "id": 181,
     "title": "Battle of Vitebsk",
+    "siteId": 330,
     "date": "1812-07-28",
     "location": "Vitebsk",
     "country": "Belarus",
@@ -1551,6 +1552,7 @@
   {
     "id": 182,
     "title": "Battle of Shevardino",
+    "siteId": 332,
     "date": "1812-09-05",
     "location": "Shevardino",
     "country": "Russia",
@@ -4908,5 +4910,13 @@
     "location": "Mequinenza, Aragón, Spain",
     "description": "The Siege of Mequinenza officially ended on June 8, 1810, when the Spanish garrison under Colonel Manuel Carbón, facing overwhelming French artillery superiority, was compelled to surrender the fortress to the victorious forces of General Louis Gabriel Suchet. This strategic victory secured French control over the vital confluence of the Ebro and Segre rivers, effectively neutralizing one of the last significant Spanish strongholds blocking Suchet’s advance into Valencia and marking a critical turning point in the Peninsular War’s Aragonese campaign.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_Mequinenza"
+  },
+  {
+    "id": "578",
+    "siteId": 1197,
+    "title": "Second Battle of Vitebsk",
+    "date": "1811-07-11",
+    "location": "Vitebsk, Belarus",
+    "description": "On November 7 (October 26 Old Style), 1812, the critical clash known as the Battle of Vitebsk unfolded as a pivotal moment during Napoleon’s disastrous retreat from Moscow. In this encounter, the Russian corps under General Peter Wittgenstein successfully captured the heavily fortified city and its vital French logistics base, defeating the garrison left behind to secure Napoleon's lines of communication. The fall of Vitebsk was a catastrophic strategic blow for the Grande Armée; it instantly deprived the freezing, starving French troops of their last major supply depot of food, winter clothing, and ammunition, effectively sealing the tragic fate of their retreat toward the Berezina River."
   }
 ]

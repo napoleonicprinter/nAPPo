@@ -22756,5 +22756,19 @@
     "longitude": 1.418693,
     "image": "Ponts_Jumeaux.webp",
     "createDate": "2026-11-07"
+  },
+  {
+    "id": "1197",
+    "name": "Second Battle of Vitebsk",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1812-11-07",
+    "location": "Vitebsk",
+    "country": "Belarus",
+    "description": "On November 7 (October 26 Old Style), 1812, the critical clash known as the Battle of Vitebsk unfolded as a pivotal moment during Napoleon’s disastrous retreat from Moscow. In this encounter, the Russian corps under General Peter Wittgenstein successfully captured the heavily fortified city and its vital French logistics base, defeating the garrison left behind to secure Napoleon's lines of communication. The fall of Vitebsk was a catastrophic strategic blow for the Grande Armée; it instantly deprived the freezing, starving French troops of their last major supply depot of food, winter clothing, and ammunition, effectively sealing the tragic fate of their retreat toward the Berezina River.",
+    "latitude": 55.192681,
+    "longitude": 30.206359,
+    "image": "Vitebsk_retreat.webp",
+    "createDate": "2026-11-07"
   }
 ]
