@@ -22770,5 +22770,35 @@
     "longitude": 30.206359,
     "image": "Vitebsk_retreat.webp",
     "createDate": "2026-11-07"
+  },
+  {
+    "id": "1198",
+    "name": "Monument to the heroes of the war of 1812",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1912-12-06",
+    "location": "Vitebsk",
+    "country": "Belarus",
+    "description": "The Monument to the Heroes of the War of 1812 in Vitebsk was designed by Ivan Fomin and inaugurated on December 6, 1912, for the centenary of the victory over Napoleon. Standing 26 meters tall on Uspenskaya Hill, this red granite obelisk features a cast-iron double-headed eagle and honors the soldiers who fought in the region.",
+    "latitude": 55.199431,
+    "longitude": 30.202723,
+    "image": "Vitebsk_obelisk.webp",
+    "createDate": "2026-11-07",
+    {
+      "id": "1199",
+      "name": "Vitebsk Regional History Museum",
+      "category": "Museum",
+      "significance": 2,
+      "date": "1912-12-06",
+      "location": "Vitebsk",
+      "country": "Belarus",
+      "description": "The Vitebsk Regional History Museum, inaugurated on November 12, 1918, is housed in the city's historic Town Hall. A major highlight of its exhibits is the Patriotic War of 1812 collection, which chronicles the region's strategic role during Napoleon's invasion. This specialized display features period weapons, military artifacts, and historical documents that bring to life the fierce local clashes and the deep regional impact of the conflict.",
+      "wikipedia_link": "https://en.wikipedia.org/wiki/Vitebsk_Regional_History_Museum",
+      "site_link": "https://vokm.museum.by/en",
+      "latitude": 55.195601,
+      "longitude": 30.206215,
+      "image": "Vitebsk_obelisk.webp",
+      "createDate": "2026-11-07"
+    }
   }
 ]
