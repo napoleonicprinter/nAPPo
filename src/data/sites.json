@@ -22814,5 +22814,19 @@
     "longitude": 13.658252,
     "image": "Memorial_Wolfshagen.webp",
     "createDate": "2026-11-07"
+  },
+  {
+    "id": "1201",
+    "name": "Napoleonic War Memorial Wolfshagen",
+    "category": "Battle landmark",
+    "significance": 3,
+    "date": "1809-07-05",
+    "location": "Markgrafneusiedl",
+    "country": "Austria",
+    "description": "During the Battle of Wagram, the fortified church of Markgrafneusiedl served as a vital strategic stronghold anchoring the Austrian left flank. Though it originally served as Archduke Charles's headquarters earlier in the campaign, a fire forced him to relocate his central command post to Deutsch-Wagram before the main clash, leaving the church to serve as the critical tactical post for Field Marshal Prince Rosenberg's forces.",
+    "latitude": 48.269092,
+    "longitude": 16.633209,
+    "image": "Kirchenruine.webp",
+    "createDate": "2026-11-07"
   }
 ]
