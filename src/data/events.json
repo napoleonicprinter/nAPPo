@@ -3461,6 +3461,7 @@
   },
   {
     "id": "405",
+    "siteId": 643,
     "title": "Valmaseda set on fire",
     "date": "1808-11-08",
     "location": "Balmaseda",
@@ -3772,6 +3773,7 @@
   },
   {
     "id": "441",
+    "siteId": 237,
     "title": "Kufstein fortress capitulation",
     "date": "1805-11-08",
     "location": "Kufstein, Austria",
@@ -3790,7 +3792,7 @@
     "id": "443",
     "siteId": 714,
     "title": "Combat of Valvasone",
-    "date": "1805-11-08",
+    "date": "1805-11-11",
     "location": "Valvasone, Italy",
     "description": "A minor rearguard action was fought at Valvasone, near the Tagliamento River, on November 11th 1805, where Austrian forces under Archduke Charles successfully fended off pursuing French cavalry during their retreat."
   },
@@ -3815,7 +3817,7 @@
     "id": "446",
     "siteId": 717,
     "title": "Birth of General Rowland Hill",
-    "date": "1772-11-08",
+    "date": "1772-08-11",
     "location": "Prees, Shropshire, England",
     "description": "Hill was born on 11 August 1772 in Prees, Shropshire. He was the second son and fourth child of Sir John Hill. He served under Sir John Moore and under Wellington during the Peninsular War.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Rowland_Hill,_1st_Viscount_Hill"
