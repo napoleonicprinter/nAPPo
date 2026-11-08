@@ -12868,7 +12868,7 @@
     "id": "648",
     "name": "Battlefield of Roncesvalles",
     "category": "Battle site",
-    "significance": 1,
+    "significance": 2,
     "location": "Roncesvalles Pass, Navarra",
     "country": "Spain",
     "year": "1813",
@@ -22859,7 +22859,7 @@
     "year": "1813",
     "location": "Maya, Navarra",
     "country": "Spain",
-    "description": "TThe Battle of Maya (July 25, 1813) was a bloody Peninsular War clash in the Pyrenees where a French force under General d'Erlon launched a surprise attack and successfully forced an unprepared British-Portuguese division to retreat from a strategic mountain pass. Though a tactical victory for the French, they failed to exploit the breakthrough, allowing the Allies to regroup and defeat the broader French offensive days later at Sorauren.",
+    "description": "The Battle of Maya (July 25, 1813) was a bloody Peninsular War clash in the Pyrenees where a French force under General d'Erlon launched a surprise attack and successfully forced an unprepared British-Portuguese division to retreat from a strategic mountain pass. Though a tactical victory for the French, they failed to exploit the breakthrough, allowing the Allies to regroup and defeat the broader French offensive days later at Sorauren.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maya",
     "latitude": 43.228623,
     "longitude": -1.465262,
@@ -22897,6 +22897,115 @@
     "latitude": 43.491128,
     "longitude": -1.473816,
     "image": "Maya_canvas.webp",
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1205",
+    "name": "General Palafox HQ",
+    "category": "Landmark",
+    "significance": 2,
+    "date": "1808-08.05",
+    "year": "1808",
+    "location": "Villamayor de Gállego, Zaragoza",
+    "country": "Spain",
+    "description": "From August 5 to 9, 1808, General José de Palafox established his headquarters in Villamayor de Gállego, near the Hermitage of the Virgen del Pueyo. After temporarily leaving Zaragoza to gather reinforcements and supplies, he used this elevated position just outside the city to monitor the French siege before successfully breaking through their lines to re-enter Zaragoza on August 9.",
+    "latitude": 43.491128,
+    "longitude": -1.473816,
+    "image": "Palafox_HQ.webp",
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1206",
+    "name": "Battlefield of Sorauren (Battle of the Pyrenees)",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1813-07-28",
+    "year": "1813",
+    "location": "Sorauren, Navarra",
+    "country": "Spain",
+    "description": "The Battle of Sorauren (1813) was a crucial Peninsular War engagement near Pamplona, Spain, where the Duke of Wellington’s allied forces repelled a major offensive by French Marshal Soult. Soult's failure to relieve the besieged garrison at Pamplona forced a French retreat back across the Pyrenees, decisively ending Napoleon's dominance in Spain.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sorauren",
+    "latitude": 42.862934,
+    "longitude": -1.593992,
+    "image": "Sorauren.webp",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "defeated": "France",
+    "victor": [
+      "Britain",
+      "Portugal",
+      "Spain"
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Francisco de Longa"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1207",
+    "name": "Battlefield of Second Sorauren (Battle of the Pyrenees)",
+    "category": "Battle site",
+    "significance": 2,
+    "date": "1813-07-30",
+    "year": "1813",
+    "location": "Sorauren, Navarra",
+    "country": "Spain",
+    "description": "Following his defeat two days earlier, Soult attempted a flanking maneuver to slip between the Allied lines and the besieged fortress of San Sebastián. However, the Duke of Wellington anticipated the move and launched a devastating counteroffensive. An intense Allied artillery bombardment and coordinated infantry assaults shattered the moving French divisions, inflicting an additional 3,500 casualties and forcing Soult into a chaotic, full-scale retreat back to France.",
+    "latitude": 42.864752,
+    "longitude": -1.604932,
+    "image": "Sorauren_2.webp",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "defeated": "France",
+    "victor": [
+      "Britain",
+      "Portugal",
+      "Spain"
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley",
+      "Francisco de Longa"
+    ],
+    "commander_Loss": [
+      "Jean de Dieu Soult"
+    ],
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1208",
+    "name": "Battlefield of Beunza",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1813-07-30",
+    "year": "1813",
+    "location": "Sorauren, Navarra",
+    "country": "Spain",
+    "description": "The Combat of Beunza was a vital delaying action where General Rowland Hill’s outnumbered Allied force blocked a French flanking attempt by General D'Erlon. Hill’s stubborn, fighting retreat through rugged terrain prevented the French from turning the Allied flank, allowing Wellington to decisively crush the main French army at Sorauren.",
+    "latitude": 42.972885,
+    "longitude": -1.710921,
+    "image": "Beunza.webp",
+    "special": [
+      "Peninsular War",
+      "Guerra de Independencia"
+    ],
+    "defeated": "France",
+    "victor": [
+      "Britain"
+    ],
+    "commander_Victor": [
+      "Rowland Hill"
+    ],
+    "commander_Loss": [
+      "Louis Abbé"
+    ],
     "createDate": "2026-11-08"
   }
 ]

@@ -4929,5 +4929,39 @@
     "location": "Alba de Tormes, Spain",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alba_de_Tormes_(1812)",
     "description": "The Battle of Alba de Tormes was a battle fought between November 8 and 16, 1812, between French forces under the command of Marshal Jean de Dieu Soult and the allied forces (British, Portuguese, and Spanish) under the command of the Duke of Wellington."
+  },
+  {
+    "id": "580",
+    "siteId": 1203,
+    "title": "Combat of Maya",
+    "date": "1813-07-25",
+    "location": "Maya, Navarra, Spain",
+    "description": "TThe Battle of Maya (July 25, 1813) was a bloody Peninsular War clash in the Pyrenees where a French force under General d'Erlon launched a surprise attack and successfully forced an unprepared British-Portuguese division to retreat from a strategic mountain pass. Though a tactical victory for the French, they failed to exploit the breakthrough, allowing the Allies to regroup and defeat the broader French offensive days later at Sorauren.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maya"
+  },
+  {
+    "id": "581",
+    "siteId": 1206,
+    "title": "Battle of Sorauren (Battle of the Pyrenees)",
+    "date": "1813-07-28",
+    "location": "Sorauren, Navarra, Spain",
+    "description": "The Battle of Sorauren (July 28, 1813) was a crucial Peninsular War engagement near Pamplona, Spain, where the Duke of Wellington’s allied forces repelled a major offensive by French Marshal Soult. Soult's failure to relieve the besieged garrison at Pamplona forced a French retreat back across the Pyrenees, decisively ending Napoleon's dominance in Spain.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Sorauren"
+  },
+  {
+    "id": "582",
+    "siteId": 1027,
+    "title": "Second Battle of Sorauren (Battle of the Pyrenees)",
+    "date": "1813-07-30",
+    "location": "Sorauren, Navarra, Spain",
+    "description": "Following his defeat two days earlier, Soult attempted a flanking maneuver to slip between the Allied lines and the besieged fortress of San Sebastián. However, the Duke of Wellington anticipated the move and launched a devastating counteroffensive. An intense Allied artillery bombardment and coordinated infantry assaults shattered the moving French divisions, inflicting an additional 3,500 casualties and forcing Soult into a chaotic, full-scale retreat back to France."
+  },
+  {
+    "id": "583",
+    "siteId": 1208,
+    "title": "Combat of Beunza",
+    "date": "1813-07-30",
+    "location": "Beunza, Navarra, Spain",
+    "description": "The Combat of Beunza (1813) was a vital delaying action where General Rowland Hill’s outnumbered Allied force blocked a French flanking attempt by General D'Erlon. Hill’s stubborn, fighting retreat through rugged terrain prevented the French from turning the Allied flank, allowing Wellington to decisively crush the main French army at Sorauren."
   }
 ]
