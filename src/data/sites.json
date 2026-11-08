@@ -22831,7 +22831,7 @@
   },
   {
     "id": "1202",
-    "name": "Dutch Artillery Museum ",
+    "name": "Dutch Artillery Museum",
     "category": "Museum",
     "significance": 2,
     "year": "1961",
@@ -22842,6 +22842,61 @@
     "latitude": 52.388572,
     "longitude": 5.915187,
     "image": "Dutch_Artillery_museum.webp",
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1203",
+    "relatedSites": [
+      {
+        "id": 1204,
+        "title": "Canvas by Jules-Antoine Duvaux"
+      }
+    ],
+    "name": "Battlefield of Maya",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1813-07-25",
+    "year": "1813",
+    "location": "Maya, Navarra",
+    "country": "Spain",
+    "description": "TThe Battle of Maya (July 25, 1813) was a bloody Peninsular War clash in the Pyrenees where a French force under General d'Erlon launched a surprise attack and successfully forced an unprepared British-Portuguese division to retreat from a strategic mountain pass. Though a tactical victory for the French, they failed to exploit the breakthrough, allowing the Allies to regroup and defeat the broader French offensive days later at Sorauren.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Maya",
+    "latitude": 43.228623,
+    "longitude": -1.465262,
+    "image": "Maya.webp",
+    "special": "Peninsular War",
+    "victor": "France",
+    "defeated": [
+      "Britain",
+      "Portugal"
+    ],
+    "commander_Victor": [
+      "Jean Baptiste Drouet"
+    ],
+    "commander_Loss": [
+      "William Stewart",
+      "William Pringle"
+    ],
+    "createDate": "2026-11-08"
+  },
+  {
+    "id": "1204",
+    "name": "Combat du col de Maya",
+    "relatedSites": [
+      {
+        "id": 1203,
+        "title": "Battlefield"
+      }
+    ],
+    "category": "Artwork",
+    "significance": 2,
+    "year": "1871",
+    "location": "'t Harde",
+    "country": "Netherlands",
+    "description": "Combat du col de Maya is a dramatic historical oil painting created by French artist Jules-Antoine Duvaux in 1871. Preserved at the Musée Basque in Bayonne, the artwork vividly depicts the chaotic July 25, 1813 Peninsular War battle. The canvas captures the moment French troops under General d'Erlon aggressively scale the rugged Pyrenees terrain to drive back an unprepared Anglo-Portuguese division.",
+    "latitude": 43.491128,
+    "longitude": -1.473816,
+    "image": "Maya_canvas.webp",
     "createDate": "2026-11-08"
   }
 ]
