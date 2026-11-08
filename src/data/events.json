@@ -4920,5 +4920,14 @@
     "date": "1811-07-11",
     "location": "Vitebsk, Belarus",
     "description": "On November 7 (October 26 Old Style), 1812, the critical clash known as the Battle of Vitebsk unfolded as a pivotal moment during Napoleon’s disastrous retreat from Moscow. In this encounter, the Russian corps under General Peter Wittgenstein successfully captured the heavily fortified city and its vital French logistics base, defeating the garrison left behind to secure Napoleon's lines of communication. The fall of Vitebsk was a catastrophic strategic blow for the Grande Armée; it instantly deprived the freezing, starving French troops of their last major supply depot of food, winter clothing, and ammunition, effectively sealing the tragic fate of their retreat toward the Berezina River."
+  },
+  {
+    "id": "579",
+    "siteId": 42,
+    "title": "Battle of Alba de Tormes",
+    "date": "1811-11-08",
+    "location": "Alba de Tormes, Spain",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alba_de_Tormes_(1812)",
+    "description": "The Battle of Alba de Tormes was a battle fought between November 8 and 16, 1812, between French forces under the command of Marshal Jean de Dieu Soult and the allied forces (British, Portuguese, and Spanish) under the command of the Duke of Wellington."
   }
 ]
