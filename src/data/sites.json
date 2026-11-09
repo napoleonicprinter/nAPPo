@@ -22904,7 +22904,7 @@
     "name": "General Palafox HQ",
     "category": "Landmark",
     "significance": 2,
-    "date": "1808-08.05",
+    "date": "1808-08-05",
     "year": "1808",
     "location": "Villamayor de Gállego, Zaragoza",
     "country": "Spain",
@@ -23007,5 +23007,63 @@
       "Louis Abbé"
     ],
     "createDate": "2026-11-08"
+  },
+  {
+    "id": "1209",
+    "name": "Grande Armée Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1912-09-05",
+    "location": "Shevardino",
+    "country": "Russia",
+    "description": "The Grande Armée Memorial at  Shevardino stands on the Borodino battlefield in Russia, marking the site of Napoleon's command post. Designed by Paul-Prosper Boeswillwald to honor the fallen French and allied soldiers of the 1812 campaign, the granite obelisk was officially inaugurated on September 5, 1912, to commemorate the centennial of the battle.",
+    "latitude": 55.500165,
+    "longitude": 35.799874,
+    "image": "Shevardino_memorial.webp",
+    "createDate": "2026-11-09"
+  },
+  {
+    "id": "1210",
+    "name": "Shevardino Redoubt",
+    "category": "Battle landmark",
+    "significance": 3,
+    "date": "1812-09-05",
+    "location": "Shevardino",
+    "country": "Russia",
+    "description": "The Shevardino Redoubt was a vital forward fortification that became the site of a brutal, day-long battle on September 5, 1812, just two days before the main Battle of Borodino. A heavily outnumbered Russian force fiercely defended the earthwork against relentless assaults by Napoleon's troops, resulting in severe casualties on both sides during intense hand-to-hand fighting. Though the French eventually captured the position late at night, the stubborn Russian resistance bought invaluable time for Kutuzov's main army to reinforce their primary defensive lines.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Shevardino",
+    "latitude": 55.499144,
+    "longitude": 35.796979,
+    "image": "Shevardino_redoubt.webp",
+    "createDate": "2026-11-09"
+  },
+  {
+    "id": "1211",
+    "name": "Memorial 12th Battery Company",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1913-09-05",
+    "location": "Shevardino",
+    "country": "Russia",
+    "description": "The Monument to the 12th Battery Company is a historic memorial located on the Shevardino Redoubt within the Borodino Battlefield in Russia. Designed by the architect L.R. Sologub, the monument was inaugurated in 1912 to commemorate the centennial of the Patriotic War of 1812. It honors the heroic actions of the 12th Battery Company of the Life Guards 3rd Artillery Brigade, who fiercely defended this strategic advanced fortification against overwhelming French forces on September 5, 1812, just two days prior to the main Battle of Borodino. The stone monument stands as a lasting tribute to the bravery and heavy casualties endured by the Russian artillerymen who delayed Napoleon’s advance.",
+    "latitude": 55.499193,
+    "longitude": 35.796682,
+    "image": "Shevardino_artillery.webp",
+    "createDate": "2026-11-09"
+  },
+  {
+    "id": "1212",
+    "name": "Doroninio living museum",
+    "category": "Museum",
+    "significance": 2,
+    "year": "2006",
+    "location": "Shevardino",
+    "country": "Russia",
+    "description": "The Doronino military-historical settlement is an interactive opened in 2006, living museum located on the Borodino Reserve. Unlike traditional exhibits, its 19th-century buildings, tools, and artifacts are fully functional and accessible to the public. Through immersive reenactments by historical clubs, visitors actively experience the daily lives of local peasants and billeted Russian soldiers, stepping directly into the dramatic events of the Patriotic War of 1812.",
+    "site_link": "https://www.doronino.memorandum.ru/",
+    "latitude": 55.497017,
+    "longitude": 35.786632,
+    "image": "Doronino.webp",
+    "createDate": "2026-11-09"
   }
 ]
