@@ -23274,5 +23274,117 @@
     "longitude": 35.827315,
     "image": "mass_grave_borodino.webp",
     "createDate": "2026-11-10"
+  },
+  {
+    "id": "1227",
+    "name": "Murom Infantry Regiment Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1912-09-07",
+    "location": "Voroshilovo, Moscow Óblast",
+    "country": "Russia",
+    "description": "The Monument to the Murom Infantry Regiment is a historic military memorial located on the Borodino Battlefield in Russia, erected in 1912 to mark the centenary of the Patriotic War of 1812. Designed by architect Aleksey Vereshchagin and funded by the regiment's own officers, the monument consists of a rugged, natural granite block topped with an Orthodox cross, featuring the inscription: 'The people of Murom to their heroic ancestors.' During the legendary Battle of Borodino against Napoleon’s army, the 21st Murom Infantry Regiment fought heroically under the command of Major General Alexander Tuchkov, defending the critically strategic and bloodiest sectors of the line, including the Bagration Flêches and the village of Semyonovskoye.",
+    "latitude": 55.504675,
+    "longitude": 35.832741,
+    "image": "Muromsky_memorial.webp",
+    "createDate": "2026-11-10"
+  },
+  {
+    "id": "1228",
+    "name": "Russian Grenadier Divisions Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1912-09-07",
+    "location": "Voroshilovo, Moscow Óblast",
+    "country": "Russia",
+    "description": "The Monument commemorates the extreme bravery and heavy sacrifices of two prominent Russian infantry divisions during the bloody Battle of Borodino on September 7, 1812, the 2nd Grenadier Division, commanded by Major General Prince Charles of Mecklenburg-Schwerin and the 2nd Combined Grenadier Division, commanded by Major General Count Mikhail S. Vorontsov.",
+    "latitude": 55.504519,
+    "longitude": 35.831235,
+    "image": "2ndGrenadier_memorial.webp",
+    "createDate": "2026-11-11"
+  },
+  {
+    "id": "1229",
+    "name": "Grateful Russia to its Defenders",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1912-08-26",
+    "location": "Voroshilovo, Moscow Óblast",
+    "country": "Russia",
+    "description": "This monument at Borodino is a grand granite obelisk erected to honor the Russian soldiers who fought against Napoleon's army in 1812. Originally commissioned by Emperor Nicholas II for the centenary of the battle, the monument was first inaugurated on August 26, 1912. Although it was destroyed during the Soviet era, a faithful reconstruction was completed and re-inaugurated on October 15, 1995, ensuring its legacy as a central symbol of national remembrance on the historic battlefield.",
+    "latitude": 55.506088,
+    "longitude": 35.829411,
+    "image": "Gratefull_russia.webp",
+    "createDate": "2026-11-11"
+  },
+  {
+    "id": "1230",
+    "name": "Borodino Battlefield Museum",
+    "category": "Museum",
+    "significance": 3,
+    "year": "1839-09-07",
+    "location": "Borodinó, Moscow Óblast",
+    "country": "Russia",
+    "description": "The State Borodino War and History Museum and Reserve, officially established in 1839 by order of Tsar Nicholas I, is the oldest museum in the world founded on a Napoleonic battlefield. Visitors exploring the historic grounds are greeted by a prominent outdoor exhibition of captured French and allied artillery. This impressive collection features genuine bronze cannon barrels and howitzers seized during the 1812 campaign, many of which still display original foundry marks, the revolutionary motto 'Liberté, Égalité' and the distinct crowned 'N' monogram of Napoleon Bonaparte.",
+    "site_link": "https://www.borodino.ru/",
+    "latitude": 55.517918,
+    "longitude": 35.822673,
+    "image": "Borodino_museum.webp",
+    "createDate": "2026-11-11"
+  },
+  {
+    "id": "1231",
+    "name": "Russian Warrior-Heroes of the Battle of Borodino",
+    "category": "Monument",
+    "significance": 3,
+    "year": "1839-09-07",
+    "location": "Borodinó, Moscow Óblast",
+    "country": "Russia",
+    "description": "The Main Monument to the Russian Warrior-Heroes of the Battle of Borodino was officially inaugurated on August 26, 1839, to mark the 27th anniversary of the historic 1812 clash against Napoleon's forces. Designed by architect Antonio Adamini and erected on the bloody grounds of the Raevsky Redoubt, this striking 27.5-meter cast-iron chapel-monument was unveiled by Tsar Nicholas I during a grand military ceremony. Though tragically dynamited by the Soviet regime in 1932, the iconic monument was completely and faithfully reconstructed in 1987 to honor the enduring memory of the fallen soldiers.",
+    "latitude": 55.517918,
+    "longitude": 35.822673,
+    "image": "Borodino_heros.webp",
+    "createDate": "2026-11-11"
+  },
+  {
+    "id": "1232",
+    "relatedSites": [
+      {
+        "id": "1233",
+        "title": "First grave at Sima"
+      }
+    ],
+    "name": "Prince Bagration tomb",
+    "category": "Grave site",
+    "significance": 3,
+    "year": "1839-09-07",
+    "location": "Borodinó, Moscow Óblast",
+    "country": "Russia",
+    "description": "The tomb of Prince Pyotr Bagration stands at the foot of the Main Monument on Borodino’s Raevsky Redoubt, honoring one of Russia’s greatest military heroes. Mortally wounded while defending the flèches during the Battle of Borodino in 1812, the general was initially buried in the village of Sima. To permanently honor his sacrifice, his remains were transferred to the Borodino battlefield in July 1839 under the orders of Tsar Nicholas I. Today, the carefully restored monument marks his final resting place at the very heart of the historic conflict.",
+    "flower_link": "https://es.findagrave.com/memorial/91624766/pyotr_ivanovich-bagration/flower",
+    "latitude": 55.519246,
+    "longitude": 35.827347,
+    "image": "Bagration_tomb.webp",
+    "createDate": "2026-11-11"
+  },
+  {
+    "id": "1233",
+    "relatedSites": [
+      {
+        "id": "1232",
+        "title": "Tomb at Borodinó"
+      }
+    ],
+    "name": "Prince Bagration first grave site",
+    "category": "Landmark",
+    "significance": 3,
+    "year": "1812-09-24",
+    "location": "Sima, Vladimir Óblast",
+    "country": "Russia",
+    "description": "Following his mortal wounding at the Battle of Borodino, the legendary Russian general Prince Pyotr Bagration died of gangrene on September 24, 1812 (September 12 Old Style) at the Golitsyn estate in the village of Sima. He was laid to rest in his first grave at Sima's Epiphany Church, where his body remained undisturbed for nearly three decades. In 1839, on the initiative of his former brother-in-arms, the poet-partisan Denis Davydov, Bagration's remains were exhumed and ceremonially transferred to the Borodino battlefield to lie alongside the men he commanded. Today, a memorial bust marks the site of his original resting place in Sima, preserving the memory of the village's connection to the revered military hero.",
+    "latitude": 56.685342,
+    "longitude": 39.553298,
+    "image": "Sima_church.webp",
+    "createDate": "2026-11-11"
   }
 ]
