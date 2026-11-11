@@ -22918,6 +22918,12 @@
     "id": "1206",
     "name": "Battlefield of Sorauren (Battle of the Pyrenees)",
     "category": "Battle site",
+    "relatedSites": [
+      {
+        "id": "1243",
+        "title": "Wellington at Sorauren - T. Barker canvas"
+      }
+    ],
     "significance": 2,
     "date": "1813-07-28",
     "year": "1813",
@@ -23196,7 +23202,7 @@
     "name": "Spaso-Borodino Nunnery",
     "category": "Landmark",
     "significance": 2,
-    "year": "1839",
+    "date": "1839",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "The Spaso-Borodinsky Monastery (also known as the Savior-Borodino Convent) is a historic Russian Orthodox nunnery founded in 1839 by Margarita Tuchkova, the widow of General Aleksandr Tuchkov. It was built directly on the Borodino battlefield as a monumental memorial to honor the Russian soldiers who died during the bloody Battle of Borodino in 1812 against Napoleon's forces.",
@@ -23210,7 +23216,7 @@
     "name": "General Tuchkov death site",
     "category": "Landmark",
     "significance": 2,
-    "year": "1812-09-07",
+    "date": "1812-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "The Church of the Savior at the Borodino Battlefield was built by Margarita Tuchkova, the widow of General Alexander Tuchkov, who heroically perished during the Battle of Borodino in 1812. Constructed on the exact spot where her husband fell, the church served as a poignant monument to fallen soldiers and a personal sanctuary of grief, eventually leading to the foundation of the Spaso-Borodinsky Monastery. It stands today as a powerful historical symbol of love, devotion, and national remembrance.",
@@ -23224,7 +23230,7 @@
     "name": "3rd foot division of General Konovnitsin memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "This monument erected in 1912 on the Borodino Battlefield stands on the historic defensive lines of the Bagration fleches and honors the division's regiments and fallen officers, including Major General Alexander Tuchkov, who died heroically nearby while leading a counterattack.",
@@ -23238,7 +23244,7 @@
     "name": "Russian Pioneers Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "Erected in 1912 for the battle's centennial, this monument honors the Russian pioneer and engineer troops. They worked against time to build the crucial field fortifications—including the Raevsky Redoubt, Shevardino Redoubt, and Bagration Fleches—that allowed the army to hold the line against Napoleon's forces.",
@@ -23252,7 +23258,7 @@
     "name": "Russian 27th foot division Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "Erected in 1912 for the battle's centennial, the Monument to the 27th Infantry Division of General Dmitry Neverovsky commemorates the fierce and heroic stand of these soldiers during the Battle of Borodino in 1812. Positioned near the critical Shevardino Redoubt, the monument honors the division's legendary resilience in holding back overwhelming French cavalry charges, which bought crucial time for the main Russian forces to deploy.",
@@ -23266,7 +23272,7 @@
     "name": "Russian mass graves",
     "category": "Landmark",
     "significance": 2,
-    "year": "1812-09-07",
+    "date": "1812-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "Mass Graves of Russian soldiers who died durint the battle.",
@@ -23280,7 +23286,7 @@
     "name": "Murom Infantry Regiment Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "The Monument to the Murom Infantry Regiment is a historic military memorial located on the Borodino Battlefield in Russia, erected in 1912 to mark the centenary of the Patriotic War of 1812. Designed by architect Aleksey Vereshchagin and funded by the regiment's own officers, the monument consists of a rugged, natural granite block topped with an Orthodox cross, featuring the inscription: 'The people of Murom to their heroic ancestors.' During the legendary Battle of Borodino against Napoleon’s army, the 21st Murom Infantry Regiment fought heroically under the command of Major General Alexander Tuchkov, defending the critically strategic and bloodiest sectors of the line, including the Bagration Flêches and the village of Semyonovskoye.",
@@ -23294,7 +23300,7 @@
     "name": "Russian Grenadier Divisions Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "The Monument commemorates the extreme bravery and heavy sacrifices of two prominent Russian infantry divisions during the bloody Battle of Borodino on September 7, 1812, the 2nd Grenadier Division, commanded by Major General Prince Charles of Mecklenburg-Schwerin and the 2nd Combined Grenadier Division, commanded by Major General Count Mikhail S. Vorontsov.",
@@ -23308,7 +23314,7 @@
     "name": "Grateful Russia to its Defenders",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-08-26",
+    "date": "1912-08-26",
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "This monument at Borodino is a grand granite obelisk erected to honor the Russian soldiers who fought against Napoleon's army in 1812. Originally commissioned by Emperor Nicholas II for the centenary of the battle, the monument was first inaugurated on August 26, 1912. Although it was destroyed during the Soviet era, a faithful reconstruction was completed and re-inaugurated on October 15, 1995, ensuring its legacy as a central symbol of national remembrance on the historic battlefield.",
@@ -23322,7 +23328,7 @@
     "name": "Borodino Battlefield Museum",
     "category": "Museum",
     "significance": 3,
-    "year": "1839-09-07",
+    "date": "1839-09-07",
     "location": "Borodinó, Moscow Óblast",
     "country": "Russia",
     "description": "The State Borodino War and History Museum and Reserve, officially established in 1839 by order of Tsar Nicholas I, is the oldest museum in the world founded on a Napoleonic battlefield. Visitors exploring the historic grounds are greeted by a prominent outdoor exhibition of captured French and allied artillery. This impressive collection features genuine bronze cannon barrels and howitzers seized during the 1812 campaign, many of which still display original foundry marks, the revolutionary motto 'Liberté, Égalité' and the distinct crowned 'N' monogram of Napoleon Bonaparte.",
@@ -23337,7 +23343,7 @@
     "name": "Russian Warrior-Heroes of the Battle of Borodino",
     "category": "Monument",
     "significance": 3,
-    "year": "1839-09-07",
+    "date": "1839-09-07",
     "location": "Borodinó, Moscow Óblast",
     "country": "Russia",
     "description": "The Main Monument to the Russian Warrior-Heroes of the Battle of Borodino was officially inaugurated on August 26, 1839, to mark the 27th anniversary of the historic 1812 clash against Napoleon's forces. Designed by architect Antonio Adamini and erected on the bloody grounds of the Raevsky Redoubt, this striking 27.5-meter cast-iron chapel-monument was unveiled by Tsar Nicholas I during a grand military ceremony. Though tragically dynamited by the Soviet regime in 1932, the iconic monument was completely and faithfully reconstructed in 1987 to honor the enduring memory of the fallen soldiers.",
@@ -23357,7 +23363,7 @@
     "name": "Prince Bagration tomb",
     "category": "Grave site",
     "significance": 3,
-    "year": "1839-09-07",
+    "date": "1839-09-07",
     "location": "Borodinó, Moscow Óblast",
     "country": "Russia",
     "description": "The tomb of Prince Pyotr Bagration stands at the foot of the Main Monument on Borodino’s Raevsky Redoubt, honoring one of Russia’s greatest military heroes. Mortally wounded while defending the flèches during the Battle of Borodino in 1812, the general was initially buried in the village of Sima. To permanently honor his sacrifice, his remains were transferred to the Borodino battlefield in July 1839 under the orders of Tsar Nicholas I. Today, the carefully restored monument marks his final resting place at the very heart of the historic conflict.",
@@ -23378,7 +23384,7 @@
     "name": "Prince Bagration first grave site",
     "category": "Landmark",
     "significance": 3,
-    "year": "1812-09-24",
+    "date": "1812-09-24",
     "location": "Sima, Vladimir Óblast",
     "country": "Russia",
     "description": "Following his mortal wounding at the Battle of Borodino, the legendary Russian general Prince Pyotr Bagration died of gangrene on September 24, 1812 (September 12 Old Style) at the Golitsyn estate in the village of Sima. He was laid to rest in his first grave at Sima's Epiphany Church, where his body remained undisturbed for nearly three decades. In 1839, on the initiative of his former brother-in-arms, the poet-partisan Denis Davydov, Bagration's remains were exhumed and ceremonially transferred to the Borodino battlefield to lie alongside the men he commanded. Today, a memorial bust marks the site of his original resting place in Sima, preserving the memory of the village's connection to the revered military hero.",
@@ -23392,7 +23398,7 @@
     "name": "Russian Cavalry Guards and Horse Guard Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Semenovskoe, Moscow Óblast",
     "country": "Russia",
     "description": "The Monument to the Chevalier Guards and Horse Guards stands as a tribute to Russia's most elite heavy cavalry regiments. Unveiled during the centenary celebrations of the Patriotic War of 1812 —which culminated on September 8, 1912— the memorial was erected by the First Brigade of the First Guards Cavalry Division. Topped by a striking bronze eagle perched atop a stone column, the monument marks the site behind the Raevsky Redoubt where these regiments bravely counterattacked and drove back French and Saxon cavalry during the Battle of Borodino.",
@@ -23406,7 +23412,7 @@
     "name": "Russian Cuirassiers Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Semenovskoe, Moscow Óblast",
     "country": "Russia",
     "description": "The Memorisal plate reads 'To the brave officers and lower ranks of His Majesty's Cuirassier Regiment, [and] to their commander and chief, Colonel Karl Budberg, who stood to the death on this field'",
@@ -23420,7 +23426,7 @@
     "name": "Russian Astrakhan Cuirassier Regiment Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Semenovskoe, Moscow Óblast",
     "country": "Russia",
     "description": "Erected in 1912 at the edge of the Psarevsky Forest by the regiment's descendants, this pink granite obelisk honors the Astrakhan Cuirassier Regiment, which lost an astonishing four-fifths of its men at the Battle of Borodino.",
@@ -23435,7 +23441,7 @@
     "name": "Russian officers' graves",
     "category": "Grave site",
     "significance": 2,
-    "year": "1966-09-07",
+    "date": "1966-09-07",
     "location": "Semenovskoe, Moscow Óblast",
     "country": "Russia",
     "description": "This is the resting place of four Russian officers killed at the Battle of Borodino. The center one is the shared grave of Lieutenant Sergei Nikolaevich Tatishchev and Ensign Nikolai Alekseevich Olenin of the Semyonovsky Life Guards Regiment, who were killed by a single cannonball; the monument was designed by Olenin’s father, Alexei Nikolaevich Olenin. Nearby, two low red granite columns mark the graves of Captain Alexander Petrovich Levshin of the Life Guards Jaeger Regiment and Captain Pyotr Fyodorovich Shaposhnikov of the Life Guards Preobrazhensky Regiment. All four officers and their headstones were relocated here from Mozhaisk’s Troitskoye Cemetery in 1967 after a community center was built on the original site. (Photo: borodino.ru)",
@@ -23450,7 +23456,7 @@
     "name": "23rd Infantry Division Memorial",
     "category": "Monument",
     "significance": 2,
-    "year": "1912-09-07",
+    "date": "1912-09-07",
     "location": "Semenovskoe, Moscow Óblast",
     "country": "Russia",
     "description": "Erected for the Battle of Borodino centennial at the edge of Psarevsky Forest, this granite column topped with a double-headed eagle honors Major General Alexei Nikolaevich Bakhmetev and his 23rd Infantry Division (specifically the Rylsk and Yekaterinburg regiments). Funded by descendants of the regiments, the memorial commemorates the division's heroic stand on September 7th 1812 where it suffered over 1,370 casualties and Bakhmetev lost his leg to a cannonball.",
@@ -23458,6 +23464,110 @@
     "latitude": 55.517745,
     "longitude": 35.836751,
     "image": "Russian_23_Division.webp",
+    "createDate": "2026-11-12"
+  },
+  {
+    "id": "1239",
+    "name": "Santa Coloma house - British HQ",
+    "category": "Landmark",
+    "relatedSites": [
+      {
+        "id": "1240",
+        "title": "Artwork by Fortuny"
+      }
+    ],
+    "significance": 2,
+    "date": "1807-07-01",
+    "location": "Bernal, Quilmes",
+    "country": "Argentina",
+    "description": "The British vanguard under Major General John Levison Gower occupied the Casa de Santa Coloma on the night of July 1 to July 2, 1807, during the Second British Invasion of the Río de la Plata. They arrived at dusk on July 1 after disembarking at Ensenada de Barragán on June 28, seeking shelter from a heavy rainstorm before resuming their march toward Buenos Aires early the next morning.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Quinta_de_Santa_Coloma",
+    "latitude": -34.702293,
+    "longitude": -58.287190,
+    "image": "SantaColoma.webp",
+    "createDate": "2026-11-12"
+  },
+  {
+    "id": "1240",
+    "name": "British General Staff Headquarters at Santa Coloma's house",
+    "category": "Artwork",
+    "relatedSites": [
+      {
+        "id": "1239",
+        "title": "Santa Coloma house"
+      }
+    ],
+    "significance": 2,
+    "year": "1930",
+    "location": " Museo Udaondo, Luján, Buenos Aires",
+    "country": "Argentina",
+    "latitude": -34.562649,
+    "longitude": -59.121628,
+    "description": "Painted by Spanish-Argentine artist Francisco Fortuny in the early 20th century (c. 1900–1930s), British General Staff Headquarters at the Casa de Santa Coloma depicts Lieutenant General John Whitelocke and his officers planning the 1807 British assault on Buenos Aires. Housed at the Museo Udaondo in Luján, Argentina, this detailed historical watercolor captures the tense strategic meeting inside the colonial Quinta de Santa Coloma in Quilmes just days before the British forces were defeated.",
+    "image": "SantaColoma_fortuny.webp",
+    "createDate": "2026-11-12"
+  },
+  {
+    "id": "1241",
+    "name": "Old Bridge at Sorauren",
+    "category": "Landmark",
+    "relatedSites": [
+      {
+        "id": "1242",
+        "title": "Thomas Jones Barker canvas"
+      }
+    ],
+    "significance": 1,
+    "date": "1813-07-27",
+    "location": "Sorauren, Navarra",
+    "country": "Spain",
+    "latitude": 42.868259,
+    "longitude": -1.609883,
+    "description": "On July 27, 1813, Lord Wellington rode ahead of his army with his aide-de-camp, Lord Fitzroy Somerset, to the bridge at Sorauren, where they spotted advancing French troops across the river. Calmly resting his paper on the stone parapet, Wellington scribbled a pencil note to reroute his approaching divisions and sent Somerset galloping back with the order just before the French captured the crossing.",
+    "image": "Sorauren_Bridge.webp",
+    "createDate": "2026-11-12"
+  },
+  {
+    "id": "1242",
+    "name": "Wellington and Somerset Waiting on Sorauren Bridge",
+    "category": "Artwork",
+    "relatedSites": [
+      {
+        "id": "1241",
+        "title": "Sorauren Bridge"
+      }
+    ],
+    "significance": 2,
+    "year": "1854",
+    "location": "Sorauren, Navarra",
+    "country": "Spain",
+    "latitude": 51.348967,
+    "longitude": -0.995966,
+    "description": "Wellington and Somerset Waiting on Sorauren Bridge is an oil painting created around 1853–1854 by the British artist Thomas Jones Barker, which is part of the Wellington family collection and exhibited at Stratfield Saye. Set in the Spanish Pyrenees just before the Battle of Sorauren in July 1813, the scene depicts the Duke of Wellington leaning over the stone bridge parapet over the Ulzama river to write urgent orders. Beside him stands his aide-de-camp, Lord FitzRoy Somerset, in a red uniform next to their horses against a dramatic mountain backdrop.",
+    "image": "Sorauren_Bridge_canvas.webp",
+    "site_link": "https://wellington.co.uk/stratfield-saye-house/",
+    "createDate": "2026-11-12"
+  },
+  {
+    "id": "1243",
+    "name": "Wellington at Sorauren",
+    "category": "Artwork",
+    "relatedSites": [
+      {
+        "id": "1206",
+        "title": "Sorauren Battlefield"
+      }
+    ],
+    "significance": 2,
+    "year": "1853",
+    "location": "National Army Museum, Myth and Reality, London",
+    "country": "England",
+    "latitude": 51.48641,
+    "longitude": -0.16044,
+    "description": "Wellington at Sorauren, 27 July 1813, is an oil-on-canvas history painting created in 1853 by the British artist Thomas Jones Barker. The Romantic-style work depicts Arthur Wellesley, then Marquess of Wellington, being escorted on horseback by local Spanish guides through the rugged mountain passes near Sorauren during the Peninsular War. Originally displayed at the Royal Academy Exhibition of 1853 at the National Gallery, the painting is currently housed and exhibited at the National Army Museum in London.",
+    "image": "Sorauren_Wellingon.webp",
+    "site_link": "https://collection.nam.ac.uk/detail.php?acc=1960-04-1-1",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Wellington_at_Sorauren",
     "createDate": "2026-11-12"
   }
 ]
