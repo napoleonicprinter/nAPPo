@@ -4988,5 +4988,14 @@
     "location": "Gridnevo, Óblast de Moscú, Russia",
     "flower_link": "https://es.findagrave.com/memorial/91624766/pyotr_ivanovich-bagration/flower",
     "description": "Following his mortal wounding at the Battle of Borodino, the legendary Russian general Prince Pyotr Bagration died of gangrene on September 24, 1812 (September 12 Old Style) at the Golitsyn estate in the village of Sima. He was laid to rest in his first grave at Sima's Epiphany Church, where his body remained undisturbed for nearly three decades. In 1839, on the initiative of his former brother-in-arms, the poet-partisan Denis Davydov, Bagration's remains were exhumed and ceremonially transferred to the Borodino battlefield to lie alongside the men he commanded. Today, a bust marks the site of his original resting place in Sima, preserving the memory of the village's connection to the revered military hero."
+  },
+  {
+    "id": "587",
+    "siteId": 1246,
+    "title": "Battle of Foz de Arouce",
+    "date": "1811-03-15",
+    "location": "Foz de Arouce, Portugal",
+    "description": "The Battle of Foz de Arouce took place on 15 March 1811 when Anglo-Portuguese forces led by Arthur Wellesley clashed against the French rearguard commanded by Marshal Michel Ney. Launching a surprise attack late in the afternoon, Wellesley caught Ney's troops off guard while they were positioned in front of the swollen Ceira River. The assault triggered a panicked French retreat across a single narrow bridge, resulting in a decisive Allied victory and roughly 250 French casualties before Ney blew up the bridge to cover their escape.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Foz_de_Arouce"
   }
 ]

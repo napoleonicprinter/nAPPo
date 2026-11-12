@@ -22042,8 +22042,8 @@
     "country": "England",
     "description": "Originally composed of six distinct barracks—Ross, Burgoyne, Somerset, Napier, Risborough, and Sir John Moore—only Sir John Moore Barracks still stands today at Shorncliffe Military Camp. The British Army initially purchased the land in 1794 and expanded it extensively in the early 19th century due to the Napoleonic threat. It was here that Sir John Moore established the main training hub for the Light Division.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Shorncliffe_Army_Camp",
-    "latitude": 51.07707,
-    "longitude": 1.313828,
+    "latitude": 51.077081,
+    "longitude": 1.138271,
     "image": "Moore_barracks.webp",
     "createDate": "2026-11-02"
   },
@@ -23220,6 +23220,7 @@
     "location": "Voroshilovo, Moscow Óblast",
     "country": "Russia",
     "description": "The Church of the Savior at the Borodino Battlefield was built by Margarita Tuchkova, the widow of General Alexander Tuchkov, who heroically perished during the Battle of Borodino in 1812. Constructed on the exact spot where her husband fell, the church served as a poignant monument to fallen soldiers and a personal sanctuary of grief, eventually leading to the foundation of the Spaso-Borodinsky Monastery. It stands today as a powerful historical symbol of love, devotion, and national remembrance.",
+    "youtube_link": "https://www.youtube.com/watch?v=iqWp5jrgYCk",
     "latitude": 55.504519,
     "longitude": 35.830061,
     "image": "Saviour_church.webp",
@@ -23569,5 +23570,77 @@
     "site_link": "https://collection.nam.ac.uk/detail.php?acc=1960-04-1-1",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Wellington_at_Sorauren",
     "createDate": "2026-11-12"
+  },
+  {
+    "id": "1244",
+    "name": "Foz de Arouce Obelisk",
+    "category": "Monument",
+    "significance": 2,
+    "date": "1898-03-15",
+    "location": "Foz de Arouce",
+    "country": "Portugal",
+    "latitude": 40.159638,
+    "longitude": -8.280798,
+    "description": "Located next to the Vineyards of the Count of Foz de Arouce, this memorial honors all those who served in the Peninsular War during the third French Invasion in 1811. It was commissioned on March 15, 1898, by Francisco Augusto Furtado de Mesquita de Paiva Pinto, the 1st Viscount and 1st Count of Foz de Arouce.",
+    "image": "Arouce_obleisk.webp",
+    "more info": "https://www.uf-fozdearouceecasaldeermio.pt/freguesia/locais-a-visitar/obelisco-original",
+    "createDate": "2026-11-13"
+  },
+  {
+    "id": "1245",
+    "name": "Foz de Arouce Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "year": "1911",
+    "location": "Foz de Arouce",
+    "country": "Portugal",
+    "latitude": 40.161258,
+    "longitude": -8.277979,
+    "description": "Erected in honor of the brave soldiers who fought in the Battle of Foz de Arouce, the Obelisk of Foz de Arouce is a source of local pride commemorating the events of March 15, 1811, during Masséna's retreat against Wellington's troops at the end of the third French invasion of Portugal.",
+    "image": "Arouce_memorial.webp",
+    "createDate": "2026-11-13"
+  },
+  {
+    "id": "1246",
+    "name": "Battlefield of Foz de Arouce",
+    "category": "Battle site",
+    "significance": 2,
+    "year": "1811",
+    "location": "Foz de Arouce",
+    "country": "Portugal",
+    "latitude": 40.151896,
+    "longitude": -8.277269,
+    "description": "The Battle of Foz de Arouce took place on 15 March 1811 when Anglo-Portuguese forces led by Arthur Wellesley clashed against the French rearguard commanded by Marshal Michel Ney. Launching a surprise attack late in the afternoon, Wellesley caught Ney's troops off guard while they were positioned in front of the swollen Ceira River. The assault triggered a panicked French retreat across a single narrow bridge, resulting in a decisive Allied victory and roughly 250 French casualties before Ney blew up the bridge to cover their escape.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Foz_de_Arouce",
+    "image": "Arouce.webp",
+    "special": "Peninsular War",
+    "victor": [
+      "Britain",
+      "Portugal"
+    ],
+    "defeated": [
+      "France"
+    ],
+    "commander_Loss": [
+      "Michel Ney"
+    ],
+    "commander_Victor": [
+      "Arthur Wellesley"
+    ],
+    "createDate": "2026-11-13"
+  },
+  {
+    "id": "1247",
+    "name": "Foz de Arouce bridge",
+    "category": "Battle landmark",
+    "significance": 2,
+    "year": "1811",
+    "location": "Foz de Arouce",
+    "country": "Portugal",
+    "latitude": 40.161934,
+    "longitude": -8.277577,
+    "description": "During the Battle of Foz de Arouce, the single narrow bridge over the flooded Ceira River became the site of a chaotic French retreat. Caught off guard by the Allied attack, panicking French troops created a deadly bottleneck on the span under heavy fire, causing many to be pushed into the water and drown. Once his surviving men crossed, Marshal Michel Ney blew up the bridge to stop the Anglo-Portuguese pursuit.",
+    "image": "Arouce_bridge.webp",
+    "createDate": "2026-11-13"
   }
 ]
