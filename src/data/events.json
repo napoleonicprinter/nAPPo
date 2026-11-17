@@ -2202,7 +2202,7 @@
     "siteId": 525,
     "title": "Battle of Borizov",
     "description": "The Russian vanguard under Charles de Lambert eliminated the Franco-Polish force under Dombrowsky.",
-    "date": "1812-11-14",
+    "date": "1812-11-21",
     "location": "Borizov",
     "country": "Belarus",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Borisov"
@@ -5009,5 +5009,14 @@
     "location": "Lleweni Hall, Denbighshire, Wales",
     "description": "Stapleton Cotton, 1st Viscount Combermere, was born on November 14, 1773, at Lleweni Hall (also spelled Llewenny Hall) in Denbighshire, Wales. This historic estate in the Vale of Clwyd was the ancestral seat of his mother's family, the Stapletons. His parents, Sir Robert Salusbury Cotton and Frances Stapleton, resided there until his father succeeded to the baronetcy and relocated the family to their estate at Combermere Abbey in Cheshire.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Stapleton_Cotton,_1st_Viscount_Combermere"
+  },
+  {
+    "id": "589",
+    "siteId": 1249,
+    "title": "Combat of Ontígola",
+    "date": "1809-11-18",
+    "location": "Ontígola, Toledo, Spain",
+    "description": "The Action of Ontígola took place on November 18, 1809 as the largest pure cavalry clash of the conflict, it pitted French dragoons under General Milhaud against Spanish cavalry led by General Manuel Freire. Following a fierce melee near Aranjuez that left hundreds dead—including French General Marie Auguste Pâris—the French forced the Spanish cavalry back toward Ocaña, setting the stage for their major victory the next day.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_Ont%C3%ADgola"
   }
 ]
