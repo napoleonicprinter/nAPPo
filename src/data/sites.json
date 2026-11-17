@@ -2378,8 +2378,8 @@
     "location": "Ocaña, Toledo",
     "country": "Spain",
     "description": "Fought on November 19th 1809 between French forces under Marshal Jean-de-Dieu Soult against the Spanish army under General Juan Carlos Aréizaga, which suffered its greatest single defeat.",
-    "latitude": 39.96,
-    "longitude": -3.5,
+    "latitude": 39.966476,
+    "longitude": -3.475908,
     "image": "Ocana.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Oca%C3%B1a",
     "youtube_link": "https://youtu.be/BGsCNAB5BmY",
@@ -2399,7 +2399,7 @@
     "maps_OFF": [
       {
         "id": "ocaña",
-        "name": "Phase 1",
+        "name": "Phase 1 (Atlas GdI)",
         "url": "Ocaña.svg",
         "bounds": [
           [
