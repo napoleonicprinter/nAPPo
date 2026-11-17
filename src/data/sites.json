@@ -2396,11 +2396,26 @@
     "commander_Loss": [
       "Juan Carlos Aréizaga"
     ],
-    "maps_OFF": [
+    "maps": [
       {
         "id": "ocaña",
         "name": "Phase 1 (Atlas GdI)",
-        "url": "Ocaña.svg",
+        "url": "Ocana_1.svg",
+        "bounds": [
+          [
+            39.878099,
+            -3.579576
+          ],
+          [
+            40.024427,
+            -3.430905
+          ]
+        ]
+      },
+      {
+        "id": "ocaña2",
+        "name": "Phase 2 (Atlas GdI)",
+        "url": "Ocana_2.svg",
         "bounds": [
           [
             39.878099,
