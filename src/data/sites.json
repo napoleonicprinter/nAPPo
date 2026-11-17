@@ -2382,6 +2382,7 @@
     "longitude": -3.5,
     "image": "Ocana.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Oca%C3%B1a",
+    "youtube_link": "https://youtu.be/BGsCNAB5BmY",
     "createDate": "2025-03-15",
     "special": [
       "arc",
@@ -2394,6 +2395,23 @@
     ],
     "commander_Loss": [
       "Juan Carlos Aréizaga"
+    ],
+    "maps": [
+      {
+        "id": "ocaña",
+        "name": "Phase 1",
+        "url": "Ocaña.svg",
+        "bounds": [
+          [
+            39.878099,
+            -3.579576
+          ],
+          [
+            40.024427,
+            -3.430905
+          ]
+        ]
+      }
     ]
   },
   {
@@ -23668,8 +23686,8 @@
     "year": "1809",
     "location": "Ontígola, Toledo",
     "country": "Spain",
-    "latitude": 39.99730,
-    "longitude": -3.554696,
+    "latitude": 39.998138,
+    "longitude": -3.556959,
     "description": "The Action of Ontígola took place on November 18, 1809 as the largest pure cavalry clash of the conflict, it pitted French dragoons under General Milhaud against Spanish cavalry led by General Manuel Freire. Following a fierce melee near Aranjuez that left hundreds dead—including French General Marie Auguste Pâris—the French forced the Spanish cavalry back toward Ocaña, setting the stage for their major victory the next day.",
     "wikipedia_link": "https://es.wikipedia.org/wiki/Acci%C3%B3n_de_Ont%C3%ADgola",
     "image": "Ontigola.webp",
@@ -23716,6 +23734,60 @@
     "longitude": -3.496148,
     "description": "General Antoine Marie Paris d'Illins (commonly known as General Paris) was killed in action on November 18, 1809, by Spanish trooper Vicente Manzano during a cavalry skirmish near Ontígola. He was reportedly buried in the Dominican convent of Ocaña, with local accounts placing his tomb inside the chapter house (Sala Capitular), a cloister chapel next to the sacristy. His remains are believed to have been lost in 1936 when the convent was converted into a workshop during the Spanish Civil War.",
     "image": "Ocaña_dominicos.webp",
+    "createDate": "2026-11-17"
+  },
+  {
+    "id": "1251",
+    "name": "Battlefield of Cuesta del Madero",
+    "category": "Battle site",
+    "significance": 1,
+    "date": "1809-11-08",
+    "year": "1809",
+    "location": "La Guardia, Toledo",
+    "country": "Spain",
+    "latitude": 39.826174,
+    "longitude": -3.80497,
+    "description": "On November 8, 1809, the Action of Cuesta del Madero took place near La Guardia in Toledo during the Peninsular War. Spanish cavalry led by General Manuel Freire confronted French dragoons commanded by General Milhaud who held a strong position on the elevated slope known as Cuesta del Madero. Freire impatiently launched a frontal assault before his flanking regiments arrived, allowing the well-positioned French cavalry to inflict heavy casualties on the Spanish riders, including the Grenadiers of Ferdinand VII. Although the French eventually withdrew toward Dosbarrios, this costly skirmish preceded the Spanish defeat at the Battle of Ocaña just days later.",
+    "image": "Cuesta_madero.webp",
+    "special": "Guerra de Independencia",
+    "victor": [
+      "Spain"
+    ],
+    "defeated": [
+      "France"
+    ],
+    "commander_Victor": [
+      "Manuel Freire"
+    ],
+    "commander_Loss": [
+      "Édouard Milhaud"
+    ],
+    "createDate": "2026-11-17"
+  },
+  {
+    "id": "1252",
+    "name": "Tajo River crossing point at Villamanrique",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Villamanrique, Madrid",
+    "country": "Spain",
+    "latitude": 40.065255,
+    "longitude": -3.229229,
+    "description": "At the main crossing point near Villamanrique de Tajo, Spanish military engineers rapidly constructed two improvised wagon bridges (puentes de carros) across two adjacent river fords to move the main body of General Aréizaga's army, including General Vigodet's division, artillery, and supply trains. However, before the entire force could pass to the northern bank, a fierce three-day rainstorm caused the Tagus River to swell violently and turned the surrounding roads into impassable mud. Facing rising waters and French reinforcements, Aréizaga ordered the two bridges dismantled, leaving the bulk of his army stranded on the southern shore.",
+    "image": "Villamanrique.webp",
+    "createDate": "2026-11-17"
+  },
+  {
+    "id": "1253",
+    "name": "Tajo River crossing point at Buenameson",
+    "category": "Landmark",
+    "significance": 1,
+    "location": "Villamanrique, Madrid",
+    "country": "Spain",
+    "latitude": 40.084799,
+    "longitude": -3.201562,
+    "description": "At the main crossing point near Villamanrique de Tajo, Spanish military engineers rapidly constructed two improvised wagon bridges (puentes de carros) across two adjacent river fords to move the main body of General Aréizaga's army, including General Vigodet's division, artillery, and supply trains. However, before the entire force could pass to the northern bank, a fierce three-day rainstorm caused the Tagus River to swell violently and turned the surrounding roads into impassable mud. Facing rising waters and French reinforcements, Aréizaga ordered the two bridges dismantled, leaving the bulk of his army stranded on the southern shore.",
+    "image": "Villamanrique.webp",
     "createDate": "2026-11-17"
   }
 ]
