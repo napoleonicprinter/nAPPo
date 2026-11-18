@@ -23804,5 +23804,45 @@
     "description": "At the main crossing point near Villamanrique de Tajo, Spanish military engineers rapidly constructed two improvised wagon bridges (puentes de carros) across two adjacent river fords to move the main body of General Aréizaga's army, including General Vigodet's division, artillery, and supply trains. However, before the entire force could pass to the northern bank, a fierce three-day rainstorm caused the Tagus River to swell violently and turned the surrounding roads into impassable mud. Facing rising waters and French reinforcements, Aréizaga ordered the two bridges dismantled, leaving the bulk of his army stranded on the southern shore.",
     "image": "Villamanrique.webp",
     "createDate": "2026-11-17"
+  },
+  {
+    "id": "1254",
+    "name": "Saint Peter church tower",
+    "category": "Battle landmark",
+    "significance": 1,
+    "location": "Ocaña, Toledo",
+    "country": "Spain",
+    "latitude": 39.958615,
+    "longitude": -3.501189,
+    "description": "During the Battle of Ocaña  Spanish commander General Juan Carlos de Aréizaga famously watched his army's defeat from a local church belfry, though historians remain divided on which exact tower he climbed. While the Tower of the Church of San Martín (Torre de la iglesia de San Martín) is the most widely cited vantage point—largely because it is the only tower from that era still standing in Ocaña today—several military histories and archival sources argue that he actually observed the battle from the nearby Tower of the Church of San Pedro (Torre de la iglesia de San Pedro). This ongoing debate stems from contemporary eyewitness accounts that only vaguely mentioned 'one of Ocaña's bell towers,' combined with the fact that the Church of San Pedro and its tower were completely demolished in 1906, leaving San Martín as the sole physical landmark associated with the event.",
+    "image": "Ocana_Torre_SPedro.webp",
+    "createDate": "2026-11-18"
+  },
+  {
+    "id": "1255",
+    "name": "Saint Peter church tower",
+    "category": "Battle landmark",
+    "significance": 1,
+    "location": "Ocaña, Toledo",
+    "country": "Spain",
+    "latitude": 39.961843,
+    "longitude": -3.498268,
+    "description": "During the Battle of Ocaña  Spanish commander General Juan Carlos de Aréizaga famously watched his army's defeat from a local church belfry, though historians remain divided on which exact tower he climbed. While the Tower of the Church of San Martín (Torre de la iglesia de San Martín) is the most widely cited vantage point—largely because it is the only tower from that era still standing in Ocaña today—several military histories and archival sources argue that he actually observed the battle from the nearby Tower of the Church of San Pedro (Torre de la iglesia de San Pedro). This ongoing debate stems from contemporary eyewitness accounts that only vaguely mentioned 'one of Ocaña's bell towers,' combined with the fact that the Church of San Pedro and its tower were completely demolished in 1906, leaving San Martín as the sole physical landmark associated with the event.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Torre_de_la_iglesia_de_San_Mart%C3%ADn_(Oca%C3%B1a)",
+    "image": "Ocana_Torre_SMartin.webp",
+    "createDate": "2026-11-18"
+  },
+  {
+    "id": "1256",
+    "name": "Dosbarrios rearguard action",
+    "category": "Battle landmark",
+    "significance": 2,
+    "location": "Dosbarrios, Toledo",
+    "country": "Spain",
+    "latitude": 39.884593,
+    "longitude": -3.478722,
+    "description": "Following the collapse of the Spanish army at the Battle of Ocaña on November 19, 1809, General José Pascual de Zayas led the only disciplined division toward Dosbarrios to cover the chaotic retreat south. Despite a stubborn, miles-long defense alongside remnants of Girón’s and Vigodet’s divisions, the outnumbered rearguard was soon overwhelmed by Marshal Soult's pursuing French cavalry, sealing a catastrophic Spanish defeat.",
+    "image": "Dosbarrios.webp",
+    "createDate": "2026-11-18"
   }
 ]
