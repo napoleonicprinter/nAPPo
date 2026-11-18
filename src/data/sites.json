@@ -23947,7 +23947,7 @@
     "longitude": 31.433369,
     "description": "Krasny is one of the oldest towns in Smolensk Oblast. In 1963, it officially opened the Krasninsky Local History Museum to showcase the district's rich heritage. Today, the museum's exhibitions cover everything from traditional peasant life and the area's modern development to major conflicts like the Patriotic War of 1812 and the Great Patriotic War of 1941–1945.",
     "image": "Krasny_museum.webp",
-    "createDate": "2026-11-19"
+    "createDate": "2026-11-1"
   },
   {
     "id": "1264",
@@ -23955,12 +23955,26 @@
     "date": "1912-09-07",
     "category": "Monument",
     "significance": 2,
-    "location": "Gorki, Moscow Óblast",
+    "location": "Semenovskoe, Moscow Óblast",
     "country": "Russia",
     "latitude": 55.51611,
     "longitude": 35.826680,
     "description": "Designed by architect Alexei Pavlovich Vereshchagin and erected in 1912, this monument honors General Pyotr Likhachev’s 24th Infantry Division, whose soldiers made the final stand at the Raevsky Battery. Before the stronghold fell at 4:00 PM, the wounded General Likhachev was bayoneted and became the only Russian general captured during the battle, while his surviving troops retreated east across the Ognik Stream to join the reserves. Having suffered massive losses—973 killed, 815 wounded, and 828 missing—the division later distinguished itself at the 1813 Battle of the Nations near Leipzig before marching into Paris in March 1814.",
     "image": "24th_Inf_Division.webp",
+    "createDate": "2026-11-19"
+  },
+  {
+    "id": "1265",
+    "name": "12th Infantry Division Monument",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.51457,
+    "longitude": 35.83061,
+    "description": "Erected in 1912 by descendants of its regiments to mark the battle's centenary, this monument stands on the exact spot between the Raevsky Battery and Semyonovskoye where Major General Illarion Vasilchikov’s 12th Infantry Division was stationed during the Battle of Borodino. Fighting as part of General Nikolai Raevsky's 7th Infantry Corps against Napoleon's forces, the division suffered devastating losses of 1,050 killed, 1,435 wounded, and 630 missing. After being refitted, the unit went on to distinguish itself in subsequent battles near Maloyaroslavets and Krasnoye.",
+    "image": "12th_Inf_Division.webp",
     "createDate": "2026-11-19"
   }
 ]
