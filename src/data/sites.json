@@ -23990,5 +23990,62 @@
     "description": "Erected in 1912 by veterans' descendants and designed by Moscow architect Alexei Pavlovich Vereshchagin, this monument to the field horse artillery features a gray granite block shaped like a horse artilleryman's helmet. Attached to cavalry corps for their speed, maneuverability, and firepower, these units successfully repelled General Auguste Caulaincourt's French cavalry charge against the Raevsky Battery on this very section of the front. Unlike foot artillery, horse artillerymen wore dragoon-style uniforms and helmets, which are depicted in the monument's bas-relief.",
     "image": "Horse_artillery.webp",
     "createDate": "2026-11-19"
+  },
+  {
+    "id": "1267",
+    "name": "House of Bavarian History",
+    "date": "2019-06-04",
+    "category": "Museum",
+    "significance": 2,
+    "location": "Regensburg",
+    "country": "Germany",
+    "latitude": 49.020118,
+    "longitude": 12.102327,
+    "description": "Inaugurated in June 2019, the Haus der Bayerischen Geschichte uses the Napoleonic era as the foundational starting point of its permanent exhibition rather than housing a separate collection. Its opening gallery explores how Napoleon’s alliance elevated Bavaria to a kingdom in 1806, contrasting royal highlights—such as François-Guillaume Ménageot’s painting of the 1806 Franco-Bavarian dynastic wedding—with personal mementos illustrating the heavy human toll of the Napoleonic Wars.",
+    "site_link": "https://www.museum.bayern/en/museum.html",
+    "image": "Museo_bavaria.webp",
+    "createDate": "2026-11-19"
+  },
+  {
+    "id": "1268",
+    "name": "Engagement of Reinhausen",
+    "date": "1809-04-17",
+    "year": "1089",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Regensburg, Bavaria",
+    "country": "Germany",
+    "latitude": 49.029492,
+    "longitude": 12.114068,
+    "description": "The Engagement of Reinhausen was a minor skirmish fought on April 17, 1809, opposite Regensburg during the War of the Fifth Coalition. An Austrian advance guard under Johann von Klenau probed the outposts of Marshal Davout’s isolated French III Corps, driving pickets out of nearby Weichs before being held at Reinhausen. Although casualties were light, Klenau failed to realize that Davout's main force was concentrated in Regensburg, allowing the French corps to slip away unmolested and rejoin Napoleon's main army two days later.",
+    "more info": "https://www.historyofwar.org/articles/engagement_regen.html",
+    "special": "5",
+    "victor": "France",
+    "defeated": "Austria",
+    "commander_Loss": [
+      "Johann von Klenau"
+    ],
+    "commander_Victor": [
+      "Charles Morand"
+    ],
+    "maps": [
+      {
+        "id": "reinhausen",
+        "name": "Phase 1",
+        "url": "Reinhausen.svg",
+        "bounds": [
+          [
+            48.995187,
+            12.051659
+          ],
+          [
+            49.066132,
+            12.160254
+          ]
+        ]
+      }
+    ],
+    "image": "Regensburg.webp",
+    "createDate": "2026-11-19"
   }
 ]

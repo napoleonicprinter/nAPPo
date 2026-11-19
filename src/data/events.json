@@ -5035,5 +5035,14 @@
     "location": "Ocaña, Toledo, Spain",
     "description": "Fought on November 19th 1809 between French forces under Marshal Jean-de-Dieu Soult against the Spanish army under General Juan Carlos Aréizaga, which suffered its greatest single defeat.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Oca%C3%B1a"
+  },
+  {
+    "id": "592",
+    "siteId": 1268,
+    "title": "Engagement of Reinhausen",
+    "date": "1809-04-17",
+    "location": "Regensburg, Bavaria, Germany",
+    "description": "The Engagement of Reinhausen was a minor skirmish fought on April 17, 1809, opposite Regensburg during the War of the Fifth Coalition. An Austrian advance guard under Johann von Klenau probed the outposts of Marshal Davout’s isolated French III Corps, driving pickets out of nearby Weichs before being held at Reinhausen. Although casualties were light, Klenau failed to realize that Davout's main force was concentrated in Regensburg, allowing the French corps to slip away unmolested and rejoin Napoleon's main army two days later.",
+    "more info": "https://www.historyofwar.org/articles/engagement_regen.html"
   }
 ]
