@@ -5044,5 +5044,22 @@
     "location": "Regensburg, Bavaria, Germany",
     "description": "The Engagement of Reinhausen was a minor skirmish fought on April 17, 1809, opposite Regensburg during the War of the Fifth Coalition. An Austrian advance guard under Johann von Klenau probed the outposts of Marshal Davout’s isolated French III Corps, driving pickets out of nearby Weichs before being held at Reinhausen. Although casualties were light, Klenau failed to realize that Davout's main force was concentrated in Regensburg, allowing the French corps to slip away unmolested and rejoin Napoleon's main army two days later.",
     "more info": "https://www.historyofwar.org/articles/engagement_regen.html"
+  },
+  {
+    "id": "593",
+    "siteId": 1269,
+    "title": "Battle of Malatarde",
+    "date": "1809-10-25",
+    "location": "Orihuela del Tremedal, Teruel, Spain",
+    "description": "The Battle of Orihuela del Tremedal, locally known as the Battle of Malatarde, took place on October 25, 1809, during the Peninsular War. A French punitive column of around 3,000 troops under Colonel Henriot marched from Daroca to dislodge Spanish Brigadier Pedro Villacampa's 4,000-man division, which had established a base and military hospital at the Sanctuary of Nuestra Señora del Tremedal. Outmatched, Villacampa managed to retreat toward Bronchales, abandoning most of his supplies on the mountain. Unable to carry off the captured provisions, French soldiers set fire to the stockpile, causing the gunpowder stores to explode and destroying the sanctuary before sacking and burning the nearby town of Orihuela in retaliation for supporting the Spanish forces."
+  },
+  {
+    "id": "594",
+    "siteId": 1270,
+    "title": "Battle of Belchite",
+    "date": "1809-06-19",
+    "location": "Belchite, Zaragoza, Spain",
+    "description": "Fought on June 18, 1809 the Battle of Belchite was a decisive Franco-Polish victory led by General Louis-Gabriel Suchet over General Joaquín Blake’s Spanish army. During the French flank attacks, a shell struck a Spanish ammunition wagon, causing a massive explosion that wiped out their gunpowder supply and sparked a chaotic retreat. The rout cost the Spanish around 2,000 casualties and all their artillery, cementing French control over the Zaragoza region.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Belchite_(1809)"
   }
 ]

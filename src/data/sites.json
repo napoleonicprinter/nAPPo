@@ -24047,5 +24047,54 @@
     ],
     "image": "Regensburg.webp",
     "createDate": "2026-11-19"
+  },
+  {
+    "id": "1269",
+    "name": "Battlefield of Malatarde",
+    "date": "1809-10-25",
+    "year": "1809",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Orihuela del Tremedal, Teruel",
+    "country": "Spain",
+    "latitude": 40.528755,
+    "longitude": -1.650518,
+    "description": "The Battle of Orihuela del Tremedal, locally known as the Battle of Malatarde, took place on October 25, 1809, during the Peninsular War. A French punitive column of around 3,000 troops under Colonel Henriot marched from Daroca to dislodge Spanish Brigadier Pedro Villacampa's 4,000-man division, which had established a base and military hospital at the Sanctuary of Nuestra Señora del Tremedal. Outmatched, Villacampa managed to retreat toward Bronchales, abandoning most of his supplies on the mountain. Unable to carry off the captured provisions, French soldiers set fire to the stockpile, causing the gunpowder stores to explode and destroying the sanctuary before sacking and burning the nearby town of Orihuela in retaliation for supporting the Spanish forces.",
+    "special": "Guerra de Independencia",
+    "victor": "France",
+    "defeated": "Spain",
+    "commander_Loss": [
+      "Pedro Villacampa"
+    ],
+    "commander_Victor": [
+      "Jean François Henriot"
+    ],
+    "image": "Orihuela.webp",
+    "createDate": "2026-11-19"
+  },
+  {
+    "id": "1270",
+    "name": "Battlefield of Belchite",
+    "date": "1809-06-19",
+    "year": "1809",
+    "category": "Battle site",
+    "significance": 2,
+    "location": "Belchite, Zaragoza",
+    "country": "Spain",
+    "latitude": 41.298355,
+    "longitude": -0.762321,
+    "description": "Fought on June 18, 1809 the Battle of Belchite was a decisive Franco-Polish victory led by General Louis-Gabriel Suchet over General Joaquín Blake’s Spanish army. During the French flank attacks, a shell struck a Spanish ammunition wagon, causing a massive explosion that wiped out their gunpowder supply and sparked a chaotic retreat. The rout cost the Spanish around 2,000 casualties and all their artillery, cementing French control over the Zaragoza region.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Belchite_(1809)",
+    "special": "Guerra de Independencia",
+    "victor": "France",
+    "defeated": "Spain",
+    "commander_Loss": [
+      "Joaquín Blake"
+    ],
+    "commander_Victor": [
+      "Louis Gabriel Suchet"
+    ],
+    "image": "Belchite.webp",
+    "createDate": "2026-11-19"
   }
 ]
