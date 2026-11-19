@@ -23976,5 +23976,19 @@
     "description": "Erected in 1912 by descendants of its regiments to mark the battle's centenary, this monument stands on the exact spot between the Raevsky Battery and Semyonovskoye where Major General Illarion Vasilchikov’s 12th Infantry Division was stationed during the Battle of Borodino. Fighting as part of General Nikolai Raevsky's 7th Infantry Corps against Napoleon's forces, the division suffered devastating losses of 1,050 killed, 1,435 wounded, and 630 missing. After being refitted, the unit went on to distinguish itself in subsequent battles near Maloyaroslavets and Krasnoye.",
     "image": "12th_Inf_Division.webp",
     "createDate": "2026-11-19"
+  },
+  {
+    "id": "1266",
+    "name": "Field Horse Artillery Monument",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.513757,
+    "longitude": 35.828891,
+    "description": "Erected in 1912 by veterans' descendants and designed by Moscow architect Alexei Pavlovich Vereshchagin, this monument to the field horse artillery features a gray granite block shaped like a horse artilleryman's helmet. Attached to cavalry corps for their speed, maneuverability, and firepower, these units successfully repelled General Auguste Caulaincourt's French cavalry charge against the Raevsky Battery on this very section of the front. Unlike foot artillery, horse artillerymen wore dragoon-style uniforms and helmets, which are depicted in the monument's bas-relief.",
+    "image": "Horse_artillery.webp",
+    "createDate": "2026-11-19"
   }
 ]
