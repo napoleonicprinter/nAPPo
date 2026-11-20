@@ -4637,8 +4637,8 @@
     "location": "Cape Finisterre",
     "country": "Spain",
     "description": "On July 22nd 1805, the British fleet under Admiral Robert Calder fought an indecisive Naval battle against the combined Franco-Spanish fleet which was returning from the West Indies.",
-    "latitude": 42.8941,
-    "longitude": -9.2711,
+    "latitude": 43.34,
+    "longitude": -11.38,
     "image": "Finisterre.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Finisterre_(1805)",
     "createDate": "2025-03-22",
@@ -4652,6 +4652,23 @@
     ],
     "commander_Loss": [
       "Pierre-Charles Villeneuve"
+    ],
+    "maps": [
+      {
+        "id": "finisterre",
+        "name": "1st move",
+        "url": "Finisterre_1.svg",
+        "bounds": [
+          [
+            43.33,
+            -11.42
+          ],
+          [
+            43.39,
+            -11.28
+          ]
+        ]
+      }
     ]
   },
   {
@@ -24096,5 +24113,120 @@
     ],
     "image": "Belchite.webp",
     "createDate": "2026-11-19"
+  },
+  {
+    "id": "1271",
+    "name": "Volyn Infantry Regiment Monument",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.512327,
+    "longitude": 35.829753,
+    "description": "Funded by descendants of the soldiers, the monument to the Volyn Infantry Regiment was designed by architect Alexei Pavlovich Vereshchagin for the 1912 centennial of the Battle of Borodino. During the battle, the regiment—under Major General Ignatius Petrovich Rossi—defended the line between Semyonovskoye and the Raevsky battery, suffering 500 casualties (240 killed, 109 wounded, and 151 missing). After General Rossi recovered from a severe concussion and the regiment was replenished, they fought at Tarutino and Vyazma, joined the 1813–1814 campaigns, and marched into Paris at the war's end.",
+    "image": "Volyn_Infantry.webp",
+    "createDate": "2026-11-20"
+  },
+  {
+    "id": "1272",
+    "name": "Franz Alekseevich Roubaud Memorial",
+    "date": "1992-09-07",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.509054,
+    "longitude": 35.830355,
+    "description": "Located in the center of the village of Semyonovskoye, an observation deck built in 1992 for the 180th anniversary of the Battle of Borodino stands on the exact hill that served as General Pyotr Bagration's command post on August 26, 1812. Designed by architect Sidnin, the stone-and-granite lookout features bronze directional markers pointing to key battlefield landmarks, including Bagration's flèches, the Raevsky Battery, and the command posts of Kutuzov and Napoleon. At the entrance, a memorial sign honors artist Franz Roubaud with a bronze bas-relief depicting the battle for Semyonovskoye from his famous panorama, which he researched on-site in 1910 and 1911; his initial 1910 sketch is displayed at the Borodino museum-reserve, while the completed panoramic masterpiece is housed in Moscow's Battle of Borodino Panorama Museum.",
+    "image": "Roubaud_Memorial.webp",
+    "createDate": "2026-11-20"
+  },
+  {
+    "id": "1273",
+    "name": "4th Cavalry Corps Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "relatedSites": [
+      {
+        "id": "1274",
+        "title": "Nadezhda Durova statue at Yelábuga"
+      }
+    ],
+    "significance": 2,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.507078,
+    "longitude": 35.831630,
+    "description": "Near the road between Semyonovskoye village and the Spaso-Borodinsky Monastery stands a 1912 granite monument designed by architect Alexei Vereshchagin to honor General Karl Sievers's 4th Cavalry Corps on the centenary of the Battle of Borodino. Topped with a double-headed eagle, the red granite block displays a gold dedication to the corps' regiments on the front and lists those killed and wounded during the August 26, 1812 battle on the back. The memorial also recalls Nadezhda Durova, the famous 'cavalry maiden' who fought at Borodino disguised as Lieutenant Alexander Alexandrov of the Lithuanian Uhlan Regiment and later recounted her wartime experiences in her 1836 memoir, Notes of a Cavalry Maiden.",
+    "image": "4th_Cavalry.webp",
+    "createDate": "2026-11-20"
+  },
+  {
+    "id": "1274",
+    "name": "Nadezhda Durova (The Cavalry Maiden) Statue",
+    "year": "1993",
+    "relatedSites": [
+      {
+        "id": "1273",
+        "title": "4th Cavalry Corps Memorial at Borodinó"
+      }
+    ],
+    "category": "Monument",
+    "significance": 2,
+    "location": "Yelábuga, Tartaristán",
+    "country": "Russia",
+    "latitude": 55.758533,
+    "longitude": 52.045077,
+    "description": "Inaugurated in 1993 in Yelabuga, Russia, the bronze equestrian monument to Nadezhda Durova honors the legendary 'Cavalry Maiden' who disguised herself as a man to become the first known female officer in the Russian military. Created by sculptor Fyodor Lyakh and architect S. L. Buritsky, the statue stands near the entrance to Trinity Cemetery—where Durova was buried after spending her final decades in the city—depicting her on horseback in full military uniform and combat readiness. The monument commemorates both her decorated service during the Napoleonic Wars and her celebrated literary career as the author of The Cavalry Maiden.",
+    "more info": "https://equestrianstatue.org/durova-nadezhda/",
+    "image": "Nadezhda_Durova.webp",
+    "createDate": "2026-11-20"
+  },
+  {
+    "id": "1275",
+    "name": "Nadezhda Durova (The Cavalry Maiden) grave",
+    "date": "1866-03-21",
+    "category": "Grave site",
+    "significance": 2,
+    "location": "Yelábuga, Tartaristán",
+    "country": "Russia",
+    "latitude": 55.758666,
+    "longitude": 52.043779,
+    "description": "Nadezhda Durova, the famous decorated cavalry officer of the Napoleonic Wars, is buried at the historic Trinity Cemetery (Troitskoye Kladbishche) in Yelabuga, Russia. Following her death in 1866 at the age of 82, she was laid to rest with full military honors, accompanied by a military convoy and a triple-gun salute. Although her original tombstone was destroyed when the cemetery closed in the 1930s, the site was later restored and is now a cultural monument marked by a replacement memorial honoring her as 'Russia's Joan of Arc', with a bronze equestrian statue standing near the cemetery gates.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Aleksandr_Aleksandrov",
+    "flower_link": "https://es.findagrave.com/memorial/208248975/nadezhda_andreyevna-durova/flower",
+    "image": "Nadezhda_Durova_grave.webp",
+    "createDate": "2026-11-20"
+  },
+  {
+    "id": "1276",
+    "name": "Nadezhda Durova Museum",
+    "date": "1993-08-27",
+    "category": "Museum",
+    "significance": 2,
+    "location": "Yelábuga, Tartaristán",
+    "country": "Russia",
+    "latitude": 55.758691,
+    "longitude": 52.067454,
+    "description": "Inaugurated in 1993, the Nadezhda Durova Manor Museum in Yelabuga, Russia, is the world’s only museum-estate dedicated to the legendary 'Cavalry Maiden' of the Patriotic War of 1812. Located at the preserved 19th-century wooden home where Durova spent the final decades of her life from 1831 to 1866 and wrote her famous memoirs, the museum spans five exhibition halls along with reconstructed courtyard outbuildings. Visitors can explore artifacts, uniforms, weapons, and correspondence—including letters with Alexander Pushkin—that trace her journey from a decorated cavalry officer to a celebrated writer in provincial Russia.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Aleksandr_Aleksandrov",
+    "flower_link": "https://es.findagrave.com/memorial/208248975/nadezhda_andreyevna-durova/flower",
+    "image": "Nadezhda_Durova_museum.webp",
+    "createDate": "2026-11-20"
+  },
+  {
+    "id": "1277",
+    "name": "Battle Cabo Finisterre Memorial",
+    "date": "2008-09-06",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Finisterre, Galicia",
+    "country": "Spain",
+    "latitude": 42.882969,
+    "longitude": -9.272036,
+    "description": "Dedicated on September 6, 2008, by the Municipality of Fisterra (Concello de Fisterra) and the Asociación La Armada Invencible, this bronze plaque honors the heroic sailors who lost their lives during the Naval Battle of Cape Finisterre in July 1805—a key engagement of the Napoleonic Wars fought between the British Royal Navy and a combined Franco-Spanish fleet.",
+    "image": "Finisterre_placa.webp",
+    "createDate": "2026-11-20"
   }
 ]
