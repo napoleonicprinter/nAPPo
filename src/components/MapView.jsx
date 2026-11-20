@@ -30,6 +30,131 @@ const TILE_LAYERS = {
     }
 };
 
+// Shared offscreen canvas & cache for detecting and replacing Esri "Map data not yet available" placeholder tiles
+let tileCheckCanvas = null;
+let tileCheckCtx = null;
+let oceanFallbackDataUrl = null;
+const parentTileCache = new Map();
+
+const getTileCheckContext = () => {
+    if (!tileCheckCanvas && typeof document !== 'undefined') {
+        tileCheckCanvas = document.createElement('canvas');
+        tileCheckCanvas.width = 256;
+        tileCheckCanvas.height = 256;
+        tileCheckCtx = tileCheckCanvas.getContext('2d', { willReadFrequently: true });
+    }
+    return { canvas: tileCheckCanvas, ctx: tileCheckCtx };
+};
+
+const getOceanFallbackDataUrl = () => {
+    if (!oceanFallbackDataUrl && typeof document !== 'undefined') {
+        const c = document.createElement('canvas');
+        c.width = 16;
+        c.height = 16;
+        const ctx = c.getContext('2d');
+        ctx.fillStyle = 'rgb(9, 25, 38)';
+        ctx.fillRect(0, 0, 16, 16);
+        oceanFallbackDataUrl = c.toDataURL('image/png');
+    }
+    return oceanFallbackDataUrl;
+};
+
+const isEsriPlaceholderTile = (img) => {
+    try {
+        const { ctx } = getTileCheckContext();
+        if (!ctx) return false;
+        ctx.drawImage(img, 0, 0, 256, 256);
+
+        const isGrayBg = (x, y) => {
+            const d = ctx.getImageData(x, y, 1, 1).data;
+            return (
+                d[0] >= 198 && d[0] <= 210 &&
+                Math.abs(d[0] - d[1]) <= 3 &&
+                Math.abs(d[1] - d[2]) <= 3
+            );
+        };
+
+        if (
+            !isGrayBg(10, 10) ||
+            !isGrayBg(245, 10) ||
+            !isGrayBg(10, 245) ||
+            !isGrayBg(245, 245) ||
+            !isGrayBg(128, 30)
+        ) {
+            return false;
+        }
+
+        // Center pixel (128, 128) hits the lighter "Map data not yet available" text (~237, 237, 237)
+        const center = ctx.getImageData(128, 128, 1, 1).data;
+        return center[0] >= 220 && center[1] >= 220 && center[2] >= 220;
+    } catch (e) {
+        return false;
+    }
+};
+
+const loadParentTileImage = (url) => {
+    if (parentTileCache.has(url)) {
+        return parentTileCache.get(url);
+    }
+    const promise = new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => resolve(img);
+        img.onerror = (err) => {
+            parentTileCache.delete(url);
+            reject(err);
+        };
+        img.src = url;
+    });
+    if (parentTileCache.size > 60) {
+        const oldestKey = parentTileCache.keys().next().value;
+        parentTileCache.delete(oldestKey);
+    }
+    parentTileCache.set(url, promise);
+    return promise;
+};
+
+const replaceWithParentTile = (tile, coords, urlTemplate) => {
+    const z = Math.round(coords.z);
+    const fallbackZoom = Math.min(z - 1, 13);
+    if (fallbackZoom < 0 || z <= fallbackZoom) return;
+
+    tile.dataset.fallbackApplied = 'true';
+
+    // Immediately replace the gray placeholder with Esri's standard ocean color
+    const immediateUrl = getOceanFallbackDataUrl();
+    if (immediateUrl) {
+        tile.src = immediateUrl;
+    }
+
+    const scale = Math.pow(2, z - fallbackZoom);
+    const totalTiles = Math.pow(2, z);
+    const wrappedX = ((coords.x % totalTiles) + totalTiles) % totalTiles;
+    const parentX = Math.floor(wrappedX / scale);
+    const parentY = Math.floor(coords.y / scale);
+    const subX = wrappedX % scale;
+    const subY = ((coords.y % scale) + scale) % scale;
+
+    const parentUrl = urlTemplate
+        .replace('{s}', 'a')
+        .replace('{z}', String(fallbackZoom))
+        .replace('{x}', String(parentX))
+        .replace('{y}', String(parentY));
+
+    loadParentTileImage(parentUrl)
+        .then((parentImg) => {
+            const { canvas, ctx } = getTileCheckContext();
+            if (!canvas || !ctx) return;
+            const sSize = 256 / scale;
+            const sx = subX * sSize;
+            const sy = subY * sSize;
+            ctx.imageSmoothingEnabled = true;
+            ctx.drawImage(parentImg, sx, sy, sSize, sSize, 0, 0, 256, 256);
+            tile.src = canvas.toDataURL('image/jpeg', 0.92);
+        })
+        .catch(() => { });
+};
+
 const getSiteIcon = (site) => {
     const color = getCategoryColor(site.category);
     const rate = Number(site.significance) || 1;
@@ -1409,6 +1534,25 @@ const MapView = () => {
                     maxZoom={19}
                     maxNativeZoom={TILE_LAYERS[mapStyle]?.maxNativeZoom || 18}
                     keepBuffer={4}
+                    crossOrigin="anonymous"
+                    eventHandlers={{
+                        tileload: (e) => {
+                            const tile = e.tile;
+                            const coords = e.coords;
+                            if (!tile || !coords || tile.dataset.fallbackApplied) return;
+                            if (coords.z >= 13 && isEsriPlaceholderTile(tile)) {
+                                replaceWithParentTile(tile, coords, TILE_LAYERS[mapStyle]?.url || '');
+                            }
+                        },
+                        tileerror: (e) => {
+                            const tile = e.tile;
+                            const coords = e.coords;
+                            if (!tile || !coords || tile.dataset.fallbackApplied) return;
+                            if (coords.z > 13) {
+                                replaceWithParentTile(tile, coords, TILE_LAYERS[mapStyle]?.url || '');
+                            }
+                        }
+                    }}
                 />
                 <MapOverlaysLayer />
                 <MapResizeHandler />
