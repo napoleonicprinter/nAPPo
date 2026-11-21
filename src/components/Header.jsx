@@ -4,9 +4,9 @@ import { registerPlugin, Capacitor } from '@capacitor/core';
 import {
     Map, List, Navigation, MapPin, Settings, Calendar, Filter, Ticket,
     ShoppingCart, UserCircle, Menu, X, Search, Smartphone, Sun, Moon,
-    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload, Layers, CloudDownload
+    LogOut, Newspaper, Tablet, Monitor, Star, Download, Upload, Layers, CloudDownload, FileText
 } from 'lucide-react';
-import { useAppContext, useBackHandler, EUROPEAN_CAPITALS } from '../context/AppContext';
+import { useAppContext, useBackHandler, EUROPEAN_CAPITALS, isPaidVersion } from '../context/AppContext';
 import { CATEGORY_ORDER } from '../constants/categoryOrder';
 import CustomCategorySelect from './CustomCategorySelect';
 import CustomSimpleSelect from './CustomSimpleSelect';
@@ -25,6 +25,7 @@ const FiltersModal = lazy(() => import('./FiltersModal'));
 const NewsModal = lazy(() => import('./NewsModal'));
 const CalendarView = lazy(() => import('./CalendarView'));
 const ShoppingView = lazy(() => import('./ShoppingView'));
+const ServiceSheetsModal = lazy(() => import('./ServiceSheetsModal'));
 
 // Register the custom native plugin we created in MainActivity.java
 const Review = registerPlugin('Review');
@@ -58,7 +59,8 @@ const Header = () => {
         exportUserData, importUserData,
         setShowUpdateSitesModal,
         showEvents, setShowEvents, setHistoryNavState,
-        filterSignificance, filterMonth, showArcOnly
+        filterSignificance, filterMonth, showArcOnly,
+        showServiceSheetsModal, setShowServiceSheetsModal
     } = useAppContext();
 
     // --- FIX: Ensure these local states are defined ---
@@ -99,6 +101,7 @@ const Header = () => {
     useBackHandler('headerFilters', showFilters, () => setShowFilters(false), 30);
     useBackHandler('headerShopping', showShoppingView, () => setShowShoppingView(false), 30);
     useBackHandler('headerCalendar', showCalendarView, () => setShowCalendarView(false), 30);
+    useBackHandler('headerServiceSheets', showServiceSheetsModal, () => setShowServiceSheetsModal(false), 30);
     useBackHandler('headerMenu', isMenuOpen, () => setIsMenuOpen(false), 25);
     useBackHandler('headerDeleteConfirm', showDeleteConfirm, () => setShowDeleteConfirm(false), 35);
     useBackHandler('headerHelpDropdown', showHelpDropdown, () => setShowHelpDropdown(false), 25);
@@ -322,6 +325,19 @@ const Header = () => {
                                 </div>
                             </button>
 
+                            {isPaidVersion && (
+                                <button
+                                    className={`custom-select-trigger filter-select glass-panel ${showServiceSheetsModal ? 'active' : ''}`}
+                                    onClick={() => { setShowServiceSheetsModal(true); setIsMenuOpen(false); }}
+                                    style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}
+                                >
+                                    <div className="custom-select-value" style={{ gap: '4px' }}>
+                                        <FileText size={16} />
+                                        <span>Service Sheets</span>
+                                    </div>
+                                </button>
+                            )}
+
                             <button className="custom-select-trigger filter-select glass-panel" onClick={() => { setShowNews(true); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>
                                 <div className="custom-select-value" style={{ gap: '4px' }}>
                                     <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
@@ -444,6 +460,22 @@ const Header = () => {
                             </button>
                         </div>
                     </div>
+                    {isPaidVersion && (
+                        <div className="mobile-tag-filter">
+                            <div className="custom-select-container">
+                                <button
+                                    className={`custom-select-trigger mobile-icon-btn glass-panel ${showServiceSheetsModal ? 'active' : ''}`}
+                                    onClick={() => { setShowServiceSheetsModal(true); setIsMenuOpen(false); }}
+                                    style={{ justifyContent: 'center' }}
+                                >
+                                    <div className="custom-select-value" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <FileText size={16} />
+                                        <span>Service Sheets</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    )}
                     <div className="mobile-tag-filter">
                         <div className="custom-select-container">
                             <button className="custom-select-trigger mobile-icon-btn glass-panel" onClick={() => { setShowNews(true); }} style={{ justifyContent: 'center' }}>
@@ -908,6 +940,7 @@ const Header = () => {
                 {showFilters && <FiltersModal onClose={() => setShowFilters(false)} />}
                 {showShoppingView && <ShoppingView onClose={() => setShowShoppingView(false)} />}
                 {showCalendarView && <CalendarView onClose={() => setShowCalendarView(false)} />}
+                {showServiceSheetsModal && <ServiceSheetsModal onClose={() => setShowServiceSheetsModal(false)} />}
             </Suspense>
         </header>
     );

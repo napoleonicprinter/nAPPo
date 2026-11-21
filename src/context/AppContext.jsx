@@ -5,6 +5,7 @@ import shoppingData from '../data/shopping.json';
 import newsDataFallback from '../data/news.json';
 import messagesDataFallback from '../data/messages.json';
 import dealsDataFallback from '../data/deals.json';
+import serviceSheetsDataFallback from '../data/serviceSheets.json';
 import { Geolocation } from '@capacitor/geolocation';
 import { App } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
@@ -263,7 +264,86 @@ export const AppProvider = ({ children, storeUrl }) => {
         });
     };
 
+    const enableMapOverlay = (mapId) => {
+        if (!mapId) return;
+        setActiveMapOverlays(prev => {
+            const current = Array.isArray(prev) ? prev : [];
+            return current.includes(mapId) ? current : [...current, mapId];
+        });
+    };
+
     const clearMapOverlays = () => setActiveMapOverlays([]);
+
+    const [serviceSheetsBaseData, setServiceSheetsBaseData] = useState(() => {
+        const bundled = Array.isArray(serviceSheetsDataFallback) ? serviceSheetsDataFallback : [];
+        const saved = localStorage.getItem('serviceSheetsData');
+        if (saved && saved !== "undefined") {
+            try {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    const bundledMap = new Map(bundled.map(s => [String(s.id).trim(), s]));
+                    const merged = parsed.map(item => {
+                        const b = bundledMap.get(String(item.id).trim());
+                        return b ? { ...item, ...b } : item;
+                    });
+                    const parsedIds = new Set(parsed.map(s => String(s.id).trim()));
+                    bundled.forEach(b => {
+                        if (!parsedIds.has(String(b.id).trim())) {
+                            merged.push(b);
+                        }
+                    });
+                    return merged;
+                }
+            } catch (e) { }
+        }
+        return bundled;
+    });
+
+    const serviceSheets = useMemo(() => {
+        if (!isPaidVersion) return [];
+        return (serviceSheetsBaseData || []).map((sheet, sIdx) => {
+            const id = String(sheet.id || `sheet-${sIdx}`).trim();
+            const rawImage = sheet.image;
+            const image = rawImage ? resolveSiteImageUrl(rawImage) : '';
+            const markers = Array.isArray(sheet.markers)
+                ? sheet.markers.map((m, mIdx) => ({
+                    ...m,
+                    id: String(m.id || `${id}-marker-${mIdx}`).trim(),
+                    image: m.image ? resolveSiteImageUrl(m.image) : undefined
+                }))
+                : [];
+            return {
+                ...sheet,
+                id,
+                image,
+                markers
+            };
+        });
+    }, [serviceSheetsBaseData]);
+
+    const serviceSheetTypes = useMemo(() => {
+        const baseTypes = ['Ship', 'Regiment', 'Commander'];
+        const extraTypes = [];
+        (serviceSheets || []).forEach(sheet => {
+            const raw = sheet.type || sheet.category;
+            if (!raw) return;
+            const t = String(raw).trim();
+            const lower = t.toLowerCase();
+            let norm = t.charAt(0).toUpperCase() + t.slice(1);
+            if (lower === 'ship' || lower === 'ships') norm = 'Ship';
+            else if (lower === 'regiment' || lower === 'regiments') norm = 'Regiment';
+            else if (lower === 'commander' || lower === 'commanders' || lower === 'captain' || lower === 'captains') norm = 'Commander';
+            if (!baseTypes.includes(norm) && !extraTypes.includes(norm)) {
+                extraTypes.push(norm);
+            }
+        });
+        return [...baseTypes, ...extraTypes];
+    }, [serviceSheets]);
+
+    const [selectedServiceSheet, setSelectedServiceSheet] = useState(null);
+    const [serviceSheetMarkerToOpen, setServiceSheetMarkerToOpen] = useState(null);
+    const [callerServiceSheet, setCallerServiceSheet] = useState(null);
+    const [showServiceSheetsModal, setShowServiceSheetsModal] = useState(false);
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         const saved = localStorage.getItem('messagesData');
@@ -1906,7 +1986,18 @@ export const AppProvider = ({ children, storeUrl }) => {
             activeDeals,
             activeMapOverlays,
             toggleMapOverlay,
+            enableMapOverlay,
             clearMapOverlays,
+            serviceSheets,
+            serviceSheetTypes,
+            selectedServiceSheet,
+            setSelectedServiceSheet,
+            serviceSheetMarkerToOpen,
+            setServiceSheetMarkerToOpen,
+            callerServiceSheet,
+            setCallerServiceSheet,
+            showServiceSheetsModal,
+            setShowServiceSheetsModal,
             callerSite,
             setCallerSite,
             showEvents,

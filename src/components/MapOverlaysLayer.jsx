@@ -3,12 +3,20 @@ import { ImageOverlay, useMap } from 'react-leaflet';
 import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import L from 'leaflet';
 
-const OverlayFitter = ({ overlays, siteToOpenPopup, isMobileLike }) => {
+const OverlayFitter = ({ overlays, siteToOpenPopup, serviceSheetMarkerToOpen, isMobileLike }) => {
     const map = useMap();
     const lastZoomedId = useRef(null);
     
     useEffect(() => {
-        if (siteToOpenPopup) return; // Coordinated by PopupOpener
+        if (siteToOpenPopup || serviceSheetMarkerToOpen) {
+            if (overlays.length > 0) {
+                const activeOverlay = overlays[overlays.length - 1];
+                if (activeOverlay?.id) {
+                    lastZoomedId.current = activeOverlay.id;
+                }
+            }
+            return; // Coordinated by PopupOpener / ServiceSheetPopupOpener
+        }
         if (overlays.length > 0) {
             const activeOverlay = overlays[overlays.length - 1];
             if (activeOverlay.bounds && lastZoomedId.current !== activeOverlay.id) {
@@ -24,13 +32,13 @@ const OverlayFitter = ({ overlays, siteToOpenPopup, isMobileLike }) => {
         } else {
             lastZoomedId.current = null;
         }
-    }, [overlays, map, siteToOpenPopup, isMobileLike]);
+    }, [overlays, map, siteToOpenPopup, serviceSheetMarkerToOpen, isMobileLike]);
 
     return null;
 };
 
 const MapOverlaysLayer = () => {
-    const { activeMapOverlays, allSites, siteToOpenPopup, previewDevice } = useAppContext();
+    const { activeMapOverlays, allSites, siteToOpenPopup, serviceSheetMarkerToOpen, previewDevice } = useAppContext();
     const isMobileLike = previewDevice === 'mobile' || previewDevice === 'tablet';
 
     const overlaysToRender = useMemo(() => {
@@ -53,7 +61,7 @@ const MapOverlaysLayer = () => {
 
     return (
         <>
-            <OverlayFitter overlays={overlaysToRender} siteToOpenPopup={siteToOpenPopup} isMobileLike={isMobileLike} />
+            <OverlayFitter overlays={overlaysToRender} siteToOpenPopup={siteToOpenPopup} serviceSheetMarkerToOpen={serviceSheetMarkerToOpen} isMobileLike={isMobileLike} />
             {overlaysToRender.map(map => (
                 <ImageOverlay
                     key={map.id}

@@ -137,6 +137,7 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
         setHistoryNavState,
         activeMapOverlays,
         toggleMapOverlay,
+        setSelectedServiceSheet,
         getPortalContainer
     } = useAppContext();
 
@@ -517,7 +518,12 @@ const SiteCard = ({ site, onClose, isCompact = false, hideMapLink = false, showI
                                         e.stopPropagation();
                                         const prev = callerSite;
                                         setCallerSite(null);
-                                        if (prev.fromView === 'todayInHistory' || prev.fromView === 'historyCalendar') {
+                                        if (prev.fromServiceSheet) {
+                                            setSelectedSite(null);
+                                            if (onClose) onClose();
+                                            setSiteToOpenPopup(null);
+                                            if (setSelectedServiceSheet) setSelectedServiceSheet(prev.fromServiceSheet);
+                                        } else if (prev.fromView === 'todayInHistory' || prev.fromView === 'historyCalendar') {
                                             setSelectedSite(null);
                                             if (onClose) onClose();
                                             setSiteToOpenPopup(null);

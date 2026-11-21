@@ -3,6 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays, Camera } from 'lucide-react';
 import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
+import ServiceSheetCard from './ServiceSheetCard';
 import CustomSimpleSelect from './CustomSimpleSelect';
 import { getBelligerentStatus } from '../utils/filterValidation';
 import './CardView.css';
@@ -45,7 +46,11 @@ const CardView = () => {
         filterBelligerent,
         setFilterBelligerent,
         availableOutcomeCounts,
-        showOnlyNew
+        showOnlyNew,
+        serviceSheets,
+        selectedServiceSheet,
+        setSelectedServiceSheet,
+        setCallerServiceSheet
     } = useAppContext();
 
     const outcomeOptions = useMemo(() => {
@@ -448,6 +453,46 @@ const CardView = () => {
                             <SiteCard
                                 site={liveSite}
                                 onClose={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }}
+                                isCompact={false}
+                            />
+                        </div>
+                    </div>
+                );
+            })()}
+            {selectedServiceSheet && (() => {
+                const liveSheet = (serviceSheets || []).find(s => s.id === selectedServiceSheet.id) || selectedServiceSheet;
+                return (
+                    <div
+                        onClick={() => { setSelectedServiceSheet(null); if (setCallerServiceSheet) setCallerServiceSheet(null); }}
+                        style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100vw',
+                            height: '100vh',
+                            backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                            backdropFilter: 'blur(4px)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            zIndex: 2147483641,
+                            padding: '16px'
+                        }}
+                    >
+                        <div
+                            onClick={(e) => e.stopPropagation()}
+                            className="animate-fade-in"
+                            style={{
+                                width: '380px',
+                                maxWidth: '92vw',
+                                maxHeight: '85vh',
+                                overflow: 'visible',
+                                borderRadius: '16px'
+                            }}
+                        >
+                            <ServiceSheetCard
+                                sheet={liveSheet}
+                                onClose={() => { setSelectedServiceSheet(null); if (setCallerServiceSheet) setCallerServiceSheet(null); }}
                                 isCompact={false}
                             />
                         </div>

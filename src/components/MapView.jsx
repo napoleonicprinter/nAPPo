@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Popup, Marker, Tooltip, ZoomControl, useMap, useMapEvents, Polyline, CircleMarker } from 'react-leaflet';
-import { useAppContext, useBackHandler, getAvailableSiteMaps } from '../context/AppContext';
+import { useAppContext, useBackHandler, getAvailableSiteMaps, isPaidVersion } from '../context/AppContext';
 import SiteCard, { getCategoryColor } from './SiteCard';
+import ServiceSheetCard from './ServiceSheetCard';
 import DealsView from './DealsView';
 import MapOverlaysLayer from './MapOverlaysLayer';
 import L from 'leaflet';
@@ -1387,12 +1388,228 @@ const ClusteredSiteMarkers = ({
     );
 };
 
+const getInvisibleServiceSheetIcon = (marker) => {
+    const w = Number(marker?.width || marker?.hit_width || marker?.hitSize || marker?.hit_size) || 34;
+    const h = Number(marker?.height || marker?.hit_height || marker?.hitSize || marker?.hit_size) || 24;
+    return L.divIcon({
+        className: 'service-sheet-invisible-icon',
+        html: `<div style="width:${w}px;height:${h}px;background:transparent;border:none;cursor:pointer;"></div>`,
+        iconSize: [w, h],
+        iconAnchor: [w / 2, h / 2],
+        popupAnchor: [0, -h / 2 - 4]
+    });
+};
+
+const ServiceSheetPopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigatingRef }) => {
+    const map = useMap();
+    const {
+        serviceSheetMarkerToOpen,
+        setServiceSheetMarkerToOpen,
+        selectedSite,
+        setSelectedSite,
+        selectedServiceSheet,
+        setSelectedServiceSheet
+    } = useAppContext();
+
+    useEffect(() => {
+        if (!serviceSheetMarkerToOpen) return;
+
+        const targetKey = `ss-marker-${String(serviceSheetMarkerToOpen.markerId).trim()}`;
+
+        if (selectedSite) setSelectedSite(null);
+        if (selectedServiceSheet) setSelectedServiceSheet(null);
+
+        isNavigatingRef.current = true;
+        activePopupSiteIdRef.current = targetKey;
+
+        markerRefs.current.forEach((marker, idStr) => {
+            if (idStr !== targetKey) {
+                try {
+                    marker.closePopup();
+                } catch (e) { }
+            }
+        });
+
+        let cancelled = false;
+        let retryTimer = null;
+        let pollAttempts = 0;
+        const maxPollAttempts = 40;
+
+        const executeOpen = () => {
+            if (cancelled) return;
+            const marker = markerRefs.current.get(targetKey);
+            if (!marker) {
+                pollAttempts++;
+                if (pollAttempts < maxPollAttempts) {
+                    retryTimer = setTimeout(executeOpen, 60);
+                } else {
+                    isNavigatingRef.current = false;
+                    setServiceSheetMarkerToOpen(null);
+                }
+                return;
+            }
+
+            const targetLatLng = marker.getLatLng
+                ? marker.getLatLng()
+                : L.latLng(serviceSheetMarkerToOpen.latitude, serviceSheetMarkerToOpen.longitude);
+            const currentZoom = map.getZoom();
+            const targetZoom = Math.max(currentZoom, 13.5);
+            const yOffset = isMobileLike ? 150 : 120;
+            const targetPoint = map.project(targetLatLng, targetZoom);
+            targetPoint.y -= yOffset;
+            const centerLatLng = map.unproject(targetPoint, targetZoom);
+
+            map.flyTo(centerLatLng, targetZoom, { duration: 0.6 });
+
+            setTimeout(() => {
+                if (cancelled) return;
+                markerRefs.current.forEach((otherMarker, idStr) => {
+                    if (idStr !== targetKey) {
+                        try {
+                            otherMarker.closePopup();
+                        } catch (e) { }
+                    }
+                });
+                const m = markerRefs.current.get(targetKey);
+                if (m) {
+                    try {
+                        m.openPopup();
+                    } catch (e) { }
+                }
+                isNavigatingRef.current = false;
+                setServiceSheetMarkerToOpen(null);
+            }, 400);
+        };
+
+        executeOpen();
+
+        return () => {
+            cancelled = true;
+            if (retryTimer) clearTimeout(retryTimer);
+            isNavigatingRef.current = false;
+        };
+    }, [
+        serviceSheetMarkerToOpen, map, markerRefs, isMobileLike,
+        setServiceSheetMarkerToOpen, selectedSite, setSelectedSite,
+        selectedServiceSheet, setSelectedServiceSheet,
+        activePopupSiteIdRef, isNavigatingRef
+    ]);
+
+    return null;
+};
+
+const ServiceSheetMarkers = ({
+    serviceSheets,
+    activeMapOverlays,
+    markerRefs,
+    activePopupSiteIdRef,
+    setSelectedSite,
+    setSelectedServiceSheet,
+    setCallerSite,
+    setCallerServiceSheet,
+    isMobileLike
+}) => {
+    const activeOverlaySet = useMemo(() => new Set(activeMapOverlays || []), [activeMapOverlays]);
+
+    const visibleEntries = useMemo(() => {
+        if (!isPaidVersion || !Array.isArray(serviceSheets) || serviceSheets.length === 0) return [];
+        const entries = [];
+        serviceSheets.forEach(sheet => {
+            if (!Array.isArray(sheet.markers)) return;
+            sheet.markers.forEach(marker => {
+                const lat = Number(marker.latitude);
+                const lon = Number(marker.longitude);
+                if (isNaN(lat) || isNaN(lon)) return;
+                const mapId = marker.map_id || marker.mapId;
+                const isAlwaysVisible = marker.always_visible === true || marker.alwaysVisible === true;
+                if (!mapId || isAlwaysVisible || activeOverlaySet.has(mapId)) {
+                    entries.push({ sheet, marker, lat, lon });
+                }
+            });
+        });
+        return entries;
+    }, [serviceSheets, activeOverlaySet]);
+
+    if (visibleEntries.length === 0) return null;
+
+    const openMarkerPopup = (e, refKey) => {
+        if (e.originalEvent) e.originalEvent.stopPropagation();
+        activePopupSiteIdRef.current = refKey;
+        setSelectedSite(null);
+        setSelectedServiceSheet(null);
+        if (setCallerSite) setCallerSite(null);
+
+        markerRefs.current.forEach((otherMarker, idStr) => {
+            if (idStr !== refKey) {
+                try {
+                    otherMarker.closePopup();
+                } catch (err) { }
+            }
+        });
+
+        e.target.openPopup();
+    };
+
+    return (
+        <>
+            {visibleEntries.map(({ sheet, marker, lat, lon }) => {
+                const refKey = `ss-marker-${String(marker.id).trim()}`;
+                return (
+                    <Marker
+                        key={refKey}
+                        position={[lat, lon]}
+                        icon={getInvisibleServiceSheetIcon(marker)}
+                        zIndexOffset={650}
+                        eventHandlers={{
+                            mouseover: (e) => {
+                                if (!isMobileLike) {
+                                    openMarkerPopup(e, refKey);
+                                }
+                            },
+                            click: (e) => {
+                                openMarkerPopup(e, refKey);
+                            }
+                        }}
+                        ref={(r) => {
+                            if (r) markerRefs.current.set(refKey, r);
+                            else markerRefs.current.delete(refKey);
+                        }}
+                    >
+                        <Popup
+                            autoPan={false}
+                            autoPanPadding={[50, 50]}
+                            closeButton={false}
+                            autoClose={false}
+                            closeOnClick={false}
+                        >
+                            <div style={{ width: '300px', position: 'relative' }}>
+                                <ServiceSheetCard
+                                    sheet={sheet}
+                                    marker={marker}
+                                    isCompact={true}
+                                    onClose={() => {
+                                        activePopupSiteIdRef.current = null;
+                                        const m = markerRefs.current.get(refKey);
+                                        if (m) m.closePopup();
+                                        if (setCallerServiceSheet) setCallerServiceSheet(null);
+                                    }}
+                                />
+                            </div>
+                        </Popup>
+                    </Marker>
+                );
+            })}
+        </>
+    );
+};
+
 const MapView = () => {
     const {
         sites, theme, mapStyle, clusterRadius,
         selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
         userCoords, isFiltered, previewDevice, clearAllFilters,
-        filterCategory, activeMapOverlays, setCallerSite
+        filterCategory, activeMapOverlays, setCallerSite,
+        serviceSheets, selectedServiceSheet, setSelectedServiceSheet, setCallerServiceSheet
     } = useAppContext();
 
     const hasActiveOverlays = useMemo(() => {
@@ -1469,7 +1686,7 @@ const MapView = () => {
             .leaflet-popup-tip-container { margin-top: -1px; }
             .leaflet-popup-tip { background: white !important; box-shadow: none !important; border: none !important; }
             .detail-view-active .leaflet-control-container { visibility: hidden !important; opacity: 0 !important; }
-            .custom-div-icon { background: none !important; border: none !important; }
+            .custom-div-icon, .service-sheet-invisible-icon { background: none !important; border: none !important; }
             .leaflet-overlay-pane { z-index: 400 !important; }
             .leaflet-marker-pane { z-index: 600 !important; }
             .new-site-badge {
@@ -1512,7 +1729,7 @@ const MapView = () => {
     const defaultCenter = [48.8566, 2.3522];
 
     return (
-        <div style={{ height: '100%', width: '100%', position: 'relative' }} className={`animate-fade-in ${selectedSite ? 'detail-view-active' : ''}`}>
+        <div style={{ height: '100%', width: '100%', position: 'relative' }} className={`animate-fade-in ${(selectedSite || selectedServiceSheet) ? 'detail-view-active' : ''}`}>
             <MapContainer
                 preferCanvas={true}
                 center={defaultCenter}
@@ -1562,8 +1779,9 @@ const MapView = () => {
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
                 <ClusterZoomBackControl zoomBackView={zoomBackView} setZoomBackView={setZoomBackView} isMobileLike={isMobileLike} theme={theme} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} activePopupSiteIdRef={activePopupSiteIdRef} />
-                <MapEventsHandler onMapClick={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }} />
+                <MapEventsHandler onMapClick={() => { setSelectedSite(null); setSelectedServiceSheet(null); if (setCallerSite) setCallerSite(null); if (setCallerServiceSheet) setCallerServiceSheet(null); }} />
                 <PopupOpener markerRefs={markerRefs} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
+                <ServiceSheetPopupOpener markerRefs={markerRefs} isMobileLike={isMobileLike} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <ZoomPopupPreserver markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} />
                 <SinglePopupEnforcer markerRefs={markerRefs} activePopupSiteIdRef={activePopupSiteIdRef} isNavigatingRef={isNavigatingRef} setCallerSite={setCallerSite} setSelectedSite={setSelectedSite} />
                 <TodaysBattlePopupOpener
@@ -1587,6 +1805,18 @@ const MapView = () => {
                     hasActiveOverlays={hasActiveOverlays}
                     isTodaysBattleActive={isTodaysBattleActive}
                     setZoomBackView={setZoomBackView}
+                />
+
+                <ServiceSheetMarkers
+                    serviceSheets={serviceSheets}
+                    activeMapOverlays={activeMapOverlays}
+                    markerRefs={markerRefs}
+                    activePopupSiteIdRef={activePopupSiteIdRef}
+                    setSelectedSite={setSelectedSite}
+                    setSelectedServiceSheet={setSelectedServiceSheet}
+                    setCallerSite={setCallerSite}
+                    setCallerServiceSheet={setCallerServiceSheet}
+                    isMobileLike={isMobileLike}
                 />
             </MapContainer>
 
@@ -1615,6 +1845,36 @@ const MapView = () => {
                                 <SiteCard
                                     site={liveSite}
                                     onClose={() => { setSelectedSite(null); if (setCallerSite) setCallerSite(null); }}
+                                    isCompact={false}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                );
+            })()}
+            {selectedServiceSheet && (() => {
+                const liveSheet = (serviceSheets || []).find(s => s.id === selectedServiceSheet.id) || selectedServiceSheet;
+                const isStrictMobile = previewDevice === 'mobile';
+                return (
+                    <div style={{
+                        position: 'fixed',
+                        top: isStrictMobile ? '145px' : '50%',
+                        left: '50%',
+                        transform: isStrictMobile ? 'translateX(-50%)' : 'translate(-50%, -50%)',
+                        width: '320px',
+                        maxWidth: '92vw',
+                        zIndex: 2147483641,
+                        pointerEvents: 'none'
+                    }}>
+                        <div className="animate-fade-in" style={{
+                            pointerEvents: 'none',
+                            maxHeight: isStrictMobile ? 'calc(100dvh - 160px)' : '85vh',
+                            overflow: 'visible'
+                        }}>
+                            <div style={{ pointerEvents: 'auto', width: '100%' }}>
+                                <ServiceSheetCard
+                                    sheet={liveSheet}
+                                    onClose={() => { setSelectedServiceSheet(null); if (setCallerServiceSheet) setCallerServiceSheet(null); }}
                                     isCompact={false}
                                 />
                             </div>

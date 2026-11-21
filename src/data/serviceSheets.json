@@ -1,0 +1,424 @@
+[
+  {
+    "id": "ship-argonauta",
+    "type": "Ship",
+    "name": "Argonauta (80)",
+    "subtitle": "80-gun Ship of the Line",
+    "country": "Spain",
+    "years": "1798–1805",
+    "image": "Finisterre.webp",
+    "description": "Built at Ferrol in 1798, the 80-gun ship of the line Argonauta served as the flagship of Lieutenant General Federico Gravina during the 1805 West Indies expedition and at the Battle of Cape Finisterre, where she led the Allied van squadron into action against Admiral Robert Calder's British fleet.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Spanish_ship_Argonauta_(1798)",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "1277",
+        "title": "Battle Cabo Finisterre Memorial"
+      },
+      {
+        "id": "188",
+        "title": "Battle of Trafalgar"
+      }
+    ],
+    "markers": [
+      {
+        "id": "argonauta-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3531,
+        "longitude": -11.4385,
+        "role": "Allied Van Flagship",
+        "strength": "80 guns, 680 men",
+        "casualties": {
+          "dead": 6,
+          "wounded": 5
+        },
+        "damage": "Sails, rigging and fore-topmast damaged during the opening exchange",
+        "captain": "Rafael de Hore",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina",
+        "notes": "Led the Franco-Spanish line of battle at the head of the van division."
+      }
+    ]
+  },
+  {
+    "id": "ship-san-rafael",
+    "type": "Ship",
+    "name": "San Rafael (80)",
+    "subtitle": "80-gun Ship of the Line",
+    "country": "Spain",
+    "years": "1771–1805",
+    "image": "Finisterre.webp",
+    "description": "An 80-gun Spanish ship of the line launched at Havana in 1771. At the Battle of Cape Finisterre on July 22, 1805, San Rafael fought fiercely in the thick fog within Gravina's van division until she was dismasted and captured by the British fleet.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Spanish_ship_San_Rafael_(1771)",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "1277",
+        "title": "Battle Cabo Finisterre Memorial"
+      }
+    ],
+    "markers": [
+      {
+        "id": "san-rafael-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3469,
+        "longitude": -11.4460,
+        "role": "5th Ship in Allied Van Line",
+        "strength": "80 guns, 650 men",
+        "casualties": {
+          "dead": 53,
+          "wounded": 114
+        },
+        "damage": "Completely dismasted and heavily hulled; captured by the Royal Navy",
+        "captain": "Francisco de Montes",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina"
+      }
+    ]
+  },
+  {
+    "id": "ship-firme",
+    "type": "Ship",
+    "name": "Firme (74)",
+    "subtitle": "74-gun Ship of the Line",
+    "country": "Spain",
+    "years": "1754–1805",
+    "image": "Finisterre.webp",
+    "description": "A 74-gun Spanish ship of the line built at La Carraca (Cádiz) in 1754. During the Battle of Cape Finisterre she sustained severe concentrated fire from several British ships of the line, losing all her masts before striking her colors.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Cape_Finisterre_(1805)",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "1277",
+        "title": "Battle Cabo Finisterre Memorial"
+      }
+    ],
+    "markers": [
+      {
+        "id": "firme-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3454,
+        "longitude": -11.4470,
+        "role": "6th Ship in Allied Van Line",
+        "strength": "74 guns, 600 men",
+        "casualties": {
+          "dead": 41,
+          "wounded": 97
+        },
+        "damage": "Main and mizzen masts shot away; captured after heavy close-range combat",
+        "captain": "Rafael de Villavicencio",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina"
+      }
+    ]
+  },
+  {
+    "id": "ship-bucentaure",
+    "type": "Ship",
+    "name": "Bucentaure (80)",
+    "subtitle": "80-gun Bucentaure-class Ship of the Line",
+    "country": "France",
+    "years": "1803–1805",
+    "image": "Finisterre.webp",
+    "description": "Lead ship of her class of 80-gun ships of the line of the French Navy, launched at Toulon in 1803. Bucentaure served as the flagship of Vice-Admiral Pierre-Charles Villeneuve at both the Battle of Cape Finisterre and the Battle of Trafalgar.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/French_ship_Bucentaure_(1803)",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "188",
+        "title": "Battle of Trafalgar"
+      }
+    ],
+    "markers": [
+      {
+        "id": "bucentaure-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3357,
+        "longitude": -11.4602,
+        "role": "Combined Fleet Flagship (Center)",
+        "strength": "80 guns, 840 men",
+        "casualties": {
+          "dead": 5,
+          "wounded": 5
+        },
+        "damage": "Light damage to sails and rigging in dense fog",
+        "captain": "Jean-Jacques Magendie",
+        "commander": "Pierre-Charles Villeneuve",
+        "commander_id": "cmd-villeneuve"
+      }
+    ]
+  },
+  {
+    "id": "ship-prince-of-wales",
+    "type": "Ship",
+    "name": "HMS Prince of Wales (98)",
+    "subtitle": "98-gun Boyne-class Second Rate Ship of the Line",
+    "country": "Great Britain",
+    "years": "1794–1822",
+    "image": "Finisterre.webp",
+    "description": "A 98-gun second-rate ship of the line of the Royal Navy launched at Portsmouth Dockyard in 1794. HMS Prince of Wales served as the flagship of Vice-Admiral Sir Robert Calder at the Battle of Cape Finisterre on July 22, 1805.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/HMS_Prince_of_Wales_(1794)",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      }
+    ],
+    "markers": [
+      {
+        "id": "prince-of-wales-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3352,
+        "longitude": -11.2810,
+        "role": "British Fleet Flagship",
+        "strength": "98 guns, 750 men",
+        "casualties": {
+          "dead": 3,
+          "wounded": 20
+        },
+        "damage": "Rudder and rigging damaged",
+        "captain": "William Cuming",
+        "commander": "Robert Calder",
+        "commander_id": "cmd-calder"
+      }
+    ]
+  },
+  {
+    "id": "reg-imperial-guard-waterloo",
+    "type": "Regiment",
+    "name": "1er Régiment de Grenadiers-à-Pied de la Garde Impériale",
+    "subtitle": "Old Guard Infantry Regiment",
+    "country": "France",
+    "years": "1799–1815",
+    "image": "Waterloo.webp",
+    "description": "The senior infantry regiment of Napoleon's Old Guard. Formed from the most battle-hardened veterans of the Grande Armée, the 1st Foot Grenadiers formed the final reserve at the Battle of Waterloo, holding squares near La Belle Alliance to cover the French retreat.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/1st_Foot_Grenadier_Regiment_(Imperial_Guard)",
+    "related_sites": [
+      {
+        "id": "2",
+        "title": "Battlefield of Waterloo"
+      },
+      {
+        "id": "173",
+        "title": "Musée Wellington Waterloo"
+      }
+    ],
+    "markers": [
+      {
+        "id": "imperial-guard-waterloo-1",
+        "battle_id": "2",
+        "battle_name": "Battlefield of Waterloo",
+        "map_id": "waterloo-phase1",
+        "date": "1815-06-18",
+        "latitude": 50.6569,
+        "longitude": 4.4129,
+        "role": "Imperial Guard Reserve (Rossomme / La Belle Alliance)",
+        "strength": "1,300 men (2 battalions)",
+        "casualties": {
+          "dead": 95,
+          "wounded": 240
+        },
+        "damage": "Maintained square formation under heavy Allied artillery and cavalry pressure during the final retreat",
+        "commander": "Jean-Martin Petit",
+        "commander_id": "cmd-petit"
+      }
+    ]
+  },
+  {
+    "id": "cmd-gravina",
+    "type": "Commander",
+    "name": "Federico Gravina",
+    "subtitle": "Captain General of the Royal Spanish Armada",
+    "country": "Spain",
+    "years": "1756–1806",
+    "image": "Finisterre.webp",
+    "description": "Federico Carlos Gravina y Nápoli (1756–1806) was Spain's premier naval commander during the Napoleonic Wars. At the Battle of Cape Finisterre (July 22, 1805), commanding from the 80-gun Argonauta, his Spanish van division bore the brunt of the fighting in thick fog. Months later he commanded the Spanish fleet at Trafalgar, where he was mortally wounded.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Federico_Gravina",
+    "birthplace_id": "",
+    "grave_id": "",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "1277",
+        "title": "Battle Cabo Finisterre Memorial"
+      },
+      {
+        "id": "188",
+        "title": "Battle of Trafalgar"
+      }
+    ],
+    "markers": [
+      {
+        "id": "gravina-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3504,
+        "longitude": -11.4733,
+        "role": "Commander of the Allied Van Squadron",
+        "strength": "6 Spanish Ships of the Line (Van Division)",
+        "casualties": {
+          "dead": 106,
+          "wounded": 231
+        },
+        "damage": "Two ships of the van (San Rafael and Firme) dismasted and captured in dense fog",
+        "captain": "Flagship: Argonauta (80)",
+        "captain_id": "ship-argonauta"
+      }
+    ]
+  },
+  {
+    "id": "cmd-villeneuve",
+    "type": "Commander",
+    "name": "Pierre-Charles Villeneuve",
+    "subtitle": "Vice-Admiral of the French Navy",
+    "country": "France",
+    "years": "1763–1806",
+    "image": "Finisterre.webp",
+    "description": "Pierre-Charles-Jean-Baptiste-Silvestre de Villeneuve (1763–1806) commanded the combined Franco-Spanish fleet during the 1805 Atlantic campaign, leading the fleet at the Battle of Cape Finisterre against Sir Robert Calder and subsequently at the Battle of Trafalgar against Lord Nelson.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Pierre-Charles_Villeneuve",
+    "birthplace_id": "",
+    "grave_id": "",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "188",
+        "title": "Battle of Trafalgar"
+      }
+    ],
+    "markers": [
+      {
+        "id": "villeneuve-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3338,
+        "longitude": -11.4892,
+        "role": "Commander-in-Chief, Combined Franco-Spanish Fleet",
+        "strength": "20 Ships of the Line (14 French, 6 Spanish), 7 Frigates",
+        "casualties": {
+          "dead": 149,
+          "wounded": 327
+        },
+        "damage": "2 Spanish ships captured; allied fleet put into Vigo and Ferrol",
+        "captain": "Flagship: Bucentaure (80)",
+        "captain_id": "ship-bucentaure"
+      }
+    ]
+  },
+  {
+    "id": "cmd-calder",
+    "type": "Commander",
+    "name": "Sir Robert Calder",
+    "subtitle": "Vice-Admiral of the Royal Navy",
+    "country": "Great Britain",
+    "years": "1745–1818",
+    "image": "Finisterre.webp",
+    "description": "Admiral Sir Robert Calder, 1st Baronet (1745–1818) commanded the British blockading squadron off Ferrol that intercepted Villeneuve's returning Franco-Spanish fleet at the Battle of Cape Finisterre on July 22, 1805, capturing two Spanish ships of the line despite being outnumbered 15 to 20.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Robert_Calder",
+    "birthplace_id": "",
+    "grave_id": "",
+    "related_sites": [
+      {
+        "id": "215",
+        "title": "Battle of Cape Finisterre"
+      },
+      {
+        "id": "1277",
+        "title": "Battle Cabo Finisterre Memorial"
+      }
+    ],
+    "markers": [
+      {
+        "id": "calder-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "latitude": 43.3498,
+        "longitude": -11.2870,
+        "role": "Commander-in-Chief, British Squadron",
+        "strength": "15 Ships of the Line, 2 Frigates, 2 Smaller Vessels",
+        "casualties": {
+          "dead": 39,
+          "wounded": 159
+        },
+        "damage": "HMS Windsor Castle crippled; captured Spanish ships San Rafael and Firme",
+        "captain": "Flagship: HMS Prince of Wales (98)",
+        "captain_id": "ship-prince-of-wales"
+      }
+    ]
+  },
+  {
+    "id": "cmd-petit",
+    "type": "Commander",
+    "name": "Jean-Martin Petit",
+    "subtitle": "Général de Brigade, Commander of the 1st Foot Grenadiers of the Old Guard",
+    "country": "France",
+    "years": "1772–1856",
+    "image": "Waterloo.webp",
+    "description": "Baron Jean-Martin Petit (1772–1856) was famous for being embraced by Napoleon during the Emperor's farewell to the Old Guard at Fontainebleau in 1814. At Waterloo on June 18, 1815, he commanded the 1st Regiment of Foot Grenadiers of the Imperial Guard, holding the final squares covering the army's withdrawal.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Jean-Martin_Petit",
+    "birthplace_id": "",
+    "grave_id": "",
+    "related_sites": [
+      {
+        "id": "2",
+        "title": "Battlefield of Waterloo"
+      }
+    ],
+    "markers": [
+      {
+        "id": "petit-waterloo-1",
+        "battle_id": "2",
+        "battle_name": "Battlefield of Waterloo",
+        "map_id": "waterloo-phase1",
+        "date": "1815-06-18",
+        "latitude": 50.6569,
+        "longitude": 4.4129,
+        "role": "Commander, 1er Régiment de Grenadiers-à-Pied",
+        "strength": "1,300 men (2 battalions)",
+        "casualties": {
+          "dead": 95,
+          "wounded": 240
+        },
+        "damage": "Covered the French retreat in square formation until nightfall"
+      }
+    ]
+  }
+]
