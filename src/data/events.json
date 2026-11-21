@@ -5076,5 +5076,13 @@
     "date": "1798-07-22",
     "location": "Cairo, Egypt",
     "description": "Napoleon captured Cairo on July 22nd 1798, following his decisive victory over the Mamluk army at the Battle of the Pyramids on July 21st."
+  },
+  {
+    "id": "597",
+    "title": "Battle of Villafranca",
+    "date": "1809-03-17",
+    "location": "Villafranca del Bierzo, León, Spain",
+    "description": "Occurring on March 17, 1809, amidst the French occupation of León in the Peninsular War, the Battle of Villafranca del Bierzo ended in a French defeat. Following a brutal four-hour siege, the small, cut-off French garrison surrendered to regular Spanish troops commanded by Brigadier José de Mendizábal and General Pedro Caro, the 3rd Marquis of la Romana.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Villafranca_(1809)"
   }
 ]

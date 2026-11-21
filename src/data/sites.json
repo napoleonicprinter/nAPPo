@@ -24248,5 +24248,44 @@
       "2",
       "Egyptian Campaign"
     ]
+  },
+  {
+    "id": "1279",
+    "year": "1809",
+    "date": "1809-03-17",
+    "name": "Battlefield of Villafranca",
+    "category": "Battle site",
+    "significance": 1,
+    "location": "Villafranca del Bierzo, León",
+    "country": "Spain",
+    "description": "Occurring on March 17, 1809, amidst the French occupation of León in the Peninsular War, the Battle of Villafranca del Bierzo ended in a French defeat. Following a brutal four-hour siege, the small, cut-off French garrison surrendered to regular Spanish troops commanded by Brigadier José de Mendizábal and General Pedro Caro, the 3rd Marquis of la Romana.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Villafranca_(1809)",
+    "latitude": 42.604024,
+    "longitude": -6.810131,
+    "image": "Villafranca.webp",
+    "createDate": "2026-11-21",
+    "victor": "Spain",
+    "defeated": "France",
+    "commander_Victor": [
+      "José de Mendizábal",
+      "Marqués de la Romana"
+    ],
+    "special": "Guerra de Independencia"
+  },
+  {
+    "id": "1280",
+    "year": "1891",
+    "date": "1891-10-17",
+    "name": " Imperial Treasury Vienna",
+    "category": "Museum",
+    "significance": 1,
+    "location": "Vienna",
+    "country": "Austria",
+    "description": "Housed in Vienna’s Imperial Treasury, this collection captures the dramatic clash and fragile alliance between the Habsburg dynasty and Napoleon Bonaparte. Alongside the glittering Austrian Crown Jewels—adopted in 1804 by Emperor Francis I to establish the Austrian Empire in defiance of French expansion—stands the opulent Cradle of the King of Rome. Gifted by Paris in 1811 for Napoleon II, the son of Napoleon and Habsburg Archduchess Marie Louise, this monumental silver-gilt crib symbolizes the short-lived union of two rival empires.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Austrian_Crown_Jewels",
+    "latitude": 48.206770,
+    "longitude": 16.365737,
+    "image": "Viena_Treasury.webp",
+    "createDate": "2026-11-21"
   }
 ]
