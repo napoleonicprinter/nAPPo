@@ -8447,8 +8447,8 @@
     "latitude": 31.1217,
     "longitude": 33.79825,
     "date": "1801-02-08",
-    "victor": "United Kingdom",
-    "defeated": "France",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
     "image": "El_Arish.webp",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Siege_of_El_Arish",
     "createDate": "2025-03-22",
@@ -8457,10 +8457,12 @@
       "Egyptian Campaign"
     ],
     "commander_Victor": [
-      "Ralph Abercromby"
+      "Napoleon",
+      "Jean-Baptiste Kléber",
+      "Jean Reynier"
     ],
     "commander_Loss": [
-      "Jacques-François Menou"
+      "Abdullah Pasha"
     ]
   },
   {
@@ -16131,7 +16133,7 @@
     "year": "1798",
     "date": "1798-07-22",
     "name": "Capture of Cairo",
-    "category": "Battle site",
+    "category": "Landmark",
     "significance": 3,
     "location": "Cairo",
     "country": "Egypt",
@@ -16139,14 +16141,7 @@
     "latitude": 30.04442,
     "longitude": 31.23571,
     "image": "Cairo.webp",
-    "createDate": "2025-08-23",
-    "victor": "France",
-    "defeated": "Ottoman Empire",
-    "special": [
-      "arc",
-      "2",
-      "Egyptian Campaign"
-    ]
+    "createDate": "2025-08-23"
   },
   {
     "id": "835",
@@ -24228,5 +24223,30 @@
     "description": "Dedicated on September 6, 2008, by the Municipality of Fisterra (Concello de Fisterra) and the Asociación La Armada Invencible, this bronze plaque honors the heroic sailors who lost their lives during the Naval Battle of Cape Finisterre in July 1805—a key engagement of the Napoleonic Wars fought between the British Royal Navy and a combined Franco-Spanish fleet.",
     "image": "Finisterre_placa.webp",
     "createDate": "2026-11-20"
+  },
+  {
+    "id": "1278",
+    "year": "1798",
+    "date": "1798-10-21",
+    "name": "Revolt of Cairo",
+    "category": "Battle site",
+    "significance": 2,
+    "location": "Cairo",
+    "country": "Egypt",
+    "description": "During the 1798 Revolt of Cairo, the French military repression centered on Historic Cairo, with the heaviest bombardment and bloodshed occurring at the Al-Azhar Mosque. After the uprising broke out in the nearby al-Husayn quarter, Napoleon positioned heavy artillery on the elevated walls of the Cairo Citadel to shell rebel-held neighborhoods below. French infantry then fought street-by-street through barricaded residential alleys before breaking down the gates of Al-Azhar—the insurgents' final refuge—and storming the interior. In the weeks that followed, hundreds of suspected ringleaders were executed, with many bodies disposed of in the Nile River.",
+    "latitude": 30.046000,
+    "longitude": 31.262512,
+    "image": "Cairo_old.webp",
+    "createDate": "2025-08-23",
+    "victor": "France",
+    "defeated": "Ottoman Empire",
+    "commander_Victor": [
+      "Napoleon"
+    ],
+    "special": [
+      "arc",
+      "2",
+      "Egyptian Campaign"
+    ]
   }
 ]

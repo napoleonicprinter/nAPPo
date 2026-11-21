@@ -5061,5 +5061,20 @@
     "location": "Belchite, Zaragoza, Spain",
     "description": "Fought on June 18, 1809 the Battle of Belchite was a decisive Franco-Polish victory led by General Louis-Gabriel Suchet over General Joaquín Blake’s Spanish army. During the French flank attacks, a shell struck a Spanish ammunition wagon, causing a massive explosion that wiped out their gunpowder supply and sparked a chaotic retreat. The rout cost the Spanish around 2,000 casualties and all their artillery, cementing French control over the Zaragoza region.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Belchite_(1809)"
+  },
+  {
+    "id": "595",
+    "title": "Revolt of Cairo",
+    "date": "1798-10-21",
+    "location": "Cairo, Egypt",
+    "description": "On October 21–22, 1798, Cairo's residents launched a major uprising against Napoleon Bonaparte’s occupying French forces, sparked by heavy taxation and religious tensions. Centered around the Al-Azhar Mosque, the rebellion quickly spread as insurgents barricaded the streets and killed several French soldiers. Napoleon responded with heavy artillery bombardments and overwhelming infantry force, brutally crushing the revolt within two days at the cost of thousands of Egyptian lives.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Revolt_of_Cairo"
+  },
+  {
+    "id": "596",
+    "title": "Capture of Cairo",
+    "date": "1798-07-22",
+    "location": "Cairo, Egypt",
+    "description": "Napoleon captured Cairo on July 22nd 1798, following his decisive victory over the Mamluk army at the Battle of the Pyramids on July 21st."
   }
 ]
