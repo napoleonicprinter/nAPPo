@@ -24368,5 +24368,20 @@
     "longitude": 0.534897,
     "image": "Chatham.webp",
     "createDate": "2026-11-22"
+  },
+  {
+    "id": "1285",
+    "year": "1908",
+    "name": "Capilla de las Heroínas de los Sitios de 1808",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Zaragoza, Aragón",
+    "country": "Spain",
+    "description": "The Capilla de las Heroínas de los Sitios de 1808 (also known as the Chapel of the Annunciation or Mausoleum of the Heroines) is a commemorative chapel inside the Iglesia de Nuestra Señora del Portillo in Zaragoza, Spain. Commissioned in 1907 and officially erected and inaugurated in 1908 to mark the centenary of the Sieges of Zaragoza during the Peninsular War, the chapel was designed by architect Ricardo Magdalena. It honors the bravery of the women who defended the city against Napoleonic forces and houses the mausoleum containing the remains of three prominent heroines: Agustina de Aragón, Casta Álvarez, and Manuela Sancho.",
+    "site_link": "https://www.parroquiadelportillo.es/rincondelasheroinas",
+    "latitude": 41.655884,
+    "longitude": -0.89278,
+    "image": "Capilla_portillo.webp",
+    "createDate": "2026-11-22"
   }
 ]

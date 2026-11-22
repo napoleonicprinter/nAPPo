@@ -601,5 +601,78 @@
         "commander_id": "cmd-gravina"
       }
     ]
+  },
+  {
+    "id": "ship-america",
+    "type": "Ship",
+    "name": "América (64)",
+    "subtitle": "64-gun Ship of the Line",
+    "country": "Spain",
+    "years": "1766–1823",
+    "image": "64_canones.webp",
+    "description": "The América was a 64-gun Spanish Navy ship of the line built in Havana in 1766 and decommissioned in 1823. Measuring 61.81 meters long with a 1,178-ton displacement, this two-decked vessel carried a crew of 776 men and was armed with a mix of cannons and howitzers.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Am%C3%A9rica_%281766%29",
+    "markers": [
+      {
+        "id": "america-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "coordinates": [
+          [
+            43.34996,
+            -11.41611
+          ]
+        ],
+        "role": "Served as the third ship in the vanguard",
+        "strength": "64 guns, 600 men (estimated)",
+        "casualties": {
+          "dead": 5,
+          "wounded": 13
+        },
+        "damage": "All masts bullet-riddled, 60 shots in masts",
+        "captain": "Juan Darrac",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina",
+        "notes": "Served in the vanguard and held the vanguard line in heavy fog, suffering heavy damage."
+      }
+    ]
+  },
+  {
+    "id": "ship-españa",
+    "type": "Ship",
+    "name": "España (64)",
+    "subtitle": "64-gun Ship of the Line",
+    "country": "Spain",
+    "years": "1757–1808",
+    "image": "64_canones.webp",
+    "description": "España was a Spanish 64-gun ship of the line launched in 1757. She escorted treasure fleets to New Spain and fought at Gibraltar, Cape Spartel, and Finisterre before being scrapped in 1808.",
+    "markers": [
+      {
+        "id": "españa-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "coordinates": [
+          [
+            43.34848,
+            -11.41718
+          ]
+        ],
+        "role": "Served as the third ship in the vanguard",
+        "strength": "64 guns, 600 men (estimated)",
+        "casualties": {
+          "dead": 5,
+          "wounded": 23
+        },
+        "damage": "Riggig much torn, mizzen mast down, several spars, Rudder partly obliterated, some damage in hull.",
+        "captain": "Bernardo Muñoz",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina",
+        "notes": "Suffered heavy damage, taking 28 casualties before retreating to Vigo."
+      }
+    ]
   }
 ]
