@@ -1388,16 +1388,116 @@ const ClusteredSiteMarkers = ({
     );
 };
 
-const getInvisibleServiceSheetIcon = (marker) => {
-    const w = Number(marker?.width || marker?.hit_width || marker?.hitSize || marker?.hit_size) || 34;
-    const h = Number(marker?.height || marker?.hit_height || marker?.hitSize || marker?.hit_size) || 24;
+const getInvisibleServiceSheetIcon = (marker, sheet, showHighlight = false) => {
+    const w = Number(marker?.width || marker?.hit_width || marker?.hitSize || marker?.hit_size) || 56;
+    const h = Number(marker?.height || marker?.hit_height || marker?.hitSize || marker?.hit_size) || 28;
+    const highlightStyle = showHighlight
+        ? 'border: 1.5px dashed #ffeb3b; background: rgba(255, 235, 59, 0.18); box-shadow: 0 0 6px rgba(255, 235, 59, 0.5);'
+        : 'border: 1.5px solid transparent; background: transparent;';
     return L.divIcon({
         className: 'service-sheet-invisible-icon',
-        html: `<div style="width:${w}px;height:${h}px;background:transparent;border:none;cursor:pointer;"></div>`,
+        html: `<div class="service-sheet-hit-box ${showHighlight ? 'highlighted' : ''}" title="${(sheet?.name || '').replace(/"/g, '&quot;')}" style="width:${w}px;height:${h}px;border-radius:6px;cursor:pointer;box-sizing:border-box;transition:border-color 0.15s ease,background-color 0.15s ease;${highlightStyle}"></div>`,
         iconSize: [w, h],
         iconAnchor: [w / 2, h / 2],
         popupAnchor: [0, -h / 2 - 4]
     });
+};
+
+const BattleMapCursorBar = ({ highlightServiceSheets, setHighlightServiceSheets, hasActiveOverlays }) => {
+    const [cursorCoords, setCursorCoords] = useState(null);
+    const [copied, setCopied] = useState(false);
+
+    useMapEvents({
+        mousemove: (e) => {
+            if (e?.latlng) {
+                setCursorCoords({
+                    lat: e.latlng.lat.toFixed(5),
+                    lon: e.latlng.lng.toFixed(5)
+                });
+            }
+        }
+    });
+
+    if (!isPaidVersion || !hasActiveOverlays) return null;
+
+    const handleCopyCoords = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!cursorCoords) return;
+        const text = `[${cursorCoords.lat}, ${cursorCoords.lon}]`;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 1500);
+            }).catch(() => { });
+        }
+    };
+
+    return (
+        <div
+            className="leaflet-bottom leaflet-left"
+            style={{
+                marginBottom: '12px',
+                marginLeft: '10px',
+                pointerEvents: 'auto',
+                zIndex: 5000
+            }}
+        >
+            <div
+                className="leaflet-control"
+                style={{
+                    margin: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    backgroundColor: 'rgba(18, 23, 31, 0.85)',
+                    backdropFilter: 'blur(6px)',
+                    color: '#f0f6fc',
+                    padding: '4px 10px',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+                    fontSize: '0.75rem',
+                    fontFamily: 'monospace'
+                }}
+            >
+                <span
+                    onClick={handleCopyCoords}
+                    title="Move pointer on map to read coordinates (Click to copy [lat, lon])"
+                    style={{ cursor: 'pointer', userSelect: 'all', whiteSpace: 'nowrap' }}
+                >
+                    {copied
+                        ? 'Copied!'
+                        : cursorCoords
+                            ? `${cursorCoords.lat}, ${cursorCoords.lon}`
+                            : 'Move pointer for coords'}
+                </span>
+                <button
+                    type="button"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setHighlightServiceSheets(prev => !prev);
+                    }}
+                    title={highlightServiceSheets ? 'Hide Service Sheet hit zones' : 'Highlight Service Sheet locations on map'}
+                    style={{
+                        border: highlightServiceSheets ? '1px solid #ffeb3b' : '1px solid rgba(255,255,255,0.3)',
+                        backgroundColor: highlightServiceSheets ? 'rgba(255, 235, 59, 0.25)' : 'rgba(255,255,255,0.1)',
+                        color: highlightServiceSheets ? '#ffeb3b' : '#ffffff',
+                        borderRadius: '5px',
+                        padding: '2px 7px',
+                        fontSize: '0.72rem',
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                        fontFamily: 'sans-serif',
+                        whiteSpace: 'nowrap'
+                    }}
+                >
+                    {highlightServiceSheets ? 'Hide Zones' : 'Show Zones'}
+                </button>
+            </div>
+        </div>
+    );
 };
 
 const ServiceSheetPopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRef, isNavigatingRef }) => {
@@ -1414,16 +1514,18 @@ const ServiceSheetPopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRe
     useEffect(() => {
         if (!serviceSheetMarkerToOpen) return;
 
-        const targetKey = `ss-marker-${String(serviceSheetMarkerToOpen.markerId).trim()}`;
+        const posIdx = serviceSheetMarkerToOpen.positionIndex ?? 0;
+        const primaryKey = `ss-marker-${String(serviceSheetMarkerToOpen.markerId).trim()}-${posIdx}`;
+        const fallbackKey = `ss-marker-${String(serviceSheetMarkerToOpen.markerId).trim()}-0`;
 
         if (selectedSite) setSelectedSite(null);
         if (selectedServiceSheet) setSelectedServiceSheet(null);
 
         isNavigatingRef.current = true;
-        activePopupSiteIdRef.current = targetKey;
+        activePopupSiteIdRef.current = primaryKey;
 
         markerRefs.current.forEach((marker, idStr) => {
-            if (idStr !== targetKey) {
+            if (idStr !== primaryKey && idStr !== fallbackKey) {
                 try {
                     marker.closePopup();
                 } catch (e) { }
@@ -1437,7 +1539,7 @@ const ServiceSheetPopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRe
 
         const executeOpen = () => {
             if (cancelled) return;
-            const marker = markerRefs.current.get(targetKey);
+            const marker = markerRefs.current.get(primaryKey) || markerRefs.current.get(fallbackKey);
             if (!marker) {
                 pollAttempts++;
                 if (pollAttempts < maxPollAttempts) {
@@ -1463,14 +1565,16 @@ const ServiceSheetPopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRe
 
             setTimeout(() => {
                 if (cancelled) return;
+                const resolvedKey = markerRefs.current.has(primaryKey) ? primaryKey : fallbackKey;
+                activePopupSiteIdRef.current = resolvedKey;
                 markerRefs.current.forEach((otherMarker, idStr) => {
-                    if (idStr !== targetKey) {
+                    if (idStr !== resolvedKey) {
                         try {
                             otherMarker.closePopup();
                         } catch (e) { }
                     }
                 });
-                const m = markerRefs.current.get(targetKey);
+                const m = markerRefs.current.get(resolvedKey);
                 if (m) {
                     try {
                         m.openPopup();
@@ -1500,6 +1604,7 @@ const ServiceSheetPopupOpener = ({ markerRefs, isMobileLike, activePopupSiteIdRe
 
 const ServiceSheetMarkers = ({
     serviceSheets,
+    allSites,
     activeMapOverlays,
     markerRefs,
     activePopupSiteIdRef,
@@ -1507,28 +1612,53 @@ const ServiceSheetMarkers = ({
     setSelectedServiceSheet,
     setCallerSite,
     setCallerServiceSheet,
-    isMobileLike
+    isMobileLike,
+    highlightServiceSheets
 }) => {
     const activeOverlaySet = useMemo(() => new Set(activeMapOverlays || []), [activeMapOverlays]);
 
     const visibleEntries = useMemo(() => {
-        if (!isPaidVersion || !Array.isArray(serviceSheets) || serviceSheets.length === 0) return [];
+        if (!isPaidVersion || activeOverlaySet.size === 0 || !Array.isArray(serviceSheets) || serviceSheets.length === 0) {
+            return [];
+        }
         const entries = [];
         serviceSheets.forEach(sheet => {
             if (!Array.isArray(sheet.markers)) return;
             sheet.markers.forEach(marker => {
-                const lat = Number(marker.latitude);
-                const lon = Number(marker.longitude);
-                if (isNaN(lat) || isNaN(lon)) return;
                 const mapId = marker.map_id || marker.mapId;
-                const isAlwaysVisible = marker.always_visible === true || marker.alwaysVisible === true;
-                if (!mapId || isAlwaysVisible || activeOverlaySet.has(mapId)) {
-                    entries.push({ sheet, marker, lat, lon });
+                if (mapId) {
+                    if (!activeOverlaySet.has(mapId)) return;
+                } else if (marker.battle_id && Array.isArray(allSites)) {
+                    const battleSite = allSites.find(s => String(s.id).trim() === String(marker.battle_id).trim());
+                    const siteMaps = getAvailableSiteMaps(battleSite);
+                    const hasMatchingOverlay = Array.isArray(siteMaps) && siteMaps.some(m => m && activeOverlaySet.has(m.id));
+                    if (!hasMatchingOverlay) return;
+                } else {
+                    return;
                 }
+                const positions = Array.isArray(marker.positions) && marker.positions.length > 0
+                    ? marker.positions
+                    : (typeof marker.latitude === 'number' && typeof marker.longitude === 'number'
+                        ? [{ latitude: marker.latitude, longitude: marker.longitude }]
+                        : []);
+                positions.forEach((pos, posIdx) => {
+                    const lat = Number(pos.latitude);
+                    const lon = Number(pos.longitude);
+                    if (!isNaN(lat) && !isNaN(lon)) {
+                        entries.push({
+                            sheet,
+                            marker,
+                            lat,
+                            lon,
+                            posIdx,
+                            refKey: `ss-marker-${String(marker.id).trim()}-${posIdx}`
+                        });
+                    }
+                });
             });
         });
         return entries;
-    }, [serviceSheets, activeOverlaySet]);
+    }, [serviceSheets, activeOverlaySet, allSites]);
 
     if (visibleEntries.length === 0) return null;
 
@@ -1552,20 +1682,14 @@ const ServiceSheetMarkers = ({
 
     return (
         <>
-            {visibleEntries.map(({ sheet, marker, lat, lon }) => {
-                const refKey = `ss-marker-${String(marker.id).trim()}`;
+            {visibleEntries.map(({ sheet, marker, lat, lon, refKey }) => {
                 return (
                     <Marker
-                        key={refKey}
+                        key={`${refKey}-${highlightServiceSheets ? 'hl' : 'invis'}`}
                         position={[lat, lon]}
-                        icon={getInvisibleServiceSheetIcon(marker)}
+                        icon={getInvisibleServiceSheetIcon(marker, sheet, highlightServiceSheets)}
                         zIndexOffset={650}
                         eventHandlers={{
-                            mouseover: (e) => {
-                                if (!isMobileLike) {
-                                    openMarkerPopup(e, refKey);
-                                }
-                            },
                             click: (e) => {
                                 openMarkerPopup(e, refKey);
                             }
@@ -1605,7 +1729,7 @@ const ServiceSheetMarkers = ({
 
 const MapView = () => {
     const {
-        sites, theme, mapStyle, clusterRadius,
+        sites, allSites, theme, mapStyle, clusterRadius,
         selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
         userCoords, isFiltered, previewDevice, clearAllFilters,
         filterCategory, activeMapOverlays, setCallerSite,
@@ -1638,6 +1762,7 @@ const MapView = () => {
 
     const [showDeals, setShowDeals] = useState(false);
     const [zoomBackView, setZoomBackView] = useState(null);
+    const [highlightServiceSheets, setHighlightServiceSheets] = useState(false);
     const markerRefs = useRef(new Map());
     const activePopupSiteIdRef = useRef(null);
     const isNavigatingRef = useRef(false);
@@ -1687,6 +1812,11 @@ const MapView = () => {
             .leaflet-popup-tip { background: white !important; box-shadow: none !important; border: none !important; }
             .detail-view-active .leaflet-control-container { visibility: hidden !important; opacity: 0 !important; }
             .custom-div-icon, .service-sheet-invisible-icon { background: none !important; border: none !important; }
+            .service-sheet-hit-box:hover {
+                border: 1.5px dashed #ffeb3b !important;
+                background: rgba(255, 235, 59, 0.2) !important;
+                box-shadow: 0 0 8px rgba(255, 235, 59, 0.6) !important;
+            }
             .leaflet-overlay-pane { z-index: 400 !important; }
             .leaflet-marker-pane { z-index: 600 !important; }
             .new-site-badge {
@@ -1777,6 +1907,7 @@ const MapView = () => {
                 <LocationMarker isFiltered={isFiltered} />
                 <LocationCenteringHandler />
                 <CenterControl userCoords={userCoords} isMobileLike={isMobileLike} />
+                <BattleMapCursorBar highlightServiceSheets={highlightServiceSheets} setHighlightServiceSheets={setHighlightServiceSheets} hasActiveOverlays={hasActiveOverlays} />
                 <ClusterZoomBackControl zoomBackView={zoomBackView} setZoomBackView={setZoomBackView} isMobileLike={isMobileLike} theme={theme} />
                 <FitFilteredSites sites={sites} isFiltered={isFiltered} selectedSite={selectedSite} siteToOpenPopup={siteToOpenPopup} activeMapOverlays={activeMapOverlays} activePopupSiteIdRef={activePopupSiteIdRef} />
                 <MapEventsHandler onMapClick={() => { setSelectedSite(null); setSelectedServiceSheet(null); if (setCallerSite) setCallerSite(null); if (setCallerServiceSheet) setCallerServiceSheet(null); }} />
@@ -1809,6 +1940,7 @@ const MapView = () => {
 
                 <ServiceSheetMarkers
                     serviceSheets={serviceSheets}
+                    allSites={allSites}
                     activeMapOverlays={activeMapOverlays}
                     markerRefs={markerRefs}
                     activePopupSiteIdRef={activePopupSiteIdRef}
@@ -1817,6 +1949,7 @@ const MapView = () => {
                     setCallerSite={setCallerSite}
                     setCallerServiceSheet={setCallerServiceSheet}
                     isMobileLike={isMobileLike}
+                    highlightServiceSheets={highlightServiceSheets}
                 />
             </MapContainer>
 

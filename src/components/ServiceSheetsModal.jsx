@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Search, Anchor, Shield, User, Swords, FileText, MapPin } from 'lucide-react';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { normalizeServiceSheetType, getServiceSheetTypeColor } from './ServiceSheetCard';
 
 const getTypePluralLabel = (type) => {
@@ -18,6 +18,7 @@ const ServiceSheetsModal = ({ onClose }) => {
         allSites,
         setSelectedServiceSheet,
         setSelectedSite,
+        setSiteToOpenPopup,
         setCallerServiceSheet,
         setServiceSheetMarkerToOpen,
         enableMapOverlay,
@@ -60,7 +61,28 @@ const ServiceSheetsModal = ({ onClose }) => {
     };
 
     const handleJumpToMarker = (sheet, marker) => {
-        const mapId = marker.map_id || marker.mapId;
+        let mapId = marker.map_id || marker.mapId;
+        let battleSite = null;
+        if (marker.battle_id && Array.isArray(allSites)) {
+            battleSite = allSites.find(s => String(s.id).trim() === String(marker.battle_id).trim());
+            if (!mapId && battleSite) {
+                const siteMaps = getAvailableSiteMaps(battleSite);
+                if (siteMaps && siteMaps.length > 0) {
+                    mapId = siteMaps[0].id;
+                }
+            }
+        }
+        if (!mapId && battleSite) {
+            setSelectedServiceSheet(null);
+            setSelectedSite(null);
+            setSiteToOpenPopup(null);
+            onClose();
+            setTimeout(() => {
+                setSiteToOpenPopup(battleSite);
+                setView('map');
+            }, 30);
+            return;
+        }
         if (mapId && enableMapOverlay) {
             enableMapOverlay(mapId);
         }

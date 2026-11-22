@@ -6,23 +6,9 @@
     "subtitle": "80-gun Ship of the Line",
     "country": "Spain",
     "years": "1798–1805",
-    "image": "Finisterre.webp",
+    "image": "argonauta.webp",
     "description": "Built at Ferrol in 1798, the 80-gun ship of the line Argonauta served as the flagship of Lieutenant General Federico Gravina during the 1805 West Indies expedition and at the Battle of Cape Finisterre, where she led the Allied van squadron into action against Admiral Robert Calder's British fleet.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Spanish_ship_Argonauta_(1798)",
-    "related_sites": [
-      {
-        "id": "215",
-        "title": "Battle of Cape Finisterre"
-      },
-      {
-        "id": "1277",
-        "title": "Battle Cabo Finisterre Memorial"
-      },
-      {
-        "id": "188",
-        "title": "Battle of Trafalgar"
-      }
-    ],
     "markers": [
       {
         "id": "argonauta-finisterre-1",
@@ -30,19 +16,45 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3531,
-        "longitude": -11.4385,
-        "role": "Allied Van Flagship",
+        "coordinates": [
+          [
+            43.35293,
+            -11.41397
+          ]
+        ],
+        "role": "Flagship of Gravina",
         "strength": "80 guns, 680 men",
         "casualties": {
           "dead": 6,
           "wounded": 5
         },
-        "damage": "Sails, rigging and fore-topmast damaged during the opening exchange",
+        "damage": "Mizzen and fore masts knocked down, Masts and spars Cutwater torn down",
         "captain": "Rafael de Hore",
         "commander": "Federico Gravina",
         "commander_id": "cmd-gravina",
         "notes": "Led the Franco-Spanish line of battle at the head of the van division."
+      },
+      {
+        "id": "argonauta-trafalgar-1",
+        "battle_id": "188",
+        "battle_name": "Battle of Trafalgar",
+        "date": "1805-10-21",
+        "coordinates": [
+          [
+            36.183,
+            -6.181
+          ]
+        ],
+        "role": "Allied Rear Division",
+        "strength": "80 guns, 811 men",
+        "casualties": {
+          "dead": 100,
+          "wounded": 203
+        },
+        "damage": "Rudder disabled, hull pierced near the waterline; scuttled during the post-battle gale",
+        "captain": "Antonio Pareja",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina"
       }
     ]
   },
@@ -73,8 +85,12 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3469,
-        "longitude": -11.4460,
+        "coordinates": [
+          [
+            43.34684,
+            -11.4185
+          ]
+        ],
         "role": "5th Ship in Allied Van Line",
         "strength": "80 guns, 650 men",
         "casualties": {
@@ -115,8 +131,12 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3454,
-        "longitude": -11.4470,
+        "coordinates": [
+          [
+            43.34536,
+            -11.41957
+          ]
+        ],
         "role": "6th Ship in Allied Van Line",
         "strength": "74 guns, 600 men",
         "casualties": {
@@ -137,7 +157,7 @@
     "subtitle": "80-gun Bucentaure-class Ship of the Line",
     "country": "France",
     "years": "1803–1805",
-    "image": "Finisterre.webp",
+    "image": "bucentaure.webp",
     "description": "Lead ship of her class of 80-gun ships of the line of the French Navy, launched at Toulon in 1803. Bucentaure served as the flagship of Vice-Admiral Pierre-Charles Villeneuve at both the Battle of Cape Finisterre and the Battle of Trafalgar.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/French_ship_Bucentaure_(1803)",
     "related_sites": [
@@ -157,8 +177,16 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3357,
-        "longitude": -11.4602,
+        "coordinates": [
+          [
+            43.33574,
+            -11.43
+          ],
+          [
+            43.33563,
+            -11.4268
+          ]
+        ],
         "role": "Combined Fleet Flagship (Center)",
         "strength": "80 guns, 840 men",
         "casualties": {
@@ -166,6 +194,28 @@
           "wounded": 5
         },
         "damage": "Light damage to sails and rigging in dense fog",
+        "captain": "Jean-Jacques Magendie",
+        "commander": "Pierre-Charles Villeneuve",
+        "commander_id": "cmd-villeneuve"
+      },
+      {
+        "id": "bucentaure-trafalgar-1",
+        "battle_id": "188",
+        "battle_name": "Battle of Trafalgar",
+        "date": "1805-10-21",
+        "coordinates": [
+          [
+            36.188,
+            -6.185
+          ]
+        ],
+        "role": "Combined Fleet Flagship",
+        "strength": "80 guns, 888 men",
+        "casualties": {
+          "dead": 197,
+          "wounded": 85
+        },
+        "damage": "Completely dismasted after raking broadsides from HMS Victory and HMS Neptune",
         "captain": "Jean-Jacques Magendie",
         "commander": "Pierre-Charles Villeneuve",
         "commander_id": "cmd-villeneuve"
@@ -195,8 +245,16 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3352,
-        "longitude": -11.2810,
+        "coordinates": [
+          [
+            43.33494,
+            -11.32273
+          ],
+          [
+            43.33556,
+            -11.3272
+          ]
+        ],
         "role": "British Fleet Flagship",
         "strength": "98 guns, 750 men",
         "casualties": {
@@ -237,8 +295,16 @@
         "battle_name": "Battlefield of Waterloo",
         "map_id": "waterloo-phase1",
         "date": "1815-06-18",
-        "latitude": 50.6569,
-        "longitude": 4.4129,
+        "coordinates": [
+          [
+            50.6569,
+            4.4129
+          ],
+          [
+            50.6585,
+            4.4125
+          ]
+        ],
         "role": "Imperial Guard Reserve (Rossomme / La Belle Alliance)",
         "strength": "1,300 men (2 battalions)",
         "casualties": {
@@ -247,7 +313,11 @@
         },
         "damage": "Maintained square formation under heavy Allied artillery and cavalry pressure during the final retreat",
         "commander": "Jean-Martin Petit",
-        "commander_id": "cmd-petit"
+        "commander_id": "cmd-petit",
+        "brigade": "1st Brigade (Cambronne)",
+        "division": "Old Guard Grenadier Division (Friant)",
+        "corp": "Imperial Guard (Drouot)",
+        "commander_in_chief": "Napoleon Bonaparte"
       }
     ]
   },
@@ -258,23 +328,19 @@
     "subtitle": "Captain General of the Royal Spanish Armada",
     "country": "Spain",
     "years": "1756–1806",
-    "image": "Finisterre.webp",
+    "image": "Gravina.webp",
     "description": "Federico Carlos Gravina y Nápoli (1756–1806) was Spain's premier naval commander during the Napoleonic Wars. At the Battle of Cape Finisterre (July 22, 1805), commanding from the 80-gun Argonauta, his Spanish van division bore the brunt of the fighting in thick fog. Months later he commanded the Spanish fleet at Trafalgar, where he was mortally wounded.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Federico_Gravina",
     "birthplace_id": "",
     "grave_id": "",
     "related_sites": [
       {
-        "id": "215",
-        "title": "Battle of Cape Finisterre"
+        "id": "1281",
+        "title": "CaptainGravina's grave"
       },
       {
-        "id": "1277",
-        "title": "Battle Cabo Finisterre Memorial"
-      },
-      {
-        "id": "188",
-        "title": "Battle of Trafalgar"
+        "id": "1282",
+        "title": "Captain Gravina's death house"
       }
     ],
     "markers": [
@@ -284,8 +350,12 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3504,
-        "longitude": -11.4733,
+        "coordinates": [
+          [
+            43.35043,
+            -11.43597
+          ]
+        ],
         "role": "Commander of the Allied Van Squadron",
         "strength": "6 Spanish Ships of the Line (Van Division)",
         "casualties": {
@@ -295,6 +365,25 @@
         "damage": "Two ships of the van (San Rafael and Firme) dismasted and captured in dense fog",
         "captain": "Flagship: Argonauta (80)",
         "captain_id": "ship-argonauta"
+      },
+      {
+        "id": "gravina-trafalgar-1",
+        "battle_id": "188",
+        "battle_name": "Battle of Trafalgar",
+        "date": "1805-10-21",
+        "coordinates": [
+          [
+            36.183,
+            -6.18
+          ]
+        ],
+        "role": "Commander of the Spanish Squadron (Príncipe de Asturias)",
+        "strength": "15 Spanish Ships of the Line",
+        "casualties": {
+          "dead": 1022,
+          "wounded": 1383
+        },
+        "damage": "Severely wounded in the left arm by grapeshot aboard Príncipe de Asturias"
       }
     ]
   },
@@ -327,8 +416,12 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3338,
-        "longitude": -11.4892,
+        "coordinates": [
+          [
+            43.33379,
+            -11.44517
+          ]
+        ],
         "role": "Commander-in-Chief, Combined Franco-Spanish Fleet",
         "strength": "20 Ships of the Line (14 French, 6 Spanish), 7 Frigates",
         "casualties": {
@@ -336,6 +429,27 @@
           "wounded": 327
         },
         "damage": "2 Spanish ships captured; allied fleet put into Vigo and Ferrol",
+        "captain": "Flagship: Bucentaure (80)",
+        "captain_id": "ship-bucentaure"
+      },
+      {
+        "id": "villeneuve-trafalgar-1",
+        "battle_id": "188",
+        "battle_name": "Battle of Trafalgar",
+        "date": "1805-10-21",
+        "coordinates": [
+          [
+            36.188,
+            -6.185
+          ]
+        ],
+        "role": "Commander-in-Chief, Combined Fleet",
+        "strength": "33 Ships of the Line (18 French, 15 Spanish)",
+        "casualties": {
+          "dead": 4395,
+          "wounded": 2541
+        },
+        "damage": "Flagship Bucentaure dismasted and forced to strike; Villeneuve taken prisoner",
         "captain": "Flagship: Bucentaure (80)",
         "captain_id": "ship-bucentaure"
       }
@@ -370,8 +484,12 @@
         "battle_name": "Battle of Cape Finisterre",
         "map_id": "finisterre",
         "date": "1805-07-22",
-        "latitude": 43.3498,
-        "longitude": -11.2870,
+        "coordinates": [
+          [
+            43.34982,
+            -11.32839
+          ]
+        ],
         "role": "Commander-in-Chief, British Squadron",
         "strength": "15 Ships of the Line, 2 Frigates, 2 Smaller Vessels",
         "casualties": {
@@ -409,8 +527,12 @@
         "battle_name": "Battlefield of Waterloo",
         "map_id": "waterloo-phase1",
         "date": "1815-06-18",
-        "latitude": 50.6569,
-        "longitude": 4.4129,
+        "coordinates": [
+          [
+            50.6569,
+            4.4129
+          ]
+        ],
         "role": "Commander, 1er Régiment de Grenadiers-à-Pied",
         "strength": "1,300 men (2 battalions)",
         "casualties": {
@@ -418,6 +540,65 @@
           "wounded": 240
         },
         "damage": "Covered the French retreat in square formation until nightfall"
+      }
+    ]
+  },
+  {
+    "id": "ship-terrible",
+    "type": "Ship",
+    "name": "Terrible (74)",
+    "subtitle": "74-gun Ship of the Line",
+    "country": "Spain",
+    "years": "1754–1811",
+    "image": "terrible.webp",
+    "description": "Built at Ferrol in 1798, the 80-gun ship of the line Argonauta served as the flagship of Lieutenant General Federico Gravina during the 1805 West Indies expedition and at the Battle of Cape Finisterre, where she led the Allied van squadron into action against Admiral Robert Calder's British fleet.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Terrible_(1754)",
+    "markers": [
+      {
+        "id": "terrible-finisterre-1",
+        "battle_id": "215",
+        "battle_name": "Battle of Cape Finisterre",
+        "map_id": "finisterre",
+        "date": "1805-07-22",
+        "coordinates": [
+          [
+            43.35145,
+            -11.41504
+          ]
+        ],
+        "role": "Served as the second ship in the vanguard",
+        "strength": "74 guns, 642 men",
+        "casualties": {
+          "dead": 1,
+          "wounded": 7
+        },
+        "damage": "Rigging Much torn, two cannons dismounted, slide ripped off, one shot flotation high",
+        "captain": "Francisco Vázquez de Mondragón",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina",
+        "notes": "Served in the vanguard and bore the brunt of the British attack."
+      },
+      {
+        "id": "terrible-trafalgar-1",
+        "battle_id": "188",
+        "battle_name": "Battle of Trafalgar",
+        "date": "1805-10-21",
+        "coordinates": [
+          [
+            36.183,
+            -6.18
+          ]
+        ],
+        "role": "Allied Rear Division",
+        "strength": "80 guns, 811 men",
+        "casualties": {
+          "dead": 100,
+          "wounded": 203
+        },
+        "damage": "Rudder disabled, hull pierced near the waterline; scuttled during the post-battle gale",
+        "captain": "Antonio Pareja",
+        "commander": "Federico Gravina",
+        "commander_id": "cmd-gravina"
       }
     ]
   }

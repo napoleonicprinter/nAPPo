@@ -5064,6 +5064,7 @@
   },
   {
     "id": "595",
+    "siteId": 1278,
     "title": "Revolt of Cairo",
     "date": "1798-10-21",
     "location": "Cairo, Egypt",
@@ -5072,6 +5073,7 @@
   },
   {
     "id": "596",
+    "siteId": 834,
     "title": "Capture of Cairo",
     "date": "1798-07-22",
     "location": "Cairo, Egypt",
@@ -5079,10 +5081,21 @@
   },
   {
     "id": "597",
+    "siteId": 1279,
     "title": "Battle of Villafranca",
     "date": "1809-03-17",
     "location": "Villafranca del Bierzo, León, Spain",
     "description": "Occurring on March 17, 1809, amidst the French occupation of León in the Peninsular War, the Battle of Villafranca del Bierzo ended in a French defeat. Following a brutal four-hour siege, the small, cut-off French garrison surrendered to regular Spanish troops commanded by Brigadier José de Mendizábal and General Pedro Caro, the 3rd Marquis of la Romana.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Battle_of_Villafranca_(1809)"
+  },
+  {
+    "id": "598",
+    "siteId": 1282,
+    "title": "Captaim Federico Gravina death",
+    "date": "1806-03-09",
+    "location": "Cádiz, Spain",
+    "description": "Federico Gravina y Nápoli died in Cádiz on March 9, 1806, at age 49, from wounds sustained at the Battle of Trafalgar. On October 21, 1805, grapeshot shattered his left arm while he commanded the Spanish fleet aboard his flagship Príncipe de Asturias. Despite being promoted to Captain General while recovering, gangrene set in and he succumbed to his injuries months later.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Federico_Gravina",
+    "flower_link": "https://es.findagrave.com/memorial/23970165/federico-gravina_y_napoli/flower"
   }
 ]

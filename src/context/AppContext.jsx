@@ -301,17 +301,58 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const serviceSheets = useMemo(() => {
         if (!isPaidVersion) return [];
+        const extractPositions = (m) => {
+            const list = [];
+            const addPos = (latVal, lonVal, labelVal) => {
+                const lat = Number(latVal);
+                const lon = Number(lonVal);
+                if (!isNaN(lat) && !isNaN(lon)) {
+                    list.push({ latitude: lat, longitude: lon, label: labelVal || undefined });
+                }
+            };
+            if (m.latitude !== undefined && m.longitude !== undefined) {
+                addPos(m.latitude, m.longitude, m.location_label || m.label);
+            }
+            const multiRaw = m.coordinates || m.locations || m.positions;
+            if (Array.isArray(multiRaw)) {
+                multiRaw.forEach(item => {
+                    if (Array.isArray(item) && item.length >= 2) {
+                        addPos(item[0], item[1], item[2]);
+                    } else if (item && typeof item === 'object') {
+                        addPos(item.latitude ?? item.lat, item.longitude ?? item.lon ?? item.lng, item.label || item.name);
+                    }
+                });
+            }
+            // Deduplicate identical coordinates
+            const seen = new Set();
+            return list.filter(p => {
+                const key = `${p.latitude.toFixed(6)},${p.longitude.toFixed(6)}`;
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        };
+
         return (serviceSheetsBaseData || []).map((sheet, sIdx) => {
             const id = String(sheet.id || `sheet-${sIdx}`).trim();
             const rawImage = sheet.image;
             const image = rawImage ? resolveSiteImageUrl(rawImage) : '';
-            const markers = Array.isArray(sheet.markers)
-                ? sheet.markers.map((m, mIdx) => ({
+            const rawMarkers = Array.isArray(sheet.markers)
+                ? sheet.markers
+                : Array.isArray(sheet.locations)
+                    ? sheet.locations
+                    : [];
+            const markers = rawMarkers.map((m, mIdx) => {
+                const positions = extractPositions(m);
+                return {
                     ...m,
                     id: String(m.id || `${id}-marker-${mIdx}`).trim(),
+                    latitude: positions[0]?.latitude ?? Number(m.latitude),
+                    longitude: positions[0]?.longitude ?? Number(m.longitude),
+                    positions,
                     image: m.image ? resolveSiteImageUrl(m.image) : undefined
-                }))
-                : [];
+                };
+            });
             return {
                 ...sheet,
                 id,

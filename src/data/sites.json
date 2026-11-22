@@ -24288,5 +24288,39 @@
     "longitude": 16.365737,
     "image": "Viena_Treasury.webp",
     "createDate": "2026-11-21"
+  },
+  {
+    "id": "1281",
+    "year": "1883",
+    "date": "1883-04-28",
+    "name": "Federico Gravina's grave",
+    "category": "Grave site",
+    "significance": 3,
+    "location": "San Fernando, Cádiz",
+    "country": "Spain",
+    "description": "The tomb of Federico Gravina y Nápoli, Captain General of the Spanish Royal Navy who died in 1806 from wounds sustained at the Battle of Trafalgar, is located in the Panteón de Marinos Ilustres (Pantheon of Illustrious Sailors) in San Fernando, Cádiz. Initially buried at the Church of El Carmen in Cádiz, his remains were transferred to the Pantheon in 1854, briefly moved to the Basilica of Nuestra Señora de Atocha in Madrid in 1869, and returned permanently to San Fernando on April 28, 1883.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Federico_Gravina",
+    "flower_link": "https://es.findagrave.com/memorial/23970165/federico-gravina_y_napoli/flower",
+    "latitude": 36.479345,
+    "longitude": -6.193957,
+    "image": "Gravina_grave.webp",
+    "createDate": "2026-11-22"
+  },
+  {
+    "id": "1282",
+    "year": "1806",
+    "date": "1806-03-09",
+    "name": "Federico Gravina's death house",
+    "category": "Landmark",
+    "significance": 3,
+    "location": "Plaza de la Catedral, Cádiz",
+    "country": "Spain",
+    "description": "Located on Cádiz's Plaza de la Catedral, this historic residence is where Spanish Admiral Federico Gravina died on March 9, 1806, from wounds sustained at the Battle of Trafalgar. Today, a commemorative marble plaque on the façade honors the celebrated naval commander's final home.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Federico_Gravina",
+    "flower_link": "https://es.findagrave.com/memorial/23970165/federico-gravina_y_napoli/flower",
+    "latitude": 36.529738,
+    "longitude": 36.529738,
+    "image": "Gravina_death.webp",
+    "createDate": "2026-11-22"
   }
 ]

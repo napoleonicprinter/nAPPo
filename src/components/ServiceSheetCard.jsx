@@ -4,7 +4,7 @@ import {
     Swords, Link2, X, Layers, Flower2, User, Shield, Anchor,
     Users, Skull, AlertCircle, Crosshair, Landmark, FileText
 } from 'lucide-react';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, getAvailableSiteMaps } from '../context/AppContext';
 import { handleImageFallback } from '../utils/imageUtils';
 import { validateSiteFilters } from '../utils/filterValidation';
 import NavErrorModal from './NavErrorModal';
@@ -196,7 +196,21 @@ const ServiceSheetCard = ({ sheet, marker = null, onClose, isCompact = false, sh
 
     const handleJumpToMarker = (targetMarker) => {
         if (!targetMarker) return;
-        const mapId = targetMarker.map_id || targetMarker.mapId;
+        let mapId = targetMarker.map_id || targetMarker.mapId;
+        let battleSite = null;
+        if (targetMarker.battle_id && Array.isArray(allSites)) {
+            battleSite = allSites.find(s => String(s.id).trim() === String(targetMarker.battle_id).trim());
+            if (!mapId && battleSite) {
+                const siteMaps = getAvailableSiteMaps(battleSite);
+                if (siteMaps && siteMaps.length > 0) {
+                    mapId = siteMaps[0].id;
+                }
+            }
+        }
+        if (!mapId && battleSite) {
+            handleNavigateToSite(battleSite);
+            return;
+        }
         if (mapId && enableMapOverlay) {
             enableMapOverlay(mapId);
         }
@@ -238,6 +252,18 @@ const ServiceSheetCard = ({ sheet, marker = null, onClose, isCompact = false, sh
 
     const commanderName = marker?.commander || marker?.commander_name || '';
     const commanderSheet = resolveLinkedServiceSheet(marker?.commander_id, commanderName);
+
+    const brigadeText = marker?.brigade || sheet?.brigade || '';
+    const brigadeSheet = resolveLinkedServiceSheet(marker?.brigade_id, brigadeText);
+
+    const divisionText = marker?.division || sheet?.division || '';
+    const divisionSheet = resolveLinkedServiceSheet(marker?.division_id, divisionText);
+
+    const corpText = marker?.corp || marker?.corps || sheet?.corp || sheet?.corps || '';
+    const corpSheet = resolveLinkedServiceSheet(marker?.corp_id || marker?.corps_id, corpText);
+
+    const cincName = marker?.commander_in_chief || marker?.c_in_c || marker?.cinc || sheet?.commander_in_chief || sheet?.c_in_c || '';
+    const cincSheet = resolveLinkedServiceSheet(marker?.commander_in_chief_id || marker?.c_in_c_id || marker?.cinc_id, cincName);
 
     const battleName = marker ? resolveBattleName(marker) : '';
     const battleDate = marker?.date || sheet.date || sheet.years || '';
@@ -573,6 +599,122 @@ const ServiceSheetCard = ({ sheet, marker = null, onClose, isCompact = false, sh
                                 </div>
                             )}
 
+                            {brigadeText && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                                    <Shield size={13} style={{ flexShrink: 0, color: '#8b949e' }} />
+                                    <span><strong>Brigade:</strong></span>
+                                    {brigadeSheet ? (
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleOpenLinkedServiceSheet(brigadeSheet);
+                                            }}
+                                            style={{
+                                                border: 'none',
+                                                background: 'none',
+                                                padding: 0,
+                                                color: 'var(--accent-primary, #58a6ff)',
+                                                fontWeight: 'bold',
+                                                textDecoration: 'underline',
+                                                cursor: 'pointer',
+                                                fontSize: '0.82rem'
+                                            }}
+                                        >
+                                            {brigadeText}
+                                        </button>
+                                    ) : (
+                                        <span>{brigadeText}</span>
+                                    )}
+                                </div>
+                            )}
+
+                            {divisionText && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                                    <Layers size={13} style={{ flexShrink: 0, color: '#8b949e' }} />
+                                    <span><strong>Division:</strong></span>
+                                    {divisionSheet ? (
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleOpenLinkedServiceSheet(divisionSheet);
+                                            }}
+                                            style={{
+                                                border: 'none',
+                                                background: 'none',
+                                                padding: 0,
+                                                color: 'var(--accent-primary, #58a6ff)',
+                                                fontWeight: 'bold',
+                                                textDecoration: 'underline',
+                                                cursor: 'pointer',
+                                                fontSize: '0.82rem'
+                                            }}
+                                        >
+                                            {divisionText}
+                                        </button>
+                                    ) : (
+                                        <span>{divisionText}</span>
+                                    )}
+                                </div>
+                            )}
+
+                            {corpText && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                                    <Swords size={13} style={{ flexShrink: 0, color: '#8b949e' }} />
+                                    <span><strong>Corp:</strong></span>
+                                    {corpSheet ? (
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleOpenLinkedServiceSheet(corpSheet);
+                                            }}
+                                            style={{
+                                                border: 'none',
+                                                background: 'none',
+                                                padding: 0,
+                                                color: 'var(--accent-primary, #58a6ff)',
+                                                fontWeight: 'bold',
+                                                textDecoration: 'underline',
+                                                cursor: 'pointer',
+                                                fontSize: '0.82rem'
+                                            }}
+                                        >
+                                            {corpText}
+                                        </button>
+                                    ) : (
+                                        <span>{corpText}</span>
+                                    )}
+                                </div>
+                            )}
+
+                            {cincName && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                                    <User size={13} style={{ flexShrink: 0, color: '#d97706' }} />
+                                    <span title="Commander in Chief"><strong>C-in-C:</strong></span>
+                                    {cincSheet ? (
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleOpenLinkedServiceSheet(cincSheet);
+                                            }}
+                                            style={{
+                                                border: 'none',
+                                                background: 'none',
+                                                padding: 0,
+                                                color: 'var(--accent-primary, #58a6ff)',
+                                                fontWeight: 'bold',
+                                                textDecoration: 'underline',
+                                                cursor: 'pointer',
+                                                fontSize: '0.82rem'
+                                            }}
+                                        >
+                                            {cincName}
+                                        </button>
+                                    ) : (
+                                        <span>{cincName}</span>
+                                    )}
+                                </div>
+                            )}
+
                             {notesText && (
                                 <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary, #888)', marginTop: '2px', fontStyle: 'italic' }}>
                                     {notesText}
@@ -599,7 +741,7 @@ const ServiceSheetCard = ({ sheet, marker = null, onClose, isCompact = false, sh
                                 borderTop: '1px solid rgba(128,128,128,0.2)'
                             }}>
                                 {/* External Icon Links */}
-                                {(sheet.wikipedia_link || sheet.site_link || sheet.more_info_link || sheet.youtube_link) && (
+                                {(sheet.wikipedia_link || sheet.site_link || sheet.more_info_link || sheet.moreInfo || sheet.link || sheet.youtube_link) && (
                                     <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                                         {sheet.wikipedia_link && sheet.wikipedia_link.trim() !== '' && (
                                             <a href={sheet.wikipedia_link} target="_blank" rel="noreferrer" title="Wikipedia" style={{ color: '#666' }}>
@@ -613,6 +755,16 @@ const ServiceSheetCard = ({ sheet, marker = null, onClose, isCompact = false, sh
                                         )}
                                         {sheet.more_info_link && sheet.more_info_link.trim() !== '' && (
                                             <a href={sheet.more_info_link} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
+                                                <ExternalLink size={22} />
+                                            </a>
+                                        )}
+                                        {sheet.moreInfo && sheet.moreInfo.trim() !== '' && sheet.moreInfo !== sheet.more_info_link && (
+                                            <a href={sheet.moreInfo} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
+                                                <ExternalLink size={22} />
+                                            </a>
+                                        )}
+                                        {sheet.link && sheet.link.trim() !== '' && sheet.link !== sheet.site_link && sheet.link !== sheet.wikipedia_link && sheet.link !== sheet.more_info_link && sheet.link !== sheet.moreInfo && (
+                                            <a href={sheet.link} target="_blank" rel="noreferrer" title="More Info" style={{ color: '#666' }}>
                                                 <ExternalLink size={22} />
                                             </a>
                                         )}
