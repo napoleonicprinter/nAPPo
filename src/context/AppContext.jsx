@@ -138,13 +138,18 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     // Data states initialized from localStorage or bundled fallbacks
     const [sitesBaseData, setSitesBaseData] = useState(() => {
+        if (isDevelopment) {
+            return sitesData;
+        }
         const saved = localStorage.getItem('sitesData');
-        const bundledMap = new Map((sitesData || []).map(s => [String(s.id).trim(), s]));
+        const bundledList = Array.isArray(sitesData) ? sitesData : [];
+        const bundledMap = new Map(bundledList.map(s => [String(s.id).trim(), s]));
         if (saved && saved !== "undefined") {
             try {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
-                    return parsed.map(site => {
+                    const parsedIds = new Set(parsed.map(s => String(s.id).trim()));
+                    const merged = parsed.map(site => {
                         const bundled = bundledMap.get(String(site.id).trim());
                         if (!bundled) return site;
                         return {
@@ -163,6 +168,12 @@ export const AppProvider = ({ children, storeUrl }) => {
                                     : (bundled.commander_Tie || bundled.commander_Inconclusive || [])
                         };
                     });
+                    bundledList.forEach(b => {
+                        if (!parsedIds.has(String(b.id).trim())) {
+                            merged.push(b);
+                        }
+                    });
+                    return merged;
                 }
             } catch (e) { }
         }
@@ -475,13 +486,15 @@ export const AppProvider = ({ children, storeUrl }) => {
                 if (res.status === 'fulfilled') {
                     const { key, data } = res.value;
                     if (key === 'sites' && Array.isArray(data) && data.length > 0) {
-                        const bundledMap = new Map((sitesData || []).map(s => [String(s.id).trim(), s]));
+                        const bundledList = Array.isArray(sitesData) ? sitesData : [];
+                        const bundledMap = new Map(bundledList.map(s => [String(s.id).trim(), s]));
+                        const remoteIds = new Set(data.map(s => String(s.id).trim()));
                         const mergedSites = data.map(remoteSite => {
                             const bundled = bundledMap.get(String(remoteSite.id).trim());
                             if (!bundled) return remoteSite;
                             return {
-                                ...bundled,
                                 ...remoteSite,
+                                ...(isDevelopment ? bundled : {}),
                                 commander_Victor: (Array.isArray(remoteSite.commander_Victor) && remoteSite.commander_Victor.length > 0)
                                     ? remoteSite.commander_Victor
                                     : (bundled.commander_Victor || []),
@@ -494,6 +507,12 @@ export const AppProvider = ({ children, storeUrl }) => {
                                         ? remoteSite.commander_Inconclusive
                                         : (bundled.commander_Tie || bundled.commander_Inconclusive || [])
                             };
+                        });
+                        // Preserve any newly added local sites in src/data/sites.json not yet pushed to GitHub
+                        bundledList.forEach(b => {
+                            if (!remoteIds.has(String(b.id).trim())) {
+                                mergedSites.push(b);
+                            }
                         });
                         sitesResult = mergedSites;
                         const currentIds = new Set((sitesBaseData || []).map(s => String(s.id).trim()));
