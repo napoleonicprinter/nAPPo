@@ -24322,5 +24322,20 @@
     "longitude": -6.29531,
     "image": "Gravina_death.webp",
     "createDate": "2026-11-22"
+  },
+  {
+    "id": "1283",
+    "date": "1815-06-17",
+    "name": "Napoleon’s Last Headquarters",
+    "category": "Museum",
+    "significance": 2,
+    "location": "Genappe",
+    "country": "Belgium",
+    "description": "On the rainy evening of June 17, 1815, Napoleon’s exhausted army halted at the unoccupied Caillou Farm, which became the Emperor’s Last Headquarters as he planned his final battle. Now an officially listed monument and museum, the historic farmhouse preserves the story of that pivotal night—alongside its broader history—through eyewitness accounts and authentic French military artifacts, including Napoleon's own camp bed.",
+    "site_link": "https://www.dernier-qg-napoleon.be/en/home/",
+    "latitude": 50.646082,
+    "longitude": 4.420704,
+    "image": "Caillou_Farm.webp",
+    "createDate": "2026-11-22"
   }
 ]

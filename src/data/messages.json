@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Spread the Word",
-    "description": "If you are enjoying using nAPPo Trails web site, please let your friends know about it. That helps us to continue improving and developing the web site!",
+    "title": "Daily events of Napoleonic history",
+    "description": "Check the 'CALENDAR' icon at the uper right corner to see the daily events of Napoleonic history! ",
     "email": "",
-    "from": "2026-10-22",
-    "until": "2026-10-29",
+    "from": "2026-11-22",
+    "until": "2026-12-29",
     "maxShows": 2
   }
 ]
