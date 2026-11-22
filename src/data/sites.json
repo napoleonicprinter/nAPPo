@@ -2898,6 +2898,23 @@
       "Anne-François-Charles Trelliard",
       "George Bock",
       "Benjamin d'Urban"
+    ],
+    "maps": [
+      {
+        "id": "majadahonda",
+        "name": "Phase 1",
+        "url": "Majadahonda.svg",
+        "bounds": [
+          [
+            40.4733,
+            -3.8931
+          ],
+          [
+            40.5073,
+            -3.8669
+          ]
+        ]
+      }
     ]
   },
   {
@@ -24336,6 +24353,20 @@
     "latitude": 50.646082,
     "longitude": 4.420704,
     "image": "Caillou_Farm.webp",
+    "createDate": "2026-11-22"
+  },
+  {
+    "id": "1284",
+    "year": "1869",
+    "name": "French Prisoners of War Memorial",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Chatham",
+    "country": "England",
+    "description": "The French Prisoners of War Memorial at St. George’s Centre in Chatham honours the French soldiers and sailors who died aboard British prison ships on the River Medway during the Napoleonic Wars. Built in 1869 and moved to its current site alongside the re-interred remains of the prisoners in 1904, the Gothic Revival monument—including a 1991 plaque commemorating 362 additional discovered remains—serves today as a solemn site for annual Anglo-French remembrance services.",
+    "latitude": 51.396928,
+    "longitude": 0.534897,
+    "image": "Chatham.webp",
     "createDate": "2026-11-22"
   }
 ]
