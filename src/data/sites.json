@@ -24377,11 +24377,93 @@
     "significance": 2,
     "location": "Zaragoza, Aragón",
     "country": "Spain",
-    "description": "The Capilla de las Heroínas de los Sitios de 1808 (also known as the Chapel of the Annunciation or Mausoleum of the Heroines) is a commemorative chapel inside the Iglesia de Nuestra Señora del Portillo in Zaragoza, Spain. Commissioned in 1907 and officially erected and inaugurated in 1908 to mark the centenary of the Sieges of Zaragoza during the Peninsular War, the chapel was designed by architect Ricardo Magdalena. It honors the bravery of the women who defended the city against Napoleonic forces and houses the mausoleum containing the remains of three prominent heroines: Agustina de Aragón, Casta Álvarez, and Manuela Sancho.",
+    "description": "The Capilla de las Heroínas de los Sitios de 1808 (also known as the Chapel of the Annunciation or Mausoleum of the Heroines) is a commemorative chapel inside the Iglesia de Nuestra Señora del Portillo. Commissioned in 1907 and officially erected and inaugurated in 1908 to mark the centenary of the Sieges of Zaragoza during the Peninsular War, the chapel was designed by architect Ricardo Magdalena. It honors the bravery of the women who defended the city against Napoleonic forces and houses the mausoleum containing the remains of three prominent heroines: Agustina de Aragón, Casta Álvarez, and Manuela Sancho.",
     "site_link": "https://www.parroquiadelportillo.es/rincondelasheroinas",
     "latitude": 41.655884,
     "longitude": -0.89278,
     "image": "Capilla_portillo.webp",
     "createDate": "2026-11-22"
+  },
+  {
+    "id": "1286",
+    "name": "Life Guards Artillery Brigade Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.508176,
+    "longitude": 35.844397,
+    "description": "Erected in 1912 the monument on the southern outskirts of Semenovskoye honors Battery No. 2 and Light Company No. 2 of the Life Guards Artillery Brigade. During the decisive battle of August 26, 1812, Battery Company No. 2 fought for Bagration's flèches starting at 7:00 a.m., before the rest of the Guards artillery later defended the Semyonovsky Heights. Together with the Russian infantry and cavalry, their decisive actions stopped Napoleon's forces from breaking through the lines to attack from the rear.",
+    "image": "Guards_Artillery.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1287",
+    "name": "Life Guards Izmailovsky Regiment Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Semenovskoe, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.506213,
+    "longitude": 35.844274,
+    "description": "Erected in 1912 to mark the centenary of the Battle of Borodino. Adorned with a cross on its front face, it honors the courage and heavy sacrifices of the elite Russian Imperial Guard infantry regiment while defending against Napoleon's forces in 1812.",
+    "image": "Izmailovsky_Regiment.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1288",
+    "name": "Life Guards Artillery Battery No. 1 and Light No. 1 Co. Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.506247,
+    "longitude": 35.845160,
+    "description": "Erected in 1912, a gray granite column on a pyramidal base topped with an eight-pointed Orthodox cross honors the Life Guards Artillery Brigade. Decorated with cannonballs, the monument features base plaques listing the brigade's St. George Cross recipients from the 1812–1814 campaign. At the Battle of Borodino, the brigade fought closely with the Guards Infantry Division to defend the Semyonovsky Heights—a decisive effort that led participant Fyodor Glinka to call Borodino 'the day of Russian artillery'.",
+    "image": "Artillery_Brigade_1.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1289",
+    "name": "Life Guards Lithuanian Regiment Memorial",
+    "relatedSites": [
+      {
+        "id": "1290",
+        "title": "Canvas by Nikolai Samokish"
+      }
+    ],
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.502200,
+    "longitude": 35.850840,
+    "description": "Erected in 1912 for the centenary of the Battle of Borodino, this red sandstone monument honors the Life Guards Lithuanian Regiment. Designed by officer Bylevsky and funded by descendants, its four-sided shape mimics a defensive infantry square. The front relief depicts a triumphant double-headed Russian eagle over a defeated French eagle—whose head was lost to a shell in October 1941—symbolizing the Russian victory of August 26, 1812.",
+    "image": "Lithuanian_Guards.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1290",
+    "name": "Life Guards Lithuanian Regiment Memorial",
+    "relatedSites": [
+      {
+        "id": "1289",
+        "title": "Battleground location"
+      }
+    ],
+    "year": "1911",
+    "category": "Artwork",
+    "significance": 2,
+    "location": "Borodino War and History Museum, Borodinó, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.517859,
+    "longitude": 35.822620,
+    "description": "Painted in 1911 by Russian battle artist Nikolai Semyonovich Samokish, The Attack of the Lithuanian Life Guards Regiment at the Battle of Borodino captures a fierce 1812 bayonet counterattack. Amidst billowing cannon smoke, Russian guardsmen in tall shakos surge forward into chaotic, hand-to-hand combat against French forces, highlighting the regiment's courage and sacrifice.",
+    "image": "Lithuanian_Guards_canvas.webp",
+    "createDate": "2026-11-23"
   }
 ]
