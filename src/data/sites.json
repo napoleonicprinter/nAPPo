@@ -24465,5 +24465,89 @@
     "description": "Painted in 1911 by Russian battle artist Nikolai Semyonovich Samokish, The Attack of the Lithuanian Life Guards Regiment at the Battle of Borodino captures a fierce 1812 bayonet counterattack. Amidst billowing cannon smoke, Russian guardsmen in tall shakos surge forward into chaotic, hand-to-hand combat against French forces, highlighting the regiment's courage and sacrifice.",
     "image": "Lithuanian_Guards_canvas.webp",
     "createDate": "2026-11-23"
+  },
+  {
+    "id": "1291",
+    "name": "Life Guards Lithuanian Moscow Regiment Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.502866,
+    "longitude": 35.849045,
+    "description": "For the 100th anniversary of the Battle of Borodino, two monuments were erected along the road between Semyonovskoye and Borodino Station to honor the Lithuanian Life Guards Regiment, which defended the Russian left flank against Napoleon's main assault on August 26, 1812. Two separate memorials—including a tall pink granite obelisk—exist because the regiment split in 1817 to form the Life Guards Moscow Regiment, leaving two descendant units to commemorate their shared ancestors.",
+    "image": "Lithuanian_Moscow_Reg.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1292",
+    "name": "Grenadier Leontiy Korennoy Heroic Action Site",
+    "date": "1813-10-16",
+    "relatedSites": [
+      {
+        "id": "1293",
+        "title": "Canvas by Polidor Babayev"
+      }
+    ],
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Güldengossa,",
+    "country": "Germany",
+    "latitude": 55.502866,
+    "longitude": 35.849045,
+    "description": "During the Battle of Leipzig in October 1813, Russian Grenadier Leontiy Korennoy became a legend for his bravery in the village of Güldengossa. When French forces trapped his retreating battalion against a stone wall, Korennoy helped his wounded commanders climb to safety while staying behind to hold off the enemy alone. He fought fiercely until he was severely wounded with eighteen injuries and physically unable to continue. After learning of Korennoy’s bravery, Napoleon met with him personally and issued a decree praising him as a model of courage for French soldiers. Once Korennoy recovered from his wounds, Napoleon ordered his release and sent him home.",
+    "image": "Gossa.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1293",
+    "name": "The Heroism of Leonty Korenoi",
+    "year": "1846",
+    "relatedSites": [
+      {
+        "id": "1292",
+        "title": "Site of the scene"
+      }
+    ],
+    "category": "Landmark",
+    "significance": 2,
+    "location": "Stroganov Palace, The Large Stroganova's Study, St. Petersburg",
+    "country": "Russia",
+    "latitude": 59.935534,
+    "longitude": 30.319977,
+    "description": "Painted in 1846 by Polidor Ivanovich Babayev, The Heroism of Leonty Korennoy, Grenadier of the Finland Life Guards Regiment, at the Battle of Leipzig in 1813 depicts a famous act of valor during the Napoleonic Wars. In this oil painting, the wounded Russian grenadier Leonty Korennoy uses his musket as a club to hold off advancing French troops while covering his officers' retreat over a ruined wall. Housed in the State Russian Museum, the work celebrates the bravery that famously led Napoleon’s soldiers to spare his life out of admiration.",
+    "site_link": "https://en.rusmuseum.ru/museums/stroganov-palace/",
+    "more info": "https://rusmuseumvrm.ru/data/collections/painting/17_19/babaev_pi_podvig_grenadera_l_korennogo_v_bitve_pod_leypcigom_v_1813_g_1846_zh_3561/?lang=en",
+    "image": "Korennoy.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1294",
+    "name": "Life Guards Finland Regiment Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.02038,
+    "longitude": 35.848999,
+    "description": "Erected in 1912 to mark the centenary of the Battle of Borodino, this monument by architect Bylevsky honors the Life Guards Finland Regiment. On August 26, 1812, the regiment launched fierce counterattacks near the Old Smolensk Road, halting General Poniatowski’s Polish corps from outflanking the Russian army. Today, the monument's inscription commemorates their stand: 'To your exploits of valor—glory, honor, and memory.'",
+    "image": "Finland_reg.webp",
+    "createDate": "2026-11-23"
+  },
+  {
+    "id": "1295",
+    "name": "1st Cavalry Corps Memorial",
+    "date": "1985-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Bezzubovo, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.540969,
+    "longitude": 35.81609,
+    "description": "Erected in 1985 near the village of Bezzubovo, a boulder memorial sign featuring a battle map honors Lieutenant General Fyodor Uvarov’s 1st Reserve Cavalry Corps for their actions during the Battle of Borodino on August 26, 1812. Despite unfavorable terrain and heavy enemy artillery fire, Major General Vasily Orlov-Denisov’s Life Guards Cossack Regiment repeatedly attacked the Italian corps, eventually pushing enemy infantry back across the Voinka River once horse artillery arrived. Although strong enemy defenses halted their further advance, the attack coincided with a major assault launched just to the north by Ataman Matvey Platov’s Don Cossacks against Napoleon's left flank.",
+    "image": "1st_cavalry.webp",
+    "createDate": "2026-11-24"
   }
 ]
