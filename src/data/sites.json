@@ -24549,5 +24549,35 @@
     "description": "Erected in 1985 near the village of Bezzubovo, a boulder memorial sign featuring a battle map honors Lieutenant General Fyodor Uvarov’s 1st Reserve Cavalry Corps for their actions during the Battle of Borodino on August 26, 1812. Despite unfavorable terrain and heavy enemy artillery fire, Major General Vasily Orlov-Denisov’s Life Guards Cossack Regiment repeatedly attacked the Italian corps, eventually pushing enemy infantry back across the Voinka River once horse artillery arrived. Although strong enemy defenses halted their further advance, the attack coincided with a major assault launched just to the north by Ataman Matvey Platov’s Don Cossacks against Napoleon's left flank.",
     "image": "1st_cavalry.webp",
     "createDate": "2026-11-24"
+  },
+  {
+    "id": "1296",
+    "name": "2nd Cuirassier Division Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Bezzubovo, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.505790,
+    "longitude": 35.84074,
+    "description": "Erected in 1912 near the Borodino Monastery, this monument features a distinctive railing of chained granite pedestals topped with cast-metal cuirassier helmets. It marks the exact spot from which Duka’s 1,700-strong Cuirassier Division attacked during the defense of Bagration's Flèches. Despite suffering heavy losses at Borodino, the division fought on to enter Paris in March 1814.",
+    "image": "2nd_Cuirassier.webp",
+    "createDate": "2026-11-24"
+  },
+  {
+    "id": "1297",
+    "name": "The tomb of Prince Józef Poniatowski in Kraków",
+    "date": "1813-10-19",
+    "category": "Grave site",
+    "significance": 3,
+    "location": "Wawel Cathedral, Kraków",
+    "country": "Poland",
+    "latitude": 50.054637,
+    "longitude": 19.935468,
+    "description": "Following his heroic death at the Battle of Leipzig in October 1813, his remains were brought back to Poland and officially interred in the cathedral on July 23, 1817. Resting alongside Polish monarchs and fellow national heroes like Tadeusz Kościuszko, his stone sarcophagus honors his lifelong dedication to Polish independence and marks the transformation of Wawel Cathedral into a pantheon of national heroes.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/J%C3%B3zef_Antoni_Poniatowski",
+    "flower_link": "https://es.findagrave.com/memorial/8604142/j%C3%B3sef_antoni-poniatowski/flower",
+    "image": "Poniatowski_grave.webp",
+    "createDate": "2026-11-24"
   }
 ]
