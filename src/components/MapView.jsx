@@ -1152,7 +1152,7 @@ const ClusteredSiteMarkers = ({
                 matchedCluster.pts.push(pt);
                 if (matchedCluster.isSingleCoord &&
                     (Math.abs(matchedCluster.firstLat - site.latitude) > 0.00001 ||
-                     Math.abs(matchedCluster.firstLng - site.longitude) > 0.00001)) {
+                        Math.abs(matchedCluster.firstLng - site.longitude) > 0.00001)) {
                     matchedCluster.isSingleCoord = false;
                 }
                 const n = matchedCluster.sites.length;
@@ -1211,7 +1211,7 @@ const ClusteredSiteMarkers = ({
                             if (idStr !== clickedIdStr) {
                                 try {
                                     marker.closePopup();
-                                } catch (err) {}
+                                } catch (err) { }
                             }
                         });
 
@@ -1389,14 +1389,14 @@ const ClusteredSiteMarkers = ({
 };
 
 const getInvisibleServiceSheetIcon = (marker, sheet, showHighlight = false) => {
-    const w = Number(marker?.width || marker?.hit_width || marker?.hitSize || marker?.hit_size) || 56;
-    const h = Number(marker?.height || marker?.hit_height || marker?.hitSize || marker?.hit_size) || 28;
+    const w = Number(marker?.width || marker?.hit_width || marker?.hitSize || marker?.hit_size) || 48;
+    const h = Number(marker?.height || marker?.hit_height || marker?.hitSize || marker?.hit_size) || 16;
     const highlightStyle = showHighlight
         ? 'border: 1.5px dashed #ffeb3b; background: rgba(255, 235, 59, 0.18); box-shadow: 0 0 6px rgba(255, 235, 59, 0.5);'
         : 'border: 1.5px solid transparent; background: transparent;';
     return L.divIcon({
         className: 'service-sheet-invisible-icon',
-        html: `<div class="service-sheet-hit-box ${showHighlight ? 'highlighted' : ''}" title="${(sheet?.name || '').replace(/"/g, '&quot;')}" style="width:${w}px;height:${h}px;border-radius:6px;cursor:pointer;box-sizing:border-box;transition:border-color 0.15s ease,background-color 0.15s ease;${highlightStyle}"></div>`,
+        html: `<div class="service-sheet-hit-box ${showHighlight ? 'highlighted' : ''}" title="${(sheet?.name || '').replace(/"/g, '&quot;')}" style="width:${w}px;height:${h}px;border-radius:4px;cursor:pointer;box-sizing:border-box;transition:border-color 0.15s ease,background-color 0.15s ease;${highlightStyle}"></div>`,
         iconSize: [w, h],
         iconAnchor: [w / 2, h / 2],
         popupAnchor: [0, -h / 2 - 4]
@@ -1939,7 +1939,7 @@ const MapView = () => {
                 />
 
                 <ServiceSheetMarkers
-                    serviceSheets={filteredServiceSheets || serviceSheets}
+                    serviceSheets={serviceSheets}
                     allSites={allSites}
                     activeMapOverlays={activeMapOverlays}
                     markerRefs={markerRefs}
