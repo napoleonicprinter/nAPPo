@@ -475,7 +475,7 @@ const ServiceSheetCard = ({ sheet, marker = null, onClose, isCompact = false, sh
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    setCallerServiceSheet({ sheet, marker, fromCompactPopup: true });
+                                    setCallerServiceSheet(marker ? { sheet, marker, fromCompactPopup: true } : null);
                                     setSelectedSite(null);
                                     setSelectedServiceSheet(sheet);
                                 }}

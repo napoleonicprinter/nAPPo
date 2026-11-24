@@ -397,6 +397,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [callerServiceSheet, setCallerServiceSheet] = useState(null);
     const [showServiceSheetsModal, setShowServiceSheetsModal] = useState(false);
     const [filterServiceSheet, setFilterServiceSheet] = useState('all');
+    const [filterServiceSheetType, setFilterServiceSheetType] = useState('all');
 
     const normalizeSheetType = useCallback((rawType) => {
         if (!rawType) return 'Service Sheet';
@@ -410,25 +411,29 @@ export const AppProvider = ({ children, storeUrl }) => {
 
     const filteredServiceSheets = useMemo(() => {
         if (!filterServiceSheet || filterServiceSheet === 'all') return serviceSheets;
+        let list = serviceSheets || [];
         if (filterServiceSheet.startsWith('country:')) {
             const targetCountry = filterServiceSheet.slice('country:'.length).trim().toLowerCase();
-            return (serviceSheets || []).filter(s => String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry);
-        }
-        if (filterServiceSheet.startsWith('subgroup:')) {
+            list = list.filter(s => String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry);
+        } else if (filterServiceSheet.startsWith('subgroup:')) {
             const [rawCountry, rawType] = filterServiceSheet.slice('subgroup:'.length).split('|');
             const targetCountry = String(rawCountry || '').trim().toLowerCase();
             const targetType = normalizeSheetType(rawType);
-            return (serviceSheets || []).filter(s =>
+            list = list.filter(s =>
                 String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry &&
                 normalizeSheetType(s.type || s.category) === targetType
             );
-        }
-        if (filterServiceSheet.startsWith('sheet:')) {
+        } else if (filterServiceSheet.startsWith('sheet:')) {
             const targetId = filterServiceSheet.slice('sheet:'.length).trim();
-            return (serviceSheets || []).filter(s => String(s.id).trim() === targetId);
+            list = list.filter(s => String(s.id).trim() === targetId);
         }
-        return serviceSheets;
-    }, [serviceSheets, filterServiceSheet, normalizeSheetType]);
+
+        if (filterServiceSheetType && filterServiceSheetType !== 'all') {
+            const targetType = normalizeSheetType(filterServiceSheetType);
+            list = list.filter(s => normalizeSheetType(s.type || s.category) === targetType);
+        }
+        return list;
+    }, [serviceSheets, filterServiceSheet, filterServiceSheetType, normalizeSheetType]);
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         const saved = localStorage.getItem('messagesData');
@@ -1343,6 +1348,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setShowOnlyNew(false);
         setFilterWithMaps(false);
         setFilterServiceSheet('all');
+        setFilterServiceSheetType('all');
     };
 
     useEffect(() => {
@@ -2108,6 +2114,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             serviceSheetTypes,
             filterServiceSheet,
             setFilterServiceSheet,
+            filterServiceSheetType,
+            setFilterServiceSheetType,
             selectedServiceSheet,
             setSelectedServiceSheet,
             serviceSheetMarkerToOpen,

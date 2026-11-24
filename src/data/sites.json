@@ -24580,5 +24580,19 @@
     "flower_link": "https://es.findagrave.com/memorial/8604142/j%C3%B3sef_antoni-poniatowski/flower",
     "image": "Poniatowski_grave.webp",
     "createDate": "2026-11-24"
+  },
+  {
+    "id": "1298",
+    "name": "Cossack Corps of the Don Memorial",
+    "date": "1985-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Loginovo, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.555874,
+    "longitude": 35.821248,
+    "description": "This modest monument is dedicated to the separate Cossack corps of the Don Ataman Matvey Ivanovich Platov's Army. It also stands on a low mound and was erected according to the design of architect N.I. Ivanov in 1985. ",
+    "image": "Cossaks_Don.webp",
+    "createDate": "2026-11-24"
   }
 ]

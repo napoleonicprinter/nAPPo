@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays, Camera } from 'lucide-react';
+import { Calendar, ArrowDownAZ, Navigation, ChevronUp, CalendarDays, Camera, Anchor, Shield, User } from 'lucide-react';
 import { useBackHandler } from '../hooks/useBackHandler';
 import SiteCard from './SiteCard';
-import ServiceSheetCard from './ServiceSheetCard';
+import ServiceSheetCard, { normalizeServiceSheetType } from './ServiceSheetCard';
 import CustomSimpleSelect from './CustomSimpleSelect';
 import { getBelligerentStatus } from '../utils/filterValidation';
 import './CardView.css';
@@ -48,10 +48,35 @@ const CardView = () => {
         availableOutcomeCounts,
         showOnlyNew,
         serviceSheets,
+        filteredServiceSheets,
+        filterServiceSheet,
+        filterServiceSheetType,
+        setFilterServiceSheetType,
         selectedServiceSheet,
         setSelectedServiceSheet,
         setCallerServiceSheet
     } = useAppContext();
+
+    const isServiceSheetMode = Boolean(filterServiceSheet && filterServiceSheet !== 'all');
+
+    const serviceSheetTypeCounts = useMemo(() => {
+        if (!isServiceSheetMode) return { Ship: 0, Regiment: 0, Commander: 0 };
+        let baseList = serviceSheets || [];
+        if (filterServiceSheet.startsWith('country:')) {
+            const targetCountry = filterServiceSheet.slice('country:'.length).trim().toLowerCase();
+            baseList = baseList.filter(s => String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry);
+        } else if (filterServiceSheet.startsWith('subgroup:')) {
+            const [rawCountry] = filterServiceSheet.slice('subgroup:'.length).split('|');
+            const targetCountry = String(rawCountry || '').trim().toLowerCase();
+            baseList = baseList.filter(s => String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry);
+        }
+        const counts = { Ship: 0, Regiment: 0, Commander: 0 };
+        baseList.forEach(s => {
+            const norm = normalizeServiceSheetType(s.type || s.category);
+            if (counts[norm] !== undefined) counts[norm] += 1;
+        });
+        return counts;
+    }, [isServiceSheetMode, serviceSheets, filterServiceSheet]);
 
     const outcomeOptions = useMemo(() => {
         const hasCommander = filterCommander && filterCommander !== 'all';
@@ -228,20 +253,46 @@ const CardView = () => {
         });
     }, [sites, sortField, sortOrder, userCoords, showOnlyNew]);
 
+    const sortedServiceSheets = useMemo(() => {
+        if (!isServiceSheetMode) return [];
+        const getSheetDate = (s) => {
+            if (s.date) return String(s.date).trim();
+            if (s.years) return String(s.years).trim();
+            if (Array.isArray(s.markers) && s.markers[0]?.date) return String(s.markers[0].date).trim();
+            return '9999-99-99';
+        };
+        return [...(filteredServiceSheets || [])].sort((a, b) => {
+            let result = 0;
+            if (sortField === 'date') {
+                const dA = getSheetDate(a);
+                const dB = getSheetDate(b);
+                result = dA !== dB ? dA.localeCompare(dB) : (a.name || '').localeCompare(b.name || '');
+            } else {
+                result = (a.name || '').localeCompare(b.name || '');
+                if (result === 0) {
+                    result = getSheetDate(a).localeCompare(getSheetDate(b));
+                }
+            }
+            return sortOrder === 'desc' ? -result : result;
+        });
+    }, [isServiceSheetMode, filteredServiceSheets, sortField, sortOrder]);
+
     // Reset visible count when sites or sorting/filtering change
     useEffect(() => {
         setVisibleCount(BATCH_SIZE);
-    }, [sites, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, filterBelligerent, userCoords, showOnlyNew]);
+    }, [sites, filteredServiceSheets, filterServiceSheet, filterServiceSheetType, sortField, sortOrder, filterMonth, filterCommander, filterCommanderRole, filterBelligerent, userCoords, showOnlyNew]);
 
     // Sentinel observer for progressive infinite loading
     useEffect(() => {
         const sentinelEl = sentinelRef.current;
         if (!sentinelEl) return;
 
+        const totalLen = isServiceSheetMode ? sortedServiceSheets.length : sortedSites.length;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries[0].isIntersecting) {
-                    setVisibleCount(prev => Math.min(prev + BATCH_SIZE, sortedSites.length));
+                    setVisibleCount(prev => Math.min(prev + BATCH_SIZE, totalLen));
                 }
             },
             { root: containerRef.current, rootMargin: '300px' }
@@ -249,20 +300,28 @@ const CardView = () => {
 
         observer.observe(sentinelEl);
         return () => observer.disconnect();
-    }, [sortedSites.length, visibleCount]);
+    }, [isServiceSheetMode, sortedServiceSheets.length, sortedSites.length, visibleCount]);
 
     const visibleSites = useMemo(() => {
         return sortedSites.slice(0, visibleCount);
     }, [sortedSites, visibleCount]);
 
+    const visibleServiceSheets = useMemo(() => {
+        return sortedServiceSheets.slice(0, visibleCount);
+    }, [sortedServiceSheets, visibleCount]);
+
     const sortButtonsCount = useMemo(() => {
         let count = 2; // Alphabetic, Date
+        if (isServiceSheetMode) {
+            count += 3; // Ships, Commanders, Regiments
+            return count;
+        }
         if (userCoords) count += 1; // Distance
         if ((filterCommander && filterCommander !== 'all') || (filterBelligerent && filterBelligerent !== 'all')) count += 1; // Outcome
         if (isMonthFilterVisible) count += 1; // Month
         if (isMonthFilterVisible && filterMonth !== 'all') count += 1; // Day
         return count;
-    }, [userCoords, filterCommander, filterBelligerent, isMonthFilterVisible, filterMonth]);
+    }, [isServiceSheetMode, userCoords, filterCommander, filterBelligerent, isMonthFilterVisible, filterMonth]);
 
     const showScrollHint = sortButtonsCount > 2;
 
@@ -298,7 +357,35 @@ const CardView = () => {
                             <Calendar size={14} style={{ marginRight: '4px' }} />
                             Date
                         </button>
-                        {userCoords && (
+                        {isServiceSheetMode && (
+                            <>
+                                <button
+                                    type="button"
+                                    className={`sort-tag-btn ${filterServiceSheetType === 'Ship' ? 'active' : ''}`}
+                                    onClick={() => setFilterServiceSheetType(prev => prev === 'Ship' ? 'all' : 'Ship')}
+                                >
+                                    <Anchor size={14} style={{ marginRight: '4px' }} />
+                                    Ships [{serviceSheetTypeCounts.Ship}]
+                                </button>
+                                <button
+                                    type="button"
+                                    className={`sort-tag-btn ${filterServiceSheetType === 'Commander' ? 'active' : ''}`}
+                                    onClick={() => setFilterServiceSheetType(prev => prev === 'Commander' ? 'all' : 'Commander')}
+                                >
+                                    <User size={14} style={{ marginRight: '4px' }} />
+                                    Commanders [{serviceSheetTypeCounts.Commander}]
+                                </button>
+                                <button
+                                    type="button"
+                                    className={`sort-tag-btn ${filterServiceSheetType === 'Regiment' ? 'active' : ''}`}
+                                    onClick={() => setFilterServiceSheetType(prev => prev === 'Regiment' ? 'all' : 'Regiment')}
+                                >
+                                    <Shield size={14} style={{ marginRight: '4px' }} />
+                                    Regiments [{serviceSheetTypeCounts.Regiment}]
+                                </button>
+                            </>
+                        )}
+                        {!isServiceSheetMode && userCoords && (
                             <button
                                 type="button"
                                 className={`sort-tag-btn ${sortField === 'distance' ? 'active' : ''}`}
@@ -395,12 +482,17 @@ const CardView = () => {
                 </div>
 
                 <div className={`cards-grid ${!showImages ? 'no-images-grid' : ''}`}>
-                    {visibleSites.map(site => (
-                        <SiteCard key={site.id} site={site} isCompact={true} showImage={showImages} />
-                    ))}
+                    {isServiceSheetMode
+                        ? visibleServiceSheets.map(sheet => (
+                            <ServiceSheetCard key={sheet.id} sheet={sheet} marker={null} isCompact={true} showImage={showImages} />
+                        ))
+                        : visibleSites.map(site => (
+                            <SiteCard key={site.id} site={site} isCompact={true} showImage={showImages} />
+                        ))
+                    }
                 </div>
 
-                {visibleCount < sortedSites.length && (
+                {visibleCount < (isServiceSheetMode ? sortedServiceSheets.length : sortedSites.length) && (
                     <div ref={sentinelRef} style={{ height: '20px', margin: '10px 0', pointerEvents: 'none' }} />
                 )}
             </div>

@@ -25,7 +25,13 @@ const ServiceSheetFilter = ({ className = '' }) => {
         serviceSheetTypes,
         filterServiceSheet,
         setFilterServiceSheet,
-        getPortalContainer
+        setFilterServiceSheetType,
+        getPortalContainer,
+        view,
+        setView,
+        setInnerView,
+        setSelectedSite,
+        setSelectedServiceSheet
     } = useAppContext();
 
     const isFilterSelected = Boolean(filterServiceSheet && filterServiceSheet !== 'all');
@@ -188,8 +194,20 @@ const ServiceSheetFilter = ({ className = '' }) => {
 
     const handleSelect = (val) => {
         setFilterServiceSheet(val);
+        if (setFilterServiceSheetType) {
+            setFilterServiceSheetType('all');
+        }
         setIsOpen(false);
         setSearchQuery('');
+        if (val && val !== 'all') {
+            if (setSelectedSite) setSelectedSite(null);
+            if (setSelectedServiceSheet) setSelectedServiceSheet(null);
+            if (view === 'preview' && setInnerView) {
+                setInnerView('card');
+            } else if (setView) {
+                setView('card');
+            }
+        }
     };
 
     return (
@@ -253,40 +271,18 @@ const ServiceSheetFilter = ({ className = '' }) => {
                         </button>
 
                         {filteredCountryGroups.map(group => (
-                            <React.Fragment key={group.country}>
-                                {/* Country Header Option */}
-                                <button
-                                    className={`custom-select-option ${filterServiceSheet === group.value ? 'selected' : ''}`}
-                                    onClick={() => handleSelect(group.value)}
-                                    type="button"
-                                    style={{ fontWeight: 600 }}
-                                >
-                                    <span style={{ flex: 1 }}>{group.country}</span>
-                                    <span className="category-count-badge">
-                                        [{group.totalCount}]
-                                    </span>
-                                </button>
-
-                                {/* Indented Category Subgroups (Ships, Regiments, Commanders, etc.) */}
-                                {group.subgroups.map(sub => (
-                                    <button
-                                        key={sub.value}
-                                        className={`custom-select-option ${filterServiceSheet === sub.value ? 'selected' : ''}`}
-                                        onClick={() => handleSelect(sub.value)}
-                                        type="button"
-                                        style={{
-                                            paddingLeft: '32px',
-                                            paddingRight: '38px',
-                                            fontSize: '0.88em'
-                                        }}
-                                    >
-                                        <span style={{ flex: 1 }}>{sub.label}</span>
-                                        <span className="category-count-badge">
-                                            [{sub.count}]
-                                        </span>
-                                    </button>
-                                ))}
-                            </React.Fragment>
+                            <button
+                                key={group.country}
+                                className={`custom-select-option ${filterServiceSheet === group.value ? 'selected' : ''}`}
+                                onClick={() => handleSelect(group.value)}
+                                type="button"
+                                style={{ fontWeight: 600 }}
+                            >
+                                <span style={{ flex: 1 }}>{group.country}</span>
+                                <span className="category-count-badge">
+                                    [{group.totalCount}]
+                                </span>
+                            </button>
                         ))}
 
                         {filteredCountryGroups.length === 0 && (
