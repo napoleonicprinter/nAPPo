@@ -5,7 +5,16 @@
     "description": "Check the 'CALENDAR' icon at the uper right corner to see the daily events of Napoleonic history! ",
     "email": "",
     "from": "2026-11-22",
-    "until": "2026-12-29",
+    "until": "2026-11-29",
+    "maxShows": 2
+  }
+  {
+    "id": 2,
+    "title": "New sites added daily",
+    "description": "There are thousands of sites to be addes. New events are added daily thanks to your support and contributions. Use the 'Only new sites'filter to explore the new ones! ",
+    "email": "",
+    "from": "2026-11-24",
+    "until": "2026-12-31",
     "maxShows": 2
   }
 ]

@@ -15,6 +15,7 @@ import YearFilter from './YearFilter';
 import CommanderFilter from './CommanderFilter';
 import BelligerentFilter from './BelligerentFilter';
 import ArcFilter from './ArcFilter';
+import ServiceSheetFilter from './ServiceSheetFilter';
 import FloatingViewToggle from './FloatingViewToggle';
 import './Header.css';
 import { HELP_ITEMS } from '../data/helpData';
@@ -311,6 +312,12 @@ const Header = () => {
                             </>
                         )}
 
+                        {isPaidVersion && (
+                            <div className="desktop-only" style={{ display: 'flex', alignItems: 'center' }}>
+                                <ServiceSheetFilter />
+                            </div>
+                        )}
+
                         {isFiltered && <button className="desktop-clear-filters glass-panel" onClick={clearAllFilters}>Clear All</button>}
                         {activeMapOverlays && activeMapOverlays.length > 0 && <button className="desktop-clear-filters glass-panel filters-active-red" onClick={clearMapOverlays}>Close Maps</button>}
 
@@ -324,19 +331,6 @@ const Header = () => {
                                     <span>Filters</span>
                                 </div>
                             </button>
-
-                            {isPaidVersion && (
-                                <button
-                                    className={`custom-select-trigger filter-select glass-panel ${showServiceSheetsModal ? 'active' : ''}`}
-                                    onClick={() => { setShowServiceSheetsModal(true); setIsMenuOpen(false); }}
-                                    style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}
-                                >
-                                    <div className="custom-select-value" style={{ gap: '4px' }}>
-                                        <FileText size={16} />
-                                        <span>Service Sheets</span>
-                                    </div>
-                                </button>
-                            )}
 
                             <button className="custom-select-trigger filter-select glass-panel" onClick={() => { setShowNews(true); }} style={{ justifyContent: 'center', height: '40px', padding: '0 10px', minWidth: 'auto' }}>
                                 <div className="custom-select-value" style={{ gap: '4px' }}>
@@ -461,19 +455,8 @@ const Header = () => {
                         </div>
                     </div>
                     {isPaidVersion && (
-                        <div className="mobile-tag-filter">
-                            <div className="custom-select-container">
-                                <button
-                                    className={`custom-select-trigger mobile-icon-btn glass-panel ${showServiceSheetsModal ? 'active' : ''}`}
-                                    onClick={() => { setShowServiceSheetsModal(true); setIsMenuOpen(false); }}
-                                    style={{ justifyContent: 'center' }}
-                                >
-                                    <div className="custom-select-value" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                        <FileText size={16} />
-                                        <span>Service Sheets</span>
-                                    </div>
-                                </button>
-                            </div>
+                        <div className="mobile-tag-filter" style={{ minWidth: 'max-content' }}>
+                            <ServiceSheetFilter />
                         </div>
                     )}
                     <div className="mobile-tag-filter">

@@ -396,6 +396,39 @@ export const AppProvider = ({ children, storeUrl }) => {
     const [serviceSheetMarkerToOpen, setServiceSheetMarkerToOpen] = useState(null);
     const [callerServiceSheet, setCallerServiceSheet] = useState(null);
     const [showServiceSheetsModal, setShowServiceSheetsModal] = useState(false);
+    const [filterServiceSheet, setFilterServiceSheet] = useState('all');
+
+    const normalizeSheetType = useCallback((rawType) => {
+        if (!rawType) return 'Service Sheet';
+        const t = String(rawType).trim();
+        const lower = t.toLowerCase();
+        if (lower === 'ship' || lower === 'ships') return 'Ship';
+        if (lower === 'regiment' || lower === 'regiments') return 'Regiment';
+        if (lower === 'commander' || lower === 'commanders' || lower === 'captain' || lower === 'captains') return 'Commander';
+        return t.charAt(0).toUpperCase() + t.slice(1);
+    }, []);
+
+    const filteredServiceSheets = useMemo(() => {
+        if (!filterServiceSheet || filterServiceSheet === 'all') return serviceSheets;
+        if (filterServiceSheet.startsWith('country:')) {
+            const targetCountry = filterServiceSheet.slice('country:'.length).trim().toLowerCase();
+            return (serviceSheets || []).filter(s => String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry);
+        }
+        if (filterServiceSheet.startsWith('subgroup:')) {
+            const [rawCountry, rawType] = filterServiceSheet.slice('subgroup:'.length).split('|');
+            const targetCountry = String(rawCountry || '').trim().toLowerCase();
+            const targetType = normalizeSheetType(rawType);
+            return (serviceSheets || []).filter(s =>
+                String(s.country || s.allegiance || '').trim().toLowerCase() === targetCountry &&
+                normalizeSheetType(s.type || s.category) === targetType
+            );
+        }
+        if (filterServiceSheet.startsWith('sheet:')) {
+            const targetId = filterServiceSheet.slice('sheet:'.length).trim();
+            return (serviceSheets || []).filter(s => String(s.id).trim() === targetId);
+        }
+        return serviceSheets;
+    }, [serviceSheets, filterServiceSheet, normalizeSheetType]);
 
     const [messagesBaseData, setMessagesBaseData] = useState(() => {
         const saved = localStorage.getItem('messagesData');
@@ -794,6 +827,22 @@ export const AppProvider = ({ children, storeUrl }) => {
         }
     };
 
+    const activeServiceSheetSiteIds = useMemo(() => {
+        if (!filterServiceSheet || filterServiceSheet === 'all') return null;
+        const siteIds = new Set();
+
+        (filteredServiceSheets || []).forEach(sheet => {
+            if (Array.isArray(sheet.markers)) {
+                sheet.markers.forEach(m => {
+                    if (m && m.battle_id !== undefined && m.battle_id !== null && String(m.battle_id).trim() !== '') {
+                        siteIds.add(String(m.battle_id).trim());
+                    }
+                });
+            }
+        });
+        return siteIds;
+    }, [filterServiceSheet, filteredServiceSheets]);
+
     const sitesFilteredBase = useMemo(() => {
         return derivedSites.map(site => {
             if (userCoords) {
@@ -804,6 +853,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
             return site;
         }).filter(site => {
+            if (activeServiceSheetSiteIds && !activeServiceSheetSiteIds.has(String(site.id).trim())) return false;
             if (showOnlyNew && !site.isNew) return false;
             if (filterSignificance && site.significance !== filterSignificance) return false;
             if (filterVisited === 'visited' && !site.visited) return false;
@@ -824,7 +874,7 @@ export const AppProvider = ({ children, storeUrl }) => {
             }
             return true;
         });
-    }, [derivedSites, userCoords, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, filterContributor, showArcOnly, filterRadius, filterWithMaps]);
+    }, [derivedSites, userCoords, activeServiceSheetSiteIds, showOnlyNew, filterSignificance, filterVisited, filterSearch, filterCountry, filterCoalition, filterCampaign, filterContributor, showArcOnly, filterRadius, filterWithMaps]);
 
     const passYear = useCallback((site) => {
         const siteYearStr = site.year ? String(site.year).trim() : '';
@@ -908,6 +958,7 @@ export const AppProvider = ({ children, storeUrl }) => {
     }, [filterCategory]);
 
     const passesAllFiltersExcept = (site, excludeFacet) => {
+        if (activeServiceSheetSiteIds && !activeServiceSheetSiteIds.has(String(site.id).trim())) return false;
         if (showOnlyNew && !site.isNew) return false;
         if (filterSignificance && site.significance !== filterSignificance) return false;
         if (filterSearch && (!site.name || !site.name.toLowerCase().includes(filterSearch.toLowerCase()))) return false;
@@ -1219,6 +1270,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         const hasVisitedFilter = Boolean(filterVisited && filterVisited !== 'all');
         const hasNewFilter = Boolean(showOnlyNew);
         const hasMapsFilter = Boolean(filterWithMaps);
+        const hasServiceSheetFilter = Boolean(filterServiceSheet && filterServiceSheet !== 'all');
 
         return hasRadiusFilter ||
             hasCategoryFilter ||
@@ -1235,7 +1287,8 @@ export const AppProvider = ({ children, storeUrl }) => {
             hasContributorFilter ||
             hasVisitedFilter ||
             hasNewFilter ||
-            hasMapsFilter;
+            hasMapsFilter ||
+            hasServiceSheetFilter;
     }, [
         filterRadius,
         filterCategory,
@@ -1253,7 +1306,8 @@ export const AppProvider = ({ children, storeUrl }) => {
         filterContributor,
         filterVisited,
         showOnlyNew,
-        filterWithMaps
+        filterWithMaps,
+        filterServiceSheet
     ]);
 
     // 2. Modal Filter: Specifically turns the "Filters" button RED
@@ -1288,6 +1342,7 @@ export const AppProvider = ({ children, storeUrl }) => {
         setShowArcOnly(false);
         setShowOnlyNew(false);
         setFilterWithMaps(false);
+        setFilterServiceSheet('all');
     };
 
     useEffect(() => {
@@ -2049,7 +2104,10 @@ export const AppProvider = ({ children, storeUrl }) => {
             enableMapOverlay,
             clearMapOverlays,
             serviceSheets,
+            filteredServiceSheets,
             serviceSheetTypes,
+            filterServiceSheet,
+            setFilterServiceSheet,
             selectedServiceSheet,
             setSelectedServiceSheet,
             serviceSheetMarkerToOpen,

@@ -1733,7 +1733,7 @@ const MapView = () => {
         selectedSite, setSelectedSite, siteToOpenPopup, setSiteToOpenPopup,
         userCoords, isFiltered, previewDevice, clearAllFilters,
         filterCategory, activeMapOverlays, setCallerSite,
-        serviceSheets, selectedServiceSheet, setSelectedServiceSheet, setCallerServiceSheet
+        serviceSheets, filteredServiceSheets, selectedServiceSheet, setSelectedServiceSheet, setCallerServiceSheet
     } = useAppContext();
 
     const hasActiveOverlays = useMemo(() => {
@@ -1939,7 +1939,7 @@ const MapView = () => {
                 />
 
                 <ServiceSheetMarkers
-                    serviceSheets={serviceSheets}
+                    serviceSheets={filteredServiceSheets || serviceSheets}
                     allSites={allSites}
                     activeMapOverlays={activeMapOverlays}
                     markerRefs={markerRefs}
