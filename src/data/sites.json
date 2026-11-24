@@ -23911,16 +23911,16 @@
   },
   {
     "id": "1259",
-    "name": "2nd Cavalry Battery Life Guards Artillery Brigade Monument",
+    "name": "Nizhyn Dragoon Regiment Monument",
     "date": "1912-09-07",
     "category": "Monument",
     "significance": 2,
-    "location": "Gorki, Moscow Óblast",
+    "location": "Borodinó, Moscow Óblast",
     "country": "Russia",
-    "latitude": 55.523936,
-    "longitude": 35.839906,
-    "description": "Erected in 1912 between the village of Gorki and the Psarevsky forest, this monument honors the 2nd Cavalry Battery of the Life Guards Artillery Brigade, commanded by Captain Alexander Fedorovich Rall. On the afternoon of August 26, 1812, after enemy forces captured Raevsky's Battery, the unit joined Kaptsevich's Division and the Guards Cavalry to halt a major French cavalry breakthrough in this sector. The column’s pedestal bears a gold inscription celebrating their legacy: 'The valor of parents is the inheritance of children. Everything is perishable, everything is fleeting, but valor never fades; it is immortal'.",
-    "image": "Cavalry_Battery.webp",
+    "latitude": 55.532020,
+    "longitude": 35.817923,
+    "description": "Erected in 1912 to designs by architect Leonid Kishkin, this monument honors the Nezhin Dragoon Regiment for their loyal sacrifice and celebrated cavalry raid on Napoleon's left flank during the Battle of Borodino.",
+    "image": "Nizhyn_Dragoon.webp",
     "createDate": "2026-11-18"
   },
   {
@@ -23931,8 +23931,8 @@
     "significance": 2,
     "location": "Gorki, Moscow Óblast",
     "country": "Russia",
-    "latitude": 55.523936,
-    "longitude": 35.839906,
+    "latitude": 55.52388,
+    "longitude": 35.841548,
     "description": "The wooden memorial shown is the Kutuzov Command Post Memorial Marker, erected in 2012 on the Borodino Battlefield to commemorate the bicentennial of the Patriotic War of 1812. Positioned on the left side of the Stonets stream near Psarevskaya Grove, it marks the location where historians believe Field Marshal Mikhail Kutuzov actually established his field command post on August 26 (September 7), 1812, behind the 6th Infantry Corps—distinct from his main observation post on the hill in the nearby village of Gorki. The four-sided wooden post bears carved inscriptions detailing the site's significance, the year 1812, and a quote from Kutuzov's battle disposition stating he would await continuous reports from behind the 6th Corps.",
     "image": "Kutuzov_commnadpost.webp",
     "createDate": "2026-11-18"
