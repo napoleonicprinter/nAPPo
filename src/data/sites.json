@@ -24591,8 +24591,36 @@
     "country": "Russia",
     "latitude": 55.555874,
     "longitude": 35.821248,
-    "description": "This modest monument is dedicated to the separate Cossack corps of the Don Ataman Matvey Ivanovich Platov's Army. It also stands on a low mound and was erected according to the design of architect N.I. Ivanov in 1985. ",
+    "description": "This modest monument is dedicated to the separate Cossack corps of the Don Ataman Matvey Ivanovich Platov's Army. It also stands on a low mound and was erected according to the design of architect N.I. Ivanov in 1985.",
     "image": "Cossaks_Don.webp",
     "createDate": "2026-11-24"
+  },
+  {
+    "id": "1299",
+    "name": "Life Guards Cossack Regiment Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.528783,
+    "longitude": 35.829778,
+    "description": "Originally designed by architect Sergei Rodionov in 1912, it was destroyed shortly after 1917 before being reconstructed in 1985 from early 20th-century photographs. The memorial honors the regiment's crucial role in Ataman Platov’s famous raid on Napoleon's left flank during the height of the Battle of Borodino. Ordered by Kutuzov, this diversion threw the enemy rear into confusion, halting French assaults on Bagration's flèches and Raevsky's battery long enough for vital Russian reserves to arrive.",
+    "image": "Guard_Cossaks.webp",
+    "createDate": "2026-11-25"
+  },
+  {
+    "id": "1300",
+    "name": "Life Guards Jaeger and Guards Crew Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.527488,
+    "longitude": 35.828005,
+    "description": "A white stone Doric column topped with a double-headed eagle honors the Life Guards Jäger Regiment and the sailors of the Guards Crew who defended the village on August 26, 1812. Designed by architects Fyodor Erantsev and Nikolai Permyakov, the monument was funded by the soldiers' descendants and erected in 1912 for the battle's centenary. Its pedestal features the Kulm Cross, a prestigious award bestowed upon the entire regiment by Prussian King Friedrich Wilhelm III for their bravery at the Battle of Kulm in 1813, which subsequently became their official regimental insignia.",
+    "image": "Guard_Crew.webp",
+    "createDate": "2026-11-25"
   }
 ]
