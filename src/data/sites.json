@@ -3332,7 +3332,25 @@
       "Napoleon",
       "Józef Poniatowski",
       "Joachim Murat"
-    ]
+    ],
+    "maps": [
+      {
+        "id": "leipzig-phase1",
+        "name": "Phase 1",
+        "url": "Leipzig_1.svg",
+        "bounds": [
+          [
+            51,
+            20623,
+            12.26533
+          ],
+          [
+            51.426738,
+            12.5595
+          ]
+        ]
+      }
+    ],
   },
   {
     "id": "156",
