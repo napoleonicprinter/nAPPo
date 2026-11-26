@@ -24622,5 +24622,61 @@
     "description": "A white stone Doric column topped with a double-headed eagle honors the Life Guards Jäger Regiment and the sailors of the Guards Crew who defended the village on August 26, 1812. Designed by architects Fyodor Erantsev and Nikolai Permyakov, the monument was funded by the soldiers' descendants and erected in 1912 for the battle's centenary. Its pedestal features the Kulm Cross, a prestigious award bestowed upon the entire regiment by Prussian King Friedrich Wilhelm III for their bravery at the Battle of Kulm in 1813, which subsequently became their official regimental insignia.",
     "image": "Guard_Crew.webp",
     "createDate": "2026-11-25"
+  },
+  {
+    "id": "1301",
+    "name": "Utitsky Kurgan Memorial",
+    "date": "1912-09-07",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Borodino, Moscow Óblast",
+    "country": "Russia",
+    "latitude": 55.527488,
+    "longitude": 35.828005,
+    "description": "During the Battle of Borodino on August 26, 1812, the Utitsky Kurgan served as a vital stronghold on the Russian army's left flank to block the French advance toward Moscow, a site now marked by a 1969 granite memorial according to the design of architect Nikita Ivanovich Ivanov. The memorial contains a detailed map of the military actions in the area of ​​the Old Smolensk Road and the Utitsky Kurgan on the day of the decisive battle.",
+    "image": "Utitsky_Kurgan.webp",
+    "createDate": "2026-11-25"
+  },
+  {
+    "id": "1302",
+    "name": "Coldstream Guards Badge",
+    "year": "1945",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Braine-l'Alleud, Hougoumont",
+    "country": "Belgium",
+    "latitude": 50.670380,
+    "longitude": 4.394900,
+    "description": "Erected in 1945 by Colonel Strathden, this Coldstream Guards badge and tablet were originally mounted on a post-Battle of Waterloo extension of the farm. Ahead of the June 2015 commemorations, that extension was demolished during a UK Treasury-funded restoration to return the site to its 1815 appearance. Both memorials were then relocated to the same height and position on the newly built wall, where a 200-strong detachment of Coldstream Guards re-inaugurated them on June 17, 2015. (Photo by Alta Falisa)",
+    "image": "Coldstream_guards.webp",
+    "createDate": "2026-11-26"
+  },
+  {
+    "id": "1303",
+    "name": "General Bauduin Memorial plaque",
+    "date": "1987-06-18",
+    "category": "Monument",
+    "significance": 1,
+    "location": "Braine-l'Alleud, Hougoumont",
+    "country": "Belgium",
+    "latitude": 50.670268,
+    "longitude": 4.395238,
+    "description": "On June 18, 1815, French Brigadier General Pierre François Bauduin was mortally wounded while heroically leading his brigade in the initial assault on the south perimeter of the Château d'Hougoumont during the Battle of Waterloo. Though his body was never recovered from the battlefield, this commemorative stone plaque was placed on the outer garden wall on June 18, 1987—the 172nd anniversary of the battle—by Belgian and French Napoleonic historical societies to mark the exact spot where he fell.",
+    "image": "Bauduin.webp",
+    "createDate": "2026-11-26"
+  },
+  {
+    "id": "1304",
+    "name": "French fallen at Hougoumont Memorial",
+    "year": "1913",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Braine-l'Alleud, Hougoumont",
+    "country": "Belgium",
+    "latitude": 50.671266,
+    "longitude": 4.396962,
+    "description": "Erected in 1913 the Monument to the French Soldiers (Monument aux Soldats Français) honors the French troops who fell during the fierce Battle of Waterloo on June 18, 1815. Located at the bottom of the farm's historic orchard, this stone memorial bears the simple inscription, 'Aux Soldats Français morts à Hougoumont, 18 juin 1815,' serving as a quiet tribute to their bravery at one of the battle's most intense strongholds. (Photo by Micharlemagne)",
+    "image": "French_Hougomont.webp",
+    "createDate": "2026-11-26"
   }
 ]
