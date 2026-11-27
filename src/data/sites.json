@@ -24660,7 +24660,7 @@
     "year": "1945",
     "category": "Monument",
     "significance": 1,
-    "location": "Braine-l'Alleud, Hougoumont",
+    "location": "Hougoumont, Braine-l'Alleud",
     "country": "Belgium",
     "latitude": 50.670380,
     "longitude": 4.394900,
@@ -24674,7 +24674,7 @@
     "date": "1987-06-18",
     "category": "Monument",
     "significance": 1,
-    "location": "Braine-l'Alleud, Hougoumont",
+    "location": "Hougoumont, Braine-l'Alleud",
     "country": "Belgium",
     "latitude": 50.670268,
     "longitude": 4.395238,
@@ -24702,14 +24702,14 @@
     "year": "1913",
     "category": "Monument",
     "significance": 2,
-    "location": "Genappe",
+    "location": "Braine-l'Alleud",
     "country": "Belgium",
     "latitude": 50.679580,
     "longitude": 4.411970,
     "description": "Erected in July 1817, the Gordon Monument is the oldest memorial on the Waterloo battlefield in Belgium. Commissioned by his siblings, it honors Lieutenant-Colonel Sir Alexander Gordon, the 29-year-old aide-de-camp to the Duke of Wellington who was mortally wounded during the battle on June 18, 1815. Carved from Belgian blue stone, the neoclassical monument features a broken column atop a pedestal—symbolizing a promising life cut short—and bears bilingual inscriptions detailing his bravery. (Photo by Alta Falisa)",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Gordon_Monument",
     "image": "Gordon.webp",
-    "createDate": "2026-11-26"
+    "createDate": "2026-11-27"
   },
   {
     "id": "1306",
@@ -24717,13 +24717,28 @@
     "date": "2015-06-17",
     "category": "Monument",
     "significance": 2,
-    "location": "Braine-l'Alleud, Hougoumont",
+    "location": "Hougoumont, Braine-l'Alleud",
     "country": "Belgium",
     "latitude": 50.670934,
     "longitude": 4.394307,
     "description": "Unveiled on June 17, 2015, for the bicentenary of the Battle of Waterloo, the bronze monument 'Closing the Gates on War' by sculptor Vivien Mallock stands at the north gate of Hougoumont Farm in Belgium. It depicts two soldiers straining to shut the heavy stone gates against French forces, honoring the British and Allied troops who defended the farmstead on June 18, 1815.",
-    "more info": "https://www.vivienmallock.co.uk/unveiling-waterloo-statue-hougoumont-farm-belgium/",
+    "more_info": "https://www.vivienmallock.co.uk/unveiling-waterloo-statue-hougoumont-farm-belgium/",
     "image": "British_1815.webp",
-    "createDate": "2026-11-26"
+    "createDate": "2026-11-27"
+  },
+  {
+    "id": "1307",
+    "name": "Monument to the Hanoverians",
+    "date": "2015-06-17",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Lasne",
+    "country": "Belgium",
+    "latitude": 50.679447,
+    "longitude": 4.412490,
+    "description": "Unveiled on June 17, 2015, for the bicentenary of the Battle of Waterloo, the bronze monument 'Closing the Gates on War' by sculptor Vivien Mallock stands at the north gate of Hougoumont Farm in Belgium. It depicts two soldiers straining to shut the heavy stone gates against French forces, honoring the British and Allied troops who defended the farmstead on June 18, 1815.",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Hanoverian_Monument",
+    "image": "Hannoverians.webp",
+    "createDate": "2026-11-27"
   }
 ]
