@@ -10617,7 +10617,7 @@
     "location": "Leipzig",
     "country": "Germany",
     "description": "General Count Gyulai. III. Austrian Corps. 17,000 men. Erected: 1862 by Dr. Theodor Apel.",
-    "latitude": 51.39249,
+    "latitude": 51.332505,
     "longitude": 12.31698,
     "more_info_link": "https://lebendigegeschichte-lww.de/apelsteine/#k",
     "image": "Apelstein22.webp",
@@ -11311,7 +11311,7 @@
   },
   {
     "id": "543",
-    "name": "Apelstein Nr. 44 Friccius - Battle of Möckern",
+    "name": "Apelstein Nr. 44 von Yorck - Battle of Möckern",
     "category": "Battle landmark",
     "significance": 2,
     "location": "Schkeuditz",
@@ -24694,6 +24694,36 @@
     "longitude": 4.396962,
     "description": "Erected in 1913 the Monument to the French Soldiers (Monument aux Soldats Français) honors the French troops who fell during the fierce Battle of Waterloo on June 18, 1815. Located at the bottom of the farm's historic orchard, this stone memorial bears the simple inscription, 'Aux Soldats Français morts à Hougoumont, 18 juin 1815,' serving as a quiet tribute to their bravery at one of the battle's most intense strongholds. (Photo by Micharlemagne)",
     "image": "French_Hougomont.webp",
+    "createDate": "2026-11-26"
+  },
+  {
+    "id": "1305",
+    "name": "Gordon Monument",
+    "year": "1913",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Genappe",
+    "country": "Belgium",
+    "latitude": 50.679580,
+    "longitude": 4.411970,
+    "description": "Erected in July 1817, the Gordon Monument is the oldest memorial on the Waterloo battlefield in Belgium. Commissioned by his siblings, it honors Lieutenant-Colonel Sir Alexander Gordon, the 29-year-old aide-de-camp to the Duke of Wellington who was mortally wounded during the battle on June 18, 1815. Carved from Belgian blue stone, the neoclassical monument features a broken column atop a pedestal—symbolizing a promising life cut short—and bears bilingual inscriptions detailing his bravery. (Photo by Alta Falisa)",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Gordon_Monument",
+    "image": "Gordon.webp",
+    "createDate": "2026-11-26"
+  },
+  {
+    "id": "1306",
+    "name": "Closing the Gates on War",
+    "date": "2015-06-17",
+    "category": "Monument",
+    "significance": 2,
+    "location": "Braine-l'Alleud, Hougoumont",
+    "country": "Belgium",
+    "latitude": 50.670934,
+    "longitude": 4.394307,
+    "description": "Unveiled on June 17, 2015, for the bicentenary of the Battle of Waterloo, the bronze monument 'Closing the Gates on War' by sculptor Vivien Mallock stands at the north gate of Hougoumont Farm in Belgium. It depicts two soldiers straining to shut the heavy stone gates against French forces, honoring the British and Allied troops who defended the farmstead on June 18, 1815.",
+    "more info": "https://www.vivienmallock.co.uk/unveiling-waterloo-statue-hougoumont-farm-belgium/",
+    "image": "British_1815.webp",
     "createDate": "2026-11-26"
   }
 ]
