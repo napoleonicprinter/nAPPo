@@ -5091,11 +5091,20 @@
   {
     "id": "598",
     "siteId": 1282,
-    "title": "Captaim Federico Gravina death",
+    "title": "Captain Federico Gravina death",
     "date": "1806-03-09",
     "location": "Cádiz, Spain",
     "description": "Federico Gravina y Nápoli died in Cádiz on March 9, 1806, at age 49, from wounds sustained at the Battle of Trafalgar. On October 21, 1805, grapeshot shattered his left arm while he commanded the Spanish fleet aboard his flagship Príncipe de Asturias. Despite being promoted to Captain General while recovering, gangrene set in and he succumbed to his injuries months later.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Federico_Gravina",
     "flower_link": "https://es.findagrave.com/memorial/23970165/federico-gravina_y_napoli/flower"
+  },
+  {
+    "id": "599",
+    "siteId": 1112,
+    "title": "Waterloo heroine Ann Keats Winzer's death",
+    "date": "1873-11-28",
+    "location": "Piddlehinton, West Dorset District, Dorset, England",
+    "description": "Ann Winzer was a heroine of the Battle of Waterloo, where she courageously cared for the sick and wounded soldiers. She died at age 81 at Piddlehinton, West Dorset District",
+    "flower_link": "https://es.findagrave.com/memorial/288316017/ann-winzer/flower"
   }
 ]
