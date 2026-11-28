@@ -1,5 +1,11 @@
 <?php
-session_start();
+// Show clear error message instead of blank 500 if anything fails
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // ============================================================================
 // 1. CONFIGURATION — Fill in your Patreon details from:
@@ -16,9 +22,10 @@ define('PATREON_REDIRECT_URI',  'https://www.regimientosdeamerica.com/YOUR_NEW_P
 define('PATREON_CREATOR_URL',   'https://www.patreon.com/YOUR_PATREON_PAGE');
 
 // Minimum monthly pledge in cents required for access:
-// Set to 100 ($1/€1+) to allow any active paid patron, or e.g. 500 for a $5/€5+ tier.
-// Set to 0 if you only check active_patron status regardless of amount.
-define('MIN_PLEDGE_CENTS',      100);
+// - Set to 0 to allow BOTH Free Members (Free subscribers / followers) AND Paid Patrons.
+// - Set to 100 ($1/€1+) to allow ONLY Paid Patrons.
+define('MIN_PLEDGE_CENTS',      0);
+define('ALLOW_FREE_MEMBERS',    true);
 
 // How long (in seconds) a verified session stays logged in before re-checking with Patreon (default: 24 hours)
 define('SESSION_TTL_SECONDS',   86400);
@@ -43,20 +50,19 @@ if (isset($_GET['logout'])) {
 if (isset($_GET['code'])) {
     $code = $_GET['code'];
 
-    // Exchange authorization code for access token
     $ch = curl_init('https://www.patreon.com/api/oauth2/token');
-    curl_setopt_array($ch, [
+    curl_setopt_array($ch, array(
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POST           => true,
-        CURLOPT_POSTFIELDS     => http_build_query([
+        CURLOPT_POSTFIELDS     => http_build_query(array(
             'code'          => $code,
             'grant_type'    => 'authorization_code',
             'client_id'     => PATREON_CLIENT_ID,
             'client_secret' => PATREON_CLIENT_SECRET,
             'redirect_uri'  => PATREON_REDIRECT_URI,
-        ]),
-        CURLOPT_HTTPHEADER     => ['Content-Type: application/x-www-form-urlencoded'],
-    ]);
+        )),
+        CURLOPT_HTTPHEADER     => array('Content-Type: application/x-www-form-urlencoded'),
+    ));
     $tokenResponse = curl_exec($ch);
     curl_close($ch);
 
@@ -65,52 +71,69 @@ if (isset($_GET['code'])) {
         showLoginScreen('Could not verify Patreon login token. Please try again.');
     }
 
-    // Fetch the user's memberships for your campaign
     $apiUrl = 'https://www.patreon.com/api/oauth2/v2/identity'
-            . '?include=memberships'
+            . '?include=memberships,campaign'
             . '&fields' . urlencode('[user]') . '=full_name,email'
-            . '&fields' . urlencode('[member]') . '=patron_status,currently_entitled_amount_cents';
+            . '&fields' . urlencode('[member]') . '=patron_status,currently_entitled_amount_cents,is_follower';
 
     $ch = curl_init($apiUrl);
-    curl_setopt_array($ch, [
+    curl_setopt_array($ch, array(
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER     => [
+        CURLOPT_HTTPHEADER     => array(
             'Authorization: Bearer ' . $tokenData['access_token'],
             'User-Agent: nAPPoTrails-Patreon-Gate/1.0',
-        ],
-    ]);
+        ),
+    ));
     $identityResponse = curl_exec($ch);
     curl_close($ch);
 
     $identityData = json_decode($identityResponse, true);
-    $patreonUserId = $identityData['data']['id'] ?? null;
+    $patreonUserId = isset($identityData['data']['id']) ? $identityData['data']['id'] : null;
 
-    // Check if the user has an active membership meeting the pledge requirement
     $isAuthorized = false;
-    if (!empty($identityData['included']) && is_array($identityData['included'])) {
-        foreach ($identityData['included'] as $item) {
-            if (($item['type'] ?? '') === 'member') {
-                $status = $item['attributes']['patron_status'] ?? null;
-                $cents  = (int)($item['attributes']['currently_entitled_amount_cents'] ?? 0);
 
-                if ($status === 'active_patron' && $cents >= MIN_PLEDGE_CENTS) {
-                    $isAuthorized = true;
-                    break;
+    // 1. If the logged-in user is the Campaign Creator themselves, always grant access
+    if (!empty($identityData['data']['relationships']['campaign']['data']['id'])) {
+        $isAuthorized = true;
+    }
+
+    // 2. Check campaign memberships (Paid Patrons & Free Members)
+    // Note: Patreon API v2 only returns 'member' records inside 'included' for your own campaign!
+    if (!$isAuthorized && !empty($identityData['included']) && is_array($identityData['included'])) {
+        foreach ($identityData['included'] as $item) {
+            $type = isset($item['type']) ? $item['type'] : '';
+            if ($type === 'member') {
+                $status     = isset($item['attributes']['patron_status']) ? $item['attributes']['patron_status'] : null;
+                $cents      = isset($item['attributes']['currently_entitled_amount_cents']) ? (int)$item['attributes']['currently_entitled_amount_cents'] : 0;
+                $isFollower = !empty($item['attributes']['is_follower']);
+
+                if (ALLOW_FREE_MEMBERS) {
+                    // When Free Members are allowed, any member/follower of your campaign is granted access
+                    // (except declined_patron unless they are still an active free follower)
+                    if ($status !== 'declined_patron' || $isFollower) {
+                        $isAuthorized = true;
+                        break;
+                    }
+                } else {
+                    // Only Paid Active Patrons meeting MIN_PLEDGE_CENTS
+                    if ($status === 'active_patron' && $cents >= MIN_PLEDGE_CENTS) {
+                        $isAuthorized = true;
+                        break;
+                    }
                 }
             }
         }
     }
 
     if ($isAuthorized && $patreonUserId) {
-        // Check Leech Protection (max IPs per Patreon account)
         checkLeechProtection($patreonUserId);
 
         $_SESSION['patreon_verified'] = true;
         $_SESSION['patreon_verified_at'] = time();
         $_SESSION['patreon_user_id'] = $patreonUserId;
-        $_SESSION['patreon_name'] = $identityData['data']['attributes']['full_name'] ?? 'Patron';
+        $_SESSION['patreon_name'] = isset($identityData['data']['attributes']['full_name']) ? $identityData['data']['attributes']['full_name'] : 'Patron';
 
-        $returnUrl = $_SESSION['patreon_return_url'] ?? dirname($_SERVER['SCRIPT_NAME']) . '/';
+        $returnUrl = isset($_SESSION['patreon_return_url']) ? $_SESSION['patreon_return_url'] : (dirname($_SERVER['SCRIPT_NAME']) . '/');
         unset($_SESSION['patreon_return_url']);
         header('Location: ' . $returnUrl);
         exit;
@@ -133,7 +156,6 @@ if (!$isVerified) {
     showLoginScreen();
 }
 
-// Verify Leech Protection on active session
 if (!empty($_SESSION['patreon_user_id'])) {
     checkLeechProtection($_SESSION['patreon_user_id']);
 }
@@ -141,7 +163,7 @@ if (!empty($_SESSION['patreon_user_id'])) {
 // ----------------------------------------------------------------------------
 // 4. SERVE THE REQUESTED FILE INSIDE THE PROTECTED FOLDER
 // ----------------------------------------------------------------------------
-$requestedFile = $_GET['file'] ?? '';
+$requestedFile = isset($_GET['file']) ? $_GET['file'] : '';
 $requestedFile = ltrim($requestedFile, '/');
 
 if ($requestedFile === '' || is_dir(__DIR__ . '/' . $requestedFile)) {
@@ -157,8 +179,7 @@ if ($requestedFile === '' || is_dir(__DIR__ . '/' . $requestedFile)) {
 $baseDir = realpath(__DIR__);
 $targetPath = realpath(__DIR__ . '/' . $requestedFile);
 
-// Security check: ensure the file stays inside this folder and isn't gate/config files
-$forbiddenFiles = ['patreon-gate.php', '.htaccess', '.patreon_ip_log.json'];
+$forbiddenFiles = array('patreon-gate.php', '.htaccess', '.patreon_ip_log.json');
 if (
     !$targetPath ||
     strpos($targetPath, $baseDir) !== 0 ||
@@ -180,7 +201,7 @@ if ($ext === 'php') {
     exit;
 }
 
-$mimeTypes = [
+$mimeTypes = array(
     'html'  => 'text/html; charset=utf-8',
     'htm'   => 'text/html; charset=utf-8',
     'css'   => 'text/css; charset=utf-8',
@@ -199,9 +220,9 @@ $mimeTypes = [
     'ttf'   => 'font/ttf',
     'mp4'   => 'video/mp4',
     'webm'  => 'video/webm',
-];
+);
 
-$contentType = $mimeTypes[$ext] ?? (function_exists('mime_content_type') ? mime_content_type($targetPath) : 'application/octet-stream');
+$contentType = isset($mimeTypes[$ext]) ? $mimeTypes[$ext] : 'application/octet-stream';
 header('Content-Type: ' . $contentType);
 header('Content-Length: ' . filesize($targetPath));
 readfile($targetPath);
@@ -215,9 +236,9 @@ function checkLeechProtection($patreonUserId) {
 
     $logFile = __DIR__ . '/.patreon_ip_log.json';
     $now = time();
-    $clientIp = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    $clientIp = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '0.0.0.0';
 
-    $data = [];
+    $data = array();
     if (file_exists($logFile)) {
         $raw = @file_get_contents($logFile);
         if ($raw) {
@@ -226,7 +247,6 @@ function checkLeechProtection($patreonUserId) {
         }
     }
 
-    // Clean expired entries across all users
     foreach ($data as $uid => $ips) {
         if (!is_array($ips)) {
             unset($data[$uid]);
@@ -243,7 +263,7 @@ function checkLeechProtection($patreonUserId) {
     }
 
     if (!isset($data[$patreonUserId])) {
-        $data[$patreonUserId] = [];
+        $data[$patreonUserId] = array();
     }
 
     $data[$patreonUserId][$clientIp] = $now;
@@ -260,13 +280,14 @@ function checkLeechProtection($patreonUserId) {
 // 6. LOGIN SCREEN UI
 // ----------------------------------------------------------------------------
 function showLoginScreen($errorMsg = '') {
-    $oauthUrl = 'https://www.patreon.com/oauth2/authorize?' . http_build_query([
+    $oauthUrl = 'https://www.patreon.com/oauth2/authorize?' . http_build_query(array(
         'response_type' => 'code',
         'client_id'     => PATREON_CLIENT_ID,
         'redirect_uri'  => PATREON_REDIRECT_URI,
         'scope'         => 'identity identity.memberships',
-    ]);
-    http_response_code(401);
+    ));
+    // NOTE: Do NOT send http_response_code(401) because parent cPanel Basic Auth or ErrorDocument 401
+    // in public_html/.htaccess intercepts 401 responses and triggers an Apache 500 error!
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -309,10 +330,10 @@ function showLoginScreen($errorMsg = '') {
             <h1>nAPPo Trails — Patron Access</h1>
             <p>This area is reserved for our active Patreon supporters. Log in with your Patreon account to continue.</p>
             <?php if ($errorMsg): ?>
-                <div class="error"><?= htmlspecialchars($errorMsg) ?></div>
+                <div class="error"><?php echo htmlspecialchars($errorMsg); ?></div>
             <?php endif; ?>
-            <a class="btn-patreon" href="<?= htmlspecialchars($oauthUrl) ?>">Log in with Patreon</a>
-            <a class="btn-subscribe" href="<?= htmlspecialchars(PATREON_CREATOR_URL) ?>" target="_blank" rel="noopener">
+            <a class="btn-patreon" href="<?php echo htmlspecialchars($oauthUrl); ?>">Log in with Patreon</a>
+            <a class="btn-subscribe" href="<?php echo htmlspecialchars(PATREON_CREATOR_URL); ?>" target="_blank" rel="noopener">
                 Not a subscriber yet? Join on Patreon &rarr;
             </a>
         </div>

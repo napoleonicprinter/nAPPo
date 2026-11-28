@@ -1,12 +1,10 @@
 RewriteEngine On
 
-# Prevent direct browser access to the IP-tracking data file
-<Files ".patreon_ip_log.json">
-    Require all denied
-</Files>
+# Block direct access to IP log file
+RewriteRule ^\.patreon_ip_log\.json$ - [F,L]
 
-# Allow direct requests to patreon-gate.php itself
-RewriteCond %{REQUEST_URI} !patreon-gate\.php$ [NC]
+# Stop rewriting if the request is already for patreon-gate.php
+RewriteRule ^patreon-gate\.php$ - [L]
 
-# Route all other files in this folder (HTML, JS, CSS, SVG, JSON, images) through patreon-gate.php
+# Route all other requests in this folder through patreon-gate.php
 RewriteRule ^(.*)$ patreon-gate.php?file=$1 [QSA,L]

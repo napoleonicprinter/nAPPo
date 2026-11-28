@@ -5106,5 +5106,14 @@
     "location": "Piddlehinton, West Dorset District, Dorset, England",
     "description": "Ann Winzer was a heroine of the Battle of Waterloo, where she courageously cared for the sick and wounded soldiers. She died at age 81 at Piddlehinton, West Dorset District",
     "flower_link": "https://es.findagrave.com/memorial/288316017/ann-winzer/flower"
+  },
+  {
+    "id": "600",
+    "siteId": 40,
+    "title": "Battlefield of Alba de Tormes 1809",
+    "date": "1809-11-28",
+    "location": "Alba de Tormes,Salamanca, Spain",
+    "description": "On November 28, 1809, a French imperial corps under the command of François Étienne de Kellermann attacked a Spanish army led by Diego de Cañas y Portocarrero, Duke del Parque.",
+    "wikipedia_link": "https://es.wikipedia.org/wiki/Batalla_de_Alba_de_Tormes_(1809)"
   }
 ]
